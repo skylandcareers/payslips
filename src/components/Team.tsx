@@ -92,8 +92,8 @@ const Team = () => {
   }, [api, onSelect]);
 
   return (
-    <section id="team" className="px-6 py-24 relative overflow-hidden">
-      <NetworkBackground lines={2} distance={5} className="opacity-40" />
+    <section id="team" className="px-6 py-24 relative overflow-hidden bg-black">
+      <NetworkBackground lines={4} distance={6} className="brightness-125" />
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div

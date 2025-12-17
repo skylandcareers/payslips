@@ -115,8 +115,8 @@ const Products = () => {
   }, [api, onSelect, onScroll]);
 
   return (
-    <section id="products" className="py-24 relative overflow-hidden">
-      <NetworkBackground lines={2} distance={5} className="opacity-40" />
+    <section id="products" className="py-24 relative overflow-hidden bg-black">
+      <NetworkBackground lines={4} distance={6} className="brightness-125" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header with arrows */}
         <div className="flex items-end justify-between mb-12">
