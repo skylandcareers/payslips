@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { ChevronRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface NavLink {
   href: string;
   label: string;
+}
+
+interface DropdownItem {
+  label: string;
+  href: string;
 }
 
 interface HeroSection2Props {
@@ -25,7 +31,8 @@ interface HeroSection2Props {
   onJoinClick?: () => void;
   showEmailForm?: boolean;
   children?: React.ReactNode;
-  sidebarContent?: React.ReactNode;
+  dropdownItems?: DropdownItem[];
+  dropdownLabel?: string;
 }
 
 export default function HeroSection2({
@@ -44,10 +51,12 @@ export default function HeroSection2({
   onJoinClick,
   showEmailForm = false,
   children,
-  sidebarContent,
+  dropdownItems = [],
+  dropdownLabel = "About",
 }: HeroSection2Props) {
   const [email, setEmail] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +95,44 @@ export default function HeroSection2({
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
+              {/* Dropdown Menu */}
+              {dropdownItems.length > 0 && (
+                <div 
+                  className="relative"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
+                >
+                  <button
+                    className="flex items-center gap-1 text-white/80 hover:text-white transition-colors font-medium text-sm"
+                  >
+                    {dropdownLabel}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {dropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden"
+                      >
+                        {dropdownItems.map((item, index) => (
+                          <Link
+                            key={index}
+                            to={item.href}
+                            className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm border-b border-white/5 last:border-b-0"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
+
               {navLinks.map(({ href, label }) => (
                 <button
                   key={href}
@@ -107,13 +154,6 @@ export default function HeroSection2({
               Get in touch
             </Button>
           </div>
-          
-          {/* Sub-navigation menu */}
-          {sidebarContent && (
-            <div className="mt-6 pt-4 border-t border-white/10">
-              {sidebarContent}
-            </div>
-          )}
         </div>
       </motion.header>
 
