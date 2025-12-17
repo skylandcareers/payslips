@@ -61,46 +61,46 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md bg-black border-2 border-destructive rounded-none p-6">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">Get in touch</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-white">Get in touch</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name" className="text-white">Name</Label>
             <Input
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name"
-              className={errors.name ? "border-destructive" : ""}
+              className={`bg-black border-muted-foreground/30 text-white placeholder:text-muted-foreground rounded-none ${errors.name ? "border-destructive" : ""}`}
             />
             {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email ID</Label>
+            <Label htmlFor="email" className="text-white">Email ID</Label>
             <Input
               id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className={errors.email ? "border-destructive" : ""}
+              className={`bg-black border-muted-foreground/30 text-white placeholder:text-muted-foreground rounded-none ${errors.email ? "border-destructive" : ""}`}
             />
             {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="organization">Organization Name</Label>
+            <Label htmlFor="organization" className="text-white">Organization Name</Label>
             <Input
               id="organization"
               value={organization}
               onChange={(e) => setOrganization(e.target.value)}
               placeholder="Your company"
-              className={errors.organization ? "border-destructive" : ""}
+              className={`bg-black border-muted-foreground/30 text-white placeholder:text-muted-foreground rounded-none ${errors.organization ? "border-destructive" : ""}`}
             />
             {errors.organization && <p className="text-sm text-destructive">{errors.organization}</p>}
           </div>
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <Button type="submit" className="w-full bg-destructive hover:bg-destructive/90 text-white rounded-none" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
