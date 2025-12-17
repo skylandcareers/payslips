@@ -121,19 +121,19 @@ const NetworkBackground = ({
             points[j].position.x, points[j].position.y, points[j].position.z
           );
           
-          // Brand red gradient (HSL 357, 73%, 47% = rgb(208, 32, 41))
+          // Brand red gradient - brighter and more vibrant
           const gradientT = (points[i].position.y + 5) / 10; // 0 to 1 based on Y position
-          const r1 = 0.82 + gradientT * 0.1; // Red stays high
-          const g1 = 0.13 + gradientT * 0.2; // Slight orange variation
-          const b1 = 0.16 + gradientT * 0.15;
+          const r1 = 0.9 + gradientT * 0.1; // Brighter red
+          const g1 = 0.2 + gradientT * 0.25; // More orange variation
+          const b1 = 0.2 + gradientT * 0.2;
           
           const gradientT2 = (points[j].position.y + 5) / 10;
-          const r2 = 0.82 + gradientT2 * 0.1;
-          const g2 = 0.13 + gradientT2 * 0.2;
-          const b2 = 0.16 + gradientT2 * 0.15;
+          const r2 = 0.9 + gradientT2 * 0.1;
+          const g2 = 0.2 + gradientT2 * 0.25;
+          const b2 = 0.2 + gradientT2 * 0.2;
           
-          // 25% opacity for lines (slightly more visible with red)
-          const glowOpacity = opacity * 0.25;
+          // Increased opacity for brighter lines (40% instead of 25%)
+          const glowOpacity = opacity * 0.45;
           colors.push(r1, g1, b1, glowOpacity);
           colors.push(r2, g2, b2, glowOpacity);
         }
