@@ -226,14 +226,6 @@ export default function HeroSection2({
               </div>
             )}
 
-            {/* Footer Version Text - Above Title */}
-            {footerVersion && (
-              <div className="mb-6">
-                <p className="text-white/60 text-sm">{footerVersion}</p>
-                <p className="text-white/60 text-sm">Trusted by Experts.</p>
-              </div>
-            )}
-
             {/* Title */}
             <h1 
               className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
