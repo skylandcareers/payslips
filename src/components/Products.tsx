@@ -84,6 +84,7 @@ const Products = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [current, setCurrent] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!api) return;
@@ -92,16 +93,25 @@ const Products = () => {
     setCanScrollNext(api.canScrollNext());
   }, [api]);
 
+  const onScroll = useCallback(() => {
+    if (!api) return;
+    const progress = Math.max(0, Math.min(1, api.scrollProgress()));
+    setScrollProgress(progress);
+  }, [api]);
+
   useEffect(() => {
     if (!api) return;
     onSelect();
+    onScroll();
     api.on("select", onSelect);
     api.on("reInit", onSelect);
+    api.on("scroll", onScroll);
     return () => {
       api.off("select", onSelect);
       api.off("reInit", onSelect);
+      api.off("scroll", onScroll);
     };
-  }, [api, onSelect]);
+  }, [api, onSelect, onScroll]);
 
   return (
     <section id="products" className="py-24 bg-black">
@@ -118,22 +128,22 @@ const Products = () => {
           </div>
           
           {/* Arrow buttons - hidden on mobile */}
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-3">
             <button
               onClick={() => api?.scrollPrev()}
               disabled={!canScrollPrev}
-              className="size-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="size-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Previous"
             >
-              <ChevronLeft className="size-5" />
+              <ChevronLeft className="size-6" />
             </button>
             <button
               onClick={() => api?.scrollNext()}
               disabled={!canScrollNext}
-              className="size-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="size-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Next"
             >
-              <ChevronRight className="size-5" />
+              <ChevronRight className="size-6" />
             </button>
           </div>
         </div>
@@ -152,6 +162,16 @@ const Products = () => {
             ))}
           </CarouselContent>
         </Carousel>
+
+        {/* Progress bar - desktop */}
+        <div className="hidden md:block mt-8">
+          <div className="h-0.5 bg-white/10 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-white transition-all duration-150 ease-out rounded-full"
+              style={{ width: `${Math.max(10, scrollProgress * 100)}%` }}
+            />
+          </div>
+        </div>
 
         {/* Dot Indicators - mobile only */}
         <div className="flex justify-center gap-2 mt-6 md:hidden">
