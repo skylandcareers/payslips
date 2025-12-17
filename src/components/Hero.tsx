@@ -111,11 +111,11 @@ const Hero = () => {
           description="Automate the routine. Elevate your people. Scale your revenue."
           ctaText="Get in touch"
           onCtaClick={() => setIsFormOpen(true)}
-          footerVersion="From the Makers of InsideIIM"
         >
           <LogoCloud 
             logos={partnerLogos} 
-            subtitle="Trusted by leading enterprises"
+            subtitle="From the Makers of InsideIIM"
+            title="Trusted by Experts."
             className="mt-8"
           />
         </HeroSection2>
