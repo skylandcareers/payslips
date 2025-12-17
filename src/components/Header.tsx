@@ -45,8 +45,8 @@ const Header = () => {
   }, [location.pathname]);
 
   const scrollToSection = (id: string) => {
-    setIsMobileMenuOpen(false);
     if (location.pathname !== "/") {
+      setIsMobileMenuOpen(false);
       navigate("/");
       setTimeout(() => {
         const element = document.getElementById(id);
@@ -59,6 +59,8 @@ const Header = () => {
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+      // Close menu after starting scroll
+      setTimeout(() => setIsMobileMenuOpen(false), 50);
     }
   };
 
