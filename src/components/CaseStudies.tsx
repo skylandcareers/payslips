@@ -1,4 +1,11 @@
-import { useState } from "react";
+import {
+  CardCurtainReveal,
+  CardCurtainRevealBody,
+  CardCurtainRevealDescription,
+  CardCurtainRevealFooter,
+  CardCurtainRevealTitle,
+  CardCurtain,
+} from "@/components/ui/card-curtain-reveal";
 import hulLogo from "@/assets/partners/hul.png";
 import tcplLogo from "@/assets/partners/tcpl.png";
 import gimLogo from "@/assets/partners/gim.png";
@@ -7,58 +14,82 @@ interface CaseStudy {
   id: number;
   company: string;
   logo: string;
-  problemSolution: string;
+  hook: React.ReactNode;
+  summary: string;
   fullDescription: string;
-  results: string[];
+  bgColor: "black" | "white" | "red";
 }
 
 const CaseStudies = () => {
-  const [flippedCards, setFlippedCards] = useState<number[]>([]);
-
   const caseStudies: CaseStudy[] = [
     {
       id: 1,
-      company: "Unilever",
+      company: "Hindustan Unilever",
       logo: hulLogo,
-      problemSolution: "Saved 800 hours of HR effort and boosted shortlisted candidate quality by 50% using a scientific framework for automating high-volume screening with PotentialAI.",
+      hook: (
+        <>
+          <span className="underline decoration-2">800+ HR hours</span> eliminated in high-volume hiring
+        </>
+      ),
+      summary: "Saved 800 hours of HR effort and boosted shortlisted candidate quality by 50% using a scientific framework for automating high-volume screening with PotentialAI.",
       fullDescription: "Hiring managers evaluated 20,000+ candidate profiles every year—a process that consumed weeks of valuable time. By deploying PotentialAI, we transformed their screening workflow, enabling managers to focus on high-quality interactions rather than manual filtering. This saved over 800 hours of HR effort and boosted shortlisted candidate quality by 50%.",
-      results: [
-        "Reduced screening time by 70%",
-        "Improved candidate quality by 50%",
-        "Enhanced candidate experience scores"
-      ]
+      bgColor: "black",
     },
     {
       id: 2,
       company: "Tata Consumer Products",
       logo: tcplLogo,
-      problemSolution: "Tripled offer conversion rates on large-scale campus drives by replacing manual workflows with our end-to-end suite (PotentialAI + SignalAI) for automated candidate screening and assessments.",
+      hook: (
+        <>
+          <span className="underline decoration-2">3× improvement</span> in offer conversion at campus scale
+        </>
+      ),
+      summary: "Tripled offer conversion rates on large-scale campus drives by replacing manual workflows with our end-to-end suite (PotentialAI + SignalAI) for automated candidate screening and assessments.",
       fullDescription: "Hiring managers covered 75+ campuses and screened 15,000+ candidates every year with a process that simply didn't scale. By replacing manual workflows with our end-to-end suite (PotentialAI + SignalAI), we enabled automated candidate screening and assessments. This tripled their offer conversion rates on large-scale campus drives.",
-      results: [
-        "Tripled offer conversion rates",
-        "Automated screening across 75+ campuses"
-      ]
+      bgColor: "white",
     },
     {
       id: 3,
-      company: "GIM Goa",
+      company: "Goa Institute of Management",
       logo: gimLogo,
-      problemSolution: "Cut application-to-offer timelines by two-thirds by automating manual application evaluations with PotentialAI Admit.",
+      hook: (
+        <>
+          Application-to-offer timelines <span className="underline decoration-2">cut by 66%</span>
+        </>
+      ),
+      summary: "Cut application-to-offer timelines by two-thirds by automating manual application evaluations with PotentialAI Admit.",
       fullDescription: "The admissions team processed 8,000+ applications every year—a volume that stretched timelines and strained resources. By deploying PotentialAI Admit, we transformed their evaluation workflow, enabling the team to focus on candidate quality rather than administrative bottlenecks. This reduced their application-to-offer timelines by two-thirds.",
-      results: [
-        "Application to Offer time reduced by 66%",
-        "Improved candidate evaluation consistency",
-        "Enhanced admissions team productivity"
-      ]
-    }
+      bgColor: "red",
+    },
   ];
 
-  const handleCardClick = (id: number) => {
-    setFlippedCards(prev => 
-      prev.includes(id) 
-        ? prev.filter(cardId => cardId !== id)
-        : [...prev, id]
-    );
+  const getCardStyles = (bgColor: "black" | "white" | "red") => {
+    switch (bgColor) {
+      case "black":
+        return {
+          card: "bg-black text-white border-white/20",
+          logo: "brightness-0 invert", // Makes logo white
+          text: "text-white",
+          curtain: "bg-white text-black",
+          curtainText: "text-black",
+        };
+      case "white":
+        return {
+          card: "bg-white text-black border-black/20",
+          logo: "brightness-0", // Makes logo black
+          text: "text-black",
+          curtain: "bg-black text-white",
+          curtainText: "text-white",
+        };
+      case "red":
+        return {
+          card: "bg-[hsl(var(--destructive))] text-white border-white/20",
+          logo: "brightness-0 invert", // Makes logo white
+          text: "text-white",
+          curtain: "bg-black text-white",
+          curtainText: "text-white",
+        };
+    }
   };
 
   return (
@@ -71,63 +102,54 @@ const CaseStudies = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {caseStudies.map((study) => (
-            <div
-              key={study.id}
-              className="relative h-[400px] cursor-pointer perspective-1000"
-              onClick={() => handleCardClick(study.id)}
-            >
-              <div
-                className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${
-                  flippedCards.includes(study.id) ? "rotate-y-180" : ""
-                }`}
+          {caseStudies.map((study) => {
+            const styles = getCardStyles(study.bgColor);
+            return (
+              <CardCurtainReveal
+                key={study.id}
+                className={`h-[450px] border-2 ${styles.card}`}
               >
-                {/* Front of card */}
-                <div className="absolute w-full h-full backface-hidden bg-card border border-border rounded-[20%] p-6 flex flex-col items-center justify-center gap-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="flex items-center justify-center h-24">
+                <CardCurtainRevealBody className="p-8 justify-center items-center text-center">
+                  {/* Logo */}
+                  <div className="mb-6">
                     <img
                       src={study.logo}
                       alt={`${study.company} logo`}
-                      className="max-h-20 w-auto object-contain"
+                      className={`h-16 w-auto object-contain mx-auto ${styles.logo}`}
                     />
                   </div>
-                  <p className="text-muted-foreground text-center leading-relaxed">
-                    {study.problemSolution}
-                  </p>
-                  <p className="text-sm text-primary font-medium">
-                    Click to read more →
-                  </p>
-                </div>
 
-                {/* Back of card */}
-                <div className="absolute w-full h-full backface-hidden bg-gradient-to-br from-card via-card to-primary/10 border border-border rounded-[20%] p-8 rotate-y-180 shadow-lg overflow-y-auto flex flex-col justify-center">
-                  <p className="text-muted-foreground leading-relaxed text-center italic">
+                  {/* Hook Text */}
+                  <CardCurtainRevealTitle className={`text-xl md:text-2xl font-bold leading-tight ${styles.text}`}>
+                    {study.hook}
+                  </CardCurtainRevealTitle>
+
+                  {/* Revealed Description */}
+                  <CardCurtainRevealDescription className="mt-6">
+                    <p className={`text-sm leading-relaxed ${styles.text} opacity-80`}>
+                      {study.summary}
+                    </p>
+                  </CardCurtainRevealDescription>
+                </CardCurtainRevealBody>
+
+                {/* Curtain Reveal with Full Description */}
+                <CardCurtainRevealFooter className={`${styles.curtain} p-8 flex flex-col justify-center`}>
+                  <div className="mb-4">
+                    <img
+                      src={study.logo}
+                      alt={`${study.company} logo`}
+                      className={`h-12 w-auto object-contain mx-auto ${styles.curtainText === "text-white" ? "brightness-0 invert" : "brightness-0"}`}
+                    />
+                  </div>
+                  <p className={`text-sm md:text-base leading-relaxed ${styles.curtainText} text-center italic`}>
                     "{study.fullDescription}"
                   </p>
-                  <p className="text-sm text-primary font-medium text-center mt-6">
-                    Click to go back ←
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+                </CardCurtainRevealFooter>
+              </CardCurtainReveal>
+            );
+          })}
         </div>
       </div>
-
-      <style>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
     </section>
   );
 };
