@@ -99,19 +99,28 @@ const CaseStudies = () => {
             {caseStudies.map((study) => (
               <div
                 key={study.id}
-                className={`relative h-[400px] ${study.bgColor} ${study.textColor} p-8 cursor-pointer group transition-opacity duration-300 ${
+                className={`relative h-[400px] ${study.bgColor} ${study.textColor} p-8 flex flex-col cursor-pointer group transition-opacity duration-300 ${
                   expandedCard && expandedCard !== study.id ? "opacity-30 pointer-events-none" : "opacity-100"
                 }`}
                 onClick={() => setExpandedCard(expandedCard === study.id ? null : study.id)}
               >
-                {/* Hook text at top */}
-                <div className="h-full flex flex-col">
-                  <p className="text-xl md:text-2xl font-sans leading-tight">
+                {/* Logo at top */}
+                <div className="flex-shrink-0 mb-auto">
+                  <img
+                    src={study.logo}
+                    alt={`${study.company} logo`}
+                    className={`h-20 w-auto object-contain ${study.logoFilter}`}
+                  />
+                </div>
+
+                {/* Hook text - anchored to top of bottom area */}
+                <div className="flex flex-col">
+                  <p className="text-xl md:text-2xl font-sans leading-tight mb-4">
                     {study.hook}
                   </p>
                   
-                  {/* Expand indicator at bottom */}
-                  <div className="mt-auto flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  {/* Expand indicator */}
+                  <div className="flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity mt-2">
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
