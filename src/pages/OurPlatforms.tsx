@@ -7,7 +7,7 @@ import { ArrowRight, X } from "lucide-react";
 import insideiimLogo from "@/assets/platforms/insideiim-logo.png";
 import insidekampusLogo from "@/assets/platforms/insidekampus-logo.png";
 import altuniLogo from "@/assets/platforms/altuni-logo.png";
-import altunilabsLogo from "@/assets/altuni-labs-logo.png";
+import altunilabsLogo from "@/assets/altuni-labs-logo-new.png";
 
 interface Platform {
   id: number;
@@ -107,7 +107,7 @@ const OurPlatforms = () => {
           <div className="container px-6 py-16 relative z-10">
             <div className="relative max-w-6xl mx-auto">
               {/* Desktop Grid */}
-              <div className="hidden md:grid md:grid-cols-4 gap-0 relative">
+              <div className="hidden lg:grid lg:grid-cols-4 gap-0 relative">
                 {platforms.map((platform) => (
                   <div
                     key={platform.id}
@@ -212,16 +212,16 @@ const OurPlatforms = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Mobile Stack */}
-              <div className="md:hidden flex flex-col gap-4">
+              {/* Mobile/Tablet Stack */}
+              <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-0">
                 {platforms.map((platform) => (
                   <div
                     key={platform.id}
-                    className={`relative ${platform.bgColor} ${platform.textColor} p-6 cursor-pointer group transition-all duration-300`}
+                    className={`relative ${platform.bgColor} ${platform.textColor} p-6 cursor-pointer group transition-all duration-300 min-h-[280px] sm:min-h-[320px] flex flex-col`}
                     onClick={() => setExpandedCard(expandedCard === platform.id ? null : platform.id)}
                   >
                     {/* Logo */}
-                    <div className="mb-4">
+                    <div className="mb-auto h-16 flex items-start">
                       <img
                         src={platform.logo}
                         alt={`${platform.name} logo`}
@@ -230,14 +230,16 @@ const OurPlatforms = () => {
                     </div>
 
                     {/* Platform name */}
-                    <p className="text-lg font-sans font-semibold mb-2">
-                      {platform.name}
-                    </p>
-                    
-                    {/* Expand indicator */}
-                    <div className="flex items-center gap-2 opacity-70 text-sm">
-                      <span>{expandedCard === platform.id ? 'Tap to close' : 'Tap to read more'}</span>
-                      <ArrowRight size={14} className={`transition-transform ${expandedCard === platform.id ? 'rotate-90' : ''}`} />
+                    <div className="mt-auto">
+                      <p className="text-lg font-sans font-semibold mb-2">
+                        {platform.name}
+                      </p>
+                      
+                      {/* Expand indicator */}
+                      <div className="flex items-center gap-2 opacity-70 text-sm">
+                        <span>{expandedCard === platform.id ? 'Tap to close' : 'Tap to read more'}</span>
+                        <ArrowRight size={14} className={`transition-transform ${expandedCard === platform.id ? 'rotate-90' : ''}`} />
+                      </div>
                     </div>
 
                     {/* Mobile Expanded Content */}
