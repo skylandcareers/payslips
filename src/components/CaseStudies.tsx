@@ -88,14 +88,14 @@ const CaseStudies = () => {
   const getExpandedStudy = () => caseStudies.find(s => s.id === expandedCard);
 
   return (
-    <section id="case-studies" className="py-20 bg-black relative overflow-hidden">
+    <section id="case-studies" className="py-28 md:py-32 bg-black relative overflow-hidden">
       {/* Network Background Animation */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <NetworkBackground lines={2} distance={6} />
+      <div className="absolute inset-0 z-0 opacity-70">
+        <NetworkBackground lines={3} distance={7} />
       </div>
 
       <div className="container px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
             We Make Life Simple For Our Clients
           </h2>
