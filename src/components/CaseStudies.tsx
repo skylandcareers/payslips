@@ -113,14 +113,14 @@ const CaseStudies = () => {
                   />
                 </div>
 
-                {/* Hook text - anchored to top of bottom area */}
-                <div className="flex flex-col">
-                  <p className="text-xl md:text-2xl font-sans leading-tight mb-4">
+                {/* Hook text - fixed height container so all cards align */}
+                <div className="flex flex-col min-h-[140px]">
+                  <p className="text-xl md:text-2xl font-sans leading-tight">
                     {study.hook}
                   </p>
                   
-                  {/* Expand indicator */}
-                  <div className="flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity mt-2">
+                  {/* Expand indicator - pushed to bottom */}
+                  <div className="flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity mt-auto">
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
