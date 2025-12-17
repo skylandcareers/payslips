@@ -16,12 +16,12 @@ const Contact = () => {
             
             <button
               onClick={() => setIsFormOpen(true)}
-              className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 border-2 border-primary text-foreground font-medium py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center gap-2 md:gap-3 bg-white hover:bg-gray-50 border-2 border-primary text-foreground font-medium py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <span className="flex items-center justify-center w-8 h-8 bg-primary rounded-full">
-                <ChevronRight className="w-5 h-5 text-white" />
+              <span className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-primary rounded-full">
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </span>
-              <span className="text-gray-800">Get in touch</span>
+              <span className="text-gray-800 text-sm md:text-base">Get in touch</span>
             </button>
           </div>
         </div>
