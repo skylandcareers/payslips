@@ -1,6 +1,6 @@
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
-import konverseAiImg from "@/assets/products/konverse-ai.png";
+import konverseAiImg from "@/assets/products/konverse-ai-new.png";
 import potentialAiImg from "@/assets/products/potential-ai.png";
 import billionAiImg from "@/assets/products/billion-ai.png";
 import signalAiImg from "@/assets/products/signal-ai.png";
