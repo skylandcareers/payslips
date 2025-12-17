@@ -291,23 +291,19 @@ export default function HeroSection2({
                 <span className="relative z-10 text-gray-800 group-hover:text-white transition-colors duration-300">{ctaText}</span>
               </motion.button>
             )}
-
-            {/* Additional children content */}
-            {children}
           </div>
         </div>
       </main>
 
-      {/* Footer */}
-      {footerVersion && (
-        <footer className="absolute bottom-0 left-0 right-0 z-10">
-          <div className="container mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              <p className="text-white/60 text-sm">{footerVersion}</p>
-            </div>
-          </div>
-        </footer>
-      )}
+      {/* Footer with Logo Cloud */}
+      <footer className="absolute bottom-0 left-0 right-0 z-10">
+        <div className="container mx-auto px-6 py-4">
+          {children}
+          {footerVersion && (
+            <p className="text-white/60 text-sm text-center mt-4">{footerVersion}</p>
+          )}
+        </div>
+      </footer>
     </div>
   );
 }
