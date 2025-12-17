@@ -47,9 +47,9 @@ const Team = () => {
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
-      const cardWidth = container.offsetWidth * 0.45; // ~45% width cards
+      const cardWidth = (container.offsetWidth - 24) / 2; // Account for gap
       const newIndex = Math.round(scrollLeft / cardWidth);
-      setActiveIndex(Math.min(newIndex, leadership.length - 2)); // -2 since 2 are visible
+      setActiveIndex(Math.min(newIndex, leadership.length - 2));
     };
 
     container.addEventListener("scroll", handleScroll);
@@ -126,11 +126,11 @@ const Team = () => {
           ))}
         </div>
 
-        {/* Mobile Carousel - 2 visible at a time */}
+        {/* Mobile Carousel - 2 visible at a time, starting from Ankit */}
         <div className="md:hidden">
           <div 
             ref={scrollRef}
-            className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-6 px-6"
+            className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {leadership.map((member) => (
@@ -139,7 +139,7 @@ const Team = () => {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex-shrink-0 w-[45%] snap-start"
+                className="group flex-shrink-0 w-[calc(50%-6px)] snap-start first:ml-0"
               >
                 <div className="relative aspect-[3/4] overflow-hidden mb-3">
                   <img
