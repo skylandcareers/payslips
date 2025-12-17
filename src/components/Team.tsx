@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const leadership = [
   {
@@ -36,6 +41,48 @@ const leadership = [
   },
 ];
 
+const TeamMemberCard = ({ member, index }: { member: typeof leadership[0]; index: number }) => (
+  <motion.a
+    href={member.linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className="group block cursor-pointer"
+  >
+    <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/5]">
+      <img
+        src={member.image}
+        alt={member.name}
+        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+      />
+    </div>
+    <div className="space-y-1">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-white">
+          {member.name}
+        </h3>
+        <span className="text-white/70 group-hover:opacity-80 transition-opacity">
+          <Linkedin size={14} strokeWidth={1.5} />
+        </span>
+      </div>
+      <div className="flex items-center justify-between text-xs">
+        <span className="text-[#b62100] font-medium">
+          {member.role}
+        </span>
+        <span className="text-white/60">
+          {member.credentials}
+        </span>
+      </div>
+      <p className="text-white/50 text-xs pt-1 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-10 transition-all duration-300 overflow-hidden">
+        {member.description}
+      </p>
+    </div>
+  </motion.a>
+);
+
 const Team = () => {
   return (
     <section id="team" className="px-6 py-24 bg-black">
@@ -59,59 +106,23 @@ const Team = () => {
           </p>
         </motion.div>
 
-        {/* Team Members Grid - 4 in one row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Mobile Carousel - shows 2 at a time */}
+        <div className="md:hidden">
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {leadership.map((member, index) => (
+                <CarouselItem key={member.name} className="pl-4 basis-1/2">
+                  <TeamMemberCard member={member} index={index} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        {/* Desktop Grid - 4 in one row */}
+        <div className="hidden md:grid md:grid-cols-4 gap-6">
           {leadership.map((member, index) => (
-            <motion.a
-              key={member.name}
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group block cursor-pointer"
-            >
-              {/* Image - subtle shrink on hover */}
-              <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/5]">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-
-              {/* Content below image */}
-              <div className="space-y-1">
-                {/* Name and LinkedIn - always visible */}
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-white">
-                    {member.name}
-                  </h3>
-                  <span className="text-white/70 group-hover:opacity-80 transition-opacity">
-                    <Linkedin size={14} strokeWidth={1.5} />
-                  </span>
-                </div>
-
-                {/* Role and Credentials - always visible */}
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-[#b62100] font-medium">
-                    {member.role}
-                  </span>
-                  <span className="text-white/60">
-                    {member.credentials}
-                  </span>
-                </div>
-
-                {/* Description - revealed on hover */}
-                <p 
-                  className="text-white/50 text-xs pt-1 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-10 transition-all duration-300 overflow-hidden"
-                >
-                  {member.description}
-                </p>
-              </div>
-            </motion.a>
+            <TeamMemberCard key={member.name} member={member} index={index} />
           ))}
         </div>
       </div>
