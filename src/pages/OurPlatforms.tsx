@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import insideiimLogo from "@/assets/platforms/insideiim-logo.png";
@@ -45,13 +46,14 @@ const OurPlatforms = () => {
       
       <main className="pt-24 pb-20">
         {/* Hero Section */}
-        <section className="px-6 py-16 bg-muted/30">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="relative px-6 py-16 bg-black overflow-hidden">
+          <StaticNetworkBackground className="opacity-30" density={80} />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-foreground mb-6"
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
             >
               Our Platforms
             </motion.h1>
@@ -59,7 +61,7 @@ const OurPlatforms = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg text-muted-foreground max-w-2xl mx-auto"
+              className="text-lg text-white/80 max-w-2xl mx-auto"
             >
               A unique ecosystem connecting MBA students, high-potential aspirants, and employers that value merit and outcomes.
             </motion.p>
