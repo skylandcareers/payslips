@@ -183,14 +183,14 @@ const OurTeam = () => {
                   viewport={{ once: true }}
                   className={`min-h-[200px] p-6 flex flex-col justify-end ${
                     index % 2 === 0 
-                      ? 'bg-[#1a1a1a] text-white' 
-                      : 'bg-white text-foreground'
+                      ? 'bg-[#1a1a1a]' 
+                      : 'bg-white'
                   }`}
                 >
-                  <h3 className={`text-lg font-bold mb-2 ${index % 2 === 0 ? 'text-white' : 'text-foreground'}`}>
+                  <h3 className={`text-lg font-bold mb-2 ${index % 2 === 0 ? 'text-white' : 'text-black'}`}>
                     {value.title}
                   </h3>
-                  <p className={`text-sm ${index % 2 === 0 ? 'text-white/60' : 'text-muted-foreground'}`}>
+                  <p className={`text-sm ${index % 2 === 0 ? 'text-white/60' : 'text-black/60'}`}>
                     {value.description}
                   </p>
                 </motion.div>
