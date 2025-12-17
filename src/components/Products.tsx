@@ -147,10 +147,15 @@ const Products = () => {
         {/* Carousel for all screen sizes */}
         <Carousel 
           setApi={setApi} 
-          opts={{ align: "start", loop: false, dragFree: true }} 
+          opts={{ 
+            align: "start", 
+            loop: false,
+            skipSnaps: false,
+            duration: 30,
+          }} 
           className="w-full"
         >
-          <CarouselContent className="-ml-4 md:-ml-6">
+          <CarouselContent className="-ml-4 md:-ml-6 transition-transform">
             {products.map(product => (
               <CarouselItem key={product.id} className="pl-4 md:pl-6 basis-[85%] md:basis-1/3">
                 <ProductCard product={product} />
