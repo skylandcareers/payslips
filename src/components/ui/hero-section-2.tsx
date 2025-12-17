@@ -177,14 +177,26 @@ export default function HeroSection2({
             </nav>
 
             {/* Join Button */}
-            <Button
+            <motion.button
               onClick={onJoinClick}
-              variant="outline"
-              className="hidden md:inline-flex bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 hover:text-white"
+              className="hidden md:inline-flex items-center relative overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:text-white px-4 py-2 rounded-md font-medium text-sm"
+              initial="initial"
+              whileHover="hover"
             >
-              <ChevronRight className="w-4 h-4 mr-2" />
-              Get in touch
-            </Button>
+              <motion.span
+                className="absolute inset-0 z-0 origin-left"
+                style={{ backgroundColor: "hsl(var(--primary))" }}
+                variants={{
+                  initial: { scaleX: 0 },
+                  hover: { scaleX: 1 },
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              />
+              <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                <ChevronRight className="w-4 h-4" />
+                Get in touch
+              </span>
+            </motion.button>
           </div>
         </div>
       </motion.header>
@@ -250,16 +262,27 @@ export default function HeroSection2({
                 </Button>
               </form>
             ) : (
-              <Button
+              <motion.button
                 onClick={onCtaClick}
-                size="lg"
-                className="inline-flex items-center gap-3 bg-white hover:bg-white/90 font-medium py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative inline-flex items-center gap-3 bg-white font-medium py-4 px-8 rounded-full shadow-lg overflow-hidden"
+                initial="initial"
+                whileHover="hover"
+                whileTap={{ scale: 0.98 }}
               >
-                <span className="flex items-center justify-center w-8 h-8 bg-primary rounded-full">
-                  <ChevronRight className="w-5 h-5 text-primary-foreground" />
+                <motion.span
+                  className="absolute inset-0 z-0 origin-left rounded-full"
+                  style={{ backgroundColor: "hsl(var(--primary))" }}
+                  variants={{
+                    initial: { scaleX: 0 },
+                    hover: { scaleX: 1 },
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+                <span className="relative z-10 flex items-center justify-center w-8 h-8 bg-primary group-hover:bg-white/20 rounded-full transition-colors duration-300">
+                  <ChevronRight className="w-5 h-5 text-primary-foreground group-hover:text-white transition-colors duration-300" />
                 </span>
-                <span className="text-gray-800">{ctaText}</span>
-              </Button>
+                <span className="relative z-10 text-gray-800 group-hover:text-white transition-colors duration-300">{ctaText}</span>
+              </motion.button>
             )}
 
             {/* Additional children content */}
