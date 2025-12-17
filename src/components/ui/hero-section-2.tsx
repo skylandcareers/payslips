@@ -226,6 +226,13 @@ export default function HeroSection2({
               </div>
             )}
 
+            {/* Footer Version Text - Above Title */}
+            {footerVersion && (
+              <div className="mb-6">
+                <p className="text-white/60 text-sm">{footerVersion}</p>
+                <p className="text-white/60 text-sm">Trusted by Experts.</p>
+              </div>
+            )}
 
             {/* Title */}
             <h1 
@@ -298,16 +305,6 @@ export default function HeroSection2({
         </div>
       </main>
 
-      {/* Footer */}
-      {footerVersion && (
-        <footer className="absolute bottom-0 left-0 right-0 z-10">
-          <div className="container mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              <p className="text-white/60 text-sm">{footerVersion}</p>
-            </div>
-          </div>
-        </footer>
-      )}
     </div>
   );
 }
