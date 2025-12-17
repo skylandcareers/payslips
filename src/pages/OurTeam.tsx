@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Linkedin } from "lucide-react";
@@ -53,13 +54,14 @@ const OurTeam = () => {
       
       <main className="pt-24 pb-20">
         {/* Hero Section */}
-        <section className="px-6 py-16 bg-muted/30">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="relative px-6 py-16 bg-black overflow-hidden">
+          <StaticNetworkBackground className="opacity-30" density={80} />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl font-bold text-foreground mb-6"
+              className="text-3xl font-bold text-white mb-6"
             >
               Who We Are
             </motion.h1>
@@ -67,7 +69,7 @@ const OurTeam = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg text-muted-foreground max-w-2xl mx-auto"
+              className="text-lg text-white/80 max-w-2xl mx-auto"
             >
               We are a group of builders, dreamers, and doers who care about one thing above all else: helping people make better career choices.
             </motion.p>
