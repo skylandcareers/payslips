@@ -4,21 +4,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Phone, Mail } from "lucide-react";
 
 interface Contact2Props {
   title?: string;
   description?: string;
   phone?: string;
   email?: string;
-  web?: { label: string; url: string };
 }
 
 export const Contact2 = ({
   title = "Contact Us",
   description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
-  phone = "+91 9820030699",
-  email = "connect@altunilabs.com",
-  web = { label: "altunilabs.com", url: "https://altunilabs.com" },
+  phone = "+91 97694 76005",
+  email = "sales@insideiim.com",
 }: Contact2Props) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,7 +40,6 @@ export const Contact2 = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
@@ -62,110 +60,109 @@ export const Contact2 = ({
   return (
     <section id="contact" className="py-16 md:py-24 bg-background">
       <div className="container px-6">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-10 lg:grid-cols-2">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left Column - Info */}
             <div className="flex flex-col justify-between">
               <div>
-                <div className="mb-6">
-                  <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground">
-                    {title}
-                  </h2>
-                </div>
-                <p className="text-muted-foreground mb-8">{description}</p>
+                <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
+                  {title}
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10 max-w-md">
+                  {description}
+                </p>
               </div>
 
-              <div>
-                <p className="mb-4 font-semibold text-foreground">Contact Details</p>
-                <div className="space-y-3 text-sm text-muted-foreground">
-                  <p>
-                    <span className="font-medium text-foreground">Phone: </span>
-                    {phone}
-                  </p>
-                  <p>
-                    <span className="font-medium text-foreground">Email: </span>
+              <div className="space-y-1">
+                <p className="text-lg font-semibold text-foreground mb-4">Contact Details</p>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <Phone className="w-5 h-5" />
+                    <span>{phone}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <Mail className="w-5 h-5" />
                     <a
                       href={`mailto:${email}`}
-                      className="underline hover:text-foreground transition-colors"
+                      className="hover:text-foreground transition-colors underline"
                     >
                       {email}
                     </a>
-                  </p>
-                  <p>
-                    <span className="font-medium text-foreground">Web: </span>
-                    <a
-                      href={web.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:text-foreground transition-colors"
-                    >
-                      {web.label}
-                    </a>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid gap-4 sm:grid-cols-2">
+            {/* Right Column - Form Card */}
+            <div className="bg-card border border-border rounded-2xl shadow-lg p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" className="text-foreground font-medium">First Name</Label>
+                    <Input
+                      id="firstName"
+                      placeholder="First Name"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                      className="rounded-lg h-12 bg-background"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" className="text-foreground font-medium">Last Name</Label>
+                    <Input
+                      id="lastName"
+                      placeholder="Last Name"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                      className="rounded-lg h-12 bg-background"
+                    />
+                  </div>
+                </div>
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
+                  <Label htmlFor="email" className="text-foreground font-medium">Email</Label>
                   <Input
-                    id="firstName"
-                    placeholder="John"
-                    value={formData.firstName}
+                    id="email"
+                    type="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="rounded-lg h-12 bg-background"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="subject" className="text-foreground font-medium">Subject</Label>
+                  <Input
+                    id="subject"
+                    placeholder="Subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="rounded-lg h-12 bg-background"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-foreground font-medium">Message</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Type your message here."
+                    className="min-h-[120px] rounded-lg bg-background resize-none"
+                    value={formData.message}
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input
-                    id="lastName"
-                    placeholder="Doe"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
-                <Input
-                  id="subject"
-                  placeholder="How can we help?"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Your message..."
-                  className="min-h-[120px]"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
+                <Button 
+                  type="submit" 
+                  className="w-full h-12 rounded-lg text-base font-medium" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
