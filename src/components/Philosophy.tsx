@@ -45,20 +45,20 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
 
   return (
     <section className="relative bg-background">
-      {/* Desktop: Sticky scroll section - 3 viewport heights for 3 slides */}
-      <div ref={containerRef} className="hidden lg:block h-[300vh] relative">
+      {/* Desktop: Sticky scroll section - reduced height */}
+      <div ref={containerRef} className="hidden lg:block h-[200vh] relative">
         <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center">
           {/* Circuit Animation Background */}
           <CircuitAnimation containerRef={containerRef} className="opacity-60" />
           
           {/* Header - centered */}
-          <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground text-center mb-12 relative z-10">
+          <h2 className="text-2xl md:text-3xl font-sans font-bold text-foreground text-center mb-8 relative z-10">
             Our Approach to AI
           </h2>
           
           {/* Centered content container */}
-          <div className="relative z-10 w-full max-w-2xl mx-auto px-8">
-            <div className="relative min-h-[200px]">
+          <div className="relative z-10 w-full max-w-xl mx-auto px-8">
+            <div className="relative min-h-[160px]">
               {slides.map((slide, index) => (
                 <SlideText
                   key={index}
@@ -74,19 +74,19 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
       </div>
 
       {/* Mobile/Tablet: Stacked with parallax background */}
-      <div ref={mobileContainerRef} className="lg:hidden relative min-h-[300vh]">
+      <div ref={mobileContainerRef} className="lg:hidden relative min-h-[200vh]">
         {/* Circuit Animation Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <CircuitAnimation className="opacity-40" />
         </div>
 
         <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-6">
-          <h2 className="text-2xl font-sans font-bold text-foreground text-center mb-8 relative z-10">
+          <h2 className="text-xl font-sans font-bold text-foreground text-center mb-6 relative z-10">
             Our Approach to AI
           </h2>
 
           <div className="relative z-10 w-full max-w-md mx-auto">
-            <div className="relative min-h-[180px]">
+            <div className="relative min-h-[150px]">
               {slides.map((slide, index) => (
                 <MobileSlideText
                   key={index}
