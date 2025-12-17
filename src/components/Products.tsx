@@ -57,9 +57,6 @@ const Products = () => {
       <div className="container px-6">
         {/* Header */}
         <div className="mb-12">
-          <span className="text-[#b62100] text-sm font-semibold tracking-wider uppercase mb-2 block">
-            Products
-          </span>
           <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
             Our Products
           </h2>
@@ -82,7 +79,7 @@ const Products = () => {
               <img
                 src={product.image}
                 alt={product.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
               />
               
               {/* Gradient overlay */}
