@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, X } from "lucide-react";
+import { X } from "lucide-react";
 import hulLogo from "@/assets/partners/hul.png";
 import tcplLogo from "@/assets/partners/tcpl.png";
 import gimLogo from "@/assets/partners/gim.png";
@@ -28,7 +28,7 @@ const CaseStudies = () => {
       logo: hulLogo,
       hook: (
         <>
-          <span className="underline decoration-[hsl(var(--destructive))] decoration-[3px] underline-offset-4 font-semibold">800+ HR hours</span>
+          <span className="underline decoration-[#E53935] decoration-[3px] underline-offset-4 font-semibold">800+ HR hours</span>
           <br />
           eliminated in high-volume hiring
         </>
@@ -46,7 +46,7 @@ const CaseStudies = () => {
       logo: tcplLogo,
       hook: (
         <>
-          <span className="underline decoration-[hsl(var(--destructive))] decoration-[3px] underline-offset-4 font-semibold">3× improvement</span> in offer
+          <span className="underline decoration-[#E53935] decoration-[3px] underline-offset-4 font-semibold">3× improvement</span> in offer
           <br />
           conversion at campus scale
         </>
@@ -66,13 +66,13 @@ const CaseStudies = () => {
         <>
           Application-to-offer
           <br />
-          timelines <span className="underline decoration-[hsl(var(--destructive))] decoration-[3px] underline-offset-4 font-semibold">cut by 66%</span>
+          timelines <span className="underline decoration-[#E53935] decoration-[3px] underline-offset-4 font-semibold">cut by 66%</span>
         </>
       ),
       summary: "Cut application-to-offer timelines by two-thirds by automating manual application evaluations with PotentialAI Admit.",
       product: "PotentialAI Admit",
       fullDescription: "The admissions team processed 8,000+ applications every year—a volume that stretched timelines and strained resources. By deploying PotentialAI Admit, we transformed their evaluation workflow, enabling the team to focus on candidate quality rather than administrative bottlenecks. This reduced their application-to-offer timelines by two-thirds.",
-      bgColor: "bg-[hsl(var(--destructive))]",
+      bgColor: "bg-[#E53935]",
       textColor: "text-white",
       logoFilter: "brightness-0 invert",
     },
@@ -86,77 +86,91 @@ const CaseStudies = () => {
     <section id="case-studies" className="py-20 bg-black">
       <div className="container px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white mb-4 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-sans font-semibold text-white tracking-tight">
             We Make Life Simple For Our Clients
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl mx-auto">
-          {caseStudies.map((study) => (
-            <motion.div
-              key={study.id}
-              layout
-              className="relative cursor-pointer overflow-hidden"
-              onClick={() => handleCardClick(study.id)}
-            >
-              <AnimatePresence mode="wait">
-                {expandedCard === study.id ? (
-                  // Expanded State
+        <div className="max-w-6xl mx-auto">
+          <AnimatePresence mode="wait">
+            {expandedCard ? (
+              // Expanded View - takes full width
+              <motion.div
+                key={`expanded-${expandedCard}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white text-black"
+              >
+                {(() => {
+                  const study = caseStudies.find(s => s.id === expandedCard);
+                  if (!study) return null;
+                  
+                  return (
+                    <div className="p-10 md:p-16 relative">
+                      {/* Close button */}
+                      <button 
+                        className="absolute top-6 right-6 p-3 hover:bg-black/5 transition-colors"
+                        onClick={() => setExpandedCard(null)}
+                      >
+                        <X size={24} strokeWidth={1.5} />
+                      </button>
+
+                      <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+                        {/* Left Column */}
+                        <div className="flex flex-col">
+                          {/* Logo */}
+                          <div className="mb-10">
+                            <img
+                              src={study.logo}
+                              alt={`${study.company} logo`}
+                              className="h-14 w-auto object-contain brightness-0"
+                            />
+                          </div>
+
+                          {/* Summary */}
+                          <p className="text-xl md:text-2xl font-sans font-medium leading-relaxed text-black">
+                            {study.summary}
+                          </p>
+
+                          {/* Product Used */}
+                          <div className="mt-10 pt-6 border-t border-black/10">
+                            <span className="text-xs uppercase tracking-widest text-black/40 font-sans">Product Used</span>
+                            <p className="text-lg font-semibold text-[#E53935] mt-1 font-sans">{study.product}</p>
+                          </div>
+                        </div>
+
+                        {/* Right Column - Full Description */}
+                        <div className="flex items-center">
+                          <div className="pl-8 border-l-2 border-[#E53935]">
+                            <p className="text-base md:text-lg text-black/60 leading-relaxed font-sans">
+                              "{study.fullDescription}"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </motion.div>
+            ) : (
+              // Grid View - All cards
+              <motion.div
+                key="grid"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-3 gap-0"
+              >
+                {caseStudies.map((study) => (
                   <motion.div
-                    key="expanded"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white text-black p-8"
-                  >
-                    {/* Close button */}
-                    <button 
-                      className="absolute top-4 right-4 p-2 hover:bg-black/10 transition-colors"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setExpandedCard(null);
-                      }}
-                    >
-                      <X size={20} />
-                    </button>
-
-                    {/* Logo */}
-                    <div className="mb-6">
-                      <img
-                        src={study.logo}
-                        alt={`${study.company} logo`}
-                        className="h-12 w-auto object-contain brightness-0"
-                      />
-                    </div>
-
-                    {/* Summary */}
-                    <p className="text-lg font-sans font-medium leading-relaxed mb-6">
-                      {study.summary}
-                    </p>
-
-                    {/* Product Used */}
-                    <div className="mb-6 py-3 border-t border-b border-black/10">
-                      <span className="text-sm text-black/50 uppercase tracking-wider">Product Used</span>
-                      <p className="text-base font-semibold text-[hsl(var(--destructive))]">{study.product}</p>
-                    </div>
-
-                    {/* Full Description */}
-                    <div className="relative pl-4 border-l-2 border-[hsl(var(--destructive))]">
-                      <p className="text-sm text-black/70 leading-relaxed italic">
-                        "{study.fullDescription}"
-                      </p>
-                    </div>
-                  </motion.div>
-                ) : (
-                  // Collapsed State - Hook
-                  <motion.div
-                    key="collapsed"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`h-[500px] ${study.bgColor} ${study.textColor} p-8 flex flex-col group`}
+                    key={study.id}
+                    className={`h-[500px] ${study.bgColor} ${study.textColor} p-8 flex flex-col cursor-pointer group transition-all duration-300 hover:opacity-90`}
+                    onClick={() => handleCardClick(study.id)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     {/* Logo at top */}
                     <div className="flex-shrink-0">
@@ -169,21 +183,15 @@ const CaseStudies = () => {
 
                     {/* Hook text at bottom */}
                     <div className="mt-auto">
-                      <p className="text-xl md:text-2xl font-sans leading-tight mb-4">
+                      <p className="text-xl md:text-2xl font-sans leading-tight">
                         {study.hook}
                       </p>
-                      
-                      {/* Click indicator */}
-                      <div className="flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
-                        <span className="text-sm">Click to expand</span>
-                        <ChevronDown size={16} className="animate-bounce" />
-                      </div>
                     </div>
                   </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>

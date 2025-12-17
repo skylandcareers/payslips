@@ -228,7 +228,7 @@ export default function HeroSection2({
 
             {/* Title */}
             <h1 
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-4xl md:text-6xl lg:text-7xl font-sans font-bold text-white leading-[1.1] tracking-tight mb-8"
               style={{ textShadow: '0 0 40px rgba(255,255,255,0.2), 0 2px 8px rgba(0,0,0,0.4)' }}
             >
               {title}
@@ -236,7 +236,7 @@ export default function HeroSection2({
 
             {/* Description */}
             <p 
-              className="text-base md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-10"
+              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-12 font-sans font-normal tracking-wide"
               style={{ textShadow: '0 0 15px rgba(255,255,255,0.2)' }}
             >
               {description}
