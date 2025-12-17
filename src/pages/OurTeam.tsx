@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StaticNetworkBackground from "@/components/StaticNetworkBackground";
+import NetworkBackground from "@/components/NetworkBackground";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Linkedin } from "lucide-react";
@@ -55,7 +55,9 @@ const OurTeam = () => {
       <main className="pt-24 pb-20">
         {/* Hero Section */}
         <section className="relative px-6 py-16 bg-black overflow-hidden">
-          <StaticNetworkBackground className="opacity-30" density={80} />
+          <div className="absolute inset-0 z-0">
+            <NetworkBackground lines={5} distance={6} className="brightness-150" />
+          </div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
