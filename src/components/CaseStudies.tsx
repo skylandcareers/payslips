@@ -88,10 +88,10 @@ const CaseStudies = () => {
   const getExpandedStudy = () => caseStudies.find(s => s.id === expandedCard);
 
   return (
-    <section id="case-studies" className="py-28 md:py-32 bg-black relative overflow-hidden">
-      {/* Network Background Animation */}
-      <div className="absolute inset-0 z-0 opacity-70">
-        <NetworkBackground lines={3} distance={7} />
+    <section id="case-studies" className="py-24 bg-black relative overflow-hidden">
+      {/* Network Background Animation - same as hero */}
+      <div className="absolute inset-0 z-0">
+        <NetworkBackground lines={3} distance={7} className="brightness-125" />
       </div>
 
       <div className="container px-6 relative z-10">
@@ -107,7 +107,7 @@ const CaseStudies = () => {
             {caseStudies.map((study) => (
               <div
                 key={study.id}
-                className={`relative h-[400px] ${study.bgColor} ${study.textColor} p-8 flex flex-col cursor-pointer group transition-opacity duration-300 ${
+                className={`relative h-[450px] ${study.bgColor} ${study.textColor} p-8 flex flex-col cursor-pointer group transition-opacity duration-300 ${
                   expandedCard && expandedCard !== study.id ? "opacity-30 pointer-events-none" : "opacity-100"
                 }`}
                 onClick={() => setExpandedCard(expandedCard === study.id ? null : study.id)}
