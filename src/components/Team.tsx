@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 const leadership = [
@@ -41,18 +43,14 @@ const leadership = [
   },
 ];
 
-const TeamMemberCard = ({ member, index }: { member: typeof leadership[0]; index: number }) => (
-  <motion.a
+const TeamMemberCard = ({ member }: { member: typeof leadership[0] }) => (
+  <a
     href={member.linkedin}
     target="_blank"
     rel="noopener noreferrer"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    viewport={{ once: true }}
     className="group block cursor-pointer"
   >
-    <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/5]">
+    <div className="relative aspect-square overflow-hidden mb-3">
       <img
         src={member.image}
         alt={member.name}
@@ -60,30 +58,38 @@ const TeamMemberCard = ({ member, index }: { member: typeof leadership[0]; index
       />
     </div>
     <div className="space-y-1">
-      <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-white">
+      <div className="flex items-center gap-2">
+        <h3 className="text-base font-semibold text-white leading-tight">
           {member.name}
         </h3>
-        <span className="text-white/70 group-hover:opacity-80 transition-opacity">
-          <Linkedin size={14} strokeWidth={1.5} />
-        </span>
+        <Linkedin size={14} className="text-white/70 flex-shrink-0" />
       </div>
-      <div className="flex items-center justify-between text-xs">
-        <span className="text-[#b62100] font-medium">
-          {member.role}
-        </span>
-        <span className="text-white/60">
-          {member.credentials}
-        </span>
+      <div className="flex flex-col text-xs gap-0.5">
+        <span className="text-[#b62100] font-medium">{member.role}</span>
+        <span className="text-white/60 text-[11px]">{member.credentials}</span>
       </div>
-      <p className="text-white/50 text-xs pt-1 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-10 transition-all duration-300 overflow-hidden">
-        {member.description}
-      </p>
     </div>
-  </motion.a>
+  </a>
 );
 
 const Team = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect();
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api, onSelect]);
+
   return (
     <section id="team" className="px-6 py-24 bg-black">
       <div className="max-w-6xl mx-auto">
@@ -108,21 +114,42 @@ const Team = () => {
 
         {/* Mobile Carousel - shows 2 at a time */}
         <div className="md:hidden">
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
-            <CarouselContent className="-ml-4">
-              {leadership.map((member, index) => (
-                <CarouselItem key={member.name} className="pl-4 basis-1/2">
-                  <TeamMemberCard member={member} index={index} />
+          <Carousel setApi={setApi} opts={{ align: "start" }} className="w-full">
+            <CarouselContent className="-ml-3">
+              {leadership.map((member) => (
+                <CarouselItem key={member.name} className="pl-3 basis-[45%]">
+                  <TeamMemberCard member={member} />
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
+          {/* Dot Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {[0, 1].map((index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index * 2)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  Math.floor(current / 2) === index ? "bg-white w-6" : "bg-white/30"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Desktop Grid - 4 in one row */}
         <div className="hidden md:grid md:grid-cols-4 gap-6">
           {leadership.map((member, index) => (
-            <TeamMemberCard key={member.name} member={member} index={index} />
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <TeamMemberCard member={member} />
+            </motion.div>
           ))}
         </div>
       </div>
