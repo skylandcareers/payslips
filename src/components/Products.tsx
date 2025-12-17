@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import konverseAiImg from "@/assets/products/konverse-ai.png";
 import potentialAiImg from "@/assets/products/potential-ai.png";
@@ -81,65 +81,89 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => (
 
 const Products = () => {
   const [api, setApi] = useState<CarouselApi>();
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
   const [current, setCurrent] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!api) return;
     setCurrent(api.selectedScrollSnap());
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
   }, [api]);
 
   useEffect(() => {
     if (!api) return;
     onSelect();
     api.on("select", onSelect);
+    api.on("reInit", onSelect);
     return () => {
       api.off("select", onSelect);
+      api.off("reInit", onSelect);
     };
   }, [api, onSelect]);
 
   return (
     <section id="products" className="py-24 bg-black">
-      <div className="container px-6 mx-auto">
-        {/* Header */}
-        <div className="mb-16 max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
-            Our Products
-          </h2>
-          <p className="text-white/60 max-w-2xl mt-4">
-            AI-powered solutions designed to transform how you work, learn, and grow.
-          </p>
-        </div>
-
-        {/* Mobile Carousel */}
-        <div className="md:hidden">
-          <Carousel setApi={setApi} opts={{ align: "start", loop: true }} className="w-full">
-            <CarouselContent className="-ml-4">
-              {products.map(product => (
-                <CarouselItem key={product.id} className="pl-4 basis-[85%]">
-                  <ProductCard product={product} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-          {/* Dot Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
-            {products.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  current === index ? "bg-white w-6" : "bg-white/30"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header with arrows */}
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
+              Our Products
+            </h2>
+            <p className="text-white/60 max-w-2xl mt-4">
+              AI-powered solutions designed to transform how you work, learn, and grow.
+            </p>
+          </div>
+          
+          {/* Arrow buttons - hidden on mobile */}
+          <div className="hidden md:flex gap-2">
+            <button
+              onClick={() => api?.scrollPrev()}
+              disabled={!canScrollPrev}
+              className="size-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+            <button
+              onClick={() => api?.scrollNext()}
+              disabled={!canScrollNext}
+              className="size-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              aria-label="Next"
+            >
+              <ChevronRight className="size-5" />
+            </button>
           </div>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {products.map(product => (
-            <ProductCard key={product.id} product={product} />
+        {/* Carousel for all screen sizes */}
+        <Carousel 
+          setApi={setApi} 
+          opts={{ align: "start", loop: false }} 
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4 md:-ml-6">
+            {products.map(product => (
+              <CarouselItem key={product.id} className="pl-4 md:pl-6 basis-[85%] md:basis-1/3">
+                <ProductCard product={product} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+
+        {/* Dot Indicators - mobile only */}
+        <div className="flex justify-center gap-2 mt-6 md:hidden">
+          {products.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                current === index ? "bg-white w-6" : "bg-white/30"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>
