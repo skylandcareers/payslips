@@ -74,7 +74,7 @@ const PartnerWithUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-12 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-12 text-center"
             >
               Partnership Opportunities
             </motion.h2>
@@ -105,7 +105,7 @@ const PartnerWithUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-8 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-8 text-center"
             >
               Why Partner With AltUni Labs?
             </motion.h2>
@@ -139,7 +139,7 @@ const PartnerWithUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-6"
+              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-6"
             >
               Let's Build Together
             </motion.h2>

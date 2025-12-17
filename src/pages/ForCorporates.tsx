@@ -360,7 +360,7 @@ const ForCorporates = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
                 Full-Funnel Campus Hiring & Branding
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -398,7 +398,7 @@ const ForCorporates = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
                 AI Tools for Smarter Campus Hiring
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -474,7 +474,7 @@ const ForCorporates = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
                 What Our Partners Say
               </h2>
             </motion.div>

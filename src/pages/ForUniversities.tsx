@@ -336,7 +336,7 @@ const ForUniversities = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
                 The Three Pillars of Admissions Success
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -691,7 +691,7 @@ const ForUniversities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-2xl md:text-4xl font-sans font-semibold mb-6"
             >
               Ready to Transform Your Admissions?
             </motion.h2>

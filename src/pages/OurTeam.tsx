@@ -87,7 +87,7 @@ const OurTeam = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Why We Exist</h2>
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-6 text-center">Why We Exist</h2>
               <p className="text-muted-foreground leading-relaxed">
                 InsideIIM began as a hostel room project to solve a simple problem. Students needed honest guidance that could help them decide, prepare, and grow. That spirit still drives us. We keep our focus on learners, share real experiences, and build practical products that make decisions easier. Across our platforms, we serve a large and active community that returns for clarity, credibility, and outcomes.
               </p>
@@ -103,7 +103,7 @@ const OurTeam = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-white mb-12 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-white mb-12 text-center"
             >
               Leadership Team
             </motion.h2>
@@ -153,7 +153,7 @@ const OurTeam = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6 text-center">How We Work</h2>
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-6 text-center">How We Work</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We keep teams small, ownership high, and feedback fast. We test ideas with real users, measure what matters, and iterate. When we get it right, we scale. When we miss, we fix and move.
               </p>
@@ -169,7 +169,7 @@ const OurTeam = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-12 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-12 text-center"
             >
               Our Values
             </motion.h2>
@@ -200,7 +200,7 @@ const OurTeam = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Life at Our Company</h2>
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-6 text-center">Life at Our Company</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We are a lean team that treats problems like products. People pick up ownership early, run with ideas, and ship with pace. It is not your average workplace. We juggle multiple projects and still find time to laugh at the end of a long sprint. We value clarity, speed, and follow-through. If something breaks, we fix it. If something works, we scale it.
               </p>

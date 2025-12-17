@@ -50,7 +50,7 @@ const OurStory = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6">Humble Beginnings</h2>
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-6">Humble Beginnings</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 InsideIIM.com began in February 2011 in a hostel room at IIM Indore. No team. No business plan. No funding ambitions. Just a clear purpose to help students make better career decisions.
               </p>
@@ -69,7 +69,7 @@ const OurStory = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-12 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-12 text-center"
             >
               Our Journey
             </motion.h2>
@@ -104,7 +104,7 @@ const OurStory = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-foreground mb-6">What Guides Us</h2>
+              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-6">What Guides Us</h2>
               <p className="text-muted-foreground leading-relaxed">
                 We build for trust. We listen to our community. We simplify choices with clear guidance, honest stories, and practical tools. We've made mistakes. We'll make more. But we'll always strive to delight our community and partners. Your satisfaction is our only true metric.
               </p>
@@ -120,7 +120,7 @@ const OurStory = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-12 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-12 text-center"
             >
               Our Impact
             </motion.h2>

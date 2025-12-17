@@ -52,7 +52,7 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
           <CircuitAnimation containerRef={containerRef} className="opacity-60" />
           
           {/* Header - centered */}
-          <h2 className="text-2xl md:text-3xl font-sans font-bold text-foreground text-center mb-8 relative z-10">
+          <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground text-center mb-8 relative z-10">
             Our Approach to AI
           </h2>
           
@@ -81,7 +81,7 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
         </div>
 
         <div className="sticky top-0 h-screen flex flex-col items-center justify-center px-6">
-          <h2 className="text-xl font-sans font-bold text-foreground text-center mb-6 relative z-10">
+          <h2 className="text-xl md:text-2xl font-sans font-semibold text-foreground text-center mb-6 relative z-10">
             Our Approach to AI
           </h2>
 

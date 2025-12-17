@@ -115,7 +115,7 @@ const Products = () => {
         {/* Header with arrows */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
+            <h2 className="text-2xl md:text-4xl font-sans font-semibold text-white tracking-tight">
               Our Products
             </h2>
             <p className="text-white/60 max-w-2xl mt-4">
