@@ -13,15 +13,15 @@ const leadership = [
   {
     name: "Anshuman Ghosh",
     role: "CTO",
-    credentials: "IIT Delhi | ex-Samsung",
-    description: "Leading tech innovation across our suite of AI products.",
+    credentials: "IIT Delhi | ex-Oracle",
+    description: "4x CTO, 20+ years of experience.",
     image: "https://cdn.insideiim.com/wp-content/uploads/2025/09/30184541/anshuman-ghosh.jpeg",
     linkedin: "https://www.linkedin.com/in/anshumanghosh/",
   },
   {
     name: "Vignesh Sreenivasan",
     role: "VP-GTM",
-    credentials: "IIM Kozhikode | ex-Deloitte",
+    credentials: "IIM Kozhikode | ex-Samsung",
     description: "Driving go-to-market strategy and growth initiatives.",
     image: "https://cdn.insideiim.com/wp-content/uploads/2025/09/30184536/vignesh-sreenivasan.jpeg",
     linkedin: "https://www.linkedin.com/in/vignesh-sreenivasan/",
@@ -59,16 +59,19 @@ const Team = () => {
           </p>
         </motion.div>
 
-        {/* Team Members Grid - 2x2 */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+        {/* Team Members Grid - 4 in one row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {leadership.map((member, index) => (
-            <motion.div
+            <motion.a
               key={member.name}
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="group block cursor-pointer"
             >
               {/* Image - no rounded corners */}
               <div className="relative aspect-[4/3] overflow-hidden mb-4">
@@ -83,35 +86,30 @@ const Team = () => {
               <div className="space-y-2">
                 {/* Name and LinkedIn */}
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-white">
                     {member.name}
                   </h3>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#0A66C2] hover:opacity-80 transition-opacity"
-                  >
-                    <Linkedin size={20} />
-                  </a>
+                  <span className="text-[#0A66C2] group-hover:opacity-80 transition-opacity">
+                    <Linkedin size={18} />
+                  </span>
                 </div>
 
                 {/* Role and Credentials on same line */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[#b62100] text-sm font-medium">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-[#b62100] font-medium">
                     {member.role}
                   </span>
-                  <span className="text-white/60 text-sm">
+                  <span className="text-white/60">
                     {member.credentials}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-white/50 text-sm pt-2">
+                <p className="text-white/50 text-xs pt-1">
                   {member.description}
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
