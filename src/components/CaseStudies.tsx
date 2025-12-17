@@ -89,8 +89,8 @@ const CaseStudies = () => {
 
   return (
     <section id="case-studies" className="pt-24 pb-16 bg-black relative overflow-hidden">
-      {/* Network Background Animation - positioned to show below cards */}
-      <div className="absolute inset-0 z-0">
+      {/* Network Background Animation - shifted down so it shows beneath the cards */}
+      <div className="absolute inset-x-0 -top-24 -bottom-24 z-0 translate-y-24">
         <NetworkBackground lines={5} distance={6} className="brightness-150" />
       </div>
 
