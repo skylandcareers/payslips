@@ -173,7 +173,7 @@ const OurTeam = () => {
             >
               Our Values
             </motion.h2>
-            <div className="grid md:grid-cols-2 gap-0">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
@@ -181,13 +181,13 @@ const OurTeam = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`min-h-[280px] md:min-h-[320px] p-8 flex flex-col justify-end ${
+                  className={`min-h-[200px] p-6 flex flex-col justify-end ${
                     index % 2 === 0 
                       ? 'bg-[#1a1a1a] text-white' 
                       : 'bg-white text-foreground'
                   }`}
                 >
-                  <h3 className={`text-2xl font-bold mb-2 ${index % 2 === 0 ? 'text-white' : 'text-foreground'}`}>
+                  <h3 className={`text-lg font-bold mb-2 ${index % 2 === 0 ? 'text-white' : 'text-foreground'}`}>
                     {value.title}
                   </h3>
                   <p className={`text-sm ${index % 2 === 0 ? 'text-white/60' : 'text-muted-foreground'}`}>
