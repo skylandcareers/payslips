@@ -18,9 +18,9 @@ const capabilities = [
 
 const AICapabilities = () => {
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-4 md:py-24 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left side - Feature list */}
           <FeatureHighlight
             title="Our AI Capabilities"
