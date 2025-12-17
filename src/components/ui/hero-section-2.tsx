@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronRight, ChevronDown, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+
+const MotionLink = motion(Link);
 
 interface NavLink {
   href: string;
@@ -118,16 +120,30 @@ export default function HeroSection2({
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden"
+                        className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden"
                       >
                         {dropdownItems.map((item, index) => (
-                          <Link
+                          <MotionLink
                             key={index}
                             to={item.href}
-                            className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm border-b border-white/5 last:border-b-0"
+                            className="group relative block overflow-hidden px-4 py-3 text-white/80 hover:text-white text-sm border-b border-white/10 last:border-b-0"
+                            initial="initial"
+                            whileHover="hover"
                           >
-                            {item.label}
-                          </Link>
+                            <motion.span
+                              className="absolute inset-0 z-0 origin-left"
+                              style={{ backgroundColor: "hsl(var(--primary))" }}
+                              variants={{
+                                initial: { scaleX: 0 },
+                                hover: { scaleX: 1 },
+                              }}
+                              transition={{ duration: 0.3, ease: "easeOut" }}
+                            />
+                            <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-2">
+                              <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+                              {item.label}
+                            </span>
+                          </MotionLink>
                         ))}
                       </motion.div>
                     )}
