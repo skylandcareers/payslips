@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 import konverseAiImg from "@/assets/products/konverse-ai.png";
 import potentialAiImg from "@/assets/products/potential-ai.png";
 import billionAiImg from "@/assets/products/billion-ai.png";
@@ -9,6 +10,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
 const products = [{
@@ -78,6 +80,23 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => (
 );
 
 const Products = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect();
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api, onSelect]);
+
   return (
     <section id="products" className="py-24 bg-black">
       <div className="container px-6 mx-auto">
@@ -93,7 +112,7 @@ const Products = () => {
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <Carousel setApi={setApi} opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
               {products.map(product => (
                 <CarouselItem key={product.id} className="pl-4 basis-[85%]">
@@ -102,6 +121,19 @@ const Products = () => {
               ))}
             </CarouselContent>
           </Carousel>
+          {/* Dot Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {products.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  current === index ? "bg-white w-6" : "bg-white/30"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Desktop Grid */}
