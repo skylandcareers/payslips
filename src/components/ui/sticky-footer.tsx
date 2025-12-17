@@ -29,18 +29,18 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
       className={cn('bg-black', className)}
       {...props}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="py-12 md:py-20">
           <AnimatedContainer delay={0.1}>
             <div className="flex flex-col gap-10">
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 justify-items-center md:justify-items-start">
                 {/* Logo and tagline */}
-                <div className="col-span-2 md:col-span-1">
-                  <img src={logo} alt="AltUni Labs" className="h-8 md:h-10 mb-4" />
+                <div className="col-span-2 md:col-span-1 text-center md:text-left">
+                  <img src={logo} alt="AltUni Labs" className="h-8 md:h-10 mb-4 mx-auto md:mx-0" />
                   <p className="text-white/60 text-sm leading-relaxed mb-6">
                     Making AI that makes humans better. Training humans who make AI better.
                   </p>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 justify-center md:justify-start">
                     {socialLinks.map((link) => (
                       <a
                         key={link.title}
@@ -58,7 +58,7 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
                 {/* Link groups */}
                 {footerLinkGroups.map((group, index) => (
                   <AnimatedContainer key={group.label} delay={0.15 + index * 0.05}>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 text-center md:text-left">
                       <h4 className="text-white/40 text-xs font-medium uppercase tracking-wider">
                         {group.label}
                       </h4>
@@ -91,7 +91,7 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
               {/* Copyright */}
               <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-white/40 text-sm">
-                  © 2024 AltUni Labs. All rights reserved.
+                  © 2025 AltUni Labs. All rights reserved.
                 </p>
                 <p className="text-white/40 text-sm">
                   Powering the future of talent
