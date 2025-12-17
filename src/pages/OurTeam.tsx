@@ -162,14 +162,14 @@ const OurTeam = () => {
         </section>
 
         {/* Values */}
-        <section className="px-6 py-16 bg-muted/30">
-          <div className="max-w-4xl mx-auto">
+        <section className="px-6 py-16 bg-black">
+          <div className="max-w-5xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-12 text-center"
+              className="text-2xl md:text-4xl font-sans font-semibold text-white mb-12 text-center"
             >
               Our Values
             </motion.h2>
@@ -181,10 +181,10 @@ const OurTeam = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-card border border-border rounded-xl p-6 text-center"
+                  className="bg-black border border-primary p-6 text-center hover:border-primary/80 transition-colors"
                 >
-                  <h3 className="text-lg font-bold text-foreground mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm">{value.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">{value.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}
             </div>
