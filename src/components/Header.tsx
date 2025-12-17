@@ -44,24 +44,36 @@ const Header = () => {
     setMobileAboutOpen(false);
   }, [location.pathname]);
 
+  // If we navigated to home with a pending scroll target, perform it after layout settles.
+  useEffect(() => {
+    const pending = sessionStorage.getItem("scrollTo");
+    if (pending && location.pathname === "/") {
+      sessionStorage.removeItem("scrollTo");
+      setTimeout(() => performScroll(pending), 300);
+    }
+  }, [location.pathname]);
+
+  const performScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    // Use scroll-margin on sections to account for the fixed header.
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const scrollToSection = (id: string) => {
     if (location.pathname !== "/") {
+      sessionStorage.setItem("scrollTo", id);
       setIsMobileMenuOpen(false);
       navigate("/");
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-      // Close menu after starting scroll
-      setTimeout(() => setIsMobileMenuOpen(false), 50);
+      return;
     }
+
+    const wasMenuOpen = isMobileMenuOpen;
+    setIsMobileMenuOpen(false);
+
+    // Wait for the mobile menu collapse animation so the final scroll position is correct.
+    setTimeout(() => performScroll(id), wasMenuOpen ? 360 : 0);
   };
 
   const handleLogoClick = () => {
@@ -87,6 +99,7 @@ const Header = () => {
   return (
     <>
       <motion.header 
+        id="site-header"
         className="fixed top-0 left-0 right-0 z-50"
         initial={{ opacity: 1 }}
         animate={{ 
