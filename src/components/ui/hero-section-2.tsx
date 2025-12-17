@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface NavLink {
   href: string;
@@ -15,7 +16,6 @@ interface HeroSection2Props {
   userCount?: number;
   title: string;
   description: string;
-  eyebrow?: string;
   placeholder?: string;
   ctaText?: string;
   onSubmit?: (email: string) => void;
@@ -25,6 +25,7 @@ interface HeroSection2Props {
   onJoinClick?: () => void;
   showEmailForm?: boolean;
   children?: React.ReactNode;
+  sidebarContent?: React.ReactNode;
 }
 
 export default function HeroSection2({
@@ -34,7 +35,6 @@ export default function HeroSection2({
   userCount = 0,
   title,
   description,
-  eyebrow,
   placeholder = "Enter your email",
   ctaText = "Get Started",
   onSubmit,
@@ -44,8 +44,18 @@ export default function HeroSection2({
   onJoinClick,
   showEmailForm = false,
   children,
+  sidebarContent,
 }: HeroSection2Props) {
   const [email, setEmail] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,8 +66,17 @@ export default function HeroSection2({
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="absolute top-0 left-0 right-0 z-50">
+      {/* Header with scroll animation */}
+      <motion.header 
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        initial={{ opacity: 1, backgroundColor: "transparent" }}
+        animate={{ 
+          opacity: scrolled ? 0.95 : 1,
+          backgroundColor: scrolled ? "rgba(0, 0, 0, 0.8)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+        }}
+        transition={{ duration: 0.3 }}
+      >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -89,7 +108,14 @@ export default function HeroSection2({
             </Button>
           </div>
         </div>
-      </header>
+      </motion.header>
+
+      {/* Left Sidebar */}
+      {sidebarContent && (
+        <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block">
+          {sidebarContent}
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center relative z-10">
@@ -116,15 +142,6 @@ export default function HeroSection2({
               </div>
             )}
 
-            {/* Eyebrow */}
-            {eyebrow && (
-              <p 
-                className="text-xs md:text-sm font-medium tracking-widest uppercase text-white/80 mb-6"
-                style={{ textShadow: '0 0 20px rgba(255,255,255,0.3)' }}
-              >
-                {eyebrow}
-              </p>
-            )}
 
             {/* Title */}
             <h1 

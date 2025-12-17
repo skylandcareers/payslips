@@ -2,6 +2,7 @@ import { useState } from "react";
 import ContactFormDialog from "./ContactFormDialog";
 import NetworkBackground from "./NetworkBackground";
 import HeroSection2 from "./ui/hero-section-2";
+import { MenuVertical } from "./ui/menu-vertical";
 import logo from "@/assets/altuni-labs-logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -11,13 +12,20 @@ const Hero = () => {
   const location = useLocation();
 
   // Network background configuration (0-10 scale)
-  const networkLines = 7; // Increased for more density
-  const networkDistance = 6; // Increased connection distance
+  const networkLines = 7;
+  const networkDistance = 6;
 
   const navLinks = [
     { href: "case-studies", label: "Case Studies" },
     { href: "products", label: "Products" },
     { href: "team", label: "The Team" },
+  ];
+
+  const sidebarMenuItems = [
+    { label: "Our Story", href: "/our-story" },
+    { label: "Our Platforms", href: "/our-platforms" },
+    { label: "Our Team", href: "/our-team" },
+    { label: "Our Investors", href: "/our-investors" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -73,12 +81,12 @@ const Hero = () => {
           navLinks={navLinks}
           onNavClick={scrollToSection}
           onJoinClick={() => setIsFormOpen(true)}
-          eyebrow="Built on a decade of trust. Powered by AI that works."
           title="We Make AI That Makes Humans Better."
           description="Automate the routine. Elevate your people. Scale your revenue."
           ctaText="Get in touch"
           onCtaClick={() => setIsFormOpen(true)}
           footerVersion="From the Makers of InsideIIM"
+          sidebarContent={<MenuVertical menuItems={sidebarMenuItems} />}
         />
       </section>
 
