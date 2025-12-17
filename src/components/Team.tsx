@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 const leadership = [
   {
@@ -37,8 +38,26 @@ const leadership = [
 ];
 
 const Team = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const cardWidth = container.offsetWidth * 0.45; // ~45% width cards
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(Math.min(newIndex, leadership.length - 2)); // -2 since 2 are visible
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section id="team" className="px-6 py-24 bg-black">
+    <section id="team" className="px-6 py-16 md:py-24 bg-black">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -46,21 +65,21 @@ const Team = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="text-[#b62100] text-sm font-semibold tracking-wider uppercase mb-4 block">
             Team
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
             Meet Our Leadership
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-white/60 max-w-2xl mx-auto text-sm md:text-base">
             For 12 years, our platforms have supported millions across the talent and hiring landscape
           </p>
         </motion.div>
 
-        {/* Team Members Grid - 4 in one row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Desktop Grid - 4 in one row */}
+        <div className="hidden md:grid md:grid-cols-4 gap-6">
           {leadership.map((member, index) => (
             <motion.a
               key={member.name}
@@ -73,7 +92,6 @@ const Team = () => {
               viewport={{ once: true }}
               className="group block cursor-pointer"
             >
-              {/* Image - subtle shrink on hover */}
               <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/5]">
                 <img
                   src={member.image}
@@ -81,10 +99,7 @@ const Team = () => {
                   className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
               </div>
-
-              {/* Content below image */}
               <div className="space-y-1">
-                {/* Name and LinkedIn - always visible */}
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-white">
                     {member.name}
@@ -93,8 +108,6 @@ const Team = () => {
                     <Linkedin size={14} strokeWidth={1.5} />
                   </span>
                 </div>
-
-                {/* Role and Credentials - always visible */}
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-[#b62100] font-medium">
                     {member.role}
@@ -103,8 +116,6 @@ const Team = () => {
                     {member.credentials}
                   </span>
                 </div>
-
-                {/* Description - revealed on hover */}
                 <p 
                   className="text-white/50 text-xs pt-1 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-10 transition-all duration-300 overflow-hidden"
                 >
@@ -113,6 +124,61 @@ const Team = () => {
               </div>
             </motion.a>
           ))}
+        </div>
+
+        {/* Mobile Carousel - 2 visible at a time */}
+        <div className="md:hidden">
+          <div 
+            ref={scrollRef}
+            className="flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-6 px-6"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {leadership.map((member) => (
+              <a
+                key={member.name}
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex-shrink-0 w-[45%] snap-start"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden mb-3">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top grayscale"
+                  />
+                </div>
+                <div className="space-y-0.5">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-sm font-semibold text-white truncate pr-2">
+                      {member.name}
+                    </h3>
+                    <Linkedin size={12} className="text-white/70 flex-shrink-0" />
+                  </div>
+                  <div className="flex items-center justify-between text-[10px]">
+                    <span className="text-[#b62100] font-medium">
+                      {member.role}
+                    </span>
+                  </div>
+                  <p className="text-white/50 text-[10px] truncate">
+                    {member.credentials}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+          
+          {/* Pagination dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {[0, 1, 2].map((index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === activeIndex ? "bg-white w-4" : "bg-white/30"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
