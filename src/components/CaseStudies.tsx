@@ -88,10 +88,10 @@ const CaseStudies = () => {
   const getExpandedStudy = () => caseStudies.find(s => s.id === expandedCard);
 
   return (
-    <section id="case-studies" className="pt-24 pb-40 bg-black relative overflow-hidden">
-      {/* Network Background Animation - same as hero */}
+    <section id="case-studies" className="pt-24 pb-16 bg-black relative overflow-hidden">
+      {/* Network Background Animation - positioned to show below cards */}
       <div className="absolute inset-0 z-0">
-        <NetworkBackground lines={3} distance={7} className="brightness-125" />
+        <NetworkBackground lines={5} distance={6} className="brightness-150" />
       </div>
 
       <div className="container px-6 relative z-10">
