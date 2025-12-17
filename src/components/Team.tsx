@@ -57,6 +57,12 @@ const TeamMemberCard = ({ member }: { member: typeof leadership[0] }) => (
         alt={member.name}
         className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
       />
+      {/* Description overlay on hover */}
+      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+        <p className="text-white text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          {member.description}
+        </p>
+      </div>
     </div>
     <div className="space-y-1">
       <div className="flex items-center gap-2">
