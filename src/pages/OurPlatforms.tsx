@@ -59,7 +59,7 @@ const platforms: Platform[] = [
     logo: altunilabsLogo,
     bgColor: "bg-[#1a1a1a]",
     textColor: "text-white",
-    logoFilter: "",
+    logoFilter: "!h-16",
   },
 ];
 
