@@ -6,6 +6,7 @@ import billionAiImg from "@/assets/products/billion-ai.png";
 import signalAiImg from "@/assets/products/signal-ai.png";
 import prepbabaImg from "@/assets/products/prepbaba.png";
 import ayanaAiImg from "@/assets/products/ayana-ai.avif";
+import NetworkBackground from "@/components/NetworkBackground";
 import {
   Carousel,
   CarouselContent,
@@ -114,8 +115,9 @@ const Products = () => {
   }, [api, onSelect, onScroll]);
 
   return (
-    <section id="products" className="py-24 bg-black">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="products" className="py-24 relative overflow-hidden">
+      <NetworkBackground lines={2} distance={5} className="opacity-40" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header with arrows */}
         <div className="flex items-end justify-between mb-12">
           <div>
