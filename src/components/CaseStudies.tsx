@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import hulLogo from "@/assets/partners/hul.png";
@@ -89,21 +89,21 @@ const CaseStudies = () => {
 
   return (
     <section id="case-studies" className="pt-24 pb-16 bg-black relative overflow-hidden">
-      {/* Network Background Animation - shifted down so it shows beneath the cards */}
+      {/* Network Background Animation */}
       <div className="absolute inset-x-0 -top-24 -bottom-24 z-0 translate-y-24">
         <NetworkBackground lines={5} distance={6} className="brightness-150" />
       </div>
 
       <div className="container px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-2xl md:text-4xl font-sans font-semibold text-white tracking-tight">
             We Make Life Simple For Our Clients
           </h2>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Grid of cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
+          {/* Desktop Grid - horizontal cards */}
+          <div className="hidden md:grid md:grid-cols-3 gap-0 relative">
             {caseStudies.map((study) => (
               <div
                 key={study.id}
@@ -112,7 +112,7 @@ const CaseStudies = () => {
                 }`}
                 onClick={() => setExpandedCard(expandedCard === study.id ? null : study.id)}
               >
-                {/* Logo at top - fixed height container for alignment */}
+                {/* Logo at top */}
                 <div className="flex-shrink-0 mb-auto h-24 flex items-start">
                   <img
                     src={study.logo}
@@ -121,13 +121,13 @@ const CaseStudies = () => {
                   />
                 </div>
 
-                {/* Hook text - fixed height container so all cards align */}
+                {/* Hook text */}
                 <div className="flex flex-col min-h-[140px]">
                   <p className="text-xl md:text-2xl font-sans leading-tight">
                     {study.hook}
                   </p>
                   
-                  {/* Expand indicator - pushed to bottom */}
+                  {/* Expand indicator */}
                   <div className="flex items-center gap-2 opacity-50 group-hover:opacity-100 transition-opacity mt-auto">
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </div>
@@ -135,7 +135,7 @@ const CaseStudies = () => {
               </div>
             ))}
 
-            {/* Expanded overlay - covers all cards */}
+            {/* Desktop Expanded overlay - curtain animation */}
             <AnimatePresence>
               {expandedCard && (
                 <motion.div
@@ -154,7 +154,10 @@ const CaseStudies = () => {
                         {/* Close button */}
                         <button 
                           className="absolute top-6 right-6 p-2 hover:bg-black/5 transition-colors"
-                          onClick={() => setExpandedCard(null)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setExpandedCard(null);
+                          }}
                         >
                           <X size={24} strokeWidth={1.5} />
                         </button>
@@ -162,7 +165,7 @@ const CaseStudies = () => {
                         <div className="grid md:grid-cols-2 gap-8 md:gap-12 h-full">
                           {/* Left Column */}
                           <div className="flex flex-col">
-                            {/* Logo - original color */}
+                            {/* Logo */}
                             <div className="mb-8">
                               <img
                                 src={study.logo}
@@ -198,6 +201,70 @@ const CaseStudies = () => {
                 </motion.div>
               )}
             </AnimatePresence>
+          </div>
+
+          {/* Mobile Stack - vertical cards */}
+          <div className="md:hidden flex flex-col gap-4">
+            {caseStudies.map((study) => (
+              <div
+                key={study.id}
+                className={`relative ${study.bgColor} ${study.textColor} p-6 cursor-pointer group transition-all duration-300`}
+                onClick={() => setExpandedCard(expandedCard === study.id ? null : study.id)}
+              >
+                {/* Logo */}
+                <div className="mb-4">
+                  <img
+                    src={study.logo}
+                    alt={`${study.company} logo`}
+                    className={`h-12 w-auto object-contain ${study.logoFilter}`}
+                  />
+                </div>
+
+                {/* Hook text */}
+                <p className="text-lg font-sans leading-tight mb-3">
+                  {study.hook}
+                </p>
+                
+                {/* Expand indicator */}
+                <div className="flex items-center gap-2 opacity-70 text-sm">
+                  <span>{expandedCard === study.id ? 'Tap to close' : 'Tap to read more'}</span>
+                  <ArrowRight size={14} className={`transition-transform ${expandedCard === study.id ? 'rotate-90' : ''}`} />
+                </div>
+
+                {/* Mobile Expanded Content */}
+                <AnimatePresence>
+                  {expandedCard === study.id && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-6 mt-4 border-t border-current/20">
+                        {/* Summary */}
+                        <p className="text-sm font-sans font-medium leading-relaxed mb-4">
+                          {study.summary}
+                        </p>
+
+                        {/* Full Description */}
+                        <div className="pl-4 border-l-2 border-current/30 mb-4">
+                          <p className="text-xs leading-relaxed font-sans italic opacity-80">
+                            "{study.fullDescription}"
+                          </p>
+                        </div>
+
+                        {/* Product Used */}
+                        <div className="pt-4 border-t border-current/20">
+                          <span className="text-xs uppercase tracking-widest opacity-60 font-sans">Product Used</span>
+                          <p className="text-sm font-semibold mt-1 font-sans">{study.product}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
           </div>
         </div>
       </div>
