@@ -12,7 +12,7 @@ const Partners = () => {
   ];
 
   return (
-    <section className="py-16 bg-background overflow-hidden">
+    <section className="py-8 bg-background overflow-hidden">
       <div className="container px-6">
         {/* Header Text */}
         <div className="text-center mb-8">
