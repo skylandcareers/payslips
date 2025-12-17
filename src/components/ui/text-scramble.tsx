@@ -20,7 +20,7 @@ export function TextScramble({ text, className = "" }: TextScrambleProps) {
   const scramble = useCallback(() => {
     setIsScrambling(true)
     frameRef.current = 0
-    const duration = text.length * 3
+    const duration = text.length * 1.5 // Faster scramble
 
     if (intervalRef.current) clearInterval(intervalRef.current)
 
@@ -46,7 +46,7 @@ export function TextScramble({ text, className = "" }: TextScrambleProps) {
         setDisplayText(text)
         setIsScrambling(false)
       }
-    }, 30)
+    }, 20) // Faster interval
   }, [text])
 
   const handleMouseEnter = () => {
@@ -70,15 +70,15 @@ export function TextScramble({ text, className = "" }: TextScrambleProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span className="font-mono tracking-tight">
+      <span className="font-sans tracking-normal">
         {displayText.split("").map((char, i) => (
           <span
             key={i}
             className={cn(
-              "inline-block transition-all duration-100",
-              isScrambling && i >= Math.floor((frameRef.current / (text.length * 3)) * text.length)
-                ? "text-primary opacity-70"
-                : "text-foreground"
+              "inline-block transition-all duration-75",
+              isScrambling && i >= Math.floor((frameRef.current / (text.length * 1.5)) * text.length)
+                ? "text-orange-500 opacity-80"
+                : "text-muted-foreground"
             )}
           >
             {char === " " ? "\u00A0" : char}
@@ -90,7 +90,7 @@ export function TextScramble({ text, className = "" }: TextScrambleProps) {
       <span className="absolute -bottom-1 left-0 w-full h-px overflow-hidden">
         <span
           className={cn(
-            "absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent transition-transform duration-300",
+            "absolute inset-0 bg-gradient-to-r from-transparent via-orange-500 to-transparent transition-transform duration-300",
             isHovering ? "translate-x-0" : "-translate-x-full"
           )}
         />
@@ -100,7 +100,7 @@ export function TextScramble({ text, className = "" }: TextScrambleProps) {
       {/* Subtle glow on hover */}
       <span
         className={cn(
-          "absolute inset-0 bg-primary/5 rounded transition-opacity duration-300 -z-10",
+          "absolute inset-0 bg-orange-500/5 rounded transition-opacity duration-300 -z-10",
           isHovering ? "opacity-100" : "opacity-0"
         )}
       />
