@@ -278,9 +278,16 @@ export default function HeroSection2({
                   }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 />
-                <span className="relative z-10 flex items-center justify-center w-8 h-8 bg-primary group-hover:bg-white/20 rounded-full transition-colors duration-300">
+                <motion.span 
+                  className="relative z-10 flex items-center justify-center w-8 h-8 bg-primary group-hover:bg-white/20 rounded-full transition-colors duration-300"
+                  variants={{
+                    initial: { x: 0 },
+                    hover: { x: [0, 4, 0] },
+                  }}
+                  transition={{ duration: 0.6, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.3 }}
+                >
                   <ChevronRight className="w-5 h-5 text-primary-foreground group-hover:text-white transition-colors duration-300" />
-                </span>
+                </motion.span>
                 <span className="relative z-10 text-gray-800 group-hover:text-white transition-colors duration-300">{ctaText}</span>
               </motion.button>
             )}
