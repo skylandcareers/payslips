@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Partners from "@/components/Partners";
 import Philosophy from "@/components/Philosophy";
@@ -24,7 +23,6 @@ const Index = () => {
       
       {/* Main content */}
       <div className="relative z-10">
-        <Header />
         <Hero />
         <Partners />
         <Philosophy />
