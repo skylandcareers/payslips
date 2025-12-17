@@ -107,15 +107,15 @@ export default function HeroSection2({
               Get in touch
             </Button>
           </div>
+          
+          {/* Sub-navigation menu */}
+          {sidebarContent && (
+            <div className="mt-6 pt-4 border-t border-white/10">
+              {sidebarContent}
+            </div>
+          )}
         </div>
       </motion.header>
-
-      {/* Left Sidebar */}
-      {sidebarContent && (
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden lg:block">
-          {sidebarContent}
-        </div>
-      )}
 
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center relative z-10">
