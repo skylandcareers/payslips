@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
-import NetworkBackground from "@/components/NetworkBackground";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import {
   Carousel,
   CarouselContent,
@@ -93,7 +93,7 @@ const Team = () => {
 
   return (
     <section id="team" className="px-6 py-24 relative overflow-hidden bg-black">
-      <NetworkBackground lines={4} distance={6} className="brightness-125" />
+      <StaticNetworkBackground density={60} />
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
