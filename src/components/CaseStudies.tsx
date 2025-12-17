@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import hulLogo from "@/assets/partners/hul.png";
 import tcplLogo from "@/assets/partners/tcpl.png";
 import gimLogo from "@/assets/partners/gim.png";
+import NetworkBackground from "./NetworkBackground";
 
 interface CaseStudy {
   id: number;
@@ -16,6 +17,7 @@ interface CaseStudy {
   bgColor: string;
   textColor: string;
   logoFilter: string;
+  cardLogoHeight?: string;
 }
 
 const CaseStudies = () => {
@@ -61,6 +63,7 @@ const CaseStudies = () => {
       bgColor: "bg-white",
       textColor: "text-black",
       logoFilter: "brightness-0",
+      cardLogoHeight: "h-12",
     },
     {
       id: 3,
@@ -85,10 +88,15 @@ const CaseStudies = () => {
   const getExpandedStudy = () => caseStudies.find(s => s.id === expandedCard);
 
   return (
-    <section id="case-studies" className="py-20 bg-black">
-      <div className="container px-6">
+    <section id="case-studies" className="py-20 bg-black relative overflow-hidden">
+      {/* Network Background Animation */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <NetworkBackground lines={2} distance={6} />
+      </div>
+
+      <div className="container px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-sans font-semibold text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
             We Make Life Simple For Our Clients
           </h2>
         </div>
@@ -109,7 +117,7 @@ const CaseStudies = () => {
                   <img
                     src={study.logo}
                     alt={`${study.company} logo`}
-                    className={`h-20 w-auto object-contain ${study.logoFilter}`}
+                    className={`${study.cardLogoHeight || 'h-20'} w-auto object-contain ${study.logoFilter}`}
                   />
                 </div>
 
