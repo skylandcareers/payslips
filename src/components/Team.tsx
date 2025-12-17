@@ -60,7 +60,7 @@ const Team = () => {
         </motion.div>
 
         {/* Team Members Grid - 4 in one row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {leadership.map((member, index) => (
             <motion.a
               key={member.name}
@@ -73,8 +73,8 @@ const Team = () => {
               viewport={{ once: true }}
               className="group block cursor-pointer"
             >
-              {/* Image - no rounded corners */}
-              <div className="relative aspect-[4/3] overflow-hidden mb-4">
+              {/* Image - taller aspect ratio, shrinks on hover */}
+              <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/3]">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -84,18 +84,20 @@ const Team = () => {
 
               {/* Content below image */}
               <div className="space-y-2">
-                {/* Name and LinkedIn */}
+                {/* Name and LinkedIn - always visible */}
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-white">
                     {member.name}
                   </h3>
-                  <span className="text-[#0A66C2] group-hover:opacity-80 transition-opacity">
+                  <span className="text-white group-hover:opacity-80 transition-opacity">
                     <Linkedin size={18} />
                   </span>
                 </div>
 
-                {/* Role and Credentials on same line */}
-                <div className="flex items-center justify-between text-xs">
+                {/* Role and Credentials - revealed on hover */}
+                <div 
+                  className="flex items-center justify-between text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                >
                   <span className="text-[#b62100] font-medium">
                     {member.role}
                   </span>
@@ -104,8 +106,10 @@ const Team = () => {
                   </span>
                 </div>
 
-                {/* Description */}
-                <p className="text-white/50 text-xs pt-1">
+                {/* Description - revealed on hover */}
+                <p 
+                  className="text-white/50 text-xs pt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75"
+                >
                   {member.description}
                 </p>
               </div>
