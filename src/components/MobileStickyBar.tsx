@@ -25,15 +25,15 @@ const MobileStickyBar = () => {
           isVisible ? "translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="bg-primary px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
+        <div className="bg-primary px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.2)] flex justify-center">
           <button
             onClick={() => setIsFormOpen(true)}
-            className="w-full flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-foreground font-medium py-3 px-6 rounded-full transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-foreground font-medium py-2.5 px-5 rounded-full transition-all duration-300"
           >
-            <span className="flex items-center justify-center w-8 h-8 bg-primary rounded-full">
-              <ChevronRight className="w-5 h-5 text-white" />
+            <span className="flex items-center justify-center w-6 h-6 bg-primary rounded-full">
+              <ChevronRight className="w-4 h-4 text-white" />
             </span>
-            <span className="text-gray-800 font-semibold">Get in touch</span>
+            <span className="text-gray-800 text-sm font-semibold">Get in touch</span>
           </button>
         </div>
       </div>
