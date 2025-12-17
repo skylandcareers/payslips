@@ -152,13 +152,27 @@ export default function HeroSection2({
               )}
 
               {navLinks.map(({ href, label }) => (
-                <button
+                <motion.button
                   key={href}
                   onClick={() => onNavClick?.(href)}
-                  className="text-white/80 hover:text-white transition-colors font-medium text-sm"
+                  className="group relative overflow-hidden px-4 py-2 rounded-md text-white/80 hover:text-white font-medium text-sm"
+                  initial="initial"
+                  whileHover="hover"
                 >
-                  {label}
-                </button>
+                  <motion.span
+                    className="absolute inset-0 z-0 origin-left rounded-md"
+                    style={{ backgroundColor: "hsl(var(--primary))" }}
+                    variants={{
+                      initial: { scaleX: 0 },
+                      hover: { scaleX: 1 },
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                  <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+                    {label}
+                  </span>
+                </motion.button>
               ))}
             </nav>
 
