@@ -25,7 +25,7 @@ const MobileStickyBar = () => {
           isVisible ? "translate-y-0" : "translate-y-full"
         }`}
       >
-        <div className="bg-primary px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.2)] flex justify-center">
+        <div className="bg-black/80 backdrop-blur-sm px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.3)] flex justify-center">
           <button
             onClick={() => setIsFormOpen(true)}
             className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-foreground font-medium py-2.5 px-5 rounded-full transition-all duration-300"
