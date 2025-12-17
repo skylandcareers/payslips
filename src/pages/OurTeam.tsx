@@ -163,7 +163,7 @@ const OurTeam = () => {
 
         {/* Values */}
         <section className="px-6 py-16 bg-black">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ const OurTeam = () => {
             >
               Our Values
             </motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 gap-0">
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
@@ -181,10 +181,18 @@ const OurTeam = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-black border border-primary p-6 text-center hover:border-primary/80 transition-colors"
+                  className={`min-h-[280px] md:min-h-[320px] p-8 flex flex-col justify-end ${
+                    index % 2 === 0 
+                      ? 'bg-[#1a1a1a] text-white' 
+                      : 'bg-white text-foreground'
+                  }`}
                 >
-                  <h3 className="text-lg font-bold text-white mb-3">{value.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{value.description}</p>
+                  <h3 className={`text-2xl font-bold mb-2 ${index % 2 === 0 ? 'text-white' : 'text-foreground'}`}>
+                    {value.title}
+                  </h3>
+                  <p className={`text-sm ${index % 2 === 0 ? 'text-white/60' : 'text-muted-foreground'}`}>
+                    {value.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
