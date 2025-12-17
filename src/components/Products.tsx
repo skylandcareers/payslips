@@ -5,7 +5,7 @@ import potentialAiImg from "@/assets/products/potential-ai.png";
 import billionAiImg from "@/assets/products/billion-ai.png";
 import signalAiImg from "@/assets/products/signal-ai.png";
 import prepbabaImg from "@/assets/products/prepbaba.png";
-import ayanaAiImg from "@/assets/products/ayana-ai.avif";
+import ayanaAiImg from "@/assets/products/ayana-ai.png";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import {
   Carousel,
