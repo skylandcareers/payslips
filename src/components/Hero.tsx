@@ -2,7 +2,7 @@ import { useState } from "react";
 import ContactFormDialog from "./ContactFormDialog";
 import NetworkBackground from "./NetworkBackground";
 import HeroSection2 from "./ui/hero-section-2";
-import logo from "@/assets/altuni-labs-logo.png";
+import logo from "@/assets/altuni-labs-logo-white.png";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Hero = () => {
@@ -72,7 +72,7 @@ const Hero = () => {
             <img 
               src={logo} 
               alt="AltUni Labs" 
-              className="h-10 md:h-12 w-auto cursor-pointer filter brightness-0 invert"
+              className="h-10 md:h-12 w-auto cursor-pointer"
               onClick={handleLogoClick}
             />
           }
