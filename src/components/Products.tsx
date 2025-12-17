@@ -109,7 +109,7 @@ const Products = () => {
   }, [api, onSelect]);
 
   return (
-    <section id="products" className="py-24 relative overflow-hidden bg-black">
+    <section id="products" className="scroll-mt-24 md:scroll-mt-28 py-24 relative overflow-hidden bg-black">
       <StaticNetworkBackground density={80} />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header with arrows */}
