@@ -23,7 +23,6 @@ const Hero = () => {
   const dropdownItems = [
     { label: "Our Story", href: "/our-story" },
     { label: "Our Platforms", href: "/our-platforms" },
-    { label: "Our Team", href: "/our-team" },
     { label: "Our Investors", href: "/our-investors" },
   ];
 
