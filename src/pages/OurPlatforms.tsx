@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import insideiimLogo from "@/assets/platforms/insideiim-logo.png";
 import insidekampusLogo from "@/assets/platforms/insidekampus-logo.png";
-import altuniLogo from "@/assets/platforms/altuni-logo.png";
+import altuniLogo from "@/assets/platforms/altuni-logo-white.png";
 import altunilabsLogo from "@/assets/altuni-labs-logo-new.png";
 
 interface Platform {
