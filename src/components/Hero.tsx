@@ -2,7 +2,6 @@ import { useState } from "react";
 import ContactFormDialog from "./ContactFormDialog";
 import NetworkBackground from "./NetworkBackground";
 import HeroSection2 from "./ui/hero-section-2";
-import { MenuVertical } from "./ui/menu-vertical";
 import logo from "@/assets/altuni-labs-logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -21,7 +20,7 @@ const Hero = () => {
     { href: "team", label: "The Team" },
   ];
 
-  const sidebarMenuItems = [
+  const dropdownItems = [
     { label: "Our Story", href: "/our-story" },
     { label: "Our Platforms", href: "/our-platforms" },
     { label: "Our Team", href: "/our-team" },
@@ -79,6 +78,8 @@ const Hero = () => {
             />
           }
           navLinks={navLinks}
+          dropdownItems={dropdownItems}
+          dropdownLabel="About"
           onNavClick={scrollToSection}
           onJoinClick={() => setIsFormOpen(true)}
           title="We Make AI That Makes Humans Better."
@@ -86,7 +87,6 @@ const Hero = () => {
           ctaText="Get in touch"
           onCtaClick={() => setIsFormOpen(true)}
           footerVersion="From the Makers of InsideIIM"
-          sidebarContent={<MenuVertical menuItems={sidebarMenuItems} />}
         />
       </section>
 
