@@ -6,7 +6,7 @@ import billionAiImg from "@/assets/products/billion-ai.png";
 import signalAiImg from "@/assets/products/signal-ai.png";
 import prepbabaImg from "@/assets/products/prepbaba.png";
 import ayanaAiImg from "@/assets/products/ayana-ai.avif";
-import NetworkBackground from "@/components/NetworkBackground";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import {
   Carousel,
   CarouselContent,
@@ -85,38 +85,32 @@ const Products = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [current, setCurrent] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   const onSelect = useCallback(() => {
     if (!api) return;
-    setCurrent(api.selectedScrollSnap());
+    const curr = api.selectedScrollSnap();
+    const total = api.scrollSnapList().length;
+    setCurrent(curr);
     setCanScrollPrev(api.canScrollPrev());
     setCanScrollNext(api.canScrollNext());
-  }, [api]);
-
-  const onScroll = useCallback(() => {
-    if (!api) return;
-    const progress = Math.max(0, Math.min(1, api.scrollProgress()));
-    setScrollProgress(progress);
+    setProgress(((curr + 1) / total) * 100);
   }, [api]);
 
   useEffect(() => {
     if (!api) return;
     onSelect();
-    onScroll();
     api.on("select", onSelect);
     api.on("reInit", onSelect);
-    api.on("scroll", onScroll);
     return () => {
       api.off("select", onSelect);
       api.off("reInit", onSelect);
-      api.off("scroll", onScroll);
     };
-  }, [api, onSelect, onScroll]);
+  }, [api, onSelect]);
 
   return (
     <section id="products" className="py-24 relative overflow-hidden bg-black">
-      <NetworkBackground lines={4} distance={6} className="brightness-125" />
+      <StaticNetworkBackground density={80} />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header with arrows */}
         <div className="flex items-end justify-between mb-12">
@@ -153,7 +147,7 @@ const Products = () => {
         {/* Carousel for all screen sizes */}
         <Carousel 
           setApi={setApi} 
-          opts={{ align: "start", loop: false }} 
+          opts={{ align: "start", loop: false, dragFree: true }} 
           className="w-full"
         >
           <CarouselContent className="-ml-4 md:-ml-6">
@@ -169,8 +163,8 @@ const Products = () => {
         <div className="hidden md:block mt-8">
           <div className="h-0.5 bg-white/10 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-white transition-all duration-150 ease-out rounded-full"
-              style={{ width: `${Math.max(10, scrollProgress * 100)}%` }}
+              className="h-full bg-white rounded-full transition-all duration-300"
+              style={{ width: `${progress}%` }}
             />
           </div>
         </div>
