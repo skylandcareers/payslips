@@ -94,47 +94,49 @@ const OurTeam = () => {
         </section>
 
         {/* Leadership Team */}
-        <section className="px-6 py-16 bg-muted/30">
+        <section className="px-6 py-16 bg-black">
           <div className="max-w-5xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold text-foreground mb-12 text-center"
+              className="text-3xl font-bold text-white mb-12 text-center"
             >
               Leadership Team
             </motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {leadership.map((member, index) => (
-                <motion.div
+                <motion.a
                   key={member.name}
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center p-6 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="group block cursor-pointer"
                 >
-                  <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden bg-muted ring-4 ring-primary/10">
+                  <div className="relative aspect-square overflow-hidden mb-4">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
-                  <p className="text-primary text-sm mb-1">{member.role}</p>
-                  <p className="text-muted-foreground text-xs mb-2">{member.education}</p>
-                  <p className="text-muted-foreground text-sm mb-3">{member.description}</p>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    <Linkedin size={16} />
-                  </a>
-                </motion.div>
+                  <div className="space-y-1 text-center">
+                    <div className="flex items-center justify-center gap-2">
+                      <h3 className="text-lg font-bold text-white">
+                        {member.name}
+                      </h3>
+                      <Linkedin size={16} className="text-white/70 group-hover:text-[#0A66C2] transition-colors" />
+                    </div>
+                    <p className="text-primary text-sm">{member.role}</p>
+                    <p className="text-white/60 text-xs">{member.education}</p>
+                    <p className="text-white/80 text-sm mt-2">{member.description}</p>
+                  </div>
+                </motion.a>
               ))}
             </div>
           </div>
