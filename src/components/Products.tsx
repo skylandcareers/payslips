@@ -53,44 +53,47 @@ const products = [
 
 const Products = () => {
   return (
-    <section id="products" className="py-20 bg-black">
-      <div className="container px-6">
+    <section id="products" className="py-24 bg-black">
+      <div className="container px-6 mx-auto">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-16 max-w-6xl mx-auto">
+          <span className="text-[#b62100] text-sm font-semibold tracking-wider uppercase mb-3 block">
+            Products
+          </span>
           <h2 className="text-3xl md:text-4xl font-sans font-semibold text-white tracking-tight">
             Our Products
           </h2>
-          <p className="text-white/60 max-w-2xl mt-3">
+          <p className="text-white/60 max-w-2xl mt-4">
             AI-powered solutions designed to transform how you work, learn, and grow.
           </p>
         </div>
 
-        {/* Products Grid - 3 columns */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl">
+        {/* Products Grid - 3 columns, centered */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {products.map((product) => (
             <a
               key={product.id}
               href={product.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-[4/3] overflow-hidden block"
+              className="group relative aspect-[3/4] overflow-hidden rounded-xl block"
             >
               {/* Image */}
               <img
                 src={product.image}
                 alt={product.title}
-                className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
               />
               
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               
               {/* Content */}
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <h3 className="text-xl font-semibold text-white mb-2">
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <h3 className="text-2xl font-semibold text-white mb-3">
                   {product.title}
                 </h3>
-                <p className="text-white/70 text-sm line-clamp-2 mb-3">
+                <p className="text-white/70 text-sm leading-relaxed line-clamp-2 mb-4">
                   {product.description}
                 </p>
                 <div className="flex items-center gap-2 text-white/60 text-sm group-hover:text-white transition-colors">
