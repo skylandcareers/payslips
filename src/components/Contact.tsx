@@ -7,17 +7,13 @@ const Contact = () => {
 
   return (
     <>
-      <section id="contact" className="py-20 bg-background">
+      <section id="contact" className="py-12 bg-background">
         <div className="container px-6">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
-              Let's Build the Future Together
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+              Let's Start Building
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Whether you're an university seeking end-to-end marketing solutions or an enterprise ready to elevate your people potential, we're here to help you succeed.
-            </p>
             
-            {/* Get in touch CTA */}
             <button
               onClick={() => setIsFormOpen(true)}
               className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 border-2 border-primary text-foreground font-medium py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
