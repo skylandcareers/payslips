@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FeatureHighlight } from "@/components/ui/feature-highlight";
 import { Entropy } from "@/components/ui/entropy";
-import { TextScramble } from "@/components/ui/text-scramble";
 
 const capabilities = [
   "Agentic Workflows",
@@ -26,7 +25,7 @@ const AICapabilities = () => {
           <FeatureHighlight
             title="Our AI Capabilities"
             features={capabilities.map((cap, index) => (
-              <TextScramble key={index} text={cap} />
+              <span key={index}>{cap}</span>
             ))}
             footer={
               <p className="text-sm text-muted-foreground mt-4">
