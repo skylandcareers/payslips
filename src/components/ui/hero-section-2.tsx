@@ -77,14 +77,16 @@ export default function HeroSection2({
     <div className="relative min-h-screen flex flex-col">
       {/* Header with scroll animation */}
       <motion.header 
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        initial={{ opacity: 1, backgroundColor: "transparent" }}
+        className="fixed top-0 left-0 right-0 z-50"
+        initial={{ opacity: 1 }}
         animate={{ 
-          opacity: scrolled ? 0.95 : 1,
-          backgroundColor: scrolled ? "rgba(0, 0, 0, 0.8)" : "transparent",
-          backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+          opacity: scrolled ? 0.98 : 1,
         }}
-        transition={{ duration: 0.3 }}
+        style={{
+          backgroundColor: scrolled ? "rgba(0, 0, 0, 0.85)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+          transition: "all 0.3s ease",
+        }}
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
