@@ -45,20 +45,20 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
 
   return (
     <section className="relative bg-background">
-      {/* Desktop: Sticky scroll section - compact height */}
-      <div ref={containerRef} className="hidden lg:block h-[120vh] relative">
+      {/* Desktop: Sticky scroll section */}
+      <div ref={containerRef} className="hidden lg:block h-[150vh] relative">
         <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center">
           {/* Circuit Animation Background */}
           <CircuitAnimation containerRef={containerRef} className="opacity-60" />
           
-          {/* Header - centered */}
+          {/* Header */}
           <h2 className="text-xl md:text-2xl font-sans font-bold text-foreground text-center mb-6 relative z-10">
             Our Approach to AI
           </h2>
           
-          {/* Centered content container */}
+          {/* Content container */}
           <div className="relative z-10 w-full max-w-lg mx-auto px-8">
-            <div className="relative min-h-[120px]">
+            <div className="relative min-h-[140px]">
               {slides.map((slide, index) => (
                 <SlideText
                   key={index}
@@ -73,8 +73,8 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
         </div>
       </div>
 
-      {/* Mobile/Tablet: Compact sticky scroll */}
-      <div ref={mobileContainerRef} className="lg:hidden relative h-[100vh]">
+      {/* Mobile/Tablet: Sticky scroll with more height for scroll effect */}
+      <div ref={mobileContainerRef} className="lg:hidden relative h-[200vh]">
         {/* Circuit Animation Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <CircuitAnimation className="opacity-40" />
@@ -86,7 +86,7 @@ const Philosophy = ({ slides = defaultSlides }: StickySlideDeckProps) => {
           </h2>
 
           <div className="relative z-10 w-full max-w-sm mx-auto">
-            <div className="relative min-h-[120px]">
+            <div className="relative min-h-[140px]">
               {slides.map((slide, index) => (
                 <MobileSlideText
                   key={index}
@@ -118,13 +118,13 @@ const SlideText = ({ slide, index, progress, totalSlides }: SlideTextProps) => {
 
   const opacity = useTransform(
     progress,
-    [start, start + stepSize * 0.1, end - stepSize * 0.1, end],
+    [start, start + stepSize * 0.15, end - stepSize * 0.15, end],
     [0, 1, 1, 0]
   );
 
   const y = useTransform(
     progress,
-    [start, start + stepSize * 0.15, end - stepSize * 0.1, end],
+    [start, start + stepSize * 0.2, end - stepSize * 0.15, end],
     [30, 0, 0, -30]
   );
 
@@ -156,14 +156,14 @@ const MobileSlideText = ({ slide, index, progress, totalSlides }: SlideTextProps
 
   const opacity = useTransform(
     progress,
-    [start, start + stepSize * 0.1, end - stepSize * 0.1, end],
+    [start, start + stepSize * 0.15, end - stepSize * 0.15, end],
     [0, 1, 1, 0]
   );
 
   const y = useTransform(
     progress,
-    [start, start + stepSize * 0.15, end - stepSize * 0.1, end],
-    [20, 0, 0, -20]
+    [start, start + stepSize * 0.2, end - stepSize * 0.15, end],
+    [25, 0, 0, -25]
   );
 
   return (
