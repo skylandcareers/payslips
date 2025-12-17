@@ -26,10 +26,9 @@ type StickyFooterProps = React.ComponentProps<'footer'>;
 export function StickyFooter({ className, ...props }: StickyFooterProps) {
   return (
     <footer
-      className={cn('sticky bottom-0 -z-10 bg-black', className)}
+      className={cn('bg-black', className)}
       {...props}
     >
-      <div className="bg-background rounded-b-2xl h-6 md:h-10" />
       <div className="container mx-auto px-4 md:px-6">
         <div className="py-12 md:py-20">
           <AnimatedContainer delay={0.1}>
