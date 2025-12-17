@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Partners from "@/components/Partners";
 import Philosophy from "@/components/Philosophy";
@@ -12,6 +13,8 @@ import MobileStickyBar from "@/components/MobileStickyBar";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
+      <Header />
+      
       {/* Wiggling background elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-wiggle" />
