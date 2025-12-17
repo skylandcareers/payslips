@@ -112,7 +112,7 @@ const Team = () => {
           <span className="text-[#b62100] text-sm font-semibold tracking-wider uppercase mb-4 block">
             Team
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-4xl font-sans font-semibold text-white mb-4">
             Meet Our Leadership
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
