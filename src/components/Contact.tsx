@@ -10,7 +10,7 @@ const Contact = () => {
       <section id="contact" className="py-12 bg-background">
         <div className="container px-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+            <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground">
               Let's Start Building
             </h2>
             
