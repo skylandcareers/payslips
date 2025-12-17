@@ -88,7 +88,7 @@ const CaseStudies = () => {
   const getExpandedStudy = () => caseStudies.find(s => s.id === expandedCard);
 
   return (
-    <section id="case-studies" className="py-24 bg-black relative overflow-hidden">
+    <section id="case-studies" className="pt-24 pb-40 bg-black relative overflow-hidden">
       {/* Network Background Animation - same as hero */}
       <div className="absolute inset-0 z-0">
         <NetworkBackground lines={3} distance={7} className="brightness-125" />
@@ -112,8 +112,8 @@ const CaseStudies = () => {
                 }`}
                 onClick={() => setExpandedCard(expandedCard === study.id ? null : study.id)}
               >
-                {/* Logo at top */}
-                <div className="flex-shrink-0 mb-auto">
+                {/* Logo at top - fixed height container for alignment */}
+                <div className="flex-shrink-0 mb-auto h-24 flex items-start">
                   <img
                     src={study.logo}
                     alt={`${study.company} logo`}
