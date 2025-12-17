@@ -29,7 +29,7 @@ const platforms: Platform[] = [
     logo: insideiimLogo,
     bgColor: "bg-[#1a1a1a]",
     textColor: "text-white",
-    logoFilter: "brightness-0 invert",
+    logoFilter: "",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const platforms: Platform[] = [
     logo: insidekampusLogo,
     bgColor: "bg-white",
     textColor: "text-black",
-    logoFilter: "brightness-0",
+    logoFilter: "",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const platforms: Platform[] = [
     logo: altuniLogo,
     bgColor: "bg-[#b62100]",
     textColor: "text-white",
-    logoFilter: "brightness-0 invert",
+    logoFilter: "",
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const platforms: Platform[] = [
     logo: altunilabsLogo,
     bgColor: "bg-[#1a1a1a]",
     textColor: "text-white",
-    logoFilter: "brightness-0 invert",
+    logoFilter: "",
   },
 ];
 
