@@ -73,8 +73,8 @@ const Team = () => {
               viewport={{ once: true }}
               className="group block cursor-pointer"
             >
-              {/* Image - taller aspect ratio, shrinks on hover */}
-              <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/3]">
+              {/* Image - subtle shrink on hover */}
+              <div className="relative aspect-[3/4] overflow-hidden mb-4 transition-all duration-500 group-hover:aspect-[4/5]">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -83,7 +83,7 @@ const Team = () => {
               </div>
 
               {/* Content below image */}
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {/* Name and LinkedIn - always visible */}
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-white">
@@ -94,10 +94,8 @@ const Team = () => {
                   </span>
                 </div>
 
-                {/* Role and Credentials - revealed on hover */}
-                <div 
-                  className="flex items-center justify-between text-xs opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
-                >
+                {/* Role and Credentials - always visible */}
+                <div className="flex items-center justify-between text-xs">
                   <span className="text-[#b62100] font-medium">
                     {member.role}
                   </span>
@@ -108,7 +106,7 @@ const Team = () => {
 
                 {/* Description - revealed on hover */}
                 <p 
-                  className="text-white/50 text-xs pt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75"
+                  className="text-white/50 text-xs pt-1 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-10 transition-all duration-300 overflow-hidden"
                 >
                   {member.description}
                 </p>
