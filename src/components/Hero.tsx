@@ -2,21 +2,8 @@ import { useState } from "react";
 import ContactFormDialog from "./ContactFormDialog";
 import NetworkBackground from "./NetworkBackground";
 import HeroSection2 from "./ui/hero-section-2";
-import { LogoCloud } from "./ui/logo-cloud";
 import logo from "@/assets/altuni-labs-logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
-
-// Partner logos
-import hul from "@/assets/partners/hul.png";
-import asianPaints from "@/assets/partners/asian-paints.png";
-import colgate from "@/assets/partners/colgate.png";
-import reckitt from "@/assets/partners/reckitt.png";
-import mondelez from "@/assets/partners/mondelez.png";
-import gsk from "@/assets/partners/gsk.png";
-import jsw from "@/assets/partners/jsw.png";
-import mahindra from "@/assets/partners/mahindra-new.png";
-import shell from "@/assets/partners/shell.jpg";
-import sunPharma from "@/assets/partners/sun-pharma.png";
 
 const Hero = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -37,19 +24,6 @@ const Hero = () => {
     { label: "Our Story", href: "/our-story" },
     { label: "Our Platforms", href: "/our-platforms" },
     { label: "Our Investors", href: "/our-investors" },
-  ];
-
-  const partnerLogos = [
-    { src: hul, alt: "HUL" },
-    { src: asianPaints, alt: "Asian Paints" },
-    { src: colgate, alt: "Colgate" },
-    { src: reckitt, alt: "Reckitt" },
-    { src: mondelez, alt: "Mondelez" },
-    { src: gsk, alt: "GSK" },
-    { src: jsw, alt: "JSW" },
-    { src: mahindra, alt: "Mahindra" },
-    { src: shell, alt: "Shell" },
-    { src: sunPharma, alt: "Sun Pharma" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -111,14 +85,8 @@ const Hero = () => {
           description="Automate the routine. Elevate your people. Scale your revenue."
           ctaText="Get in touch"
           onCtaClick={() => setIsFormOpen(true)}
-        >
-          <LogoCloud 
-            logos={partnerLogos} 
-            subtitle="From the Makers of InsideIIM"
-            title="Trusted by Experts."
-            className="mt-8"
-          />
-        </HeroSection2>
+          footerVersion="From the Makers of InsideIIM"
+        />
       </section>
 
       {/* Contact Form Dialog */}
