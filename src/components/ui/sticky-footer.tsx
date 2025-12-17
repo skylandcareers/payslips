@@ -118,7 +118,7 @@ const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { title: 'Our Story', href: '/our-story' },
       { title: 'Our Platforms', href: '/our-platforms' },
-      { title: 'Our Team', href: '/our-team' },
+      { title: 'Our People', href: '/our-team' },
       { title: 'Our Investors', href: '/our-investors' },
     ],
   },

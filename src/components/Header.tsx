@@ -21,6 +21,7 @@ const Header = () => {
     { label: "Our Story", href: "/our-story" },
     { label: "Our Platforms", href: "/our-platforms" },
     { label: "Our Investors", href: "/our-investors" },
+    { label: "Our People", href: "/our-team" },
   ];
 
   const navLinks = [
