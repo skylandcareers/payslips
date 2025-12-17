@@ -89,8 +89,8 @@ const Team = () => {
                   <h3 className="text-lg font-semibold text-white">
                     {member.name}
                   </h3>
-                  <span className="text-white group-hover:opacity-80 transition-opacity">
-                    <Linkedin size={18} />
+                  <span className="text-white/70 group-hover:opacity-80 transition-opacity">
+                    <Linkedin size={14} strokeWidth={1.5} />
                   </span>
                 </div>
 
