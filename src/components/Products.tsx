@@ -62,7 +62,7 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => (
     <img 
       src={product.image} 
       alt={product.title} 
-      className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" 
+      className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100" 
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
     <div className="absolute inset-x-0 bottom-0 p-6">
