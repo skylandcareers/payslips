@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import potentialAiDashboard from "@/assets/products/potential-ai-dashboard.png";
+import signalAiDashboard from "@/assets/products/signal-ai-dashboard.png";
+import konverseAiDashboard from "@/assets/products/konverse-ai-dashboard.png";
 
 export type ShowcaseStep = {
   id: string;
@@ -61,7 +63,7 @@ const products: ProductTab[] = [
       { id: "2", title: "Built From Scratch", text: "Each simulation is custom-designed for your workflows, competencies, and performance expectations." },
       { id: "3", title: "Built & Live in 48-72 Hours", text: "Designed and launched quickly - complete with secure proctoring." },
     ],
-    images: [{ label: "Assessment", src: "", alt: "SignalAI Interface" }],
+    images: [{ label: "Assessment", src: signalAiDashboard, alt: "SignalAI Interface" }],
   },
   {
     value: "interview-copilot",
@@ -75,7 +77,7 @@ const products: ProductTab[] = [
       { id: "2", title: "Adaptive Follow-Ups & Probing", text: "Surfaces relevant follow-ups and lines of inquiry based on the candidate's answers and background." },
       { id: "3", title: "Instant, Structured Interview Reports", text: "Produces panel-ready summaries within seconds: strengths, risks, patterns, and a clear recommendation." },
     ],
-    images: [{ label: "Co-Pilot", src: "", alt: "KonverseAI Interface" }],
+    images: [{ label: "Co-Pilot", src: konverseAiDashboard, alt: "KonverseAI Interface" }],
   },
 ];
 
