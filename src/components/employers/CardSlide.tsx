@@ -84,7 +84,7 @@ export const CardSlide = memo(function CardSlide({
       {cards.slice(0, 3).map((card, index) => (
         <motion.div
           key={card.id}
-          className="absolute bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl border border-border flex flex-col justify-between text-left overflow-hidden"
+          className="absolute bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl border border-muted/30 flex flex-col justify-between text-left overflow-hidden"
           style={{
             transformOrigin: "top center",
             height: cardSize.height,
@@ -115,13 +115,13 @@ export const CardSlide = memo(function CardSlide({
               <img
                 src={card.image}
                 alt={card.name}
-                className="w-full h-24 sm:h-32 md:h-36 lg:h-40 rounded-lg border border-border object-cover shadow-md"
+                className="w-full h-24 sm:h-32 md:h-36 lg:h-40 rounded-lg border border-muted/20 object-cover shadow-md"
                 loading="lazy"
               />
             </div>
           </div>
 
-          <div className="pt-2 sm:pt-3 border-t border-border mt-2 sm:mt-4">
+          <div className="pt-2 sm:pt-3 border-t border-muted/20 mt-2 sm:mt-4">
             <p className="text-card-foreground font-medium text-xs sm:text-sm md:text-base font-sans">
               {card.designation}
             </p>
@@ -132,7 +132,7 @@ export const CardSlide = memo(function CardSlide({
       {cards.slice(3).map((card, index) => (
         <div
           key={card.id}
-          className="absolute bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl border border-border flex flex-col justify-between text-left overflow-hidden opacity-0"
+          className="absolute bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-xl border border-muted/30 flex flex-col justify-between text-left overflow-hidden opacity-0"
           style={{
             transformOrigin: "top center",
             height: cardSize.height,

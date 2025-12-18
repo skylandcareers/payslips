@@ -117,7 +117,7 @@ const FeatureShowcase = () => {
         </motion.div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="flex h-auto bg-transparent p-0 border-b border-border rounded-none flex-wrap justify-center gap-2 mb-8">
+          <TabsList className="flex h-auto bg-transparent p-0 border-b border-muted/30 rounded-none flex-wrap justify-center gap-2 mb-8">
             {products.map((product) => (
               <TabsTrigger
                 key={product.value}
