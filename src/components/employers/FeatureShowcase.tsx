@@ -1,5 +1,11 @@
 import * as React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
@@ -136,18 +142,22 @@ const FeatureShowcase = () => {
                     {product.description}
                   </p>
 
-                  <div className="space-y-0">
+                  <Accordion type="single" collapsible className="w-full">
                     {product.steps.map((step) => (
-                      <div key={step.id} className="border-l-2 border-primary pl-4 py-3">
-                        <h4 className="text-base font-semibold text-foreground mb-1 font-sans">
+                      <AccordionItem 
+                        key={step.id} 
+                        value={step.id}
+                        className="border-b border-muted-foreground/30 border-t-0 border-l-0 border-r-0"
+                      >
+                        <AccordionTrigger className="text-left text-base font-medium font-sans py-4 hover:no-underline">
                           {step.title}
-                        </h4>
-                        <p className="text-muted-foreground text-sm font-sans">
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground font-sans pb-4">
                           {step.text}
-                        </p>
-                      </div>
+                        </AccordionContent>
+                      </AccordionItem>
                     ))}
-                  </div>
+                  </Accordion>
 
                 </div>
 
