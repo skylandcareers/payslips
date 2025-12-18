@@ -99,7 +99,7 @@ const Team = () => {
 
   return (
     <section id="team" className="scroll-mt-24 md:scroll-mt-28 px-6 py-24 relative overflow-hidden bg-black">
-      <StaticNetworkBackground density={60} />
+      <StaticNetworkBackground density={30} />
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
