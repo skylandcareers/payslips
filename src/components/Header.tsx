@@ -416,7 +416,7 @@ const Header = () => {
               From the Makers of 
               <img src={insideIIMlogo} alt="InsideIIM" className="h-3 inline-block" />
               and 
-              <img src={insideKampusLogo} alt="InsideKampus" className="h-3 inline-block brightness-0 invert opacity-80" />
+              <img src={insideKampusLogo} alt="InsideKampus" className="h-3 inline-block" />
             </div>
           </motion.div>
         )}
