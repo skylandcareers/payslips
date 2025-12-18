@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionItem,
@@ -170,14 +169,6 @@ const FeatureShowcase = () => {
                     ))}
                   </Accordion>
 
-                  <div className="flex gap-4">
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans">
-                      Get Started
-                    </Button>
-                    <Button variant="outline" className="font-sans">
-                      Learn More
-                    </Button>
-                  </div>
                 </div>
 
                 {/* Image Side */}
