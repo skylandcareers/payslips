@@ -414,9 +414,9 @@ const Header = () => {
           >
             <div className="flex items-center justify-center gap-2 py-1.5 text-xs text-white/60 tracking-wide">
               From the Makers of 
-              <img src={insideIIMlogo} alt="InsideIIM" className="h-3 inline-block" />
+              <img src={insideIIMlogo} alt="InsideIIM" className="h-4 inline-block" />
               and 
-              <img src={insideKampusLogo} alt="InsideKampus" className="h-3 inline-block" />
+              <img src={insideKampusLogo} alt="InsideKampus" className="h-4 inline-block" />
             </div>
           </motion.div>
         )}
