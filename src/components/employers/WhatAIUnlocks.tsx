@@ -53,7 +53,7 @@ const WhatAIUnlocks = () => {
         </motion.h2>
 
         {/* Stats grid - vertical on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-20">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
@@ -63,13 +63,13 @@ const WhatAIUnlocks = () => {
               viewport={{ once: true }}
               className="text-left"
             >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 font-sans">
+              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 font-sans">
                 {stat.value}
               </div>
-              <div className="text-sm md:text-base font-semibold text-foreground mb-2 font-sans">
+              <div className="text-sm font-semibold text-foreground mb-1 font-sans">
                 {stat.title}
               </div>
-              <p className="text-muted-foreground text-sm font-sans leading-relaxed">
+              <p className="text-muted-foreground text-xs font-sans leading-relaxed">
                 {stat.description}
               </p>
             </motion.div>
