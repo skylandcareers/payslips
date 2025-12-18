@@ -600,15 +600,20 @@ const ForUniversities = () => {
         <section id="services" className="relative py-16 md:py-24 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
           <NetworkBackground className="brightness-110" />
           <div className="max-w-7xl mx-auto relative z-10">
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-4xl font-light text-foreground mb-6 md:mb-10 text-center font-sans"
+              className="text-center mb-4 md:mb-6"
             >
-              A Full-Stack AI Admissions Flow
-            </motion.h2>
+              <h2 className="text-2xl md:text-4xl font-light text-foreground font-sans">
+                A Full-Stack AI Admissions Flow
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground mt-2 font-sans">
+                Attract, Engage, and Shortlist the Best Candidates
+              </p>
+            </motion.div>
             
             {/* Desktop Timeline with Scroll Animation */}
             <div className="hidden md:block">
