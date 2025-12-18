@@ -49,7 +49,7 @@ const WhatAIUnlocks = () => {
           viewport={{ once: true }}
           className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-16 md:mb-20"
         >
-          What AI Unlocks for Hiring Teams.
+          What AI Unlocks for Hiring Teams
         </motion.h2>
 
         {/* Stats grid - vertical on mobile */}
@@ -77,8 +77,8 @@ const WhatAIUnlocks = () => {
         </div>
       </div>
 
-      {/* Area Chart - brighter, more visible */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 pointer-events-none">
+      {/* Area Chart - positioned lower to avoid overlap */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 pointer-events-none">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
