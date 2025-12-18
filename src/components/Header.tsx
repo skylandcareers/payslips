@@ -399,6 +399,24 @@ const Header = () => {
         </AnimatePresence>
       </motion.header>
 
+      {/* Makers Banner - disappears on scroll */}
+      <AnimatePresence>
+        {!scrolled && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed left-0 right-0 z-40 bg-transparent"
+            style={{ top: "72px" }}
+          >
+            <div className="text-center py-1.5 text-xs text-white/60 tracking-wide">
+              From the Makers of <span className="text-white/80">InsideIIM</span> and <span className="text-white/80">InsideKampus</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Contact Form Dialog */}
       <ContactFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
     </>
