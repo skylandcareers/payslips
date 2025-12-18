@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 interface StepDescription {
   prefix: string | null;
@@ -53,71 +53,49 @@ const steps: Step[] = [
   }
 ];
 
-// Mobile step with scroll-based animation
-const MobileStep = ({ 
-  step, 
-  index, 
-  scrollYProgress,
-  totalSteps
-}: { 
-  step: Step; 
-  index: number;
-  scrollYProgress: any;
-  totalSteps: number;
-}) => {
-  const segmentSize = 1 / totalSteps;
-  const start = index * segmentSize;
-  const peak = start + segmentSize * 0.5;
-  const end = start + segmentSize;
-  
-  const opacity = useTransform(
-    scrollYProgress, 
-    [start, start + 0.05, peak, end - 0.05, end], 
-    [0, 1, 1, 1, index === totalSteps - 1 ? 1 : 0.3]
-  );
-  const scale = useTransform(
-    scrollYProgress, 
-    [start, start + 0.05, peak, end], 
-    [0.7, 1, 1.1, 1]
-  );
-  const y = useTransform(scrollYProgress, [start, start + 0.1], [30, 0]);
-
+// Mobile step (used in sticky scrollytelling view)
+const MobileStep = ({ step }: { step: Step }) => {
   return (
     <motion.div
-      style={{ opacity, scale, y }}
+      key={step.id}
+      initial={{ opacity: 0, y: 18, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -18, scale: 0.98 }}
+      transition={{ duration: 0.45, ease: "easeInOut" }}
       className="flex flex-col items-center text-center"
     >
       {/* Circle */}
-      <div className="relative mb-3">
+      <div className="relative mb-4">
         {!step.isAI && (
           <div className="absolute inset-[-6px] rounded-full border-2 border-dashed border-muted-foreground/40" />
         )}
-        
-        <div 
-          className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center text-center ${
-            step.isAI 
-              ? "bg-primary text-primary-foreground" 
-              : "bg-foreground text-background"
+        <div
+          className={`relative z-10 w-20 h-20 rounded-full flex items-center justify-center text-center ${
+            step.isAI ? "bg-primary text-primary-foreground" : "bg-foreground text-background"
           }`}
         >
-          <span className="text-[7px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
+          <span className="text-[8px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
             {step.label}
           </span>
         </div>
       </div>
 
       {/* Description */}
-      <div className="max-w-[220px]">
+      <div className="max-w-[260px]">
         {(step.descAbove || step.descBelow) && (
-          <p className="text-xs text-muted-foreground font-sans">
+          <p className="text-xs text-muted-foreground font-sans leading-relaxed">
             {step.descAbove && (
               <>
-                {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
+                {step.descAbove.prefix}{" "}
+                <span className="text-foreground font-semibold">{step.descAbove.bold}</span>
+                {step.descAbove.suffix ? <> {step.descAbove.suffix}</> : null}
               </>
             )}
             {step.descBelow && (
               <>
-                {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
+                {step.descBelow.prefix ? <>{step.descBelow.prefix}{" "}</> : null}
+                <span className="text-foreground font-semibold">{step.descBelow.bold}</span>
+                {step.descBelow.suffix ? <> {step.descBelow.suffix}</> : null}
               </>
             )}
           </p>
@@ -135,25 +113,35 @@ const HiringFlow = () => {
     offset: ["start start", "end end"]
   });
 
-  // Track which step is active based on scroll
+  // Track which step is active based on scroll (mobile scrollytelling only)
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (!isMobile) return;
+
     const unsubscribe = scrollYProgress.on("change", (value) => {
       const newIndex = Math.min(Math.floor(value * steps.length), steps.length - 1);
       setActiveIndex(newIndex);
     });
+
     return () => unsubscribe();
   }, [scrollYProgress]);
 
-  // Desktop auto-rotation
+  // Desktop auto-rotation (desktop only)
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    if (!isDesktop) return;
+
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % steps.length);
     }, 4000);
+
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="bg-background overflow-hidden">
+    <section className="bg-background overflow-visible md:overflow-hidden">
       {/* Desktop */}
       <div className="hidden md:block py-16 md:py-32">
         <div className="container mx-auto px-6">
@@ -274,8 +262,8 @@ const HiringFlow = () => {
 
       {/* Mobile - Sticky scroll with step-by-step reveal */}
       <div className="md:hidden" ref={containerRef}>
-        <div className="h-[400vh] relative">
-          <div className="sticky top-0 h-screen flex flex-col justify-center px-6">
+        <div className="h-[220vh] relative">
+          <div className="sticky top-0 min-h-screen flex flex-col justify-start px-6 pt-16 pb-16">
             {/* Header */}
             <div className="mb-8">
               <h2 className="text-xl font-sans font-semibold text-foreground">
@@ -288,12 +276,9 @@ const HiringFlow = () => {
 
             {/* Current step display */}
             <div className="flex-1 flex items-center justify-center">
-              <MobileStep 
-                step={steps[activeIndex]} 
-                index={activeIndex}
-                scrollYProgress={scrollYProgress}
-                totalSteps={steps.length}
-              />
+              <AnimatePresence mode="wait">
+                <MobileStep step={steps[activeIndex]} />
+              </AnimatePresence>
             </div>
 
             {/* Step indicators */}
