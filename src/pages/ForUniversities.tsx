@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import NetworkBackground from "@/components/NetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { motion, AnimatePresence } from "framer-motion";
+import { Timeline } from "@/components/ui/timeline";
 import { Button } from "@/components/ui/button";
 import { useInView } from "framer-motion";
 import { 
@@ -182,7 +183,7 @@ const ForUniversities = () => {
   const [displayText, setDisplayText] = useState("");
   const [attractMode, setAttractMode] = useState<"online" | "offline">("online");
   const [shortlistMode, setShortlistMode] = useState<"potential" | "konverse">("potential");
-  const [selectedFormat, setSelectedFormat] = useState<string | null>(null);
+  const [selectedFormat, setSelectedFormat] = useState<string | null>("Videos");
   const [isDeleting, setIsDeleting] = useState(false);
   const [expandedService, setExpandedService] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -522,7 +523,7 @@ const ForUniversities = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 md:mb-8"
             >
               Your University Growth Stack Just Got Better
             </motion.h1>
@@ -530,34 +531,21 @@ const ForUniversities = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 h-12 md:h-16 flex items-center justify-center"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-6 md:mb-8 h-10 md:h-12 flex items-center justify-center"
             >
               <span className="text-primary inline-block">
                 {displayText}
               </span>
-              <span className="text-white ml-2">the best candidates</span>
+              <span className="text-white/90 ml-2">the best candidates</span>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8"
+              className="text-sm md:text-base text-white/60 max-w-2xl mx-auto"
             >
               Every part of your admissions journey — now powered by AI
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" onClick={() => setIsFormOpen(true)}>
-                Schedule a Demo
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-                <a href="#services">Explore Solutions</a>
-              </Button>
-            </motion.div>
           </div>
         </section>
 
@@ -612,100 +600,56 @@ const ForUniversities = () => {
         </section>
 
         {/* Services Section - Timeline Layout */}
-        <section id="services" className="py-16 md:py-20 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 md:mb-16"
-            >
-              <h2 className="text-xl md:text-2xl lg:text-4xl font-sans font-semibold text-foreground mb-4">
-                The Three Pillars of Admissions Success
-              </h2>
-              <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-                End-to-end marketing solutions for universities seeking to attract, engage, and shortlist the best candidates.
-              </p>
-            </motion.div>
-
-            {/* Desktop Timeline Layout */}
-            <div className="hidden md:block relative">
-              {services.map((service, index) => {
-                const isLast = index === services.length - 1;
-                
-                return (
-                  <motion.div
-                    key={service.phase}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="grid grid-cols-[220px_1fr] gap-12"
-                  >
-                    {/* Left Column - Timeline with Pillar Name */}
-                    <div className="relative flex flex-col items-start">
-                      {/* Timeline dot */}
-                      <div className="flex items-center gap-4">
-                        <div className="relative group">
-                          <div className="w-4 h-4 rounded-full bg-primary/60 shadow-[0_0_12px_4px_hsl(var(--primary)/0.3)] transition-all duration-300 group-hover:scale-125" />
-                          <div className="absolute inset-0 w-4 h-4 rounded-full bg-primary/30 animate-ping opacity-0 group-hover:opacity-100" />
-                        </div>
-                        <h3 className="text-2xl md:text-3xl font-light text-muted-foreground/70">
-                          {service.phase.charAt(0) + service.phase.slice(1).toLowerCase()}
-                        </h3>
-                      </div>
-                      
-                      {/* Timeline vertical line */}
-                      {!isLast && (
-                        <div className="absolute left-[5px] top-6 w-px h-full bg-border" />
-                      )}
-                    </div>
-
-                    {/* Right Column - Content */}
-                    <div className={`pb-16 ${isLast ? 'pb-0' : ''}`}>
-                      <h4 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
+        <section id="services" className="py-20 md:py-32 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
+          <div className="max-w-7xl mx-auto">
+            {/* Desktop Timeline with Scroll Animation */}
+            <div className="hidden md:block">
+              <Timeline 
+                data={services.map((service) => ({
+                  title: service.phase.charAt(0) + service.phase.slice(1).toLowerCase(),
+                  content: (
+                    <div className="pb-10">
+                      <h4 className="text-lg md:text-xl font-medium text-foreground mb-4">
                         {service.title}
                       </h4>
                       {renderServiceContent(service)}
                     </div>
-                  </motion.div>
-                );
-              })}
+                  )
+                }))}
+              />
             </div>
 
             {/* Mobile Collapsible Layout */}
             <div className="md:hidden space-y-4">
+              <h2 className="text-xl font-light text-foreground mb-8 text-center">
+                The Three Pillars
+              </h2>
               {services.map((service, index) => (
                 <motion.div
                   key={service.phase}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="border border-border rounded-lg overflow-hidden"
+                  className="border border-border/50 overflow-hidden"
                 >
                   <button
                     onClick={() => toggleService(service.phase)}
-                    className="w-full flex items-center justify-between p-4 bg-card hover:bg-muted/50 transition-colors"
+                    className="w-full flex items-center justify-between p-4 bg-card/50 hover:bg-muted/30 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full bg-primary/60 shadow-[0_0_8px_2px_hsl(var(--primary)/0.3)]" />
+                      <div className="w-2 h-2 rounded-full bg-primary" />
                       <div className="text-left">
-                        <h3 className="text-base font-semibold text-foreground">
+                        <h3 className="text-sm font-medium text-foreground">
                           {service.phase.charAt(0) + service.phase.slice(1).toLowerCase()}
                         </h3>
-                        <p className="text-xs text-muted-foreground line-clamp-1">{service.title}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <span className="text-xs">{expandedService === service.phase ? "Collapse" : "Expand"}</span>
-                      <motion.div
-                        animate={{ rotate: expandedService === service.phase ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ChevronDown className="h-5 w-5" />
-                      </motion.div>
-                    </div>
+                    <motion.div
+                      animate={{ rotate: expandedService === service.phase ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ChevronDown className="h-4 w-4 text-muted-foreground" />
+                    </motion.div>
                   </button>
                   
                   <AnimatePresence>
@@ -717,7 +661,8 @@ const ForUniversities = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-4 pt-0 border-t border-border">
+                        <div className="p-4 pt-0 border-t border-border/30">
+                          <p className="text-xs text-muted-foreground mb-3">{service.title}</p>
                           {renderServiceContent(service)}
                         </div>
                       </motion.div>
