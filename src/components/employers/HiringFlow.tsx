@@ -139,7 +139,7 @@ const HiringFlow = () => {
                       className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center text-center p-3 transition-all duration-300 ${
                         step.isAI 
                           ? "bg-primary text-primary-foreground" 
-                          : "bg-muted text-foreground border border-border"
+                          : "bg-muted text-foreground border border-muted-foreground/20"
                       }`}
                       animate={{ scale: isActive ? 1.05 : 1 }}
                       whileHover={{ scale: 1.08 }}
@@ -179,7 +179,7 @@ const HiringFlow = () => {
 
                   {/* Connecting line */}
                   {i < steps.length - 1 && (
-                    <div className="absolute top-1/2 left-full w-[calc(100%-6rem)] h-0.5 bg-border -translate-y-1/2 z-0">
+                    <div className="absolute top-1/2 left-full w-[calc(100%-6rem)] h-0.5 bg-muted-foreground/20 -translate-y-1/2 z-0">
                       {activeIndex === i + 1 && (
                         <motion.div 
                           className="absolute top-[-4px] w-2.5 h-2.5 rounded-full bg-primary shadow-lg shadow-primary/50"
@@ -205,7 +205,7 @@ const HiringFlow = () => {
               <motion.div
                 key={step.id}
                 className={`p-4 border rounded-lg transition-all duration-300 ${
-                  isActive ? "border-primary bg-primary/5" : "border-border"
+                  isActive ? "border-muted-foreground/40 bg-muted/30" : "border-muted/20"
                 }`}
                 onClick={() => setActiveIndex(i)}
                 initial={{ opacity: 0, x: -20 }}
@@ -217,7 +217,7 @@ const HiringFlow = () => {
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center text-center ${
                     step.isAI 
                       ? "bg-primary text-primary-foreground" 
-                      : "bg-muted text-foreground border border-border"
+                      : "bg-muted text-foreground border border-muted-foreground/20"
                   }`}>
                     <span className="text-[8px] font-semibold whitespace-pre-line leading-tight font-sans">
                       {step.label.split('\n')[0]}
