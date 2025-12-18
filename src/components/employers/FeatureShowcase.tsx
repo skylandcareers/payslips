@@ -163,15 +163,7 @@ const FeatureShowcase = () => {
                 </div>
 
                 {/* Image Side */}
-                <div className="relative bg-muted rounded-lg overflow-hidden min-h-[300px] md:min-h-[400px]">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
-                  
-                  <div className="absolute bottom-6 left-6 right-6 z-20">
-                    <p className="text-sm md:text-base text-foreground font-sans">
-                      {product.tagline}
-                    </p>
-                  </div>
-
+                <div className="flex flex-col">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={getActiveImageIndex(product.value)}
@@ -179,40 +171,42 @@ const FeatureShowcase = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute inset-0 flex items-center justify-center p-4"
+                      className="flex items-center justify-center"
                     >
                       {product.images[getActiveImageIndex(product.value)]?.src ? (
                         <img 
                           src={product.images[getActiveImageIndex(product.value)].src} 
                           alt={product.images[getActiveImageIndex(product.value)].alt || "Product screenshot"}
-                          className="w-full h-full object-contain"
+                          className="w-full h-auto object-contain"
                         />
                       ) : (
-                        <div className="text-muted-foreground font-sans">
+                        <div className="text-muted-foreground font-sans py-20">
                           [Product Screenshot]
                         </div>
                       )}
                     </motion.div>
                   </AnimatePresence>
+                  
+                  <p className="text-sm md:text-base text-foreground font-sans text-center mt-6">
+                    {product.tagline}
+                  </p>
 
                   {product.images.length > 1 && (
-                    <div className="absolute bottom-0 left-0 right-0 z-30 bg-background/50 backdrop-blur-sm">
-                      <div className="flex">
-                        {product.images.map((img, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setActiveImageIndex(prev => ({ ...prev, [product.value]: idx }))}
-                            className={cn(
-                              "px-4 py-2 text-sm font-medium transition-all font-sans",
-                              getActiveImageIndex(product.value) === idx
-                                ? "bg-foreground text-background"
-                                : "text-muted-foreground hover:text-foreground"
-                            )}
-                          >
-                            {img.label}
-                          </button>
-                        ))}
-                      </div>
+                    <div className="flex justify-center gap-2 mt-4">
+                      {product.images.map((img, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveImageIndex(prev => ({ ...prev, [product.value]: idx }))}
+                          className={cn(
+                            "px-4 py-2 text-sm font-medium transition-all font-sans border",
+                            getActiveImageIndex(product.value) === idx
+                              ? "bg-foreground text-background border-foreground"
+                              : "text-muted-foreground hover:text-foreground border-muted"
+                          )}
+                        >
+                          {img.label}
+                        </button>
+                      ))}
                     </div>
                   )}
                 </div>
