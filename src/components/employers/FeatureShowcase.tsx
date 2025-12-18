@@ -1,11 +1,5 @@
 import * as React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
@@ -37,58 +31,44 @@ const products: ProductTab[] = [
   {
     value: "profile-evaluation",
     label: "Profile Evaluation",
-    eyebrow: "AI-Powered Screening",
-    title: "Profile Evaluation",
-    tagline: "Screen thousands in minutes",
-    description: "AI-powered profile screening that evaluates candidates against your specific role requirements, reducing manual review time by 90%.",
+    eyebrow: "EVALUATION ENGINE",
+    title: "PotentialAI",
+    tagline: "Your evaluation process automated, unbiased, and instant.",
+    description: "An evaluation engine that understands roles, scores candidates like your best hiring manager, and scales your team's judgment.",
     steps: [
-      { id: "1", title: "Upload Resumes", text: "Batch upload candidate profiles in any format" },
-      { id: "2", title: "Define Criteria", text: "Set custom evaluation parameters for your role" },
-      { id: "3", title: "Get Rankings", text: "Receive scored and ranked candidate lists" },
+      { id: "1", title: "Fully Customised for Each Role", text: "Built around your competencies, your context, and your hiring expectations." },
+      { id: "2", title: "Consistent Scoring Across All Candidates", text: "One evaluation standard your entire team can rely on." },
+      { id: "3", title: "Instant Shortlists, Even at Scale", text: "Processes and ranks thousands of applicants in minutes." },
     ],
-    images: [{ label: "Dashboard", src: "", alt: "Profile Evaluation Dashboard" }],
+    images: [{ label: "Dashboard", src: "", alt: "PotentialAI Dashboard" }],
   },
   {
     value: "assessments",
-    label: "Assessments",
-    eyebrow: "Role-Fit Testing",
-    title: "AI Assessments",
-    tagline: "Custom simulations in days",
-    description: "Deploy custom role-fit simulations that test real job scenarios, not just generic aptitude.",
+    label: "Custom Assessments",
+    eyebrow: "ASSESSMENT ENGINE",
+    title: "SignalAI",
+    tagline: "Fully custom, role-aligned simulations that reflect your real work.",
+    description: "A role-specific assessment engine that mirrors real work, measures real performance, and delivers far stronger hiring decisions.",
     steps: [
-      { id: "1", title: "Design Assessment", text: "Create custom assessments for your roles" },
-      { id: "2", title: "Deploy at Scale", text: "Send to thousands of candidates seamlessly" },
-      { id: "3", title: "Analyze Results", text: "Get detailed insights on candidate performance" },
+      { id: "1", title: "Evaluates On-the-Job Skills", text: "Assesses candidates through decisions and tasks pulled directly from the role." },
+      { id: "2", title: "Built From Scratch", text: "Each simulation is custom-designed for your workflows, competencies, and performance expectations." },
+      { id: "3", title: "Built & Live in 48-72 Hours", text: "Designed and launched quickly - complete with secure proctoring." },
     ],
-    images: [{ label: "Assessment", src: "", alt: "Assessment Interface" }],
+    images: [{ label: "Assessment", src: "", alt: "SignalAI Interface" }],
   },
   {
     value: "interview-copilot",
     label: "Interview Co-Pilot",
-    eyebrow: "Consistent Scoring",
-    title: "Interview Co-Pilot",
-    tagline: "100% consistent evaluations",
-    description: "AI-assisted interview scoring that ensures consistency across panels and reduces bias.",
+    eyebrow: "INTERVIEW ASSISTANT",
+    title: "KonverseAI",
+    tagline: "Real-time guidance for consistent, comprehensive interviews.",
+    description: "An interview copilot that stays active throughout the conversation - helping panels stay consistent, and walk away with clearer decisions.",
     steps: [
-      { id: "1", title: "Define Rubric", text: "Set evaluation criteria for interviews" },
-      { id: "2", title: "Real-time Assist", text: "Get AI suggestions during interviews" },
-      { id: "3", title: "Score Analysis", text: "Compare scores across interviewers" },
+      { id: "1", title: "Works Across Offline & Virtual Panels", text: "Sits beside your interviewers in any format - guiding, listening, and capturing insights without disrupting the flow." },
+      { id: "2", title: "Adaptive Follow-Ups & Probing", text: "Surfaces relevant follow-ups and lines of inquiry based on the candidate's answers and background." },
+      { id: "3", title: "Instant, Structured Interview Reports", text: "Produces panel-ready summaries within seconds: strengths, risks, patterns, and a clear recommendation." },
     ],
-    images: [{ label: "Co-Pilot", src: "", alt: "Interview Co-Pilot" }],
-  },
-  {
-    value: "ai-interviews",
-    label: "AI Interviews",
-    eyebrow: "Automated Screening",
-    title: "AI-Led Interviews",
-    tagline: "Scale your first rounds",
-    description: "Automated first-round interviews that screen candidates 24/7 with consistent quality.",
-    steps: [
-      { id: "1", title: "Configure Questions", text: "Set up interview questions and criteria" },
-      { id: "2", title: "Candidate Experience", text: "Candidates complete interviews anytime" },
-      { id: "3", title: "Review Highlights", text: "Watch key moments, skip the rest" },
-    ],
-    images: [{ label: "AI Interview", src: "", alt: "AI Interview Interface" }],
+    images: [{ label: "Co-Pilot", src: "", alt: "KonverseAI Interface" }],
   },
 ];
 
@@ -156,18 +136,18 @@ const FeatureShowcase = () => {
                     {product.description}
                   </p>
 
-                  <Accordion type="single" collapsible className="w-full mb-6">
+                  <div className="space-y-0">
                     {product.steps.map((step) => (
-                      <AccordionItem key={step.id} value={step.id}>
-                        <AccordionTrigger className="text-left text-base font-medium font-sans">
+                      <div key={step.id} className="border-l-2 border-primary pl-4 py-3">
+                        <h4 className="text-base font-semibold text-foreground mb-1 font-sans">
                           {step.title}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground font-sans">
+                        </h4>
+                        <p className="text-muted-foreground text-sm font-sans">
                           {step.text}
-                        </AccordionContent>
-                      </AccordionItem>
+                        </p>
+                      </div>
                     ))}
-                  </Accordion>
+                  </div>
 
                 </div>
 
@@ -176,7 +156,7 @@ const FeatureShowcase = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
                   
                   <div className="absolute bottom-6 left-6 right-6 z-20">
-                    <p className="text-xl md:text-2xl font-semibold text-foreground font-sans">
+                    <p className="text-sm md:text-base text-foreground font-sans">
                       {product.tagline}
                     </p>
                   </div>
