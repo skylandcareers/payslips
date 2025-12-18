@@ -125,8 +125,8 @@ const footerLinkGroups: FooterLinkGroup[] = [
   {
     label: 'Solutions',
     links: [
-      { title: 'For Universities', href: '/for-universities' },
       { title: 'For Employers', href: '/for-employers' },
+      { title: 'For Universities', href: '/for-universities' },
     ],
   },
   {
