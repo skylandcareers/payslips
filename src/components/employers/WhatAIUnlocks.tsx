@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import {
   AreaChart,
   Area,
@@ -42,14 +42,7 @@ const stats = [
 
 const WhatAIUnlocks = () => {
   const mobileRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(mobileRef, { once: false, margin: "-100px" });
-  const [hasExpanded, setHasExpanded] = useState(false);
-
-  useEffect(() => {
-    if (isInView && !hasExpanded) {
-      setHasExpanded(true);
-    }
-  }, [isInView, hasExpanded]);
+  const isInView = useInView(mobileRef, { once: false, margin: "-50px" });
 
   return (
     <section className="py-16 md:py-32 bg-background relative overflow-hidden">
@@ -94,7 +87,7 @@ const WhatAIUnlocks = () => {
           </div>
         </div>
 
-        {/* Mobile version - Auto-expand on scroll */}
+        {/* Mobile version - Auto-expand/collapse on scroll */}
         <div className="md:hidden" ref={mobileRef}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -111,10 +104,10 @@ const WhatAIUnlocks = () => {
           <motion.div 
             initial={{ height: 0, opacity: 0 }}
             animate={{ 
-              height: hasExpanded ? "auto" : 0, 
-              opacity: hasExpanded ? 1 : 0 
+              height: isInView ? "auto" : 0, 
+              opacity: isInView ? 1 : 0 
             }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
             <div className="grid grid-cols-2 gap-6 pt-6 pb-8">
@@ -123,10 +116,10 @@ const WhatAIUnlocks = () => {
                   key={stat.title}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ 
-                    opacity: hasExpanded ? 1 : 0, 
-                    y: hasExpanded ? 0 : 10 
+                    opacity: isInView ? 1 : 0, 
+                    y: isInView ? 0 : 10 
                   }}
-                  transition={{ duration: 0.3, delay: hasExpanded ? index * 0.1 : 0 }}
+                  transition={{ duration: 0.3, delay: isInView ? index * 0.08 : 0 }}
                   className="text-left"
                 >
                   <div className="text-2xl font-bold text-foreground mb-1 font-sans">
