@@ -51,7 +51,7 @@ const EmployerHero = () => {
         <NetworkBackground 
           lines={7} 
           distance={6}
-          className="brightness-125"
+          className="brightness-150"
         />
       </div>
 

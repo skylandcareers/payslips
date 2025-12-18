@@ -512,7 +512,7 @@ const ForUniversities = () => {
       <main className="pt-24">
         {/* Hero Section */}
         <section className="relative px-6 py-16 md:py-24 lg:py-32 bg-black overflow-hidden min-h-[70vh] flex items-center">
-          <NetworkBackground className="brightness-125" />
+          <NetworkBackground className="brightness-150" />
           <div className="absolute inset-0 bg-[url('/lovable-uploads/circuit-pattern.png')] opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
           <div className="max-w-5xl mx-auto text-center relative z-10">
