@@ -7,11 +7,11 @@ import {
 
 const data = [
   { name: "Week 1", value: 100 },
-  { name: "Week 2", value: 280 },
-  { name: "Week 3", value: 450 },
-  { name: "Week 4", value: 620 },
-  { name: "Week 5", value: 780 },
-  { name: "Week 6", value: 920 },
+  { name: "Week 2", value: 150 },
+  { name: "Week 3", value: 250 },
+  { name: "Week 4", value: 400 },
+  { name: "Week 5", value: 600 },
+  { name: "Week 6", value: 850 },
   { name: "Week 7", value: 1000 },
 ];
 
@@ -47,13 +47,13 @@ const WhatAIUnlocks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-sans font-semibold text-foreground text-center mb-16"
+          className="text-3xl md:text-5xl font-sans font-semibold text-foreground mb-16 md:mb-20"
         >
           What AI Unlocks for Hiring Teams.
         </motion.h2>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-20">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
@@ -61,15 +61,15 @@ const WhatAIUnlocks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center p-6"
+              className="text-left"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-3 font-sans">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 font-sans">
                 {stat.value}
               </div>
-              <div className="text-lg font-semibold text-foreground mb-2 font-sans">
+              <div className="text-base md:text-lg font-semibold text-foreground mb-2 font-sans">
                 {stat.title}
               </div>
-              <p className="text-muted-foreground text-sm font-sans">
+              <p className="text-muted-foreground text-sm font-sans leading-relaxed">
                 {stat.description}
               </p>
             </motion.div>
@@ -77,20 +77,21 @@ const WhatAIUnlocks = () => {
         </div>
       </div>
 
-      {/* Area Chart - non-interactive, decorative */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 opacity-20 pointer-events-none">
+      {/* Area Chart - brighter, more visible */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 pointer-events-none">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
-                <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0}/>
+                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
+                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={0.2}/>
               </linearGradient>
             </defs>
             <Area 
               type="monotone" 
               dataKey="value" 
               stroke="hsl(var(--primary))" 
+              strokeWidth={2}
               fillOpacity={1} 
               fill="url(#colorValue)" 
             />
