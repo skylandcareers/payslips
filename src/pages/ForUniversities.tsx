@@ -3,8 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useInView } from "framer-motion";
 import { 
   Megaphone, 
   MessageSquare, 
@@ -21,9 +22,9 @@ import {
   Languages,
   Users,
   CheckCircle,
-  ArrowRight,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Upload,
   SlidersHorizontal,
   ListOrdered,
@@ -41,6 +42,7 @@ import post5 from "@/assets/posts/post-5.avif";
 import carousel1 from "@/assets/carousels/carousel-1.jpg";
 import carousel2 from "@/assets/carousels/carousel-2.jpg";
 import carousel3 from "@/assets/carousels/carousel-3.jpg";
+import partnerSchoolsLogo from "@/assets/university/partner-schools-logos.png";
 
 const services = [
   {
@@ -87,12 +89,6 @@ const services = [
   }
 ];
 
-const contentFormats = [
-  { icon: Youtube, label: "YouTube Videos & Shorts", metric: "10mn+ views/year" },
-  { icon: Instagram, label: "Instagram Reels & Carousels", metric: "530K+ followers" },
-  { icon: Mic, label: "Webinars & YouTube Lives", metric: "9mn+ reach/year" },
-];
-
 const ayanaFeatures = [
   { icon: Languages, title: "Multi-Lingual Support", description: "Speaks Hindi, Tamil, English, and more" },
   { icon: Shield, title: "Secure & Private", description: "Dedicated server with data isolation" },
@@ -100,10 +96,6 @@ const ayanaFeatures = [
   { icon: Bot, title: "Human-Like Tone", description: "Warm, persuasive, and credible responses" },
   { icon: Globe, title: "CRM Integration", description: "Works with Meritto, LeadSquared, and more" },
   { icon: Users, title: "Contextual Replies", description: "Trained on your brochures, FAQs, and deadlines" },
-];
-
-const partnerSchools = [
-  "SPJIMR", "Great Lakes", "TAPMI", "SDA Bocconi", "BITSOM", "GIM", "MICA"
 ];
 
 const stats = [
@@ -192,7 +184,10 @@ const ForUniversities = () => {
   const [shortlistMode, setShortlistMode] = useState<"potential" | "konverse">("potential");
   const [selectedFormat, setSelectedFormat] = useState<string | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [expandedService, setExpandedService] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const isServicesInView = useInView(servicesRef, { once: true, margin: "-100px" });
 
   const scrollCarousel = (direction: "left" | "right") => {
     if (carouselRef.current) {
@@ -251,13 +246,274 @@ const ForUniversities = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentWordIndex]);
 
+  const toggleService = (phase: string) => {
+    setExpandedService(expandedService === phase ? null : phase);
+  };
+
+  const renderServiceContent = (service: typeof services[0]) => {
+    if (service.phase === "ATTRACT") {
+      return (
+        <>
+          {/* Online/Offline Toggle Buttons */}
+          <div className="flex gap-3 mb-6">
+            <Button
+              variant={attractMode === "online" ? "default" : "outline"}
+              onClick={() => setAttractMode("online")}
+              className="px-4 md:px-6 text-sm"
+            >
+              Online
+            </Button>
+            <Button
+              variant={attractMode === "offline" ? "default" : "outline"}
+              onClick={() => { setAttractMode("offline"); setSelectedFormat(null); }}
+              className="px-4 md:px-6 text-sm"
+            >
+              Offline
+            </Button>
+          </div>
+
+          {attractMode === "online" ? (
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-sm">
+                Branded Content Campaigns on InsideIIM's high-traffic platforms
+              </p>
+              
+              {/* Platform Logos */}
+              <div className="flex items-center gap-4 md:gap-6 mb-4 flex-wrap">
+                {platformLogos.map((platform) => (
+                  <div key={platform.name} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <platform.icon className="h-5 w-5 md:h-6 md:w-6" />
+                    <span className="text-xs md:text-sm font-medium">{platform.name}</span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Formats */}
+              <div className="flex flex-wrap gap-2">
+                {onlineFormats.map((format) => (
+                  <button
+                    key={format}
+                    onClick={() => setSelectedFormat(selectedFormat === format ? null : format)}
+                    className={`px-3 py-1 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer ${
+                      selectedFormat === format
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-primary/10 text-primary hover:bg-primary/20"
+                    }`}
+                  >
+                    {format}
+                  </button>
+                ))}
+              </div>
+
+              {/* Thumbnails Carousel */}
+              {selectedFormat && formatContent[selectedFormat] && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-4 relative"
+                >
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={() => scrollCarousel("left")}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-foreground" />
+                  </button>
+                  <button
+                    onClick={() => scrollCarousel("right")}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                  >
+                    <ChevronRight className="w-5 h-5 text-foreground" />
+                  </button>
+
+                  <div 
+                    ref={carouselRef}
+                    className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                  >
+                    {formatContent[selectedFormat].links.map((link, idx) => {
+                      const thumbnails = formatContent[selectedFormat].thumbnails;
+                      const thumbnail = thumbnails?.[idx];
+                      
+                      return (
+                        <div
+                          key={idx}
+                          className="flex-shrink-0 w-[85%] md:w-[48%] snap-start rounded-xl overflow-hidden border border-border"
+                        >
+                          {formatContent[selectedFormat].type === "youtube" ? (
+                            <div className="aspect-video bg-muted">
+                              <img
+                                src={getYouTubeThumbnail(link)}
+                                alt={`${selectedFormat} thumbnail ${idx + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ) : thumbnail ? (
+                            <div className="bg-muted">
+                              <img
+                                src={thumbnail}
+                                alt={`${selectedFormat} thumbnail ${idx + 1}`}
+                                className="w-full h-auto object-contain"
+                              />
+                            </div>
+                          ) : formatContent[selectedFormat].type === "instagram" ? (
+                            <div className="aspect-square bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
+                              <Instagram className="w-12 h-12 text-white" />
+                            </div>
+                          ) : (
+                            <div className="p-4 bg-card aspect-video flex flex-col justify-center">
+                              <p className="text-sm text-muted-foreground line-clamp-3">
+                                {link.split("/").pop()?.replace(/-/g, " ").slice(0, 80)}...
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          ) : (
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-sm">
+                Engage first-hand with high-intent leads through exclusive offline events
+              </p>
+              
+              {/* Cafe Logos */}
+              <div className="mt-4 flex gap-4 md:gap-6 items-center flex-wrap">
+                <img 
+                  src={konversationsCafeLogo} 
+                  alt="Konversations Cafe 2025" 
+                  className="h-16 md:h-24 object-contain"
+                />
+                <img 
+                  src={kareersCafeLogo} 
+                  alt="Kareers Cafe" 
+                  className="h-16 md:h-24 object-contain"
+                />
+              </div>
+            </div>
+          )}
+        </>
+      );
+    }
+    
+    if (service.phase === "ENGAGE") {
+      return (
+        <div className="mt-4">
+          <h4 className="text-base md:text-lg font-bold text-foreground mb-3">Meet Ayana AI</h4>
+          <p className="text-muted-foreground text-xs md:text-sm mb-4">
+            Your AI-powered nurturing engine that automates follow-ups and improves conversions.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {ayanaFeatures.map((feature) => (
+              <div key={feature.title} className="flex items-start gap-2">
+                <feature.icon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs font-medium text-foreground">{feature.title}</p>
+                  <p className="text-xs text-muted-foreground">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    
+    if (service.phase === "SHORTLIST") {
+      return (
+        <>
+          {/* PotentialAI / KonverseAI Toggle Buttons */}
+          <div className="flex gap-3 mb-6">
+            <Button
+              variant={shortlistMode === "potential" ? "default" : "outline"}
+              onClick={() => setShortlistMode("potential")}
+              className="px-4 md:px-6 text-xs md:text-sm"
+            >
+              PotentialAI Admit
+            </Button>
+            <Button
+              variant={shortlistMode === "konverse" ? "default" : "outline"}
+              onClick={() => setShortlistMode("konverse")}
+              className="px-4 md:px-6 text-xs md:text-sm"
+            >
+              KonverseAI Admit
+            </Button>
+          </div>
+
+          {shortlistMode === "potential" ? (
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-sm mb-4">
+                Intelligent Shortlisting Tool for bias-free evaluation
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Upload className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Upload 1000s of profiles with ease</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <SlidersHorizontal className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Define customized shortlisting rules</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ListOrdered className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Get ranked, bias-free shortlists in hours</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Timer className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Drastically reduce manual screening effort</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Link2 className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Direct CRM integration for seamless workflow</span>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-sm mb-4">
+                AI-Led Autonomous Interviews - Smarter, Scalable, Bias-Free
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Mic className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Voice-first, natural conversation experience</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Languages className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Bilingual support (English, Hindi, Hinglish)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Timer className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">24/7 availability - scales to thousands of candidates</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Bot className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">AI conducts full interview autonomously with dynamic follow-ups</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <FileText className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+                  <span className="text-foreground/80 text-xs md:text-sm">Competency-mapped scores with detailed transcripts & recommendations</span>
+                </li>
+              </ul>
+            </div>
+          )}
+        </>
+      );
+    }
+    
+    return null;
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="relative px-6 py-20 bg-black overflow-hidden">
+        <section className="relative px-6 py-16 md:py-20 bg-black overflow-hidden">
           <StaticNetworkBackground className="opacity-30" density={80} />
           <div className="absolute inset-0 bg-[url('/lovable-uploads/circuit-pattern.png')] opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
@@ -266,7 +522,7 @@ const ForUniversities = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8"
             >
               Your University Growth Stack Just Got Better
             </motion.h1>
@@ -274,7 +530,7 @@ const ForUniversities = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 h-16 flex items-center justify-center"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 h-12 md:h-16 flex items-center justify-center"
             >
               <span className="text-primary inline-block">
                 {displayText}
@@ -285,7 +541,7 @@ const ForUniversities = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8"
+              className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-6 md:mb-8"
             >
               Every part of your admissions journey — now powered by AI
             </motion.p>
@@ -306,9 +562,9 @@ const ForUniversities = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 bg-primary text-primary-foreground">
+        <section className="py-8 md:py-12 bg-primary text-primary-foreground">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -318,34 +574,78 @@ const ForUniversities = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-sm opacity-90">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">{stat.value}</div>
+                  <div className="text-xs md:text-sm opacity-90">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Trusted By Schools - Logo Strip */}
+        <section className="py-10 md:py-16 px-6 bg-muted/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-lg md:text-xl font-semibold text-muted-foreground mb-6 md:mb-8 text-center"
+            >
+              Trusted by India's Top B-Schools
+            </motion.h3>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="flex justify-center mb-8"
+            >
+              <img 
+                src={partnerSchoolsLogo} 
+                alt="Partner Schools" 
+                className="w-full max-w-4xl object-contain"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row justify-center gap-8 md:gap-16"
+            >
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-foreground">100+</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Partner Schools</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-foreground">120+</div>
+                <div className="text-xs md:text-sm text-muted-foreground">Campaigns Delivered</div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Services Section - Timeline Layout */}
-        <section id="services" className="py-20 px-6">
+        <section id="services" className="py-16 md:py-20 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
             >
-              <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
+              <h2 className="text-xl md:text-2xl lg:text-4xl font-sans font-semibold text-foreground mb-4">
                 The Three Pillars of Admissions Success
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
                 End-to-end marketing solutions for universities seeking to attract, engage, and shortlist the best candidates.
               </p>
             </motion.div>
 
-            {/* Timeline Layout */}
-            <div className="relative">
+            {/* Desktop Timeline Layout */}
+            <div className="hidden md:block relative">
               {services.map((service, index) => {
                 const isLast = index === services.length - 1;
                 
@@ -356,7 +656,7 @@ const ForUniversities = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-[180px_1fr] md:grid-cols-[220px_1fr] gap-8 md:gap-12"
+                    className="grid grid-cols-[220px_1fr] gap-12"
                   >
                     {/* Left Column - Timeline with Pillar Name */}
                     <div className="relative flex flex-col items-start">
@@ -382,316 +682,77 @@ const ForUniversities = () => {
                       <h4 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
                         {service.title}
                       </h4>
-                      
-                      {service.phase === "ATTRACT" ? (
-                        <>
-                          {/* Online/Offline Toggle Buttons */}
-                          <div className="flex gap-3 mb-6">
-                            <Button
-                              variant={attractMode === "online" ? "default" : "outline"}
-                              onClick={() => setAttractMode("online")}
-                              className="px-6"
-                            >
-                              Online
-                            </Button>
-                            <Button
-                              variant={attractMode === "offline" ? "default" : "outline"}
-                              onClick={() => { setAttractMode("offline"); setSelectedFormat(null); }}
-                              className="px-6"
-                            >
-                              Offline
-                            </Button>
-                          </div>
-
-                          {attractMode === "online" ? (
-                            <div className="space-y-4">
-                              <p className="text-muted-foreground">
-                                Branded Content Campaigns on InsideIIM's high-traffic platforms
-                              </p>
-                              
-                              {/* Platform Logos */}
-                              <div className="flex items-center gap-6 mb-4">
-                                {platformLogos.map((platform) => (
-                                  <div key={platform.name} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                                    <platform.icon className="h-6 w-6" />
-                                    <span className="text-sm font-medium">{platform.name}</span>
-                                  </div>
-                                ))}
-                              </div>
-                              
-                              {/* Formats */}
-                              <div className="flex flex-wrap gap-2">
-                                {onlineFormats.map((format) => (
-                                  <button
-                                    key={format}
-                                    onClick={() => setSelectedFormat(selectedFormat === format ? null : format)}
-                                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all cursor-pointer ${
-                                      selectedFormat === format
-                                        ? "bg-primary text-primary-foreground"
-                                        : "bg-primary/10 text-primary hover:bg-primary/20"
-                                    }`}
-                                  >
-                                    {format}
-                                  </button>
-                                ))}
-                              </div>
-
-                              {/* Thumbnails Carousel */}
-                              {selectedFormat && formatContent[selectedFormat] && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: "auto" }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  className="mt-4 relative"
-                                >
-                                  {/* Navigation Arrows */}
-                                  <button
-                                    onClick={() => scrollCarousel("left")}
-                                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
-                                  >
-                                    <ChevronLeft className="w-5 h-5 text-foreground" />
-                                  </button>
-                                  <button
-                                    onClick={() => scrollCarousel("right")}
-                                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
-                                  >
-                                    <ChevronRight className="w-5 h-5 text-foreground" />
-                                  </button>
-
-                                  <div 
-                                    ref={carouselRef}
-                                    className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory px-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-                                  >
-                                    {formatContent[selectedFormat].links.map((link, idx) => {
-                                      const thumbnails = formatContent[selectedFormat].thumbnails;
-                                      const thumbnail = thumbnails?.[idx];
-                                      
-                                      return (
-                                        <div
-                                          key={idx}
-                                          className="flex-shrink-0 w-[85%] md:w-[48%] snap-start rounded-xl overflow-hidden border border-border"
-                                        >
-                                          {formatContent[selectedFormat].type === "youtube" ? (
-                                            <div className="aspect-video bg-muted">
-                                              <img
-                                                src={getYouTubeThumbnail(link)}
-                                                alt={`${selectedFormat} thumbnail ${idx + 1}`}
-                                                className="w-full h-full object-cover"
-                                              />
-                                            </div>
-                                          ) : thumbnail ? (
-                                            <div className="bg-muted">
-                                              <img
-                                                src={thumbnail}
-                                                alt={`${selectedFormat} thumbnail ${idx + 1}`}
-                                                className="w-full h-auto object-contain"
-                                              />
-                                            </div>
-                                          ) : formatContent[selectedFormat].type === "instagram" ? (
-                                            <div className="aspect-square bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
-                                              <Instagram className="w-12 h-12 text-white" />
-                                            </div>
-                                          ) : (
-                                            <div className="p-4 bg-card aspect-video flex flex-col justify-center">
-                                              <p className="text-sm text-muted-foreground line-clamp-3">
-                                                {link.split("/").pop()?.replace(/-/g, " ").slice(0, 80)}...
-                                              </p>
-                                            </div>
-                                          )}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </div>
-                          ) : (
-                            <div className="space-y-4">
-                              <p className="text-muted-foreground">
-                                Engage first-hand with high-intent leads through exclusive offline events
-                              </p>
-                              
-                              {/* Cafe Logos */}
-                              <div className="mt-4 flex gap-6 items-center">
-                                <img 
-                                  src={konversationsCafeLogo} 
-                                  alt="Konversations Cafe 2025" 
-                                  className="h-24 object-contain"
-                                />
-                                <img 
-                                  src={kareersCafeLogo} 
-                                  alt="Kareers Cafe" 
-                                  className="h-24 object-contain"
-                                />
-                              </div>
-                            </div>
-                          )}
-                        </>
-                      ) : service.phase === "ENGAGE" ? (
-                        <>
-                          {/* Ayana AI Features */}
-                          <div className="mt-4">
-                            <h4 className="text-lg font-bold text-foreground mb-3">Meet Ayana AI</h4>
-                            <p className="text-muted-foreground text-sm mb-4">
-                              Your AI-powered nurturing engine that automates follow-ups and improves conversions.
-                            </p>
-                            <div className="grid grid-cols-2 gap-3">
-                              {ayanaFeatures.map((feature) => (
-                                <div key={feature.title} className="flex items-start gap-2">
-                                  <feature.icon className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
-                                  <div>
-                                    <p className="text-xs font-medium text-foreground">{feature.title}</p>
-                                    <p className="text-xs text-muted-foreground">{feature.description}</p>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </>
-                      ) : service.phase === "SHORTLIST" ? (
-                        <>
-                          {/* PotentialAI / KonverseAI Toggle Buttons */}
-                          <div className="flex gap-3 mb-6">
-                            <Button
-                              variant={shortlistMode === "potential" ? "default" : "outline"}
-                              onClick={() => setShortlistMode("potential")}
-                              className="px-6"
-                            >
-                              PotentialAI Admit
-                            </Button>
-                            <Button
-                              variant={shortlistMode === "konverse" ? "default" : "outline"}
-                              onClick={() => setShortlistMode("konverse")}
-                              className="px-6"
-                            >
-                              KonverseAI Admit
-                            </Button>
-                          </div>
-
-                          {shortlistMode === "potential" ? (
-                            <div className="space-y-4">
-                              <p className="text-muted-foreground mb-4">
-                                Intelligent Shortlisting Tool for bias-free evaluation
-                              </p>
-                              <ul className="space-y-3">
-                                <li className="flex items-start gap-3">
-                                  <Upload className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Upload 1000s of profiles with ease</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <SlidersHorizontal className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Define customized shortlisting rules</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <ListOrdered className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Get ranked, bias-free shortlists in hours</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <Timer className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Drastically reduce manual screening effort</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <Link2 className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Direct CRM integration for seamless workflow</span>
-                                </li>
-                              </ul>
-                            </div>
-                          ) : (
-                            <div className="space-y-4">
-                              <p className="text-muted-foreground mb-4">
-                                AI-Led Autonomous Interviews - Smarter, Scalable, Bias-Free
-                              </p>
-                              <ul className="space-y-3">
-                                <li className="flex items-start gap-3">
-                                  <Mic className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Voice-first, natural conversation experience</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <Languages className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Bilingual support (English, Hindi, Hinglish)</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <Timer className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">24/7 availability - scales to thousands of candidates</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <Bot className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">AI conducts full interview autonomously with dynamic follow-ups</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                  <FileText className="h-4 w-4 mt-1 flex-shrink-0 text-red-500" />
-                                  <span className="text-foreground/80 text-sm">Competency-mapped scores with detailed transcripts & recommendations</span>
-                                </li>
-                              </ul>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <>
-                          <p className="text-muted-foreground mb-4">
-                            {service.description}
-                          </p>
-                          <ul className="space-y-2">
-                            {service.features.map((feature, idx) => (
-                              <li key={idx} className="flex items-start gap-3">
-                                <CheckCircle className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                                <span className="text-foreground/80 text-sm">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      )}
+                      {renderServiceContent(service)}
                     </div>
                   </motion.div>
                 );
               })}
             </div>
-          </div>
-        </section>
 
-
-        {/* Partner Schools */}
-        <section className="py-16 px-6 bg-muted/30">
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-xl font-semibold text-muted-foreground mb-8"
-            >
-              Trusted by India's Top B-Schools
-            </motion.h3>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              {partnerSchools.map((school) => (
-                <span
-                  key={school}
-                  className="px-6 py-3 bg-background border border-border rounded-full text-foreground font-medium"
+            {/* Mobile Collapsible Layout */}
+            <div className="md:hidden space-y-4">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.phase}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="border border-border rounded-lg overflow-hidden"
                 >
-                  {school}
-                </span>
+                  <button
+                    onClick={() => toggleService(service.phase)}
+                    className="w-full flex items-center justify-between p-4 bg-card hover:bg-muted/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-primary/60 shadow-[0_0_8px_2px_hsl(var(--primary)/0.3)]" />
+                      <div className="text-left">
+                        <h3 className="text-base font-semibold text-foreground">
+                          {service.phase.charAt(0) + service.phase.slice(1).toLowerCase()}
+                        </h3>
+                        <p className="text-xs text-muted-foreground line-clamp-1">{service.title}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-xs">{expandedService === service.phase ? "Collapse" : "Expand"}</span>
+                      <motion.div
+                        animate={{ rotate: expandedService === service.phase ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown className="h-5 w-5" />
+                      </motion.div>
+                    </div>
+                  </button>
+                  
+                  <AnimatePresence>
+                    {expandedService === service.phase && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="p-4 pt-0 border-t border-border">
+                          {renderServiceContent(service)}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-
-        {/* CTA Section */}
-        <section className="py-20 px-6 bg-primary text-primary-foreground">
+        {/* CTA Section - White Background */}
+        <section className="py-12 md:py-16 px-6 bg-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-4xl font-sans font-semibold mb-6"
+              className="text-xl md:text-2xl lg:text-4xl font-sans font-semibold text-black mb-4 md:mb-6"
             >
               Ready to Transform Your Admissions?
             </motion.h2>
@@ -700,9 +761,9 @@ const ForUniversities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-lg opacity-90 mb-8 max-w-2xl mx-auto"
+              className="text-sm md:text-base lg:text-lg text-black/70 mb-6 md:mb-8 max-w-2xl mx-auto"
             >
-              Join 100+ universities that trust InsideIIM for their end-to-end marketing solutions. Schedule a demo to see how we can help you attract, engage, and shortlist the best candidates.
+              Join 100+ universities that trust InsideIIM for their end-to-end marketing solutions.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -712,7 +773,7 @@ const ForUniversities = () => {
             >
               <Button 
                 size="lg" 
-                variant="secondary"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 onClick={() => setIsFormOpen(true)}
               >
                 Schedule a Demo
