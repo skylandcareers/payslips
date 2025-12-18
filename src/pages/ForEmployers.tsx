@@ -303,18 +303,19 @@ const ForEmployers = () => {
         </section>
 
         {/* Trusted by Top Employers */}
-        <section className="relative overflow-hidden border-y border-border">
+        <section className="relative overflow-hidden border-y border-border/30 bg-black/50">
           <div className="group relative m-auto max-w-7xl px-6">
             <div className="flex flex-col items-center md:flex-row">
-              <div className="inline-flex whitespace-nowrap border-b border-dashed py-10 text-2xl font-semibold md:border-b-0 md:border-r md:py-10 md:pr-10">
+              <div className="inline-flex whitespace-nowrap border-b border-dashed border-border/50 py-10 text-2xl font-semibold text-foreground md:border-b-0 md:border-r md:py-14 md:pr-10">
                 Trusted by experts.
                 <br className="hidden md:block" />
                 Used by the leaders.
               </div>
-              <div className="w-full md:w-[calc(100%-220px)]">
+              <div className="w-full md:w-[calc(100%-260px)] md:pl-10">
                 <div className="relative py-6 md:overflow-hidden">
                   <LogoCloud 
                     logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
+                    duration={30}
                   />
                 </div>
               </div>
