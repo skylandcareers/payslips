@@ -115,7 +115,7 @@ export const CardSlide = memo(function CardSlide({
               <img
                 src={card.image}
                 alt={card.name}
-                className="w-full h-32 sm:h-40 md:h-44 lg:h-48 rounded-lg border border-muted/20 object-contain bg-muted/10 shadow-md"
+                className="w-full h-32 sm:h-40 md:h-44 lg:h-48 rounded-lg border border-muted/20 object-contain bg-muted/10 shadow-md grayscale"
                 loading="lazy"
               />
             </div>

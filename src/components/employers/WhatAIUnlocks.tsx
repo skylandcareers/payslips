@@ -1,17 +1,11 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import {
   AreaChart,
   Area,
   ResponsiveContainer,
 } from "recharts";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 
 const data = [
   { name: "Week 1", value: 100 },
@@ -47,11 +41,20 @@ const stats = [
 ];
 
 const WhatAIUnlocks = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(mobileRef, { once: false, margin: "-100px" });
+  const [hasExpanded, setHasExpanded] = useState(false);
+
+  useEffect(() => {
+    if (isInView && !hasExpanded) {
+      setHasExpanded(true);
+    }
+  }, [isInView, hasExpanded]);
 
   return (
     <section className="py-16 md:py-32 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      {/* Desktop background only */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <StaticNetworkBackground density={35} />
       </div>
       <div className="container mx-auto px-6 relative z-10">
@@ -91,49 +94,54 @@ const WhatAIUnlocks = () => {
           </div>
         </div>
 
-        {/* Mobile version - Collapsible */}
-        <div className="md:hidden">
-          <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-            <CollapsibleTrigger className="w-full">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex items-center justify-between py-4 border-b border-muted/30"
-              >
-                <h2 className="text-xl font-sans font-semibold text-foreground text-left">
-                  What AI Unlocks for Hiring Teams
-                </h2>
-                <ChevronDown 
-                  className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-                />
-              </motion.div>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              <div className="grid grid-cols-2 gap-6 pt-6 pb-8">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.title}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="text-left"
-                  >
-                    <div className="text-2xl font-bold text-foreground mb-1 font-sans">
-                      {stat.value}
-                    </div>
-                    <div className="text-xs font-semibold text-foreground mb-1 font-sans">
-                      {stat.title}
-                    </div>
-                    <p className="text-muted-foreground text-xs font-sans leading-relaxed">
-                      {stat.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
+        {/* Mobile version - Auto-expand on scroll */}
+        <div className="md:hidden" ref={mobileRef}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="py-4 border-b border-muted/30"
+          >
+            <h2 className="text-xl font-sans font-semibold text-foreground">
+              What AI Unlocks for Hiring Teams
+            </h2>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ 
+              height: hasExpanded ? "auto" : 0, 
+              opacity: hasExpanded ? 1 : 0 
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <div className="grid grid-cols-2 gap-6 pt-6 pb-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ 
+                    opacity: hasExpanded ? 1 : 0, 
+                    y: hasExpanded ? 0 : 10 
+                  }}
+                  transition={{ duration: 0.3, delay: hasExpanded ? index * 0.1 : 0 }}
+                  className="text-left"
+                >
+                  <div className="text-2xl font-bold text-foreground mb-1 font-sans">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs font-semibold text-foreground mb-1 font-sans">
+                    {stat.title}
+                  </div>
+                  <p className="text-muted-foreground text-xs font-sans leading-relaxed">
+                    {stat.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
 
