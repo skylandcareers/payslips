@@ -1,5 +1,6 @@
-import { motion, useInView } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface StepDescription {
   prefix: string | null;
@@ -55,15 +56,7 @@ const steps: Step[] = [
 
 const HiringFlow = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const mobileRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(mobileRef, { once: false, margin: "-100px" });
-  const [hasExpanded, setHasExpanded] = useState(false);
-
-  useEffect(() => {
-    if (isInView && !hasExpanded) {
-      setHasExpanded(true);
-    }
-  }, [isInView, hasExpanded]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -92,30 +85,40 @@ const HiringFlow = () => {
           </p>
         </motion.div>
 
-        {/* Mobile - Auto-expand on scroll */}
-        <div className="md:hidden" ref={mobileRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="py-4 border-b border-muted/30"
+        {/* Mobile - Collapsible */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="w-full py-4 border-b border-muted/30 flex items-center justify-between"
           >
-            <h2 className="text-xl font-sans font-semibold text-foreground">
-              A Full-Stack AI Hiring Flow
-            </h2>
-            <p className="text-muted-foreground text-xs font-sans mt-1">
-              Tata Consumer Products • 14,000 applicants
-            </p>
-          </motion.div>
+            <div className="text-left">
+              <h2 className="text-xl font-sans font-semibold text-foreground">
+                A Full-Stack AI Hiring Flow
+              </h2>
+              <p className="text-muted-foreground text-xs font-sans mt-1">
+                Tata Consumer Products • 14,000 applicants
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-muted-foreground">
+                {isExpanded ? "Collapse" : "Expand"}
+              </span>
+              <motion.div
+                animate={{ rotate: isExpanded ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown className="w-5 h-5 text-muted-foreground" />
+              </motion.div>
+            </div>
+          </button>
           
           <motion.div 
-            initial={{ height: 0, opacity: 0 }}
+            initial={false}
             animate={{ 
-              height: hasExpanded ? "auto" : 0, 
-              opacity: hasExpanded ? 1 : 0 
+              height: isExpanded ? "auto" : 0, 
+              opacity: isExpanded ? 1 : 0 
             }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="overflow-hidden"
           >
             <div className="py-6 space-y-4">
@@ -124,18 +127,18 @@ const HiringFlow = () => {
                   key={step.id}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ 
-                    opacity: hasExpanded ? 1 : 0, 
-                    x: hasExpanded ? 0 : -10 
+                    opacity: isExpanded ? 1 : 0, 
+                    x: isExpanded ? 0 : -10 
                   }}
-                  transition={{ delay: hasExpanded ? i * 0.1 : 0, duration: 0.3 }}
-                  className={`flex items-start gap-3 p-3 rounded ${
+                  transition={{ delay: isExpanded ? i * 0.1 : 0, duration: 0.3 }}
+                  className={`flex items-start gap-3 p-3 ${
                     step.isAI ? 'bg-primary/10' : 'bg-muted/30'
                   }`}
                 >
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                     step.isAI ? 'bg-primary text-primary-foreground' : 'bg-foreground text-background'
                   }`}>
-                    <span className="text-[6px] font-bold font-sans">{i + 1}</span>
+                    <span className="text-xs font-bold font-sans">{i + 1}</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-bold text-foreground font-sans uppercase tracking-wide">
