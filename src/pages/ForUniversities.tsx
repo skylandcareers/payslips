@@ -634,9 +634,6 @@ const ForUniversities = () => {
 
             {/* Mobile Collapsible Layout */}
             <div className="md:hidden space-y-4">
-              <h2 className="text-xl font-light text-foreground mb-8 text-center">
-                The Three Pillars
-              </h2>
               {services.map((service, index) => (
                 <motion.div
                   key={service.phase}
