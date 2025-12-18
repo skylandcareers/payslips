@@ -7,7 +7,7 @@ interface StaticNetworkBackgroundProps {
 
 const StaticNetworkBackground = ({ 
   className = '',
-  density = 60
+  density = 25
 }: StaticNetworkBackgroundProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -45,8 +45,8 @@ const StaticNetworkBackground = ({
       }
 
       // Draw connections
-      const maxDist = 150;
-      ctx.lineWidth = 0.5;
+      const maxDist = 200;
+      ctx.lineWidth = 0.8;
 
       for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
@@ -55,8 +55,8 @@ const StaticNetworkBackground = ({
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDist) {
-            const opacity = (1 - dist / maxDist) * 0.3;
-            ctx.strokeStyle = `rgba(182, 33, 0, ${opacity})`;
+            const opacity = (1 - dist / maxDist) * 0.2;
+            ctx.strokeStyle = `rgba(139, 69, 55, ${opacity})`;
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
             ctx.lineTo(points[j].x, points[j].y);
@@ -67,9 +67,9 @@ const StaticNetworkBackground = ({
 
       // Draw points
       points.forEach(point => {
-        ctx.fillStyle = 'rgba(182, 33, 0, 0.4)';
+        ctx.fillStyle = 'rgba(182, 33, 0, 0.25)';
         ctx.beginPath();
-        ctx.arc(point.x, point.y, 1.5, 0, Math.PI * 2);
+        ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
         ctx.fill();
       });
     };
