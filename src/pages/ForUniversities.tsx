@@ -541,7 +541,7 @@ const ForUniversities = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm md:text-base text-white/60 max-w-2xl mx-auto"
             >
-              Every part of your admissions journey — now powered by AI
+              Every part of your admissions journey - now powered by AI
             </motion.p>
           </div>
         </section>
