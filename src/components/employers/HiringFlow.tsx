@@ -53,10 +53,94 @@ const steps: Step[] = [
   }
 ];
 
+// Individual step component with its own scroll trigger
+const MobileStep = ({ step, index, isLast }: { step: Step; index: number; isLast: boolean }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, margin: "-20%" });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="flex flex-col items-center text-center w-full"
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ 
+        opacity: isInView ? 1 : 0.3, 
+        scale: isInView ? 1 : 0.8,
+        y: isInView ? 0 : 20
+      }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
+      {/* Circle */}
+      <div className="relative mb-3">
+        {!step.isAI && (
+          <motion.div 
+            className="absolute inset-[-6px] rounded-full border-2 border-dashed border-muted-foreground/40"
+            animate={{ opacity: isInView ? 1 : 0.3 }}
+          />
+        )}
+        
+        {isInView && (
+          <motion.div 
+            className="absolute inset-[-4px] rounded-full bg-primary/30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0.4, 0.1, 0.4], scale: [1, 1.1, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          />
+        )}
+        
+        <motion.div 
+          className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center text-center transition-all duration-300 ${
+            step.isAI 
+              ? "bg-primary text-primary-foreground" 
+              : "bg-foreground text-background"
+          }`}
+          animate={{ scale: isInView ? 1.1 : 0.9 }}
+        >
+          <span className="text-[7px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
+            {step.label}
+          </span>
+        </motion.div>
+      </div>
+
+      {/* Description */}
+      <motion.div
+        className="max-w-[250px]"
+        animate={{ opacity: isInView ? 1 : 0.3 }}
+      >
+        {(step.descAbove || step.descBelow) && (
+          <p className="text-xs text-muted-foreground font-sans">
+            {step.descAbove && (
+              <>
+                {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
+              </>
+            )}
+            {step.descBelow && (
+              <>
+                {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
+              </>
+            )}
+          </p>
+        )}
+      </motion.div>
+
+      {/* Connecting line */}
+      {!isLast && (
+        <motion.div 
+          className="w-px h-8 bg-muted-foreground/30 mt-3"
+          animate={{ 
+            scaleY: isInView ? 1 : 0,
+            opacity: isInView ? 1 : 0 
+          }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          style={{ transformOrigin: "top" }}
+        />
+      )}
+    </motion.div>
+  );
+};
+
 const HiringFlow = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const mobileRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(mobileRef, { once: false, margin: "-50px" });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -85,8 +169,8 @@ const HiringFlow = () => {
           </p>
         </motion.div>
 
-        {/* Mobile - Visual Flow with circles */}
-        <div className="md:hidden" ref={mobileRef}>
+        {/* Mobile - Visual Flow with individually animated steps */}
+        <div className="md:hidden">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -102,88 +186,16 @@ const HiringFlow = () => {
             </p>
           </motion.div>
           
-          <motion.div 
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ 
-              height: isInView ? "auto" : 0, 
-              opacity: isInView ? 1 : 0 
-            }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="flex flex-col items-center space-y-6 py-4">
-              {steps.map((step, i) => {
-                const isActive = activeIndex === i;
-                
-                return (
-                  <motion.div
-                    key={step.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ 
-                      opacity: isInView ? 1 : 0, 
-                      scale: isInView ? 1 : 0.9 
-                    }}
-                    transition={{ delay: isInView ? i * 0.1 : 0, duration: 0.3 }}
-                    className="flex flex-col items-center text-center w-full"
-                  >
-                    {/* Circle */}
-                    <div className="relative mb-3">
-                      {!step.isAI && (
-                        <div className="absolute inset-[-6px] rounded-full border-2 border-dashed border-muted-foreground/40" />
-                      )}
-                      
-                      {isActive && (
-                        <motion.div 
-                          className="absolute inset-[-4px] rounded-full bg-primary/30"
-                          animate={{ opacity: [0.4, 0.1, 0.4], scale: [1, 1.1, 1] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        />
-                      )}
-                      
-                      <motion.div 
-                        className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center text-center transition-all duration-300 ${
-                          step.isAI 
-                            ? "bg-primary text-primary-foreground" 
-                            : "bg-foreground text-background"
-                        }`}
-                        animate={{ scale: isActive ? 1.1 : 1 }}
-                      >
-                        <span className="text-[7px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
-                          {step.label}
-                        </span>
-                      </motion.div>
-                    </div>
-
-                    {/* Description */}
-                    <motion.div
-                      className="max-w-[250px]"
-                      animate={{ opacity: isActive ? 1 : 0.6 }}
-                    >
-                      {(step.descAbove || step.descBelow) && (
-                        <p className="text-xs text-muted-foreground font-sans">
-                          {step.descAbove && (
-                            <>
-                              {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
-                            </>
-                          )}
-                          {step.descBelow && (
-                            <>
-                              {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
-                            </>
-                          )}
-                        </p>
-                      )}
-                    </motion.div>
-
-                    {/* Connecting line */}
-                    {i < steps.length - 1 && (
-                      <div className="w-px h-6 bg-muted-foreground/30 mt-3" />
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
+          <div className="flex flex-col items-center space-y-2 py-4">
+            {steps.map((step, i) => (
+              <MobileStep 
+                key={step.id} 
+                step={step} 
+                index={i} 
+                isLast={i === steps.length - 1}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Flow Visualization - Desktop */}
@@ -225,12 +237,10 @@ const HiringFlow = () => {
 
                   {/* Circle */}
                   <div className="relative">
-                    {/* Dashed border for non-AI steps */}
                     {!step.isAI && (
                       <div className="absolute inset-[-8px] rounded-full border-2 border-dashed border-muted-foreground/40" />
                     )}
                     
-                    {/* Glow effect for active */}
                     {isActive && (
                       <motion.div 
                         className="absolute inset-[-4px] rounded-full bg-primary/30"
@@ -240,7 +250,6 @@ const HiringFlow = () => {
                       />
                     )}
                     
-                    {/* Main circle */}
                     <motion.div 
                       className={`relative z-10 w-28 h-28 rounded-full flex items-center justify-center text-center p-3 transition-all duration-300 ${
                         step.isAI 
