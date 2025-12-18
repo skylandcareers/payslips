@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NetworkBackground from "@/components/NetworkBackground";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
@@ -279,13 +280,10 @@ const ForUniversities = () => {
                 Branded Content Campaigns on InsideIIM's high-traffic platforms
               </p>
               
-              {/* Platform Logos */}
-              <div className="flex items-center gap-4 md:gap-6 mb-4 flex-wrap">
+              {/* Platform Logos - Sleek icons only */}
+              <div className="flex items-center gap-6 md:gap-8 mb-4">
                 {platformLogos.map((platform) => (
-                  <div key={platform.name} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                    <platform.icon className="h-5 w-5 md:h-6 md:w-6" />
-                    <span className="text-xs md:text-sm font-medium">{platform.name}</span>
-                  </div>
+                  <platform.icon key={platform.name} className="h-5 w-5 md:h-6 md:w-6 text-muted-foreground/60" />
                 ))}
               </div>
               
@@ -318,13 +316,13 @@ const ForUniversities = () => {
                   {/* Navigation Arrows */}
                   <button
                     onClick={() => scrollCarousel("left")}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-8 h-8 rounded-full bg-muted/50 flex items-center justify-center hover:bg-muted transition-colors"
                   >
                     <ChevronLeft className="w-5 h-5 text-foreground" />
                   </button>
                   <button
                     onClick={() => scrollCarousel("right")}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-8 h-8 rounded-full bg-muted/50 flex items-center justify-center hover:bg-muted transition-colors"
                   >
                     <ChevronRight className="w-5 h-5 text-foreground" />
                   </button>
@@ -340,7 +338,7 @@ const ForUniversities = () => {
                       return (
                         <div
                           key={idx}
-                          className="flex-shrink-0 w-[85%] md:w-[48%] snap-start rounded-xl overflow-hidden border border-border"
+                          className="flex-shrink-0 w-[85%] md:w-[48%] snap-start overflow-hidden"
                         >
                           {formatContent[selectedFormat].type === "youtube" ? (
                             <div className="aspect-video bg-muted">
@@ -600,8 +598,19 @@ const ForUniversities = () => {
         </section>
 
         {/* Services Section - Timeline Layout */}
-        <section id="services" className="py-20 md:py-32 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
-          <div className="max-w-7xl mx-auto">
+        <section id="services" className="relative py-20 md:py-32 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
+          <StaticNetworkBackground className="opacity-20" density={40} />
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-4xl font-light text-foreground mb-16 md:mb-24 text-center"
+            >
+              Attract, Engage, and Shortlist the Best Candidates
+            </motion.h2>
+            
             {/* Desktop Timeline with Scroll Animation */}
             <div className="hidden md:block">
               <Timeline 
@@ -630,7 +639,7 @@ const ForUniversities = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="border border-border/50 overflow-hidden"
+                  className="overflow-hidden"
                 >
                   <button
                     onClick={() => toggleService(service.phase)}
@@ -661,7 +670,7 @@ const ForUniversities = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-4 pt-0 border-t border-border/30">
+                        <div className="p-4 pt-0">
                           <p className="text-xs text-muted-foreground mb-3">{service.title}</p>
                           {renderServiceContent(service)}
                         </div>
