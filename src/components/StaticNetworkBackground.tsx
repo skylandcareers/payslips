@@ -44,9 +44,9 @@ const StaticNetworkBackground = ({
         });
       }
 
-      // Draw connections
-      const maxDist = 200;
-      ctx.lineWidth = 0.8;
+      // Draw connections - rust colored lines
+      const maxDist = 250;
+      ctx.lineWidth = 1;
 
       for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
@@ -55,8 +55,9 @@ const StaticNetworkBackground = ({
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDist) {
-            const opacity = (1 - dist / maxDist) * 0.2;
-            ctx.strokeStyle = `rgba(139, 69, 55, ${opacity})`;
+            const opacity = (1 - dist / maxDist) * 0.5;
+            // Rust/copper color: rgb(139, 90, 75)
+            ctx.strokeStyle = `rgba(139, 90, 75, ${opacity})`;
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
             ctx.lineTo(points[j].x, points[j].y);
@@ -65,11 +66,11 @@ const StaticNetworkBackground = ({
         }
       }
 
-      // Draw points
+      // Draw small rust-colored dots at connection points
       points.forEach(point => {
-        ctx.fillStyle = 'rgba(182, 33, 0, 0.25)';
+        ctx.fillStyle = 'rgba(160, 80, 60, 0.6)';
         ctx.beginPath();
-        ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
+        ctx.arc(point.x, point.y, 1.5, 0, Math.PI * 2);
         ctx.fill();
       });
     };
