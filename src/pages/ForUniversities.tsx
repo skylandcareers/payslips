@@ -561,27 +561,6 @@ const ForUniversities = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-8 md:py-12 bg-primary text-primary-foreground">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">{stat.value}</div>
-                  <div className="text-xs md:text-sm opacity-90">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Trusted By Schools - Logo Strip */}
         <section className="py-10 md:py-16 px-6 bg-muted/30">
           <div className="max-w-6xl mx-auto">
@@ -612,16 +591,14 @@ const ForUniversities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row justify-center gap-8 md:gap-16"
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
             >
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-foreground">100+</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Partner Schools</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-foreground">120+</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Campaigns Delivered</div>
-              </div>
+              {stats.map((stat, index) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
             </motion.div>
           </div>
         </section>
