@@ -262,7 +262,7 @@ const HiringFlow = () => {
 
       {/* Mobile - Sticky scroll with step-by-step reveal */}
       <div className="md:hidden" ref={containerRef}>
-        <div className="h-[180vh] relative">
+        <div className="h-[140vh] relative">
           <div className="sticky top-16 px-6 py-8">
             {/* Header */}
             <div className="mb-6">
