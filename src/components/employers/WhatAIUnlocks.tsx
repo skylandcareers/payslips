@@ -54,7 +54,7 @@ const WhatAIUnlocks = () => {
   return (
     <section className="py-16 md:py-32 bg-background relative overflow-hidden">
       {/* Desktop background only */}
-      <div className="absolute inset-0 z-0 hidden md:block">
+      <div className="absolute inset-0 z-0 hidden md:block opacity-60">
         <StaticNetworkBackground density={35} />
       </div>
       <div className="container mx-auto px-6 relative z-10">
