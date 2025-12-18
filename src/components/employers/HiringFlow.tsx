@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 interface StepDescription {
   prefix: string | null;
@@ -55,6 +61,7 @@ const steps: Step[] = [
 
 const HiringFlow = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,15 +71,15 @@ const HiringFlow = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-background overflow-hidden">
+    <section className="py-16 md:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
-        {/* Header */}
+        {/* Desktop Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 hidden md:block"
         >
           <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
             A Full-Stack AI Hiring Flow
@@ -82,6 +89,73 @@ const HiringFlow = () => {
             <span className="text-foreground font-semibold">14,000 applicants</span>
           </p>
         </motion.div>
+
+        {/* Mobile - Collapsible */}
+        <div className="md:hidden">
+          <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+            <CollapsibleTrigger className="w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-between py-4 border-b border-muted/30"
+              >
+                <div className="text-left">
+                  <h2 className="text-xl font-sans font-semibold text-foreground">
+                    A Full-Stack AI Hiring Flow
+                  </h2>
+                  <p className="text-muted-foreground text-xs font-sans mt-1">
+                    Tata Consumer Products • 14,000 applicants
+                  </p>
+                </div>
+                <ChevronDown 
+                  className={`h-5 w-5 text-muted-foreground transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} 
+                />
+              </motion.div>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="py-6 space-y-4">
+                {steps.map((step, i) => (
+                  <motion.div
+                    key={step.id}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    className={`flex items-start gap-3 p-3 rounded ${
+                      step.isAI ? 'bg-primary/10' : 'bg-muted/30'
+                    }`}
+                  >
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      step.isAI ? 'bg-primary text-primary-foreground' : 'bg-foreground text-background'
+                    }`}>
+                      <span className="text-[6px] font-bold font-sans">{i + 1}</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-bold text-foreground font-sans uppercase tracking-wide">
+                        {step.label.replace('\n', ' ')}
+                      </p>
+                      {(step.descAbove || step.descBelow) && (
+                        <p className="text-xs text-muted-foreground font-sans mt-1">
+                          {step.descAbove && (
+                            <>
+                              {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
+                            </>
+                          )}
+                          {step.descBelow && (
+                            <>
+                              {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
+                            </>
+                          )}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        </div>
 
         {/* Flow Visualization - Desktop */}
         <div className="hidden lg:block">
@@ -199,83 +273,13 @@ const HiringFlow = () => {
           </div>
         </div>
 
-        {/* Flow Visualization - Mobile (Vertical) */}
-        <div className="lg:hidden">
-          <div className="flex flex-col items-center space-y-8">
-            {steps.map((step, i) => {
-              const isActive = activeIndex === i;
-              
-              return (
-                <motion.div
-                  key={step.id}
-                  className="flex flex-col items-center text-center"
-                  onClick={() => setActiveIndex(i)}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {/* Circle */}
-                  <div className="relative mb-4">
-                    {!step.isAI && (
-                      <div className="absolute inset-[-6px] rounded-full border-2 border-dashed border-muted-foreground/40" />
-                    )}
-                    
-                    <motion.div 
-                      className={`relative z-10 w-20 h-20 rounded-full flex items-center justify-center text-center p-2 transition-all duration-300 ${
-                        step.isAI 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-foreground text-background"
-                      }`}
-                      animate={{ scale: isActive ? 1.05 : 1 }}
-                    >
-                      <span className="text-[8px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
-                        {step.label}
-                      </span>
-                    </motion.div>
-                  </div>
-
-                  {/* Description */}
-                  <motion.div
-                    className="max-w-[200px]"
-                    animate={{ opacity: isActive ? 1 : 0.6 }}
-                  >
-                    {(step.descAbove || step.descBelow) && (
-                      <div className="flex items-start gap-2 justify-center">
-                        <div className="w-2 h-2 rounded-full bg-primary mt-1 flex-shrink-0" />
-                        <p className="text-xs text-muted-foreground text-left font-sans">
-                          {step.descAbove && (
-                            <>
-                              {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
-                            </>
-                          )}
-                          {step.descBelow && (
-                            <>
-                              {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
-                            </>
-                          )}
-                        </p>
-                      </div>
-                    )}
-                  </motion.div>
-
-                  {/* Connecting line */}
-                  {i < steps.length - 1 && (
-                    <div className="w-px h-8 bg-muted-foreground/20 mt-4" />
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Case Study Credit */}
+        {/* Case Study Credit - Desktop only */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-16 pt-8 border-t border-muted/20"
+          className="text-center mt-16 pt-8 border-t border-muted/20 hidden md:block"
         >
           <p className="text-sm text-muted-foreground font-sans">
             Case Study: <span className="text-foreground font-semibold">Tata Consumer Products</span> Summer Hiring Process across <span className="text-foreground font-semibold">50+ top campuses</span>
