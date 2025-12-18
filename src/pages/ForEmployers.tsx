@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
-import { LogoCloud } from "@/components/ui/logo-cloud";
+import { LogoCloud } from "@/components/ui/logo-cloud-3";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { 
@@ -302,21 +302,23 @@ const ForEmployers = () => {
           </div>
         </section>
 
-        {/* Trusted by Leaders */}
-        <section className="py-16 bg-black/80 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-light text-muted-foreground mb-2">
-              Trusted by leaders.
-            </h2>
-            <p className="text-3xl md:text-4xl font-bold text-foreground">
-              120+ Partners
-            </p>
-          </div>
-          <div className="relative">
-            <LogoCloud 
-              logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
-              duration={35}
-            />
+        {/* Trusted by Top Employers */}
+        <section className="relative overflow-hidden border-y border-border/20">
+          <div className="group relative m-auto max-w-7xl px-6">
+            <div className="flex flex-col items-center md:flex-row">
+              <div className="inline-flex whitespace-nowrap border-b border-dashed border-border/30 py-10 text-2xl font-semibold md:border-b-0 md:border-r md:py-10 md:pr-10">
+                Trusted by experts.
+                <br className="hidden md:block" />
+                Used by the leaders.
+              </div>
+              <div className="w-full md:w-[calc(100%-220px)]">
+                <div className="relative py-6 md:overflow-hidden">
+                  <LogoCloud 
+                    logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
