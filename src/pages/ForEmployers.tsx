@@ -302,24 +302,21 @@ const ForEmployers = () => {
           </div>
         </section>
 
-        {/* Trusted by Top Employers */}
-        <section className="relative overflow-hidden border-y border-border/30 bg-black/50">
-          <div className="group relative m-auto max-w-7xl px-6">
-            <div className="flex flex-col items-center md:flex-row">
-              <div className="inline-flex whitespace-nowrap border-b border-dashed border-border/50 py-10 text-2xl font-semibold text-foreground md:border-b-0 md:border-r md:py-14 md:pr-10">
-                Trusted by experts.
-                <br className="hidden md:block" />
-                Used by the leaders.
-              </div>
-              <div className="w-full md:w-[calc(100%-260px)] md:pl-10">
-                <div className="relative py-6 md:overflow-hidden">
-                  <LogoCloud 
-                    logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
-                    duration={30}
-                  />
-                </div>
-              </div>
-            </div>
+        {/* Trusted by Leaders */}
+        <section className="py-16 bg-black/80 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-light text-muted-foreground mb-2">
+              Trusted by leaders.
+            </h2>
+            <p className="text-3xl md:text-4xl font-bold text-foreground">
+              120+ Partners
+            </p>
+          </div>
+          <div className="relative">
+            <LogoCloud 
+              logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
+              duration={35}
+            />
           </div>
         </section>
 

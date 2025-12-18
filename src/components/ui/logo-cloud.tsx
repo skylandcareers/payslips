@@ -1,5 +1,6 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { cn } from "@/lib/utils";
+import { Play } from "lucide-react";
 
 type Logo = {
   src: string;
@@ -16,16 +17,12 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 export function LogoCloud({ className, logos, duration = 40, ...props }: LogoCloudProps) {
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <InfiniteSlider gap={64} duration={duration}>
+      <InfiniteSlider gap={80} duration={duration}>
         {logos.map((logo) => (
-          <img
-            key={logo.alt}
-            src={logo.src}
-            alt={logo.alt}
-            width={logo.width ?? 120}
-            height={logo.height ?? 60}
-            className="h-12 w-auto object-contain"
-          />
+          <div key={logo.alt} className="flex items-center gap-3 text-muted-foreground/60">
+            <Play className="h-4 w-4 fill-current" />
+            <span className="text-lg font-medium whitespace-nowrap">{logo.alt}</span>
+          </div>
         ))}
       </InfiniteSlider>
     </div>
