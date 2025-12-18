@@ -48,7 +48,7 @@ const WhatAIUnlocks = () => {
   });
 
   return (
-    <section className="py-16 md:py-32 bg-background relative overflow-hidden">
+    <section className="bg-background relative overflow-visible md:overflow-hidden md:py-32">
       {/* Desktop background only */}
       <div className="absolute inset-0 z-0 hidden md:block">
         <StaticNetworkBackground density={35} />
@@ -93,9 +93,9 @@ const WhatAIUnlocks = () => {
       {/* Mobile - Sticky scroll reveal */}
       <div className="md:hidden" ref={containerRef}>
         {/* Tall scroll container */}
-        <div className="h-[300vh] relative">
+        <div className="h-[170vh] relative">
           {/* Sticky content */}
-          <div className="sticky top-0 h-screen flex flex-col justify-center px-6 overflow-hidden">
+          <div className="sticky top-0 min-h-screen flex flex-col justify-start px-6 pt-16 pb-16">
             <motion.h2
               className="text-xl font-sans font-semibold text-foreground mb-8"
             >
@@ -121,8 +121,8 @@ const WhatAIUnlocks = () => {
             </div>
 
             {/* Progress indicator */}
-            <div className="absolute bottom-20 left-6 right-6">
-              <motion.div 
+            <div className="absolute bottom-10 left-6 right-6">
+              <motion.div
                 className="h-0.5 bg-primary"
                 style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
               />
@@ -170,9 +170,10 @@ const MobileStat = ({
   start: number;
   end: number;
 }) => {
-  const opacity = useTransform(scrollYProgress, [start, start + 0.1, end, end + 0.1], [0, 1, 1, 0.3]);
-  const scale = useTransform(scrollYProgress, [start, start + 0.1, end, end + 0.1], [0.8, 1, 1, 0.95]);
-  const y = useTransform(scrollYProgress, [start, start + 0.1], [20, 0]);
+  const baseOpacity = index === 0 ? 1 : 0;
+  const opacity = useTransform(scrollYProgress, [start, start + 0.05, end, end + 0.05], [baseOpacity, 1, 1, 0.25]);
+  const scale = useTransform(scrollYProgress, [start, start + 0.05, end, end + 0.05], [0.92, 1, 1, 0.98]);
+  const y = useTransform(scrollYProgress, [start, start + 0.05], [12, 0]);
 
   return (
     <motion.div
