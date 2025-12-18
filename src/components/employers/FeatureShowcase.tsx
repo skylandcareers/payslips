@@ -9,6 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
+import potentialAiDashboard from "@/assets/products/potential-ai-dashboard.png";
 
 export type ShowcaseStep = {
   id: string;
@@ -46,7 +47,7 @@ const products: ProductTab[] = [
       { id: "2", title: "Consistent Scoring Across All Candidates", text: "One evaluation standard your entire team can rely on." },
       { id: "3", title: "Instant Shortlists, Even at Scale", text: "Processes and ranks thousands of applicants in minutes." },
     ],
-    images: [{ label: "Dashboard", src: "", alt: "PotentialAI Dashboard" }],
+    images: [{ label: "Dashboard", src: potentialAiDashboard, alt: "PotentialAI Dashboard" }],
   },
   {
     value: "assessments",
@@ -178,11 +179,19 @@ const FeatureShowcase = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute inset-0 flex items-center justify-center"
+                      className="absolute inset-0 flex items-center justify-center p-4"
                     >
-                      <div className="text-muted-foreground font-sans">
-                        [Product Screenshot]
-                      </div>
+                      {product.images[getActiveImageIndex(product.value)]?.src ? (
+                        <img 
+                          src={product.images[getActiveImageIndex(product.value)].src} 
+                          alt={product.images[getActiveImageIndex(product.value)].alt || "Product screenshot"}
+                          className="w-full h-full object-contain"
+                        />
+                      ) : (
+                        <div className="text-muted-foreground font-sans">
+                          [Product Screenshot]
+                        </div>
+                      )}
                     </motion.div>
                   </AnimatePresence>
 
