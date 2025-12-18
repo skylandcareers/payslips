@@ -93,7 +93,7 @@ const WhatAIUnlocks = () => {
       {/* Mobile - Sticky scroll reveal */}
       <div className="md:hidden" ref={containerRef}>
         {/* Tall scroll container */}
-        <div className="h-[150vh] relative">
+        <div className="h-[115vh] relative">
           {/* Sticky content */}
           <div className="sticky top-16 px-6 py-8">
             <motion.h2
