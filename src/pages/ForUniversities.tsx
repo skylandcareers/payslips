@@ -556,7 +556,7 @@ const ForUniversities = () => {
               viewport={{ once: true }}
               className="text-center text-muted-foreground text-sm mb-8 font-sans"
             >
-              Trusted by India's Top B-Schools
+              Trusted by India's Top Institutions
             </motion.p>
 
             {/* Logo Strip */}
