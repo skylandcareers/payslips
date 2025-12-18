@@ -11,7 +11,7 @@ import OurPlatforms from "./pages/OurPlatforms";
 import OurTeam from "./pages/OurTeam";
 import OurInvestors from "./pages/OurInvestors";
 
-import ForCorporates from "./pages/ForCorporates";
+import ForEmployers from "./pages/ForEmployers";
 import ForUniversities from "./pages/ForUniversities";
 import PartnerWithUs from "./pages/PartnerWithUs";
 
@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/our-investors" element={<OurInvestors />} />
           
-          <Route path="/for-corporates" element={<ForCorporates />} />
+          <Route path="/for-employers" element={<ForEmployers />} />
           <Route path="/for-universities" element={<ForUniversities />} />
           <Route path="/partner-with-us" element={<PartnerWithUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
