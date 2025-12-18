@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import NetworkBackground from "@/components/NetworkBackground";
 import { CardSlide, Card } from "./CardSlide";
+import potentialAiDashboard from "@/assets/products/potential-ai-dashboard.png";
+import signalAiDashboard from "@/assets/products/signal-ai-dashboard.png";
+import konverseAiDashboard from "@/assets/products/konverse-ai-dashboard.png";
 
 const CARDS: Card[] = [
   {
@@ -13,7 +16,7 @@ const CARDS: Card[] = [
         about. Your evaluation process automated, unbiased, and instant.
       </p>
     ),
-    image: "https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev/dashboard-gradient.png"
+    image: potentialAiDashboard
   },
   {
     id: 1,
@@ -24,7 +27,7 @@ const CARDS: Card[] = [
         Fully custom, role-aligned simulations that reflect your real work.
       </p>
     ),
-    image: "https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev/crm-featured.png"
+    image: signalAiDashboard
   },
   {
     id: 2,
@@ -36,7 +39,7 @@ const CARDS: Card[] = [
         skills that matter.
       </p>
     ),
-    image: "https://pub-940ccf6255b54fa799a9b01050e6c227.r2.dev/featured-06.png"
+    image: konverseAiDashboard
   }
 ];
 
