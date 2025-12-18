@@ -1,21 +1,9 @@
 import { motion } from "framer-motion";
-import hulLogo from "@/assets/partners/hul.png";
-import tcplLogo from "@/assets/partners/tcpl.png";
-import mahindraLogo from "@/assets/partners/mahindra-new.png";
-import relianceLogo from "@/assets/partners/reliance.jpg";
-import axisLogo from "@/assets/partners/axis-bank-logo.png";
-
-const partners = [
-  { name: "Hindustan Unilever", logo: hulLogo },
-  { name: "Tata Consumer Products", logo: tcplLogo },
-  { name: "Mahindra", logo: mahindraLogo },
-  { name: "Reliance", logo: relianceLogo },
-  { name: "Axis Bank", logo: axisLogo },
-];
+import partnerLogos from "@/assets/employers/partner-logos.png";
 
 const TrustedBySection = () => {
   return (
-    <section className="py-16 bg-background border-y border-muted/20">
+    <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -27,24 +15,46 @@ const TrustedBySection = () => {
           Trusted by experts. Used by the leaders.
         </motion.p>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center"
-            >
-              <img
-                src={partner.logo}
-                alt={`${partner.name} logo`}
-                className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
-              />
-            </motion.div>
-          ))}
-        </div>
+        {/* Logo Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-10"
+        >
+          <img
+            src={partnerLogos}
+            alt="Partner logos - Unilever, Aditya Birla Group, TAS, Colgate, Reliance, Asian Paints, Sun Pharma, Decathlon"
+            className="w-full max-w-4xl h-auto object-contain"
+          />
+        </motion.div>
+
+        {/* Stats Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
+        >
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
+              120+
+            </div>
+            <p className="text-xs text-muted-foreground font-sans">
+              Enterprise + Education Partners
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
+              530K+
+            </div>
+            <p className="text-xs text-muted-foreground font-sans">
+              Social Media Followers
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
