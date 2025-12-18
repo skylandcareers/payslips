@@ -14,21 +14,25 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 
 export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <InfiniteSlider gap={24} duration={30}>
+    <div
+      className={cn("relative overflow-hidden", className)}
+      {...props}
+    >
+      {/* Edge fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
+
+      <InfiniteSlider gap={48} duration={28} durationOnHover={40} className="py-2">
         {logos.map((logo) => (
-          <div
+          <img
             key={logo.alt}
-            className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center p-3"
-          >
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width ?? 60}
-              height={logo.height ?? 60}
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.width ?? 140}
+            height={logo.height ?? 44}
+            loading="lazy"
+            className="h-10 md:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+          />
         ))}
       </InfiniteSlider>
     </div>
