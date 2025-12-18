@@ -229,7 +229,7 @@ const ForEmployers = () => {
   const selectedToolData = aiTools.find(tool => tool.id === selectedTool);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-sans">
       <Header />
       
       <main className="pt-24">
@@ -303,15 +303,14 @@ const ForEmployers = () => {
         </section>
 
         {/* Trusted by Top Employers */}
-        <section className="relative overflow-hidden border-y border-border/20">
+        <section className="relative overflow-hidden border-y border-primary/50">
           <div className="group relative m-auto max-w-7xl px-6">
             <div className="flex flex-col items-center md:flex-row">
-              <div className="inline-flex whitespace-nowrap border-b border-dashed border-border/30 py-10 text-2xl font-semibold md:border-b-0 md:border-r md:py-10 md:pr-10">
-                Trusted by experts.
-                <br className="hidden md:block" />
-                Used by the leaders.
+              <div className="inline-flex flex-col whitespace-nowrap border-b border-dashed border-primary/30 py-10 text-2xl md:text-3xl font-light text-muted-foreground md:border-b-0 md:border-r md:py-12 md:pr-12">
+                <span>Trusted by experts.</span>
+                <span>Used by the leaders.</span>
               </div>
-              <div className="w-full md:w-[calc(100%-220px)]">
+              <div className="w-full md:w-[calc(100%-280px)] md:pl-8">
                 <div className="relative py-6 md:overflow-hidden">
                   <LogoCloud 
                     logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
