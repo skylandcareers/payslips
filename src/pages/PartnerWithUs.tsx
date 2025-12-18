@@ -78,7 +78,7 @@ const PartnerWithUs = () => {
             >
               Partnership Opportunities
             </motion.h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {partnerTypes.map((partner, index) => (
                 <motion.div
                   key={partner.title}
@@ -86,11 +86,11 @@ const PartnerWithUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors"
+                  className={`p-6 ${index % 3 === 0 ? 'bg-[#1a1a1a]/80' : index % 3 === 1 ? 'bg-white/80' : 'bg-[#2a2a2a]/80'}`}
                 >
-                  <partner.icon className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-bold text-foreground mb-2">{partner.title}</h3>
-                  <p className="text-muted-foreground">{partner.description}</p>
+                  <partner.icon className={`h-8 w-8 mb-4 ${index % 3 === 1 ? 'text-black' : 'text-white/70'}`} strokeWidth={1.5} />
+                  <h3 className={`text-lg font-semibold mb-2 ${index % 3 === 1 ? 'text-black' : 'text-white'}`}>{partner.title}</h3>
+                  <p className={`text-sm ${index % 3 === 1 ? 'text-black/70' : 'text-white/60'}`}>{partner.description}</p>
                 </motion.div>
               ))}
             </div>
