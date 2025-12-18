@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NetworkBackground from "@/components/NetworkBackground";
-import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
@@ -280,10 +279,10 @@ const ForUniversities = () => {
                 Branded Content Campaigns on InsideIIM's high-traffic platforms
               </p>
               
-              {/* Platform Logos - Sleek icons only */}
+              {/* Platform Logos - Sleek thin icons */}
               <div className="flex items-center gap-6 md:gap-8 mb-4">
                 {platformLogos.map((platform) => (
-                  <platform.icon key={platform.name} className="h-5 w-5 md:h-6 md:w-6 text-muted-foreground/60" />
+                  <platform.icon key={platform.name} className="h-5 w-5 md:h-6 md:w-6 text-muted-foreground/50" strokeWidth={1} />
                 ))}
               </div>
               
@@ -507,7 +506,7 @@ const ForUniversities = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-sans">
       <Header />
       
       <main className="pt-24">
@@ -598,15 +597,15 @@ const ForUniversities = () => {
         </section>
 
         {/* Services Section - Timeline Layout */}
-        <section id="services" className="relative py-20 md:py-32 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
-          <StaticNetworkBackground className="opacity-20" density={40} />
+        <section id="services" className="relative py-16 md:py-24 px-6 scroll-mt-24 md:scroll-mt-28" ref={servicesRef}>
+          <NetworkBackground className="brightness-110" />
           <div className="max-w-7xl mx-auto relative z-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-4xl font-light text-foreground mb-16 md:mb-24 text-center"
+              className="text-2xl md:text-4xl font-light text-foreground mb-10 md:mb-16 text-center font-sans"
             >
               Attract, Engage, and Shortlist the Best Candidates
             </motion.h2>
@@ -683,36 +682,21 @@ const ForUniversities = () => {
           </div>
         </section>
 
-        {/* CTA Section - White Background */}
-        <section className="py-12 md:py-16 px-6 bg-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h2
+        {/* CTA Section - White Background - Compact */}
+        <section className="py-8 md:py-10 bg-white">
+          <div className="container mx-auto px-6">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-xl md:text-2xl lg:text-4xl font-sans font-semibold text-black mb-4 md:mb-6"
+              className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
             >
-              Ready to Transform Your Admissions?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-sm md:text-base lg:text-lg text-black/70 mb-6 md:mb-8 max-w-2xl mx-auto"
-            >
-              Join 100+ universities that trust InsideIIM for their end-to-end marketing solutions.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+              <h2 className="text-lg md:text-2xl font-semibold text-black font-sans text-center md:text-left">
+                Ready to Transform Your Admissions?
+              </h2>
               <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 text-sm font-sans"
                 onClick={() => setIsFormOpen(true)}
               >
                 Schedule a Demo
