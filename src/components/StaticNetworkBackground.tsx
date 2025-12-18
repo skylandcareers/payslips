@@ -56,11 +56,11 @@ const StaticNetworkBackground = ({
 
           if (dist < maxDist) {
             const opacity = (1 - dist / maxDist) * 0.35;
-            // Peachy/salmon color matching the live NetworkBackground
+            // Peachy/salmon/rust color matching the live NetworkBackground
             const gradientT = points[i].y / height;
-            const r = Math.floor(230 + gradientT * 25); // 230-255
-            const g = Math.floor(51 + gradientT * 64);  // 51-115
-            const b = Math.floor(51 + gradientT * 51);  // 51-102
+            const r = Math.floor(180 + gradientT * 40); // 180-220 (less red)
+            const g = Math.floor(80 + gradientT * 50);  // 80-130 (more green for peach)
+            const b = Math.floor(70 + gradientT * 40);  // 70-110 (more blue)
             ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
@@ -70,13 +70,13 @@ const StaticNetworkBackground = ({
         }
       }
 
-      // Draw points - peachy/salmon color
+      // Draw points - peachy/salmon/rust color
       points.forEach(point => {
         const gradientT = point.y / height;
-        const r = Math.floor(230 + gradientT * 25);
-        const g = Math.floor(51 + gradientT * 64);
-        const b = Math.floor(51 + gradientT * 51);
-        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 0.5)`;
+        const r = Math.floor(180 + gradientT * 40);
+        const g = Math.floor(80 + gradientT * 50);
+        const b = Math.floor(70 + gradientT * 40);
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 0.6)`;
         ctx.beginPath();
         ctx.arc(point.x, point.y, 1.5, 0, Math.PI * 2);
         ctx.fill();
