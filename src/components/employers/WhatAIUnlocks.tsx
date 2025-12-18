@@ -95,14 +95,14 @@ const WhatAIUnlocks = () => {
         {/* Tall scroll container */}
         <div className="h-[115vh] relative">
           {/* Sticky content */}
-          <div className="sticky top-16 px-6 py-8">
+          <div className="sticky top-16 px-6 pt-6 pb-6 min-h-[calc(100svh-4rem)] flex flex-col">
             <motion.h2
               className="text-xl font-sans font-semibold text-foreground mb-6"
             >
               What AI Unlocks for Hiring Teams
             </motion.h2>
             
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-2 gap-4 mb-4">
               {stats.map((stat, index) => {
                 const start = index * 0.2;
                 const end = start + 0.3;
@@ -125,6 +125,12 @@ const WhatAIUnlocks = () => {
               className="h-0.5 bg-primary"
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
             />
+
+            <div className="mt-auto pt-6">
+              <p className="text-[10px] text-muted-foreground font-sans">
+                Next: A Full-Stack AI Hiring Flow
+              </p>
+            </div>
           </div>
         </div>
       </div>

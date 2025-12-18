@@ -263,7 +263,7 @@ const HiringFlow = () => {
       {/* Mobile - Sticky scroll with step-by-step reveal */}
       <div className="md:hidden" ref={containerRef}>
         <div className="h-[140vh] relative">
-          <div className="sticky top-16 px-6 py-8">
+          <div className="sticky top-16 px-6 pt-6 pb-6 min-h-[calc(100svh-4rem)] flex flex-col">
             {/* Header */}
             <div className="mb-6">
               <h2 className="text-xl font-sans font-semibold text-foreground">
@@ -275,36 +275,37 @@ const HiringFlow = () => {
             </div>
 
             {/* Current step display */}
-            <div className="flex items-center justify-center py-8">
+            <div className="flex-1 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <MobileStep step={steps[activeIndex]} />
               </AnimatePresence>
             </div>
 
-            {/* Step indicators */}
-            <div className="flex justify-center gap-2 mb-4">
-              {steps.map((step, i) => (
-                <div 
-                  key={step.id}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    i === activeIndex 
-                      ? step.isAI ? 'bg-primary w-6' : 'bg-foreground w-6'
-                      : 'bg-muted-foreground/30'
-                  }`}
-                />
-              ))}
-            </div>
+            {/* Bottom controls */}
+            <div className="mt-auto">
+              <div className="flex justify-center gap-2 mb-3">
+                {steps.map((step, i) => (
+                  <div 
+                    key={step.id}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      i === activeIndex 
+                        ? step.isAI ? 'bg-primary w-6' : 'bg-foreground w-6'
+                        : 'bg-muted-foreground/30'
+                    }`}
+                  />
+                ))}
+              </div>
 
-            {/* Progress bar - right below content */}
-            <div className="h-0.5 bg-muted/30 rounded-full overflow-hidden">
-              <motion.div 
-                className="h-full bg-primary"
-                style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-              />
+              <div className="h-0.5 bg-muted/30 rounded-full overflow-hidden">
+                <motion.div 
+                  className="h-full bg-primary"
+                  style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+                />
+              </div>
+              <p className="text-[10px] text-muted-foreground text-center mt-2 font-sans">
+                Keep scrolling for the next section
+              </p>
             </div>
-            <p className="text-[10px] text-muted-foreground text-center mt-2 font-sans">
-              Scroll to explore the flow
-            </p>
           </div>
         </div>
       </div>
