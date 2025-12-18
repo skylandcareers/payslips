@@ -47,13 +47,13 @@ const WhatAIUnlocks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-sans font-semibold text-foreground mb-16 md:mb-20"
+          className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-16 md:mb-20"
         >
           What AI Unlocks for Hiring Teams.
         </motion.h2>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-20">
+        {/* Stats grid - vertical on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-20">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
@@ -66,7 +66,7 @@ const WhatAIUnlocks = () => {
               <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 font-sans">
                 {stat.value}
               </div>
-              <div className="text-base md:text-lg font-semibold text-foreground mb-2 font-sans">
+              <div className="text-sm md:text-base font-semibold text-foreground mb-2 font-sans">
                 {stat.title}
               </div>
               <p className="text-muted-foreground text-sm font-sans leading-relaxed">
