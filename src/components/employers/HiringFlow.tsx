@@ -77,9 +77,9 @@ const HiringFlow = () => {
           <h2 className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-4">
             A Full-Stack AI Hiring Flow
           </h2>
-          <p className="text-muted-foreground text-lg font-sans">
+          <p className="text-muted-foreground text-sm md:text-base font-sans">
             Here's how Tata Consumer Products ran this flow for{" "}
-            <span className="text-primary font-semibold">14,000 applicants</span>
+            <span className="text-foreground font-semibold">14,000 applicants</span>
           </p>
         </motion.div>
 
@@ -101,12 +101,12 @@ const HiringFlow = () => {
                       <motion.div 
                         className="flex items-start gap-2"
                         initial={{ opacity: 0.5 }}
-                        animate={{ opacity: isActive ? 1 : 0.5 }}
+                        animate={{ opacity: isActive ? 1 : 0.6 }}
                         transition={{ duration: 0.4 }}
                       >
                         <motion.div 
-                          className="w-2.5 h-2.5 rounded-full bg-primary mt-1.5 flex-shrink-0"
-                          animate={{ scale: isActive ? [1, 1.4, 1] : 1 }}
+                          className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0"
+                          animate={{ scale: isActive ? [1, 1.3, 1] : 1 }}
                           transition={{ duration: 0.8, repeat: isActive ? Infinity : 0 }}
                         />
                         <p className="text-xs text-muted-foreground max-w-[140px] font-sans">
@@ -122,46 +122,49 @@ const HiringFlow = () => {
 
                   {/* Circle */}
                   <div className="relative">
+                    {/* Dashed border for non-AI steps */}
                     {!step.isAI && (
-                      <div className="absolute inset-[-8px] rounded-full border-2 border-dashed border-muted-foreground/30" />
+                      <div className="absolute inset-[-8px] rounded-full border-2 border-dashed border-muted-foreground/40" />
                     )}
                     
+                    {/* Glow effect for active */}
                     {isActive && (
                       <motion.div 
-                        className="absolute inset-[-4px] rounded-full bg-primary"
+                        className="absolute inset-[-4px] rounded-full bg-primary/30"
                         initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: [0.3, 0.1, 0.3], scale: 1 }}
+                        animate={{ opacity: [0.4, 0.1, 0.4], scale: 1 }}
                         transition={{ duration: 1.5, repeat: Infinity }}
                       />
                     )}
                     
+                    {/* Main circle */}
                     <motion.div 
-                      className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center text-center p-3 transition-all duration-300 ${
+                      className={`relative z-10 w-28 h-28 rounded-full flex items-center justify-center text-center p-3 transition-all duration-300 ${
                         step.isAI 
                           ? "bg-primary text-primary-foreground" 
-                          : "bg-muted text-foreground border border-muted-foreground/20"
+                          : "bg-foreground text-background"
                       }`}
                       animate={{ scale: isActive ? 1.05 : 1 }}
                       whileHover={{ scale: 1.08 }}
                     >
-                      <span className="text-[10px] font-semibold whitespace-pre-line leading-tight font-sans">
+                      <span className="text-[10px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
                         {step.label}
                       </span>
                     </motion.div>
                   </div>
 
                   {/* Description Below */}
-                  <div className="h-24 flex items-start pt-4">
+                  <div className="h-28 flex items-start pt-4">
                     {step.descBelow && (
                       <motion.div 
                         className="flex items-start gap-2"
                         initial={{ opacity: 0.5 }}
-                        animate={{ opacity: isActive ? 1 : 0.5 }}
+                        animate={{ opacity: isActive ? 1 : 0.6 }}
                         transition={{ duration: 0.4 }}
                       >
                         <motion.div 
-                          className="w-2.5 h-2.5 rounded-full bg-primary mt-1.5 flex-shrink-0"
-                          animate={{ scale: isActive ? [1, 1.4, 1] : 1 }}
+                          className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0"
+                          animate={{ scale: isActive ? [1, 1.3, 1] : 1 }}
                           transition={{ duration: 0.8, repeat: isActive ? Infinity : 0 }}
                         />
                         <p className="text-xs text-muted-foreground max-w-[140px] font-sans">
@@ -179,10 +182,10 @@ const HiringFlow = () => {
 
                   {/* Connecting line */}
                   {i < steps.length - 1 && (
-                    <div className="absolute top-1/2 left-full w-[calc(100%-6rem)] h-0.5 bg-muted-foreground/20 -translate-y-1/2 z-0">
+                    <div className="absolute top-1/2 left-full w-[calc(100%-7rem)] h-px bg-muted-foreground/20 -translate-y-1/2 z-0">
                       {activeIndex === i + 1 && (
                         <motion.div 
-                          className="absolute top-[-4px] w-2.5 h-2.5 rounded-full bg-primary shadow-lg shadow-primary/50"
+                          className="absolute top-[-3px] w-2 h-2 rounded-full bg-primary shadow-lg shadow-primary/50"
                           initial={{ left: "0%" }}
                           animate={{ left: "100%" }}
                           transition={{ duration: 3.5, ease: "easeOut" }}
@@ -196,56 +199,74 @@ const HiringFlow = () => {
           </div>
         </div>
 
-        {/* Flow Visualization - Mobile */}
-        <div className="lg:hidden space-y-6">
-          {steps.map((step, i) => {
-            const isActive = activeIndex === i;
-            
-            return (
-              <motion.div
-                key={step.id}
-                className={`p-4 border rounded-lg transition-all duration-300 ${
-                  isActive ? "border-muted-foreground/40 bg-muted/30" : "border-muted/20"
-                }`}
-                onClick={() => setActiveIndex(i)}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-center ${
-                    step.isAI 
-                      ? "bg-primary text-primary-foreground" 
-                      : "bg-muted text-foreground border border-muted-foreground/20"
-                  }`}>
-                    <span className="text-[8px] font-semibold whitespace-pre-line leading-tight font-sans">
-                      {step.label.split('\n')[0]}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-foreground font-sans">
-                      {step.label.replace(/\n/g, ' ')}
-                    </p>
-                    {(step.descAbove || step.descBelow) && (
-                      <p className="text-xs text-muted-foreground mt-1 font-sans">
-                        {step.descAbove && (
-                          <>
-                            {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
-                          </>
-                        )}
-                        {step.descBelow && (
-                          <>
-                            {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
-                          </>
-                        )}
-                      </p>
+        {/* Flow Visualization - Mobile (Vertical) */}
+        <div className="lg:hidden">
+          <div className="flex flex-col items-center space-y-8">
+            {steps.map((step, i) => {
+              const isActive = activeIndex === i;
+              
+              return (
+                <motion.div
+                  key={step.id}
+                  className="flex flex-col items-center text-center"
+                  onClick={() => setActiveIndex(i)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  {/* Circle */}
+                  <div className="relative mb-4">
+                    {!step.isAI && (
+                      <div className="absolute inset-[-6px] rounded-full border-2 border-dashed border-muted-foreground/40" />
                     )}
+                    
+                    <motion.div 
+                      className={`relative z-10 w-20 h-20 rounded-full flex items-center justify-center text-center p-2 transition-all duration-300 ${
+                        step.isAI 
+                          ? "bg-primary text-primary-foreground" 
+                          : "bg-foreground text-background"
+                      }`}
+                      animate={{ scale: isActive ? 1.05 : 1 }}
+                    >
+                      <span className="text-[8px] font-bold whitespace-pre-line leading-tight font-sans uppercase tracking-wide">
+                        {step.label}
+                      </span>
+                    </motion.div>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
+
+                  {/* Description */}
+                  <motion.div
+                    className="max-w-[200px]"
+                    animate={{ opacity: isActive ? 1 : 0.6 }}
+                  >
+                    {(step.descAbove || step.descBelow) && (
+                      <div className="flex items-start gap-2 justify-center">
+                        <div className="w-2 h-2 rounded-full bg-primary mt-1 flex-shrink-0" />
+                        <p className="text-xs text-muted-foreground text-left font-sans">
+                          {step.descAbove && (
+                            <>
+                              {step.descAbove.prefix} <span className="text-foreground font-semibold">{step.descAbove.bold}</span> {step.descAbove.suffix}
+                            </>
+                          )}
+                          {step.descBelow && (
+                            <>
+                              {step.descBelow.prefix} <span className="text-foreground font-semibold">{step.descBelow.bold}</span> {step.descBelow.suffix}
+                            </>
+                          )}
+                        </p>
+                      </div>
+                    )}
+                  </motion.div>
+
+                  {/* Connecting line */}
+                  {i < steps.length - 1 && (
+                    <div className="w-px h-8 bg-muted-foreground/20 mt-4" />
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Case Study Credit */}
@@ -254,10 +275,10 @@ const HiringFlow = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-16 pt-8 border-t border-muted/20"
         >
-          <p className="text-sm text-muted-foreground font-sans italic">
-            Case Study: Tata Consumer Products Summer Hiring Process across 50+ top campuses
+          <p className="text-sm text-muted-foreground font-sans">
+            Case Study: <span className="text-foreground font-semibold">Tata Consumer Products</span> Summer Hiring Process across <span className="text-foreground font-semibold">50+ top campuses</span>
           </p>
         </motion.div>
       </div>
