@@ -4,6 +4,8 @@ import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "@/assets/altuni-labs-logo-white.png";
+import insideIIMlogo from "@/assets/platforms/insideiim-logo-white.avif";
+import insideKampusLogo from "@/assets/platforms/insidekampus-logo.png";
 import ContactFormDialog from "./ContactFormDialog";
 
 const MotionLink = motion(Link);
@@ -410,8 +412,11 @@ const Header = () => {
             className="fixed left-0 right-0 z-40 bg-transparent"
             style={{ top: "72px" }}
           >
-            <div className="text-center py-1.5 text-xs text-white/60 tracking-wide">
-              From the Makers of <span className="text-white/80">InsideIIM</span> and <span className="text-white/80">InsideKampus</span>
+            <div className="flex items-center justify-center gap-2 py-1.5 text-xs text-white/60 tracking-wide">
+              From the Makers of 
+              <img src={insideIIMlogo} alt="InsideIIM" className="h-3 inline-block" />
+              and 
+              <img src={insideKampusLogo} alt="InsideKampus" className="h-3 inline-block brightness-0 invert opacity-80" />
             </div>
           </motion.div>
         )}
