@@ -65,7 +65,7 @@ const products: ProductTab[] = [
   {
     value: "interview-copilot",
     label: "Interview Co-Pilot",
-    eyebrow: "INTERVIEW ASSISTANT",
+    eyebrow: "INTERVIEW CO-PILOT",
     title: "KonverseAI",
     tagline: "Real-time guidance for consistent, comprehensive interviews.",
     description: "An interview copilot that stays active throughout the conversation - helping panels stay consistent, and walk away with clearer decisions.",
