@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import partnerLogos from "@/assets/employers/partner-logos.png";
-import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 
 const TrustedBySection = () => {
   return (
-    <section className="py-12 md:py-16 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <StaticNetworkBackground density={30} />
-      </div>
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-12 md:py-16 bg-background">
+      <div className="container mx-auto px-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
