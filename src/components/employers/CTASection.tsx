@@ -18,7 +18,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
           >
-            <h2 className="text-xl md:text-2xl font-semibold text-black font-sans">
+            <h2 className="text-lg md:text-2xl font-semibold text-black font-sans">
               10X your hiring team with AI
             </h2>
             <Button 

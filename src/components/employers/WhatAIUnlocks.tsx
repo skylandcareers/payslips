@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import {
   AreaChart,
   Area,
   ResponsiveContainer,
 } from "recharts";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const data = [
   { name: "Week 1", value: 100 },
@@ -40,49 +47,98 @@ const stats = [
 ];
 
 const WhatAIUnlocks = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <StaticNetworkBackground density={35} />
       </div>
       <div className="container mx-auto px-6 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-16 md:mb-20"
-        >
-          What AI Unlocks for Hiring Teams
-        </motion.h2>
+        {/* Desktop version */}
+        <div className="hidden md:block">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-4xl font-sans font-semibold text-foreground mb-16 md:mb-20"
+          >
+            What AI Unlocks for Hiring Teams
+          </motion.h2>
 
-        {/* Stats grid - vertical on mobile */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-20">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-left"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 font-sans">
-                {stat.value}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-20">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-left"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 font-sans">
+                  {stat.value}
+                </div>
+                <div className="text-sm font-semibold text-foreground mb-1 font-sans">
+                  {stat.title}
+                </div>
+                <p className="text-muted-foreground text-xs font-sans leading-relaxed">
+                  {stat.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile version - Collapsible */}
+        <div className="md:hidden">
+          <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+            <CollapsibleTrigger className="w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-between py-4 border-b border-muted/30"
+              >
+                <h2 className="text-xl font-sans font-semibold text-foreground text-left">
+                  What AI Unlocks for Hiring Teams
+                </h2>
+                <ChevronDown 
+                  className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+                />
+              </motion.div>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="grid grid-cols-2 gap-6 pt-6 pb-8">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="text-left"
+                  >
+                    <div className="text-2xl font-bold text-foreground mb-1 font-sans">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs font-semibold text-foreground mb-1 font-sans">
+                      {stat.title}
+                    </div>
+                    <p className="text-muted-foreground text-xs font-sans leading-relaxed">
+                      {stat.description}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-              <div className="text-sm font-semibold text-foreground mb-1 font-sans">
-                {stat.title}
-              </div>
-              <p className="text-muted-foreground text-xs font-sans leading-relaxed">
-                {stat.description}
-              </p>
-            </motion.div>
-          ))}
+            </CollapsibleContent>
+          </Collapsible>
         </div>
       </div>
 
-      {/* Area Chart - positioned lower to avoid overlap */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 pointer-events-none">
+      {/* Area Chart - Desktop only */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 pointer-events-none hidden md:block">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>

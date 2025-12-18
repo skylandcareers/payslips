@@ -64,7 +64,7 @@ const EmployerHero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-sans text-foreground leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-sans text-foreground leading-tight">
               Full Stack AI That Makes Hiring Faster, Fairer, and{" "}
               <span className="text-primary">Human-Led</span>
             </h1>
