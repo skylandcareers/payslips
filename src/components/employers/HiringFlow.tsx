@@ -262,10 +262,10 @@ const HiringFlow = () => {
 
       {/* Mobile - Sticky scroll with step-by-step reveal */}
       <div className="md:hidden" ref={containerRef}>
-        <div className="h-[220vh] relative">
-          <div className="sticky top-0 min-h-screen flex flex-col justify-start px-6 pt-16 pb-16">
+        <div className="h-[180vh] relative">
+          <div className="sticky top-16 px-6 py-8">
             {/* Header */}
-            <div className="mb-8">
+            <div className="mb-6">
               <h2 className="text-xl font-sans font-semibold text-foreground">
                 A Full-Stack AI Hiring Flow
               </h2>
@@ -275,7 +275,7 @@ const HiringFlow = () => {
             </div>
 
             {/* Current step display */}
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex items-center justify-center py-8">
               <AnimatePresence mode="wait">
                 <MobileStep step={steps[activeIndex]} />
               </AnimatePresence>
@@ -295,18 +295,16 @@ const HiringFlow = () => {
               ))}
             </div>
 
-            {/* Progress bar */}
-            <div className="mb-16">
-              <div className="h-0.5 bg-muted/30 rounded-full overflow-hidden">
-                <motion.div 
-                  className="h-full bg-primary"
-                  style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-                />
-              </div>
-              <p className="text-[10px] text-muted-foreground text-center mt-2 font-sans">
-                Scroll to explore the flow
-              </p>
+            {/* Progress bar - right below content */}
+            <div className="h-0.5 bg-muted/30 rounded-full overflow-hidden">
+              <motion.div 
+                className="h-full bg-primary"
+                style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+              />
             </div>
+            <p className="text-[10px] text-muted-foreground text-center mt-2 font-sans">
+              Scroll to explore the flow
+            </p>
           </div>
         </div>
       </div>

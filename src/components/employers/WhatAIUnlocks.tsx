@@ -93,16 +93,16 @@ const WhatAIUnlocks = () => {
       {/* Mobile - Sticky scroll reveal */}
       <div className="md:hidden" ref={containerRef}>
         {/* Tall scroll container */}
-        <div className="h-[170vh] relative">
+        <div className="h-[150vh] relative">
           {/* Sticky content */}
-          <div className="sticky top-0 min-h-screen flex flex-col justify-start px-6 pt-16 pb-16">
+          <div className="sticky top-16 px-6 py-8">
             <motion.h2
-              className="text-xl font-sans font-semibold text-foreground mb-8"
+              className="text-xl font-sans font-semibold text-foreground mb-6"
             >
               What AI Unlocks for Hiring Teams
             </motion.h2>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 mb-6">
               {stats.map((stat, index) => {
                 const start = index * 0.2;
                 const end = start + 0.3;
@@ -120,13 +120,11 @@ const WhatAIUnlocks = () => {
               })}
             </div>
 
-            {/* Progress indicator */}
-            <div className="absolute bottom-10 left-6 right-6">
-              <motion.div
-                className="h-0.5 bg-primary"
-                style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-              />
-            </div>
+            {/* Progress indicator - right below content */}
+            <motion.div
+              className="h-0.5 bg-primary"
+              style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+            />
           </div>
         </div>
       </div>
