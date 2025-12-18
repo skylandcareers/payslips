@@ -138,7 +138,7 @@ const Header = () => {
                 onMouseLeave={() => setDropdownOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-white/80 hover:text-white transition-colors font-medium text-sm"
+                  className="flex items-center gap-1 px-4 py-2 text-white/80 hover:text-white transition-colors font-medium text-sm"
                 >
                   About
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -188,7 +188,7 @@ const Header = () => {
                 onMouseLeave={() => setSolutionsDropdownOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-white/80 hover:text-white transition-colors font-medium text-sm"
+                  className="flex items-center gap-1 px-4 py-2 text-white/80 hover:text-white transition-colors font-medium text-sm"
                 >
                   Solutions
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${solutionsDropdownOpen ? 'rotate-180' : ''}`} />
