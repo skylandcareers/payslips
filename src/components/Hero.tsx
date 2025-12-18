@@ -62,7 +62,7 @@ const Hero = () => {
           <NetworkBackground 
             lines={networkLines} 
             distance={networkDistance}
-            className="brightness-125"
+            className="brightness-150"
           />
         </div>
 
