@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StaticNetworkBackground from "@/components/StaticNetworkBackground";
+import NetworkBackground from "@/components/NetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -513,8 +513,8 @@ const ForUniversities = () => {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="relative px-6 py-16 md:py-20 bg-black overflow-hidden">
-          <StaticNetworkBackground className="opacity-30" density={80} />
+        <section className="relative px-6 py-16 md:py-24 lg:py-32 bg-black overflow-hidden min-h-[70vh] flex items-center">
+          <NetworkBackground className="brightness-125" />
           <div className="absolute inset-0 bg-[url('/lovable-uploads/circuit-pattern.png')] opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
           <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -562,43 +562,57 @@ const ForUniversities = () => {
         </section>
 
         {/* Trusted By Schools - Logo Strip */}
-        <section className="py-10 md:py-16 px-6 bg-muted/30">
-          <div className="max-w-6xl mx-auto">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
+        <section className="py-12 md:py-16 bg-background">
+          <div className="container mx-auto px-6">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-lg md:text-xl font-semibold text-muted-foreground mb-6 md:mb-8 text-center"
+              className="text-center text-muted-foreground text-sm mb-8 font-sans"
             >
               Trusted by India's Top B-Schools
-            </motion.h3>
+            </motion.p>
+
+            {/* Logo Strip */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="flex justify-center mb-8"
+              className="flex justify-center mb-10"
             >
               <img 
                 src={partnerSchoolsLogo} 
-                alt="Partner Schools" 
-                className="w-full max-w-4xl object-contain"
+                alt="Partner Schools - GIM, SPJIMR, TAPMI, SDA Bocconi, SRM"
+                className="w-full max-w-4xl h-auto object-contain"
               />
             </motion.div>
+
+            {/* Stats Row */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+              className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
             >
-              {stats.map((stat, index) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
+                  120+
                 </div>
-              ))}
+                <p className="text-xs text-muted-foreground font-sans">
+                  Enterprise + Education Partners
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
+                  530K+
+                </div>
+                <p className="text-xs text-muted-foreground font-sans">
+                  Social Media Followers
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
