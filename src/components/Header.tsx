@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "@/assets/altuni-labs-logo-white.png";
 import insideIIMlogo from "@/assets/platforms/insideiim-logo-white.avif";
-import insideKampusLogo from "@/assets/platforms/insidekampus-logo.png";
+import insideKampusLogo from "@/assets/platforms/kampus-logo.png";
 import ContactFormDialog from "./ContactFormDialog";
 
 const MotionLink = motion(Link);
