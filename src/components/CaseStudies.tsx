@@ -60,7 +60,7 @@ const CaseStudies = () => {
       summary: "Tripled offer conversion rates on large-scale campus drives by replacing manual workflows with our end-to-end suite for automated candidate screening and assessments.",
       product: "PotentialAI + SignalAI",
       fullDescription: "Hiring managers covered 75+ campuses and screened 15,000+ candidates every year with a process that simply didn't scale. By replacing manual workflows with our end-to-end suite (PotentialAI + SignalAI), we enabled automated candidate screening and assessments. This tripled their offer conversion rates on large-scale campus drives.",
-      bgColor: "bg-white/80",
+      bgColor: "bg-white/90",
       textColor: "text-black",
       logoFilter: "brightness-0",
       cardLogoHeight: "h-12",
