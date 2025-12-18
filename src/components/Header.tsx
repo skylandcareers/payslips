@@ -12,7 +12,9 @@ const Header = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,6 +24,11 @@ const Header = () => {
     { label: "Our Platforms", href: "/our-platforms" },
     { label: "Our Investors", href: "/our-investors" },
     { label: "Our People", href: "/our-team" },
+  ];
+
+  const solutionsItems = [
+    { label: "For Employers", href: "/for-employers" },
+    { label: "For Universities", href: "/for-universities" },
   ];
 
   const navLinks = [
@@ -174,6 +181,56 @@ const Header = () => {
                 </AnimatePresence>
               </div>
 
+              {/* Solutions Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setSolutionsDropdownOpen(true)}
+                onMouseLeave={() => setSolutionsDropdownOpen(false)}
+              >
+                <button
+                  className="flex items-center gap-1 text-white/80 hover:text-white transition-colors font-medium text-sm"
+                >
+                  Solutions
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${solutionsDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence>
+                  {solutionsDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-md border border-white/10 shadow-xl z-50 overflow-hidden"
+                    >
+                      {solutionsItems.map((item, index) => (
+                        <MotionLink
+                          key={index}
+                          to={item.href}
+                          className="group relative block overflow-hidden px-4 py-3 text-white/80 hover:text-white text-sm border-b border-white/10 last:border-b-0"
+                          initial="initial"
+                          whileHover="hover"
+                        >
+                          <motion.span
+                            className="absolute inset-0 z-0 origin-left"
+                            style={{ backgroundColor: "hsl(var(--primary))" }}
+                            variants={{
+                              initial: { scaleX: 0 },
+                              hover: { scaleX: 1 },
+                            }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                          />
+                          <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-2">
+                            <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+                            {item.label}
+                          </span>
+                        </MotionLink>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* Nav Links */}
               {navLinks.map(({ href, label }) => (
                 <motion.button
@@ -267,6 +324,40 @@ const Header = () => {
                         className="overflow-hidden pl-4"
                       >
                         {dropdownItems.map((item, index) => (
+                          <Link
+                            key={index}
+                            to={item.href}
+                            className="flex items-center gap-2 text-white/60 hover:text-white py-2 text-base"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <ArrowRight className="w-4 h-4" />
+                            {item.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Solutions Accordion */}
+                <div>
+                  <button 
+                    className="w-full flex items-center justify-between text-white/80 hover:text-white py-3 text-lg font-medium"
+                    onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                  >
+                    Solutions
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileSolutionsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden pl-4"
+                      >
+                        {solutionsItems.map((item, index) => (
                           <Link
                             key={index}
                             to={item.href}
