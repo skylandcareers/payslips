@@ -605,9 +605,9 @@ const ForUniversities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl md:text-4xl font-light text-foreground mb-10 md:mb-16 text-center font-sans"
+              className="text-2xl md:text-4xl font-light text-foreground mb-6 md:mb-10 text-center font-sans"
             >
-              Attract, Engage, and Shortlist the Best Candidates
+              A Full-Stack AI Admissions Flow
             </motion.h2>
             
             {/* Desktop Timeline with Scroll Animation */}
