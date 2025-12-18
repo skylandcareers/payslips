@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 import ContactFormDialog from "@/components/ContactFormDialog";
+import { LogoCloud } from "@/components/ui/logo-cloud";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { 
@@ -187,7 +188,7 @@ const campusSolutions = [
 ];
 
 const stats = [
-  { value: "100+", label: "Corporates Served" },
+  { value: "100+", label: "Employers Served" },
   { value: "50+", label: "Campus Competitions Run" },
   { value: "1M+", label: "Students Reached" },
   { value: "100K+", label: "Profiles Screened" },
@@ -195,7 +196,7 @@ const stats = [
 
 const words = ["Shortlisting", "Competitions", "Assessments", "Employer Branding", "Business Simulations"];
 
-const ForCorporates = () => {
+const ForEmployers = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -302,49 +303,20 @@ const ForCorporates = () => {
         </section>
 
         {/* Trusted by Top Employers */}
-        <section className="py-16 bg-muted/30 overflow-hidden">
-          <div className="max-w-6xl mx-auto px-6">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-xl font-semibold text-muted-foreground mb-8 text-center"
-            >
-              Trusted by Top Employers
-            </motion.h3>
-            
-            {/* Top row - moves left to right */}
-            <div className="relative mb-6">
-              <div className="flex animate-scroll-right">
-                {[...partnerLogos, ...partnerLogos].map((partner, idx) => (
-                  <div key={`top-${idx}`} className="flex-shrink-0 mx-4">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-background border border-border flex items-center justify-center p-2 hover:border-primary/50 transition-colors">
-                      <img 
-                        src={partner.logo} 
-                        alt={partner.name} 
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
-                  </div>
-                ))}
+        <section className="relative overflow-hidden border-y border-border">
+          <div className="group relative m-auto max-w-7xl px-6">
+            <div className="flex flex-col items-center md:flex-row">
+              <div className="inline-flex whitespace-nowrap border-b border-dashed py-10 text-2xl font-semibold md:border-b-0 md:border-r md:py-10 md:pr-10">
+                Trusted by experts.
+                <br className="hidden md:block" />
+                Used by the leaders.
               </div>
-            </div>
-
-            {/* Bottom row - moves right to left */}
-            <div className="relative">
-              <div className="flex animate-scroll-left">
-                {[...partnerLogos, ...partnerLogos].map((partner, idx) => (
-                  <div key={`bottom-${idx}`} className="flex-shrink-0 mx-4">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-background border border-border flex items-center justify-center p-2 hover:border-primary/50 transition-colors">
-                      <img 
-                        src={partner.logo} 
-                        alt={partner.name} 
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
-                  </div>
-                ))}
+              <div className="w-full md:w-[calc(100%-220px)]">
+                <div className="relative py-6 md:overflow-hidden">
+                  <LogoCloud 
+                    logos={partnerLogos.map(p => ({ src: p.logo, alt: p.name }))}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -550,7 +522,7 @@ const ForCorporates = () => {
               viewport={{ once: true }}
               className="text-lg opacity-90 mb-8 max-w-2xl mx-auto"
             >
-              Join 100+ corporates that trust InsideIIM for their end-to-end campus hiring solutions. Schedule a demo to see how we can help you shortlist, assess, and engage the best talent.
+              Join 100+ employers that trust InsideIIM for their end-to-end campus hiring solutions. Schedule a demo to see how we can help you shortlist, assess, and engage the best talent.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -576,4 +548,4 @@ const ForCorporates = () => {
   );
 };
 
-export default ForCorporates;
+export default ForEmployers;
