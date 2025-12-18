@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 
 export type ShowcaseStep = {
   id: string;
@@ -99,8 +100,11 @@ const FeatureShowcase = () => {
   const getActiveImageIndex = (productValue: string) => activeImageIndex[productValue] ?? 0;
 
   return (
-    <section className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <StaticNetworkBackground density={35} />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}

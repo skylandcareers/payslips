@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import StaticNetworkBackground from "@/components/StaticNetworkBackground";
 
 interface StepDescription {
   prefix: string | null;
@@ -64,8 +65,11 @@ const HiringFlow = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-20 md:py-32 bg-background overflow-hidden relative">
+      <div className="absolute inset-0 z-0">
+        <StaticNetworkBackground density={35} />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
