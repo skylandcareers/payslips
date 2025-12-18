@@ -595,24 +595,18 @@ const ForUniversities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
+              className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-16"
             >
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
-                  120+
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
+                    {stat.value}
+                  </div>
+                  <p className="text-xs text-muted-foreground font-sans">
+                    {stat.label}
+                  </p>
                 </div>
-                <p className="text-xs text-muted-foreground font-sans">
-                  Enterprise + Education Partners
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-foreground font-sans">
-                  530K+
-                </div>
-                <p className="text-xs text-muted-foreground font-sans">
-                  Social Media Followers
-                </p>
-              </div>
+              ))}
             </motion.div>
           </div>
         </section>
