@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "@/assets/altuni-labs-logo-white.png";
+import logo from "@/assets/altuni-labs-logo-new.png";
 import insideIIMlogo from "@/assets/platforms/insideiim-logo-white.avif";
 import insideKampusLogo from "@/assets/platforms/kampus-logo.png";
 import ContactFormDialog from "./ContactFormDialog";

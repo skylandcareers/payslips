@@ -8,7 +8,7 @@ import {
   YoutubeIcon,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from "@/assets/altuni-labs-logo-white.png";
+import logo from "@/assets/altuni-labs-logo-new.png";
 
 interface FooterLink {
   title: string;
