@@ -93,6 +93,36 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
                 <p className="text-white/40 text-sm">
                   © 2025 AltUni Labs. All rights reserved.
                 </p>
+                    <div className="flex items-center gap-4">
+                  <div className="flex flex-col text-right sm:text-left">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+                      Quality & Security
+                    </span>
+                    <span className="text-xs font-medium text-white dark:text-gray-200">
+                      ISO Certified
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 px-1.5 flex items-center justify-center rounded bg-white/70 dark:bg-white/5 border border-red-100 dark:border-gray-800 group-hover:bg-white dark:group-hover:bg-white/10 group-hover:border-red-200 dark:group-hover:border-gray-700 transition-all">
+                      <img
+                        src="/uaf-9001-logo-AQC.jpg"
+                        alt="ISO 9001:2015"
+                        width={180}
+                        height={72}
+                        className="h-6 w-auto object-contain transition-all duration-300"
+                      />
+                    </div>
+                    <div className="h-8 px-1.5 flex items-center justify-center rounded bg-white/70 dark:bg-white/5 border border-red-100 dark:border-gray-800 group-hover:bg-white dark:group-hover:bg-white/10 group-hover:border-red-200 dark:group-hover:border-gray-700 transition-all">
+                      <img
+                        src="/uaf-27001-logo-AQC.jpg"
+                        alt="ISO 27001:2022"
+                        width={180}
+                        height={72}
+                        className="h-6 w-auto object-contain transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <p className="text-white/40 text-sm">
                   Powering the future of talent
                 </p>
