@@ -1,5 +1,4 @@
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { ArrowRight } from "lucide-react";
 import konverseAiImg from "@/assets/products/konverse-ai-new.png";
 import potentialAiImg from "@/assets/products/potential-ai.png";
 import billionAiImg from "@/assets/products/billion-ai.png";
@@ -7,12 +6,6 @@ import signalAiImg from "@/assets/products/signal-ai.png";
 import prepbabaImg from "@/assets/products/prepbaba.png";
 import ayanaAiImg from "@/assets/products/ayana-ai.png";
 import StaticNetworkBackground from "@/components/StaticNetworkBackground";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
 
 const products = [{
   id: "konverse-ai",
@@ -81,110 +74,22 @@ const ProductCard = ({ product }: { product: typeof products[0] }) => (
 );
 
 const Products = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-  const [current, setCurrent] = useState(0);
-  const [progress, setProgress] = useState(0);
-
-  const onSelect = useCallback(() => {
-    if (!api) return;
-    const curr = api.selectedScrollSnap();
-    const total = api.scrollSnapList().length;
-    setCurrent(curr);
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
-    setProgress(((curr + 1) / total) * 100);
-  }, [api]);
-
-  useEffect(() => {
-    if (!api) return;
-    onSelect();
-    api.on("select", onSelect);
-    api.on("reInit", onSelect);
-    return () => {
-      api.off("select", onSelect);
-      api.off("reInit", onSelect);
-    };
-  }, [api, onSelect]);
-
   return (
     <section id="products" className="scroll-mt-24 md:scroll-mt-28 py-24 relative overflow-hidden bg-black">
       <StaticNetworkBackground density={30} />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header with arrows */}
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-sans font-semibold text-white tracking-tight">
-              Our Products
-            </h2>
-            <p className="text-white/60 max-w-2xl mt-4">
-              AI-powered solutions designed to transform how you work, learn, and grow.
-            </p>
-          </div>
-          
-          {/* Arrow buttons - hidden on mobile */}
-          <div className="hidden md:flex gap-3">
-            <button
-              onClick={() => api?.scrollPrev()}
-              disabled={!canScrollPrev}
-              className="size-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="size-6" />
-            </button>
-            <button
-              onClick={() => api?.scrollNext()}
-              disabled={!canScrollNext}
-              className="size-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="Next"
-            >
-              <ChevronRight className="size-6" />
-            </button>
-          </div>
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-4xl font-sans font-semibold text-white tracking-tight">
+            Our Products
+          </h2>
+          <p className="text-white/60 max-w-2xl mt-4">
+            AI-powered solutions designed to transform how you work, learn, and grow.
+          </p>
         </div>
 
-        {/* Carousel for all screen sizes */}
-        <Carousel 
-          setApi={setApi} 
-          opts={{ 
-            align: "start", 
-            loop: false,
-            skipSnaps: false,
-            duration: 30,
-          }} 
-          className="w-full"
-        >
-          <CarouselContent className="-ml-4 md:-ml-6 transition-transform">
-            {products.map(product => (
-              <CarouselItem key={product.id} className="pl-4 md:pl-6 basis-[85%] md:basis-1/3">
-                <ProductCard product={product} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-
-        {/* Progress bar - desktop */}
-        <div className="hidden md:block mt-8">
-          <div className="h-0.5 bg-white/10 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-white rounded-full transition-all duration-300"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
-
-        {/* Dot Indicators - mobile only */}
-        <div className="flex justify-center gap-2 mt-6 md:hidden">
-          {products.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                current === index ? "bg-white w-6" : "bg-white/30"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {products.map(product => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
