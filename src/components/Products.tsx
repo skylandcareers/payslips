@@ -46,28 +46,28 @@ const products = [{
 }];
 
 const ProductCard = ({ product }: { product: typeof products[0] }) => (
-  <a 
-    href={product.href} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="group relative aspect-[3/4] overflow-hidden rounded-xl block"
+  <a
+    href={product.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative aspect-[4/5] overflow-hidden block border border-white/10 hover:border-[#b62100]/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(182,33,0,0.15)]"
   >
-    <img 
-      src={product.image} 
-      alt={product.title} 
-      className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" 
+    <img
+      src={product.image}
+      alt={product.title}
+      className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110"
     />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-    <div className="absolute inset-x-0 bottom-0 p-6">
-      <h3 className="text-2xl font-semibold text-white mb-3">
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+    <div className="absolute inset-x-0 bottom-0 p-8">
+      <h3 className="text-3xl font-semibold text-white mb-3">
         {product.title}
       </h3>
-      <p className="text-white/70 text-sm leading-relaxed line-clamp-2 mb-4">
+      <p className="text-white/70 text-base leading-relaxed line-clamp-2 mb-5">
         {product.description}
       </p>
-      <div className="flex items-center gap-2 text-white/60 text-sm group-hover:text-white transition-colors">
+      <div className="flex items-center gap-2 text-[#b62100] text-sm font-medium group-hover:text-white transition-colors">
         <span>Learn more</span>
-        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+        <ArrowRight className="size-4 transition-transform group-hover:translate-x-2" />
       </div>
     </div>
   </a>
