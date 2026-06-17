@@ -51,11 +51,11 @@ const TeamMemberCard = ({ member }: { member: typeof leadership[0] }) => (
     rel="noopener noreferrer"
     className="group block cursor-pointer"
   >
-    <div className="relative aspect-square overflow-hidden mb-3">
+    <div className="relative aspect-[4/5] overflow-hidden mb-4 border border-white/10 group-hover:border-[#b62100]/50 transition-all duration-500">
       <img
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+        className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110"
       />
       {/* Description overlay on hover - desktop only */}
       <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-end p-4">
@@ -66,14 +66,14 @@ const TeamMemberCard = ({ member }: { member: typeof leadership[0] }) => (
     </div>
     <div className="space-y-1">
       <div className="flex items-center gap-2">
-        <h3 className="text-base font-semibold text-white leading-tight">
+        <h3 className="text-lg font-semibold text-white leading-tight">
           {member.name}
         </h3>
-        <Linkedin size={14} className="text-white/70 flex-shrink-0" />
+        <Linkedin size={16} className="text-white/70 group-hover:text-[#0A66C2] transition-colors flex-shrink-0" />
       </div>
-      <div className="flex flex-col text-xs gap-0.5">
+      <div className="flex flex-col text-sm gap-0.5">
         <span className="text-[#b62100] font-medium">{member.role}</span>
-        <span className="text-white/60 text-[11px]">{member.credentials}</span>
+        <span className="text-white/60 text-xs">{member.credentials}</span>
       </div>
     </div>
   </a>
