@@ -120,11 +120,11 @@ const OurTeam = () => {
                   viewport={{ once: true }}
                   className="group block cursor-pointer"
                 >
-                  <div className="relative aspect-square overflow-hidden mb-4">
+                  <div className="relative aspect-square overflow-hidden mb-4 border border-white/10 group-hover:border-[#b62100]/50 transition-all duration-500">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="space-y-1 text-center">
