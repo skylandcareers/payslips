@@ -71,7 +71,7 @@ const Hero = () => {
           logoElement={
             <img 
               src={logo} 
-              alt="AltUni Labs" 
+              alt="Document Generators" 
               className="h-10 md:h-12 w-auto cursor-pointer"
               onClick={handleLogoClick}
             />

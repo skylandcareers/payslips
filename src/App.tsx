@@ -6,14 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import OurStory from "./pages/OurStory";
-import OurPlatforms from "./pages/OurPlatforms";
-import OurTeam from "./pages/OurTeam";
-import OurInvestors from "./pages/OurInvestors";
 
-import ForEmployers from "./pages/ForEmployers";
-import ForUniversities from "./pages/ForUniversities";
-import PartnerWithUs from "./pages/PartnerWithUs";
+import OfferLetter from "./pages/OfferLetter";
+import PayslipGenerator from "./pages/PayslipGenerator";
+import LetterheadGenerator from "./pages/LetterheadGenerator";
+
+import MouriIndex from "./pages/MouriIndex";
+import MouriOfferLetter from "./pages/MouriOfferLetter";
+import MouriPayslipGenerator from "./pages/MouriPayslipGenerator";
+import MouriLetterheadGenerator from "./pages/MouriLetterheadGenerator";
 
 const queryClient = new QueryClient();
 
@@ -26,14 +27,16 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/our-story" element={<OurStory />} />
-          <Route path="/our-platforms" element={<OurPlatforms />} />
-          <Route path="/our-team" element={<OurTeam />} />
-          <Route path="/our-investors" element={<OurInvestors />} />
+
+          <Route path="/offer-letter" element={<OfferLetter />} />
+          <Route path="/payslips" element={<PayslipGenerator />} />
+          <Route path="/letterhead" element={<LetterheadGenerator />} />
+
+          <Route path="/mouri" element={<MouriIndex />} />
+          <Route path="/mouri/offer-letter" element={<MouriOfferLetter />} />
+          <Route path="/mouri/payslips" element={<MouriPayslipGenerator />} />
+          <Route path="/mouri/letterhead" element={<MouriLetterheadGenerator />} />
           
-          <Route path="/for-employers" element={<ForEmployers />} />
-          <Route path="/for-universities" element={<ForUniversities />} />
-          <Route path="/partner-with-us" element={<PartnerWithUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

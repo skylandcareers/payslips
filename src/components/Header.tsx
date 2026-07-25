@@ -125,9 +125,9 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
               <img 
-                src={logo} 
-                alt="AltUni Labs" 
-                className="h-12 md:h-16 w-auto"
+                src="https://media.licdn.com/dms/image/v2/D560BAQGREzSyNC8Gtw/company-logo_200_200/company-logo_200_200/0/1687330866404/aviso_inc_logo?e=2147483647&v=beta&t=8-c6FAeLmXM5IIbukECZ4W6vgIhc7bdaEYOWfOaMWYw" 
+                alt="Aviso" 
+                className="h-12 md:h-16 w-auto rounded"
               />
             </div>
             

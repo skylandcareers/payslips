@@ -36,7 +36,7 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 justify-items-center md:justify-items-start">
                 {/* Logo and tagline */}
                 <div className="col-span-2 md:col-span-1 text-center md:text-left">
-                  <img src={logo} alt="AltUni Labs" className="h-14 md:h-20 mb-4 mx-auto md:mx-0" />
+                  <img src={logo} alt="Document Generators" className="h-14 md:h-20 mb-4 mx-auto md:mx-0" />
                   <p className="text-white/60 text-sm leading-relaxed mb-6">
                     Making AI that makes humans better. Training humans who make AI better.
                   </p>
@@ -91,7 +91,7 @@ export function StickyFooter({ className, ...props }: StickyFooterProps) {
               {/* Copyright */}
               <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-white/40 text-sm">
-                  © 2025 AltUni Labs. All rights reserved.
+                  © 2025 Document Generators. All rights reserved.
                 </p>
                     <div className="flex items-center gap-4">
                   <div className="flex flex-col text-right sm:text-left">
