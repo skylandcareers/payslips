@@ -19,55 +19,58 @@ const KluLetterheadGenerator = () => {
   };
 
   const handleExportPDF = () => {
-    window.print();
+    setIsExporting(true);
+    setTimeout(() => {
+      window.print();
+      setIsExporting(false);
+    }, 100);
   };
 
-  const PageHeader = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
-    <div className={`w-full relative px-12 md:px-16 print:px-0 ${isPrintFixed ? 'pt-8' : 'pt-6 print:pt-8'}`}>
-      <div className="flex w-full items-center justify-between pb-2 mb-2">
-        {/* Left Logo */}
-        <div className="w-[100px] h-[100px] flex-shrink-0 flex items-center justify-center relative z-20">
-          <img src="/klu_logo.jpg" alt="KLEF Logo" className="w-full h-full object-contain" onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.style.display = 'none';
-            if (target.parentElement) {
-              target.parentElement.innerHTML = '<div class="w-24 h-24 rounded-full border-4 border-red-800 flex items-center justify-center text-red-800 font-bold text-3xl">KL</div>';
-            }
-          }} />
+  const PageHeader = () => {
+    return (
+      <div className="w-full relative shrink-0">
+        <div className="flex flex-row items-center justify-start w-full px-12 md:px-16 print:px-0 pt-8 pb-6">
+          <div className="w-[180px] print:w-[180px] shrink-0 -mt-10">
+            <img src="https://klh.edu.in/wp-content/uploads/2024/08/Lg.png" alt="KLH Logo" className="w-full h-auto object-contain" />
+          </div>
+          <div className="w-[1.5px] bg-slate-700 h-[85px] mx-2 print:mx-2 shrink-0"></div>
+          <div className="flex flex-col items-center justify-center flex-1 text-center overflow-visible">
+            <h1 className="text-[#CC3B3A] text-[30px] print:text-[30px] font-bold whitespace-nowrap" style={{
+              fontFamily: '"Arial Narrow", Arial, sans-serif', transformOrigin: 'center'
+            }}>
+              Koneru Lakshmaiah Education Foundation
+            </h1>
+            <p className="text-black text-[11px] md:text-[12px] print:text-[12px] font-sans font-medium whitespace-nowrap">
+              (Deemed to be University estd. u/s. 3 of the UGC Act, 1956)
+            </p>
+            <p className="text-[#333] text-[9.5px] md:text-[10.5px] print:text-[10.5px] font-sans whitespace-nowrap">
+              Off-Campus: Bachupally-Gandimaisamma Road, Bowrampet, Hyderabad, Telangana - 500 043.
+            </p>
+            <p className="text-[#333] text-[9.5px] md:text-[10.5px] print:text-[10.5px] font-sans whitespace-nowrap">
+              Phone No: 7815926816, www.klh.edu.in
+            </p>
+          </div>
         </div>
-
-        {/* Right Text */}
-        <div className="flex flex-col flex-1 pl-2 pr-12 items-center justify-center text-center font-sans mt-0">
-          <h1 className="text-[#a6192e] text-[24px] md:text-[26px] print:text-[26px] font-bold leading-none mb-1 whitespace-nowrap">
-            Koneru Lakshmaiah Education Foundation
-          </h1>
-          <p className="text-gray-600 text-[10px] md:text-[11px] print:text-[11px] mt-0 leading-tight">
-            (Deemed to be University estd. u/s. 3 of the UGC Act, 1956)
-          </p>
-          <p className="text-gray-600 text-[9px] md:text-[10px] print:text-[10px] mt-0.5 whitespace-nowrap">
-            Off-Campus: R.V.S Nagar, Moinabad Road, Near TS Police Academy, Aziz Nagar, Hyderabad, Telangana - 500 075
-          </p>
-          <p className="text-gray-600 text-[9px] md:text-[10px] print:text-[10px] whitespace-nowrap">
-            Phone No. 76608 72999; www.klef.ac.in, www.klef.edu.in
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+      </div >
+    );
+  };
 
   const PageFooter = () => (
-    <div className="w-full relative px-12 md:px-16 print:px-0 pb-4 print:pb-6 mt-8">
+    <div className="w-full relative px-12 md:px-16 print:px-0 pb-2 print:pb-2 mt-8">
       <div className="pt-3 flex flex-col items-center justify-center w-full px-4">
-        <h2 className="text-[#a6192e] text-[10px] md:text-[11px] print:text-[11px] font-sans tracking-[0.2em] mb-1 font-bold text-center w-full whitespace-nowrap overflow-hidden text-ellipsis">
-          E X A L T I N G  E D U C A T I O N ,  E P I T O M I S I N G  E X C E L L E N C E
-        </h2>
-        <p className="text-black text-[10px] md:text-[11px] print:text-[11px] text-center font-sans">
-          Admin. Office: Parkview, Flat No. 103, Ground Floor H.No 8-2-293, 82/W/103, Women's Co-operative Housing Society
+        <div className="flex items-center justify-center text-[#d1232a] text-[11px] md:text-[12px] print:text-[12px] font-sans tracking-[0.3em] font-medium mb-3 w-full whitespace-nowrap">
+          <span>EXALTING EDUCATION</span>
+          <span className="text-[#333] font-normal tracking-normal mx-8">|</span>
+          <span>EPITOMISING EXCELLENCE</span>
+        </div>
+        <p className="text-slate-800 text-[10.5px] md:text-[11px] print:text-[11.5px] text-center font-sans tracking-tight">
+          <strong>Admin.Office:</strong> Parkview, Flat No.103, Ground Floor, H.No 8-2-293,82/W/103, Women's Co-operative Housing Society,
         </p>
-        <p className="text-black text-[10px] md:text-[11px] print:text-[11px] text-center font-sans">
-          Road No.7D, Jubilee Hills, Hyderabad - 500045 | Phone No: 040 - 23 542 127
+        <p className="text-slate-800 text-[10.5px] md:text-[11px] print:text-[11.5px] text-center font-sans tracking-tight mt-0.5">
+          Road No.70, Jubilee Hills, Hyderabad-500045 | Phone No: 040 23 542 127
         </p>
       </div>
+      <div className="w-full h-px bg-gray-300 mt-4"></div>
     </div>
   );
 
@@ -108,16 +111,9 @@ const KluLetterheadGenerator = () => {
             pointer-events: none;
             width: 50%;
           }
-          .vertical-klef {
-            position: fixed;
-            left: 15mm;
-            top: 60mm;
-            z-index: 10;
-          }
         }
       `}</style>
 
-      {/* Top Navbar */}
       <nav className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-50 print:hidden shadow-sm">
         <div className="flex items-center gap-4">
           <Link to="/klu" className="text-slate-500 hover:text-slate-900 transition-colors">
@@ -131,7 +127,8 @@ const KluLetterheadGenerator = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={handleExportPDF}
-            className="flex items-center gap-2 px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-lg font-medium transition-all shadow-sm"
+            disabled={isExporting}
+            className="flex items-center gap-2 px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-lg font-medium transition-all shadow-sm disabled:opacity-75"
           >
             {isExporting ? <Check className="w-4 h-4" /> : <Download className="w-4 h-4" />}
             {isExporting ? "Exported!" : "Export PDF"}
@@ -139,10 +136,7 @@ const KluLetterheadGenerator = () => {
         </div>
       </nav>
 
-      {/* Main Content Area */}
       <div className="flex-1 flex flex-col md:flex-row overflow-hidden print:overflow-visible">
-
-        {/* Mobile Tabs */}
         <div className="flex md:hidden border-b border-slate-200 bg-white p-2 gap-2 print:hidden">
           <button
             className={`flex-1 py-2 px-4 rounded-md font-medium text-sm transition-colors ${activeTab === 'form' ? 'bg-red-50 text-red-700' : 'text-slate-600 hover:bg-slate-50'}`}
@@ -158,7 +152,6 @@ const KluLetterheadGenerator = () => {
           </button>
         </div>
 
-        {/* Left Column: Form Controls */}
         <div className={`${activeTab === 'form' ? 'flex' : 'hidden'} md:flex w-full md:w-[400px] lg:w-[450px] bg-white border-r border-slate-200 flex-col h-full overflow-y-auto print:hidden z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)] relative`}>
           <div className="p-6">
             <div className="flex items-center gap-2 mb-6 text-slate-800">
@@ -212,30 +205,18 @@ const KluLetterheadGenerator = () => {
                   className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-slate-50 focus:bg-white text-sm text-slate-900 font-mono leading-relaxed resize-none"
                   placeholder="Main body content..."
                 />
-                <p className="text-xs text-slate-500 italic mt-1">Note: Signatories should be added directly into the body text layout using markdown.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Live A4 Preview */}
         <div className={`${activeTab === 'preview' ? 'flex' : 'hidden'} md:flex flex-1 bg-slate-100 overflow-y-auto print:overflow-visible p-4 md:p-8 justify-center print:p-0 print:bg-white`}>
 
           <div className="w-full max-w-[210mm] bg-white shadow-[0_0_40px_rgba(0,0,0,0.1)] print:shadow-none print-content-container relative print:max-w-none page-container">
-
-            {/* Preview Watermark (Absolute) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.05] pointer-events-none print:hidden w-[50%] flex justify-center items-center z-0">
-              <img src="/klu_logo.jpg" alt="" className="w-full h-auto object-contain" onError={(e) => (e.target as HTMLImageElement).style.display = 'none'} />
-            </div>
-
-            {/* Print Watermark (Fixed) */}
-            <img src="/klu_logo.jpg" alt="" className="hidden print:block watermark" onError={(e) => (e.target as HTMLImageElement).style.display = 'none'} />
-
             <table className="w-full relative z-10 h-full border-collapse border-spacing-0 table-fixed">
               <thead>
                 <tr>
                   <td>
-                    <div className="h-[20px] print:h-0"></div>
                     <PageHeader />
                   </td>
                 </tr>
@@ -246,8 +227,8 @@ const KluLetterheadGenerator = () => {
                   <td className="align-top relative px-12 md:px-16 print:px-0">
                     <div className="h-full block min-h-[500px] relative">
 
-                      {/* Vertical KLEF text - Absolute positioning allows Title to center on full page */}
-                      <div className="absolute left-0 md:left-0 print:left-0 top-[10px] w-[100px] flex flex-col gap-1 items-center z-10 text-[#a6192e] text-[24px] md:text-[26px] print:text-[26px] leading-tight" style={{ fontFamily: 'Impact, Arial Black, sans-serif', transform: 'scaleY(1.1)' }}>
+                      {/* Vertical KLEF text */}
+                      <div className="absolute print:left-8 w-[40px] flex flex-col gap-1 items-center z-10 text-[#CC3B3A] text-[22px] md:text-[24px] print:text-[24px] font-bold leading-none -mt-4" style={{ fontFamily: '"Arial", sans-serif', transform: 'scale(1.05, 1.3)' }}>
                         <span>K</span>
                         <span>L</span>
                         <span>E</span>
@@ -255,7 +236,7 @@ const KluLetterheadGenerator = () => {
                       </div>
 
                       {/* Date */}
-                      <div className="text-right mb-6 font-serif">
+                      <div className="text-right font-serif">
                         <span className="text-[14px] text-black font-bold">Date: {formData.date}</span>
                       </div>
 
