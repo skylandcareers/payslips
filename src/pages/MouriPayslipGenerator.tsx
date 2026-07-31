@@ -367,7 +367,7 @@ const MouriPayslipGenerator = () => {
             <div className="relative z-10 flex flex-col h-full flex-1">
               
               {/* Corporate Payslip Header */}
-              <div className="flex items-center justify-between border-b-[12px] border-[#005A9C] pb-4 mb-6 pt-2 bg-white">
+              <div className="flex items-center justify-between border-b border-gray-200 pb-4 mb-6 pt-2 bg-white">
                 <div>
                   <img src="/mouri_logo_new.png" alt="mouri tech logo" className="h-16 w-auto object-contain" />
                 </div>

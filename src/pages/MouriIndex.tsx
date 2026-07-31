@@ -14,9 +14,9 @@ const MouriIndex = () => {
       <div className="relative z-10 w-full max-w-6xl px-6 py-12 flex flex-col items-center">
         
         {/* Top Right Toggle */}
-        <div className="absolute top-6 right-6 z-20">
+        <div className="absolute top-6 left-6 z-20">
           <Link to="/" className="px-5 py-2 bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md">
-            Switch to Aviso <span className="text-[#005A9C]">→</span>
+            <span className="text-[#005A9C]">←</span> Back to Portal
           </Link>
         </div>
 

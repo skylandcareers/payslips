@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import { Download, Check, Settings2 } from "lucide-react";
 
@@ -7,6 +8,7 @@ const MouriLetterheadGenerator = () => {
   const [activeTab, setActiveTab] = useState<"form" | "preview">("form");
 
   const [formData, setFormData] = useState({
+    documentTitle: "",
     date: new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }),
     referenceNo: "MT/GEN/2026/102",
     recipientName: "To Whomsoever It May Concern",
@@ -28,7 +30,6 @@ const MouriLetterheadGenerator = () => {
 
   const PageHeader = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
     <div className={`w-full relative ${isPrintFixed ? 'pt-6' : 'pt-2 print:pt-6'}`}>
-      <div className={`${isPrintFixed ? 'block' : 'hidden print:block'} fixed top-0 left-0 w-full h-[8px] bg-[#005A9C] z-20`}></div>
       
       <div className="flex justify-between items-end pb-4 mb-6 border-b-[12px] border-[#005A9C] w-full bg-white mt-2 print:mt-6">
         <div>
@@ -49,8 +50,6 @@ const MouriLetterheadGenerator = () => {
 
   const PageFooter = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
     <div className={`w-full relative bg-white ${isPrintFixed ? 'pb-6 pt-6' : 'mt-8 pt-6 pb-10 md:pb-14 print:pb-6'}`}>
-      {/* Top Border */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gray-200"></div>
       
       {/* Tech Dot Pattern */}
       <div 
@@ -147,6 +146,10 @@ const MouriLetterheadGenerator = () => {
           <div className="space-y-4">
             <div className="grid gap-4">
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Metadata</h3>
+              <div>
+                <label className="block text-xs mb-1 text-slate-600 font-medium">Document Title (Optional)</label>
+                <input type="text" name="documentTitle" placeholder="e.g. NO OBJECTION CERTIFICATE" value={formData.documentTitle} onChange={handleChange} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:border-[#005A9C] focus:ring-1 focus:ring-[#005A9C] outline-none transition-all text-slate-800 font-semibold uppercase" />
+              </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs mb-1 text-slate-600 font-medium">Date</label>
@@ -162,12 +165,12 @@ const MouriLetterheadGenerator = () => {
             <div className="grid gap-4 pt-4 border-t border-slate-100">
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Recipient</h3>
               <div>
-                <label className="block text-xs mb-1 text-slate-600 font-medium">To (Name / Authority)</label>
-                <input type="text" name="recipientName" value={formData.recipientName} onChange={handleChange} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:border-[#005A9C] focus:ring-1 focus:ring-[#005A9C] outline-none transition-all text-slate-800" />
+                <label className="block text-xs mb-1 text-slate-600 font-medium">Name / Title</label>
+                <textarea name="recipientName" value={formData.recipientName} onChange={handleChange} rows={2} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:border-[#005A9C] focus:ring-1 focus:ring-[#005A9C] outline-none transition-all text-slate-800 resize-none" />
               </div>
               <div>
                 <label className="block text-xs mb-1 text-slate-600 font-medium">Address (Optional)</label>
-                <textarea name="recipientAddress" value={formData.recipientAddress} onChange={handleChange} rows={2} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:border-[#005A9C] focus:ring-1 focus:ring-[#005A9C] outline-none resize-none transition-all text-slate-800" placeholder="e.g. 123 Bank Street, Mumbai" />
+                <textarea name="recipientAddress" value={formData.recipientAddress} onChange={handleChange} rows={3} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:border-[#005A9C] focus:ring-1 focus:ring-[#005A9C] outline-none resize-none transition-all text-slate-800" placeholder="e.g. 123 Bank Street, Mumbai" />
               </div>
             </div>
 
@@ -245,6 +248,14 @@ const MouriLetterheadGenerator = () => {
                     {/* Content padding */}
                     <div className="px-14 md:px-20 font-sans text-[11px] text-gray-700 leading-[1.6]">
                       
+                      {formData.documentTitle && (
+                        <div className="mt-8 mb-6 text-center">
+                          <h1 className="text-[15px] font-bold text-gray-900 uppercase tracking-widest underline underline-offset-4">
+                            {formData.documentTitle}
+                          </h1>
+                        </div>
+                      )}
+
                       <div className="flex justify-between items-start mb-6 mt-4 text-gray-900">
                         <div>
                           <p><strong>Date:</strong> {formData.date}</p>
@@ -258,8 +269,10 @@ const MouriLetterheadGenerator = () => {
 
                       <div className="mb-6 text-gray-900 leading-relaxed">
                         <p><strong>To,</strong></p>
-                        <p>{formData.recipientName}</p>
-                        {formData.recipientAddress.split('\\n').map((line, i) => (
+                        {formData.recipientName.split('\n').map((line, i) => (
+                          line.trim() ? <p key={`name-${i}`}>{line}</p> : null
+                        ))}
+                        {formData.recipientAddress.split('\n').map((line, i) => (
                           line.trim() ? <p key={i}>{line}</p> : null
                         ))}
                       </div>
@@ -272,9 +285,19 @@ const MouriLetterheadGenerator = () => {
 
                       <div className="space-y-4 text-justify text-[11.5px] text-gray-900">
                         <p className="mb-2">{formData.salutation}</p>
-                        {formData.bodyText.split('\\n').map((paragraph, idx) => (
-                          paragraph.trim() ? <p key={idx}>{paragraph}</p> : null
-                        ))}
+                        <ReactMarkdown 
+                          components={{
+                            p: ({node, ...props}) => <p className="mb-4" {...props} />,
+                            h1: ({node, ...props}) => <h1 className="text-[14px] font-bold text-gray-900 uppercase tracking-widest text-center underline underline-offset-4 mb-6 mt-2" {...props} />,
+                            h2: ({node, ...props}) => <h2 className="text-[13px] font-bold text-gray-900 mb-4 mt-6" {...props} />,
+                            h3: ({node, ...props}) => <h3 className="text-[12px] font-bold text-gray-900 mb-3 mt-4" {...props} />,
+                            ul: ({node, ...props}) => <ul className="list-disc pl-6 mb-4 space-y-2 ml-4 marker:text-[#005A9C]" {...props} />,
+                            li: ({node, ...props}) => <li className="pl-2" {...props} />,
+                            strong: ({node, ...props}) => <strong className="font-[700] text-black print:text-black" {...props} />
+                          }}
+                        >
+                          {formData.bodyText}
+                        </ReactMarkdown>
                       </div>
 
                       <div className="mt-12 mb-10">

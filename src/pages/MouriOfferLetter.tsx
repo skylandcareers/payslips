@@ -56,8 +56,8 @@ const MouriOfferLetter = () => {
   };
 
   const PageHeader = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
-    <div className={`w-full relative ${isPrintFixed ? 'pt-6' : 'pt-2 print:pt-6'}`}>
-      <div className={`${isPrintFixed ? 'block' : 'hidden print:block'} fixed top-0 left-0 w-full h-[8px] bg-[#005A9C] z-20`}></div>
+    <div className={`w-full relative ${isPrintFixed ? 'pt-2' : 'pt-2 print:pt-4'}`}>
+
       
       <div className="flex justify-between items-end pb-4 mb-6 border-b-[12px] border-[#005A9C] w-full bg-white mt-2 print:mt-6">
         <div>
@@ -93,7 +93,7 @@ const MouriOfferLetter = () => {
 
       <div className="flex justify-between items-center font-sans text-[9px] text-gray-400 relative z-10 pl-2">
         <p className="font-semibold text-gray-500 tracking-wider">MOURI TECH LIMITED</p>
-        <p>Regd Office: D1 IT Park Hill #2, Visakhapatnam, 530003, AP</p>
+        <p>Regd Office: Survey No. 64, 4th Floor, SBR Surya Pearl Sector III, Hyderabad, TS 500081</p>
         <p>www.mouritech.com</p>
       </div>
     </div>
@@ -381,14 +381,14 @@ const MouriOfferLetter = () => {
                       {/* --- START OF CONTENT FLOW --- */}
                       
                       {/* Traditional Corporate Letter Format */}
-                      <div className="flex justify-between items-start mb-6 mt-4 text-gray-900">
+                      <div className="flex justify-between items-start mb-4 mt-2 text-gray-900">
                         <div>
                           <p><strong>Date:</strong> {formData.date}</p>
                           <p><strong>Offer Letter No:</strong> {formData.referenceNo}</p>
                         </div>
                       </div>
 
-                      <div className="mb-6 text-gray-900 leading-relaxed">
+                      <div className="mb-4 text-gray-900 leading-relaxed">
                         <p><strong>To,</strong></p>
                         <p>{formData.candidateName}</p>
                         <p>{formData.candidateAddress}</p>
@@ -397,7 +397,7 @@ const MouriOfferLetter = () => {
                         <p>Email: {formData.emailId}</p>
                       </div>
 
-                      <div className="mb-6 text-gray-900">
+                      <div className="mb-4 text-gray-900">
                         <p><strong>Subject: Offer of Employment for the Position of {formData.role}</strong></p>
                       </div>
 
@@ -410,10 +410,10 @@ const MouriOfferLetter = () => {
 
                         <p>This document outlines the detailed terms, conditions, and compensation structure associated with your new role. Please review it carefully.</p>
 
-                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-10 mb-3 border-b border-gray-200 pb-2 tracking-wide">PART A: ROLE & RESPONSIBILITIES</div>
+                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-2 border-b border-gray-200 pb-2 tracking-wide">PART A: ROLE & RESPONSIBILITIES</div>
                         
                         <p className="font-bold text-gray-900 mt-4 mb-2">1. Position Details</p>
-                        <table className="w-full text-[11px] mb-6 border-collapse">
+                        <table className="w-full text-[11px] mb-4 border-collapse">
                           <tbody>
                             <tr><Th>Position Title</Th><Td><span className="font-bold text-gray-900">{formData.role}</span></Td></tr>
                             <tr><Th>Department</Th><Td>{formData.department}</Td></tr>
@@ -438,7 +438,7 @@ const MouriOfferLetter = () => {
                           </tbody>
                         </table>
 
-                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-10 mb-3 border-b border-gray-200 pb-2 tracking-wide">PART B: TERMS OF EMPLOYMENT</div>
+                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-2 border-b border-gray-200 pb-2 tracking-wide">PART B: TERMS OF EMPLOYMENT</div>
                         
                         <p className="font-bold text-gray-900 mt-4 mb-2">4. Compensation & Benefits</p>
                         <table className="w-full text-[11px] mb-6 border-collapse">
@@ -459,7 +459,7 @@ const MouriOfferLetter = () => {
                         <p className="font-bold text-gray-900 mt-4 mb-2">6. Notice Period & Separation</p>
                         <p>During your probation period, the notice period shall be <span className="font-bold text-gray-900">{formData.noticePeriodProbation} days</span>. Following confirmation, the notice period required from either party will be <span className="font-bold text-gray-900">{formData.noticePeriodConfirmed} days</span>, or salary in lieu thereof, subject to project transition requirements.</p>
 
-                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-10 mb-3 border-b border-gray-200 pb-2 tracking-wide">PART C: COMPLIANCE & POLICIES</div>
+                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-2 border-b border-gray-200 pb-2 tracking-wide">PART C: COMPLIANCE & POLICIES</div>
                         
                         <p className="font-bold text-gray-900 mt-4 mb-2">7. Confidentiality & Intellectual Property</p>
                         <p>You acknowledge that all source code, architectures, client data, trade secrets, and proprietary algorithms you encounter or create during your employment are the exclusive Intellectual Property (IP) of MOURI Tech Limited. You agree to strictly adhere to our Non-Disclosure Agreement (NDA).</p>
@@ -467,10 +467,10 @@ const MouriOfferLetter = () => {
                         <p className="font-bold text-gray-900 mt-4 mb-2">8. Data Privacy & Security</p>
                         <p>MOURI Tech strictly complies with ISO 27001:2022 and global data protection regulations (e.g., GDPR, DPDPA). You are required to maintain the highest standards of information security at all times.</p>
 
-                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-10 mb-3 border-b border-gray-200 pb-2 tracking-wide">PART D: ACCEPTANCE</div>
+                        <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-3 border-b border-gray-200 pb-2 tracking-wide">PART D: ACCEPTANCE</div>
                         <p>This offer is contingent upon successful background verification and reference checks. The terms herein shall be governed by the laws of India.</p>
                         
-                        <div className="mt-12 grid grid-cols-2 gap-12 mb-10" style={{ pageBreakInside: 'avoid' }}>
+                        <div className="mt-8 grid grid-cols-2 gap-12 mb-6" style={{ pageBreakInside: 'avoid' }}>
                           <div>
                             <p className="font-bold text-gray-900 mb-10 uppercase tracking-wide text-[10px]">For MOURI Tech Limited</p>
                             <p className="font-bold text-gray-900 border-t-2 border-gray-200 pt-3 w-56 text-[12px]">{formData.signatoryName}</p>
@@ -486,7 +486,7 @@ const MouriOfferLetter = () => {
                         {/* Force page break before Annexure A */}
                         <div style={{ pageBreakBefore: 'always' }}></div>
 
-                        <div className="mb-8 mt-6">
+                        <div className="mb-2 mt-4">
                           <h3 className="font-bold text-[#005A9C] text-[16px] uppercase tracking-wide">Annexure A</h3>
                           <h4 className="text-[13px] text-gray-500 font-medium">Detailed Salary Structure</h4>
                         </div>
@@ -511,7 +511,7 @@ const MouriOfferLetter = () => {
                           
                           return (
                             <>
-                              <div className="flex justify-between items-end mb-6 bg-slate-50 p-4 rounded border border-slate-200">
+                              <div className="flex justify-between items-end mb-3 bg-slate-50 p-3 rounded border border-slate-200">
                                 <div>
                                   <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Employee Name</p>
                                   <p className="font-bold text-gray-900 text-[13px]">{formData.candidateName}</p>
@@ -526,96 +526,99 @@ const MouriOfferLetter = () => {
                                 </div>
                               </div>
                               
-                              <table className="w-full text-[11px] mb-8 border-collapse">
+                              <table className="w-full text-[11px] mb-2 border-collapse">
                                 <thead>
                                   <tr>
-                                    <th className="py-3 px-4 text-left border-b-2 border-[#005A9C] bg-white text-gray-400 uppercase tracking-wider text-[10px]">Salary Component</th>
-                                    <th className="py-3 px-4 text-right border-b-2 border-[#005A9C] bg-white text-gray-400 uppercase tracking-wider text-[10px]">Monthly (INR)</th>
-                                    <th className="py-3 px-4 text-right border-b-2 border-[#005A9C] bg-white text-gray-400 uppercase tracking-wider text-[10px]">Annual (INR)</th>
+                                    <th className="py-2 px-4 text-left border-b-2 border-[#005A9C] bg-white text-gray-400 uppercase tracking-wider text-[10px]">Salary Component</th>
+                                    <th className="py-2 px-4 text-right border-b-2 border-[#005A9C] bg-white text-gray-400 uppercase tracking-wider text-[10px]">Monthly (INR)</th>
+                                    <th className="py-2 px-4 text-right border-b-2 border-[#005A9C] bg-white text-gray-400 uppercase tracking-wider text-[10px]">Annual (INR)</th>
                                   </tr>
                                 </thead>
                                 <tbody className="text-gray-700">
                                 <tr>
-                                  <td colSpan={3} className="py-3 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide">Earnings</td>
+                                  <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide">Earnings</td>
                                 </tr>
                                 <tr>
-                                  <td className="py-2.5 px-4 border-b border-gray-100">Basic Salary</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(basicA / 12)}</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(basicA)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100">Basic Salary</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(basicA / 12)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(basicA)}</td>
                                 </tr>
                                 <tr>
-                                  <td className="py-2.5 px-4 border-b border-gray-100">House Rent Allowance (HRA)</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(hraA / 12)}</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(hraA)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100">House Rent Allowance (HRA)</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(hraA / 12)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(hraA)}</td>
                                 </tr>
                                 <tr>
-                                  <td className="py-2.5 px-4 border-b border-gray-100">Special Allowance</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(specialA / 12)}</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(specialA)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100">Special Allowance</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(specialA / 12)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(specialA)}</td>
                                 </tr>
                                 <tr className="bg-slate-50 font-bold text-gray-900 border-t border-b border-gray-200">
-                                  <td className="py-3 px-4">Gross Salary (A)</td>
-                                  <td className="py-3 px-4 text-right">{formatNumber(annual / 12)}</td>
-                                  <td className="py-3 px-4 text-right">{formatNumber(annual)}</td>
+                                  <td className="py-2 px-4">Gross Salary (A)</td>
+                                  <td className="py-2 px-4 text-right">{formatNumber(annual / 12)}</td>
+                                  <td className="py-2 px-4 text-right">{formatNumber(annual)}</td>
                                 </tr>
                                 
                                 
                                 {formData.esops && formData.esops !== "0" && (
                                   <>
                                     <tr>
-                                      <td colSpan={3} className="py-3 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-4">Long-Term Incentives</td>
+                                      <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-2">Long-Term Incentives</td>
                                     </tr>
                                     <tr className="border-b border-gray-100">
-                                      <td className="py-2.5 px-4">Employee Stock Ownership Plan (ESOPs)</td>
-                                      <td className="py-2.5 px-4 text-right">--</td>
-                                      <td className="py-2.5 px-4 text-right">{formData.esops}</td>
+                                      <td className="py-2 px-4">Employee Stock Ownership Plan (ESOPs)</td>
+                                      <td className="py-2 px-4 text-right">--</td>
+                                      <td className="py-2 px-4 text-right">{formData.esops}</td>
                                     </tr>
                                     <tr className="bg-slate-50 font-bold text-gray-900 border-b border-gray-200">
-                                      <td className="py-3 px-4">Total Cost to Company (CTC + ESOPs)</td>
-                                      <td className="py-3 px-4 text-right">--</td>
-                                      <td className="py-3 px-4 text-right">{formatNumber(annual + parseNumber(formData.esops))}</td>
+                                      <td className="py-2 px-4">Total Cost to Company (CTC + ESOPs)</td>
+                                      <td className="py-2 px-4 text-right">--</td>
+                                      <td className="py-2 px-4 text-right">{formatNumber(annual + parseNumber(formData.esops))}</td>
                                     </tr>
                                   </>
                                 )}
 
                                 <tr>
-                                  <td colSpan={3} className="py-3 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-4">Deductions</td>
+                                  <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-2">Deductions</td>
                                 </tr>
                                 <tr>
-                                  <td className="py-2.5 px-4 border-b border-gray-100">Provident Fund (PF)</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(pfM)}</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(pfA)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100">Provident Fund (PF)</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(pfM)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(pfA)}</td>
                                 </tr>
                                 <tr>
-                                  <td className="py-2.5 px-4 border-b border-gray-100">Professional Tax (PT)</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(ptM)}</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(ptA)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100">Professional Tax (PT)</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(ptM)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(ptA)}</td>
                                 </tr>
                                 <tr>
-                                  <td className="py-2.5 px-4 border-b border-gray-100">Income Tax (TDS @ 10%)</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(tdsM)}</td>
-                                  <td className="py-2.5 px-4 border-b border-gray-100 text-right">{formatNumber(tdsA)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100">Income Tax (TDS @ 10%)</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(tdsM)}</td>
+                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(tdsA)}</td>
                                 </tr>
                                 <tr className="bg-slate-50 font-bold text-gray-900 border-t border-b border-gray-200">
-                                  <td className="py-3 px-4">Total Deductions (B)</td>
-                                  <td className="py-3 px-4 text-right">{formatNumber(pfM + ptM + tdsM)}</td>
-                                  <td className="py-3 px-4 text-right">{formatNumber(deductionsA)}</td>
+                                  <td className="py-2 px-4">Total Deductions (B)</td>
+                                  <td className="py-2 px-4 text-right">{formatNumber(pfM + ptM + tdsM)}</td>
+                                  <td className="py-2 px-4 text-right">{formatNumber(deductionsA)}</td>
                                 </tr>
                                 
                                 <tr className="bg-[#005A9C]/10 font-bold border-b border-[#005A9C]/20">
-                                  <td className="py-4 px-4 text-[#005A9C] text-[12px]">Net Take Home (A - B)</td>
-                                  <td className="py-4 px-4 text-right text-gray-900 text-[12px]">{formatNumber((annual / 12) - (pfM + ptM + tdsM))}</td>
-                                  <td className="py-4 px-4 text-right text-gray-900 text-[12px]">{formatNumber(netA)}</td>
+                                  <td className="py-3 px-4 text-[#005A9C] text-[12px]">Net Take Home (A - B)</td>
+                                  <td className="py-3 px-4 text-right text-gray-900 text-[12px]">{formatNumber((annual / 12) - (pfM + ptM + tdsM))}</td>
+                                  <td className="py-3 px-4 text-right text-gray-900 text-[12px]">{formatNumber(netA)}</td>
                                 </tr>
                               </tbody>
                               </table>
                             </>
                           );
                         })()}
-                        <p className="text-[9px] text-gray-500 italic mb-12">* Note: Income Tax (TDS) has been calculated at a flat 10% rate. Final tax liability may vary based on actual investment declarations.</p>
                         
-                        <div className="mt-8 mb-4">
-                          <p className="font-bold text-gray-900 border-t-2 border-gray-200 pt-3 w-56 inline-block text-[12px]">Employee Signature</p>
+                        <div style={{ pageBreakInside: 'avoid' }}>
+                          <p className="text-[9px] text-gray-500 italic mb-4 mt-2">* Note: Income Tax (TDS) has been calculated at a flat 10% rate. Final tax liability may vary based on actual investment declarations.</p>
+                          
+                          <div className="mt-12 mb-2">
+                            <p className="font-bold text-gray-900 border-t-2 border-gray-200 pt-3 w-56 inline-block text-[12px]">Employee Signature</p>
+                          </div>
                         </div>
                       </div>
                       {/* --- END OF CONTENT FLOW --- */}

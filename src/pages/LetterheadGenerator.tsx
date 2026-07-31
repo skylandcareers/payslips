@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import { Download, Check, Settings2 } from "lucide-react";
 
@@ -152,7 +153,7 @@ const LetterheadGenerator = () => {
               <h3 className="text-xs font-bold text-white/50 uppercase tracking-widest">Recipient</h3>
               <div>
                 <label className="block text-xs mb-1 text-white/80">Name / Title</label>
-                <input type="text" name="recipientName" value={formData.recipientName} onChange={handleChange} className="w-full bg-black/50 border border-white/10 rounded px-3 py-2 text-sm focus:border-primary outline-none" />
+                <textarea name="recipientName" value={formData.recipientName} onChange={handleChange} rows={2} className="w-full bg-black/50 border border-white/10 rounded px-3 py-2 text-sm focus:border-primary outline-none resize-none" />
               </div>
               <div>
                 <label className="block text-xs mb-1 text-white/80">Address (Optional)</label>
@@ -227,9 +228,15 @@ const LetterheadGenerator = () => {
                       </div>
 
                       <div className="mb-10 text-[12px] text-gray-900 leading-relaxed font-semibold">
-                        <p>{formData.recipientName}</p>
+                        {formData.recipientName.split('\n').map((line, i) => (
+                          line.trim() ? <p key={`name-${i}`}>{line}</p> : null
+                        ))}
                         {formData.recipientAddress && (
-                          <p className="whitespace-pre-line">{formData.recipientAddress}</p>
+                          <div className="mt-1">
+                            {formData.recipientAddress.split('\n').map((line, i) => (
+                              line.trim() ? <p key={`addr-${i}`}>{line}</p> : null
+                            ))}
+                          </div>
                         )}
                       </div>
 
@@ -241,7 +248,19 @@ const LetterheadGenerator = () => {
                       
                       <div className="space-y-6 text-gray-900 text-[12px] leading-[1.8] font-serif text-justify mb-20 flex-1">
                         <p>{formData.salutation}</p>
-                        <div className="whitespace-pre-wrap">{formData.bodyText}</div>
+                        <ReactMarkdown 
+                          components={{
+                            p: ({node, ...props}) => <p className="mb-4" {...props} />,
+                            h1: ({node, ...props}) => <h1 className="text-[14px] font-bold text-gray-900 uppercase tracking-widest text-center underline underline-offset-4 mb-6 mt-2" {...props} />,
+                            h2: ({node, ...props}) => <h2 className="text-[13px] font-bold text-gray-900 mb-4 mt-6" {...props} />,
+                            h3: ({node, ...props}) => <h3 className="text-[12px] font-bold text-gray-900 mb-3 mt-4" {...props} />,
+                            ul: ({node, ...props}) => <ul className="list-disc pl-6 mb-4 space-y-2 ml-4" {...props} />,
+                            li: ({node, ...props}) => <li className="pl-2" {...props} />,
+                            strong: ({node, ...props}) => <strong className="font-[700] text-black print:text-black" {...props} />
+                          }}
+                        >
+                          {formData.bodyText}
+                        </ReactMarkdown>
                       </div>
 
                       {/* Signature Area */}
