@@ -111,11 +111,11 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 
 This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Passport No.: B7596504**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
 
-He will be traveling to France to attend the **3rd International Conference on Biomolecules** from **September 16, 2026, to September 18, 2026**, in Nancy, France.
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
-As part of his approved academic travel, his **accommodation expenses are fully covered and secured** by the University's sanctioned financial assistance. He has confirmed hotel reservations in Nancy, France for the entire duration of his stay.
+This is to officially confirm that the student is provided with **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the entire duration of his Ph.D. program.
 
-This letter is issued upon his request to facilitate visa processing and confirm his accommodation arrangements during the conference.
+This certificate is issued upon his request for official purposes, including visa processing and other academic requirements.
 
 **Place:** Hyderabad, India
 **Date:** 25-02-2026
@@ -125,6 +125,75 @@ This letter is issued upon his request to facilitate visa processing and confirm
 *(Registrar / Dean / Director – Research)*
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+    }
+  },
+  {
+    id: 'receipt',
+    name: 'Fee Receipt (Student Copy)',
+    data: {
+      isHTML: true,
+      referenceNumber: '',
+      date: '',
+      documentTitle: '',
+      bodyText: `<div class="w-full text-[12px] font-sans text-black -mt-6">
+  <div class="font-semibold mb-1 text-[13px]">Fee Receipt(Student Copy)</div>
+  <div class="border-b-[1.5px] border-dashed border-black/70 mb-2"></div>
+  
+  <table class="w-full mb-3 table-fixed">
+    <tbody>
+      <tr class="h-6 align-top">
+        <td class="w-[100px]">Receipt No.</td>
+        <td class="w-3">:</td>
+        <td class="font-bold">WU/2026-2027/2555</td>
+        <td class="w-[100px]">Receipt Date</td>
+        <td class="w-3">:</td>
+        <td>Sep 15, 2026</td>
+      </tr>
+      <tr class="h-6 align-top">
+        <td>Student Name</td>
+        <td>:</td>
+        <td class="font-bold">PREM KUMAR REDDY ELETI</td>
+        <td>Student UID</td>
+        <td>:</td>
+        <td>B7596504</td>
+      </tr>
+      <tr class="h-6 align-top">
+        <td>Class</td>
+        <td>:</td>
+        <td class="font-bold">PHD</td>
+        <td>Father Name</td>
+        <td>:</td>
+        <td class="font-bold">[Father's Name]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="w-full border-collapse border-[1.5px] border-black mb-2">
+    <thead>
+      <tr class="bg-[#d9edf7] border-b-[1.5px] border-black text-[12px]">
+        <th class="border-r-[1.5px] border-black p-1.5 text-center w-14 font-bold">S No.</th>
+        <th class="border-r-[1.5px] border-black p-1.5 text-center font-bold">Particulars</th>
+        <th class="p-1.5 text-center w-40 font-bold">Total (in Rs.)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border-r-[1.5px] border-black p-1.5 text-right font-normal">1</td>
+        <td class="border-r-[1.5px] border-black p-1.5 font-normal">University Hostel Fee Odd</td>
+        <td class="p-1.5 text-right font-normal">105,000.00</td>
+      </tr>
+      <tr class="border-t-[1.5px] border-black">
+        <td colspan="2" class="border-r-[1.5px] border-black p-1.5 text-center">Total Amount</td>
+        <td class="p-1.5 text-right font-normal">105000.0</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="mt-2 text-[12px]">Amt. in words: Rupees One Lakh Five Thousand Only</div>
+  
+  <div class="border-b-[1.5px] border-dashed border-black/70 mt-[40px]"></div>
+</div>`,
+      footerAddress: '',
     }
   }
 ];
@@ -165,14 +234,17 @@ const WoxsenLetterheadGenerator = () => {
     );
   };
 
-  const PageFooter = () => (
-    <div className="w-full relative px-[20mm] pb-[15mm] mt-8 text-[#ff0000] text-[13px] font-sans text-center">
-      <div className="w-full h-[1.5px] bg-[#ff0000] mb-2.5"></div>
-      <div className="whitespace-pre-wrap prose-strong:font-bold prose-strong:text-[#ff0000]">
-        <ReactMarkdown components={{ p: React.Fragment }}>{formData.footerAddress}</ReactMarkdown>
+  const PageFooter = () => {
+    if (!formData.footerAddress) return null;
+    return (
+      <div className="w-full relative px-[20mm] pb-[15mm] mt-8 text-[#ff0000] text-[13px] font-sans text-center">
+        <div className="w-full h-[1.5px] bg-[#ff0000] mb-2.5"></div>
+        <div className="whitespace-pre-wrap prose-strong:font-bold prose-strong:text-[#ff0000]">
+          <ReactMarkdown components={{ p: React.Fragment }}>{formData.footerAddress}</ReactMarkdown>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
@@ -392,7 +464,11 @@ const WoxsenLetterheadGenerator = () => {
 
                       {formData.bodyText && (
                         <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.6] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
+                          {(formData as any).isHTML ? (
+                            <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
+                          ) : (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
+                          )}
                         </div>
                       )}
 
