@@ -23,6 +23,9 @@ import SathyabamaLetterheadGenerator from "./pages/SathyabamaLetterheadGenerator
 import KluIndex from "./pages/KluIndex";
 import KluLetterheadGenerator from "./pages/KluLetterheadGenerator";
 
+import WoxsenIndex from "./pages/WoxsenIndex";
+import WoxsenLetterheadGenerator from "./pages/WoxsenLetterheadGenerator";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -50,6 +53,9 @@ const App = () => (
           
           <Route path="/klu" element={<KluIndex />} />
           <Route path="/klu/letterhead" element={<KluLetterheadGenerator />} />
+          
+          <Route path="/woxsen" element={<WoxsenIndex />} />
+          <Route path="/woxsen/letterhead" element={<WoxsenLetterheadGenerator />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

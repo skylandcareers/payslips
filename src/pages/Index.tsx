@@ -114,6 +114,26 @@ const Index = () => {
             </div>
           </Link>
 
+          {/* Woxsen Card */}
+          <Link to="/woxsen" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-red-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <img 
+                  src="https://woxsen.edu.in/uploads/l20241112111757.webp" 
+                  alt="Woxsen University" 
+                  className="h-10 w-auto group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Woxsen University</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                Create official academic and administrative documents on Woxsen University letterheads.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-red-700 text-sm font-semibold bg-red-50 py-2 rounded-lg group-hover:bg-red-700 group-hover:text-white transition-all">
+                Open Portal <GraduationCap className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
         </div>
       </div>
       
