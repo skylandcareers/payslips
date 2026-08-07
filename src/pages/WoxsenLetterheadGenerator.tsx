@@ -1,44 +1,145 @@
 import React, { useState } from 'react';
-import { Settings2, Download, Printer } from 'lucide-react';
+import { Settings2, Download, Printer, FileText } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+
+const templates = [
+  {
+    id: 'noc',
+    name: 'No Objection Certificate (NOC)',
+    data: {
+      referenceNumber: 'WOU/2026/PHD/REG/013',
+      date: '25/02/2026',
+      documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
+      bodyText: `**To**
+**The Consulate General of France**
+**Bengaluru, India**
+
+**Subject: No Objection Certificate for Attending 3rd International Conference on Biomolecules, France – PhD (Biotechnology)**
+
+This is to certify that **Mr. PREM KUMAR REDDY ELETI** (Passport No.: B7596504) is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**. His doctoral research is related to the following poster presentation:
+
+**Title of the Presentation:**
+"Development of a Next-Generation Biomolecule-Driven Microbial Consortium Biofertilizer for Sustainable Rice Cultivation"
+
+The University has no objection to him traveling to France to attend the **3rd International Conference on Biomolecules** from **September 16 to September 18, 2026**, at the University of Lorraine, Nancy, France.
+
+His participation is purely academic and will not affect his Ph.D. progress. He is expected to resume his research at Woxsen University upon completion.
+
+This certificate is issued at the student's request for a visa and official purposes.
+
+**Place:** Hyderabad, India
+**Date:** 25-02-2026
+&nbsp;
+&nbsp;
+&nbsp;
+**Registrar/Dean**
+**Woxsen University**`,
+      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+    }
+  },
+  {
+    id: 'sanction',
+    name: 'Sanction Letter',
+    data: {
+      referenceNumber: 'WOU/2026/PHD/EVEN&CONF/037',
+      date: '25/02/2026',
+      documentTitle: '**SANCTION LETTER**',
+      bodyText: `**To**
+**Mr. PREM KUMAR REDDY ELETI**
+**Ph.D. Scholar, School of Biotechnology**
+
+**Subject: Financial Sanction and Academic Leave Approval for International Conference – France**
+
+This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Passport No.: B7596504**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
+
+The University hereby sanctions a **financial assistance of ₹2,60,000/- (Rupees Two Lakhs Sixty Thousand Only)** in favor of Mr. Prem Kumar Reddy Eleti to support his academic travel and related expenses for attending the **3rd International Conference on Biomolecules** in **France**.
+
+The conference is scheduled to be held from **September 16, 2026, to September 18, 2026**, in Nancy, France.
+
+He has been granted **official academic leave** for the period from **14th September 2026 to 21st September 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
+
+The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
+
+This letter is issued at the request of the student for **visa and other official purposes**.
+
+**Place:** Hyderabad, India
+**Date:** 25-02-2026
+&nbsp;
+&nbsp;
+&nbsp;
+*(Registrar / Dean / Director – Research)*
+**Woxsen University**`,
+      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+    }
+  },
+  {
+    id: 'bonafide',
+    name: 'Bonafide Certificate',
+    data: {
+      referenceNumber: 'WOU/2026/PHD/REG/013',
+      date: '25/02/2026',
+      documentTitle: '**BONAFIDE CERTIFICATE**',
+      bodyText: `**To Whomsoever It May Concern**
+
+This is to certify that **Mr. PREM KUMAR REDDY ELETI**, bearing **Passport No.: B7596504** is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**.
+
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
+
+The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
+
+This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
+
+**Place:** Hyderabad, India
+**Date:** 25-02-2026
+&nbsp;
+&nbsp;
+&nbsp;
+*(Registrar / Dean / Director – Research)*
+**Woxsen University**`,
+      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+    }
+  },
+  {
+    id: 'hotel',
+    name: 'Hotel / Accommodation Confirmation',
+    data: {
+      referenceNumber: 'WOU/2026/PHD/HOSTEL/046',
+      date: '25/02/2026',
+      documentTitle: '**ACCOMMODATION CONFIRMATION**',
+      bodyText: `**To Whomsoever It May Concern**
+
+This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Passport No.: B7596504**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
+
+He will be traveling to France to attend the **3rd International Conference on Biomolecules** from **September 16, 2026, to September 18, 2026**, in Nancy, France.
+
+As part of his approved academic travel, his **accommodation expenses are fully covered and secured** by the University's sanctioned financial assistance. He has confirmed hotel reservations in Nancy, France for the entire duration of his stay.
+
+This letter is issued upon his request to facilitate visa processing and confirm his accommodation arrangements during the conference.
+
+**Place:** Hyderabad, India
+**Date:** 25-02-2026
+&nbsp;
+&nbsp;
+&nbsp;
+*(Registrar / Dean / Director – Research)*
+**Woxsen University**`,
+      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+    }
+  }
+];
 
 const WoxsenLetterheadGenerator = () => {
   const [activeTab, setActiveTab] = useState<'form' | 'preview'>('form');
   const [isExporting, setIsExporting] = useState(false);
+  const [formData, setFormData] = useState(templates[0].data);
 
-  const [formData, setFormData] = useState({
-    referenceNumber: 'WOU/2026/PHD/REG/012',
-    date: '25/02/2026',
-    documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
-    bodyText: `**To**
-**The Consulate General of France**
-**Bengaluru, India**
-
-**Subject: No Objection Certificate for Attending IEEE I2MTC 2026 Conference, France – PhD (CSE)**
-
-**To Whomsoever It May Concern**
-
-This is to certify that Mr. YANDRA YUGESWARA RAO is a bonafide Ph.D. Scholar at Woxsen University, Hyderabad, India.
-
-He is currently pursuing his Doctor of Philosophy (Ph.D.) in Computer Science & Engineering (CSE) and holds Admission No.: 23WU02645646 and Passport No.: W8081174. His doctoral research work is related to the following Ph.D. research paper:
-
-**Title of the Ph.D. Research Paper:**
-"An Intelligent Measurement and Data Analytics Framework Using Machine Learning for Smart Systems"
-
-The University has no objection to Mr. Yandra Yugeswara Rao traveling to France to attend the IEEE I2MTC 2026 Conference, scheduled to be held from May 25, 2026, to May 28, 2026, at the Nancy Congress Center – Centre Prouvé, Nancy, France.
-
-His participation in the above conference is purely academic and research-oriented in nature and will not affect his Ph.D. progress at the University. He is expected to resume his doctoral research activities at Woxsen University after completion of the conference.
-
-This certificate is issued at the student's request for a visa and other official purposes.
-
-**Place:** Hyderabad, India
-**Date:** 25-02-2026
-
-*(Registrar / Dean / Director – Research)*
-**Woxsen University**`,
-    footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
-  });
+  const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const template = templates.find(t => t.id === e.target.value);
+    if (template) {
+      setFormData(template.data);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -173,6 +274,21 @@ This certificate is issued at the student's request for a visa and other officia
               <h2 className="text-lg font-bold">Document Details</h2>
             </div>
 
+            <div className="mb-6 bg-red-50 p-4 rounded-xl border border-red-100">
+              <label className="flex items-center gap-2 text-sm font-semibold text-red-900 mb-2">
+                <FileText className="w-4 h-4" />
+                Quick Templates
+              </label>
+              <select 
+                onChange={handleTemplateChange}
+                className="w-full p-2.5 border border-red-200 rounded-lg outline-none transition-all bg-white text-sm text-slate-900 focus:ring-2 focus:ring-red-500 shadow-sm"
+              >
+                {templates.map(t => (
+                  <option key={t.id} value={t.id}>{t.name}</option>
+                ))}
+              </select>
+            </div>
+
             <div className="space-y-5">
               
               <div className="grid grid-cols-2 gap-4">
@@ -269,13 +385,13 @@ This certificate is issued at the student's request for a visa and other officia
                       )}
 
                       {formData.documentTitle && (
-                        <div className="text-center mb-6 text-[17px] prose-strong:font-bold prose-strong:text-black">
+                        <div className="text-center mb-8 text-[17px] prose-strong:font-bold prose-strong:text-black">
                           <ReactMarkdown components={{ p: React.Fragment }}>{formData.documentTitle.replace(/\n/g, '  \n')}</ReactMarkdown>
                         </div>
                       )}
 
                       {formData.bodyText && (
-                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.6] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-justify font-sans">
+                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.6] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
                           <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
                         </div>
                       )}
