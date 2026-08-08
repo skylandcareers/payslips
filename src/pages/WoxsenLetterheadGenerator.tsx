@@ -247,7 +247,7 @@ const WoxsenLetterheadGenerator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-50 to-slate-100/80 flex flex-col font-sans selection:bg-red-500/20 selection:text-red-900">
       <style>{`
         @media print {
           @page {
@@ -286,14 +286,14 @@ const WoxsenLetterheadGenerator = () => {
       `}</style>
 
       {/* Top Navigation */}
-      <div className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-sm print:hidden">
+      <div className="bg-white/80 backdrop-blur-xl border-b border-slate-200/60 px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] print:hidden">
         <div className="flex items-center gap-4">
-          <a href="/woxsen" className="text-slate-500 hover:text-slate-800 transition-colors">
+          <a href="/woxsen" className="text-slate-500 hover:text-slate-800 transition-colors font-medium text-sm flex items-center gap-1">
             ← Back
           </a>
           <div className="w-px h-6 bg-slate-200"></div>
           <h1 className="text-xl font-bold text-slate-800 flex items-center gap-3">
-            <div className="w-8 h-8 bg-red-100 text-red-700 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-tr from-red-700 to-red-500 text-white rounded-lg flex items-center justify-center shadow-md ring-4 ring-red-50">
               W
             </div>
             Woxsen Letterhead Generator
@@ -303,7 +303,7 @@ const WoxsenLetterheadGenerator = () => {
           <button
             onClick={handleExportPDF}
             disabled={isExporting}
-            className={`px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-lg font-medium transition-all shadow-sm flex items-center gap-2 ${isExporting ? 'opacity-70 cursor-not-allowed' : ''}`}
+            className={`px-5 py-2.5 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-800 hover:to-red-700 text-white rounded-xl font-medium transition-all shadow-[0_4px_14px_0_rgba(220,38,38,0.25)] hover:shadow-[0_6px_20px_rgba(220,38,38,0.23)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 ${isExporting ? 'opacity-70 cursor-not-allowed transform-none hover:shadow-none' : ''}`}
           >
             {isExporting ? (
               <>
@@ -339,21 +339,22 @@ const WoxsenLetterheadGenerator = () => {
         </div>
 
         {/* Left Form Sidebar */}
-        <div className={`${activeTab === 'form' ? 'flex' : 'hidden'} md:flex w-full md:w-[400px] lg:w-[450px] bg-white border-r border-slate-200 flex-col h-full overflow-y-auto print:hidden z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)] relative`}>
+        <div className={`${activeTab === 'form' ? 'flex' : 'hidden'} md:flex w-full md:w-[400px] lg:w-[450px] bg-white/60 backdrop-blur-3xl border-r border-slate-200/60 flex-col h-full overflow-y-auto print:hidden z-10 shadow-[4px_0_24px_rgba(0,0,0,0.02)] relative`}>
           <div className="p-6">
             <div className="flex items-center gap-2 mb-6 text-slate-800">
-              <Settings2 className="w-5 h-5 text-red-700" />
+              <Settings2 className="w-5 h-5 text-red-600" />
               <h2 className="text-lg font-bold">Document Details</h2>
             </div>
 
-            <div className="mb-6 bg-red-50 p-4 rounded-xl border border-red-100">
-              <label className="flex items-center gap-2 text-sm font-semibold text-red-900 mb-2">
-                <FileText className="w-4 h-4" />
+            <div className="mb-6 bg-gradient-to-br from-red-50/50 to-red-50 p-5 rounded-2xl border border-red-100/60 shadow-sm">
+              <label className="flex items-center gap-2 text-sm font-semibold text-red-900 mb-3">
+                <FileText className="w-4 h-4 text-red-600" />
                 Quick Templates
               </label>
               <select 
                 onChange={handleTemplateChange}
-                className="w-full p-2.5 border border-red-200 rounded-lg outline-none transition-all bg-white text-sm text-slate-900 focus:ring-2 focus:ring-red-500 shadow-sm"
+                className="w-full p-3 border border-red-200/80 rounded-xl outline-none transition-all bg-white text-sm font-medium text-slate-800 hover:border-red-300 focus:ring-4 focus:ring-red-500/10 focus:border-red-500 shadow-sm appearance-none cursor-pointer"
+                style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b91c1c%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem top 50%', backgroundSize: '0.65rem auto' }}
               >
                 {templates.map(t => (
                   <option key={t.id} value={t.id}>{t.name}</option>
@@ -371,7 +372,7 @@ const WoxsenLetterheadGenerator = () => {
                     name="referenceNumber"
                     value={formData.referenceNumber}
                     onChange={handleChange}
-                    className="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-slate-50 focus:bg-white text-sm text-slate-900"
+                    className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm placeholder:text-slate-400"
                   />
                 </div>
                 <div className="space-y-1.5 col-span-2 md:col-span-1">
@@ -381,7 +382,7 @@ const WoxsenLetterheadGenerator = () => {
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-slate-50 focus:bg-white text-sm text-slate-900"
+                    className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm placeholder:text-slate-400"
                   />
                 </div>
               </div>
@@ -393,19 +394,22 @@ const WoxsenLetterheadGenerator = () => {
                   name="documentTitle"
                   value={formData.documentTitle}
                   onChange={handleChange}
-                  className="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-slate-50 focus:bg-white text-sm text-slate-900"
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm placeholder:text-slate-400"
                 />
               </div>
 
-              <div className="space-y-1.5">
-                <label className="text-sm font-semibold text-slate-700">Body Content (Markdown)</label>
-                <p className="text-xs text-slate-500">Everything else goes here (To, Subject, Salutation, Signature). Use **bold** where needed.</p>
+              <div className="space-y-1.5 group">
+                <div className="flex items-center justify-between">
+                  <label className="text-sm font-semibold text-slate-700">Body Content</label>
+                  <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200">Markdown</span>
+                </div>
+                <p className="text-xs text-slate-500 mb-2">Everything else goes here (To, Subject, Salutation, Signature). Use **bold** where needed.</p>
                 <textarea
                   name="bodyText"
                   value={formData.bodyText}
                   onChange={handleChange}
                   rows={15}
-                  className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-slate-50 focus:bg-white text-sm text-slate-900 font-mono leading-relaxed resize-none mt-2"
+                  className="w-full p-4 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-800 font-mono leading-relaxed resize-none mt-2 shadow-inner placeholder:text-slate-300"
                 />
               </div>
 
@@ -416,7 +420,7 @@ const WoxsenLetterheadGenerator = () => {
                   value={formData.footerAddress}
                   onChange={handleChange}
                   rows={2}
-                  className="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all bg-slate-50 focus:bg-white text-sm text-slate-900 resize-none"
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 resize-none shadow-sm placeholder:text-slate-400"
                 />
               </div>
 
@@ -425,9 +429,10 @@ const WoxsenLetterheadGenerator = () => {
         </div>
 
         {/* Right Preview Area */}
-        <div className={`${activeTab === 'preview' ? 'flex' : 'hidden'} md:flex flex-1 bg-slate-100 overflow-y-auto print:overflow-visible p-4 md:p-8 justify-center print:p-0 print:bg-white print:block print:!flex`}>
+        <div className={`${activeTab === 'preview' ? 'flex' : 'hidden'} md:flex flex-1 bg-slate-100/50 overflow-y-auto print:overflow-visible p-4 md:p-8 justify-center print:p-0 print:bg-white print:block print:!flex relative`}>
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none print:hidden"></div>
           
-          <div className="w-full max-w-[210mm] bg-white shadow-[0_0_40px_rgba(0,0,0,0.1)] print:shadow-none print-content-container relative print:max-w-none page-container" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+          <div className="w-full max-w-[210mm] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1),0_0_20px_rgba(0,0,0,0.02)] print:shadow-none print-content-container relative print:max-w-none page-container transition-transform duration-300 hover:scale-[1.002]" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
             {/* Center Watermark */}
             <img 
               src="https://woxsen.edu.in/uploads/l20241112111757.webp" 

@@ -134,6 +134,42 @@ const Index = () => {
             </div>
           </Link>
 
+          {/* CA Card */}
+          <Link to="/ca" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-indigo-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-auto px-4 border-2 border-indigo-700 rounded-lg flex items-center justify-center text-indigo-700 font-serif font-bold text-2xl group-hover:scale-105 transition-transform">
+                  CA
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">D. Raja Sekhar & Co.</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                Chartered Accountants letterhead generator for financial certificates and declarations.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-indigo-700 text-sm font-semibold bg-indigo-50 py-2 rounded-lg group-hover:bg-indigo-700 group-hover:text-white transition-all">
+                Open Portal <Briefcase className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Spoorthi Card */}
+          <Link to="/spoorthi" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-emerald-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-auto px-4 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-700 font-sans font-bold text-xl group-hover:scale-105 transition-transform text-center leading-tight">
+                  SPOORTHI<br/>ASSOCIATES
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Spoorthi Associates</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                Engineers & Architects letterhead generator for valuation certificates and reports.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-emerald-700 text-sm font-semibold bg-emerald-50 py-2 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                Open Portal <Building2 className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
         </div>
       </div>
       

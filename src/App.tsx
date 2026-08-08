@@ -26,6 +26,12 @@ import KluLetterheadGenerator from "./pages/KluLetterheadGenerator";
 import WoxsenIndex from "./pages/WoxsenIndex";
 import WoxsenLetterheadGenerator from "./pages/WoxsenLetterheadGenerator";
 
+import CaIndex from "./pages/CaIndex";
+import CaLetterheadGenerator from "./pages/CaLetterheadGenerator";
+
+import SpoorthiIndex from "./pages/SpoorthiIndex";
+import SpoorthiLetterheadGenerator from "./pages/SpoorthiLetterheadGenerator";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -56,6 +62,12 @@ const App = () => (
           
           <Route path="/woxsen" element={<WoxsenIndex />} />
           <Route path="/woxsen/letterhead" element={<WoxsenLetterheadGenerator />} />
+          
+          <Route path="/ca" element={<CaIndex />} />
+          <Route path="/ca/letterhead" element={<CaLetterheadGenerator />} />
+
+          <Route path="/spoorthi" element={<SpoorthiIndex />} />
+          <Route path="/spoorthi/letterhead" element={<SpoorthiLetterheadGenerator />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
