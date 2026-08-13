@@ -13,7 +13,7 @@ const SathyabamaLetterheadGenerator = () => {
     referenceNo: "SU/ADMIN/2026/045",
     recipientName: "To Whomsoever It May Concern",
     recipientAddress: "",
-    subject: "Bona Fide Certificate",
+    subject: "Bonafide Certificate",
     salutation: "To Whom It May Concern,",
     bodyText: "This is to certify that Mr. ARUNKUMAR RAJALINGAM, S/O Shri. RAJALINGAM, bearing Registration Number 19S915003, is a bonafide student of Sathyabama Institute of Science and Technology (Deemed to be University).\n\nHe is currently pursuing the M.E. Computer Science and Engineering program in the School of Computing - Department of Computer Science and Engineering.\n\nHe is presently in the Second Year (III Semester) of the program for the academic year 2026-2027.\n\nHis date of birth as per the institution records is 29/04/2002. He is a full-time student of the Institution and is residing in the Institution hostel during his studies. His academic performance and conduct have been found to be satisfactory.\n\nThis certificate is issued upon his request for official and visa purposes.",
     signatoryName: "Dr. T. Sasipraba",

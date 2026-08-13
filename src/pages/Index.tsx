@@ -170,6 +170,44 @@ const Index = () => {
             </div>
           </Link>
 
+          {/* HighRadius Card */}
+          <Link to="/highradius" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-blue-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <img
+                  src="https://cdn.highradius.com/wp-content/uploads/2024/06/HighRadius-Updated.svg"
+                  alt="HighRadius"
+                  className="h-10 w-auto group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">HighRadius</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                Generate offer letters, payslips, and official letterheads for HighRadius Technologies.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#0047AB] text-sm font-semibold bg-blue-50 py-2 rounded-lg group-hover:bg-[#0047AB] group-hover:text-white transition-all">
+                Open Portal <Briefcase className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Maruthi Glass Mart Card */}
+          <Link to="/maruthi-glass" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-[#005691] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-auto px-4 bg-[#005691]/10 rounded-lg flex items-center justify-center text-[#005691] font-sans font-black text-lg group-hover:scale-105 transition-transform text-center leading-tight">
+                  MARUTHI<br/>GLASS MART
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Maruthi Glass Mart</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                Generate official letterheads, price quotations, estimates, and warranty certificates.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#005691] text-sm font-semibold bg-[#005691]/10 py-2 rounded-lg group-hover:bg-[#005691] group-hover:text-white transition-all">
+                Open Portal <Building2 className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
         </div>
       </div>
       

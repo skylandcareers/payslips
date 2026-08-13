@@ -32,6 +32,14 @@ import CaLetterheadGenerator from "./pages/CaLetterheadGenerator";
 import SpoorthiIndex from "./pages/SpoorthiIndex";
 import SpoorthiLetterheadGenerator from "./pages/SpoorthiLetterheadGenerator";
 
+import HighradiusIndex from "./pages/HighradiusIndex";
+import HighradiusOfferLetter from "./pages/HighradiusOfferLetter";
+import HighradiusPayslipGenerator from "./pages/HighradiusPayslipGenerator";
+import HighradiusLetterheadGenerator from "./pages/HighradiusLetterheadGenerator";
+
+import MaruthiGlassIndex from "./pages/MaruthiGlassIndex";
+import MaruthiGlassLetterheadGenerator from "./pages/MaruthiGlassLetterheadGenerator";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -68,6 +76,14 @@ const App = () => (
 
           <Route path="/spoorthi" element={<SpoorthiIndex />} />
           <Route path="/spoorthi/letterhead" element={<SpoorthiLetterheadGenerator />} />
+
+          <Route path="/highradius" element={<HighradiusIndex />} />
+          <Route path="/highradius/offer-letter" element={<HighradiusOfferLetter />} />
+          <Route path="/highradius/payslips" element={<HighradiusPayslipGenerator />} />
+          <Route path="/highradius/letterhead" element={<HighradiusLetterheadGenerator />} />
+
+          <Route path="/maruthi-glass" element={<MaruthiGlassIndex />} />
+          <Route path="/maruthi-glass/letterhead" element={<MaruthiGlassLetterheadGenerator />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

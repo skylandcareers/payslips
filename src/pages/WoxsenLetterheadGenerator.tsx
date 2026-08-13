@@ -8,32 +8,29 @@ const templates = [
     id: 'noc',
     name: 'No Objection Certificate (NOC)',
     data: {
-      referenceNumber: 'WOU/2026/PHD/REG/013',
-      date: '25/02/2026',
+      referenceNumber: 'WOU/2026/PHD/REG/103',
+      date: '07/08/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `**To**
 **The Consulate General of France**
 **Bengaluru, India**
 
-**Subject: No Objection Certificate for Attending 3rd International Conference on Biomolecules, France – PhD (Biotechnology)**
+**Subject: No Objection Certificate for Academic Conference Attendance in France**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI** (Passport No.: B7596504) is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**. His doctoral research is related to the following poster presentation:
+This is to certify that **Mr. PREM KUMAR REDDY ELETI** is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
 
-**Title of the Presentation:**
-"Development of a Next-Generation Biomolecule-Driven Microbial Consortium Biofertilizer for Sustainable Rice Cultivation"
+He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647876** and **Passport No.: B7596504**. His doctoral research is related to the poster presentation titled **“Development of a Next-Generation Biomolecule-Driven Microbial Consortium Biofertilizer for Sustainable Rice Cultivation.”**
 
-The University has no objection to him traveling to France to attend the **3rd International Conference on Biomolecules** from **September 16 to September 18, 2026**, at the University of Lorraine, Nancy, France.
+The University has **no objection to his travel to France** to attend the **3rd International Conference on Biomolecules**, scheduled from **16–18 September 2026** at the **University of Lorraine, Nancy, France**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University** upon completion of the conference.
 
-His participation is purely academic and will not affect his Ph.D. progress. He is expected to resume his research at Woxsen University upon completion.
-
-This certificate is issued at the student's request for a visa and official purposes.
+This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Hyderabad, India
-**Date:** 25-02-2026
+**Date:** 07-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
-**Registrar/Dean**
+**(Registrar / Dean)**
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -42,18 +39,19 @@ This certificate is issued at the student's request for a visa and official purp
     id: 'sanction',
     name: 'Sanction Letter',
     data: {
-      referenceNumber: 'WOU/2026/PHD/EVEN&CONF/037',
-      date: '25/02/2026',
+      referenceNumber: 'WOU/2026/PHD/EVEN&CONF/135',
+      date: '07/08/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `**To**
 **Mr. PREM KUMAR REDDY ELETI**
 **Ph.D. Scholar, School of Biotechnology**
+**Student ID: 24WU02647876**
 
 **Subject: Financial Sanction and Academic Leave Approval for International Conference – France**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Passport No.: B7596504**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
+This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Student ID.: 24WU02647876**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
 
-The University hereby sanctions a **financial assistance of ₹2,60,000/- (Rupees Two Lakhs Sixty Thousand Only)** in favor of Mr. Prem Kumar Reddy Eleti to support his academic travel and related expenses for attending the **3rd International Conference on Biomolecules** in **France**.
+The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Prem Kumar Reddy Eleti to support his academic travel and related expenses for attending the **3rd International Conference on Biomolecules** in **France**.
 
 The conference is scheduled to be held from **September 16, 2026, to September 18, 2026**, in Nancy, France.
 
@@ -64,11 +62,11 @@ The above financial sanction and leave approval have been granted after due cons
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Hyderabad, India
-**Date:** 25-02-2026
+**Date:** 07-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
-*(Registrar / Dean / Director – Research)*
+**(Registrar / Dean / Director – Research)**
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -77,12 +75,12 @@ This letter is issued at the request of the student for **visa and other officia
     id: 'bonafide',
     name: 'Bonafide Certificate',
     data: {
-      referenceNumber: 'WOU/2026/PHD/REG/013',
-      date: '25/02/2026',
+      referenceNumber: 'WOU/2026/PHD/REG/118',
+      date: '07/08/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI**, bearing **Passport No.: B7596504** is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**.
+This is to certify that **Mr. PREM KUMAR REDDY ELETI**, bearing **Admission No.: 24WU02647876** is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -91,11 +89,11 @@ The student is provided **hostel accommodation within the University campus**, a
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Hyderabad, India
-**Date:** 25-02-2026
+**Date:** 07-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
-*(Registrar / Dean / Director – Research)*
+**(Registrar / Dean / Director – Research)**
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -104,12 +102,12 @@ This bonafide certificate is issued upon his request for **official purposes**, 
     id: 'hotel',
     name: 'Hotel / Accommodation Confirmation',
     data: {
-      referenceNumber: 'WOU/2026/PHD/HOSTEL/046',
-      date: '25/02/2026',
+      referenceNumber: 'WOU/2026/PHD/HOSTEL/108',
+      date: '07/08/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Passport No.: B7596504**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
+This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Admission No.: 24WU02647876** and **Passport No.: B7596504**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -118,11 +116,11 @@ This is to officially confirm that the student is provided with **hostel accommo
 This certificate is issued upon his request for official purposes, including visa processing and other academic requirements.
 
 **Place:** Hyderabad, India
-**Date:** 25-02-2026
+**Date:** 07-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
-*(Registrar / Dean / Director – Research)*
+**(Registrar / Dean / Director – Research)**
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -136,7 +134,7 @@ This certificate is issued upon his request for official purposes, including vis
       date: '',
       documentTitle: '',
       bodyText: `<div class="w-full text-[12px] font-sans text-black -mt-6">
-  <div class="font-semibold mb-1 text-[13px]">Fee Receipt(Student Copy)</div>
+  <div class="font-semibold mb-1 text-[13px]">Bonafide Receipt (Student Copy)</div>
   <div class="border-b-[1.5px] border-dashed border-black/70 mb-2"></div>
   
   <table class="w-full mb-3 table-fixed">
@@ -147,7 +145,7 @@ This certificate is issued upon his request for official purposes, including vis
         <td class="font-bold">WU/2026-2027/2555</td>
         <td class="w-[100px]">Receipt Date</td>
         <td class="w-3">:</td>
-        <td>Sep 15, 2026</td>
+        <td>June 15, 2026</td>
       </tr>
       <tr class="h-6 align-top">
         <td>Student Name</td>
@@ -155,7 +153,7 @@ This certificate is issued upon his request for official purposes, including vis
         <td class="font-bold">PREM KUMAR REDDY ELETI</td>
         <td>Student UID</td>
         <td>:</td>
-        <td>B7596504</td>
+        <td>24WU02647876</td>
       </tr>
       <tr class="h-6 align-top">
         <td>Class</td>
@@ -163,7 +161,7 @@ This certificate is issued upon his request for official purposes, including vis
         <td class="font-bold">PHD</td>
         <td>Father Name</td>
         <td>:</td>
-        <td class="font-bold">[Father's Name]</td>
+        <td class="font-bold">GANGADHAR ELETI</td>
       </tr>
     </tbody>
   </table>
@@ -180,11 +178,11 @@ This certificate is issued upon his request for official purposes, including vis
       <tr>
         <td class="border-r-[1.5px] border-black p-1.5 text-right font-normal">1</td>
         <td class="border-r-[1.5px] border-black p-1.5 font-normal">University Hostel Fee Odd</td>
-        <td class="p-1.5 text-right font-normal">105,000.00</td>
+        <td class="p-1.5 text-right font-normal">1,05,000.00</td>
       </tr>
       <tr class="border-t-[1.5px] border-black">
         <td colspan="2" class="border-r-[1.5px] border-black p-1.5 text-center">Total Amount</td>
-        <td class="p-1.5 text-right font-normal">105000.0</td>
+        <td class="p-1.5 text-right font-normal">1,05,000.00</td>
       </tr>
     </tbody>
   </table>
@@ -227,9 +225,9 @@ const WoxsenLetterheadGenerator = () => {
       <div className="w-full relative shrink-0">
         <div className="flex flex-col items-center justify-center w-full px-[20mm] pt-[15mm] pb-6">
           <div className="w-[198px] shrink-0 mb-4 self-end">
-          <img src="https://woxsen.edu.in/uploads/l20241112111757.webp" alt="Woxsen Logo" className="w-full h-auto object-contain" />
+            <img src="https://woxsen.edu.in/uploads/l20241112111757.webp" alt="Woxsen Logo" className="w-full h-auto object-contain" />
+          </div>
         </div>
-      </div>
       </div>
     );
   };
@@ -321,7 +319,7 @@ const WoxsenLetterheadGenerator = () => {
       </div>
 
       <div className="flex flex-1 overflow-hidden h-[calc(100vh-73px)] print:h-auto print:block print:overflow-visible">
-        
+
         {/* Mobile Tabs */}
         <div className="md:hidden flex bg-white border-b border-slate-200 w-full shrink-0 print:hidden">
           <button
@@ -351,7 +349,7 @@ const WoxsenLetterheadGenerator = () => {
                 <FileText className="w-4 h-4 text-red-600" />
                 Quick Templates
               </label>
-              <select 
+              <select
                 onChange={handleTemplateChange}
                 className="w-full p-3 border border-red-200/80 rounded-xl outline-none transition-all bg-white text-sm font-medium text-slate-800 hover:border-red-300 focus:ring-4 focus:ring-red-500/10 focus:border-red-500 shadow-sm appearance-none cursor-pointer"
                 style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b91c1c%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem top 50%', backgroundSize: '0.65rem auto' }}
@@ -363,7 +361,7 @@ const WoxsenLetterheadGenerator = () => {
             </div>
 
             <div className="space-y-5">
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5 col-span-2 md:col-span-1">
                   <label className="text-sm font-semibold text-slate-700">Reference Number</label>
@@ -431,13 +429,13 @@ const WoxsenLetterheadGenerator = () => {
         {/* Right Preview Area */}
         <div className={`${activeTab === 'preview' ? 'flex' : 'hidden'} md:flex flex-1 bg-slate-100/50 overflow-y-auto print:overflow-visible p-4 md:p-8 justify-center print:p-0 print:bg-white print:block print:!flex relative`}>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none print:hidden"></div>
-          
+
           <div className="w-full max-w-[210mm] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1),0_0_20px_rgba(0,0,0,0.02)] print:shadow-none print-content-container relative print:max-w-none page-container transition-transform duration-300 hover:scale-[1.002]" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
             {/* Center Watermark */}
-            <img 
-              src="https://woxsen.edu.in/uploads/l20241112111757.webp" 
-              alt="Watermark" 
-              className="watermark" 
+            <img
+              src="https://woxsen.edu.in/uploads/l20241112111757.webp"
+              alt="Watermark"
+              className="watermark"
             />
 
             <table className="w-full relative z-10 h-full border-collapse border-spacing-0 table-fixed">
@@ -453,7 +451,7 @@ const WoxsenLetterheadGenerator = () => {
                 <tr>
                   <td className="align-top relative px-[20mm]">
                     <div className="h-full block min-h-[600px] relative text-black text-[13.5px] font-sans leading-relaxed">
-                      
+
                       {(formData.referenceNumber || formData.date) && (
                         <div className="flex justify-between items-start mb-8 font-sans text-[14px]">
                           <div><ReactMarkdown components={{ p: React.Fragment }}>{formData.referenceNumber.replace(/\n/g, '  \n')}</ReactMarkdown></div>
@@ -469,7 +467,7 @@ const WoxsenLetterheadGenerator = () => {
 
                       {formData.bodyText && (
                         <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.6] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
-                          {(formData as any).isHTML ? (
+                          {(formData as { isHTML?: boolean }).isHTML ? (
                             <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
                           ) : (
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
