@@ -6,27 +6,27 @@ import remarkGfm from 'remark-gfm';
 const templates = [
   {
     id: 'noc',
-    name: 'No Objection Certificate (NOC)',
+    name: 'No Objection Certificate (NOC) - Dinesh Kumar Musku',
     data: {
       referenceNumber: 'WOU/2026/PHD/REG/103',
-      date: '07/08/2026',
+      date: '18/08/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `**To**
-**The Consulate General of France**
-**Bengaluru, India**
+**The Visa Officer / Consulate General of Spain**
+**India**
 
-**Subject: No Objection Certificate for Academic Conference Attendance in France**
+**Subject: No Objection Certificate for Academic Conference Attendance (BIOSPAIN 2026) in Spain**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI** is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
+This is to certify that **Mr. DINESH KUMAR MUSKU** is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647876** and **Passport No.: B7596504**. His doctoral research is related to the poster presentation titled **“Development of a Next-Generation Biomolecule-Driven Microbial Consortium Biofertilizer for Sustainable Rice Cultivation.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647887**.
 
-The University has **no objection to his travel to France** to attend the **3rd International Conference on Biomolecules**, scheduled from **16–18 September 2026** at the **University of Lorraine, Nancy, France**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University** upon completion of the conference.
+The University has **no objection to his travel to Spain** to attend **BIOSPAIN 2026**, scheduled from **September 29th to October 1st, 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University** upon completion of the conference.
 
 This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Hyderabad, India
-**Date:** 07-08-2026
+**Date:** 18-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
@@ -37,32 +37,31 @@ This certificate is issued at his request for **visa and official purposes**.
   },
   {
     id: 'sanction',
-    name: 'Sanction Letter',
+    name: 'Sanction Letter - Dinesh Kumar Musku',
     data: {
       referenceNumber: 'WOU/2026/PHD/EVEN&CONF/135',
-      date: '07/08/2026',
+      date: '18/08/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `**To**
-**Mr. PREM KUMAR REDDY ELETI**
+**Mr. DINESH KUMAR MUSKU**
 **Ph.D. Scholar, School of Biotechnology**
-**Student ID: 24WU02647876**
+**Student ID: 24WU02647887**
+**Email: dineshkumarmusku@gmail.com**
 
-**Subject: Financial Sanction and Academic Leave Approval for International Conference – France**
+**Subject: Academic Leave and Deputation Approval for International Conference – BIOSPAIN 2026 (Spain)**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Student ID.: 24WU02647876**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
+This is to certify that **Mr. DINESH KUMAR MUSKU**, holding **Student ID.: 24WU02647887**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
 
-The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Prem Kumar Reddy Eleti to support his academic travel and related expenses for attending the **3rd International Conference on Biomolecules** in **France**.
+The University hereby approves his official participation in **BIOSPAIN 2026**, taking place in **Bilbao, Spain** from **September 29, 2026, to October 1, 2026** (Registration: Academic Regular Registration - 330,00 EUR Paid).
 
-The conference is scheduled to be held from **September 16, 2026, to September 18, 2026**, in Nancy, France.
+He has been granted **official academic leave** for the period from **27th September 2026 to 3rd October 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
 
-He has been granted **official academic leave** for the period from **14th September 2026 to 21st September 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
-
-The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
+The University has **no objection** to his participation in the above-mentioned academic event.
 
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Hyderabad, India
-**Date:** 07-08-2026
+**Date:** 18-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
@@ -73,23 +72,23 @@ This letter is issued at the request of the student for **visa and other officia
   },
   {
     id: 'bonafide',
-    name: 'Bonafide Certificate',
+    name: 'Bonafide Certificate - Dinesh Kumar Musku',
     data: {
       referenceNumber: 'WOU/2026/PHD/REG/118',
-      date: '07/08/2026',
+      date: '18/08/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI**, bearing **Admission No.: 24WU02647876** is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**.
+This is to certify that **Mr. DINESH KUMAR MUSKU**, bearing **Admission No.: 24WU02647887** is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
 The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
 
-This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
+This bonafide certificate is issued upon his request for **official purposes**, including **conference participation at BIOSPAIN 2026 (Bilbao, Spain), accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Hyderabad, India
-**Date:** 07-08-2026
+**Date:** 18-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
@@ -100,23 +99,23 @@ This bonafide certificate is issued upon his request for **official purposes**, 
   },
   {
     id: 'hotel',
-    name: 'Hotel / Accommodation Confirmation',
+    name: 'Hotel / Accommodation Confirmation - Dinesh Kumar Musku',
     data: {
       referenceNumber: 'WOU/2026/PHD/HOSTEL/108',
-      date: '07/08/2026',
+      date: '18/08/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. PREM KUMAR REDDY ELETI**, holding **Admission No.: 24WU02647876** and **Passport No.: B7596504**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
+This is to certify that **Mr. DINESH KUMAR MUSKU**, holding **Admission No.: 24WU02647887**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
 This is to officially confirm that the student is provided with **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the entire duration of his Ph.D. program.
 
-This certificate is issued upon his request for official purposes, including visa processing and other academic requirements.
+This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
 
 **Place:** Hyderabad, India
-**Date:** 07-08-2026
+**Date:** 18-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
@@ -127,7 +126,7 @@ This certificate is issued upon his request for official purposes, including vis
   },
   {
     id: 'receipt',
-    name: 'Fee Receipt (Student Copy)',
+    name: 'Fee Receipt (Student Copy) - Dinesh Kumar Musku',
     data: {
       isHTML: true,
       referenceNumber: '',
@@ -142,26 +141,26 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-6 align-top">
         <td class="w-[100px]">Receipt No.</td>
         <td class="w-3">:</td>
-        <td class="font-bold">WU/2026-2027/2555</td>
+        <td class="font-bold">WU/2026-2027/2589</td>
         <td class="w-[100px]">Receipt Date</td>
         <td class="w-3">:</td>
-        <td>June 15, 2026</td>
+        <td>August 18, 2026</td>
       </tr>
       <tr class="h-6 align-top">
         <td>Student Name</td>
         <td>:</td>
-        <td class="font-bold">PREM KUMAR REDDY ELETI</td>
+        <td class="font-bold">DINESH KUMAR MUSKU</td>
         <td>Student UID</td>
         <td>:</td>
-        <td>24WU02647876</td>
+        <td>24WU02647887</td>
       </tr>
       <tr class="h-6 align-top">
         <td>Class</td>
         <td>:</td>
         <td class="font-bold">PHD</td>
-        <td>Father Name</td>
+        <td>Father / Guardian</td>
         <td>:</td>
-        <td class="font-bold">GANGADHAR ELETI</td>
+        <td class="font-bold">Balkonda, Nizamabad, TS</td>
       </tr>
     </tbody>
   </table>
