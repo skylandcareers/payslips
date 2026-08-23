@@ -10,8 +10,33 @@ const GOLD_ACCENT = "#b18a4b";
 
 const templateOptions = [
   {
+    id: 'spain_sponsorship_dinesh',
+    name: 'Spain Visa SPONSORSHIP LETTER - Dinesh Kumar (Maruthi Glass Mart)',
+    data: {
+      referenceNo: 'MGM/VISA/2026/SPAIN-01',
+      date: '21 August 2026',
+      recipientName: 'The Visa Officer',
+      recipientAddress: 'Consulate General of Spain\nMumbai, India',
+      subject: 'SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE UNDERTAKING FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)',
+      salutation: 'Dear Sir/Madam,',
+      page1Paragraphs: [
+        `I, **Mr. Musku Narsaiah**, an Indian citizen, hereby confirm that I am the biological father and financial sponsor of **Mr. Dinesh Kumar Musku** (Passport No.: **Y5326556**, Student UID: **24WU02647887**), who is a full-time Ph.D. Research Scholar pursuing his doctoral degree in Biotechnology at **Woxsen University**, Telangana, India.`,
+        `I am the proprietor of **M/s Maruthi Glass Mart**, a registered business in Telangana, India (GSTIN: **36ABHPL2882R1ZV**, PAN: **DIJPM0547Q**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.`,
+        `My son, Mr. Dinesh Kumar Musku, has been accepted to present his doctoral research paper at the international biotechnology conference **BIOSPAIN 2026**, scheduled to take place in **Bilbao, Spain** from **September 29th to October 1st, 2026**.`,
+        `I hereby undertake **full financial responsibility** for my son's entire trip to Spain and the Schengen territory, including his round-trip travel, accommodation, daily living expenses, meals, local transport, overseas health insurance, and any emergency contingencies that may arise during his stay from **27th September 2026 to 5th October 2026**.`,
+        `My son is traveling strictly for academic purposes. He has strong academic commitments in India and will return immediately after completing his conference visit to resume his Ph.D. research at Woxsen University.`,
+        `All necessary financial and business credentials, including GST registration certificate, PAN, bank statements, Income Tax Returns, certificates from Woxsen University, and BIOSPAIN 2026 receipts, are submitted in support of this application.`,
+        `I fully support his participation in this international conference and assure you of my financial capability and commitment. I kindly request you to consider his visa application favorably.`,
+        `Thanking you.`
+      ],
+      page2Paragraphs: [],
+      signatoryName: 'MUSKU NARSAIAH',
+      signatoryDesignation: 'Proprietor\nM/s Maruthi Glass Mart\nTelangana, India',
+    }
+  },
+  {
     id: 'korea_visa_cover_letter',
-    name: 'South Korea Visa Cover Letter (2 Pages)',
+    name: 'South Korea Visa SPONSORSHIP LETTER (2 Pages)',
     data: {
       referenceNo: '',
       date: '13 August 2026',
@@ -76,11 +101,11 @@ const MaruthiGlassLetterheadGenerator = () => {
 
   const [headerData, setHeaderData] = useState({
     businessName: 'MARUTHI GLASS MART',
-    tagline: 'Interior Design & Materials',
-    proprietor: 'Ms. Kommula Pranathi',
+    tagline: 'Glass & Interior Materials Supply',
+    proprietor: 'Musku Narsaiah',
     phone: '+91 96186 25279',
     gstin: '36ABHPL2882R1ZV',
-    pan: 'GRVPP7008H',
+    pan: 'DIJPM0547Q',
     entityType: 'PROPRIETORSHIP',
     address: '11/28/1, Kakatiya Autonagar, Warangal, Hanumakonda, Telangana – 506012',
   });
@@ -111,6 +136,11 @@ const MaruthiGlassLetterheadGenerator = () => {
     const selected = templateOptions.find(t => t.id === templateId);
     if (selected) {
       setFormData(selected.data);
+      if (templateId === 'spain_sponsorship_dinesh') {
+        setHeaderData(prev => ({ ...prev, proprietor: 'Musku Narsaiah' }));
+      } else if (templateId === 'korea_visa_cover_letter') {
+        setHeaderData(prev => ({ ...prev, proprietor: 'Ms. Kommula Pranathi' }));
+      }
     }
   };
 
@@ -118,7 +148,7 @@ const MaruthiGlassLetterheadGenerator = () => {
     window.print();
   };
 
-  {/* Exact Header matching User's HTML */}
+  {/* Exact Header matching User's HTML */ }
   const HeaderDesign = () => (
     <header className="w-full pb-2 mb-3 border-b-4 border-[#1e4652] relative bg-white">
       <div className="flex justify-between items-start flex-wrap gap-4">
@@ -160,7 +190,7 @@ const MaruthiGlassLetterheadGenerator = () => {
     </header>
   );
 
-  {/* Exact Footer matching User's HTML */}
+  {/* Exact Footer matching User's HTML */ }
   const FooterDesign = ({ pageNum, totalPages }: { pageNum: number; totalPages: number }) => (
     <footer className="w-full font-sans mt-auto pt-4 relative bg-white">
       <div className="h-[1px] bg-[#c8d1d5] relative mb-1.5">
@@ -174,9 +204,6 @@ const MaruthiGlassLetterheadGenerator = () => {
         <div className="text-right">
           {headerData.address}
         </div>
-      </div>
-      <div className="text-center mt-1 text-[#8a9498] text-[6.2px]">
-        South Korea Short-Stay Visa Application · Page {pageNum} of {totalPages}
       </div>
     </footer>
   );
@@ -221,7 +248,7 @@ const MaruthiGlassLetterheadGenerator = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-base font-bold text-slate-900 tracking-tight leading-none">MARUTHI GLASS MART</span>
-              <span className="text-xs text-[#1e4652] font-semibold">South Korea Visa Cover Letter Generator</span>
+              <span className="text-xs text-[#1e4652] font-semibold">South Korea Visa SPONSORSHIP LETTER Generator</span>
             </div>
           </Link>
           <div className="flex items-center gap-4">
@@ -240,11 +267,11 @@ const MaruthiGlassLetterheadGenerator = () => {
 
         {/* Sidebar Controls */}
         <div className={`w-full md:w-[380px] bg-white border border-slate-200 rounded-xl shadow-sm p-6 flex-col gap-6 overflow-y-auto max-h-[calc(100vh-140px)] sticky top-28 print:hidden shrink-0 ${activeTab === "form" ? "flex" : "hidden md:flex"}`}>
-          
+
           <div className="flex items-center justify-between border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
               <Settings2 className="w-5 h-5 text-[#1e4652]" />
-              <h2 className="text-lg font-bold text-slate-900">Cover Letter Controls</h2>
+              <h2 className="text-lg font-bold text-slate-900">SPONSORSHIP LETTER Controls</h2>
             </div>
           </div>
 
@@ -367,14 +394,14 @@ const MaruthiGlassLetterheadGenerator = () => {
 
           {/* PAGE 1 */}
           <div className="page-container page w-full max-w-[210mm] min-h-[297mm] bg-white text-black shadow-2xl p-12 md:p-14 relative flex flex-col justify-between print:shadow-none print:w-full print:max-w-none" style={{ fontFamily: selectedFont }}>
-            
+
             <div>
               {/* Header */}
               <HeaderDesign />
 
               {/* Title Block */}
               <div className="text-center my-3">
-                <h2 className="font-sans text-[13px] font-bold text-[#173f4b] tracking-[1.5px] uppercase">COVER LETTER</h2>
+                <h2 className="font-sans text-[13px] font-bold text-[#173f4b] tracking-[1.5px] uppercase">SPONSORSHIP LETTER</h2>
                 <div className="w-[40mm] h-[2px] bg-[#b18a4b] mx-auto my-1.5"></div>
                 <div className="font-sans text-[7px] text-[#737e83] tracking-[0.8px] uppercase">South Korea Short-Stay Visa Application</div>
               </div>
@@ -409,6 +436,16 @@ const MaruthiGlassLetterheadGenerator = () => {
                   </ReactMarkdown>
                 </div>
               ))}
+
+              {/* Signature (If Single Page Document) */}
+              {formData.page2Paragraphs.length === 0 && (
+                <div className="mt-4 text-[9.8pt] leading-normal font-serif">
+                  <p>Yours faithfully,</p>
+                  <div className="h-[18mm]"></div>
+                  <div className="font-bold text-[#173f4b] text-[10pt]">{formData.signatoryName}</div>
+                  <div className="text-[9pt] text-slate-700 whitespace-pre-line">{formData.signatoryDesignation}</div>
+                </div>
+              )}
             </div>
 
             {/* Page 1 Footer */}
@@ -419,14 +456,14 @@ const MaruthiGlassLetterheadGenerator = () => {
           {/* PAGE 2 (If multi-page) */}
           {formData.page2Paragraphs.length > 0 && (
             <div className="page-container page page-break w-full max-w-[210mm] min-h-[297mm] bg-white text-black shadow-2xl p-12 md:p-14 relative flex flex-col justify-between print:shadow-none print:w-full print:max-w-none mt-8 print:mt-0" style={{ fontFamily: selectedFont }}>
-              
+
               <div>
                 {/* Header */}
                 <HeaderDesign />
 
                 {/* Continued Bar */}
                 <div className="font-sans text-[7.5px] font-bold tracking-[1.15px] text-[#68757a] my-3 pb-1 border-b border-[#d7dfe2] uppercase">
-                  COVER LETTER — CONTINUED
+                  SPONSORSHIP LETTER — CONTINUED
                 </div>
 
                 {/* Page 2 Body Paragraphs */}

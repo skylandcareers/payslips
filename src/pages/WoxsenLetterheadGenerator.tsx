@@ -5,77 +5,88 @@ import remarkGfm from 'remark-gfm';
 
 const templates = [
   {
-    id: 'noc',
-    name: 'No Objection Certificate (NOC) - Dinesh Kumar Musku',
+    id: 'sanction',
+    name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
     data: {
-      referenceNumber: 'WOU/2026/PHD/REG/103',
-      date: '18/08/2026',
-      documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
-      bodyText: `**To**
-**The Visa Officer / Consulate General of Spain**
-**India**
+      referenceNumber: 'WOU/2026/PHD/EVEN&CONF/135',
+      date: '21/08/2026',
+      documentTitle: '**SANCTION LETTER**',
+      bodyText: `To  
+**Mr. DINESH KUMAR MUSKU**  
+**Ph.D. Scholar, School of Biotechnology**  
+**Student ID: 24WU02647887**
 
-**Subject: No Objection Certificate for Academic Conference Attendance (BIOSPAIN 2026) in Spain**
+**Subject: Financial Sanction and Academic Leave Approval for International Conference – Spain**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU** is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
+This is to certify that **Mr. DINESH KUMAR MUSKU**, holding **Student ID.: 24WU02647887**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647887**.
+The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Dinesh Kumar Musku to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
 
-The University has **no objection to his travel to Spain** to attend **BIOSPAIN 2026**, scheduled from **September 29th to October 1st, 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University** upon completion of the conference.
+The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
 
-This certificate is issued at his request for **visa and official purposes**.
+He has been granted **official academic leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
 
-**Place:** Hyderabad, India
-**Date:** 18-08-2026
+The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
+
+This letter is issued at the request of the student for **visa and other official purposes**.
+
+**Place:** Hyderabad, India  
+**Date:** 21-08-2026
+
 &nbsp;
 &nbsp;
 &nbsp;
-**(Registrar / Dean)**
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+*(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
   },
   {
-    id: 'sanction',
-    name: 'Sanction Letter - Dinesh Kumar Musku',
+    id: 'noc',
+    name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
     data: {
-      referenceNumber: 'WOU/2026/PHD/EVEN&CONF/135',
-      date: '18/08/2026',
-      documentTitle: '**SANCTION LETTER**',
-      bodyText: `**To**
-**Mr. DINESH KUMAR MUSKU**
-**Ph.D. Scholar, School of Biotechnology**
-**Student ID: 24WU02647887**
-**Email: dineshkumarmusku@gmail.com**
+      referenceNumber: 'WOU/2026/PHD/REG/103',
+      date: '21/08/2026',
+      documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
+      bodyText: `To  
+**The Consulate General of Spain**  
+**Mumbai, India**
 
-**Subject: Academic Leave and Deputation Approval for International Conference – BIOSPAIN 2026 (Spain)**
+**Subject: No Objection Certificate for Academic Conference Attendance in Spain**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU**, holding **Student ID.: 24WU02647887**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
+This is to certify that **Mr. DINESH KUMAR MUSKU** is a bona fide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
 
-The University hereby approves his official participation in **BIOSPAIN 2026**, taking place in **Bilbao, Spain** from **September 29, 2026, to October 1, 2026** (Registration: Academic Regular Registration - 330,00 EUR Paid).
+He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647887** and **Passport No.: Y5326556**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
 
-He has been granted **official academic leave** for the period from **27th September 2026 to 3rd October 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
+The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University upon completion of the conference**.
 
-The University has **no objection** to his participation in the above-mentioned academic event.
+This certificate is issued at his request for **visa and official purposes**.
 
-This letter is issued at the request of the student for **visa and other official purposes**.
+**Place:** Hyderabad, India  
+**Date:** 21-08-2026
 
-**Place:** Hyderabad, India
-**Date:** 18-08-2026
 &nbsp;
 &nbsp;
 &nbsp;
-**(Registrar / Dean / Director – Research)**
+&nbsp;
+
+*(Registrar / Dean)*  
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
   },
   {
     id: 'bonafide',
-    name: 'Bonafide Certificate - Dinesh Kumar Musku',
+    name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: 'WOU/2026/PHD/REG/118',
-      date: '18/08/2026',
+      date: '21/08/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -85,14 +96,17 @@ He is a regular research scholar of the University and is currently in the **3rd
 
 The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
 
-This bonafide certificate is issued upon his request for **official purposes**, including **conference participation at BIOSPAIN 2026 (Bilbao, Spain), accommodation confirmation, visa processing, and other academic requirements.**
+This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
-**Place:** Hyderabad, India
-**Date:** 18-08-2026
+**Place:** Hyderabad, India  
+**Date:** 21-08-2026
+
 &nbsp;
 &nbsp;
 &nbsp;
-**(Registrar / Dean / Director – Research)**
+&nbsp;
+
+*(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -102,7 +116,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
     name: 'Hotel / Accommodation Confirmation - Dinesh Kumar Musku',
     data: {
       referenceNumber: 'WOU/2026/PHD/HOSTEL/108',
-      date: '18/08/2026',
+      date: '21/08/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -114,12 +128,15 @@ This is to officially confirm that the student is provided with **hostel accommo
 
 This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
 
-**Place:** Hyderabad, India
-**Date:** 18-08-2026
+**Place:** Hyderabad, India  
+**Date:** 21-08-2026
+
 &nbsp;
 &nbsp;
 &nbsp;
-**(Registrar / Dean / Director – Research)**
+&nbsp;
+
+*(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
       footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -133,7 +150,7 @@ This certificate is issued upon his request for official purposes, including vis
       date: '',
       documentTitle: '',
       bodyText: `<div class="w-full text-[12px] font-sans text-black -mt-6">
-  <div class="font-semibold mb-1 text-[13px]">Bonafide Receipt (Student Copy)</div>
+  <div class="font-semibold mb-1 text-[13px]">Hostel Fee Receipt (Student Copy)</div>
   <div class="border-b-[1.5px] border-dashed border-black/70 mb-2"></div>
   
   <table class="w-full mb-3 table-fixed">
@@ -144,7 +161,7 @@ This certificate is issued upon his request for official purposes, including vis
         <td class="font-bold">WU/2026-2027/2589</td>
         <td class="w-[100px]">Receipt Date</td>
         <td class="w-3">:</td>
-        <td>August 18, 2026</td>
+        <td>June 12, 2026</td>
       </tr>
       <tr class="h-6 align-top">
         <td>Student Name</td>
@@ -157,10 +174,10 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-6 align-top">
         <td>Class</td>
         <td>:</td>
-        <td class="font-bold">PHD</td>
+        <td class="font-bold">Ph.D.</td>
         <td>Father / Guardian</td>
         <td>:</td>
-        <td class="font-bold">Balkonda, Nizamabad, TS</td>
+        <td class="font-bold">NARSAIAH MUSKU</td>
       </tr>
     </tbody>
   </table>
@@ -176,7 +193,7 @@ This certificate is issued upon his request for official purposes, including vis
     <tbody>
       <tr>
         <td class="border-r-[1.5px] border-black p-1.5 text-right font-normal">1</td>
-        <td class="border-r-[1.5px] border-black p-1.5 font-normal">University Hostel Fee Odd</td>
+        <td class="border-r-[1.5px] border-black p-1.5 font-normal">University Hostel Fee </td>
         <td class="p-1.5 text-right font-normal">1,05,000.00</td>
       </tr>
       <tr class="border-t-[1.5px] border-black">
@@ -465,11 +482,11 @@ const WoxsenLetterheadGenerator = () => {
                       )}
 
                       {formData.bodyText && (
-                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.6] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
+                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.65] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
                           {(formData as { isHTML?: boolean }).isHTML ? (
                             <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
                           ) : (
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText}</ReactMarkdown>
                           )}
                         </div>
                       )}

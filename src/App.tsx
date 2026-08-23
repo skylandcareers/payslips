@@ -40,6 +40,12 @@ import HighradiusLetterheadGenerator from "./pages/HighradiusLetterheadGenerator
 import MaruthiGlassIndex from "./pages/MaruthiGlassIndex";
 import MaruthiGlassLetterheadGenerator from "./pages/MaruthiGlassLetterheadGenerator";
 
+import TechnoIndiaIndex from "./pages/TechnoIndiaIndex";
+import TechnoIndiaLetterheadGenerator from "./pages/TechnoIndiaLetterheadGenerator";
+
+import SriYogeshwaraIndex from "./pages/SriYogeshwaraIndex";
+import SriYogeshwaraLetterheadGenerator from "./pages/SriYogeshwaraLetterheadGenerator";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -84,6 +90,12 @@ const App = () => (
 
           <Route path="/maruthi-glass" element={<MaruthiGlassIndex />} />
           <Route path="/maruthi-glass/letterhead" element={<MaruthiGlassLetterheadGenerator />} />
+
+          <Route path="/techno-india" element={<TechnoIndiaIndex />} />
+          <Route path="/techno-india/letterhead" element={<TechnoIndiaLetterheadGenerator />} />
+
+          <Route path="/sri-yogeshwara" element={<SriYogeshwaraIndex />} />
+          <Route path="/sri-yogeshwara/letterhead" element={<SriYogeshwaraLetterheadGenerator />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
