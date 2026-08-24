@@ -59,7 +59,7 @@ Registrar & Dean (R&D)
       documentTitle: '**NO OBJECTION CERTIFICATE & LEAVE APPROVAL**',
       bodyText: `To  
 **The Consulate General of France**  
-**Kolkata / Mumbai, India**
+**Kolkata, India**
 
 **Subject: No Objection Certificate and Official Academic Leave Approval for International Conference in France**
 

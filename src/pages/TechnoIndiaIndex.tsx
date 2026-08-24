@@ -47,7 +47,7 @@ const TechnoIndiaIndex = () => {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-8 w-full max-w-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl">
 
           {/* Generator Card */}
           <Link to="/techno-india/letterhead" className="group">
@@ -60,7 +60,23 @@ const TechnoIndiaIndex = () => {
                 Generate Recommendation Letters, Provisional Degree Certificates, Bonafide Certificates, NOCs, and Official Department Correspondence with custom stamps and signatures.
               </p>
               <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#d9232a] text-sm font-bold group-hover:gap-3 transition-all">
-                Launch Document Generator <FileOutput className="w-4 h-4" />
+                Launch University Suite <FileOutput className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Imperial Leather Sponsorship Card */}
+          <Link to="/imperial-leather/letterhead" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-slate-800 hover:shadow-xl hover:-translate-y-1 flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-300 flex items-center justify-center mb-6 text-slate-900 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300 shadow-sm font-serif font-black text-xl">
+                IL
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-900">Imperial Leather Sponsorship Generator</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                Generate Financial Sponsorship Letters & Visa Guarantees on official Imperial Leather GST Letterhead (Sagar Debnath, Proprietor).
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-slate-900 text-sm font-bold group-hover:gap-3 transition-all">
+                Launch Sponsorship Suite <FileOutput className="w-4 h-4" />
               </div>
             </div>
           </Link>

@@ -249,6 +249,24 @@ const Index = () => {
             </div>
           </Link>
 
+          {/* Imperial Leather Card */}
+          <Link to="/imperial-leather/letterhead" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-slate-800 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-auto px-4 bg-slate-900 rounded-xl flex items-center justify-center text-white font-serif font-black text-lg group-hover:scale-105 transition-transform text-center leading-tight shadow-md">
+                  IMPERIAL<br/>LEATHER
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Imperial Leather</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                GST registered Proprietorship (Sagar Debnath) Sponsorship Letterhead Generator & Visa Financial Guarantee.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-slate-900 text-sm font-semibold bg-slate-100 py-2 rounded-lg group-hover:bg-slate-900 group-hover:text-white transition-all">
+                Open Portal <Building2 className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
           {/* Maruthi Glass Mart Card */}
           <Link to="/maruthi-glass" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-[#005691] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
