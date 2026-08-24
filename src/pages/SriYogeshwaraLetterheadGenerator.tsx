@@ -149,10 +149,12 @@ const SriYogeshwaraLetterheadGenerator = () => {
               box-shadow: none !important;
               margin: 0 !important;
               width: 210mm !important;
-              min-height: 297mm !important;
-              padding: 12mm 18mm 18mm !important;
+              max-height: 297mm !important;
+              padding: 8mm 15mm 10mm !important;
               position: relative;
-              page-break-after: always;
+              page-break-inside: avoid !important;
+              page-break-after: avoid !important;
+              overflow: hidden !important;
             }
           }
         `}
@@ -293,35 +295,35 @@ const SriYogeshwaraLetterheadGenerator = () => {
         <div className={`print-container flex-1 overflow-y-auto bg-slate-200/50 p-4 md:p-8 rounded-2xl md:flex flex-col gap-10 items-center relative print:block print:bg-transparent print:rounded-none print:p-0 print:m-0 ${activeTab === "preview" ? "flex" : "hidden"}`}>
 
           {/* A4 Page */}
-          <div className="page-container page w-full max-w-[210mm] min-h-[297mm] bg-white text-black shadow-2xl p-8 md:p-11 relative flex flex-col justify-between print:shadow-none print:w-full print:max-w-none" style={{ fontFamily: selectedFont }}>
+          <div className="page-container page w-full max-w-[210mm] min-h-[297mm] bg-white text-black shadow-2xl p-6 md:p-8 relative flex flex-col justify-between print:shadow-none print:w-full print:max-w-none" style={{ fontFamily: selectedFont }}>
 
             <div className="w-full flex flex-col">
 
               {/* RESTORED GREEN SRI YOGESHWARA LETTERHEAD HEADER */}
-              <header className="w-full pb-3 mb-4 border-b-2 border-green-900 bg-white flex flex-col items-center justify-center text-center">
+              <header className="w-full pb-2 mb-3 border-b-2 border-green-900 bg-white flex flex-col items-center justify-center text-center">
 
                 {/* Single Line: Emblem Logo + Firm Title */}
-                <div className="flex items-center justify-center gap-3 mb-1.5">
-                  <div className="w-10 h-10 rounded-xl bg-green-900 flex items-center justify-center text-amber-300 shadow-sm shrink-0">
-                    <Sprout className="w-6 h-6 text-amber-300" />
+                <div className="flex items-center justify-center gap-3 mb-1">
+                  <div className="w-9 h-9 rounded-xl bg-green-900 flex items-center justify-center text-amber-300 shadow-sm shrink-0">
+                    <Sprout className="w-5.5 h-5.5 text-amber-300" />
                   </div>
-                  <h1 className="text-[24px] font-black text-green-950 tracking-tight leading-none uppercase">
+                  <h1 className="text-[23px] font-black text-green-950 tracking-tight leading-none uppercase">
                     {headerData.firmName}
                   </h1>
                 </div>
 
                 {/* Tagline */}
-                <div className="text-[12px] font-black text-green-900 tracking-wide uppercase mb-1 max-w-[620px]">
+                <div className="text-[11.5px] font-black text-green-900 tracking-wide uppercase mb-1 max-w-[620px]">
                   {headerData.tagline}
                 </div>
 
                 {/* Principal Address Line */}
-                <div className="text-[11px] font-semibold text-slate-800 mb-1 leading-snug">
+                <div className="text-[10.5px] font-semibold text-slate-800 mb-1 leading-snug">
                   {headerData.address}
                 </div>
 
                 {/* GSTIN & Contact Info */}
-                <div className="text-[11.5px] font-extrabold text-slate-900 flex items-center justify-center flex-wrap gap-3">
+                <div className="text-[11px] font-extrabold text-slate-900 flex items-center justify-center flex-wrap gap-3">
                   <span><strong className="text-green-950 font-black">GSTIN:</strong> {headerData.gstin}</span>
                   <span className="text-green-800 font-black">•</span>
                   <span><strong className="text-green-950 font-black">Ph:</strong> {headerData.phone}</span>
@@ -350,18 +352,18 @@ const SriYogeshwaraLetterheadGenerator = () => {
 
               {/* Subject */}
               {formData.subject && (
-                <div className="border-l-[3.5px] border-amber-500 bg-green-50/60 p-2 mb-3 font-sans text-[9pt] leading-snug font-bold text-green-950">
+                <div className="border-l-[3.5px] border-amber-500 bg-green-50/60 p-2.5 mb-3 font-sans text-[9.2pt] leading-snug font-bold text-green-950">
                   Subject: {formData.subject}
                 </div>
               )}
 
               {/* Salutation */}
               {formData.salutation && (
-                <p className="text-[9pt] leading-[1.4] text-justify mb-2 text-slate-900 font-medium">{formData.salutation}</p>
+                <p className="text-[9.5pt] leading-[1.5] text-justify mb-2.5 text-slate-900 font-medium">{formData.salutation}</p>
               )}
 
               {/* Body Content */}
-              <div className="w-full text-[9.5pt] leading-[1.55] text-justify text-slate-900 mb-4 [&_p]:mb-3 prose-strong:font-bold prose-strong:text-green-950">
+              <div className="w-full text-[9.6pt] leading-[1.6] text-justify text-slate-900 mb-3 [&_p]:mb-3.5 prose-strong:font-bold prose-strong:text-green-950">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {formData.bodyText || ''}
                 </ReactMarkdown>
@@ -372,19 +374,19 @@ const SriYogeshwaraLetterheadGenerator = () => {
             {/* Signature Block (Left Aligned) */}
             <div className="w-full mt-3 pt-1 flex flex-col items-start text-left font-sans">
               <div className="text-[9.5pt] text-slate-900 font-medium">Yours faithfully,</div>
-              <div className="text-[9pt] font-bold text-green-950 mt-0.5">For {formData.signatoryFirm || headerData.firmName}</div>
+              <div className="text-[9.2pt] font-bold text-green-950 mt-0.5">For {formData.signatoryFirm || headerData.firmName}</div>
 
               {/* Blank vertical space for physical signing & stamping */}
-              <div className="h-16 w-48" />
+              <div className="h-12 w-48" />
 
               <div className="text-[10.5pt] font-bold text-green-950 uppercase">{headerData.proprietor}</div>
               <div className="text-[9pt] font-semibold text-slate-700">Proprietor</div>
             </div>
 
             {/* Centered Page Footer */}
-            <footer className="w-full font-sans mt-auto pt-3 border-t border-slate-300 bg-white text-center text-[9px] text-slate-800 leading-snug">
+            <footer className="w-full font-sans mt-auto pt-2 border-t-2 border-green-900 bg-white text-center text-[9px] text-slate-900 leading-snug">
               <div className="font-semibold text-slate-900 flex items-center justify-center flex-wrap gap-2">
-                <span>GSTIN: <strong>{headerData.gstin}</strong></span>
+                <span>GSTIN: <strong className="text-green-950 font-black">{headerData.gstin}</strong></span>
                 <span className="text-green-800 font-bold">•</span>
                 <span>{headerData.hsnCode}</span>
                 <span className="text-green-800 font-bold">•</span>
