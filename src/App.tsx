@@ -47,6 +47,8 @@ import SriYogeshwaraIndex from "./pages/SriYogeshwaraIndex";
 import SriYogeshwaraLetterheadGenerator from "./pages/SriYogeshwaraLetterheadGenerator";
 
 import ImperialLeatherLetterheadGenerator from "./pages/ImperialLeatherLetterheadGenerator";
+import StandardEngineeringLetterheadGenerator from "./pages/StandardEngineeringLetterheadGenerator";
+import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLetterheadGenerator";
 
 const queryClient = new QueryClient();
 
@@ -100,6 +102,9 @@ const App = () => (
           <Route path="/sri-yogeshwara/letterhead" element={<SriYogeshwaraLetterheadGenerator />} />
 
           <Route path="/imperial-leather/letterhead" element={<ImperialLeatherLetterheadGenerator />} />
+          <Route path="/standard-engineering/letterhead" element={<StandardEngineeringLetterheadGenerator />} />
+          <Route path="/medical-equipments/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
+          <Route path="/meis/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

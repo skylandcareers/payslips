@@ -103,8 +103,8 @@ const ImperialLeatherLetterheadGenerator = () => {
     gstin: '19AAFFI6308A1ZP',
     hsnCode: 'HSN: 4202 (Leather Goods) | HSN: 4107 (Finished Leather)',
     regType: 'REGULAR TAXPAYER (PROPRIETORSHIP)',
-    address: '62, TOPSIA ROAD, TOPSIA, Kolkata, West Bengal - 700039',
-    phone: '+91 9836544416',
+    address: '62, TOPSIA ROAD, TOPSIA, Kolkata, West Bengal',
+    phone: '+91 8125588816',
   });
 
   const [formData, setFormData] = useState(templateOptions[0].data);
@@ -312,7 +312,7 @@ const ImperialLeatherLetterheadGenerator = () => {
                       <h1 className="text-[26px] font-black text-[#0f172a] tracking-widest leading-none uppercase font-serif mb-1">
                         {headerData.firmName}
                       </h1>
-                      <div className="text-[10px] font-bold text-[#b8860b] tracking-[0.15em] uppercase mb-0.5">
+                      <div className="text-[9px] font-bold text-[#b8860b] tracking-[0.15em] uppercase mb-0.5">
                         {headerData.tagline}
                       </div>
                       <div className="text-[9.5px] font-medium text-slate-600">
@@ -378,36 +378,40 @@ const ImperialLeatherLetterheadGenerator = () => {
                 )}
 
                 {/* Body Content */}
-                <div className="w-full text-[9.6pt] leading-[1.65] text-justify text-slate-900 mb-3 [&_p]:mb-3.5 prose-strong:font-bold prose-strong:text-[#0f172a]">
+                <div className="w-full text-[9.6pt] leading-[1.65] text-justify text-slate-900 [&_p]:mb-2.5 [&_p:last-child]:mb-0 prose-strong:font-bold prose-strong:text-[#0f172a]">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {formData.bodyText || ''}
+                    {formData.bodyText}
                   </ReactMarkdown>
+                </div>
+
+                {/* Sign-off Block: Yours faithfully, sits directly under Thanking you. */}
+                <div className="w-full flex flex-col items-start text-left font-sans mt-0.5 mb-14">
+                  <div className="text-[9.5pt] text-slate-900 font-medium leading-none">Yours faithfully,</div>
+
+                  {/* 40px blank vertical space for physical ink signature & stamp seal */}
+                  <div className="h-32 w-full" />
+
+                  <div className="text-[10pt] font-extrabold text-slate-950 uppercase tracking-wide leading-tight">
+                    {formData.signatoryName || headerData.proprietor}
+                  </div>
+                  <div className="text-[8.5pt] font-semibold text-slate-600 leading-tight">
+                    {formData.signatoryTitle || 'Proprietor'}
+                  </div>
                 </div>
 
               </div>
 
             </div>
 
-            {/* Signature Block (Left Aligned) */}
-            <div className="w-full mt-4 pt-1 flex flex-col items-start text-left font-sans px-1">
-              <div className="text-[9.5pt] text-slate-900 font-medium">Yours faithfully,</div>
-              <div className="text-[9.5pt] font-bold text-[#0f172a] mt-0.5">For {formData.signatoryFirm || headerData.firmName}</div>
-
-              {/* Blank vertical space for physical signing & stamping */}
-              <div className="h-14 w-52" />
-
-              <div className="text-[10.5pt] font-bold text-slate-950 uppercase tracking-wide">{headerData.proprietor}</div>
-              <div className="text-[9pt] font-semibold text-slate-700">Proprietor</div>
-            </div>
-
-            {/* Centered Page Footer */}
-            <footer className="w-full font-sans mt-auto pt-2.5 border-t-2 border-[#0f172a] bg-white text-center text-[9px] text-slate-900 leading-snug">
-              <div className="font-semibold text-slate-900 flex items-center justify-center flex-wrap gap-2">
+            {/* Centered Page Footer with Address */}
+            <footer className="w-full font-sans absolute bottom-0 left-0 right-0 px-[18mm] pb-[7mm] bg-white text-center text-[8.5px] text-slate-900 leading-snug z-20">
+              <div className="w-full h-[1.5px] bg-[#0f172a] mb-1.5"></div>
+              <div className="font-semibold text-slate-900 flex items-center justify-center flex-wrap gap-2 text-[8.5px]">
                 <span>GSTIN: <strong className="text-[#0f172a] font-black">{headerData.gstin}</strong></span>
                 <span className="text-[#b8860b] font-bold">•</span>
                 <span>{headerData.hsnCode}</span>
                 <span className="text-[#b8860b] font-bold">•</span>
-                <span>{headerData.regType}</span>
+                <span>62, TOPSIA ROAD, TOPSIA, Kolkata, West Bengal - 700039</span>
               </div>
             </footer>
 

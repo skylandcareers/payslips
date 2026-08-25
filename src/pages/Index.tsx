@@ -173,26 +173,6 @@ const Index = () => {
             </div>
           </Link>
 
-          {/* Techno India University Card */}
-          <Link to="/techno-india" className="group">
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-red-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
-              <div className="h-16 flex items-center justify-center mb-6">
-                <img 
-                  src="/techno-india-logo.png" 
-                  alt="Techno India University" 
-                  className="h-10 w-auto max-w-[200px] object-contain group-hover:scale-105 transition-transform"
-                />
-              </div>
-              <h2 className="text-xl font-bold mb-3 text-slate-800">Techno India University</h2>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
-                Generate Recommendation Letters, Provisional Degree Certificates, Bonafide Certificates, and NOCs.
-              </p>
-              <div className="mt-auto w-full flex items-center justify-center gap-2 text-red-600 text-sm font-semibold bg-red-50 py-2 rounded-lg group-hover:bg-red-600 group-hover:text-white transition-all">
-                Open Portal <GraduationCap className="w-4 h-4" />
-              </div>
-            </div>
-          </Link>
-
           {/* CA Card */}
           <Link to="/ca" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-indigo-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
@@ -280,6 +260,42 @@ const Index = () => {
                 Generate official letterheads, price quotations, estimates, and warranty certificates.
               </p>
               <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#005691] text-sm font-semibold bg-[#005691]/10 py-2 rounded-lg group-hover:bg-[#005691] group-hover:text-white transition-all">
+                Open Portal <Building2 className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Standard Engineering Service Card */}
+          <Link to="/standard-engineering/letterhead" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-amber-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-auto px-4 bg-slate-900 rounded-xl flex items-center justify-center text-amber-400 font-sans font-black text-lg group-hover:scale-105 transition-transform text-center leading-tight shadow-md border-2 border-amber-500">
+                  STANDARD<br/>ENGINEERING
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Standard Engineering Service</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                GST registered Proprietorship (Baidyanath Seth) Engineers, Manufacturers & Erection Service letterhead generator.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-amber-700 text-sm font-semibold bg-amber-50 py-2 rounded-lg group-hover:bg-amber-700 group-hover:text-white transition-all">
+                Open Portal <Building2 className="w-4 h-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Medical Equipments & Instrument Services Card */}
+          <Link to="/medical-equipments/letterhead" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-teal-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-auto px-4 bg-teal-900 rounded-xl flex items-center justify-center text-teal-200 font-sans font-black text-lg group-hover:scale-105 transition-transform text-center leading-tight shadow-md border-2 border-teal-500">
+                  MEDICAL<br/>EQUIPMENTS
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Medical Equipments & Instruments</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+                GST registered Partnership Firm (meisindia.in) Medical Equipment, Teaching Aids & Calibration letterhead generator.
+              </p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-teal-800 text-sm font-semibold bg-teal-50 py-2 rounded-lg group-hover:bg-teal-800 group-hover:text-white transition-all">
                 Open Portal <Building2 className="w-4 h-4" />
               </div>
             </div>

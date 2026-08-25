@@ -44,7 +44,7 @@ This letter is issued at the request of the student for **visa and other officia
 
 *(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
-      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+      footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
   },
   {
@@ -78,7 +78,7 @@ This certificate is issued at his request for **visa and official purposes**.
 
 *(Registrar / Dean)*  
 **Woxsen University**`,
-      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+      footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
   },
   {
@@ -108,7 +108,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 
 *(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
-      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+      footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
   },
   {
@@ -138,7 +138,7 @@ This certificate is issued upon his request for official purposes, including vis
 
 *(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
-      footerAddress: '**Campus Address:** Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
+      footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
   },
   {

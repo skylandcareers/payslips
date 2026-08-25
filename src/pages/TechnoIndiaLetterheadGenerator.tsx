@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings2, Download, FileText, ArrowLeft, Type } from 'lucide-react';
+import { Settings2, Download, FileText, ArrowLeft, Type, Files } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -17,7 +17,7 @@ const templates = [
     name: '1. Sanction Letter - Financial & Academic Leave Approval (Nancy, France 2026)',
     data: {
       referenceNumber: 'TIU/2026/PHD/BIOTECH/SAN/135',
-      date: '24/08/2026',
+      date: '25/08/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
 **Mr. TUSHAR DEBNATH**  
@@ -38,16 +38,18 @@ The above financial sanction and leave approval have been granted after due cons
 
 This letter is issued at the request of the student for **visa processing and official university records**.
 
-**Place:** Kolkata, West Bengal, India  
-**Date:** 24-08-2026
+**Best Regards,**
 
 &nbsp;  
 &nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 
-**Prof. (Dr.) S. K. Mukherjee**  
-Registrar & Dean (R&D)  
+**Prof. (Dr.) Sujoy Biswas**  
+**Registrar & Director**  
 **Techno India University, West Bengal**`,
-      footerAddress: '**Campus Address:** Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 9836544416 • www.technoindiauniversity.ac.in',
+      footerAddress: 'Campus Address:Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 8125588816 • www.technoindiauniversity.ac.in',
     }
   },
   {
@@ -55,7 +57,7 @@ Registrar & Dean (R&D)
     name: '2. No Objection Certificate (NOC) & Leave Approval - Nancy, France 2026',
     data: {
       referenceNumber: 'TIU/2026/PHD/REG/NOC/103',
-      date: '24/08/2026',
+      date: '25/08/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE & LEAVE APPROVAL**',
       bodyText: `To  
 **The Consulate General of France**  
@@ -73,16 +75,18 @@ The University has officially **approved his Academic Duty Leave** for the perio
 
 This certificate is issued at his request for **Schengen Visa processing and official purposes**.
 
-**Place:** Kolkata, West Bengal, India  
-**Date:** 24-08-2026
+**Best Regards,**
 
 &nbsp;  
 &nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 
-**Prof. (Dr.) S. K. Mukherjee**  
-Registrar  
+**Prof. (Dr.) Sujoy Biswas**  
+**Registrar & Director**  
 **Techno India University, West Bengal**`,
-      footerAddress: '**Campus Address:** Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 9836544416 • www.technoindiauniversity.ac.in',
+      footerAddress: 'Campus Address:Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 8125588816 • www.technoindiauniversity.ac.in',
     }
   },
   {
@@ -90,7 +94,7 @@ Registrar
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: 'TIU/2026/PHD/REG/BON/118',
-      date: '24/08/2026',
+      date: '25/08/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -102,16 +106,18 @@ The student is provided **hostel accommodation within the University campus**, a
 
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
-**Place:** Kolkata, West Bengal, India  
-**Date:** 24-08-2026
+**Best Regards,**
 
 &nbsp;  
 &nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 
-**Prof. (Dr.) S. K. Mukherjee**  
-Registrar  
+**Prof. (Dr.) Sujoy Biswas**  
+**Registrar & Director**  
 **Techno India University, West Bengal**`,
-      footerAddress: '**Campus Address:** Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 9836544416 • www.technoindiauniversity.ac.in',
+      footerAddress: 'Campus Address:Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 8125588816 • www.technoindiauniversity.ac.in',
     }
   },
   {
@@ -119,7 +125,7 @@ Registrar
     name: '4. Recommendation Certificate (Department of Biotechnology)',
     data: {
       referenceNumber: 'TIU/2026/BIOTECH/REC/045',
-      date: '24/08/2026',
+      date: '25/08/2026',
       documentTitle: '**RECOMMENDATION LETTER**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -131,16 +137,18 @@ He is dedicated, diligent, and maintains high standards of academic integrity an
 
 I have no hesitation in recommending **Mr. Tushar Debnath** for academic research opportunities, international fellowship programs, conference presentations, or professional endeavors in biotechnology.
 
-**Place:** Kolkata, West Bengal, India  
-**Date:** 24-08-2026
+**Best Regards,**
 
+&nbsp;  
+&nbsp;  
+&nbsp;  
 &nbsp;  
 &nbsp;  
 
 **Dr. Debalina Mukherjee, Ph.D**  
-Professor, Department of Biotechnology  
+**Head & Professor, Department of Biotechnology**  
 **Techno India University, West Bengal**`,
-      footerAddress: '**Campus Address:** Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 9836544416 • www.technoindiauniversity.ac.in',
+      footerAddress: 'Campus Address:Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 8125588816 • www.technoindiauniversity.ac.in',
     }
   },
   {
@@ -148,7 +156,7 @@ Professor, Department of Biotechnology
     name: '5. Hostel / Accommodation Confirmation Certificate',
     data: {
       referenceNumber: 'TIU/2026/PHD/HOSTEL/108',
-      date: '24/08/2026',
+      date: '25/08/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -160,16 +168,18 @@ This is to officially confirm that the student is provided with **hostel accommo
 
 This certificate is issued upon his request for official purposes, including visa processing for attending the **3rd International Conference on Biomolecules** (September 16–18, 2026 in Nancy, France) organized by Université de Lorraine and other academic requirements.
 
-**Place:** Kolkata, West Bengal, India  
-**Date:** 24-08-2026
+**Best Regards,**
 
 &nbsp;  
 &nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
 
-**Mr. A. K. Banerjee**  
-Chief Hostel Warden & Accounts Officer  
+**Prof. (Dr.) Sujoy Biswas**  
+**Registrar & Director**  
 **Techno India University, West Bengal**`,
-      footerAddress: '**Campus Address:** Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 9836544416 • www.technoindiauniversity.ac.in',
+      footerAddress: 'Campus Address:Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 8125588816 • www.technoindiauniversity.ac.in',
     }
   },
   {
@@ -239,7 +249,7 @@ Chief Hostel Warden & Accounts Officer
   
   <div class="border-b-[1.5px] border-dashed border-black/70 mt-[30px]"></div>
 </div>`,
-      footerAddress: '**Campus Address:** Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 9836544416 • www.technoindiauniversity.ac.in',
+      footerAddress: 'Campus Address:Techno India University, EM-4, Sector V, Salt Lake, Kolkata - 700091, West Bengal, India  \nPhone: +91 8125588816 • www.technoindiauniversity.ac.in',
     }
   }
 ];
@@ -249,10 +259,13 @@ const TechnoIndiaLetterheadGenerator = () => {
   const [isExporting, setIsExporting] = useState(false);
   const [selectedFont, setSelectedFont] = useState(fontOptions[0].value);
   const [admissionNo, setAdmissionNo] = useState('24TIUBIO1245');
+  const [selectedTemplateId, setSelectedTemplateId] = useState('sanction');
   const [formData, setFormData] = useState(templates[0].data);
 
   const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const template = templates.find(t => t.id === e.target.value);
+    const tId = e.target.value;
+    setSelectedTemplateId(tId);
+    const template = templates.find(t => t.id === tId);
     if (template) {
       setFormData(template.data);
     }
@@ -276,12 +289,23 @@ const TechnoIndiaLetterheadGenerator = () => {
     handleAdmissionNoChange(newId);
   };
 
+  const [isExportingAll, setIsExportingAll] = useState(false);
+
   const handleExportPDF = () => {
     setIsExporting(true);
+    setIsExportingAll(false);
     setTimeout(() => {
       window.print();
       setTimeout(() => setIsExporting(false), 1000);
     }, 100);
+  };
+
+  const handleExportAllPDF = () => {
+    setIsExportingAll(true);
+    setTimeout(() => {
+      window.print();
+      setTimeout(() => setIsExportingAll(false), 1000);
+    }, 150);
   };
 
   const PageHeader = () => {
@@ -295,22 +319,118 @@ const TechnoIndiaLetterheadGenerator = () => {
             EM 4, Sector V, Salt Lake, Kolkata-700091, West Bengal, India
           </div>
           <div className="text-[10.5px] text-gray-700 font-sans tracking-wide text-center leading-normal mt-1 font-medium">
-            Phone: +91 9836544416 • www.technoindiauniversity.ac.in
+            Phone: +91 8125588816 • www.technoindiauniversity.ac.in
           </div>
         </div>
       </div>
     );
   };
 
-  const PageFooter = () => {
-    if (!formData.footerAddress) return null;
+  const PageFooter = ({ customAddress }: { customAddress?: string }) => {
+    const addr = customAddress || formData.footerAddress;
+    if (!addr) return null;
     return (
-      <div className="w-full relative px-[18mm] pb-[8mm] mt-4 text-[#d9232a] text-[10.5px] font-sans text-center">
+      <div className="w-full shrink-0 px-[18mm] pb-[8mm] pt-2 text-[#d9232a] text-[10.5px] font-sans text-center bg-white z-20">
         <div className="w-full h-[1.5px] bg-[#d9232a] mb-1.5"></div>
         <div
           className="leading-snug font-normal prose-strong:font-bold prose-strong:text-[#d9232a]"
-          dangerouslySetInnerHTML={{ __html: formData.footerAddress.replace(/\n/g, '<br/>') }}
+          dangerouslySetInnerHTML={{ __html: addr.replace(/\n/g, '<br/>') }}
         />
+      </div>
+    );
+  };
+
+  const renderLetterCard = (itemData: typeof formData, keyId?: string) => {
+    const rawText = itemData.bodyText || '';
+    const match = rawText.match(/(\*\*Best Regards,\*\*|Best Regards,|&nbsp;|\*\*Prof\. \(Dr\.\) Sujoy|\*\*Dr\. Debalina)/i);
+
+    let mainBody = rawText;
+    let closingText = '**Best Regards,**';
+    let signatoryText = '';
+    let hasSig = false;
+
+    if (match && match.index !== undefined) {
+      hasSig = true;
+      mainBody = rawText.substring(0, match.index).trim();
+      const sigRaw = rawText.substring(match.index).replace(/&nbsp;/g, '').trim();
+
+      const sigMatch = sigRaw.match(/(\*\*Prof\. \(Dr\.\)|\*\*Dr\. Debalina|Yours faithfully)/i);
+      if (sigMatch && sigMatch.index !== undefined) {
+        closingText = sigRaw.substring(0, sigMatch.index).trim() || '**Best Regards,**';
+        signatoryText = sigRaw.substring(sigMatch.index).trim();
+      } else {
+        signatoryText = sigRaw;
+      }
+    }
+
+    return (
+      <div
+        key={keyId}
+        className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0"
+        style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
+      >
+        {/* Center Watermark */}
+        <img src="/techno-india-logo.png" alt="Watermark" className="watermark" />
+
+        {/* Top Header */}
+        <div className="shrink-0">
+          <PageHeader />
+        </div>
+
+        {/* Main Body Section (Fills Middle Space) */}
+        <div className="flex-1 px-[18mm] py-2 relative z-10 text-slate-950 text-[10pt] leading-[1.55] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
+          {(itemData.referenceNumber || itemData.date) && (
+            <div className="flex justify-between items-center mb-3 text-[10pt] font-semibold border-b border-slate-100 pb-1 text-slate-900" style={{ fontFamily: selectedFont }}>
+              <div><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.referenceNumber || '').replace(/\n/g, '  \n')}</ReactMarkdown></div>
+              <div><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.date || '').replace(/\n/g, '  \n')}</ReactMarkdown></div>
+            </div>
+          )}
+
+          {itemData.documentTitle && (
+            <div className="text-center mb-3.5 text-[13pt] font-bold uppercase tracking-wider text-black prose-strong:font-bold prose-strong:text-black">
+              <ReactMarkdown components={{ p: React.Fragment }}>{(itemData.documentTitle || '').replace(/\n/g, '  \n')}</ReactMarkdown>
+            </div>
+          )}
+
+          {itemData.bodyText && (
+            <div className="mb-4 max-w-none leading-[1.55] text-slate-950 text-[10pt]" style={{ fontFamily: selectedFont }}>
+              {(itemData as { isHTML?: boolean }).isHTML ? (
+                <div dangerouslySetInnerHTML={{ __html: itemData.bodyText }} />
+              ) : hasSig ? (
+                <>
+                  <div className="prose prose-p:mt-0 prose-p:mb-2.5 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black leading-[1.55]" style={{ fontFamily: selectedFont }}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {mainBody.replace(/\n/g, '  \n')}
+                    </ReactMarkdown>
+                  </div>
+
+                  <div className="text-left w-full text-[10pt] font-bold text-slate-950 mt-4 mb-1">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {closingText.replace(/\n/g, '  \n')}
+                    </ReactMarkdown>
+                  </div>
+
+                  <div className="h-24 w-full" />
+
+                  <div className="flex flex-col items-end text-right ml-auto w-max max-w-[340px] text-[10pt] text-slate-950 prose-strong:font-bold prose-strong:text-black leading-snug">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {signatoryText.replace(/\n/g, '  \n')}
+                    </ReactMarkdown>
+                  </div>
+                </>
+              ) : (
+                <div className="prose prose-p:mt-0 prose-p:mb-2.5 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black leading-[1.55]" style={{ fontFamily: selectedFont }}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {rawText.replace(/\n/g, '  \n')}
+                  </ReactMarkdown>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Footer Pinned to Absolute Bottom via Flexbox shrink-0 */}
+        <PageFooter customAddress={itemData.footerAddress} />
       </div>
     );
   };
@@ -324,32 +444,25 @@ const TechnoIndiaLetterheadGenerator = () => {
             margin: 0 !important;
           }
           html, body {
-            height: 297mm !important;
-            max-height: 297mm !important;
-            overflow: hidden !important;
-            background-color: white !important;
             margin: 0 !important;
             padding: 0 !important;
+            background-color: white !important;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
           }
-          .print-content-container {
-            width: 100% !important;
-            max-width: none !important;
+          .page-card {
+            width: 210mm !important;
             height: 297mm !important;
+            min-height: 297mm !important;
             max-height: 297mm !important;
+            page-break-after: always !important;
+            break-after: page !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: none !important;
             margin: 0 !important;
             padding: 0 !important;
-            box-shadow: none !important;
             border: none !important;
-            overflow: hidden !important;
-            page-break-after: avoid !important;
-            page-break-inside: avoid !important;
-          }
-          .page-container {
-            height: 297mm !important;
-            max-height: 297mm !important;
-            overflow: hidden !important;
           }
         }
         .watermark {
@@ -381,18 +494,36 @@ const TechnoIndiaLetterheadGenerator = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={handleExportPDF}
-            disabled={isExporting}
-            className={`px-5 py-2.5 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-800 hover:to-red-700 text-white rounded-xl font-medium transition-all shadow-[0_4px_14px_0_rgba(217,35,42,0.25)] hover:shadow-[0_6px_20px_rgba(217,35,42,0.23)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 ${isExporting ? 'opacity-70 cursor-not-allowed transform-none hover:shadow-none' : ''}`}
+            disabled={isExporting || isExportingAll}
+            className={`px-4 py-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl font-medium transition-all shadow-sm flex items-center gap-2 text-sm ${isExporting ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
             {isExporting ? (
               <>
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-3.5 h-3.5 border-2 border-red-600/30 border-t-red-600 rounded-full animate-spin" />
                 Exporting...
               </>
             ) : (
               <>
-                <Download className="w-4 h-4" />
-                Export PDF
+                <Download className="w-4 h-4 text-red-600" />
+                Export Current PDF
+              </>
+            )}
+          </button>
+
+          <button
+            onClick={handleExportAllPDF}
+            disabled={isExporting || isExportingAll}
+            className={`px-5 py-2.5 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-800 hover:to-red-700 text-white rounded-xl font-medium transition-all shadow-[0_4px_14px_0_rgba(217,35,42,0.25)] hover:shadow-[0_6px_20px_rgba(217,35,42,0.23)] hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 text-sm ${isExportingAll ? 'opacity-70 cursor-not-allowed transform-none hover:shadow-none' : ''}`}
+          >
+            {isExportingAll ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                Generating Multi-Page PDF...
+              </>
+            ) : (
+              <>
+                <Files className="w-4 h-4" />
+                Export All Letters (Single PDF)
               </>
             )}
           </button>
@@ -431,9 +562,9 @@ const TechnoIndiaLetterheadGenerator = () => {
                 Quick Templates
               </label>
               <select
+                value={selectedTemplateId}
                 onChange={handleTemplateChange}
-                className="w-full p-3 border border-red-200/80 rounded-xl outline-none transition-all bg-white text-sm font-medium text-slate-800 hover:border-red-300 focus:ring-4 focus:ring-red-500/10 focus:border-red-500 shadow-sm appearance-none cursor-pointer"
-                style={{ backgroundImage: 'url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b91c1c%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem top 50%', backgroundSize: '0.65rem auto' }}
+                className="w-full p-3 bg-white border border-red-200/80 rounded-xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500/20 shadow-sm"
               >
                 {templates.map(t => (
                   <option key={t.id} value={t.id}>{t.name}</option>
@@ -458,85 +589,82 @@ const TechnoIndiaLetterheadGenerator = () => {
               </select>
             </div>
 
-            <div className="space-y-5">
-
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <label className="text-sm font-semibold text-slate-700">Student Admission / Roll Number</label>
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-semibold text-slate-700 flex items-center justify-between mb-1">
+                  <span>Student Admission / Roll Number</span>
                   <button
-                    type="button"
                     onClick={generateNewAdmissionNo}
-                    className="text-xs font-semibold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg border border-red-200 transition-colors"
+                    type="button"
+                    className="text-xs text-red-600 hover:text-red-700 font-bold hover:underline"
                   >
                     + Generate New
                   </button>
-                </div>
+                </label>
                 <input
                   type="text"
                   value={admissionNo}
                   onChange={(e) => handleAdmissionNoChange(e.target.value)}
-                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm font-mono font-bold"
-                  placeholder="e.g. 24TIUBIO1245"
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm font-bold text-slate-900 shadow-sm"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1.5 col-span-2 md:col-span-1">
-                  <label className="text-sm font-semibold text-slate-700">Reference Number</label>
-                  <input
-                    type="text"
-                    name="referenceNumber"
-                    value={formData.referenceNumber}
-                    onChange={handleChange}
-                    className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm placeholder:text-slate-400"
-                  />
-                </div>
-                <div className="space-y-1.5 col-span-2 md:col-span-1">
-                  <label className="text-sm font-semibold text-slate-700">Date</label>
-                  <input
-                    type="text"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm placeholder:text-slate-400"
-                  />
-                </div>
+              <div>
+                <label className="text-sm font-semibold text-slate-700">Reference Number</label>
+                <input
+                  type="text"
+                  name="referenceNumber"
+                  value={formData.referenceNumber}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm"
+                />
               </div>
 
-              <div className="space-y-1.5">
+              <div>
+                <label className="text-sm font-semibold text-slate-700">Date</label>
+                <input
+                  type="text"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm"
+                />
+              </div>
+
+              <div>
                 <label className="text-sm font-semibold text-slate-700">Document Title</label>
                 <input
                   type="text"
                   name="documentTitle"
                   value={formData.documentTitle}
                   onChange={handleChange}
-                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm placeholder:text-slate-400"
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 shadow-sm"
                 />
               </div>
 
-              <div className="space-y-1.5 group">
-                <div className="flex items-center justify-between">
-                  <label className="text-sm font-semibold text-slate-700">Body Content</label>
-                  <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200">Markdown / HTML</span>
-                </div>
-                <p className="text-xs text-slate-500 mb-2">Everything else goes here (To, Subject, Salutation, Body, Signatory). Use **bold** where needed.</p>
+              <div>
+                <label className="text-sm font-semibold text-slate-700 flex items-center justify-between mb-1">
+                  <span>Body Content</span>
+                  <span className="text-xs text-slate-400 font-normal">Markdown / HTML</span>
+                </label>
                 <textarea
                   name="bodyText"
                   value={formData.bodyText}
                   onChange={handleChange}
-                  rows={15}
-                  className="w-full p-4 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-800 font-mono leading-relaxed resize-none mt-2 shadow-inner placeholder:text-slate-300"
+                  rows={12}
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 font-mono resize-y shadow-sm leading-relaxed"
+                  placeholder="Everything else goes here (To, Subject, Salutation, Body, Signatory). Use **bold** where needed."
                 />
               </div>
 
-              <div className="space-y-1.5">
+              <div>
                 <label className="text-sm font-semibold text-slate-700">Footer Address</label>
                 <textarea
                   name="footerAddress"
                   value={formData.footerAddress}
                   onChange={handleChange}
                   rows={2}
-                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 resize-none shadow-sm placeholder:text-slate-400"
+                  className="w-full p-3 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-900 resize-none shadow-sm"
                 />
               </div>
 
@@ -546,65 +674,16 @@ const TechnoIndiaLetterheadGenerator = () => {
 
         {/* Right Preview Area */}
         <div className={`${activeTab === 'preview' ? 'flex' : 'hidden'} md:flex flex-1 bg-slate-100/50 overflow-y-auto print:overflow-visible p-4 md:p-8 justify-center print:p-0 print:bg-white print:block print:!flex relative`}>
-          <div className="w-full max-w-[210mm] min-h-[297mm] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1),0_0_20px_rgba(0,0,0,0.02)] print:shadow-none print-content-container relative print:max-w-none page-container transition-transform duration-300 hover:scale-[1.002]" style={{ fontFamily: selectedFont }}>
-            {/* Center Watermark */}
-            <img
-              src="/techno-india-logo.png"
-              alt="Watermark"
-              className="watermark"
-            />
-
-            <table className="w-full relative z-10 h-full border-collapse border-spacing-0 table-fixed">
-              <thead>
-                <tr>
-                  <td>
-                    <PageHeader />
-                  </td>
-                </tr>
-              </thead>
-
-              <tbody className="h-full align-top">
-                <tr>
-                  <td className="align-top relative px-[18mm] py-2">
-                    <div className="h-full block relative text-slate-950 text-[12.5px] leading-[1.62] text-left" style={{ fontFamily: selectedFont }}>
-
-                      {(formData.referenceNumber || formData.date) && (
-                        <div className="flex justify-between items-center mb-5 text-[12.5px] font-semibold border-b border-slate-100 pb-1.5 text-slate-900" style={{ fontFamily: selectedFont }}>
-                          <div><ReactMarkdown components={{ p: React.Fragment }}>{formData.referenceNumber.replace(/\n/g, '  \n')}</ReactMarkdown></div>
-                          <div><ReactMarkdown components={{ p: React.Fragment }}>{formData.date.replace(/\n/g, '  \n')}</ReactMarkdown></div>
-                        </div>
-                      )}
-
-                      {formData.documentTitle && (
-                        <div className="text-center mb-5 text-[14pt] font-bold uppercase tracking-wider text-black prose-strong:font-bold prose-strong:text-black">
-                          <ReactMarkdown components={{ p: React.Fragment }}>{formData.documentTitle.replace(/\n/g, '  \n')}</ReactMarkdown>
-                        </div>
-                      )}
-
-                      {formData.bodyText && (
-                        <div className="mb-4 prose prose-p:mt-0 prose-p:mb-2.5 max-w-none leading-[1.62] text-slate-950 text-[12.5px] text-justify prose-strong:font-bold prose-strong:text-black" style={{ fontFamily: selectedFont }}>
-                          {(formData as { isHTML?: boolean }).isHTML ? (
-                            <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
-                          ) : (
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText}</ReactMarkdown>
-                          )}
-                        </div>
-                      )}
-
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-
-              <tfoot>
-                <tr>
-                  <td>
-                    <PageFooter />
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+          {isExportingAll ? (
+            <div className="w-full flex flex-col items-center gap-8 print:block print:gap-0">
+              {templates.map((tpl) => {
+                const itemData = tpl.id === selectedTemplateId ? formData : tpl.data;
+                return renderLetterCard(itemData, tpl.id);
+              })}
+            </div>
+          ) : (
+            renderLetterCard(formData, 'single-preview')
+          )}
         </div>
 
       </div>
