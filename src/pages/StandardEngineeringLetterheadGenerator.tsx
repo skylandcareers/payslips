@@ -13,125 +13,51 @@ const fontOptions = [
 
 const templateOptions = [
   {
-    id: 'general_correspondence',
-    name: '1. General Business Correspondence / Official Letter',
+    id: 'schengen_visa_cover_letter',
+    name: 'Sweden Schengen Visa Application Cover Letter - Debasish Biswas',
     data: {
-      referenceNo: 'SES/2026-27/LTR/084',
-      date: '25 August 2026',
-      recipientName: 'The Assistant Commissioner of Commercial Taxes',
-      recipientAddress: '24 Parganas Charge, Barrackpore Circle\nCommissionerate - West Bengal',
-      subject: 'SUBMISSION OF ANNUAL INDUSTRIAL RETURN & GST COMPLIANCE UNDERTAKING (FY 2025-26)',
-      salutation: 'Respected Sir/Madam,',
-      bodyText: `We, **STANDARD ENGINEERING SERVICE** (GSTIN: **19AJJPS2891P1Z4**), located at **Holding No.12, Raja Road, Sukchar, North 24 Parganas, West Bengal - 700115**, respectfully submit herewith our official correspondence regarding our ongoing manufacturing, erection, commissioning, and maintenance operations.
+      referenceNo: 'SES/VISA/2026/08',
+      date: '27 August 2026',
+      recipientName: 'The Visa Officer',
+      recipientAddress: 'Embassy of Sweden\nNew Delhi, India',
+      subject: 'Application for Short-Stay Schengen Visa – Tourism Visit to Sweden',
+      salutation: 'Dear Sir/Madam,',
+      bodyText: `I, **Mr. Debasish Biswas**, an Indian citizen holding Passport No. **X3007662**, respectfully submit my application for a Short-Stay Schengen Visa for Sweden for the purpose of tourism and sightseeing.
 
-Our enterprise is registered as a **Regular Taxpayer (Proprietorship)** under the sole proprietorship of **Mr. Baidyanath Seth**, with active registration since **01/07/2017**. We specialize in industrial manufacturing, erection and installation of machinery, crane components, and road transport services.
+I intend to travel to Sweden from **10 October 2026 to 20 October 2026**. My international travel arrangements are confirmed, with my arrival in Stockholm on **11 October 2026** and departure from Stockholm on **19 October 2026**, followed by my arrival in India on **20 October 2026**.
 
-We confirm that all goods (including Aluminium Waste & Scrap - HSN 7602, Crane Machinery Parts - HSN 8431, and Cast Iron Scrap - HSN 7204) and services (Maintenance & Repair - SAC 00440245, Erection & Commissioning - SAC 00440233) supplied by our organization strictly adhere to statutory GST standards.
+During my stay, I plan to explore Sweden and visit **Stockholm, Gothenburg and Malmö**, along with nearby attractions and cultural destinations. The principal purpose of my journey is tourism, sightseeing and experiencing Swedish culture, architecture and local attractions.
 
-We request your office to kindly record this official communication and acknowledge receipt of the attached statutory compliance documents.
+### **Accommodation Details:**
+My accommodation arrangements are confirmed as follows:
+- **Stockholm:** Lilla Brunn — 11 to 15 October 2026
+- **Gothenburg:** Hotell Gota Avenyn — 15 to 18 October 2026
+- **Malmö:** Scandic Stortorget — 18 to 19 October 2026
 
-Thanking you.`,
-      signatoryName: 'BAIDYANATH SETH',
-      signatoryTitle: 'Proprietor',
-      signatoryFirm: 'STANDARD ENGINEERING SERVICE',
-    }
-  },
-  {
-    id: 'industrial_quotation',
-    name: '2. Commercial Quotation - Erection, Maintenance & Fabrication',
-    data: {
-      referenceNo: 'SES/QT/2026-27/215',
-      date: '25 August 2026',
-      recipientName: 'M/s. Eastern Heavy Industries Private Limited',
-      recipientAddress: 'Industrial Complex Sector 3, Khardah Division\nNorth 24 Parganas, West Bengal - 700118',
-      subject: 'QUOTATION FOR ERECTION, COMMISSIONING, FABRICATION & REPAIR OF HEAVY MACHINERY & CRANE COMPONENTS',
-      salutation: 'Dear Sir,',
-      bodyText: `With reference to your technical inquiry and site inspection conducted at your Khardah plant, we are pleased to submit our best competitive quotation for manufacturing, erection, installation, and maintenance services:
+All accommodation bookings are in my name and are submitted with my visa application.
 
-| S.No | Description of Goods & Services | HSN / SAC | Qty | Unit Rate (₹) | Total Amount (₹) |
-| :---: | :--- | :---: | :---: | :---: | :---: |
-| 1 | **Erection, Commissioning & Installation** of Ships Derricks & Overhead Crane Assemblies | SAC 00440233 | 1 Job | ₹ 1,85,000 | ₹ 1,85,000 |
-| 2 | **Heavy Industrial Equipment Maintenance & Repair Services** (Overhauling & Alignment) | SAC 00440245 | 1 Job | ₹ 95,000 | ₹ 95,000 |
-| 3 | **Supply of Fabricated Crane Machinery Parts** & Derrick Components | HSN 84314920 | 12 Pcs | ₹ 12,500 | ₹ 1,50,000 |
-| 4 | **Aluminium Scrap Processing & Industrial Auxiliaries** | HSN 7602 | 500 Kg | ₹ 180 | ₹ 90,000 |
+### **Professional and Financial Background:**
+I am a proprietor of **Standard Engineering Service**, an established business operating in India. My business is registered under GST and has been operating since 2017. I am actively involved in managing the business and have ongoing professional responsibilities in India.
 
-### **Financial Breakdown:**
-- **Sub Total Amount:** ₹ 5,20,000/-
-- **Applicable CGST (9%):** ₹ 46,800/-
-- **Applicable SGST (9%):** ₹ 46,800/-
-- **Grand Total Amount:** **₹ 6,13,600/-** *(Rupees Six Lakh Thirteen Thousand Six Hundred Only)*
+I have enclosed my GST Registration Certificate, Income Tax Returns and bank statements as evidence of my professional and financial position. My latest Income Tax Return reflects a total income of approximately **₹15.76 lakh**, and my bank records demonstrate sufficient funds to independently finance my proposed trip.
 
-### **Terms & Conditions:**
-1. **Delivery & Erection Schedule:** Work to be completed within 14 working days from receipt of confirmed Purchase Order.
-2. **Warranty:** 12 Months comprehensive warranty on erection workmanship and fabricated parts.
-3. **Payment Terms:** 30% advance with Purchase Order, 60% upon erection completion, and 10% after 30 days of successful trial run.`,
-      signatoryName: 'BAIDYANATH SETH',
-      signatoryTitle: 'Proprietor',
-      signatoryFirm: 'STANDARD ENGINEERING SERVICE',
-    }
-  },
-  {
-    id: 'completion_certificate',
-    name: '3. Work Execution & Commissioning Completion Certificate',
-    data: {
-      referenceNo: 'SES/CC/2026-27/042',
-      date: '25 August 2026',
-      recipientName: 'To Whomsoever It May Concern',
-      recipientAddress: 'Official Project Clearance Division\nKolkata North Commissionerate, West Bengal',
-      subject: 'WORK COMPLETION AND COMMISSIONING CERTIFICATE',
-      salutation: 'To Whom It May Concern,',
-      bodyText: `This is to certify that **STANDARD ENGINEERING SERVICE** (Proprietor: **Mr. Baidyanath Seth**, GSTIN: **19AJJPS2891P1Z4**), having its principal manufacturing unit at **Holding No.12, Raja Road, Sukchar, North 24 Parganas, West Bengal - 700115**, has successfully completed the erection, commissioning, and safety load-testing of heavy machinery crane components and auxiliary industrial systems.
+I am financially capable of bearing all expenses related to my travel, including airfare, accommodation, transportation, food, sightseeing and other personal expenses. No financial sponsorship is being sought from any person or organization for this trip.
 
-### **Project Details:**
-- **Contract Work Order No.:** PO/EHI/2026/8841
-- **Nature of Work:** Erection, Commissioning & Installation Services (SAC 00440233)
-- **Scope of Supply:** Parts of Ships Derricks & Heavy Cranes (HSN 84314920)
-- **Completion Date:** 22nd August 2026
-- **Work Quality & Performance:** Excellent & Satisfactory
+### **Purpose and Return to India:**
+This is a temporary visit undertaken solely for tourism. I have strong professional and financial ties to India through my established business and will return to India after my visit to resume my business responsibilities.
 
-The installed equipment and structural assemblies have undergone rigorous safety inspections and load testing in compliance with West Bengal Factory & Industrial Safety Standards.
+I have no intention of overstaying my permitted period or undertaking any unauthorized employment in Sweden or elsewhere in the Schengen Area.
 
-This certificate is issued upon request for official documentation, client verification, and bank records.
+I have also obtained valid travel medical insurance covering my trip, and I have enclosed the relevant insurance certificate along with my other supporting documents.
 
-Thanking you.`,
-      signatoryName: 'BAIDYANATH SETH',
-      signatoryTitle: 'Proprietor',
-      signatoryFirm: 'STANDARD ENGINEERING SERVICE',
-    }
-  },
-  {
-    id: 'gst_declaration',
-    name: '4. GST Compliance & Self-Declaration Undertaking',
-    data: {
-      referenceNo: 'SES/GST/2026-27/011',
-      date: '25 August 2026',
-      recipientName: 'All Esteemed Clients & Vendor Partners',
-      recipientAddress: 'Commercial Operations & Accounts Division\nWest Bengal & All India',
-      subject: 'SELF-DECLARATION OF ACTIVE GSTIN & STATUTORY COMPLIANCE UNDERTAKING',
-      salutation: 'Dear Partners,',
-      bodyText: `We hereby declare and confirm the statutory GST details of our proprietorship firm for the purpose of e-invoicing, vendor onboarding, and Input Tax Credit (ITC) reconciliation:
+I respectfully request you to consider my application and grant me the appropriate Schengen Short-Stay Visa for my planned visit to Sweden.
 
-### **Registered Taxpayer Credentials:**
-- **Legal Name of Business:** BAIDYANATH SETH
-- **Trade Name:** STANDARD ENGINEERING SERVICE
-- **GSTIN / UIN:** **19AJJPS2891P1Z4**
-- **Constitution of Business:** Proprietorship
-- **Effective Registration Date:** 01/07/2017 (Active & Regular)
-- **Principal Place of Business:** Holding No.12, Raja Road, Sukchar, North 24 Parganas, West Bengal - 700115
-- **State Jurisdiction:** West Bengal | 24 Parganas Circle | Barrackpore Charge
-- **Center Jurisdiction:** Kolkata Zone | Kolkata North Commissionerate | Khardah Division | Range II
+I confirm that all information and documents submitted with my application are genuine and accurate to the best of my knowledge.
 
-### **Core Activities & Authorized HSN / SAC Codes:**
-- **Primary Activity:** Manufacturer & Technical Industrial Service Provider
-- **Goods HSN:** 7602 (Aluminium Scrap), 84314920 / 84314990 (Crane & Derrick Parts), 72041000 (Cast Iron Scrap), 76012090 (Aluminium Alloys)
-- **Services SAC:** 00440233 (Erection & Commissioning), 00440245 (Maintenance & Repair), 00440225 (Auxiliary Services), 00440262 (Goods Transport)
-
-We confirm that all GST returns (GSTR-1 & GSTR-3B) are filed regularly on or before due dates, enabling seamless ITC credit reflection for our valued customers.
-
-Thanking you.`,
-      signatoryName: 'BAIDYANATH SETH',
-      signatoryTitle: 'Proprietor',
-      signatoryFirm: 'STANDARD ENGINEERING SERVICE',
+Thank you for your time and consideration.`,
+      signatoryName: 'DEBASISH BISWAS',
+      signatoryTitle: 'Proprietor (Passport No.: X3007662)',
+      signatoryFirm: 'Standard Engineering Service',
     }
   }
 ];
@@ -141,17 +67,18 @@ const StandardEngineeringLetterheadGenerator = () => {
   const [isExporting, setIsExporting] = useState(false);
   const [isExportingAll, setIsExportingAll] = useState(false);
   const [selectedFont, setSelectedFont] = useState(fontOptions[0].value);
-  const [selectedTemplateId, setSelectedTemplateId] = useState('general_correspondence');
+  const [selectedTemplateId, setSelectedTemplateId] = useState('schengen_visa_cover_letter');
   const [headerTheme, setHeaderTheme] = useState<'brand_blue' | 'navy' | 'amber' | 'classic'>('brand_blue');
+  const [pageMode, setPageMode] = useState<'single' | 'multi' | 'auto'>('multi');
 
   const [headerData, setHeaderData] = useState({
     firmName: 'STANDARD ENGINEERING SERVICE',
     tagline: 'MANUFACTURERS, ENGINEERS, ERECTION & INDUSTRIAL MAINTENANCE SPECIALISTS',
-    proprietor: 'BAIDYANATH SETH',
+    proprietor: 'DEBASISH BISWAS',
     gstin: '19AJJPS2891P1Z4',
     regDetails: 'REGULAR TAXPAYER (PROPRIETORSHIP) • REG: 01/07/2017',
     address: 'Holding No.12, Raja Road, Sukchar, North Twenty Four Parganas, West Bengal - 700115',
-    phone: '+91 98310 12345 / +91 98300 67890',
+    phone: '+91 7815916787',
     email: 'info@standardses.in',
     website: 'www.standardses.in',
     logoUrl: '/standard-engineering-logo.jpg',
@@ -217,133 +144,110 @@ const StandardEngineeringLetterheadGenerator = () => {
     );
   };
 
-  const renderHeaderLayout = () => {
-    if (headerTheme === 'amber') {
-      return (
-        <div className="w-full border-b border-amber-500 pb-2 mb-3 shrink-0 px-[18mm] pt-[6mm]">
-          <div className="flex justify-between items-center gap-4">
-            <div className="flex items-center gap-3">
-              <LogoEmblem />
-              <div className="border-l border-amber-300 pl-3 py-0.5">
-                <h1 className="text-[12.5pt] font-black tracking-tight text-slate-950 uppercase leading-tight font-sans">
-                  {headerData.firmName}
-                </h1>
-                <p className="text-[7pt] font-bold text-amber-700 uppercase tracking-wider mt-0.5 leading-none">
-                  {headerData.tagline}
-                </p>
-              </div>
-            </div>
-            <div className="text-right flex flex-col items-end shrink-0 text-[7.5pt] leading-tight text-slate-700">
-              <div className="font-mono text-[8.5pt] font-bold text-slate-900">
-                GSTIN: <span className="font-extrabold text-amber-800">{headerData.gstin}</span>
-              </div>
-              <div className="font-medium text-slate-700 text-[7pt] mt-0.5">
-                Proprietor: <strong className="text-slate-900 font-semibold">{headerData.proprietor}</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
+  const renderHeaderLayout = (pageNumber?: number) => {
+    const themeStyles = {
+      brand_blue: {
+        title: "text-[#0052cc] font-sans font-black",
+        tagline: "text-[#a81c1c]",
+        accentPrimary: "bg-[#0052cc]",
+        accentSecondary: "bg-[#a81c1c]",
+      },
+      amber: {
+        title: "text-amber-900 font-sans font-black",
+        tagline: "text-amber-700",
+        accentPrimary: "bg-amber-800",
+        accentSecondary: "bg-amber-600",
+      },
+      navy: {
+        title: "text-slate-950 font-sans font-black",
+        tagline: "text-slate-700",
+        accentPrimary: "bg-slate-950",
+        accentSecondary: "bg-blue-600",
+      },
+      classic: {
+        title: "text-slate-950 font-serif font-black tracking-normal",
+        tagline: "text-[#a81c1c]",
+        accentPrimary: "bg-slate-900",
+        accentSecondary: "bg-[#a81c1c]",
+      }
+    };
 
-    if (headerTheme === 'navy') {
-      return (
-        <div className="w-full border-b-2 border-slate-900 pb-2 mb-3 shrink-0 px-[18mm] pt-[6mm]">
-          <div className="flex justify-between items-center gap-4">
-            <div className="flex items-center gap-3">
-              <LogoEmblem />
-              <div className="border-l-2 border-slate-900 pl-3 py-0.5">
-                <h1 className="text-[13pt] font-black tracking-wider uppercase leading-tight text-slate-950">{headerData.firmName}</h1>
-                <p className="text-[7pt] text-slate-700 font-bold tracking-wide uppercase leading-none">{headerData.tagline}</p>
-              </div>
-            </div>
-            <div className="text-right shrink-0 text-[7.5pt] leading-tight text-slate-800">
-              <div className="font-mono text-[8.5pt] font-black text-slate-950">GSTIN: {headerData.gstin}</div>
-              <div className="font-semibold text-slate-700 text-[7pt] mt-0.5">Proprietor: {headerData.proprietor}</div>
-            </div>
-          </div>
-        </div>
-      );
-    }
+    const t = themeStyles[headerTheme as keyof typeof themeStyles] || themeStyles.brand_blue;
 
-    if (headerTheme === 'classic') {
-      return (
-        <div className="w-full border-b border-slate-900 pb-2 mb-3 shrink-0 px-[18mm] pt-[6mm] text-center">
-          <div className="flex items-center justify-center gap-3 mb-1">
-            <LogoEmblem />
-          </div>
-          <div className="text-[13.5pt] font-black tracking-wide text-[#0052cc] uppercase font-serif leading-tight">
-            {headerData.firmName}
-          </div>
-          <div className="text-[7pt] font-bold text-[#a81c1c] uppercase tracking-widest mt-0.5">
-            {headerData.tagline}
-          </div>
-          <div className="text-[7.5pt] text-slate-800 font-semibold mt-1 flex justify-center gap-3">
-            <span>GSTIN: <strong className="text-slate-950 font-bold">{headerData.gstin}</strong></span>
-            <span>|</span>
-            <span>PROPRIETOR: <strong className="text-slate-950 font-bold">{headerData.proprietor}</strong></span>
-          </div>
-        </div>
-      );
-    }
-
-    // Default Ultra-Compact Corporate Minimal Theme (Royal Blue #0052cc + Maroon Red #a81c1c)
     return (
-      <div className="w-full shrink-0 px-[18mm] pt-[6mm] pb-1 mb-3">
-        <div className="flex justify-between items-center gap-4 mb-2">
-          {/* Left Side: Logo + Vertical Divider + Compact Firm Identity */}
-          <div className="flex items-center gap-3">
+      <div className="w-full shrink-0 px-[18mm] pt-[5mm] pb-0 mb-0 bg-white">
+        {/* Header: Logo | Firm Name & Tagline | Contact Block */}
+        <div className="w-full flex items-center gap-4">
+
+          {/* LEFT: Logo Emblem */}
+          <div className="shrink-0">
             <LogoEmblem />
-            <div className="border-l border-slate-300 pl-3 py-0.5">
-              <h1 className="text-[12.5pt] font-black tracking-tight text-[#0052cc] uppercase leading-tight font-sans">
-                {headerData.firmName}
-              </h1>
-              <p className="text-[7pt] font-bold text-[#a81c1c] uppercase tracking-wider mt-0.5 leading-none">
-                {headerData.tagline}
-              </p>
+          </div>
+
+          {/* CENTER: Firm Name, Tagline, Reg Details */}
+          <div className="flex-1 text-left">
+            <h1 className={`text-[14pt] tracking-tight uppercase leading-none font-sans ${t.title}`}>
+              {headerData.firmName}
+            </h1>
+            <p className={`text-[7.5pt] font-bold uppercase tracking-wider mt-0.5 leading-snug ${t.tagline}`}>
+              {headerData.tagline}
+            </p>
+            <div className="text-[6.5pt] font-extrabold text-slate-400 uppercase tracking-widest mt-1">
+              PROPRIETORSHIP ENTERPRISE • REG: 01/07/2017 • GST VERIFIED
             </div>
           </div>
 
-          {/* Right Side: Ultra-Compact Corporate Credentials */}
-          <div className="text-right flex flex-col items-end shrink-0 text-[7.5pt] leading-tight text-slate-600 font-sans">
-            <div className="font-mono text-[8pt] font-bold text-slate-900">
-              GSTIN: <span className="font-extrabold text-[#0052cc]">{headerData.gstin}</span>
+          {/* RIGHT: GSTIN, Phone, Email, Website */}
+          <div className="shrink-0 text-right text-[7pt] text-slate-700 font-sans leading-snug space-y-0.5">
+            <div>
+              <span className="text-slate-400 font-bold uppercase text-[6pt] tracking-wider">GSTIN: </span>
+              <span className="font-black font-mono text-slate-950 text-[7.5pt]">{headerData.gstin}</span>
             </div>
-            <div className="text-[7pt] font-medium text-slate-600 mt-0.5">
-              Proprietor: <strong className="text-slate-950 font-bold">{headerData.proprietor}</strong> • <span className="text-[#0052cc] font-semibold">{headerData.website}</span>
+            <div>
+              <span className="text-slate-400 font-bold uppercase text-[6pt] tracking-wider">Ph: </span>
+              <span className="font-semibold text-slate-800">{headerData.phone}</span>
+            </div>
+            <div className="font-bold text-[#0052cc]">{headerData.email}</div>
+            <div className="font-semibold text-slate-600">
+              {headerData.website}{pageNumber && pageNumber > 1 ? ` (Page ${pageNumber})` : ''}
             </div>
           </div>
         </div>
-        {/* Dual Brand Accent Rule: 70% Royal Blue + 30% Maroon Red */}
-        <div className="w-full flex h-[2px]">
-          <div className="w-7/10 bg-[#0052cc]" />
-          <div className="w-3/10 bg-[#a81c1c]" />
+
+        {/* Bottom Accent Line */}
+        <div className="w-full flex h-[2.5px] mt-2.5 rounded-full overflow-hidden">
+          <div className={`w-7/10 ${t.accentPrimary}`} />
+          <div className={`w-3/10 ${t.accentSecondary}`} />
         </div>
+
+        {/* Hairline border separator */}
+        <div className="border-b border-slate-200 mt-0 mb-3" />
       </div>
     );
   };
 
   const renderFooterLayout = () => {
     return (
-      <div className="w-full shrink-0 px-[18mm] pb-[4mm] pt-1 text-slate-700 font-sans bg-white z-20">
-        <div className="w-full flex h-[1.5px] mb-1.5">
+      <div className="w-full shrink-0 px-[18mm] pb-[5mm] pt-2 text-slate-800 font-sans bg-white border-t border-slate-200 z-20">
+        {/* Top Accent Line for Footer Block */}
+        <div className="w-full flex h-[2.5px] mb-2 rounded-full overflow-hidden">
           <div className="w-7/10 bg-[#0052cc]" />
           <div className="w-3/10 bg-[#a81c1c]" />
         </div>
-        <div className="grid grid-cols-3 gap-2 text-left leading-tight text-[6.5pt]">
+        <div className="grid grid-cols-3 gap-3 text-left leading-tight text-[7pt]">
           <div>
-            <span className="font-extrabold text-slate-900 uppercase tracking-widest text-[6pt]">Address: </span>
-            <span className="text-slate-600 font-medium">{headerData.address}</span>
+            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[6.5pt] mb-0.5">Corporate Address:</div>
+            <div className="text-slate-700 font-medium">{headerData.address}</div>
           </div>
           <div className="text-center">
-            <span className="font-extrabold text-slate-900 uppercase tracking-widest text-[6pt]">Contact: </span>
-            <span className="text-slate-600 font-medium">{headerData.phone} • </span>
-            <span className="text-[#0052cc] font-bold">{headerData.email}</span>
+            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[6.5pt] mb-0.5">Helpline & Website:</div>
+            <div className="text-slate-700 font-medium">{headerData.phone}</div>
+            <div className="text-[#0052cc] font-bold">{headerData.email} • {headerData.website}</div>
           </div>
           <div className="text-right">
-            <span className="font-extrabold text-slate-900 uppercase tracking-widest text-[6pt]">GSTIN: </span>
-            <span className="text-slate-900 font-bold font-mono">{headerData.gstin}</span>
-            <span className="text-slate-500 block text-[6pt]">{headerData.hsnSummary}</span>
+            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[6.5pt] mb-0.5">Statutory Info:</div>
+            <div className="text-slate-950 font-bold font-mono text-[7.5pt]">GSTIN: {headerData.gstin}</div>
+            <div className="text-slate-500 text-[6.5pt] font-mono mt-0.5">{headerData.hsnSummary}</div>
           </div>
         </div>
       </div>
@@ -352,25 +256,115 @@ const StandardEngineeringLetterheadGenerator = () => {
 
   const renderLetterCard = (itemData: typeof formData, keyId?: string) => {
     const rawText = itemData.bodyText || '';
-    const match = rawText.match(/(\*\*Best Regards,\*\*|Best Regards,|&nbsp;|\*\*BAIDYANATH SETH|\*\*For STANDARD ENGINEERING)/i);
+    const paragraphs = rawText.split(/\n\n+/).filter(p => p.trim().length > 0);
 
-    let mainBody = rawText;
-    let closingText = 'Yours faithfully,';
-    let signatoryText = `For **STANDARD ENGINEERING SERVICE**\n\n\n**BAIDYANATH SETH**\nProprietor`;
-    let hasSig = false;
+    const isMultiPage = pageMode === 'multi' || (pageMode === 'auto' && paragraphs.length > 4);
 
-    if (match && match.index !== undefined) {
-      hasSig = true;
-      mainBody = rawText.substring(0, match.index).trim();
-      const sigRaw = rawText.substring(match.index).replace(/&nbsp;/g, '').trim();
+    if (isMultiPage && paragraphs.length > 2) {
+      // Include Purpose & Return to India paragraphs (0-9) on Page 1 as requested!
+      const splitIndex = paragraphs.length >= 10 ? 10 : Math.ceil(paragraphs.length / 2);
+      const page1Body = paragraphs.slice(0, splitIndex).join('\n\n');
+      const page2Body = paragraphs.slice(splitIndex).join('\n\n');
 
-      const sigMatch = sigRaw.match(/(\*\*BAIDYANATH SETH|\*\*For STANDARD|Yours faithfully)/i);
-      if (sigMatch && sigMatch.index !== undefined) {
-        closingText = sigRaw.substring(0, sigMatch.index).trim() || 'Yours faithfully,';
-        signatoryText = sigRaw.substring(sigMatch.index).trim();
-      } else {
-        signatoryText = sigRaw;
-      }
+      return (
+        <div key={keyId} className="flex flex-col gap-8 print:gap-0">
+          {/* PAGE 1 */}
+          <div
+            className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0 border border-slate-200 print:border-none"
+            style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
+          >
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] select-none z-0">
+              <Wrench className="w-96 h-96 text-slate-900" />
+            </div>
+
+            {renderHeaderLayout(1)}
+
+            <div className="flex-1 px-[18mm] py-1.5 relative z-10 text-slate-950 text-[9.5pt] leading-[1.48] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
+              {(itemData.referenceNo || itemData.date) && (
+                <div className="flex justify-between items-center mb-2 text-[8.5pt] font-semibold text-slate-800 pb-0.5" style={{ fontFamily: selectedFont }}>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Ref No:</span>
+                    <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.referenceNo || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Date:</span>
+                    <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.date || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
+                  </div>
+                </div>
+              )}
+
+              {itemData.recipientName && (
+                <div className="mb-2 text-[9.5pt] text-slate-900 leading-snug">
+                  <div className="text-[7pt] font-extrabold uppercase tracking-wider text-slate-400 mb-0.5">To,</div>
+                  <div className="font-bold text-slate-950">{itemData.recipientName}</div>
+                  <div className="whitespace-pre-line text-slate-700 font-medium">{itemData.recipientAddress}</div>
+                </div>
+              )}
+
+              {itemData.subject && (
+                <div className="text-left my-2 pl-2.5 border-l-4 border-[#0052cc] bg-blue-50/60 py-1 text-[9.5pt] font-black uppercase tracking-wide text-slate-950 rounded-r-md">
+                  <span>SUBJECT: {itemData.subject}</span>
+                </div>
+              )}
+
+              {itemData.salutation && (
+                <div className="mb-1.5 text-[9.5pt] font-semibold text-slate-900">
+                  {itemData.salutation}
+                </div>
+              )}
+
+              <div className="mb-2 max-w-none leading-[1.48] text-slate-950 text-[9.5pt]" style={{ fontFamily: selectedFont }}>
+                <div className="prose prose-p:mt-0 prose-p:mb-2 prose-h3:mt-2 prose-h3:mb-1 max-w-none text-justify text-slate-950 text-[9.5pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0052cc] prose-th:text-white prose-th:p-1.5 prose-td:p-1.5 prose-td:border prose-td:border-slate-200 leading-[1.48]" style={{ fontFamily: selectedFont }}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {page1Body.replace(/\n/g, '  \n')}
+                  </ReactMarkdown>
+                </div>
+              </div>
+            </div>
+
+            {renderFooterLayout()}
+          </div>
+
+          {/* PAGE 2 */}
+          <div
+            className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0 border border-slate-200 print:border-none"
+            style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
+          >
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] select-none z-0">
+              <Wrench className="w-96 h-96 text-slate-900" />
+            </div>
+
+            {renderHeaderLayout(2)}
+
+            <div className="flex-1 px-[18mm] py-2 relative z-10 text-slate-950 text-[10pt] leading-[1.55] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
+
+
+              <div className="mb-4 max-w-none leading-[1.55] text-slate-950 text-[10pt]" style={{ fontFamily: selectedFont }}>
+                <div className="prose prose-p:mt-0 prose-p:mb-3 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0052cc] prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {page2Body.replace(/\n/g, '  \n')}
+                  </ReactMarkdown>
+                </div>
+
+                <div className="w-full flex flex-col items-start text-left font-sans mt-3 mb-14">
+                  <div className="text-[10pt] text-slate-900 font-medium leading-none">Yours faithfully,</div>
+
+                  <div className="h-10 w-full" />
+
+                  <div className="text-[10.5pt] font-extrabold text-slate-950 uppercase tracking-wide leading-tight">
+                    {headerData.proprietor}
+                  </div>
+                  <div className="text-[8.5pt] font-semibold text-slate-600 leading-tight">
+                    Proprietor
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {renderFooterLayout()}
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -379,20 +373,15 @@ const StandardEngineeringLetterheadGenerator = () => {
         className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0 border border-slate-200 print:border-none"
         style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
       >
-        {/* Subtle Corporate Watermark */}
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] select-none z-0">
           <Wrench className="w-96 h-96 text-slate-900" />
         </div>
 
-        {/* Top Header */}
-        {renderHeaderLayout()}
+        {renderHeaderLayout(1)}
 
-        {/* Main Body Section */}
-        <div className="flex-1 px-[18mm] py-1 relative z-10 text-slate-950 text-[10pt] leading-[1.55] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
-          
-          {/* Reference No & Date Line */}
+        <div className="flex-1 px-[18mm] py-1 relative z-10 text-slate-950 text-[8.5pt] leading-[1.42] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
           {(itemData.referenceNo || itemData.date) && (
-            <div className="flex justify-between items-center mb-3 text-[9pt] font-semibold text-slate-800 border-b border-slate-200 pb-1.5" style={{ fontFamily: selectedFont }}>
+            <div className="flex justify-between items-center mb-2 text-[8.5pt] font-semibold text-slate-800 pb-0.5" style={{ fontFamily: selectedFont }}>
               <div className="flex items-center gap-1.5">
                 <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Ref No:</span>
                 <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.referenceNo || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
@@ -404,66 +393,48 @@ const StandardEngineeringLetterheadGenerator = () => {
             </div>
           )}
 
-          {/* Recipient Address Block */}
           {itemData.recipientName && (
-            <div className="mb-3 text-[9.5pt] text-slate-900 leading-snug">
-              <div className="text-[7.5pt] font-extrabold uppercase tracking-wider text-slate-400 mb-0.5">To,</div>
-              <div className="font-bold text-slate-950">{itemData.recipientName}</div>
+            <div className="mb-2.5 text-[8.5pt] text-slate-900 leading-snug">
+              <div className="text-[7pt] font-extrabold uppercase tracking-wider text-slate-400 mb-0.5">To,</div>
+              <div className="font-bold text-slate-950 text-[9pt]">{itemData.recipientName}</div>
               <div className="whitespace-pre-line text-slate-700 font-medium">{itemData.recipientAddress}</div>
             </div>
           )}
 
-          {/* Polished Document Subject Title */}
           {itemData.subject && (
-            <div className="text-left my-3 pl-2.5 border-l-3 border-[#0052cc] text-[9.5pt] font-extrabold uppercase tracking-wide text-slate-950">
+            <div className="text-left my-2.5 pl-2.5 border-l-4 border-[#0052cc] bg-blue-50/60 py-1 text-[8.5pt] font-black uppercase tracking-wide text-slate-950 rounded-r-md">
               <span>SUBJECT: {itemData.subject}</span>
             </div>
           )}
 
-          {/* Salutation */}
           {itemData.salutation && (
-            <div className="mb-2 text-[9.5pt] font-semibold text-slate-900">
+            <div className="mb-1.5 text-[8.5pt] font-semibold text-slate-900">
               {itemData.salutation}
             </div>
           )}
 
-          {/* Main Body Text & Custom Table Rendering */}
           {itemData.bodyText && (
-            <div className="mb-4 max-w-none leading-[1.55] text-slate-950 text-[9.5pt]" style={{ fontFamily: selectedFont }}>
-              {hasSig ? (
-                <>
-                  <div className="prose prose-p:mt-0 prose-p:mb-2 max-w-none text-justify text-slate-950 text-[9.5pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0052cc] prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {mainBody.replace(/\n/g, '  \n')}
-                    </ReactMarkdown>
-                  </div>
+            <div className="mb-2 max-w-none leading-[1.42] text-slate-950 text-[8.5pt]" style={{ fontFamily: selectedFont }}>
+              <div className="prose prose-p:mt-0 prose-p:mb-1.5 max-w-none text-justify text-slate-950 text-[8.5pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0052cc] prose-th:text-white prose-th:p-1.5 prose-td:p-1.5 prose-td:border prose-td:border-slate-200 leading-[1.42]" style={{ fontFamily: selectedFont }}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {rawText.replace(/\n/g, '  \n')}
+                </ReactMarkdown>
+              </div>
 
-                  {/* Sign-off Closing */}
-                  <div className="text-left w-full text-[9.5pt] font-medium text-slate-950 mt-1.5 leading-none">
-                    {closingText}
-                  </div>
-
-                  {/* Blank space after Yours faithfully for physical signing & stamping */}
-                  <div className="h-14 w-full" />
-
-                  {/* Signatory Name & Title */}
-                  <div className="text-left w-full text-[9.5pt] text-slate-950 font-sans leading-tight">
-                    <div className="font-black text-[10pt] uppercase tracking-wide">{headerData.proprietor}</div>
-                    <div className="font-semibold text-[8.5pt] text-slate-600">Proprietor</div>
-                  </div>
-                </>
-              ) : (
-                <div className="prose prose-p:mt-0 prose-p:mb-2.5 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-slate-900 prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {rawText.replace(/\n/g, '  \n')}
-                  </ReactMarkdown>
+              <div className="w-full flex flex-col items-start text-left font-sans mt-2 mb-10">
+                <div className="text-[8.5pt] text-slate-900 font-medium leading-none">Yours faithfully,</div>
+                <div className="h-9 w-full" />
+                <div className="text-[9.5pt] font-extrabold text-slate-950 uppercase tracking-wide leading-tight">
+                  {headerData.proprietor}
                 </div>
-              )}
+                <div className="text-[8pt] font-semibold text-slate-600 leading-tight">
+                  Proprietor
+                </div>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Bottom Pinned Footer */}
         {renderFooterLayout()}
       </div>
     );
@@ -520,6 +491,27 @@ const StandardEngineeringLetterheadGenerator = () => {
         </div>
 
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+            <button
+              onClick={() => setPageMode('single')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${pageMode === 'single'
+                ? 'bg-white text-[#0052cc] shadow-xs border border-slate-200/60'
+                : 'text-slate-600 hover:text-slate-900'
+                }`}
+            >
+              📄 1-Page Smart Fit
+            </button>
+            <button
+              onClick={() => setPageMode('multi')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${pageMode === 'multi'
+                ? 'bg-white text-[#0052cc] shadow-xs border border-slate-200/60'
+                : 'text-slate-600 hover:text-slate-900'
+                }`}
+            >
+              📑 2-Page Multi-Page
+            </button>
+          </div>
+
           <button
             onClick={handleExportPDF}
             disabled={isExporting || isExportingAll}
@@ -559,7 +551,7 @@ const StandardEngineeringLetterheadGenerator = () => {
       </div>
 
       <div className="flex flex-1 overflow-hidden h-[calc(100vh-73px)] print:h-auto print:block print:overflow-visible">
-        
+
         {/* Mobile Tabs */}
         <div className="md:hidden flex bg-white border-b border-slate-200 w-full shrink-0 print:hidden">
           <button
@@ -579,7 +571,7 @@ const StandardEngineeringLetterheadGenerator = () => {
         {/* Left Control Panel */}
         <div className={`${activeTab === 'form' ? 'flex' : 'hidden'} md:flex w-full md:w-[420px] bg-white border-r border-slate-200 flex-col h-full overflow-y-auto print:hidden z-10 shadow-sm relative`}>
           <div className="p-5 space-y-5">
-            
+
             {/* Quick Templates Selector */}
             <div className="bg-slate-900 text-white p-4 rounded-2xl shadow-sm">
               <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">

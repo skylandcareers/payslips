@@ -26,6 +26,9 @@ import KluLetterheadGenerator from "./pages/KluLetterheadGenerator";
 import WoxsenIndex from "./pages/WoxsenIndex";
 import WoxsenLetterheadGenerator from "./pages/WoxsenLetterheadGenerator";
 
+import SastraIndex from "./pages/SastraIndex";
+import SastraLetterheadGenerator from "./pages/SastraLetterheadGenerator";
+
 import CaIndex from "./pages/CaIndex";
 import CaLetterheadGenerator from "./pages/CaLetterheadGenerator";
 
@@ -49,6 +52,8 @@ import SriYogeshwaraLetterheadGenerator from "./pages/SriYogeshwaraLetterheadGen
 import ImperialLeatherLetterheadGenerator from "./pages/ImperialLeatherLetterheadGenerator";
 import StandardEngineeringLetterheadGenerator from "./pages/StandardEngineeringLetterheadGenerator";
 import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLetterheadGenerator";
+import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGenerator";
+
 
 const queryClient = new QueryClient();
 
@@ -80,6 +85,9 @@ const App = () => (
           
           <Route path="/woxsen" element={<WoxsenIndex />} />
           <Route path="/woxsen/letterhead" element={<WoxsenLetterheadGenerator />} />
+
+          <Route path="/sastra" element={<SastraIndex />} />
+          <Route path="/sastra/letterhead" element={<SastraLetterheadGenerator />} />
           
           <Route path="/ca" element={<CaIndex />} />
           <Route path="/ca/letterhead" element={<CaLetterheadGenerator />} />
@@ -104,7 +112,8 @@ const App = () => (
           <Route path="/imperial-leather/letterhead" element={<ImperialLeatherLetterheadGenerator />} />
           <Route path="/standard-engineering/letterhead" element={<StandardEngineeringLetterheadGenerator />} />
           <Route path="/medical-equipments/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
-          <Route path="/meis/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
+          <Route path="/home-furniture/letterhead" element={<HomeFurnitureLetterheadGenerator />} />
+
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

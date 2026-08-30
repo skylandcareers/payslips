@@ -24,7 +24,7 @@ The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupee
 
 The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
 
-He has been granted **official academic leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
+He has been granted **leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
 
 The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
 

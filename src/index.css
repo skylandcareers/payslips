@@ -301,3 +301,37 @@ All colors MUST be HSL.
     margin: 0.5cm;
   }
 }
+
+@media print {
+  .prose {
+    max-width: none !important;
+  }
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .prose th, .prose td {
+    border: 1px solid #333;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  .prose th {
+    background-color: #f3f4f6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.prose th, .prose td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+}
+.prose th {
+  background-color: #f9fafb;
+}

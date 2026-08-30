@@ -13,8 +13,40 @@ const fontOptions = [
 
 const templateOptions = [
   {
+    id: 'schengen_visa_cover_letter',
+    name: '1. Schengen Visa Application Cover Letter - Netherlands (Ayan Biswas)',
+    data: {
+      referenceNo: 'MEIS/VISA/2026/08',
+      date: '26 August 2026',
+      recipientName: 'The Visa Officer',
+      recipientAddress: 'Embassy / Consulate of the Kingdom of the Netherlands',
+      subject: 'Application for Short-Stay Schengen Visa for Tourism – Netherlands (10 October 2026 to 20 October 2026)',
+      salutation: 'Dear Sir/Madam,',
+      bodyText: `I am **Ayan Biswas**, an Indian citizen and proprietor of **M/S. Medical Equipments & Instrument Services**, a proprietorship business engaged in medical equipment and instruments in India. I respectfully submit my application for a short-stay Schengen visa to visit the Netherlands from **10 October 2026 to 20 October 2026**.
+
+The **primary purpose of my visit is tourism and sightseeing**. During my stay, I intend to explore Amsterdam and undertake planned day visits to Utrecht, Rotterdam, Delft, The Hague and Zaanse Schans. I look forward to experiencing the Netherlands' museums, historic places, canals, architecture and cultural attractions.
+
+As my business is related to medical equipment and instruments, I may also make limited exploratory visits to relevant medical-technology or healthcare-related companies, subject to prior appointments. These activities are **secondary to my tourism plans** and are intended only to gain general industry exposure. My visit is not intended to involve employment or long-term business activity in the Netherlands.
+
+I have made arrangements for my journey and accommodation. My confirmed Emirates itinerary provides travel from **Kolkata to Amsterdam on 10 October 2026**, with the return journey commencing from **Amsterdam on 20 October 2026** and arrival in Kolkata on **21 October 2026**. My hotel reservation in Amsterdam covers **10 October 2026 to 20 October 2026**.
+
+I will be **self-financing** this trip. I have sufficient personal funds for my travel expenses, supported by my bank statements and income-tax records. My latest Income Tax Return for Assessment Year 2026–27 records total income of **₹18,61,730**, and I have also enclosed earlier ITR records and business documents to demonstrate my established financial and professional position in India.
+
+My business is supported by my GST registration and related records, and I have ongoing professional responsibilities in India. I therefore have strong reasons to return to India after this short visit. I will resume my business activities after returning and will comply fully with the conditions of the Schengen visa.
+
+I have also obtained international travel insurance for the journey, covering **10 October 2026 to 22 October 2026**, with medical cover of up to **USD 500,000 per traveller**, including medical evacuation and repatriation benefits.
+
+I kindly request you to consider my application and grant me a short-stay Schengen visa for the Netherlands for the stated period. I assure you that I will respect all visa conditions and return to India after completing my planned visit.
+
+Thank you for your time and consideration.`,
+      signatoryName: 'AYAN BISWAS',
+      signatoryTitle: 'Proprietor',
+      signatoryFirm: 'M/S. Medical Equipments & Instrument Services',
+    }
+  },
+  {
     id: 'general_correspondence',
-    name: '1. General Official Correspondence / Business Letter',
+    name: '2. General Official Correspondence / Business Letter',
     data: {
       referenceNo: 'MEIS/2026-27/LTR/104',
       date: '25 August 2026',
@@ -38,7 +70,7 @@ Thanking you.`,
   },
   {
     id: 'medical_quotation',
-    name: '2. Commercial Quotation - Medical Equipment & Teaching Aids',
+    name: '3. Commercial Quotation - Medical Equipment & Teaching Aids',
     data: {
       referenceNo: 'MEIS/QT/2026-27/312',
       date: '25 August 2026',
@@ -72,7 +104,7 @@ Thanking you.`,
   },
   {
     id: 'installation_certificate',
-    name: '3. Equipment Installation & Safety Calibration Certificate',
+    name: '4. Equipment Installation & Safety Calibration Certificate',
     data: {
       referenceNo: 'MEIS/CERT/2026-27/058',
       date: '25 August 2026',
@@ -101,7 +133,7 @@ Thanking you.`,
   },
   {
     id: 'gst_declaration',
-    name: '4. GST Statutory Compliance & Partnership Undertaking',
+    name: '5. GST Statutory Compliance & Partnership Undertaking',
     data: {
       referenceNo: 'MEIS/GST/2026-27/019',
       date: '25 August 2026',
@@ -151,7 +183,7 @@ const MedicalEquipmentsLetterheadGenerator = () => {
     gstin: '19AAKFM7205R1ZJ',
     regDetails: 'REGULAR TAXPAYER (PARTNERSHIP FIRM) • REG: 01/07/2017',
     address: '15th Floor, 1512, P S Srijan Corporate Park, Tower 1, Block GP, Sector V, Salt Lake, Bidhannagar, Kolkata - 700091',
-    phone: '+91 98300 12345 / +91 33 4000 5678',
+    phone: '+91 96186 25279',
     email: 'info@meisindia.in',
     website: 'www.meisindia.in',
     hsnSummary: 'HSN: 90230010, 39172110, 95030010 • SAC: 00440245, 00440233, 00440225',
@@ -192,117 +224,102 @@ const MedicalEquipmentsLetterheadGenerator = () => {
       setTimeout(() => setIsExportingAll(false), 1000);
     }, 150);
   };
-  const LogoEmblem = ({ theme = "teal" }: { theme?: string }) => {
-    const bg = theme === 'emerald' ? 'bg-emerald-700' : theme === 'navy' ? 'bg-slate-900' : theme === 'classic' ? 'bg-slate-950' : 'bg-teal-700';
+  const LogoEmblem = () => {
+    const [imgError, setImgError] = useState(false);
+
+    if (!imgError) {
+      return (
+        <img
+          src="/medical-equipments-logo.png"
+          alt="M/S. Medical Equipments & Instrument Services Logo"
+          className="max-h-12 w-auto max-w-[210px] object-contain shrink-0"
+          onError={() => setImgError(true)}
+        />
+      );
+    }
+
     return (
-      <div className={`${bg} text-white w-16 h-16 rounded-xl flex flex-col items-center justify-center shadow-md border border-white/20 shrink-0`}>
-        <Stethoscope className="w-8 h-8 opacity-90" />
-        <span className="text-[9px] font-black tracking-widest mt-0.5">MEIS</span>
+      <div className="bg-[#0b4a8b] text-white w-12 h-12 rounded-xl flex flex-col items-center justify-center shadow-md border border-white/20 shrink-0">
+        <Stethoscope className="w-6 h-6 opacity-90" />
+        <span className="text-[8px] font-black tracking-widest mt-0.5">MEIS</span>
       </div>
     );
   };
 
-  const renderHeaderLayout = () => {
-    if (headerTheme === 'emerald') {
-      return (
-        <div className="w-full border-b border-emerald-600 pb-3.5 mb-5 shrink-0 px-[18mm] pt-[9mm]">
-          <div className="flex justify-between items-end gap-6">
-            <div className="flex items-center gap-4">
-              <LogoEmblem theme="emerald" />
-              <div className="border-l border-emerald-300 pl-4 py-0.5">
-                <h1 className="text-[16.5pt] font-extrabold tracking-tight text-emerald-900 uppercase leading-tight font-sans">
-                  {headerData.firmName}
-                </h1>
-                <p className="text-[8pt] font-semibold text-emerald-700 uppercase tracking-wide mt-0.5 leading-snug">
-                  {headerData.tagline}
-                </p>
-              </div>
-            </div>
-            <div className="text-right flex flex-col items-end shrink-0 text-[8pt] leading-snug text-slate-600">
-              <div className="font-mono text-[9pt] font-bold text-slate-900">
-                GSTIN: <span className="font-extrabold text-emerald-800">{headerData.gstin}</span>
-              </div>
-              <div className="font-medium text-slate-700 mt-0.5">
-                Partnership Firm
-              </div>
-              <div className="text-slate-500 font-medium text-[7.5pt]">
-                {headerData.website}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
+  const [pageMode, setPageMode] = useState<'single' | 'multi' | 'auto'>('auto');
 
-    if (headerTheme === 'navy') {
-      return (
-        <div className="w-full border-b-2 border-slate-900 pb-3 mb-4 shrink-0 px-[18mm] pt-[9mm]">
-          <div className="flex justify-between items-end gap-6">
-            <div className="flex items-center gap-4">
-              <LogoEmblem theme="navy" />
-              <div className="border-l-2 border-slate-900 pl-4 py-0.5">
-                <h1 className="text-[17.5pt] font-black tracking-wider uppercase leading-tight text-slate-950">{headerData.firmName}</h1>
-                <p className="text-[8pt] text-teal-800 font-bold tracking-wide uppercase leading-snug">{headerData.tagline}</p>
-              </div>
-            </div>
-            <div className="text-right shrink-0 text-[8pt] leading-snug text-slate-800">
-              <div className="font-mono text-[9pt] font-black text-slate-950">GSTIN: {headerData.gstin}</div>
-              <div className="font-semibold text-slate-800 mt-0.5">Partnership Firm</div>
-              <div className="text-slate-600 text-[7.5pt]">{headerData.website}</div>
-            </div>
-          </div>
-        </div>
-      );
-    }
+  const renderHeaderLayout = (pageNumber?: number) => {
+    const themeStyles = {
+      teal: {
+        title: "text-[#0b4a8b] font-sans font-black",
+        tagline: "text-[#16a34a]",
+        accentPrimary: "bg-[#0b4a8b]",
+        accentSecondary: "bg-[#16a34a]",
+      },
+      emerald: {
+        title: "text-emerald-900 font-sans font-black",
+        tagline: "text-emerald-700",
+        accentPrimary: "bg-emerald-800",
+        accentSecondary: "bg-teal-500",
+      },
+      navy: {
+        title: "text-slate-950 font-sans font-black",
+        tagline: "text-sky-700",
+        accentPrimary: "bg-slate-950",
+        accentSecondary: "bg-sky-600",
+      },
+      classic: {
+        title: "text-slate-950 font-serif font-black tracking-normal",
+        tagline: "text-amber-800",
+        accentPrimary: "bg-slate-900",
+        accentSecondary: "bg-amber-600",
+      }
+    };
 
-    if (headerTheme === 'classic') {
-      return (
-        <div className="w-full border-b border-slate-900 pb-3 mb-4 shrink-0 px-[18mm] pt-[9mm] text-center">
-          <div className="flex items-center justify-center gap-4 mb-1">
-            <LogoEmblem theme="classic" />
-          </div>
-          <div className="text-[18pt] font-black tracking-wide text-slate-950 uppercase font-serif leading-tight">
-            {headerData.firmName}
-          </div>
-          <div className="text-[8.5pt] font-bold text-teal-800 uppercase tracking-widest mt-0.5">
-            {headerData.tagline}
-          </div>
-          <div className="text-[8pt] text-slate-800 font-semibold mt-1.5 flex justify-center gap-3">
-            <span>GSTIN: <strong className="text-slate-950 font-bold">{headerData.gstin}</strong></span>
-            <span>|</span>
-            <span>PARTNERSHIP FIRM</span>
-            <span>|</span>
-            <span>WEBSITE: <strong className="text-slate-950 font-bold">{headerData.website}</strong></span>
-          </div>
-        </div>
-      );
-    }
+    const t = themeStyles[headerTheme as keyof typeof themeStyles] || themeStyles.teal;
 
     return (
-      <div className="w-full border-b border-slate-300 pb-3.5 mb-5 shrink-0 px-[18mm] pt-[9mm]">
-        <div className="flex justify-between items-end gap-6">
-          <div className="flex items-center gap-4">
-            <LogoEmblem theme="teal" />
-            <div className="border-l border-slate-300 pl-4 py-0.5">
-              <h1 className="text-[16.5pt] font-extrabold tracking-tight text-teal-900 uppercase leading-tight font-sans">
-                {headerData.firmName}
-              </h1>
-              <p className="text-[8pt] font-semibold text-teal-700 uppercase tracking-wide mt-0.5 leading-snug">
-                {headerData.tagline}
-              </p>
-            </div>
+      <div className="w-full shrink-0 px-[18mm] pt-[6mm] pb-2 mb-3 bg-white border-b border-slate-200">
+        <div className="w-full text-center">
+          {/* Centered Brand Emblem / Logo */}
+          <div className="flex justify-center items-center mb-1.5">
+            <LogoEmblem />
           </div>
-          <div className="text-right flex flex-col items-end shrink-0 text-[8pt] leading-snug text-slate-600">
-            <div className="font-mono text-[9pt] font-bold text-slate-900">
-              GSTIN: <span className="font-extrabold text-teal-800">{headerData.gstin}</span>
-            </div>
-            <div className="font-medium text-slate-700 mt-0.5">
-              Partnership Firm
-            </div>
-            <div className="text-slate-500 font-medium text-[7.5pt]">
-              {headerData.website}
-            </div>
+
+          {/* Centered Company Title */}
+          <h1 className={`text-[13.5pt] tracking-tight uppercase leading-tight font-sans ${t.title}`}>
+            {headerData.firmName}
+          </h1>
+
+          {/* Centered Company Tagline */}
+          <p className={`text-[7.5pt] font-bold uppercase tracking-wider mt-0.5 leading-snug  mx-auto ${t.tagline}`}>
+            {headerData.tagline}
+          </p>
+
+          {/* Centered Contact, GSTIN, Email & Website Credentials Line */}
+          <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-0.5 text-[7.5pt] text-slate-800 font-sans">
+            <span className="font-mono font-bold text-[#0b4a8b]">
+              GSTIN: <strong className="font-black text-slate-950">{headerData.gstin}</strong>
+            </span>
+            <span className="text-slate-400 font-bold">•</span>
+            <span className="font-semibold text-slate-700">
+              Ph: {headerData.phone}
+            </span>
+            <span className="text-slate-400 font-bold">•</span>
+            <span className="font-bold text-[#0b4a8b]">
+              {headerData.email}
+            </span>
+            <span className="text-slate-400 font-bold">•</span>
+            <span className="font-semibold text-slate-600">
+              {headerData.website} {pageNumber && pageNumber > 1 ? `(Page ${pageNumber})` : ''}
+            </span>
           </div>
+        </div>
+
+        {/* Bottom Accent Line for Header Block */}
+        <div className="w-full flex h-[2.5px] mt-2.5 rounded-full overflow-hidden">
+          <div className={`w-7/10 ${t.accentPrimary}`} />
+          <div className={`w-3/10 ${t.accentSecondary}`} />
         </div>
       </div>
     );
@@ -310,23 +327,26 @@ const MedicalEquipmentsLetterheadGenerator = () => {
 
   const renderFooterLayout = () => {
     return (
-      <div className="w-full shrink-0 px-[18mm] pb-[7mm] pt-2 text-slate-900 text-[8.5pt] font-sans bg-white z-20">
-        <div className="w-full h-[2px] bg-teal-800 mb-0.5"></div>
-        <div className="w-full h-[0.5px] bg-slate-300 mb-2"></div>
-        <div className="grid grid-cols-3 gap-2 text-left leading-tight text-[8pt]">
+      <div className="w-full shrink-0 px-[18mm] pb-[5mm] pt-2 text-slate-800 font-sans bg-white border-t border-slate-200 z-20">
+        {/* Top Accent Line for Footer Block */}
+        <div className="w-full flex h-[2.5px] mb-2 rounded-full overflow-hidden">
+          <div className="w-7/10 bg-[#0b4a8b]" />
+          <div className="w-3/10 bg-[#16a34a]" />
+        </div>
+        <div className="grid grid-cols-3 gap-3 text-left leading-tight text-[7pt]">
           <div>
-            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[7.5pt]">Corporate Office Address:</div>
-            <div className="text-slate-700 mt-0.5 font-medium">{headerData.address}</div>
+            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[6.5pt] mb-0.5">Corporate Address:</div>
+            <div className="text-slate-700 font-medium">{headerData.address}</div>
           </div>
           <div className="text-center">
-            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[7.5pt]">Contact & Website:</div>
-            <div className="text-slate-700 mt-0.5 font-medium">{headerData.phone}</div>
-            <div className="text-teal-800 font-bold">{headerData.email} • {headerData.website}</div>
+            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[6.5pt] mb-0.5">Helpline & Website:</div>
+            <div className="text-slate-700 font-medium">{headerData.phone}</div>
+            <div className="text-[#0b4a8b] font-bold">{headerData.email} • {headerData.website}</div>
           </div>
           <div className="text-right">
-            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[7.5pt]">GST Statutory Details:</div>
-            <div className="text-slate-700 mt-0.5 font-medium">GSTIN: <strong className="text-slate-950 font-bold">{headerData.gstin}</strong></div>
-            <div className="text-slate-500 font-mono text-[7pt]">{headerData.hsnSummary}</div>
+            <div className="font-extrabold text-slate-950 uppercase tracking-wider text-[6.5pt] mb-0.5">Statutory Info:</div>
+            <div className="text-slate-950 font-bold font-mono text-[7.5pt]">GSTIN: {headerData.gstin}</div>
+            <div className="text-slate-500 text-[6.5pt] font-mono mt-0.5">{headerData.hsnSummary}</div>
           </div>
         </div>
       </div>
@@ -335,121 +355,185 @@ const MedicalEquipmentsLetterheadGenerator = () => {
 
   const renderLetterCard = (itemData: typeof formData, keyId?: string) => {
     const rawText = itemData.bodyText || '';
-    const match = rawText.match(/(\*\*Best Regards,\*\*|Best Regards,|&nbsp;|\*\*AUTHORIZE|\*\*For MEDICAL EQUIPMENTS)/i);
+    const paragraphs = rawText.split(/\n\n+/).filter(p => p.trim().length > 0);
 
-    let mainBody = rawText;
-    let closingText = 'Yours faithfully,';
-    let signatoryText = `For **MEDICAL EQUIPMENTS & INSTRUMENT SERVICES**\n\n\n**AUTHORIZED PARTNER**\nPartner / Authorized Signatory`;
-    let hasSig = false;
+    const isMultiPage = pageMode === 'multi' || (pageMode === 'auto' && paragraphs.length > 4);
 
-    if (match && match.index !== undefined) {
-      hasSig = true;
-      mainBody = rawText.substring(0, match.index).trim();
-      const sigRaw = rawText.substring(match.index).replace(/&nbsp;/g, '').trim();
+    if (isMultiPage && paragraphs.length > 2) {
+      // Balanced A4 height split: Place 4 paragraphs on Page 1 and remaining paras + signature block on Page 2
+      const splitIndex = paragraphs.length >= 7 ? 4 : Math.ceil(paragraphs.length / 2);
+      const page1Body = paragraphs.slice(0, splitIndex).join('\n\n');
+      const page2Body = paragraphs.slice(splitIndex).join('\n\n');
 
-      const sigMatch = sigRaw.match(/(\*\*AUTHORIZE|\*\*For MEDICAL|Yours faithfully)/i);
-      if (sigMatch && sigMatch.index !== undefined) {
-        closingText = sigRaw.substring(0, sigMatch.index).trim() || 'Yours faithfully,';
-        signatoryText = sigRaw.substring(sigMatch.index).trim();
-      } else {
-        signatoryText = sigRaw;
-      }
+      return (
+        <div key={keyId} className="flex flex-col gap-8 print:gap-0">
+          {/* PAGE 1 */}
+          <div
+            className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0 border border-slate-200 print:border-none"
+            style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
+          >
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] select-none z-0">
+              <HeartPulse className="w-96 h-96 text-[#0b4a8b]" />
+            </div>
+
+            {renderHeaderLayout(1)}
+
+            <div className="flex-1 px-[18mm] py-2 relative z-10 text-slate-950 text-[10pt] leading-[1.55] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
+              {(itemData.referenceNo || itemData.date) && (
+                <div className="flex justify-between items-center mb-3 text-[9pt] font-semibold text-slate-800 pb-0.5" style={{ fontFamily: selectedFont }}>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Ref No:</span>
+                    <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.referenceNo || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Date:</span>
+                    <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.date || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
+                  </div>
+                </div>
+              )}
+
+              {itemData.recipientName && (
+                <div className="mb-3.5 text-[10pt] text-slate-900 leading-snug">
+                  <div className="text-[7.5pt] font-extrabold uppercase tracking-wider text-slate-400 mb-0.5">To,</div>
+                  <div className="font-bold text-slate-950">{itemData.recipientName}</div>
+                  <div className="whitespace-pre-line text-slate-700 font-medium">{itemData.recipientAddress}</div>
+                </div>
+              )}
+
+              {itemData.subject && (
+                <div className="text-left my-3 pl-3 border-l-4 border-[#0b4a8b] bg-sky-50/60 py-1 text-[10pt] font-black uppercase tracking-wide text-slate-950 rounded-r-md">
+                  <span>SUBJECT: {itemData.subject}</span>
+                </div>
+              )}
+
+              {itemData.salutation && (
+                <div className="mb-2 text-[10pt] font-semibold text-slate-900">
+                  {itemData.salutation}
+                </div>
+              )}
+
+              <div className="mb-4 max-w-none leading-[1.55] text-slate-950 text-[10pt]" style={{ fontFamily: selectedFont }}>
+                <div className="prose prose-p:mt-0 prose-p:mb-3 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0b4a8b] prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {page1Body.replace(/\n/g, '  \n')}
+                  </ReactMarkdown>
+                </div>
+              </div>
+            </div>
+
+            {renderFooterLayout()}
+          </div>
+
+          {/* PAGE 2 */}
+          <div
+            className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0 border border-slate-200 print:border-none"
+            style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
+          >
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] select-none z-0">
+              <HeartPulse className="w-96 h-96 text-[#0b4a8b]" />
+            </div>
+
+            {renderHeaderLayout(2)}
+
+            <div className="flex-1 px-[18mm] py-2 relative z-10 text-slate-950 text-[10pt] leading-[1.55] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
+
+              <div className="mb-4 max-w-none leading-[1.55] text-slate-950 text-[10pt]" style={{ fontFamily: selectedFont }}>
+                <div className="prose prose-p:mt-0 prose-p:mb-3 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0b4a8b] prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {page2Body.replace(/\n/g, '  \n')}
+                  </ReactMarkdown>
+                </div>
+
+                <div className="w-full flex flex-col items-start text-left font-sans mt-3 mb-14">
+                  <div className="text-[10pt] text-slate-900 font-medium leading-none">Yours faithfully,</div>
+
+                  <div className="h-24 w-full" />
+
+                  <div className="text-[10.5pt] font-extrabold text-slate-950 uppercase tracking-wide leading-tight">
+                    {itemData.signatoryName || 'AYAN BISWAS'}
+                  </div>
+                  <div className="text-[8.5pt] font-semibold text-slate-600 leading-tight">
+                    {itemData.signatoryTitle || 'Proprietor'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {renderFooterLayout()}
+          </div>
+        </div>
+      );
     }
 
+    // Single Page Smart Fit Mode (Fits all 8 paragraphs on 1 A4 page cleanly!)
     return (
       <div
         key={keyId}
         className="w-full max-w-[210mm] min-h-[297mm] h-[297mm] bg-white shadow-xl print:shadow-none relative print:max-w-none page-container page-card flex flex-col justify-between overflow-hidden mb-8 print:mb-0 border border-slate-200 print:border-none"
         style={{ fontFamily: selectedFont, breakAfter: 'page', pageBreakAfter: 'always' }}
       >
-        {/* Subtle Corporate Watermark */}
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.03] select-none z-0">
-          <HeartPulse className="w-96 h-96 text-teal-900" />
+          <HeartPulse className="w-96 h-96 text-[#0b4a8b]" />
         </div>
 
-        {/* Top Header */}
-        {renderHeaderLayout()}
+        {renderHeaderLayout(1)}
 
-        {/* Main Body Section */}
-        <div className="flex-1 px-[18mm] py-1 relative z-10 text-slate-950 text-[10pt] leading-[1.55] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
-          
-          {/* Reference No & Date Line */}
+        <div className="flex-1 px-[18mm] py-1 relative z-10 text-slate-950 text-[8.5pt] leading-[1.42] text-left overflow-hidden flex flex-col justify-start" style={{ fontFamily: selectedFont }}>
           {(itemData.referenceNo || itemData.date) && (
-            <div className="flex justify-between items-center mb-4 text-[9.5pt] font-semibold text-slate-800 border-b border-slate-200 pb-2" style={{ fontFamily: selectedFont }}>
+            <div className="flex justify-between items-center mb-2 text-[8.5pt] font-semibold text-slate-800 pb-0.5" style={{ fontFamily: selectedFont }}>
               <div className="flex items-center gap-1.5">
-                <span className="text-slate-500 font-bold uppercase text-[8pt] tracking-wider">Ref No:</span>
+                <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Ref No:</span>
                 <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.referenceNo || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-slate-500 font-bold uppercase text-[8pt] tracking-wider">Date:</span>
+                <span className="text-slate-400 font-bold uppercase text-[7.5pt] tracking-wider">Date:</span>
                 <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(itemData.date || '').replace(/\n/g, '  \n')}</ReactMarkdown></span>
               </div>
             </div>
           )}
 
-          {/* Recipient Address Block */}
           {itemData.recipientName && (
-            <div className="mb-4 text-[10pt] text-slate-900 leading-snug">
-              <div className="text-[8pt] font-extrabold uppercase tracking-wider text-slate-500 mb-0.5">To,</div>
-              <div className="font-bold text-slate-950">{itemData.recipientName}</div>
-              <div className="whitespace-pre-line text-slate-700 font-medium">{itemData.recipientAddress}</div>
+            <div className="mb-2.5 text-[8.5pt] text-slate-900 leading-snug">
+              <div className="text-[7pt] font-extrabold uppercase tracking-wider text-slate-400 mb-0.5">To,</div>
+              <div className="font-bold text-slate-950 text-[9pt]">{itemData.recipientName}</div>
+              <div className="text-slate-700 font-medium">{itemData.recipientAddress}</div>
             </div>
           )}
 
-          {/* Document Subject Title */}
           {itemData.subject && (
-            <div className="text-left my-4 text-[10pt] font-extrabold uppercase tracking-wide text-slate-950">
-              <span className="underline underline-offset-4 decoration-teal-700 font-black">SUBJECT: {itemData.subject}</span>
+            <div className="text-left my-2.5 pl-2.5 border-l-4 border-[#0b4a8b] bg-sky-50/60 py-1 text-[8.5pt] font-black uppercase tracking-wide text-slate-950 rounded-r-md">
+              <span>SUBJECT: {itemData.subject}</span>
             </div>
           )}
 
-          {/* Salutation */}
           {itemData.salutation && (
-            <div className="mb-2 text-[10pt] font-semibold text-slate-900">
+            <div className="mb-1.5 text-[8.5pt] font-semibold text-slate-900">
               {itemData.salutation}
             </div>
           )}
 
-          {/* Main Body Text & Custom Table Rendering */}
           {itemData.bodyText && (
-            <div className="mb-4 max-w-none leading-[1.55] text-slate-950 text-[10pt]" style={{ fontFamily: selectedFont }}>
-              {hasSig ? (
-                <>
-                  <div className="prose prose-p:mt-0 prose-p:mb-2.5 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-teal-900 prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {mainBody.replace(/\n/g, '  \n')}
-                    </ReactMarkdown>
-                  </div>
+            <div className="mb-2 max-w-none leading-[1.42] text-slate-950 text-[8.5pt]" style={{ fontFamily: selectedFont }}>
+              <div className="prose prose-p:mt-0 prose-p:mb-1.5 max-w-none text-justify text-slate-950 text-[8.5pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-[#0b4a8b] prose-th:text-white prose-th:p-1.5 prose-td:p-1.5 prose-td:border prose-td:border-slate-200 leading-[1.42]" style={{ fontFamily: selectedFont }}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {rawText.replace(/\n/g, '  \n')}
+                </ReactMarkdown>
+              </div>
 
-                  {/* Salutation Closing */}
-                  <div className="text-left w-full text-[10pt] font-bold text-slate-950 mt-4 mb-2">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {closingText.replace(/\n/g, '  \n')}
-                    </ReactMarkdown>
-                  </div>
-
-                  {/* Blank space for physical signing & stamping */}
-                  <div className="h-24 w-full" />
-
-                  {/* Right-Aligned Signature Block */}
-                  <div className="flex flex-col items-end text-right ml-auto w-max max-w-[340px] text-[10pt] text-slate-950 prose-strong:font-bold prose-strong:text-black leading-snug">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {signatoryText.replace(/\n/g, '  \n')}
-                    </ReactMarkdown>
-                  </div>
-                </>
-              ) : (
-                <div className="prose prose-p:mt-0 prose-p:mb-2.5 max-w-none text-justify text-slate-950 text-[10pt] prose-strong:font-bold prose-strong:text-black prose-table:border prose-table:border-slate-300 prose-th:bg-teal-900 prose-th:text-white prose-th:p-2 prose-td:p-2 prose-td:border prose-td:border-slate-200 leading-[1.55]" style={{ fontFamily: selectedFont }}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {rawText.replace(/\n/g, '  \n')}
-                  </ReactMarkdown>
+              <div className="w-full flex flex-col items-start text-left font-sans mt-2 mb-10">
+                <div className="text-[8.5pt] text-slate-900 font-medium leading-none">Yours faithfully,</div>
+                <div className="h-9 w-full" />
+                <div className="text-[9.5pt] font-extrabold text-slate-950 uppercase tracking-wide leading-tight">
+                  {itemData.signatoryName || 'AYAN BISWAS'}
                 </div>
-              )}
+                <div className="text-[8pt] font-semibold text-slate-600 leading-tight">
+                  {itemData.signatoryTitle || 'Proprietor'}
+                </div>
+              </div>
             </div>
           )}
         </div>
 
-        {/* Bottom Pinned Footer */}
         {renderFooterLayout()}
       </div>
     );
@@ -506,6 +590,27 @@ const MedicalEquipmentsLetterheadGenerator = () => {
         </div>
 
         <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+            <button
+              onClick={() => setPageMode('single')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${pageMode === 'single'
+                ? 'bg-white text-[#0b4a8b] shadow-xs border border-slate-200/60'
+                : 'text-slate-600 hover:text-slate-900'
+                }`}
+            >
+              📄 1-Page Smart Fit
+            </button>
+            <button
+              onClick={() => setPageMode('multi')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${pageMode === 'multi'
+                ? 'bg-white text-[#0b4a8b] shadow-xs border border-slate-200/60'
+                : 'text-slate-600 hover:text-slate-900'
+                }`}
+            >
+              📑 2-Page Multi-Page
+            </button>
+          </div>
+
           <button
             onClick={handleExportPDF}
             disabled={isExporting || isExportingAll}
@@ -545,7 +650,7 @@ const MedicalEquipmentsLetterheadGenerator = () => {
       </div>
 
       <div className="flex flex-1 overflow-hidden h-[calc(100vh-73px)] print:h-auto print:block print:overflow-visible">
-        
+
         {/* Mobile Tabs */}
         <div className="md:hidden flex bg-white border-b border-slate-200 w-full shrink-0 print:hidden">
           <button
@@ -565,7 +670,7 @@ const MedicalEquipmentsLetterheadGenerator = () => {
         {/* Left Control Panel */}
         <div className={`${activeTab === 'form' ? 'flex' : 'hidden'} md:flex w-full md:w-[420px] bg-white border-r border-slate-200 flex-col h-full overflow-y-auto print:hidden z-10 shadow-sm relative`}>
           <div className="p-5 space-y-5">
-            
+
             {/* Quick Templates Selector */}
             <div className="bg-teal-900 text-white p-4 rounded-2xl shadow-sm">
               <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-200 mb-2">

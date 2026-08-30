@@ -28,11 +28,11 @@ const templates = [
 
 This is to certify that **Mr. TUSHAR DEBNATH**, holding **Admission No.: 24TIUBIO1245** and **Passport No.: S1148115**, Son of **Mr. Sagar Debnath**, is a bonafide **3rd-Year Ph.D. Scholar in the Department of Biotechnology** at **Techno India University**, Kolkata, West Bengal, India.
 
-The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Tushar Debnath to support his academic travel, registration, and related research expenses for attending and presenting his research poster titled **“Plant-Derived Bioactive Molecules for Sustainable Crop Production and Climate-Resilient Agriculture”** at the **3rd International Conference on Biomolecules** (*Next-Generation Natural Products Discovery for the Bioeconomy*) in **Nancy, France**.
+The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Tushar Debnath to support his academic travel, registration, and related research expenses for attending and presenting his research poster titled **“Plant-Derived Bioactive Molecules for Sustainable Crop Production and Climate-Resilient Agriculture”** at the **3rd International Conference on Biomolecules** in **Nancy, France**.
 
 The conference is organized by **Université de Lorraine** and the regional research network **"The One Bioeconomy"**, in technical collaboration with the **Bioencapsulation Research Group (BRG)**, scheduled to be held from **September 16–18, 2026**, in **Nancy, France**.
 
-He has been granted **official academic / duty leave** for the period from **14th September 2026 to 22nd September 2026** and is required to **return and resume his Ph.D. research** at Techno India University immediately upon completion of the conference.
+He has been granted **leave** for the period from **14th September 2026 to 22nd September 2026** and is required to **return and resume his Ph.D. research** at Techno India University immediately upon completion of the conference.
 
 The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
 
@@ -63,15 +63,15 @@ This letter is issued at the request of the student for **visa processing and of
 **The Consulate General of France**  
 **Kolkata, India**
 
-**Subject: No Objection Certificate and Official Academic Leave Approval for International Conference in France**
+**Subject: No Objection Certificate and Leave Approval for International Conference in France**
 
 This is to certify that **Mr. TUSHAR DEBNATH** is a bona fide **3rd-Year Ph.D. Scholar** at the **Department of Biotechnology, Techno India University, West Bengal**.
 
 He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24TIUBIO1245** and **Passport No.: S1148115**, Son of **Mr. Sagar Debnath**. His doctoral research is related to the poster contribution titled **“Plant-Derived Bioactive Molecules for Sustainable Crop Production and Climate-Resilient Agriculture.”**
 
-The University has **no objection to his travel to France** to attend and present his research poster at the **3rd International Conference on Biomolecules** (*Next-Generation Natural Products Discovery for the Bioeconomy*), organized by **Université de Lorraine** and **Bioencapsulation Research Group (BRG)**, scheduled from **16th September to 18th September 2026** in **Nancy, France**.
+The University has **no objection to his travel to France** to attend and present his research poster at the **3rd International Conference on Biomolecules**, organized by **Université de Lorraine** and **Bioencapsulation Research Group (BRG)**, scheduled from **16th September to 18th September 2026** in **Nancy, France**.
 
-The University has officially **approved his Academic Duty Leave** for the period from **14th September 2026 to 22nd September 2026** to enable his travel and participation. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his doctoral research at Techno India University upon completion of the conference**.
+The University **approved his Leave** for the period from **14th September 2026 to 22nd September 2026** to enable his travel and participation. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his doctoral research at Techno India University upon completion of the conference**.
 
 This certificate is issued at his request for **Schengen Visa processing and official purposes**.
 
