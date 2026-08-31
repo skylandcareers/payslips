@@ -264,9 +264,9 @@ const ImperialLeatherLetterheadGenerator = () => {
               <div><label className={labelCls}>Ref Number</label><input type="text" name="referenceNo" value={formData.referenceNo} onChange={handleFormChange} className={inputCls} /></div>
               <div><label className={labelCls}>Date</label><input type="text" name="date" value={formData.date} onChange={handleFormChange} className={inputCls} /></div>
             </div>
-            <div><label className={labelCls}>Recipient Name / Office</label><input type="text" name="recipientName" value={formData.recipientName} onChange={handleFormChange} className={inputCls} /></div>
+            <div><label className={labelCls}>Recipient Name / Office</label><textarea name="recipientName" value={formData.recipientName} onChange={handleFormChange} className={`${inputCls} resize-none`} rows={2} /></div>
             <div><label className={labelCls}>Recipient Address</label><textarea name="recipientAddress" value={formData.recipientAddress} onChange={handleFormChange} rows={2} className={`${inputCls} resize-none`} /></div>
-            <div><label className={labelCls}>Subject Line</label><input type="text" name="subject" value={formData.subject} onChange={handleFormChange} className={inputCls} /></div>
+            <div><label className={labelCls}>Subject Line</label><textarea name="subject" value={formData.subject} onChange={handleFormChange} className={`${inputCls} resize-none`} rows={2} /></div>
             <div>
               <label className={labelCls}>Body Content (Markdown Supported)</label>
               <textarea

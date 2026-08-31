@@ -65,7 +65,7 @@ This letter is issued at the request of the student for **visa processing and of
 
 **Subject: No Objection Certificate and Leave Approval for International Conference in France**
 
-This is to certify that **Mr. TUSHAR DEBNATH** is a bona fide **3rd-Year Ph.D. Scholar** at the **Department of Biotechnology, Techno India University, West Bengal**.
+This is to certify that **Mr. TUSHAR DEBNATH** is a bonafide **3rd-Year Ph.D. Scholar** at the **Department of Biotechnology, Techno India University, West Bengal**.
 
 He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24TIUBIO1245** and **Passport No.: S1148115**, Son of **Mr. Sagar Debnath**. His doctoral research is related to the poster contribution titled **“Plant-Derived Bioactive Molecules for Sustainable Crop Production and Climate-Resilient Agriculture.”**
 

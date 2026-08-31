@@ -9,7 +9,7 @@ const templates = [
     name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
     data: {
       referenceNumber: 'SASTRA/2026/PHD/EVEN&CONF/135',
-      date: '31/08/2026',
+      date: '29/08/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
 **Mr. SHAIK MUNNA BHASHA**  
@@ -20,7 +20,7 @@ const templates = [
 
 This is to certify that **Mr. SHAIK MUNNA BHASHA**, holding **Student ID: SU24011246**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thanjavur, Tamil Nadu, India.
 
-The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Shaik Munna Bhasha to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
+The University hereby sanctions a **financial assistance of ₹2,50,000/- (Rupees Two Lakhs Fifty Thousand Only)** in favor of Mr. Shaik Munna Bhasha to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
 
 The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
 
@@ -31,7 +31,7 @@ The above financial sanction and leave approval have been granted after due cons
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 29/08/2026
 
 &nbsp;
 &nbsp;
@@ -49,7 +49,7 @@ This letter is issued at the request of the student for **visa and other officia
     name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
     data: {
       referenceNumber: 'SASTRA/2026/PHD/REG/103',
-      date: '31/08/2026',
+      date: '29/08/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `To  
 **The Consulate General of Spain**  
@@ -57,16 +57,16 @@ This letter is issued at the request of the student for **visa and other officia
 
 **Subject: No Objection Certificate for Academic Conference Attendance in Spain**
 
-This is to certify that **Mr. SHAIK MUNNA BHASHA** is a bona fide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
+This is to certify that **Mr. SHAIK MUNNA BHASHA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Student ID: SU24011246** and **Passport No.: C5166238**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU24011246** and **Passport No.: C5166238**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
 
 The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at SASTRA Deemed to be University upon completion of the conference**.
 
 This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 29/08/2026
 
 &nbsp;
 &nbsp;
@@ -84,7 +84,7 @@ This certificate is issued at his request for **visa and official purposes**.
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: 'SASTRA/2026/PHD/REG/118',
-      date: '31/08/2026',
+      date: '29/08/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -97,7 +97,7 @@ The student is provided **hostel accommodation within the University campus**, a
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 29/08/2026
 
 &nbsp;
 &nbsp;
@@ -115,7 +115,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
     name: '4. Hotel / Accommodation Confirmation - Shaik Munna Bhasha',
     data: {
       referenceNumber: 'SASTRA/2026/PHD/HOSTEL/108',
-      date: '31/08/2026',
+      date: '29/08/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -128,7 +128,7 @@ This is to officially confirm that the student is provided with **hostel accommo
 This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 29/08/2026
 
 &nbsp;
 &nbsp;
@@ -161,7 +161,7 @@ This certificate is issued upon his request for official purposes, including vis
         <td class="font-bold text-slate-900">SASTRA/HOSTEL/2026-27/0892</td>
         <td class="w-[110px] font-semibold text-slate-700">Date</td>
         <td class="w-3">:</td>
-        <td class="font-bold text-slate-900">31/08/2026</td>
+        <td class="font-bold text-slate-900">29/08/2026</td>
       </tr>
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Student Name</td>
@@ -182,7 +182,7 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Course / Branch</td>
         <td>:</td>
-        <td class="font-bold text-slate-900" colspan="4">Ph.D. Biotechnology (SCBT)</td>
+        <td class="font-bold text-slate-900" colspan="4">Ph.D. School of Chemical and Biotechnology (SCBT)</td>
       </tr>
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Hostel / Block</td>
@@ -275,11 +275,21 @@ const SastraLetterheadGenerator = () => {
 
 
   const PageFooter = () => {
-    if (!formData.footerNote) return null;
     return (
-      <div className="w-full px-[20mm] pb-[12mm] mt-8 text-center font-sans">
-        <div className="w-full h-[1.5px] bg-[#003087] mb-2" />
-        <div className="text-[#003087] text-[11px] font-semibold">{formData.footerNote}</div>
+      <div className="w-full px-[20mm] pb-[12mm] mt-8 font-sans">
+        <div className="w-full h-[1.5px] bg-slate-800 mb-1" />
+        <div className="flex justify-between items-start text-[10px] font-bold text-slate-800">
+          <div className="flex flex-col text-left tracking-wide">
+            <div>THANJAVUR-613 401, TAMIL NADU, INDIA</div>
+            <div>PHONE : 04362 304000 TO 010 264101 & 108</div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex flex-col text-left tracking-wide w-[120px]">
+              <div>www.sastra.edu</div>
+              <div>FAX : 04362-264120</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
@@ -406,7 +416,26 @@ const SastraLetterheadGenerator = () => {
                             <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
                           ) : (
                             <div>
-                              <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
+                              {(() => {
+                                const sigMatch = formData.bodyText.match(/\n\s*\&nbsp;\s*\n[\s\S]*?\*\(Registrar/);
+                                if (sigMatch) {
+                                  const splitIndex = sigMatch.index;
+                                  const mainBody = formData.bodyText.substring(0, splitIndex);
+                                  const signature = formData.bodyText.substring(splitIndex).replace(/\n\s*\&nbsp;\s*\n[\s\S]*?\*\(Registrar/, '*(Registrar'); // Clean up the raw spacing
+
+                                  return (
+                                    <>
+                                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{mainBody.replace(/\n/g, '  \n')}</ReactMarkdown>
+                                      <div className="flex justify-end mt-16">
+                                        <div className="text-center">
+                                          <ReactMarkdown remarkPlugins={[remarkGfm]}>{signature.replace(/\n/g, '  \n')}</ReactMarkdown>
+                                        </div>
+                                      </div>
+                                    </>
+                                  );
+                                }
+                                return <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>;
+                              })()}
                             </div>
                           )}
                         </div>

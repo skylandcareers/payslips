@@ -11,7 +11,7 @@ const templateOptions = [
     isHTML: false,
     data: {
       referenceNo: "HFE/QTN/2026/001",
-      date: "31/08/2026",
+      date: "29/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address",
       subject: "Quotation for Furniture Supply",
@@ -47,7 +47,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/BOS/2026/001",
-      date: "31/08/2026",
+      date: "29/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nGSTIN (if any): _______________",
       subject: "BILL OF SUPPLY – Composition taxable person, not eligible to collect tax on supplies",
@@ -75,7 +75,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/DC/2026/001",
-      date: "31/08/2026",
+      date: "29/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nPh: _______________",
       subject: "DELIVERY CHALLAN",
@@ -106,7 +106,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/WC/2026/001",
-      date: "31/08/2026",
+      date: "29/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nBill No.: _______________   Bill Date: _______________",
       subject: "WARRANTY CERTIFICATE",
@@ -132,20 +132,21 @@ Thanking you.`,
     name: "5. Spain Visa Sponsorship – BioSpain 2026 (Shaik Munna Bhasha)",
     isHTML: false,
     data: {
-      referenceNo: "HFE/VISA/2026/SPAIN-01",
-      date: "31/08/2026",
-      recipientName: "The Visa Officer",
-      recipientAddress: "Embassy / Consulate General of Spain\n[City], India",
+      referenceNo: "HFE/VISA/2026/SPAIN",
+      date: "29/08/2026",
+      recipientName: "To\nThe Visa Officer",
+      recipientAddress: "The Consulate General of Spain\nMumbai, India",
       subject: "SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)",
       salutation: "Dear Sir / Madam,",
-      bodyText: `I, **Mr. Rabbani Bhasha Nangar**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and sole financial sponsor** of **Mr. Shaik Munna Bhasha** (Student ID: **SU24011246**, Date of Birth: **05-01-1992**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
+      bodyText: `I, **Mr. Rabbani Bhasha Nangar**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and financial sponsor** of **Mr. Shaik Munna Bhasha** (Student ID: **SU24011246**, Passport No: **C5166238**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
 
 I am the **Proprietor of HOME FURNITURE AND ENTERPRISE**, a registered business in Nandyal, Andhra Pradesh, India (**GSTIN: 37COOPD8437E6ZK**, **PAN: CQLPR8612J**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.
 
-My son, **Mr. Shaik Munna Bhasha**, has been accepted to attend **BIOSPAIN 2026** — one of the largest biotechnology trade fairs and conferences in Europe, organized by the Spanish national bioindustry association (AseBio):
+My son, **Mr. Shaik Munna Bhasha**, has been accepted to attend **BIOSPAIN 2026** - one of the largest biotechnology trade fairs and conferences in Europe, organized by the Spanish national bioindustry association (AseBio):
 
-**Venue:** Bilbao Exhibition Centre (BEC), Barakaldo, Bilbao, Basque Country, Spain
-**Dates:** 29 September – 1 October 2026
+- **Venue:** BILBAO EXHIBITION CENTRE
+- **Address:** Azkue Kalea, 1, 48902 San Vicente de Barakaldo, Bizkaia. Spain
+- **Dates:** 29 September – 1 October 2026
 
 I hereby undertake **full and unconditional financial responsibility** for my son's entire visit to Spain and the Schengen territory, covering:
 
@@ -156,9 +157,9 @@ I hereby undertake **full and unconditional financial responsibility** for my so
 - Conference registration and academic event fees
 - Any emergency contingency expenses during his stay
 
-My son is traveling **strictly for academic and professional development purposes** and will **return to India on or before 05 October 2026** to resume his studies at SASTRA Deemed to be University.
+My son is traveling **strictly for academic and professional development purposes** and will **return to India on or before 06 October 2026** to resume his studies at SASTRA Deemed to be University.
 
-All required supporting documents — including GST Registration Certificate, PAN Card, Bank Statements, Income Tax Returns, University Enrollment Certificate, and BioSpain Conference Registration — are enclosed herewith.
+All required supporting documents - including GST Registration Certificate, PAN Card, Bank Statements, Income Tax Returns, University Enrollment Certificate, and BioSpain Conference Registration - are enclosed herewith.
 
 I kindly and respectfully request you to consider his Schengen Visa application **favorably**.
 
@@ -183,7 +184,7 @@ const HomeFurnitureLetterheadGenerator = () => {
     hsnCode: 'HSN: 940330 (Wooden Furniture)',
     regType: 'ACTIVE COMPOSITION DEALER',
     address: 'Sy No.375/1, Maruthi Oil Mill, Panyam Road, Udumalpuram, Nandyal, Andhra Pradesh – 518 502',
-    phone: '+91 80000 00000',
+    phone: '+91 7428730894',
     email: 'info@homefurniture.in',
   });
 
@@ -360,7 +361,7 @@ const HomeFurnitureLetterheadGenerator = () => {
               <div><label className={labelCls}>Reference No.</label><input type="text" name="referenceNo" value={formData.referenceNo} onChange={handleFormChange} className={inputCls} /></div>
               <div><label className={labelCls}>Date</label><input type="text" name="date" value={formData.date} onChange={handleFormChange} className={inputCls} /></div>
             </div>
-            <div><label className={labelCls}>Recipient Name / Dept</label><input type="text" name="recipientName" value={formData.recipientName} onChange={handleFormChange} className={inputCls} /></div>
+            <div><label className={labelCls}>Recipient Name / Dept</label><textarea name="recipientName" value={formData.recipientName} onChange={handleFormChange} className={`${inputCls} resize-none`} rows={2} /></div>
             <div><label className={labelCls}>Recipient Address</label><textarea name="recipientAddress" value={formData.recipientAddress} onChange={handleFormChange} className={inputCls} rows={2} /></div>
             <div><label className={labelCls}>Subject Line</label><textarea name="subject" value={formData.subject} onChange={handleFormChange} className={inputCls} rows={2} /></div>
             <div><label className={labelCls}>Salutation</label><input type="text" name="salutation" value={formData.salutation} onChange={handleFormChange} className={inputCls} /></div>
@@ -398,42 +399,41 @@ const HomeFurnitureLetterheadGenerator = () => {
                   <td style={{ padding: "10mm 15mm 0 15mm" }}>
                     {/* HEADER STYLES */}
                     {headerStyle === 'centered' && (
-                      <div className="pb-4 mb-6 pt-2 relative">
-                        <div className="flex justify-between items-center px-2">
-                          {/* Logo & Name */}
-                          <div className="flex items-center gap-5">
-                            <img src="/home-furniture-corp-logo.jpg" alt="Logo" className="w-24 h-24 object-contain mix-blend-multiply" />
-                            <div className="flex flex-col justify-center">
-                              <h1 className="text-2xl font-black text-[#0f2142] tracking-tighter uppercase mb-0.5" style={{ fontFamily: "Georgia, serif" }}>
-                                HOME FURNITURE
-                              </h1>
-                              <h2 className="text-[17px] font-black text-[#0f2142] tracking-[0.15em] uppercase mb-1">
-                                & ENTERPRISE
-                              </h2>
-                              <p className="text-[9px] font-bold text-[#c39f55] tracking-[0.25em] uppercase">
-                                {headerData.tagline}
-                              </p>
-                            </div>
+                      <div className="pb-3 mb-5 pt-0 relative">
+                        <div className="flex justify-start items-center gap-10 mb-1">
+                          {/* Logo Bounding Box - Keeps layout tight while letting image scale */}
+                          <div className="flex shrink-0 w-36 h-24 relative">
+                            <img src="/home-furniture-corp-logo.jpg" alt="Logo" className="absolute top-1/2 left-[-15px] -translate-y-1/2 w-48 max-w-none" style={{ mixBlendMode: 'multiply', filter: 'contrast(1.1) brightness(1.05)' }} />
                           </div>
 
-                          {/* Corporate Details */}
-                          <div className="text-right flex flex-col justify-center border-l-[3px] border-[#c39f55] pl-4 py-1">
-                            <div className="text-[9px] font-bold text-slate-800 leading-relaxed max-w-[200px]">
-                              {headerData.address}
-                            </div>
-                            <div className="text-[9px] font-bold text-slate-600 mt-2">
-                              <span className="text-[#c39f55]">T:</span> {headerData.phone} | <span className="text-[#c39f55]">E:</span> {headerData.email}
-                            </div>
-                            <div className="text-[9px] font-bold text-slate-600 mt-0.5">
-                              <span className="text-[#0f2142]">GSTIN:</span> {headerData.gstin}
-                            </div>
-                            <div className="text-[9px] font-bold text-slate-600 mt-0.5">
-                              <span className="text-[#0f2142]">PROPRIETOR:</span> {headerData.proprietor}
+                          {/* Text Block */}
+                          <div className="flex flex-col items-start z-10 pt-2">
+                            <div className="text-left">
+                              <h1 className="text-[24px] leading-none font-black text-[#0f2142] tracking-tighter uppercase mb-1" style={{ fontFamily: "Georgia, serif" }}>
+                                {headerData.firmName}
+                              </h1>
+
+                              <p className="text-[10px] font-bold text-[#c39f55] tracking-[0.15em] uppercase mb-3">
+                                {headerData.tagline}
+                              </p>
+
+                              <div className="text-[10px] font-bold text-slate-800 leading-snug">
+                                {headerData.address}
+                              </div>
+
+                              <div className="text-[10px] font-bold text-slate-700 mt-1.5">
+                                <span className="text-[#c39f55]">T:</span> {headerData.phone} <span className="mx-1 text-slate-300">|</span> <span className="text-[#c39f55]">E:</span> {headerData.email} <span className="mx-1 text-slate-300">|</span><span className="text-[#0f2142]">GSTIN:</span> {headerData.gstin} <span className="mx-1 text-slate-300"></span>
+                              </div>
+
+                              <div className="text-[10px] font-bold text-slate-700 mt-0.5">
+                                <span className="text-[#0f2142]">PROPRIETOR:</span> {headerData.proprietor}
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-[#0f2142]"></div>
-                        <div className="absolute bottom-[4px] left-0 right-0 h-[1.5px] bg-[#c39f55]"></div>
+
+                        <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#0f2142]"></div>
+                        <div className="absolute bottom-[3px] left-0 right-0 h-[1px] bg-[#c39f55]"></div>
                       </div>
                     )}
 
@@ -546,7 +546,6 @@ const HomeFurnitureLetterheadGenerator = () => {
                   <div className="h-[1.5px] bg-[#c39f55] w-full mb-[2px]"></div>
                   <div className="border-t-[4px] border-[#0f2142] pt-3 flex justify-between items-center text-[9px] uppercase tracking-wider">
                     <div className="font-black text-[#0f2142]">{headerData.firmName}</div>
-                    <div className="font-bold text-slate-400">Official Corporate Communication</div>
                     <div className="font-black text-[#0f2142]">www.homefurniture.in</div>
                   </div>
                 </div>

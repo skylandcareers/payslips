@@ -56,7 +56,7 @@ This letter is issued at the request of the student for **visa and other officia
 
 **Subject: No Objection Certificate for Academic Conference Attendance in Spain**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU** is a bona fide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
+This is to certify that **Mr. DINESH KUMAR MUSKU** is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
 
 He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647887** and **Passport No.: Y5326556**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
 
