@@ -378,7 +378,7 @@ const ImperialLeatherLetterheadGenerator = () => {
                 )}
 
                 {/* Body Content */}
-                <div className="w-full text-[9.6pt] leading-[1.65] text-justify text-slate-900 [&_p]:mb-2.5 [&_p:last-child]:mb-0 prose-strong:font-bold prose-strong:text-[#0f172a]">
+                <div className="w-full text-[9.6pt] leading-snug text-justify text-slate-900 [&_p]:mb-2.5 [&_p:last-child]:mb-0 prose-strong:font-bold prose-strong:text-[#0f172a]">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {formData.bodyText}
                   </ReactMarkdown>

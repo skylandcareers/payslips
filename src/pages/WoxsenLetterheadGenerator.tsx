@@ -37,10 +37,6 @@ This letter is issued at the request of the student for **visa and other officia
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 
 *(Registrar / Dean / Director – Research)*  
 **Woxsen University**`,
@@ -423,7 +419,7 @@ const WoxsenLetterheadGenerator = () => {
                   value={formData.bodyText}
                   onChange={handleChange}
                   rows={15}
-                  className="w-full p-4 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-800 font-mono leading-relaxed resize-none mt-2 shadow-inner placeholder:text-slate-300"
+                  className="w-full p-4 border border-slate-200/60 rounded-xl focus:ring-4 focus:ring-red-500/10 focus:border-red-500 hover:border-slate-300 outline-none transition-all bg-white text-sm text-slate-800 font-mono leading-[1.5] resize-none mt-2 shadow-inner placeholder:text-slate-300"
                 />
               </div>
 
@@ -466,7 +462,7 @@ const WoxsenLetterheadGenerator = () => {
               <tbody className="h-full align-top">
                 <tr>
                   <td className="align-top relative px-[20mm]">
-                    <div className="h-full block min-h-[600px] relative text-black text-[13.5px] font-sans leading-relaxed">
+                    <div className="h-full block min-h-[600px] relative text-black text-[13.5px] font-sans leading-[1.5]">
 
                       {(formData.referenceNumber || formData.date) && (
                         <div className="flex justify-between items-start mb-8 font-sans text-[14px]">
@@ -482,11 +478,11 @@ const WoxsenLetterheadGenerator = () => {
                       )}
 
                       {formData.bodyText && (
-                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.65] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
+                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-[0.65rem] max-w-none leading-[1.5] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-left font-sans">
                           {(formData as { isHTML?: boolean }).isHTML ? (
                             <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
                           ) : (
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText}</ReactMarkdown>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
                           )}
                         </div>
                       )}

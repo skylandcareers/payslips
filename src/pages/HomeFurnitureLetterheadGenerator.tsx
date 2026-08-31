@@ -11,7 +11,7 @@ const templateOptions = [
     isHTML: false,
     data: {
       referenceNo: "HFE/QTN/2026/001",
-      date: "30/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address",
       subject: "Quotation for Furniture Supply",
@@ -47,7 +47,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/BOS/2026/001",
-      date: "30/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nGSTIN (if any): _______________",
       subject: "BILL OF SUPPLY – Composition taxable person, not eligible to collect tax on supplies",
@@ -75,7 +75,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/DC/2026/001",
-      date: "30/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nPh: _______________",
       subject: "DELIVERY CHALLAN",
@@ -106,7 +106,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/WC/2026/001",
-      date: "30/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nBill No.: _______________   Bill Date: _______________",
       subject: "WARRANTY CERTIFICATE",
@@ -133,12 +133,12 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/VISA/2026/SPAIN-01",
-      date: "30/08/2026",
+      date: "31/08/2026",
       recipientName: "The Visa Officer",
       recipientAddress: "Embassy / Consulate General of Spain\n[City], India",
       subject: "SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)",
       salutation: "Dear Sir / Madam,",
-      bodyText: `I, **Mr. Rabbani Bhasha Nangar**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and sole financial sponsor** of **Mr. Shaik Munna Bhasha** (Student ID: **24SA13047**, Date of Birth: **05-01-1992**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
+      bodyText: `I, **Mr. Rabbani Bhasha Nangar**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and sole financial sponsor** of **Mr. Shaik Munna Bhasha** (Student ID: **SU24011246**, Date of Birth: **05-01-1992**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
 
 I am the **Proprietor of HOME FURNITURE AND ENTERPRISE**, a registered business in Nandyal, Andhra Pradesh, India (**GSTIN: 37COOPD8437E6ZK**, **PAN: CQLPR8612J**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.
 
@@ -415,7 +415,7 @@ const HomeFurnitureLetterheadGenerator = () => {
                               </p>
                             </div>
                           </div>
-                          
+
                           {/* Corporate Details */}
                           <div className="text-right flex flex-col justify-center border-l-[3px] border-[#c39f55] pl-4 py-1">
                             <div className="text-[9px] font-bold text-slate-800 leading-relaxed max-w-[200px]">
@@ -478,53 +478,53 @@ const HomeFurnitureLetterheadGenerator = () => {
                     </div>
                     {/* DOCUMENT BODY */}
                     <div className="px-6 relative z-10 flex-1 bg-white/40">
-              {/* Ref & Date */}
-              <div className="flex justify-between items-center text-sm font-semibold text-slate-800 mb-8">
-                <div>Ref: <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(formData.referenceNo || '').replace(/\n/g, '  \n')}</ReactMarkdown></span></div>
-                <div>Date: <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(formData.date || '').replace(/\n/g, '  \n')}</ReactMarkdown></span></div>
-              </div>
+                      {/* Ref & Date */}
+                      <div className="flex justify-between items-center text-sm font-semibold text-slate-800 mb-8">
+                        <div>Ref: <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(formData.referenceNo || '').replace(/\n/g, '  \n')}</ReactMarkdown></span></div>
+                        <div>Date: <span className="font-extrabold text-slate-950"><ReactMarkdown components={{ p: React.Fragment }}>{(formData.date || '').replace(/\n/g, '  \n')}</ReactMarkdown></span></div>
+                      </div>
 
-              {/* Recipient */}
-              <div className="text-sm text-slate-900 leading-snug mb-8">
-                <div className="font-extrabold mb-1"><ReactMarkdown components={{ p: React.Fragment }}>{(formData.recipientName || '').replace(/\n/g, '  \n')}</ReactMarkdown></div>
-                <div><ReactMarkdown components={{ p: React.Fragment }}>{(formData.recipientAddress || '').replace(/\n/g, '  \n')}</ReactMarkdown></div>
-              </div>
+                      {/* Recipient */}
+                      <div className="text-sm text-slate-900 leading-snug mb-8">
+                        <div className="font-extrabold mb-1"><ReactMarkdown components={{ p: React.Fragment }}>{(formData.recipientName || '').replace(/\n/g, '  \n')}</ReactMarkdown></div>
+                        <div><ReactMarkdown components={{ p: React.Fragment }}>{(formData.recipientAddress || '').replace(/\n/g, '  \n')}</ReactMarkdown></div>
+                      </div>
 
-              {/* Subject */}
-              {formData.subject && (
-                <div className="text-sm mb-6 flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
-                  <span className="font-extrabold uppercase shrink-0 text-slate-950">Subject:</span>
-                  <span className="font-bold underline decoration-slate-400 underline-offset-4 text-slate-900 leading-snug">
-                    <ReactMarkdown components={{ p: React.Fragment }}>{(formData.subject || '').replace(/\n/g, '  \n')}</ReactMarkdown>
-                  </span>
-                </div>
-              )}
+                      {/* Subject */}
+                      {formData.subject && (
+                        <div className="text-sm mb-6 flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                          <span className="font-extrabold uppercase shrink-0 text-slate-950">Subject:</span>
+                          <span className="font-bold underline decoration-slate-400 underline-offset-4 text-slate-900 leading-snug">
+                            <ReactMarkdown components={{ p: React.Fragment }}>{(formData.subject || '').replace(/\n/g, '  \n')}</ReactMarkdown>
+                          </span>
+                        </div>
+                      )}
 
-              {/* Salutation */}
-              {formData.salutation && (
-                <div className="text-sm font-semibold text-slate-900 mb-4">
-                  {formData.salutation}
-                </div>
-              )}
+                      {/* Salutation */}
+                      {formData.salutation && (
+                        <div className="text-sm font-semibold text-slate-900 mb-4">
+                          {formData.salutation}
+                        </div>
+                      )}
 
-              {/* Body Text */}
-              <div className="text-sm text-slate-800 leading-relaxed text-justify space-y-4">
-                <div className="prose prose-sm max-w-none">
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {formData.bodyText || ''}
-                  </ReactMarkdown>
-                </div>
-              </div>
+                      {/* Body Text */}
+                      <div className="text-sm text-slate-800 leading-relaxed text-justify space-y-4">
+                        <div className="prose prose-sm max-w-none">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {formData.bodyText || ''}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
 
-              {/* Signatory */}
-              <div className="mt-16 text-sm text-slate-900 text-right pr-4">
-                <div className="mb-10 font-medium">For <span className="font-extrabold">{formData.signatoryFirm}</span></div>
-                <div className="font-extrabold uppercase tracking-wide">{formData.signatoryName}</div>
-                <div className="text-slate-600 font-semibold">{formData.signatoryTitle}</div>
-              </div>
-            </div>
+                      {/* Signatory */}
+                      <div className="mt-16 text-sm text-slate-900 text-right pr-4">
+                        <div className="mb-10 font-medium">For <span className="font-extrabold">{formData.signatoryFirm}</span></div>
+                        <div className="font-extrabold uppercase tracking-wide">{formData.signatoryName}</div>
+                        <div className="text-slate-600 font-semibold">{formData.signatoryTitle}</div>
+                      </div>
+                    </div>
 
-            {/* FOOTER PLACEHOLDER (pushed to bottom) */}
+                    {/* FOOTER PLACEHOLDER (pushed to bottom) */}
                   </td>
                 </tr>
               </tbody>

@@ -6,187 +6,240 @@ import remarkGfm from 'remark-gfm';
 const templates = [
   {
     id: 'sanction',
-    name: '1. Sanction Letter – Financial & Academic Leave Approval',
+    name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
     data: {
-      referenceNumber: 'SASTRA/2026/SCBT/CONF/001',
-      date: '30/08/2026',
+      referenceNumber: 'SASTRA/2026/PHD/EVEN&CONF/135',
+      date: '31/08/2026',
       documentTitle: '**SANCTION LETTER**',
-      bodyText: `To\n**Shaik Munna Bhasha**\n**Student, School of Chemical and Biotechnology (SCBT)**\n**Student ID: 24SA13047**\n\n**Subject: Financial Sanction and Academic Leave Approval for International Conference**\n\nThis is to certify that **Shaik Munna Bhasha**, holding **Student ID: 24SA13047**, is a bonafide student of the **School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.\n\nThe University hereby sanctions a **financial assistance of ₹[Amount]/- (Rupees [Amount in Words] Only)** in favor of Shaik Munna Bhasha to support his academic travel and related expenses for attending the **[Conference Name]** in **[Country]**.\n\nThe conference is scheduled to be held from **[Start Date] to [End Date]**, in **[City, Country]**.\n\nHe has been granted **leave** for the period from **[Leave Start Date] to [Leave End Date]** and is required to **return and resume his studies** at SASTRA Deemed to be University.\n\nThe above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.\n\nThis letter is issued at the request of the student for **visa and other official purposes**.\n\n**Place:** Thanjavur, Tamil Nadu, India\n**Date:** 30/08/2026\n\n&nbsp;\n&nbsp;\n&nbsp;\n&nbsp;\n&nbsp;\n\n*(Registrar / Dean of Research)*\n**SASTRA Deemed to be University**`,
+      bodyText: `To  
+**Mr. SHAIK MUNNA BHASHA**  
+**Ph.D. Scholar, School of Chemical and Biotechnology (SCBT)**  
+**Student ID: SU24011246**
+
+**Subject: Financial Sanction and Academic Leave Approval for International Conference – Spain**
+
+This is to certify that **Mr. SHAIK MUNNA BHASHA**, holding **Student ID: SU24011246**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thanjavur, Tamil Nadu, India.
+
+The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Shaik Munna Bhasha to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
+
+The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
+
+He has been granted **leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at SASTRA Deemed to be University.
+
+The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
+
+This letter is issued at the request of the student for **visa and other official purposes**.
+
+**Place:** Thanjavur, Tamil Nadu, India  
+**Date:** 31/08/2026
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+*(Registrar / Dean / Director – Research)*  
+**SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
     }
   },
   {
-    id: 'hostel_receipt',
-    name: '2. Hostel Fee Receipt – University Hostel',
-    data: {
-      referenceNumber: 'SASTRA/HOSTEL/2026-27/0892',
-      date: '30/08/2026',
-      documentTitle: '',
-      bodyText: `<div class="w-full text-[12px] font-sans text-black -mt-4">
-  <div class="font-bold mb-1 text-[14px] text-center underline">HOSTEL FEE RECEIPT</div>
-  <div class="text-center text-[11px] text-slate-600 mb-3">(Student Copy)</div>
-  <div class="border-b-[1.5px] border-dashed border-black/60 mb-4"></div>
-
-  <table class="w-full mb-4 table-fixed text-[12.5px]">
-    <tbody>
-      <tr class="h-7 align-top">
-        <td class="w-[130px] font-semibold text-slate-700">Receipt No.</td>
-        <td class="w-3">:</td>
-        <td class="font-bold">SASTRA/HOSTEL/2026-27/0892</td>
-        <td class="w-[110px] font-semibold text-slate-700">Receipt Date</td>
-        <td class="w-3">:</td>
-        <td>30/08/2026</td>
-      </tr>
-      <tr class="h-7 align-top">
-        <td class="font-semibold text-slate-700">Student Name</td>
-        <td>:</td>
-        <td class="font-bold">Shaik Munna Bhasha</td>
-        <td class="font-semibold text-slate-700">Reg. No. / ID</td>
-        <td>:</td>
-        <td>24SA13047</td>
-      </tr>
-      <tr class="h-7 align-top">
-        <td class="font-semibold text-slate-700">Programme</td>
-        <td>:</td>
-        <td class="font-bold">[Programme Name]</td>
-        <td class="font-semibold text-slate-700">Year / Semester</td>
-        <td>:</td>
-        <td>[Year / Semester]</td>
-      </tr>
-      <tr class="h-7 align-top">
-        <td class="font-semibold text-slate-700">School / Dept.</td>
-        <td>:</td>
-        <td>School of Chemical and Biotechnology (SCBT)</td>
-        <td class="font-semibold text-slate-700">Father / Guardian</td>
-        <td>:</td>
-        <td class="font-bold">Rabbani Bhasha Nangar</td>
-      </tr>
-      <tr class="h-7 align-top">
-        <td class="font-semibold text-slate-700">Hostel Block</td>
-        <td>:</td>
-        <td>[Hostel Block & Room No.]</td>
-        <td class="font-semibold text-slate-700">Academic Year</td>
-        <td>:</td>
-        <td>2026 – 2027</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="w-full border-collapse border-[1.5px] border-black mb-3 text-[12.5px]">
-    <thead>
-      <tr class="bg-[#003087] text-white border-b-[1.5px] border-black">
-        <th class="border-r-[1.5px] border-black p-2 text-center w-14 font-bold">S.No.</th>
-        <th class="border-r-[1.5px] border-black p-2 text-left font-bold">Particulars</th>
-        <th class="border-r-[1.5px] border-black p-2 text-center w-28 font-bold">Period</th>
-        <th class="p-2 text-right w-36 font-bold">Amount (₹)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="border-t border-black/20">
-        <td class="border-r-[1.5px] border-black p-2 text-center">1</td>
-        <td class="border-r-[1.5px] border-black p-2">Hostel Accommodation Fee</td>
-        <td class="border-r-[1.5px] border-black p-2 text-center">Even Sem 2026-27</td>
-        <td class="p-2 text-right">[Amount]</td>
-      </tr>
-      <tr class="border-t border-black/20">
-        <td class="border-r-[1.5px] border-black p-2 text-center">2</td>
-        <td class="border-r-[1.5px] border-black p-2">Mess / Catering Charges</td>
-        <td class="border-r-[1.5px] border-black p-2 text-center">Even Sem 2026-27</td>
-        <td class="p-2 text-right">[Amount]</td>
-      </tr>
-      <tr class="border-t border-black/20">
-        <td class="border-r-[1.5px] border-black p-2 text-center">3</td>
-        <td class="border-r-[1.5px] border-black p-2">Electricity / Maintenance Charges</td>
-        <td class="border-r-[1.5px] border-black p-2 text-center">Even Sem 2026-27</td>
-        <td class="p-2 text-right">[Amount]</td>
-      </tr>
-      <tr class="border-t-[1.5px] border-black bg-slate-50">
-        <td colspan="3" class="border-r-[1.5px] border-black p-2 text-center font-bold">Total Amount</td>
-        <td class="p-2 text-right font-bold">[Total]</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="mb-1 text-[12.5px]"><span class="font-semibold">Amount in Words:</span> Rupees [Total Amount in Words] Only</div>
-  <div class="mb-1 text-[12.5px]"><span class="font-semibold">Mode of Payment:</span> [Online / DD / Cash] &nbsp;&nbsp; <span class="font-semibold">Transaction / DD No.:</span> [Transaction No.]</div>
-  <div class="mb-4 text-[12.5px]"><span class="font-semibold">Remarks:</span> [Any remarks or NIL]</div>
-
-  <div class="border-b-[1.5px] border-dashed border-black/60 mt-[60px] mb-3"></div>
-  <div class="flex justify-between text-[12px]">
-    <div><span class="font-semibold">Received by:</span> ___________________________</div>
-    <div><span class="font-semibold">Authorised Signatory</span><br/><span class="text-slate-600">Warden / Hostel Office</span><br/><span class="text-slate-600">SASTRA Deemed to be University</span></div>
-  </div>
-</div>`,
-      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
-      isHTML: true,
-    }
-  },
-  {
     id: 'noc',
-    name: '3. No Objection Certificate (NOC) – International Conference',
+    name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
     data: {
-      referenceNumber: 'SASTRA/2026/SCBT/NOC/002',
-      date: '30/08/2026',
+      referenceNumber: 'SASTRA/2026/PHD/REG/103',
+      date: '31/08/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
-      bodyText: `To\n**The Embassy / Consulate General of [Country]**\n**[City], India**\n\n**Subject: No Objection Certificate for Academic Conference Attendance – [Country]**\n\nThis is to certify that **Shaik Munna Bhasha** is a bona fide student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India, bearing **Student ID: 24SA13047**.\n\n**Personal Details:**\n- **Date of Birth:** 05 – 01 – 1992\n- **Father's Name:** Rabbani Bhasha Nangar\n- **Mother's Name:** Halima Bee Nangar\n- **Permanent Address:** H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501\n- **Passport No.:** [Passport No.]\n\nHis studies are related to the paper/poster presentation titled **"[Presentation Title]."**\n\nThe University has **no objection to his travel to [Country]** to attend the **[Conference Name]**, scheduled from **[Start Date] – [End Date]** in **[City, Country]**. His participation is purely academic. He is expected to **resume his studies at SASTRA Deemed to be University upon completion of the conference**.\n\nThis certificate is issued at his request for **visa and official purposes**.\n\n**Place:** Thanjavur, Tamil Nadu, India\n**Date:** 30/08/2026\n\n&nbsp;\n&nbsp;\n&nbsp;\n\n*(Registrar / Dean)*\n**SASTRA Deemed to be University**`,
+      bodyText: `To  
+**The Consulate General of Spain**  
+**Mumbai, India**
+
+**Subject: No Objection Certificate for Academic Conference Attendance in Spain**
+
+This is to certify that **Mr. SHAIK MUNNA BHASHA** is a bona fide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
+
+He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Student ID: SU24011246** and **Passport No.: C5166238**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
+
+The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at SASTRA Deemed to be University upon completion of the conference**.
+
+This certificate is issued at his request for **visa and official purposes**.
+
+**Place:** Thanjavur, Tamil Nadu, India  
+**Date:** 31/08/2026
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+*(Registrar / Dean)*  
+**SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
     }
   },
   {
     id: 'bonafide',
-    name: '4. Bonafide Student Certificate',
+    name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
-      referenceNumber: 'SASTRA/2026/SCBT/BON/003',
-      date: '30/08/2026',
+      referenceNumber: 'SASTRA/2026/PHD/REG/118',
+      date: '31/08/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
-      bodyText: `**To Whomsoever It May Concern**\n\nThis is to certify that **Shaik Munna Bhasha**, bearing **Student ID: 24SA13047**, is a bonafide student of the **School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India, during the academic year **2026–2027**.\n\n- **Date of Birth:** 05 – 01 – 1992\n- **Father's Name:** Rabbani Bhasha Nangar\n- **Mother's Name:** Halima Bee Nangar\n- **Permanent Address:** H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501\n\nHe is pursuing his studies satisfactorily and his conduct and character are found to be **good**.\n\nThis bonafide certificate is issued upon his request for **official purposes**, including **conference participation, visa processing, and other academic requirements**.\n\n**Place:** Thanjavur, Tamil Nadu, India\n**Date:** 30/08/2026\n\n&nbsp;\n&nbsp;\n&nbsp;\n\n*(Registrar)*\n**SASTRA Deemed to be University**`,
+      bodyText: `**To Whomsoever It May Concern**
+
+This is to certify that **Mr. SHAIK MUNNA BHASHA**, bearing **Student ID: SU24011246** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**.
+
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
+
+The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
+
+This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
+
+**Place:** Thanjavur, Tamil Nadu, India  
+**Date:** 31/08/2026
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+*(Registrar / Dean / Director – Research)*  
+**SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
     }
   },
   {
-    id: 'bonafide_munna',
-    name: '5. Bonafide Certificate – Shaik Munna Bhasha (24SA13047)',
+    id: 'hotel',
+    name: '4. Hotel / Accommodation Confirmation - Shaik Munna Bhasha',
     data: {
-      referenceNumber: 'SASTRA/2026/UG/BON/047',
-      date: '30/08/2026',
-      documentTitle: '**BONAFIDE STUDENT CERTIFICATE**',
+      referenceNumber: 'SASTRA/2026/PHD/HOSTEL/108',
+      date: '31/08/2026',
+      documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **SHAIK MUNNA BHASHA**, bearing **Student ID: 24SA13047**, is a bonafide student of the **School of Chemical and Biotechnology (SCBT)**, **SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India, during the academic year **2026–2027**.
+This is to certify that **Mr. SHAIK MUNNA BHASHA**, holding **Student ID: SU24011246**, is a bonafide Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT) at SASTRA Deemed to be University, Thanjavur, Tamil Nadu, India.
 
-The following are his personal and family details as per University records:
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
-| Particulars | Details |
-|---|---|
-| **Student Name** | SHAIK MUNNA BHASHA |
-| **Student ID** | 24SA13047 |
-| **School / Department** | School of Chemical and Biotechnology (SCBT) |
-| **University** | SASTRA Deemed to be University, Thanjavur, Tamil Nadu |
-| **Date of Birth** | 05 – 01 – 1992 |
-| **Father's Name** | Rabbani Bhasha Nangar |
-| **Mother's Name** | Halima Bee Nangar |
-| **Permanent Address** | H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501 |
-| **Father's PAN** | CQLPR8612J |
+This is to officially confirm that the student is provided with **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the entire duration of his Ph.D. program.
 
-He is pursuing his studies at this University and his conduct and character are found to be **good**.
+This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
 
-This certificate is issued upon his request for **official and academic purposes**.
-
-**Place:** Thanjavur, Tamil Nadu, India
-**Date:** 30/08/2026
+**Place:** Thanjavur, Tamil Nadu, India  
+**Date:** 31/08/2026
 
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
 
-*(Registrar)*
+*(Registrar / Dean / Director – Research)*  
 **SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
+    }
+  },
+  {
+    id: 'receipt',
+    name: '5. Fee Receipt (Student Copy) - Shaik Munna Bhasha',
+    data: {
+      isHTML: true,
+      referenceNumber: '',
+      date: '',
+      documentTitle: '',
+      bodyText: `<div class="w-full text-[12px] font-sans text-black -mt-2">
+  <div class="font-bold mb-1 text-[15px] text-center tracking-wide underline">HOSTEL FEE RECEIPT</div>
+  <div class="text-center text-[11px] text-slate-600 mb-8 font-bold">(Student Copy)</div>
+  
+  <table class="w-full mb-6 table-fixed text-[12.5px]">
+    <tbody>
+      <tr class="h-7 align-top">
+        <td class="w-[130px] font-semibold text-slate-700">Receipt No.</td>
+        <td class="w-3">:</td>
+        <td class="font-bold text-slate-900">SASTRA/HOSTEL/2026-27/0892</td>
+        <td class="w-[110px] font-semibold text-slate-700">Date</td>
+        <td class="w-3">:</td>
+        <td class="font-bold text-slate-900">31/08/2026</td>
+      </tr>
+      <tr class="h-7 align-top">
+        <td class="font-semibold text-slate-700">Student Name</td>
+        <td>:</td>
+        <td class="font-bold uppercase text-slate-900">SHAIK MUNNA BHASHA</td>
+        <td class="font-semibold text-slate-700">Student ID No.</td>
+        <td>:</td>
+        <td class="font-bold text-slate-900">SU24011246</td>
+      </tr>
+      <tr class="h-7 align-top">
+        <td class="font-semibold text-slate-700">Father/Guardian</td>
+        <td>:</td>
+        <td class="font-bold uppercase text-slate-900">Rabbani Bhasha Nangar</td>
+        <td class="font-semibold text-slate-700">Academic Year</td>
+        <td>:</td>
+        <td class="font-bold text-slate-900">2026-27</td>
+      </tr>
+      <tr class="h-7 align-top">
+        <td class="font-semibold text-slate-700">Course / Branch</td>
+        <td>:</td>
+        <td class="font-bold text-slate-900" colspan="4">Ph.D. Biotechnology (SCBT)</td>
+      </tr>
+      <tr class="h-7 align-top">
+        <td class="font-semibold text-slate-700">Hostel / Block</td>
+        <td>:</td>
+        <td class="font-bold text-slate-900" colspan="4">Vasishta Block - Room No. 214</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="w-full mb-6 text-[12.5px] border-collapse border border-black/30">
+    <thead>
+      <tr class="bg-slate-100">
+        <th class="border border-black/30 px-3 py-2 text-left w-12">S.No</th>
+        <th class="border border-black/30 px-3 py-2 text-left">Fee Particulars</th>
+        <th class="border border-black/30 px-3 py-2 text-right w-32">Amount (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-black/30 px-3 py-2 text-center">1</td>
+        <td class="border border-black/30 px-3 py-2 font-medium">Hostel Establishment Fee (Annual)</td>
+        <td class="border border-black/30 px-3 py-2 text-right font-bold">50,000.00</td>
+      </tr>
+      <tr>
+        <td class="border border-black/30 px-3 py-2 text-center">2</td>
+        <td class="border border-black/30 px-3 py-2 font-medium">Mess Advance</td>
+        <td class="border border-black/30 px-3 py-2 text-right font-bold">55,000.00</td>
+      </tr>
+      <tr>
+        <td class="border border-black/30 px-3 py-2 text-center">3</td>
+        <td class="border border-black/30 px-3 py-2 font-medium">Hostel Caution Deposit (Refundable)</td>
+        <td class="border border-black/30 px-3 py-2 text-right font-bold">5,000.00</td>
+      </tr>
+      <tr class="font-bold bg-slate-50">
+        <td class="border border-black/30 px-3 py-2 text-right" colspan="2">Total Amount Received</td>
+        <td class="border border-black/30 px-3 py-2 text-right text-[13px]">₹1,10,000.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mb-10 font-bold italic text-[12.5px] text-slate-800">
+    Amount in Words: Rupees One Lakh Ten Thousand Only
+  </div>
+
+  <div class="flex justify-between items-end mt-16 px-2">
+    <div class="text-[11.5px] text-slate-700">
+      <div class="font-bold text-slate-800 mb-1">Payment Details:</div>
+      <div>Mode: Online Transfer (NEFT/RTGS)</div>
+      <div>Transaction ID: SBIN4398188472</div>
+      <div class="mt-3 italic text-[10px] text-slate-500">This is a computer-generated receipt.</div>
+    </div>
+    <div class="text-center">
+      <div class="border-t-[1.5px] border-black/80 w-48 pt-1.5 font-bold text-[13px]">Authorized Signatory</div>
+    </div>
+  </div>
+</div>`,
+      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
     }
   }
 ];
@@ -313,7 +366,7 @@ const SastraLetterheadGenerator = () => {
                   <label className="text-sm font-semibold text-slate-700">Body Content</label>
                   <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200">Markdown</span>
                 </div>
-                <textarea name="bodyText" value={formData.bodyText} onChange={handleChange} rows={15} className="w-full p-4 border border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none bg-white text-sm text-slate-800 font-mono leading-relaxed resize-none mt-2 shadow-inner" />
+                <textarea name="bodyText" value={formData.bodyText} onChange={handleChange} rows={15} className="w-full p-4 border border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none bg-white text-sm text-slate-800 font-mono leading-[1.5] resize-none mt-2 shadow-inner" />
               </div>
 
               <div className="space-y-1.5">
@@ -332,7 +385,7 @@ const SastraLetterheadGenerator = () => {
               <tbody className="h-full align-top">
                 <tr>
                   <td className="align-top px-[20mm] pt-6">
-                    <div className="min-h-[600px] text-black text-[13.5px] font-sans leading-relaxed">
+                    <div className="min-h-[600px] text-black text-[13.5px] font-sans leading-[1.5]">
 
                       {(formData.referenceNumber || formData.date) && (
                         <div className="flex justify-between items-start mb-8 text-[14px]">
@@ -348,11 +401,13 @@ const SastraLetterheadGenerator = () => {
                       )}
 
                       {formData.bodyText && (
-                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-4 max-w-none leading-[1.65] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-justify">
+                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-[0.65rem] max-w-none leading-[1.5] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-justify">
                           {(formData as { isHTML?: boolean }).isHTML ? (
                             <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
                           ) : (
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText}</ReactMarkdown>
+                            <div>
+                              <ReactMarkdown remarkPlugins={[remarkGfm]}>{formData.bodyText.replace(/\n/g, '  \n')}</ReactMarkdown>
+                            </div>
                           )}
                         </div>
                       )}
