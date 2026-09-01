@@ -11,7 +11,7 @@ const templateOptions = [
     isHTML: false,
     data: {
       referenceNo: "HFE/QTN/2026/001",
-      date: "29/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address",
       subject: "Quotation for Furniture Supply",
@@ -36,7 +36,7 @@ const templateOptions = [
 - Warranty: 1 year against manufacturing defects
 
 Thanking you.`,
-      signatoryName: "RABBANI BHASHA NANGAR",
+      signatoryName: "RABBANI BASHA NANGAR",
       signatoryTitle: "Proprietor",
       signatoryFirm: "Home Furniture and Enterprise",
     },
@@ -47,7 +47,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/BOS/2026/001",
-      date: "29/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nGSTIN (if any): _______________",
       subject: "BILL OF SUPPLY – Composition taxable person, not eligible to collect tax on supplies",
@@ -64,7 +64,7 @@ Thanking you.`,
 **Delivery:** [Delivery Address]
 
 **Declaration:** I/We hereby certify that the information given above is true, correct and complete in every respect.`,
-      signatoryName: "RABBANI BHASHA NANGAR",
+      signatoryName: "RABBANI BASHA NANGAR",
       signatoryTitle: "Proprietor",
       signatoryFirm: "Home Furniture and Enterprise",
     },
@@ -75,7 +75,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/DC/2026/001",
-      date: "29/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nPh: _______________",
       subject: "DELIVERY CHALLAN",
@@ -95,7 +95,7 @@ Thanking you.`,
 
 **Signature of Receiver:** _______________
 **Date & Seal:** _______________`,
-      signatoryName: "RABBANI BHASHA NANGAR",
+      signatoryName: "RABBANI BASHA NANGAR",
       signatoryTitle: "Proprietor",
       signatoryFirm: "Home Furniture and Enterprise",
     },
@@ -106,7 +106,7 @@ Thanking you.`,
     isHTML: false,
     data: {
       referenceNo: "HFE/WC/2026/001",
-      date: "29/08/2026",
+      date: "31/08/2026",
       recipientName: "Customer Name",
       recipientAddress: "Customer Address\nBill No.: _______________   Bill Date: _______________",
       subject: "WARRANTY CERTIFICATE",
@@ -122,27 +122,27 @@ Thanking you.`,
 - Damage due to misuse or accidents is NOT covered
 - Warranty is non-transferable
 - Present this certificate with original bill for claims`,
-      signatoryName: "RABBANI BHASHA NANGAR",
+      signatoryName: "RABBANI BASHA NANGAR",
       signatoryTitle: "Proprietor",
       signatoryFirm: "Home Furniture and Enterprise",
     },
   },
   {
     id: "spain-sponsorship",
-    name: "5. Spain Visa Sponsorship – BioSpain 2026 (Shaik Munna Bhasha)",
+    name: "5. Spain Visa Sponsorship – BioSpain 2026 (Shaik Munna BASHA)",
     isHTML: false,
     data: {
       referenceNo: "HFE/VISA/2026/SPAIN",
-      date: "29/08/2026",
+      date: "31/08/2026",
       recipientName: "To\nThe Visa Officer",
       recipientAddress: "The Consulate General of Spain\nMumbai, India",
       subject: "SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)",
       salutation: "Dear Sir / Madam,",
-      bodyText: `I, **Mr. Rabbani Bhasha Nangar**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and financial sponsor** of **Mr. Shaik Munna Bhasha** (Student ID: **SU24011246**, Passport No: **C5166238**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
+      bodyText: `I, **Mr. Rabbani BASHA Nangar**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and financial sponsor** of **Mr. Shaik Munna BASHA** (Student ID: **SU24011246**, Passport No: **C5166238**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
 
 I am the **Proprietor of HOME FURNITURE AND ENTERPRISE**, a registered business in Nandyal, Andhra Pradesh, India (**GSTIN: 37COOPD8437E6ZK**, **PAN: CQLPR8612J**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.
 
-My son, **Mr. Shaik Munna Bhasha**, has been accepted to attend **BIOSPAIN 2026** - one of the largest biotechnology trade fairs and conferences in Europe, organized by the Spanish national bioindustry association (AseBio):
+My son, **Mr. Shaik Munna BASHA**, has been accepted to attend **BIOSPAIN 2026** - one of the largest biotechnology trade fairs and conferences in Europe, organized by the Spanish national bioindustry association (AseBio):
 
 - **Venue:** BILBAO EXHIBITION CENTRE
 - **Address:** Azkue Kalea, 1, 48902 San Vicente de Barakaldo, Bizkaia. Spain
@@ -164,7 +164,7 @@ All required supporting documents - including GST Registration Certificate, PAN 
 I kindly and respectfully request you to consider his Schengen Visa application **favorably**.
 
 Thanking you.`,
-      signatoryName: "RABBANI BHASHA NANGAR",
+      signatoryName: "RABBANI BASHA NANGAR",
       signatoryTitle: "Proprietor",
       signatoryFirm: "Home Furniture and Enterprise",
     },
@@ -179,7 +179,7 @@ const HomeFurnitureLetterheadGenerator = () => {
   const [headerData, setHeaderData] = useState({
     firmName: 'HOME FURNITURE AND ENTERPRISE',
     tagline: 'Premium Luxury Furniture Mart | Manufacturer & Wholesale',
-    proprietor: 'RABBANI BHASHA NANGAR',
+    proprietor: 'RABBANI BASHA NANGAR',
     gstin: '37COOPD8437E6ZK',
     hsnCode: 'HSN: 940330 (Wooden Furniture)',
     regType: 'ACTIVE COMPOSITION DEALER',
