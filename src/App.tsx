@@ -53,6 +53,7 @@ import ImperialLeatherLetterheadGenerator from "./pages/ImperialLeatherLetterhea
 import StandardEngineeringLetterheadGenerator from "./pages/StandardEngineeringLetterheadGenerator";
 import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLetterheadGenerator";
 import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGenerator";
+import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
 
 
 const queryClient = new QueryClient();
@@ -113,6 +114,7 @@ const App = () => (
           <Route path="/standard-engineering/letterhead" element={<StandardEngineeringLetterheadGenerator />} />
           <Route path="/medical-equipments/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
           <Route path="/home-furniture/letterhead" element={<HomeFurnitureLetterheadGenerator />} />
+          <Route path="/raksha-global/letterhead" element={<RakshaGlobalLetterheadGenerator />} />
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

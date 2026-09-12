@@ -15,11 +15,11 @@ const templateOptions = [
       recipientAddress: 'Consulate General of Spain\nMumbai, India',
       subject: 'SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE UNDERTAKING FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)',
       salutation: 'Dear Sir/Madam,',
-      bodyText: `I, **Mr. Narsaiah Musku**, an Indian citizen, hereby confirm that I am the biological father and financial sponsor of **Mr. Dinesh Kumar Musku** (Passport No.: **Y5326556**, Student UID: **24WU02647887**), who is a full-time Ph.D. Research Scholar pursuing his doctoral degree in Biotechnology at **Woxsen University**, Telangana, India.
+      bodyText: `I, **Mr. ANANDHARAMAN**, an Indian citizen, hereby confirm that I am the biological father and financial sponsor of **Mr. ANANDHARAMAN HARISH** (Passport No.: **Y5326556**, Student UID: **24WU02647876**), who is a full-time Ph.D. Research Scholar pursuing his doctoral degree in Biotechnology at **Woxsen University**, Telangana, India.
 
 I am the proprietor of **SRI YOGESHWARA SEEDS & PESTICIDES**, a registered business in Telangana, India (GSTIN: **36ADFPN1935M1Z9**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.
 
-My son, Mr. Dinesh Kumar Musku, has been accepted to present his doctoral research paper at the international biotechnology conference **BIOSPAIN 2026**, scheduled to take place in **Bilbao, Spain** from **September 29th to October 1st, 2026**.
+My son, Mr. ANANDHARAMAN HARISH, has been accepted to present his doctoral research paper at the international biotechnology conference **BIOSPAIN 2026**, scheduled to take place in **Bilbao, Spain** from **September 29th to October 1st, 2026**.
 
 I hereby undertake **full financial responsibility** for my son's entire trip to Spain and the Schengen territory, including his round-trip travel, accommodation, daily living expenses, meals, local transport, overseas health insurance, and any emergency contingencies that may arise during his stay from **27th September 2026 to 5th October 2026**.
 
@@ -30,7 +30,7 @@ All necessary financial and business credentials, including GST registration cer
 I fully support his participation in this international conference and assure you of my financial capability and commitment. I kindly request you to consider his visa application favorably.
 
 Thanking you.`,
-      signatoryName: 'NARSAIAH MUSKU',
+      signatoryName: 'ANANDHARAMAN',
       signatoryTitle: 'Proprietor',
       signatoryFirm: 'Sri Yogeshwara Seeds & Pesticides',
     }
@@ -52,7 +52,7 @@ Our retail establishment strictly adheres to all regulatory standards mandated b
 We request you to kindly acknowledge receipt of our stock returns and update your official records accordingly. Should any further documentation or physical inspection be required, we remain at your service.
 
 Thanking you.`,
-      signatoryName: 'NARSAIAH MUSKU',
+      signatoryName: 'ANANDHARAMAN',
       signatoryTitle: 'Proprietor',
       signatoryFirm: 'Sri Yogeshwara Seeds & Pesticides',
     }
@@ -85,7 +85,7 @@ Thanking you.`,
 1. All seed batches are certified by the State Seed Testing Laboratory.
 2. Payment terms: 50% advance upon order placement, balance upon doorstep delivery.
 3. Delivery timeline: Within 3 business days from confirmation.`,
-      signatoryName: 'NARSAIAH MUSKU',
+      signatoryName: 'ANANDHARAMAN',
       signatoryTitle: 'Proprietor',
       signatoryFirm: 'Sri Yogeshwara Seeds & Pesticides',
     }
@@ -101,7 +101,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
   const [headerData, setHeaderData] = useState({
     firmName: 'SRI YOGESHWARA SEEDS & PESTICIDES',
     tagline: 'Dealers in: High-Yield Hybrid Seeds • Pesticides • Fertilisers',
-    proprietor: 'NARSAIAH MUSKU',
+    proprietor: 'ANANDHARAMAN',
     gstin: '36ADFPN1935M1Z9',
     hsnCode: 'HSN: 31021000 (Fertilisers) | HSN: 12091000 (Seeds)',
     regType: 'REGULAR TAXPAYER (PROPRIETORSHIP)',

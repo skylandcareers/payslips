@@ -6,32 +6,32 @@ import remarkGfm from 'remark-gfm';
 const templates = [
   {
     id: 'sanction',
-    name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
+    name: '1. Sanction Letter - Financial & Leave Approval (BIOSouth Korea 2026)',
     data: {
       referenceNumber: 'WOU/2026/PHD/EVEN&CONF/135',
-      date: '21/08/2026',
+      date: '11/09/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
-**Mr. DINESH KUMAR MUSKU**  
-**Ph.D. Scholar, School of Biotechnology**  
-**Student ID: 24WU02647887**
+**Mr. ANANDHARAMAN HARISH**  
+**Ph.D. Scholar, School of Technology**  
+**Student ID: 24WU02647876**
 
-**Subject: Financial Sanction and Academic Leave Approval for International Conference – Spain**
+**Subject: Financial Sanction and Leave Approval for International Conference – South Korea**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU**, holding **Student ID.: 24WU02647887**, is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**, Hyderabad, India.
+This is to certify that **Mr. ANANDHARAMAN HARISH**, holding **Student ID.: 24WU02647876**, is a bonafide **Ph.D. Scholar in the School of Technology** at **Woxsen University**, Hyderabad, India.
 
-The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. Dinesh Kumar Musku to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
+The University hereby sanctions a **financial assistance of ₹2,10,000/- (Rupees Two Lakhs Ten Thousand Only)** in favor of Mr. ANANDHARAMAN HARISH to support his academic travel and related expenses for attending the **International Conference on AI for Science - AI4Sci Korea 2026** in **South Korea**.
 
-The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
+The conference is scheduled to be held from **28th September, 2026 to 1st October, 2026** in **Seoul, South Korea**.
 
-He has been granted **leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
+He has been granted **leave** for the period from **26th September, 2026 to 5th October, 2026** and is required to **return and resume his Ph.D. studies** at Woxsen University.
 
 The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
 
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Hyderabad, India  
-**Date:** 21-08-2026
+**Date:** 11-09-2026
 
 &nbsp;
 &nbsp;
@@ -45,27 +45,27 @@ This letter is issued at the request of the student for **visa and other officia
   },
   {
     id: 'noc',
-    name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
+    name: '2. No Objection Certificate (NOC) - BIOSouth Korea 2026 South Korea',
     data: {
       referenceNumber: 'WOU/2026/PHD/REG/103',
-      date: '21/08/2026',
+      date: '11/09/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `To  
-**The Consulate General of Spain**  
+**The Consulate General of South Korea**  
 **Mumbai, India**
 
-**Subject: No Objection Certificate for Academic Conference Attendance in Spain**
+**Subject: No Objection Certificate for Academic Conference Attendance in South Korea**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU** is a bonafide **Ph.D. Scholar** at the **School of Biotechnology, Woxsen University**.
+This is to certify that **Mr. ANANDHARAMAN HARISH** is a bonafide **Ph.D. Scholar** at the **School of Technology, Woxsen University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in Biotechnology**, with **Admission No.: 24WU02647887** and **Passport No.: Y5326556**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in Technology**, with **Admission No.: 24WU02647876** and **Passport No.: T5527535**. His doctoral research is related to the poster presentation titled **“Self-Improving AI Agents for Automated Scientific Discovery.”**
 
-The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University upon completion of the conference**.
+The University has **no objection to his travel to South Korea** to attend the **International Conference on AI for Science - AI4Sci Korea 2026**, scheduled from **28th September, 2026 to 1st October, 2026** in **Seoul, South Korea**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Woxsen University upon completion of the conference**.
 
 This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Hyderabad, India  
-**Date:** 21-08-2026
+**Date:** 11-09-2026
 
 &nbsp;
 &nbsp;
@@ -82,11 +82,11 @@ This certificate is issued at his request for **visa and official purposes**.
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: 'WOU/2026/PHD/REG/118',
-      date: '21/08/2026',
+      date: '11/09/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU**, bearing **Admission No.: 24WU02647887** is a bonafide **Ph.D. Scholar in the School of Biotechnology** at **Woxsen University**.
+This is to certify that **Mr. ANANDHARAMAN HARISH**, bearing **Admission No.: 24WU02647876** is a bonafide **Ph.D. Scholar in the School of Technology** at **Woxsen University**.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -95,7 +95,7 @@ The student is provided **hostel accommodation within the University campus**, a
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Hyderabad, India  
-**Date:** 21-08-2026
+**Date:** 11-09-2026
 
 &nbsp;
 &nbsp;
@@ -109,23 +109,23 @@ This bonafide certificate is issued upon his request for **official purposes**, 
   },
   {
     id: 'hotel',
-    name: 'Hotel / Accommodation Confirmation - Dinesh Kumar Musku',
+    name: 'Hotel / Accommodation Confirmation - ANANDHARAMAN HARISH',
     data: {
       referenceNumber: 'WOU/2026/PHD/HOSTEL/108',
-      date: '21/08/2026',
+      date: '11/09/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. DINESH KUMAR MUSKU**, holding **Admission No.: 24WU02647887**, is a bonafide Ph.D. Scholar in the School of Biotechnology at Woxsen University, Hyderabad, India.
+This is to certify that **Mr. ANANDHARAMAN HARISH**, holding **Admission No.: 24WU02647876**, is a bonafide Ph.D. Scholar in the School of Technology at Woxsen University, Hyderabad, India.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
 This is to officially confirm that the student is provided with **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the entire duration of his Ph.D. program.
 
-This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
+This certificate is issued upon his request for official purposes, including visa processing for attending BIOSouth Korea 2026 (Bilbao, South Korea) and other academic requirements.
 
 **Place:** Hyderabad, India  
-**Date:** 21-08-2026
+**Date:** 11-09-2026
 
 &nbsp;
 &nbsp;
@@ -139,7 +139,7 @@ This certificate is issued upon his request for official purposes, including vis
   },
   {
     id: 'receipt',
-    name: 'Fee Receipt (Student Copy) - Dinesh Kumar Musku',
+    name: 'Fee Receipt (Student Copy) - ANANDHARAMAN HARISH',
     data: {
       isHTML: true,
       referenceNumber: '',
@@ -162,10 +162,10 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-6 align-top">
         <td>Student Name</td>
         <td>:</td>
-        <td class="font-bold">DINESH KUMAR MUSKU</td>
+        <td class="font-bold">ANANDHARAMAN HARISH</td>
         <td>Student UID</td>
         <td>:</td>
-        <td>24WU02647887</td>
+        <td>24WU02647876</td>
       </tr>
       <tr class="h-6 align-top">
         <td>Class</td>
@@ -173,7 +173,7 @@ This certificate is issued upon his request for official purposes, including vis
         <td class="font-bold">Ph.D.</td>
         <td>Father / Guardian</td>
         <td>:</td>
-        <td class="font-bold">NARSAIAH MUSKU</td>
+        <td class="font-bold">ANANDHARAMAN</td>
       </tr>
     </tbody>
   </table>

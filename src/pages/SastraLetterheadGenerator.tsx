@@ -8,19 +8,19 @@ const templates = [
     id: 'sanction',
     name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
     data: {
-      referenceNumber: 'SASTRA/2026/PHD/EVEN&CONF/135',
-      date: '31/08/2026',
+      referenceNumber: 'SASTRA/2026/PHD/EVEN&CONF/148',
+      date: '11/09/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
-**Mr. SHAIK MUNNA BASHA**  
+**Mr. RAGHU KUDALA**  
 **Ph.D. Scholar, School of Chemical and Biotechnology (SCBT)**  
-**Student ID: SU24011246**
+**Student ID: SU25011258**
 
 **Subject: Financial Sanction and Academic Leave Approval for International Conference – Spain**
 
-This is to certify that **Mr. SHAIK MUNNA BASHA**, holding **Student ID: SU24011246**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thanjavur, Tamil Nadu, India.
+This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU25011258**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thanjavur, Tamil Nadu, India.
 
-The University hereby sanctions a **financial assistance of ₹2,50,000/- (Rupees Two Lakhs Fifty Thousand Only)** in favor of Mr. Shaik Munna BASHA to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
+The University hereby sanctions a **financial assistance of ₹2,50,000/- (Rupees Two Lakhs Fifty Thousand Only)** in favor of Mr. RAGHU KUDALA to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
 
 The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
 
@@ -31,7 +31,7 @@ The above financial sanction and leave approval have been granted after due cons
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 11/09/2026
 
 &nbsp;
 &nbsp;
@@ -48,8 +48,8 @@ This letter is issued at the request of the student for **visa and other officia
     id: 'noc',
     name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
     data: {
-      referenceNumber: 'SASTRA/2026/PHD/REG/103',
-      date: '31/08/2026',
+      referenceNumber: 'SASTRA/2026/PHD/REG/115',
+      date: '11/09/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `To  
 **The Consulate General of Spain**  
@@ -57,16 +57,16 @@ This letter is issued at the request of the student for **visa and other officia
 
 **Subject: No Objection Certificate for Academic Conference Attendance in Spain**
 
-This is to certify that **Mr. SHAIK MUNNA BASHA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
+This is to certify that **Mr. RAGHU KUDALA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU24011246** and **Passport No.: C5166238**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU25011258** and **Passport No.: AU931922**. His doctoral research is related to the poster presentation titled **“Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
 
 The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at SASTRA Deemed to be University upon completion of the conference**.
 
 This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 11/09/2026
 
 &nbsp;
 &nbsp;
@@ -84,20 +84,20 @@ This certificate is issued at his request for **visa and official purposes**.
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: 'SASTRA/2026/PHD/REG/118',
-      date: '31/08/2026',
+      date: '11/09/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. SHAIK MUNNA BASHA**, bearing **Student ID: SU24011246** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**.
+This is to certify that **Mr. RAGHU KUDALA**, bearing **Student ID: SU25011258** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**.
 
-He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
+He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
 
 The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
 
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 11/09/2026
 
 &nbsp;
 &nbsp;
@@ -112,14 +112,14 @@ This bonafide certificate is issued upon his request for **official purposes**, 
   },
   {
     id: 'hotel',
-    name: '4. Hotel / Accommodation Confirmation - Shaik Munna BASHA',
+    name: '4. Hotel / Accommodation Confirmation - RAGHU KUDALA',
     data: {
       referenceNumber: 'SASTRA/2026/PHD/HOSTEL/108',
-      date: '31/08/2026',
+      date: '11/09/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. SHAIK MUNNA BASHA**, holding **Student ID: SU24011246**, is a bonafide Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT) at SASTRA Deemed to be University, Thanjavur, Tamil Nadu, India.
+This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU25011258**, is a bonafide Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT) at SASTRA Deemed to be University, Thanjavur, Tamil Nadu, India.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -128,7 +128,7 @@ This is to officially confirm that the student is provided with **hostel accommo
 This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
 
 **Place:** Thanjavur, Tamil Nadu, India  
-**Date:** 31/08/2026
+**Date:** 11/09/2026
 
 &nbsp;
 &nbsp;
@@ -143,7 +143,7 @@ This certificate is issued upon his request for official purposes, including vis
   },
   {
     id: 'receipt',
-    name: '5. Fee Receipt (Student Copy) - Shaik Munna BASHA',
+    name: '5. Fee Receipt (Student Copy) - RAGHU KUDALA',
     data: {
       isHTML: true,
       referenceNumber: '',
@@ -158,23 +158,23 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="w-[130px] font-semibold text-slate-700">Receipt No.</td>
         <td class="w-3">:</td>
-        <td class="font-bold text-slate-900">SASTRA/HOSTEL/2026-27/0892</td>
+        <td class="font-bold text-slate-900">SASTRA/HOSTEL/2026-27/0912</td>
         <td class="w-[110px] font-semibold text-slate-700">Date</td>
         <td class="w-3">:</td>
-        <td class="font-bold text-slate-900">31/08/2026</td>
+        <td class="font-bold text-slate-900">01/06/2026</td>
       </tr>
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Student Name</td>
         <td>:</td>
-        <td class="font-bold uppercase text-slate-900">SHAIK MUNNA BASHA</td>
+        <td class="font-bold uppercase text-slate-900">RAGHU KUDALA</td>
         <td class="font-semibold text-slate-700">Student ID No.</td>
         <td>:</td>
-        <td class="font-bold text-slate-900">SU24011246</td>
+        <td class="font-bold text-slate-900">SU25011258</td>
       </tr>
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Father/Guardian</td>
         <td>:</td>
-        <td class="font-bold uppercase text-slate-900">Rabbani BASHA Nangar</td>
+        <td class="font-bold uppercase text-slate-900">POSHETTY KUDALA</td>
         <td class="font-semibold text-slate-700">Academic Year</td>
         <td>:</td>
         <td class="font-bold text-slate-900">2026-27</td>
@@ -187,7 +187,7 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Hostel / Block</td>
         <td>:</td>
-        <td class="font-bold text-slate-900" colspan="4">Vasishta Block - Room No. 214</td>
+        <td class="font-bold text-slate-900" colspan="4">Vasishta Block - Room No. 105</td>
       </tr>
     </tbody>
   </table>
@@ -231,7 +231,7 @@ This certificate is issued upon his request for official purposes, including vis
     <div class="text-[11.5px] text-slate-700">
       <div class="font-bold text-slate-800 mb-1">Payment Details:</div>
       <div>Mode: Online Transfer (NEFT/RTGS)</div>
-      <div>Transaction ID: SBIN4398188472</div>
+      <div>Transaction ID: SBIN4398197654</div>
       <div class="mt-3 italic text-[10px] text-slate-500">This is a computer-generated receipt.</div>
     </div>
     <div class="text-center">

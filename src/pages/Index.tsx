@@ -160,11 +160,11 @@ const Index = () => {
           <Link to="/spoorthi" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-emerald-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
               <div className="h-16 flex items-center justify-center mb-6">
-                <div className="h-14 w-auto px-4 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-700 font-sans font-bold text-xl group-hover:scale-105 transition-transform text-center leading-tight">SPOORTHI<br />ASSOCIATES</div>
+                <div className="h-14 w-auto px-4 bg-green-50 rounded-lg flex items-center justify-center text-green-700 font-sans font-bold text-xl group-hover:scale-105 transition-transform text-center leading-tight">SPOORTHI<br />ASSOCIATES</div>
               </div>
               <h2 className="text-xl font-bold mb-3 text-slate-800">Spoorthi Associates</h2>
               <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Engineers & Architects letterhead generator for valuation certificates and reports.</p>
-              <div className="mt-auto w-full flex items-center justify-center gap-2 text-emerald-700 text-sm font-semibold bg-emerald-50 py-2 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-green-700 text-sm font-semibold bg-green-50 py-2 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
             </div>
           </Link>
 
@@ -207,6 +207,20 @@ const Index = () => {
             </div>
           </Link>
 
+                    {/* Raksha Global Enterprises */}
+          <Link to="/raksha-global/letterhead" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-green-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-14 bg-gradient-to-br from-green-500 to-green-700 rounded-lg flex flex-col items-center justify-center text-white font-serif font-black shadow-md border-2 border-green-100 group-hover:scale-105 transition-transform">
+                  <span className="text-xl">RGE</span>
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">M/S Raksha Global Enterprises</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">GST registered Retailer & Wholesaler of Dehydrated Garlic, Green Pepper, and Spices.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-green-700 text-sm font-semibold bg-green-50 py-2 rounded-lg group-hover:bg-green-600 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+            </div>
+          </Link>
+          
           {/* Woxsen University */}
           <Link to="/woxsen" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-red-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
