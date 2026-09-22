@@ -187,7 +187,7 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Hostel / Block</td>
         <td>:</td>
-        <td class="font-bold text-slate-900" colspan="4">Vasishta Block - Room No. 105</td>
+        <td class="font-bold text-slate-900" colspan="4">Integrated Chemistry Boys Hostel - Room No. 105</td>
       </tr>
     </tbody>
   </table>
@@ -239,7 +239,7 @@ This certificate is issued upon his request for official purposes, including vis
     </div>
   </div>
 </div>`,
-      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
+      footerNote: 'Palamuru University, Mahabubnagar - 509 001, Telangana State, India.',
     }
   }
 ];
@@ -263,27 +263,40 @@ const PalamuruLetterheadGenerator = () => {
     setTimeout(() => { window.print(); setTimeout(() => setIsExporting(false), 1000); }, 100);
   };
 
-          const PageHeader = () => (
-    <div style={{ padding: '30px 40px 10px 40px' }}>
-      <div className="flex justify-center w-full pb-4">
-        <img src="https://palamuruuniversity.ac.in/assets/uploads/media-uploader/palamuru-logo1743078487.png" alt="Palamuru University Header" className="w-[500px] h-auto object-contain" />
+  const PageHeader = () => (
+    <div style={{ padding: '30px 40px 10px 40px', fontFamily: 'Arial, Helvetica, sans-serif' }}>
+      <div className="flex items-center justify-center gap-7 pb-2">
+        <div className="flex-shrink-0">
+          <img src="/palamuru-logo.png" alt="Palamuru University Logo" className="w-[125px] h-[125px] object-contain" />
+        </div>
+        <div className="flex flex-col items-start justify-center pt-1">
+          <h1 className="text-[28px] font-black text-[#444444] leading-none tracking-wider mb-2.5 uppercase" style={{ fontFamily: '"Arial Black", Arial, sans-serif', transform: 'scaleY(1.05)', transformOrigin: 'left' }}>
+            PALAMURU UNIVERSITY
+          </h1>
+          <h2 className="text-[23px] font-semibold text-[#10549c] leading-none tracking-wide mb-2.5">
+            Mahbubnagar, Telangana State
+          </h2>
+          <h3 className="text-[18px] font-medium text-[#444444] leading-none tracking-wide">
+            Accredited by NAAC with 'B' Grade
+          </h3>
+        </div>
       </div>
-      <div className="w-full h-[1.5px] bg-black" />
+      <div className="w-full h-[1.5px] bg-[#444444] mt-3" />
     </div>
   );
 
-    const PageFooter = () => (
-      <div className="w-full px-[20mm] pb-[12mm] mt-8 font-sans">
-        <div className="w-full h-[2px] bg-[#b31b1b] mb-1.5" />
-        <div className="flex justify-between items-start text-[10.5px] font-bold text-[#b31b1b]">
-          <div className="text-left tracking-wide">
-            MAHABUBNAGAR - 509 001, TELANGANA STATE
-          </div>
-          <div className="text-right tracking-wide">
-            WEBSITE: www.palamuruuniversity.ac.in
-          </div>
+  const PageFooter = () => (
+    <div className="w-full px-[20mm] pb-[12mm] mt-8 font-sans">
+      <div className="w-full h-[2px] bg-[#b31b1b] mb-1.5" />
+      <div className="flex justify-between items-start text-[10.5px] font-bold text-[#b31b1b]">
+        <div className="text-left tracking-wide">
+          MAHABUBNAGAR - 509 001, TELANGANA STATE
+        </div>
+        <div className="text-right tracking-wide">
+          WEBSITE: www.palamuruuniversity.ac.in
         </div>
       </div>
+    </div>
   );
 
   return (
