@@ -58,6 +58,7 @@ import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGen
 import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 import UnionBankStatementGenerator from "./pages/UnionBankStatementGenerator";
+import SBIStatementGenerator from "./pages/SBIStatementGenerator";
 
 
 const queryClient = new QueryClient();
@@ -126,6 +127,9 @@ const App = () => (
 
           <Route path="/union-bank" element={<UnionBankStatementGenerator />} />
           <Route path="/union-bank/statement" element={<UnionBankStatementGenerator />} />
+
+          <Route path="/sbi" element={<SBIStatementGenerator />} />
+          <Route path="/sbi/statement" element={<SBIStatementGenerator />} />
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -233,6 +233,18 @@ const Index = () => {
             </div>
           </Link>
 
+          {/* State Bank of India */}
+          <Link to="/sbi" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-[#1a1f71] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <img src="/sbi_logo.jpg" alt="State Bank of India" className="h-10 w-auto object-contain group-hover:scale-105 transition-transform" />
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">State Bank of India</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Account Statement generator with verified transaction history and multi-page print layout.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#1a1f71] text-sm font-semibold bg-indigo-50 py-2 rounded-lg group-hover:bg-[#1a1f71] group-hover:text-white transition-all">Open Portal <Landmark className="w-4 h-4" /></div>
+            </div>
+          </Link>
+
           {/* Woxsen University */}
           <Link to="/woxsen" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-red-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
