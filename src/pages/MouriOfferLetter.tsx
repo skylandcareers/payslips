@@ -12,7 +12,7 @@ const MouriOfferLetter = () => {
     candidateName: "Jane Doe",
     candidateAddress: "123 Tech Lane, Innovation City",
     cityStatePin: "Mumbai, Maharashtra, 400001",
-    contactNumber: "+91 9876543210",
+    contactNumber: "+91 8125588816",
     emailId: "jane.doe@example.com",
     role: "Senior Software Engineer",
     department: "Engineering & Technology",
@@ -58,7 +58,7 @@ const MouriOfferLetter = () => {
   const PageHeader = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
     <div className={`w-full relative ${isPrintFixed ? 'pt-2' : 'pt-2 print:pt-4'}`}>
 
-      
+
       <div className="flex justify-between items-end pb-4 mb-6 border-b-[12px] border-[#005A9C] w-full bg-white mt-2 print:mt-6">
         <div>
           <img src="/mouri_logo_new.png" alt="MOURI Tech" className="h-14 w-auto object-contain mb-1" />
@@ -80,13 +80,13 @@ const MouriOfferLetter = () => {
     <div className={`w-full relative bg-white ${isPrintFixed ? 'pb-6 pt-6' : 'mt-8 pt-6 pb-10 md:pb-14 print:pb-6'}`}>
       {/* Top Border */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gray-200"></div>
-      
+
       {/* Tech Dot Pattern */}
-      <div 
-        className="absolute top-1 left-0 w-48 h-10 opacity-[0.15]" 
+      <div
+        className="absolute top-1 left-0 w-48 h-10 opacity-[0.15]"
         style={{ backgroundImage: 'radial-gradient(#005A9C 1px, transparent 1px)', backgroundSize: '8px 8px' }}
       ></div>
-      
+
       {/* Geometric Accent Line */}
       <div className="absolute top-0 left-0 w-32 h-[3px] bg-[#005A9C]"></div>
       <div className="absolute top-0 left-32 w-16 h-[3px] bg-blue-300"></div>
@@ -99,8 +99,8 @@ const MouriOfferLetter = () => {
     </div>
   );
 
-  const Th = ({children}: {children: React.ReactNode}) => <th className="py-2.5 px-3 bg-[#005A9C]/5 text-[#005A9C] font-semibold text-left border-b border-gray-200">{children}</th>;
-  const Td = ({children}: {children: React.ReactNode}) => <td className="py-2.5 px-3 border-b border-gray-100 text-gray-700">{children}</td>;
+  const Th = ({ children }: { children: React.ReactNode }) => <th className="py-2.5 px-3 bg-[#005A9C]/5 text-[#005A9C] font-semibold text-left border-b border-gray-200">{children}</th>;
+  const Td = ({ children }: { children: React.ReactNode }) => <td className="py-2.5 px-3 border-b border-gray-100 text-gray-700">{children}</td>;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-[#005A9C]/30 flex flex-col print:bg-transparent print:text-black">
@@ -158,14 +158,14 @@ const MouriOfferLetter = () => {
       </header>
 
       <main className="flex-1 pt-24 pb-12 px-4 container mx-auto flex flex-col md:flex-row gap-8 justify-center print:block print:p-0 print:m-0 print:max-w-none">
-        
+
         {/* Form Section */}
         <div className={`w-full md:w-[360px] bg-white border border-slate-200 rounded-xl shadow-sm p-6 flex-col gap-6 overflow-y-auto max-h-[calc(100vh-140px)] sticky top-28 print:hidden shrink-0 ${activeTab === "form" ? "flex" : "hidden md:flex"}`}>
           <div className="flex items-center gap-2 border-b border-slate-100 pb-4">
             <Settings2 className="w-5 h-5 text-[#005A9C]" />
             <h2 className="text-lg font-semibold text-slate-800">Offer Details</h2>
           </div>
-          
+
           <div className="space-y-4">
             {/* Same form inputs but styled lighter */}
             <div className="grid gap-4">
@@ -241,10 +241,10 @@ const MouriOfferLetter = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="grid gap-4 pt-4 border-t border-slate-100">
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Compensation</h3>
-              
+
               <div className="bg-[#005A9C]/5 p-4 rounded-xl border border-[#005A9C]/10 mb-2">
                 <div className="text-[10px] font-bold text-[#005A9C] uppercase tracking-wider mb-3 flex items-center gap-1.5">
                   Quick Salary Calculators
@@ -270,7 +270,7 @@ const MouriOfferLetter = () => {
                       Apply CTC
                     </button>
                   </div>
-                  
+
                   <div className="flex gap-2 items-center">
                     <div className="flex-1 relative">
                       <span className="absolute left-3 top-2 text-slate-400 text-xs font-medium">₹</span>
@@ -336,7 +336,7 @@ const MouriOfferLetter = () => {
 
         {/* Multi-Page WYSIWYG Preview Section */}
         <div className={`print-container flex-1 overflow-y-auto bg-slate-200/50 p-4 md:p-8 rounded-2xl md:flex flex-col gap-10 items-center relative print:block print:bg-transparent print:rounded-none print:p-0 print:m-0 print:overflow-visible ${activeTab === "preview" ? "flex" : "hidden"}`}>
-          
+
           {/* Print Watermark */}
           <img src="https://www.mouritech.com/wp-content/uploads/2021/10/MT-Home-Logo-1-1.png" alt="" className="hidden print:block watermark grayscale" />
 
@@ -353,10 +353,10 @@ const MouriOfferLetter = () => {
           </div>
 
           <div className="w-full max-w-[210mm] bg-white text-black shadow-lg rounded-md relative print:shadow-none print:rounded-none print:w-full print:max-w-none print:h-auto page-container">
-            
+
             {/* Screen Preview Bleed Bar */}
             <div className="absolute top-0 left-0 w-full h-[8px] bg-[#005A9C] z-20 print:hidden rounded-t-md"></div>
-            
+
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none print:hidden w-[70%] flex justify-center z-0">
               <img src="https://www.mouritech.com/wp-content/uploads/2021/10/MT-Home-Logo-1-1.png" alt="" className="w-full h-auto object-contain grayscale" />
             </div>
@@ -372,14 +372,14 @@ const MouriOfferLetter = () => {
                   </td>
                 </tr>
               </thead>
-              
+
               <tbody>
                 <tr>
                   <td>
                     <div className="px-14 md:px-20 font-sans text-[11px] text-gray-700 leading-[1.6]">
-                      
+
                       {/* --- START OF CONTENT FLOW --- */}
-                      
+
                       {/* Traditional Corporate Letter Format */}
                       <div className="flex justify-between items-start mb-4 mt-2 text-gray-900">
                         <div>
@@ -403,15 +403,15 @@ const MouriOfferLetter = () => {
 
                       <div className="space-y-4 text-justify text-[11.5px] text-gray-900">
                         <p className="mb-2">Dear <strong>{formData.candidateName.split(' ')[0]}</strong>,</p>
-                        
+
                         <p>We are delighted to extend this offer of employment to you on behalf of MOURI Tech Limited. Following a comprehensive review of your qualifications, experience, and potential, we believe you will be an exceptional addition to our team as a <span className="font-bold text-gray-900">{formData.role}</span>.</p>
-                        
+
                         <p>At MOURI Tech, we are driven by a mission to deliver cutting-edge enterprise IT solutions and empower global organizations through digital transformation, intelligent automation, and cloud innovation. We are confident that your technical expertise and vision will play a critical role in advancing our infrastructure, application development practices, and client-centric solutions.</p>
 
                         <p>This document outlines the detailed terms, conditions, and compensation structure associated with your new role. Please review it carefully.</p>
 
                         <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-2 border-b border-gray-200 pb-2 tracking-wide">PART A: ROLE & RESPONSIBILITIES</div>
-                        
+
                         <p className="font-bold text-gray-900 mt-4 mb-2">1. Position Details</p>
                         <table className="w-full text-[11px] mb-4 border-collapse">
                           <tbody>
@@ -439,7 +439,7 @@ const MouriOfferLetter = () => {
                         </table>
 
                         <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-2 border-b border-gray-200 pb-2 tracking-wide">PART B: TERMS OF EMPLOYMENT</div>
-                        
+
                         <p className="font-bold text-gray-900 mt-4 mb-2">4. Compensation & Benefits</p>
                         <table className="w-full text-[11px] mb-6 border-collapse">
                           <tbody>
@@ -455,12 +455,12 @@ const MouriOfferLetter = () => {
 
                         <p className="font-bold text-gray-900 mt-6 mb-2">5. Probation & Confirmation</p>
                         <p>You shall be on probation for a period of <span className="font-bold text-gray-900">{formData.probationPeriod} months</span> from your date of joining. Upon successful completion of this period, your employment will be confirmed in writing. MOURI Tech reserves the right to extend the probation period based on performance assessments.</p>
-                        
+
                         <p className="font-bold text-gray-900 mt-4 mb-2">6. Notice Period & Separation</p>
                         <p>During your probation period, the notice period shall be <span className="font-bold text-gray-900">{formData.noticePeriodProbation} days</span>. Following confirmation, the notice period required from either party will be <span className="font-bold text-gray-900">{formData.noticePeriodConfirmed} days</span>, or salary in lieu thereof, subject to project transition requirements.</p>
 
                         <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-2 border-b border-gray-200 pb-2 tracking-wide">PART C: COMPLIANCE & POLICIES</div>
-                        
+
                         <p className="font-bold text-gray-900 mt-4 mb-2">7. Confidentiality & Intellectual Property</p>
                         <p>You acknowledge that all source code, architectures, client data, trade secrets, and proprietary algorithms you encounter or create during your employment are the exclusive Intellectual Property (IP) of MOURI Tech Limited. You agree to strictly adhere to our Non-Disclosure Agreement (NDA).</p>
 
@@ -469,7 +469,7 @@ const MouriOfferLetter = () => {
 
                         <div className="font-bold text-[#005A9C] text-[13px] uppercase mt-8 mb-3 border-b border-gray-200 pb-2 tracking-wide">PART D: ACCEPTANCE</div>
                         <p>This offer is contingent upon successful background verification and reference checks. The terms herein shall be governed by the laws of India.</p>
-                        
+
                         <div className="mt-8 grid grid-cols-2 gap-12 mb-6" style={{ pageBreakInside: 'avoid' }}>
                           <div>
                             <p className="font-bold text-gray-900 mb-10 uppercase tracking-wide text-[10px]">For MOURI Tech Limited</p>
@@ -490,7 +490,7 @@ const MouriOfferLetter = () => {
                           <h3 className="font-bold text-[#005A9C] text-[16px] uppercase tracking-wide">Annexure A</h3>
                           <h4 className="text-[13px] text-gray-500 font-medium">Detailed Salary Structure</h4>
                         </div>
-                        
+
                         {(() => {
                           const parseNumber = (val: string) => parseInt(val.replace(/,/g, "")) || 0;
                           const formatNumber = (num: number) => Math.round(num).toLocaleString('en-IN');
@@ -508,7 +508,7 @@ const MouriOfferLetter = () => {
                           const tdsM = tdsA / 12;
                           const deductionsA = pfA + ptA + tdsA;
                           const netA = annual - deductionsA;
-                          
+
                           return (
                             <>
                               <div className="flex justify-between items-end mb-3 bg-slate-50 p-3 rounded border border-slate-200">
@@ -525,7 +525,7 @@ const MouriOfferLetter = () => {
                                   </p>
                                 </div>
                               </div>
-                              
+
                               <table className="w-full text-[11px] mb-2 border-collapse">
                                 <thead>
                                   <tr>
@@ -535,87 +535,87 @@ const MouriOfferLetter = () => {
                                   </tr>
                                 </thead>
                                 <tbody className="text-gray-700">
-                                <tr>
-                                  <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide">Earnings</td>
-                                </tr>
-                                <tr>
-                                  <td className="py-2 px-4 border-b border-gray-100">Basic Salary</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(basicA / 12)}</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(basicA)}</td>
-                                </tr>
-                                <tr>
-                                  <td className="py-2 px-4 border-b border-gray-100">House Rent Allowance (HRA)</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(hraA / 12)}</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(hraA)}</td>
-                                </tr>
-                                <tr>
-                                  <td className="py-2 px-4 border-b border-gray-100">Special Allowance</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(specialA / 12)}</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(specialA)}</td>
-                                </tr>
-                                <tr className="bg-slate-50 font-bold text-gray-900 border-t border-b border-gray-200">
-                                  <td className="py-2 px-4">Gross Salary (A)</td>
-                                  <td className="py-2 px-4 text-right">{formatNumber(annual / 12)}</td>
-                                  <td className="py-2 px-4 text-right">{formatNumber(annual)}</td>
-                                </tr>
-                                
-                                
-                                {formData.esops && formData.esops !== "0" && (
-                                  <>
-                                    <tr>
-                                      <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-2">Long-Term Incentives</td>
-                                    </tr>
-                                    <tr className="border-b border-gray-100">
-                                      <td className="py-2 px-4">Employee Stock Ownership Plan (ESOPs)</td>
-                                      <td className="py-2 px-4 text-right">--</td>
-                                      <td className="py-2 px-4 text-right">{formData.esops}</td>
-                                    </tr>
-                                    <tr className="bg-slate-50 font-bold text-gray-900 border-b border-gray-200">
-                                      <td className="py-2 px-4">Total Cost to Company (CTC + ESOPs)</td>
-                                      <td className="py-2 px-4 text-right">--</td>
-                                      <td className="py-2 px-4 text-right">{formatNumber(annual + parseNumber(formData.esops))}</td>
-                                    </tr>
-                                  </>
-                                )}
+                                  <tr>
+                                    <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide">Earnings</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="py-2 px-4 border-b border-gray-100">Basic Salary</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(basicA / 12)}</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(basicA)}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="py-2 px-4 border-b border-gray-100">House Rent Allowance (HRA)</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(hraA / 12)}</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(hraA)}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="py-2 px-4 border-b border-gray-100">Special Allowance</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(specialA / 12)}</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(specialA)}</td>
+                                  </tr>
+                                  <tr className="bg-slate-50 font-bold text-gray-900 border-t border-b border-gray-200">
+                                    <td className="py-2 px-4">Gross Salary (A)</td>
+                                    <td className="py-2 px-4 text-right">{formatNumber(annual / 12)}</td>
+                                    <td className="py-2 px-4 text-right">{formatNumber(annual)}</td>
+                                  </tr>
 
-                                <tr>
-                                  <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-2">Deductions</td>
-                                </tr>
-                                <tr>
-                                  <td className="py-2 px-4 border-b border-gray-100">Provident Fund (PF)</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(pfM)}</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(pfA)}</td>
-                                </tr>
-                                <tr>
-                                  <td className="py-2 px-4 border-b border-gray-100">Professional Tax (PT)</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(ptM)}</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(ptA)}</td>
-                                </tr>
-                                <tr>
-                                  <td className="py-2 px-4 border-b border-gray-100">Income Tax (TDS @ 10%)</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(tdsM)}</td>
-                                  <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(tdsA)}</td>
-                                </tr>
-                                <tr className="bg-slate-50 font-bold text-gray-900 border-t border-b border-gray-200">
-                                  <td className="py-2 px-4">Total Deductions (B)</td>
-                                  <td className="py-2 px-4 text-right">{formatNumber(pfM + ptM + tdsM)}</td>
-                                  <td className="py-2 px-4 text-right">{formatNumber(deductionsA)}</td>
-                                </tr>
-                                
-                                <tr className="bg-[#005A9C]/10 font-bold border-b border-[#005A9C]/20">
-                                  <td className="py-3 px-4 text-[#005A9C] text-[12px]">Net Take Home (A - B)</td>
-                                  <td className="py-3 px-4 text-right text-gray-900 text-[12px]">{formatNumber((annual / 12) - (pfM + ptM + tdsM))}</td>
-                                  <td className="py-3 px-4 text-right text-gray-900 text-[12px]">{formatNumber(netA)}</td>
-                                </tr>
-                              </tbody>
+
+                                  {formData.esops && formData.esops !== "0" && (
+                                    <>
+                                      <tr>
+                                        <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-2">Long-Term Incentives</td>
+                                      </tr>
+                                      <tr className="border-b border-gray-100">
+                                        <td className="py-2 px-4">Employee Stock Ownership Plan (ESOPs)</td>
+                                        <td className="py-2 px-4 text-right">--</td>
+                                        <td className="py-2 px-4 text-right">{formData.esops}</td>
+                                      </tr>
+                                      <tr className="bg-slate-50 font-bold text-gray-900 border-b border-gray-200">
+                                        <td className="py-2 px-4">Total Cost to Company (CTC + ESOPs)</td>
+                                        <td className="py-2 px-4 text-right">--</td>
+                                        <td className="py-2 px-4 text-right">{formatNumber(annual + parseNumber(formData.esops))}</td>
+                                      </tr>
+                                    </>
+                                  )}
+
+                                  <tr>
+                                    <td colSpan={3} className="py-2 px-4 font-bold text-[#005A9C] bg-[#005A9C]/5 uppercase text-[10px] tracking-wide border-t border-gray-200 mt-2">Deductions</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="py-2 px-4 border-b border-gray-100">Provident Fund (PF)</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(pfM)}</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(pfA)}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="py-2 px-4 border-b border-gray-100">Professional Tax (PT)</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(ptM)}</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(ptA)}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="py-2 px-4 border-b border-gray-100">Income Tax (TDS @ 10%)</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(tdsM)}</td>
+                                    <td className="py-2 px-4 border-b border-gray-100 text-right">{formatNumber(tdsA)}</td>
+                                  </tr>
+                                  <tr className="bg-slate-50 font-bold text-gray-900 border-t border-b border-gray-200">
+                                    <td className="py-2 px-4">Total Deductions (B)</td>
+                                    <td className="py-2 px-4 text-right">{formatNumber(pfM + ptM + tdsM)}</td>
+                                    <td className="py-2 px-4 text-right">{formatNumber(deductionsA)}</td>
+                                  </tr>
+
+                                  <tr className="bg-[#005A9C]/10 font-bold border-b border-[#005A9C]/20">
+                                    <td className="py-3 px-4 text-[#005A9C] text-[12px]">Net Take Home (A - B)</td>
+                                    <td className="py-3 px-4 text-right text-gray-900 text-[12px]">{formatNumber((annual / 12) - (pfM + ptM + tdsM))}</td>
+                                    <td className="py-3 px-4 text-right text-gray-900 text-[12px]">{formatNumber(netA)}</td>
+                                  </tr>
+                                </tbody>
                               </table>
                             </>
                           );
                         })()}
-                        
+
                         <div style={{ pageBreakInside: 'avoid' }}>
                           <p className="text-[9px] text-gray-500 italic mb-4 mt-2">* Note: Income Tax (TDS) has been calculated at a flat 10% rate. Final tax liability may vary based on actual investment declarations.</p>
-                          
+
                           <div className="mt-12 mb-2">
                             <p className="font-bold text-gray-900 border-t-2 border-gray-200 pt-3 w-56 inline-block text-[12px]">Employee Signature</p>
                           </div>
@@ -627,7 +627,7 @@ const MouriOfferLetter = () => {
                   </td>
                 </tr>
               </tbody>
-              
+
               <tfoot>
                 <tr>
                   <td>

@@ -8,7 +8,7 @@ const templates = [
     id: 'sanction',
     name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
     data: {
-      referenceNumber: 'SASTRA/2026/PHD/EVEN&CONF/148',
+      referenceNumber: 'PALAMURU/2026/PHD/EVEN&CONF/148',
       date: '11/09/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
@@ -18,19 +18,19 @@ const templates = [
 
 **Subject: Financial Sanction and Academic Leave Approval for International Conference – Spain**
 
-This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU24010825**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**, Thanjavur, Tamil Nadu, India.
+This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU24010825**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **PALAMURU Deemed to be University**, Mahabubnagar, Telangana, India.
 
 The University hereby sanctions a **financial assistance of ₹2,50,000/- (Rupees Two Lakhs Fifty Thousand Only)** in favor of Mr. RAGHU KUDALA to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
 
 The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
 
-He has been granted **leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at SASTRA Deemed to be University.
+He has been granted **leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at PALAMURU Deemed to be University.
 
 The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
 
 This letter is issued at the request of the student for **visa and other official purposes**.
 
-**Place:** Thanjavur, Tamil Nadu, India  
+**Place:** Mahabubnagar, Telangana, India  
 **Date:** 11/09/2026
 
 &nbsp;
@@ -39,8 +39,8 @@ This letter is issued at the request of the student for **visa and other officia
 &nbsp;
 
 *(Registrar / Dean / Director – Research)*  
-**SASTRA Deemed to be University**`,
-      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
+**PALAMURU Deemed to be University**`,
+      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
       isHTML: false,
     }
   },
@@ -48,7 +48,7 @@ This letter is issued at the request of the student for **visa and other officia
     id: 'noc',
     name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
     data: {
-      referenceNumber: 'SASTRA/2026/PHD/REG/115',
+      referenceNumber: 'PALAMURU/2026/PHD/REG/115',
       date: '11/09/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `To  
@@ -57,15 +57,15 @@ This letter is issued at the request of the student for **visa and other officia
 
 **Subject: No Objection Certificate for Academic Conference Attendance in Spain**
 
-This is to certify that **Mr. RAGHU KUDALA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
+This is to certify that **Mr. RAGHU KUDALA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), PALAMURU Deemed to be University**.
 
 He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU24010825** and **Passport No.: AU931922**. His doctoral research is related to the poster presentation titled **““Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
 
-The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at SASTRA Deemed to be University upon completion of the conference**.
+The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at PALAMURU Deemed to be University upon completion of the conference**.
 
 This certificate is issued at his request for **visa and official purposes**.
 
-**Place:** Thanjavur, Tamil Nadu, India  
+**Place:** Mahabubnagar, Telangana, India  
 **Date:** 11/09/2026
 
 &nbsp;
@@ -74,8 +74,8 @@ This certificate is issued at his request for **visa and official purposes**.
 &nbsp;
 
 *(Registrar / Dean)*  
-**SASTRA Deemed to be University**`,
-      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
+**PALAMURU Deemed to be University**`,
+      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
       isHTML: false,
     }
   },
@@ -83,12 +83,12 @@ This certificate is issued at his request for **visa and official purposes**.
     id: 'bonafide',
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
-      referenceNumber: 'SASTRA/2026/PHD/REG/118',
+      referenceNumber: 'PALAMURU/2026/PHD/REG/118',
       date: '11/09/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. RAGHU KUDALA**, bearing **Student ID: SU24010825** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**.
+This is to certify that **Mr. RAGHU KUDALA**, bearing **Student ID: SU24010825** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **PALAMURU Deemed to be University**.
 
 He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -96,7 +96,7 @@ The student is provided **hostel accommodation within the University campus**, a
 
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
-**Place:** Thanjavur, Tamil Nadu, India  
+**Place:** Mahabubnagar, Telangana, India  
 **Date:** 11/09/2026
 
 &nbsp;
@@ -105,8 +105,8 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 &nbsp;
 
 *(Registrar / Dean / Director – Research)*  
-**SASTRA Deemed to be University**`,
-      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
+**PALAMURU Deemed to be University**`,
+      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
       isHTML: false,
     }
   },
@@ -114,12 +114,12 @@ This bonafide certificate is issued upon his request for **official purposes**, 
     id: 'hotel',
     name: '4. Hotel / Accommodation Confirmation - RAGHU KUDALA',
     data: {
-      referenceNumber: 'SASTRA/2026/PHD/HOSTEL/108',
+      referenceNumber: 'PALAMURU/2026/PHD/HOSTEL/108',
       date: '11/09/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU24010825**, is a bonafide Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT) at SASTRA Deemed to be University, Thanjavur, Tamil Nadu, India.
+This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU24010825**, is a bonafide Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT) at PALAMURU Deemed to be University, Mahabubnagar, Telangana, India.
 
 He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -127,7 +127,7 @@ This is to officially confirm that the student is provided with **hostel accommo
 
 This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
 
-**Place:** Thanjavur, Tamil Nadu, India  
+**Place:** Mahabubnagar, Telangana, India  
 **Date:** 11/09/2026
 
 &nbsp;
@@ -136,8 +136,8 @@ This certificate is issued upon his request for official purposes, including vis
 &nbsp;
 
 *(Registrar / Dean / Director – Research)*  
-**SASTRA Deemed to be University**`,
-      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
+**PALAMURU Deemed to be University**`,
+      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
       isHTML: false,
     }
   },
@@ -158,7 +158,7 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="w-[130px] font-semibold text-slate-700">Receipt No.</td>
         <td class="w-3">:</td>
-        <td class="font-bold text-slate-900">SASTRA/HOSTEL/2026-27/0912</td>
+        <td class="font-bold text-slate-900">PALAMURU/HOSTEL/2026-27/0912</td>
         <td class="w-[110px] font-semibold text-slate-700">Date</td>
         <td class="w-3">:</td>
         <td class="font-bold text-slate-900">01/06/2026</td>
@@ -239,12 +239,12 @@ This certificate is issued upon his request for official purposes, including vis
     </div>
   </div>
 </div>`,
-      footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
+      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
     }
   }
 ];
 
-const SastraLetterheadGenerator = () => {
+const PalamuruLetterheadGenerator = () => {
   const [activeTab, setActiveTab] = useState<'form' | 'preview'>('form');
   const [isExporting, setIsExporting] = useState(false);
   const [formData, setFormData] = useState(templates[0].data);
@@ -263,37 +263,37 @@ const SastraLetterheadGenerator = () => {
     setTimeout(() => { window.print(); setTimeout(() => setIsExporting(false), 1000); }, 100);
   };
 
-  const PageHeader = () => (
-    <div style={{ padding: '70px 70px 20px 70px' }}>
-      <img
-        src="/sastra-header.jpg"
-        alt="SASTRA University Letterhead Header"
-        style={{ width: '100%', display: 'block' }}
-      />
+        const PageHeader = () => (
+    <div style={{ padding: '30px 40px 0px 40px', fontFamily: 'Times New Roman, serif' }}>
+      <div className="flex items-center justify-center gap-8 pb-2">
+        <div className="flex-shrink-0">
+          <img src="/palamuru-logo.png" alt="Palamuru University Logo" className="w-[105px] h-auto object-contain" />
+        </div>
+        <div className="flex flex-col items-center justify-center text-center mt-2">
+          <h1 className="text-[28px] font-bold text-[#002060] leading-tight tracking-wide mb-0.5 uppercase font-serif">
+            PALAMURU UNIVERSITY
+          </h1>
+          <h3 className="text-[12px] font-bold text-slate-800 mb-1 italic font-serif">
+            (Accredited by NAAC with 'B' Grade)
+          </h3>
+          <p className="text-[15px] font-bold text-[#c92626] uppercase font-serif">
+            MAHABUBNAGAR-509001.
+          </p>
+        </div>
+      </div>
+      <div className="w-full h-[1.5px] bg-black mt-1" />
     </div>
-  );
-
-
-  const PageFooter = () => {
-    return (
+  );    const PageFooter = () => (
       <div className="w-full px-[20mm] pb-[12mm] mt-8 font-sans">
-        <div className="w-full h-[1.5px] bg-slate-800 mb-1" />
-        <div className="flex justify-between items-start text-[10px] font-bold text-slate-800">
+        <div className="w-full h-[2px] bg-[#b31b1b] mb-1.5" />
+        <div className="flex justify-between items-start text-[10px] font-bold text-[#b31b1b]">
           <div className="flex flex-col text-left tracking-wide">
-            <div>THANJAVUR-613 401, TAMIL NADU, INDIA</div>
-            <div>PHONE : 04362 304000 TO 010 264101 & 108</div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex flex-col text-left tracking-wide w-[120px]">
-              <div>www.sastra.edu</div>
-              <div>FAX : 04362-264120</div>
-            </div>
+            <div>MAHABUBNAGAR - 509 001, TELANGANA STATE</div>
+            <div>WEBSITE: www.palamuruuniversity.ac.in</div>
           </div>
         </div>
       </div>
-    );
-  };
-
+  );
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-50 to-blue-50/30 flex flex-col font-sans">
       <style>{`
@@ -309,17 +309,17 @@ const SastraLetterheadGenerator = () => {
       {/* Nav */}
       <div className="bg-white/80 backdrop-blur-xl border-b border-slate-200/60 px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-sm print:hidden">
         <div className="flex items-center gap-4">
-          <a href="/sastra" className="text-slate-500 hover:text-slate-800 transition-colors font-medium text-sm">← Back</a>
+          <a href="/palamuru" className="text-slate-500 hover:text-slate-800 transition-colors font-medium text-sm">← Back</a>
           <div className="w-px h-6 bg-slate-200" />
           <h1 className="text-xl font-bold text-slate-800 flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#003087] text-white rounded-lg flex items-center justify-center shadow-md font-black text-sm">S</div>
-            SASTRA Letterhead Generator
+            <div className="w-8 h-8 bg-[#b31b1b] text-white rounded-lg flex items-center justify-center shadow-md font-black text-sm">S</div>
+            Palamuru University Letterhead
           </h1>
         </div>
         <button
           onClick={handleExportPDF}
           disabled={isExporting}
-          className={`px-5 py-2.5 bg-[#003087] hover:bg-[#002266] text-white rounded-xl font-medium transition-all shadow-md flex items-center gap-2 ${isExporting ? 'opacity-70 cursor-not-allowed' : ''}`}
+          className={`px-5 py-2.5 bg-[#b31b1b] hover:bg-[#800000] text-white rounded-xl font-medium transition-all shadow-md flex items-center gap-2 ${isExporting ? 'opacity-70 cursor-not-allowed' : ''}`}
         >
           {isExporting ? (<><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Exporting...</>) : (<><Download className="w-4 h-4" />Export PDF</>)}
         </button>
@@ -329,21 +329,21 @@ const SastraLetterheadGenerator = () => {
 
         {/* Mobile tabs */}
         <div className="md:hidden flex bg-white border-b border-slate-200 w-full shrink-0 print:hidden">
-          <button className={`flex-1 py-3 text-sm font-medium ${activeTab === 'form' ? 'text-[#003087] border-b-2 border-[#003087]' : 'text-slate-500'}`} onClick={() => setActiveTab('form')}>Edit Details</button>
-          <button className={`flex-1 py-3 text-sm font-medium ${activeTab === 'preview' ? 'text-[#003087] border-b-2 border-[#003087]' : 'text-slate-500'}`} onClick={() => setActiveTab('preview')}>Preview Document</button>
+          <button className={`flex-1 py-3 text-sm font-medium ${activeTab === 'form' ? 'text-[#b31b1b] border-b-2 border-[#b31b1b]' : 'text-slate-500'}`} onClick={() => setActiveTab('form')}>Edit Details</button>
+          <button className={`flex-1 py-3 text-sm font-medium ${activeTab === 'preview' ? 'text-[#b31b1b] border-b-2 border-[#b31b1b]' : 'text-slate-500'}`} onClick={() => setActiveTab('preview')}>Preview Document</button>
         </div>
 
         {/* Sidebar */}
         <div className={`${activeTab === 'form' ? 'flex' : 'hidden'} md:flex w-full md:w-[400px] lg:w-[450px] bg-white/60 backdrop-blur-3xl border-r border-slate-200/60 flex-col h-full overflow-y-auto print:hidden z-10`}>
           <div className="p-6">
             <div className="flex items-center gap-2 mb-6 text-slate-800">
-              <Settings2 className="w-5 h-5 text-[#003087]" />
+              <Settings2 className="w-5 h-5 text-[#b31b1b]" />
               <h2 className="text-lg font-bold">Document Details</h2>
             </div>
 
             <div className="mb-6 bg-blue-50 p-5 rounded-2xl border border-blue-100 shadow-sm">
               <label className="flex items-center gap-2 text-sm font-semibold text-blue-900 mb-3">
-                <FileText className="w-4 h-4 text-[#003087]" />Quick Templates
+                <FileText className="w-4 h-4 text-[#b31b1b]" />Quick Templates
               </label>
               <select
                 onChange={handleTemplateChange}
@@ -455,4 +455,4 @@ const SastraLetterheadGenerator = () => {
   );
 };
 
-export default SastraLetterheadGenerator;
+export default PalamuruLetterheadGenerator;

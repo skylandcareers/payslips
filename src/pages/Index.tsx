@@ -233,7 +233,35 @@ const Index = () => {
             </div>
           </Link>
 
-        </div>
+        
+          {/* Sri Saravana Stores */}
+          <Link to="/sri-saravana" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-blue-900 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-14 bg-gradient-to-br from-blue-700 to-blue-900 rounded-full flex flex-col items-center justify-center text-white font-serif font-black shadow-md border-2 border-blue-100 group-hover:scale-105 transition-transform">
+                  <span className="text-xl">SSS</span>
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Sri Saravana Stores</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Composition Taxpayer Retailer of Steel Furniture & Kitchen Stoves.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-blue-800 text-sm font-semibold bg-blue-50 py-2 rounded-lg group-hover:bg-blue-900 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+            </div>
+          </Link>
+
+
+          {/* Palamuru University */}
+          <Link to="/palamuru" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-[#b31b1b] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <img src="/palamuru-logo.png" alt="Palamuru University" className="h-12 w-auto group-hover:scale-105 transition-transform" />
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Palamuru University</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Create official academic and administrative documents on Palamuru University letterheads.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#b31b1b] text-sm font-semibold bg-red-50 py-2 rounded-lg group-hover:bg-[#b31b1b] group-hover:text-white transition-all">Open Portal <GraduationCap className="w-4 h-4" /></div>
+            </div>
+          </Link>
+
+</div>
       </div>
     </div>
   );

@@ -28,6 +28,8 @@ import WoxsenLetterheadGenerator from "./pages/WoxsenLetterheadGenerator";
 
 import SastraIndex from "./pages/SastraIndex";
 import SastraLetterheadGenerator from "./pages/SastraLetterheadGenerator";
+import PalamuruIndex from "./pages/PalamuruIndex";
+import PalamuruLetterheadGenerator from "./pages/PalamuruLetterheadGenerator";
 
 import CaIndex from "./pages/CaIndex";
 import CaLetterheadGenerator from "./pages/CaLetterheadGenerator";
@@ -54,6 +56,7 @@ import StandardEngineeringLetterheadGenerator from "./pages/StandardEngineeringL
 import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLetterheadGenerator";
 import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGenerator";
 import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
+import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 
 
 const queryClient = new QueryClient();
@@ -89,6 +92,8 @@ const App = () => (
 
           <Route path="/sastra" element={<SastraIndex />} />
           <Route path="/sastra/letterhead" element={<SastraLetterheadGenerator />} />
+          <Route path="/palamuru" element={<PalamuruIndex />} />
+          <Route path="/palamuru/letterhead" element={<PalamuruLetterheadGenerator />} />
           
           <Route path="/ca" element={<CaIndex />} />
           <Route path="/ca/letterhead" element={<CaLetterheadGenerator />} />
@@ -115,6 +120,8 @@ const App = () => (
           <Route path="/medical-equipments/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
           <Route path="/home-furniture/letterhead" element={<HomeFurnitureLetterheadGenerator />} />
           <Route path="/raksha-global/letterhead" element={<RakshaGlobalLetterheadGenerator />} />
+          <Route path="/sri-saravana" element={<SriSaravanaLetterheadGenerator />} />
+
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

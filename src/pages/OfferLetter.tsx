@@ -12,7 +12,7 @@ const OfferLetter = () => {
     candidateName: "Jane Doe",
     candidateAddress: "123 Tech Lane, Innovation City",
     cityStatePin: "Mumbai, Maharashtra, 400001",
-    contactNumber: "+91 9876543210",
+    contactNumber: "+91 8125588816",
     emailId: "jane.doe@example.com",
     role: "Senior Software Engineer",
     department: "Engineering & Technology",
@@ -60,7 +60,7 @@ const OfferLetter = () => {
       {/* Top Bleed Bar - Fixed for print to appear on every page */}
       <div className={`absolute -top-10 md:-top-14 -left-10 md:-left-14 w-[calc(100%+80px)] md:w-[calc(100%+112px)] h-[6px] bg-[#E93D44] z-20 ${isPrintFixed ? 'hidden' : 'print:hidden'}`}></div>
       <div className={`${isPrintFixed ? 'block' : 'hidden print:block'} fixed top-0 left-0 w-full h-[6px] bg-[#E93D44] z-20`}></div>
-      
+
       <div className="flex justify-between items-end pb-3 mb-6 border-b-[1.5px] border-black w-full bg-white">
         <div>
           <div className="flex items-center gap-3 mb-2">
@@ -91,8 +91,8 @@ const OfferLetter = () => {
     </div>
   );
 
-  const Th = ({children}: {children: React.ReactNode}) => <th className="py-2 px-3 border border-gray-300 bg-gray-50 text-gray-700 font-bold">{children}</th>;
-  const Td = ({children}: {children: React.ReactNode}) => <td className="py-2 px-3 border border-gray-300 text-gray-800">{children}</td>;
+  const Th = ({ children }: { children: React.ReactNode }) => <th className="py-2 px-3 border border-gray-300 bg-gray-50 text-gray-700 font-bold">{children}</th>;
+  const Td = ({ children }: { children: React.ReactNode }) => <td className="py-2 px-3 border border-gray-300 text-gray-800">{children}</td>;
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-primary/30 flex flex-col print:bg-transparent print:text-black">
@@ -148,14 +148,14 @@ const OfferLetter = () => {
       </header>
 
       <main className="flex-1 pt-24 pb-12 px-4 container mx-auto flex flex-col md:flex-row gap-8 justify-center print:block print:p-0 print:m-0 print:max-w-none">
-        
+
         {/* Form Section */}
         <div className={`w-full md:w-[360px] bg-white/5 border border-white/10 rounded-xl p-6 flex-col gap-6 overflow-y-auto max-h-[calc(100vh-140px)] sticky top-28 print:hidden shrink-0 ${activeTab === "form" ? "flex" : "hidden md:flex"}`}>
           <div className="flex items-center gap-2 border-b border-white/10 pb-4">
             <Settings2 className="w-5 h-5 text-primary" />
             <h2 className="text-lg font-semibold">Offer Details</h2>
           </div>
-          
+
           <div className="space-y-4">
             <div className="grid gap-4">
               <h3 className="text-xs font-bold text-white/50 uppercase tracking-widest">Metadata</h3>
@@ -230,10 +230,10 @@ const OfferLetter = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="grid gap-4 pt-4 border-t border-white/10">
               <h3 className="text-xs font-bold text-white/50 uppercase tracking-widest">Compensation</h3>
-              
+
               <div className="bg-white/5 p-3 rounded-md border border-white/10 mb-4 space-y-3">
                 <div>
                   <label className="block text-[10px] mb-1 text-white/70 font-semibold uppercase tracking-wider">Calculate from Annual CTC</label>
@@ -265,12 +265,12 @@ const OfferLetter = () => {
                       const takeHome = parseInt(input.value.replace(/,/g, "")) || 0;
                       if (takeHome > 0) {
                         const calculatedCTC = ((takeHome + 200) * 12) / 0.84;
-                        
+
                         const ctcInput = document.getElementById('forwardCTC') as HTMLInputElement;
                         if (ctcInput) ctcInput.value = Math.round(calculatedCTC).toLocaleString('en-IN');
 
                         const formatNumber = (num: number) => Math.round(num).toLocaleString('en-IN');
-                        
+
                         setFormData(prev => ({
                           ...prev,
                           annualCTC: formatNumber(calculatedCTC),
@@ -313,7 +313,7 @@ const OfferLetter = () => {
 
         {/* Multi-Page WYSIWYG Preview Section */}
         <div className={`print-container flex-1 overflow-y-auto bg-gray-200 p-6 rounded-xl md:flex flex-col gap-10 items-center relative print:block print:bg-transparent print:rounded-none print:p-0 print:m-0 print:overflow-visible ${activeTab === "preview" ? "flex" : "hidden"}`}>
-          
+
           {/* Print Watermark element (rendered once, fixed position in CSS handles printing on all pages) */}
           <img src="https://media.licdn.com/dms/image/v2/D560BAQGREzSyNC8Gtw/company-logo_200_200/company-logo_200_200/0/1687330866404/aviso_inc_logo?e=2147483647&v=beta&t=8-c6FAeLmXM5IIbukECZ4W6vgIhc7bdaEYOWfOaMWYw" alt="" className="hidden print:block watermark grayscale" />
 
@@ -345,12 +345,12 @@ const OfferLetter = () => {
                   </td>
                 </tr>
               </thead>
-              
+
               <tbody>
                 <tr>
                   <td>
                     <div className="px-10 md:px-14 font-sans text-[11px] text-gray-800 leading-relaxed">
-                      
+
                       {/* --- START OF CONTENT FLOW --- */}
                       <div className="flex justify-between items-start mb-6">
                         <div>
@@ -375,13 +375,13 @@ const OfferLetter = () => {
 
                       <div className="space-y-3 text-justify">
                         <p>We are pleased to inform you that after a thorough evaluation of your skills, experience, and potential, the Management of Aviso AI has decided to offer you the position of <span className="font-bold">{formData.role}</span>. We were impressed by your technical expertise and your alignment with our mission to build tomorrow's AI workforce and help Modern GTM Teams predict, guide, and simplify every revenue action.</p>
-                        
+
                         <p>We believe your contributions will be invaluable in building our unified Revenue Operating System—featuring capabilities like Conversation Intelligence, Revenue Forecasting, Pipeline Inspection, Deal Acceleration, and our No-Code GTM Agent Studio. You will play a critical role in advancing <span className="font-bold">MIKI</span>, our AI assistant, and supporting enterprise clients like Honeywell, New Relic, Elastic, Armis, and RingCentral.</p>
 
                         <p>This offer letter is a comprehensive document outlining the terms and conditions of your employment. Please read it carefully.</p>
 
                         <div className="font-bold text-primary text-[12px] uppercase mt-6 mb-2 border-b border-gray-900 pb-1">PART A: JOB DESCRIPTION</div>
-                        
+
                         <p className="font-bold">1. Position Details</p>
                         <table className="w-full text-[10px] mb-4 border-collapse">
                           <tbody>
@@ -420,7 +420,7 @@ const OfferLetter = () => {
                         </table>
 
                         <div className="font-bold text-primary text-[12px] uppercase mt-6 mb-2 border-b border-gray-900 pb-1">PART B: TERMS OF EMPLOYMENT</div>
-                        
+
                         <p className="font-bold">5. Compensation & Benefits</p>
                         <table className="w-full text-[10px] mb-4 border-collapse">
                           <tbody>
@@ -434,15 +434,15 @@ const OfferLetter = () => {
 
                         <p className="font-bold mt-6">6. Probation Period</p>
                         <p>You shall be on probation for a period of <span className="font-bold">{formData.probationPeriod} months</span> from the date of joining. Upon successful completion, you will be confirmed in writing. The company reserves the right to extend probation or terminate with <span className="font-bold">{formData.noticePeriodProbation} days'</span> notice.</p>
-                        
+
                         <p className="font-bold mt-4">7. Notice Period</p>
                         <p>During Probation: <span className="font-bold">{formData.noticePeriodProbation} days</span>. Post-Confirmation: <span className="font-bold">{formData.noticePeriodConfirmed} days</span> or salary in lieu thereof.</p>
-                        
+
                         <p className="font-bold mt-4">8. Termination</p>
                         <p>Either party may terminate by serving notice. Immediate termination applies in cases of gross misconduct or fraud.</p>
 
                         <div className="font-bold text-primary text-[12px] uppercase mt-6 mb-2 border-b border-gray-900 pb-1">PART C: CONFIDENTIALITY & NDA</div>
-                        
+
                         <p className="font-bold">9. Confidential Information</p>
                         <p>Includes source code, AI models, MIKI reasoning capabilities, Agent Studio frameworks, trade secrets, client data, and proprietary algorithms of Aviso AI.</p>
 
@@ -460,7 +460,7 @@ const OfferLetter = () => {
 
                         <div className="font-bold text-primary text-[12px] uppercase mt-6 mb-2 border-b border-gray-900 pb-1">PART F: ACCEPTANCE & ACKNOWLEDGEMENT</div>
                         <p>This offer and employment shall be governed by the laws of India, subject to exclusive jurisdiction in {formData.cityStatePin.split(',')[0]}.</p>
-                        
+
                         <div className="font-bold text-primary text-[12px] uppercase mt-6 mb-2 border-b border-gray-900 pb-1">PART G: SIGNATURES</div>
                         <div className="mt-8 pt-4 grid grid-cols-2 gap-8 mb-10" style={{ pageBreakInside: 'avoid' }}>
                           <div>
@@ -479,8 +479,8 @@ const OfferLetter = () => {
                         <div style={{ pageBreakBefore: 'always' }}></div>
 
                         <div className="font-bold text-primary text-[14px] uppercase mb-4 text-center mt-6">ANNEXURE A – SALARY STRUCTURE</div>
-                        <p className="mb-4"><strong>Employee Name:</strong> {formData.candidateName}<br/><strong>Annual CTC:</strong> INR {formData.annualCTC}</p>
-                        
+                        <p className="mb-4"><strong>Employee Name:</strong> {formData.candidateName}<br /><strong>Annual CTC:</strong> INR {formData.annualCTC}</p>
+
                         <table className="w-full text-[10px] mb-4 border border-gray-300 border-collapse bg-white/90">
                           <thead className="bg-[#E93D44] text-white">
                             <tr><th className="py-2 px-3 text-left border border-[#E93D44]">Salary Component</th><th className="py-2 px-3 text-right border border-[#E93D44]">Monthly (INR)</th><th className="py-2 px-3 text-right border border-[#E93D44]">Annual (INR)</th></tr>
@@ -500,7 +500,7 @@ const OfferLetter = () => {
                             const tdsM = tdsA / 12;
                             const deductionsA = pfA + ptA + tdsA;
                             const netA = annual - deductionsA;
-                            
+
                             return (
                               <tbody>
                                 <tr className="bg-gray-100"><td colSpan={3} className="py-1.5 px-3 font-bold border border-gray-300 text-gray-800 uppercase text-[9px]">Earnings</td></tr>
@@ -508,13 +508,13 @@ const OfferLetter = () => {
                                 <tr><Td>House Rent Allowance (HRA)</Td><Td><div className="text-right">{formatNumber(hraA / 12)}</div></Td><Td><div className="text-right">{formatNumber(hraA)}</div></Td></tr>
                                 <tr><Td>Special Allowance</Td><Td><div className="text-right">{formatNumber(specialA / 12)}</div></Td><Td><div className="text-right">{formatNumber(specialA)}</div></Td></tr>
                                 <tr className="bg-gray-50 font-bold"><Td>Gross Salary (A)</Td><Td><div className="text-right text-gray-900">{formatNumber(annual / 12)}</div></Td><Td><div className="text-right text-gray-900">{formatNumber(annual)}</div></Td></tr>
-                                
+
                                 <tr className="bg-gray-100"><td colSpan={3} className="py-1.5 px-3 font-bold border border-gray-300 text-gray-800 uppercase text-[9px]">Deductions</td></tr>
                                 <tr><Td>Provident Fund (PF)</Td><Td><div className="text-right">{formatNumber(pfM)}</div></Td><Td><div className="text-right">{formatNumber(pfA)}</div></Td></tr>
                                 <tr><Td>Professional Tax (PT)</Td><Td><div className="text-right">{formatNumber(ptM)}</div></Td><Td><div className="text-right">{formatNumber(ptA)}</div></Td></tr>
                                 <tr><Td>Income Tax (TDS @ 10%)</Td><Td><div className="text-right">{formatNumber(tdsM)}</div></Td><Td><div className="text-right">{formatNumber(tdsA)}</div></Td></tr>
                                 <tr className="bg-gray-50 font-bold"><Td>Total Deductions (B)</Td><Td><div className="text-right text-gray-900">{formatNumber(pfM + ptM + tdsM)}</div></Td><Td><div className="text-right text-gray-900">{formatNumber(deductionsA)}</div></Td></tr>
-                                
+
                                 <tr className="bg-gray-200 font-bold"><Td>Net Take Home (A - B)</Td><Td><div className="text-right text-black text-[11px]">{formatNumber((annual / 12) - (pfM + ptM + tdsM))}</div></Td><Td><div className="text-right text-black text-[11px]">{formatNumber(netA)}</div></Td></tr>
                               </tbody>
                             );
@@ -531,7 +531,7 @@ const OfferLetter = () => {
                   </td>
                 </tr>
               </tbody>
-              
+
               <tfoot>
                 <tr>
                   <td>
