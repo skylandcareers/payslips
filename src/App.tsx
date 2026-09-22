@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
+import Itr2AcknowledgementGenerator from "./pages/Itr2AcknowledgementGenerator";
 import NotFound from "./pages/NotFound";
 
 import OfferLetter from "./pages/OfferLetter";
@@ -55,6 +56,7 @@ import ImperialLeatherLetterheadGenerator from "./pages/ImperialLeatherLetterhea
 import StandardEngineeringLetterheadGenerator from "./pages/StandardEngineeringLetterheadGenerator";
 import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLetterheadGenerator";
 import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGenerator";
+import HomeFurnitureGstCertificateGenerator from "./pages/HomeFurnitureGstCertificateGenerator";
 import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 
@@ -70,6 +72,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/itr2-acknowledgement" element={<Itr2AcknowledgementGenerator />} />
 
           <Route path="/aviso" element={<AvisoIndex />} />
           <Route path="/offer-letter" element={<OfferLetter />} />
@@ -119,6 +122,7 @@ const App = () => (
           <Route path="/standard-engineering/letterhead" element={<StandardEngineeringLetterheadGenerator />} />
           <Route path="/medical-equipments/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
           <Route path="/home-furniture/letterhead" element={<HomeFurnitureLetterheadGenerator />} />
+          <Route path="/home-furniture/gst" element={<HomeFurnitureGstCertificateGenerator />} />
           <Route path="/raksha-global/letterhead" element={<RakshaGlobalLetterheadGenerator />} />
           <Route path="/sri-saravana" element={<SriSaravanaLetterheadGenerator />} />
 

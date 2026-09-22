@@ -70,6 +70,21 @@ const Index = () => {
             </div>
           </Link>
 
+          {/* Home Furniture GST Certificate */}
+          <Link to="/home-furniture/gst" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-blue-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex flex-col items-center justify-center text-white font-serif font-black shadow-md border-2 border-blue-100 group-hover:scale-105 transition-transform">
+                  <span className="text-xl">GST</span>
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Home Furniture GST Certificate</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Generate a replica of the GST REG-06 Certificate.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-blue-700 text-sm font-semibold bg-blue-50 py-2 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">Open Generator</div>
+            </div>
+          </Link>
+
+
           {/* Imperial Leather */}
           <Link to="/imperial-leather/letterhead" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-slate-800 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
@@ -261,7 +276,22 @@ const Index = () => {
             </div>
           </Link>
 
-</div>
+
+          {/* ITR-2 Acknowledgement */}
+          <Link to="/itr2-acknowledgement" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-green-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <div className="h-14 w-14 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex flex-col items-center justify-center text-white font-serif font-black shadow-md border-2 border-green-100 group-hover:scale-105 transition-transform">
+                  <span className="text-xl">ITR</span>
+                </div>
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">ITR-2 Acknowledgement</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Generate exact replica of Income Tax Return ITR-V Acknowledgement PDF.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-green-700 text-sm font-semibold bg-green-50 py-2 rounded-lg group-hover:bg-green-600 group-hover:text-white transition-all">Open Generator</div>
+            </div>
+          </Link>
+
+        </div>
       </div>
     </div>
   );
