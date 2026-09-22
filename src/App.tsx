@@ -57,6 +57,7 @@ import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLette
 import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGenerator";
 import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
+import UnionBankStatementGenerator from "./pages/UnionBankStatementGenerator";
 
 
 const queryClient = new QueryClient();
@@ -122,6 +123,9 @@ const App = () => (
           <Route path="/raksha-global/letterhead" element={<RakshaGlobalLetterheadGenerator />} />
           <Route path="/sri-saravana" element={<SriSaravanaLetterheadGenerator />} />
 
+
+          <Route path="/union-bank" element={<UnionBankStatementGenerator />} />
+          <Route path="/union-bank/statement" element={<UnionBankStatementGenerator />} />
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

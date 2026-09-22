@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Building2, GraduationCap, Briefcase, Sprout } from "lucide-react";
+import { Building2, GraduationCap, Briefcase, Sprout, Landmark } from "lucide-react";
 
 const Index = () => {
   return (
@@ -221,6 +221,18 @@ const Index = () => {
             </div>
           </Link>
           
+          {/* Union Bank of India */}
+          <Link to="/union-bank" className="group">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-[#0055b7] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+              <div className="h-16 flex items-center justify-center mb-6">
+                <img src="/union_bank_logo.png" alt="Union Bank of India" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform" />
+              </div>
+              <h2 className="text-xl font-bold mb-3 text-slate-800">Union Bank of India</h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">Statement of Account generator with verified customer details, dynamic transaction history, loan portfolios, and multi-page print layout.</p>
+              <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#0055b7] text-sm font-semibold bg-blue-50 py-2 rounded-lg group-hover:bg-[#0055b7] group-hover:text-white transition-all">Open Portal <Landmark className="w-4 h-4" /></div>
+            </div>
+          </Link>
+
           {/* Woxsen University */}
           <Link to="/woxsen" className="group">
             <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full transition-all duration-300 hover:border-red-700 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
