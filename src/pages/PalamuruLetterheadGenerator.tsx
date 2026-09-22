@@ -263,37 +263,29 @@ const PalamuruLetterheadGenerator = () => {
     setTimeout(() => { window.print(); setTimeout(() => setIsExporting(false), 1000); }, 100);
   };
 
-        const PageHeader = () => (
-    <div style={{ padding: '30px 40px 0px 40px', fontFamily: 'Times New Roman, serif' }}>
-      <div className="flex items-center justify-center gap-8 pb-2">
-        <div className="flex-shrink-0">
-          <img src="/palamuru-logo.png" alt="Palamuru University Logo" className="w-[105px] h-auto object-contain" />
-        </div>
-        <div className="flex flex-col items-center justify-center text-center mt-2">
-          <h1 className="text-[28px] font-bold text-[#002060] leading-tight tracking-wide mb-0.5 uppercase font-serif">
-            PALAMURU UNIVERSITY
-          </h1>
-          <h3 className="text-[12px] font-bold text-slate-800 mb-1 italic font-serif">
-            (Accredited by NAAC with 'B' Grade)
-          </h3>
-          <p className="text-[15px] font-bold text-[#c92626] uppercase font-serif">
-            MAHABUBNAGAR-509001.
-          </p>
-        </div>
+          const PageHeader = () => (
+    <div style={{ padding: '30px 40px 10px 40px' }}>
+      <div className="flex justify-center w-full pb-4">
+        <img src="https://palamuruuniversity.ac.in/assets/uploads/media-uploader/palamuru-logo1743078487.png" alt="Palamuru University Header" className="w-[500px] h-auto object-contain" />
       </div>
-      <div className="w-full h-[1.5px] bg-black mt-1" />
+      <div className="w-full h-[1.5px] bg-black" />
     </div>
-  );    const PageFooter = () => (
+  );
+
+    const PageFooter = () => (
       <div className="w-full px-[20mm] pb-[12mm] mt-8 font-sans">
         <div className="w-full h-[2px] bg-[#b31b1b] mb-1.5" />
-        <div className="flex justify-between items-start text-[10px] font-bold text-[#b31b1b]">
-          <div className="flex flex-col text-left tracking-wide">
-            <div>MAHABUBNAGAR - 509 001, TELANGANA STATE</div>
-            <div>WEBSITE: www.palamuruuniversity.ac.in</div>
+        <div className="flex justify-between items-start text-[10.5px] font-bold text-[#b31b1b]">
+          <div className="text-left tracking-wide">
+            MAHABUBNAGAR - 509 001, TELANGANA STATE
+          </div>
+          <div className="text-right tracking-wide">
+            WEBSITE: www.palamuruuniversity.ac.in
           </div>
         </div>
       </div>
   );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-50 to-blue-50/30 flex flex-col font-sans">
       <style>{`
