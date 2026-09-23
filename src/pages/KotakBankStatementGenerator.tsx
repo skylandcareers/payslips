@@ -16,13 +16,14 @@ export default function KotakBankStatementGenerator() {
     const result = [];
     let currentTransIndex = 0;
     const page1Trans = transactions.slice(0, Math.min(transactions.length, PAGE_1_MAX));
-    result.push({ isFirst: true, transactions: page1Trans });
+    result.push({ isFirst: true, isSummary: false, transactions: page1Trans });
     currentTransIndex += page1Trans.length;
     while (currentTransIndex < transactions.length) {
       const pageTrans = transactions.slice(currentTransIndex, currentTransIndex + MIDDLE_PAGE_MAX);
-      result.push({ isFirst: false, transactions: pageTrans });
+      result.push({ isFirst: false, isSummary: false, transactions: pageTrans });
       currentTransIndex += pageTrans.length;
     }
+    result.push({ isFirst: false, isSummary: true, transactions: [] });
     return result;
   }, [transactions]);
 
@@ -175,50 +176,54 @@ export default function KotakBankStatementGenerator() {
                 </div>
               )}
 
-              <div className="w-full">
+              <div className="w-full pb-[25mm]">
+                {!page.isSummary && (
+                  <>
                 <div className="bg-[#ed1b24] text-white py-1.5 text-[15px] font-normal mb-0 pl-[12mm]" style={{ marginLeft: '-12mm', marginRight: '-12mm', width: '210mm' }}>
                   <div className="text-center w-full" style={{ paddingRight: '12mm' }}>Savings Account Transactions</div>
                 </div>
                 <table className="w-full text-[11px] border-collapse" style={{ tableLayout: 'fixed' }}>
                   <thead>
                     <tr className="bg-[#9fa0a2] text-white">
-                      <th className="py-1.5 px-1 text-left font-normal border-r border-white" style={{ width: '4%' }}>#</th>
-                      <th className="py-1.5 px-1 text-left font-normal border-r border-white" style={{ width: '12%' }}>Date</th>
-                      <th className="py-1.5 px-1 text-left font-normal border-r border-white" style={{ width: '31%' }}>Description</th>
-                      <th className="py-1.5 px-1 text-left font-normal border-r border-white" style={{ width: '17%' }}>Chq/Ref. No.</th>
-                      <th className="py-1.5 px-1 text-right font-normal border-r border-white" style={{ width: '12%' }}>Withdrawal (Dr.)</th>
-                      <th className="py-1.5 px-1 text-right font-normal border-r border-white" style={{ width: '12%' }}>Deposit (Cr.)</th>
-                      <th className="py-1.5 px-2 text-right font-normal" style={{ width: '12%' }}>Balance</th>
+                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '4%' }}>#</th>
+                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '12%' }}>Date</th>
+                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '31%' }}>Description</th>
+                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '17%' }}>Chq/Ref. No.</th>
+                      <th className="py-1 px-1 text-right font-normal border-r border-white" style={{ width: '12%' }}>Withdrawal (Dr.)</th>
+                      <th className="py-1 px-1 text-right font-normal border-r border-white" style={{ width: '12%' }}>Deposit (Cr.)</th>
+                      <th className="py-1 px-2 text-right font-normal" style={{ width: '12%' }}>Balance</th>
                     </tr>
                   </thead>
                   <tbody>
                     {page.isFirst && (
-                      <tr className="border-b border-[#e2e2e2]">
-                        <td className="py-1.5 px-1 text-center text-[#222]">-</td>
-                        <td className="py-1.5 px-1 text-center text-[#222]">-</td>
-                        <td className="py-1.5 px-1 text-[#222]">Opening Balance</td>
-                        <td className="py-1.5 px-1 text-center text-[#222]">-</td>
-                        <td className="py-1.5 px-1 text-center text-[#222]">-</td>
-                        <td className="py-1.5 px-1 text-center text-[#222]">-</td>
-                        <td className="py-1.5 px-2 text-right text-[#222]">7,49,725.57</td>
+                      <tr className="border-b border-[#e5e7eb]">
+                        <td className="py-1 px-1 text-center text-[#222]">-</td>
+                        <td className="py-1 px-1 text-center text-[#222]">-</td>
+                        <td className="py-1 px-1 text-[#222]">Opening Balance</td>
+                        <td className="py-1 px-1 text-center text-[#222]">-</td>
+                        <td className="py-1 px-1 text-center text-[#222]">-</td>
+                        <td className="py-1 px-1 text-center text-[#222]">-</td>
+                        <td className="py-1 px-2 text-right text-[#222]">7,49,725.57</td>
                       </tr>
                     )}
                     {page.transactions.map((t, idx) => (
-                      <tr key={t.id} className="border-b border-[#e2e2e2] align-top">
-                        <td className="py-1.5 px-1 text-[#222]">{pageIndex === 0 ? idx + 1 : idx + 1 + PAGE_1_MAX + (pageIndex - 1) * MIDDLE_PAGE_MAX}</td>
-                        <td className="py-1.5 px-1 text-[#222] whitespace-nowrap">{t.date}</td>
-                        <td className="py-1.5 px-1 text-[#222] break-words pr-2 leading-[1.3]">{t.description}</td>
-                        <td className="py-1.5 px-1 text-[#222] break-words">{t.refNo}</td>
-                        <td className="py-1.5 px-1 text-right text-[#222] whitespace-nowrap">{t.debit}</td>
-                        <td className="py-1.5 px-1 text-right text-[#222] whitespace-nowrap">{t.credit}</td>
-                        <td className="py-1.5 px-2 text-right text-[#222] whitespace-nowrap">{t.balance}</td>
+                      <tr key={t.id} className="border-b border-[#e5e7eb] align-top">
+                        <td className="py-1 px-1 text-[#222]">{pageIndex === 0 ? idx + 1 : idx + 1 + PAGE_1_MAX + (pageIndex - 1) * MIDDLE_PAGE_MAX}</td>
+                        <td className="py-1 px-1 text-[#222] whitespace-nowrap">{t.date}</td>
+                        <td className="py-1 px-1 text-[#222] break-words pr-2 leading-[1.3]">{t.description}</td>
+                        <td className="py-1 px-1 text-[#222] break-words">{t.refNo}</td>
+                        <td className="py-1 px-1 text-right text-[#222] whitespace-nowrap">{t.debit}</td>
+                        <td className="py-1 px-1 text-right text-[#222] whitespace-nowrap">{t.credit}</td>
+                        <td className="py-1 px-2 text-right text-[#222] whitespace-nowrap">{t.balance}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
+                  </>
+                )}
               </div>
 
-              {pageIndex === pages.length - 1 && (
+              {page.isSummary && (
                 <div className="mt-8 text-center text-[12px] text-[#222]">
                   <div className="font-[600] text-[14px] mb-2">End of Statement</div>
                   <div className="mb-[2px]">Any discrepancy in the statement should be brought to the notice of Kotak Mahindra Bank Ltd. within</div>
@@ -237,7 +242,7 @@ export default function KotakBankStatementGenerator() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-[#e2e2e2]">
+                      <tr className="border-b border-[#e5e7eb]">
                         <td className="py-2 px-3 text-[#222]">Savings Account (SA):</td>
                         <td className="py-2 px-3 text-[#222]">7,49,725.57</td>
                         <td className="py-2 px-3 text-[#222]">9,83,404.47</td>
@@ -248,13 +253,13 @@ export default function KotakBankStatementGenerator() {
                   <div className="bg-[#ed1b24] text-white text-center py-2 text-[15px]">
                     For assistance, reach out to us at:
                   </div>
-                  <div className="flex justify-between items-center px-8 py-5 border border-[#e2e2e2] text-[12px]">
-                    <div className="text-center w-1/3 border-r border-[#e2e2e2]">
+                  <div className="flex justify-between items-center px-8 py-5 border border-[#e5e7eb] text-[12px]">
+                    <div className="text-center w-1/3 border-r border-[#e5e7eb]">
                       <div className="text-[#222] mb-1">Contact Us</div>
                       <div className="font-bold text-[#222]">1800 4100</div>
                       <div className="text-[#888] mt-1">(Toll-free number)</div>
                     </div>
-                    <div className="text-center w-1/3 border-r border-[#e2e2e2] px-4">
+                    <div className="text-center w-1/3 border-r border-[#e5e7eb] px-4">
                       <div className="text-[#222] mb-1">Branch Address</div>
                       <div className="text-[#222]">3-6 Main Road, Mupkal-503218, Telangana, India</div>
                     </div>
