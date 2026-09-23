@@ -6,32 +6,32 @@ import remarkGfm from 'remark-gfm';
 const templates = [
   {
     id: 'sanction',
-    name: '1. Sanction Letter - Financial & Academic Leave Approval (BIOSPAIN 2026)',
+    name: '1. Sanction Letter - Financial & Academic Leave Approval (AMP 2026)',
     data: {
       referenceNumber: 'PALAMURU/2026/PHD/EVEN&CONF/148',
-      date: '11/09/2026',
+      date: '22/09/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
-**Mr. RAGHU KUDALA**  
-**Ph.D. Scholar, School of Chemical and Biotechnology (SCBT)**  
-**Student ID: SU24010825**
+**Mr. SUDHEER KUMAR SHAPURAM**  
+**Ph.D. Scholar, Department of Microbiology**  
+**Student ID: PU24010850**
 
-**Subject: Financial Sanction and Academic Leave Approval for International Conference – Spain**
+**Subject: Financial Sanction and Academic Leave Approval for International Symposium – France**
 
-This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU24010825**, is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **PALAMURU Deemed to be University**, Mahabubnagar, Telangana, India.
+This is to certify that **Mr. SUDHEER KUMAR SHAPURAM**, holding **Student ID: PU24010850**, is a bonafide **Ph.D. Scholar in the Department of Microbiology** at **Palamuru University**, Mahabubnagar, Telangana, India.
 
-The University hereby sanctions a **financial assistance of ₹2,50,000/- (Rupees Two Lakhs Fifty Thousand Only)** in favor of Mr. RAGHU KUDALA to support his academic travel and related expenses for attending the **BIOSPAIN 2026 Conference** in **Spain**.
+The University hereby sanctions a **financial assistance of ₹1,25,000/- (Rupees One Lakh Twenty-Five Thousand Only)** in favor of Mr. SUDHEER KUMAR SHAPURAM to support his academic travel and related expenses for attending the **9th International Symposium on Antimicrobial Peptides (AMP 2026)** in **Besançon, France**.
 
-The conference is scheduled to be held from **September 29, 2026, to October 1, 2026**, in **Bilbao, Spain**.
+The symposium is scheduled to be held from **18th November 2026 to 20th November 2026**, in **Besançon, France**.
 
-He has been granted **leave** for the period from **27th September 2026 to 5th October 2026** and is required to **return and resume his Ph.D. studies** at PALAMURU Deemed to be University.
+He has been granted **leave** for the period from **16th November 2026 to 22nd November 2026** and is required to **return and resume his Ph.D. studies** at Palamuru University.
 
 The above financial sanction and leave approval have been granted after due consideration. The University has **no objection** to his participation in the above-mentioned academic event.
 
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 11/09/2026
+**Date:** 22/09/2026
 
 &nbsp;
 &nbsp;
@@ -39,34 +39,33 @@ This letter is issued at the request of the student for **visa and other officia
 &nbsp;
 
 *(Registrar / Dean / Director – Research)*  
-**PALAMURU Deemed to be University**`,
-      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
+**Palamuru University**`,
       isHTML: false,
     }
   },
   {
     id: 'noc',
-    name: '2. No Objection Certificate (NOC) - BIOSPAIN 2026, Spain',
+    name: '2. No Objection Certificate (NOC) - AMP 2026, France',
     data: {
       referenceNumber: 'PALAMURU/2026/PHD/REG/115',
-      date: '11/09/2026',
+      date: '22/09/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `To  
-**The Consulate General of Spain**  
+**The Consulate General of France**  
 **Mumbai, India**
 
-**Subject: No Objection Certificate for Academic Conference Attendance in Spain**
+**Subject: No Objection Certificate for Academic Symposium Attendance in France**
 
-This is to certify that **Mr. RAGHU KUDALA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), PALAMURU Deemed to be University**.
+This is to certify that **Mr. SUDHEER KUMAR SHAPURAM** is a bonafide **Ph.D. Scholar** at the **Department of Microbiology, Palamuru University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU24010825** and **Passport No.: AU931922**. His doctoral research is related to the poster presentation titled **““Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in the Department of Microbiology**, with **Student ID: PU24010850** and **Passport No.: AU931922**. His doctoral research is related to the presentation titled **“Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens.”**
 
-The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at PALAMURU Deemed to be University upon completion of the conference**.
+The University has **no objection to his travel to France** to attend the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, scheduled from **18th November – 20th November 2026** in **Besançon, France**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Palamuru University upon completion of the symposium**.
 
 This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 11/09/2026
+**Date:** 22/09/2026
 
 &nbsp;
 &nbsp;
@@ -74,8 +73,7 @@ This certificate is issued at his request for **visa and official purposes**.
 &nbsp;
 
 *(Registrar / Dean)*  
-**PALAMURU Deemed to be University**`,
-      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
+**Palamuru University**`,
       isHTML: false,
     }
   },
@@ -84,11 +82,11 @@ This certificate is issued at his request for **visa and official purposes**.
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: 'PALAMURU/2026/PHD/REG/118',
-      date: '11/09/2026',
+      date: '22/09/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. RAGHU KUDALA**, bearing **Student ID: SU24010825** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **PALAMURU Deemed to be University**.
+This is to certify that **Mr. SUDHEER KUMAR SHAPURAM**, bearing **Student ID: PU24010850** is a bonafide **Ph.D. Scholar in the Department of Microbiology** at **Palamuru University**.
 
 He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
 
@@ -97,7 +95,7 @@ The student is provided **hostel accommodation within the University campus**, a
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 11/09/2026
+**Date:** 22/09/2026
 
 &nbsp;
 &nbsp;
@@ -105,30 +103,29 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 &nbsp;
 
 *(Registrar / Dean / Director – Research)*  
-**PALAMURU Deemed to be University**`,
-      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
+**Palamuru University**`,
       isHTML: false,
     }
   },
   {
     id: 'hotel',
-    name: '4. Hotel / Accommodation Confirmation - RAGHU KUDALA',
+    name: '4. Hotel / Accommodation Confirmation - SUDHEER KUMAR',
     data: {
       referenceNumber: 'PALAMURU/2026/PHD/HOSTEL/108',
-      date: '11/09/2026',
+      date: '22/09/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
-This is to certify that **Mr. RAGHU KUDALA**, holding **Student ID: SU24010825**, is a bonafide Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT) at PALAMURU Deemed to be University, Mahabubnagar, Telangana, India.
+This is to certify that **Mr. SUDHEER KUMAR SHAPURAM**, holding **Student ID: PU24010850**, is a bonafide Ph.D. Scholar in the Department of Microbiology at Palamuru University, Mahabubnagar, Telangana, India.
 
-He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
+He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
 
 This is to officially confirm that the student is provided with **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the entire duration of his Ph.D. program.
 
-This certificate is issued upon his request for official purposes, including visa processing for attending BIOSPAIN 2026 (Bilbao, Spain) and other academic requirements.
+This certificate is issued upon his request for official purposes, including visa processing for attending AMP 2026 (Besançon, France) and other academic requirements.
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 11/09/2026
+**Date:** 22/09/2026
 
 &nbsp;
 &nbsp;
@@ -136,14 +133,13 @@ This certificate is issued upon his request for official purposes, including vis
 &nbsp;
 
 *(Registrar / Dean / Director – Research)*  
-**PALAMURU Deemed to be University**`,
-      footerNote: 'PALAMURU Deemed to be University, Thirumalaisamudram, Mahabubnagar - 509 001, Tamil Nadu, India.',
+**Palamuru University**`,
       isHTML: false,
     }
   },
   {
     id: 'receipt',
-    name: '5. Fee Receipt (Student Copy) - RAGHU KUDALA',
+    name: '5. Fee Receipt (Student Copy) - SUDHEER KUMAR',
     data: {
       isHTML: true,
       referenceNumber: '',
@@ -158,7 +154,7 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="w-[130px] font-semibold text-slate-700">Receipt No.</td>
         <td class="w-3">:</td>
-        <td class="font-bold text-slate-900">PALAMURU/HOSTEL/2026-27/0912</td>
+        <td class="font-bold text-slate-900">PU/HOSTEL/2026-27/0912</td>
         <td class="w-[110px] font-semibold text-slate-700">Date</td>
         <td class="w-3">:</td>
         <td class="font-bold text-slate-900">01/06/2026</td>
@@ -166,15 +162,15 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Student Name</td>
         <td>:</td>
-        <td class="font-bold uppercase text-slate-900">RAGHU KUDALA</td>
+        <td class="font-bold uppercase text-slate-900">SUDHEER KUMAR SHAPURAM</td>
         <td class="font-semibold text-slate-700">Student ID No.</td>
         <td>:</td>
-        <td class="font-bold text-slate-900">SU24010825</td>
+        <td class="font-bold text-slate-900">PU24010850</td>
       </tr>
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Father/Guardian</td>
         <td>:</td>
-        <td class="font-bold uppercase text-slate-900">POSHETTY KUDALA</td>
+        <td class="font-bold uppercase text-slate-900">SAPURAM RAMULU</td>
         <td class="font-semibold text-slate-700">Academic Year</td>
         <td>:</td>
         <td class="font-bold text-slate-900">2026-27</td>
@@ -182,12 +178,12 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Course / Branch</td>
         <td>:</td>
-        <td class="font-bold text-slate-900" colspan="4">Ph.D. School of Chemical and Biotechnology (SCBT)</td>
+        <td class="font-bold text-slate-900" colspan="4">Ph.D. Department of Microbiology</td>
       </tr>
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Hostel / Block</td>
         <td>:</td>
-        <td class="font-bold text-slate-900" colspan="4">Integrated Chemistry Boys Hostel - Room No. 105</td>
+        <td class="font-bold text-slate-900" colspan="4">Research Scholars Block - Room No. 201</td>
       </tr>
     </tbody>
   </table>
@@ -239,7 +235,6 @@ This certificate is issued upon his request for official purposes, including vis
     </div>
   </div>
 </div>`,
-      footerNote: 'Palamuru University, Mahabubnagar - 509 001, Telangana State, India.',
     }
   }
 ];
