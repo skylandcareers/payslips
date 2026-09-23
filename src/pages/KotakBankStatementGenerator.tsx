@@ -126,10 +126,10 @@ export default function KotakBankStatementGenerator() {
 
       <div className="flex flex-col gap-8 print:gap-0">
         {pages.map((page, pageIndex) => (
-          <div key={pageIndex} className="w-[210mm] min-h-[297mm] bg-white shadow-xl print:shadow-none print:break-after-page relative" style={{ fontFamily: 'Arial, Helvetica, sans-serif', boxSizing: 'border-box' }}>
+          <div key={pageIndex} className="w-[210mm] min-h-[297mm] bg-white shadow-xl print:shadow-none print:break-after-page relative" style={{ fontFamily: 'Arial, Helvetica, sans-serif', boxSizing: 'border-box', WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
             
             {page.isFirst && (
-              <img src="/kotak-logo.jpg" alt="Kotak Mahindra Bank" className="w-full" style={{ height: '36mm', objectFit: 'cover' }} />
+              <img src="/kotak_img_0.jpg" alt="Kotak Mahindra Bank" className="w-full h-auto block" />
             )}
 
             <div className="px-[12mm] py-[8mm] text-[#222]">
@@ -155,14 +155,14 @@ export default function KotakBankStatementGenerator() {
                       </div>
                     </div>
                     <div className="w-[45%] flex justify-end">
-                      <table className="text-[13px] leading-[1.7] w-full max-w-[280px]">
+                      <table className="text-[13px] leading-[1.7] w-auto ml-auto mr-0">
                         <tbody>
-                          <tr><td className="text-[#888] w-[45%]">Account No.</td><td className="font-bold text-right">2511836505</td></tr>
-                          <tr><td className="text-[#888]">Account Type</td><td className="font-bold text-right">Savings</td></tr>
-                          <tr><td className="text-[#888]">Branch</td><td className="font-bold text-right">Mupkal</td></tr>
-                          <tr><td className="text-[#888]">Account Status</td><td className="font-bold text-right">Active</td></tr>
-                          <tr><td className="text-[#888]">Nominee Registered</td><td className="font-bold text-right">Yes</td></tr>
-                          <tr><td className="text-[#888]">Currency</td><td className="font-bold text-right">INDIAN RUPEE</td></tr>
+                          <tr><td className="text-[#888] pr-4">Account No.</td><td className="font-bold text-[#222]">2511836505</td></tr>
+                          <tr><td className="text-[#888] pr-4">Account Type</td><td className="font-bold text-[#222]">Savings</td></tr>
+                          <tr><td className="text-[#888] pr-4">Branch</td><td className="font-bold text-[#222]">Mupkal</td></tr>
+                          <tr><td className="text-[#888] pr-4">Account Status</td><td className="font-bold text-[#222]">Active</td></tr>
+                          <tr><td className="text-[#888] pr-4">Nominee Registered</td><td className="font-bold text-[#222]">Yes</td></tr>
+                          <tr><td className="text-[#888] pr-4">Currency</td><td className="font-bold text-[#222]">INDIAN RUPEE</td></tr>
                         </tbody>
                       </table>
                     </div>
@@ -179,15 +179,13 @@ export default function KotakBankStatementGenerator() {
               <div className="w-full pb-[25mm]">
                 {!page.isSummary && (
                   <>
-                <div className="bg-[#ed1b24] text-white py-1.5 text-[15px] font-normal mb-0 pl-[12mm]" style={{ marginLeft: '-12mm', marginRight: '-12mm', width: '210mm' }}>
-                  <div className="text-center w-full" style={{ paddingRight: '12mm' }}>Savings Account Transactions</div>
-                </div>
+                <div className="bg-[#ed1b24] text-white py-1.5 text-[15px] font-normal mb-0 w-full text-center">Savings Account Transactions</div>
                 <table className="w-full text-[11px] border-collapse" style={{ tableLayout: 'fixed' }}>
                   <thead>
                     <tr className="bg-[#9fa0a2] text-white">
                       <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '4%' }}>#</th>
-                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '12%' }}>Date</th>
-                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '31%' }}>Description</th>
+                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '11%' }}>Date</th>
+                      <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '32%' }}>Description</th>
                       <th className="py-1 px-1 text-left font-normal border-r border-white" style={{ width: '17%' }}>Chq/Ref. No.</th>
                       <th className="py-1 px-1 text-right font-normal border-r border-white" style={{ width: '12%' }}>Withdrawal (Dr.)</th>
                       <th className="py-1 px-1 text-right font-normal border-r border-white" style={{ width: '12%' }}>Deposit (Cr.)</th>
@@ -210,8 +208,8 @@ export default function KotakBankStatementGenerator() {
                       <tr key={t.id} className="border-b border-[#e5e7eb] align-top">
                         <td className="py-1 px-1 text-[#222]">{pageIndex === 0 ? idx + 1 : idx + 1 + PAGE_1_MAX + (pageIndex - 1) * MIDDLE_PAGE_MAX}</td>
                         <td className="py-1 px-1 text-[#222] whitespace-nowrap">{t.date}</td>
-                        <td className="py-1 px-1 text-[#222] break-words pr-2 leading-[1.3]">{t.description}</td>
-                        <td className="py-1 px-1 text-[#222] break-words">{t.refNo}</td>
+                        <td className="py-1 px-1 text-[#222] break-all pr-1 leading-tight">{t.description}</td>
+                        <td className="py-1 px-1 text-[#222] break-all">{t.refNo}</td>
                         <td className="py-1 px-1 text-right text-[#222] whitespace-nowrap">{t.debit}</td>
                         <td className="py-1 px-1 text-right text-[#222] whitespace-nowrap">{t.credit}</td>
                         <td className="py-1 px-2 text-right text-[#222] whitespace-nowrap">{t.balance}</td>
@@ -236,8 +234,8 @@ export default function KotakBankStatementGenerator() {
                         <th colSpan={3} className="bg-[#ed1b24] text-white text-center py-2 font-normal text-[15px]">Account Summary</th>
                       </tr>
                       <tr className="bg-[#9fa0a2] text-white">
-                        <th className="py-1.5 px-3 font-normal font-[13px] border-r border-white w-[50%]">Particulars</th>
-                        <th className="py-1.5 px-3 font-normal font-[13px] border-r border-white w-[25%]">Opening Balance</th>
+                        <th className="py-1.5 px-3 font-normal font-[13px] border-r border-white border-r w-[50%]">Particulars</th>
+                        <th className="py-1.5 px-3 font-normal font-[13px] border-r border-white border-r w-[25%]">Opening Balance</th>
                         <th className="py-1.5 px-3 font-normal font-[13px] w-[25%]">Closing Balance</th>
                       </tr>
                     </thead>

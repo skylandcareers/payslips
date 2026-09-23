@@ -125,7 +125,7 @@ export default function TGBStatementGenerator() {
 
       <div className="flex flex-col gap-8 print:gap-0">
         {pages.map((page, pageIndex) => (
-          <div key={pageIndex} className="w-[210mm] min-h-[297mm] bg-white shadow-xl print:shadow-none print:break-after-page relative " style={{ fontFamily: 'Arial, sans-serif' }}>
+          <div key={pageIndex} className="w-[210mm] min-h-[297mm] bg-white shadow-xl print:shadow-none print:break-after-page relative " style={{ fontFamily: 'Arial, sans-serif', WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
             <div className="px-[12mm] py-[12mm] text-[#222]">
               {page.isFirst && (
                 <>

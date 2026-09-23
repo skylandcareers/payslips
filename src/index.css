@@ -297,9 +297,7 @@ All colors MUST be HSL.
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
-  @page {
-    margin: 0.5cm;
-  }
+  @page { size: A4; margin: 0; }
 }
 
 @media print {
