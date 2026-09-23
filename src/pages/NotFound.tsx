@@ -1,6 +1,5 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
-import Header from "@/components/Header";
 
 const NotFound = () => {
   const location = useLocation();
@@ -11,7 +10,6 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <Header />
       <div className="flex min-h-screen items-center justify-center pt-20">
         <div className="text-center">
           <h1 className="mb-4 text-6xl font-bold text-white">404</h1>

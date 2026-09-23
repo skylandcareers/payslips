@@ -1,13 +1,64 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Download, ArrowLeft, Printer, Loader2 } from 'lucide-react';
+import { Download, ArrowLeft, Printer, Loader2, Upload } from 'lucide-react';
 import { toast } from 'sonner';
 import { SBITransaction, defaultAccountDetails, defaultTransactions } from '../data/sbiData';
 
 export default function SBIStatementGenerator() {
   const [isExporting, setIsExporting] = useState(false);
   const accountDetails = defaultAccountDetails;
-  const transactions = defaultTransactions;
+  const [transactions, setTransactions] = useState(defaultTransactions);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const text = event.target?.result as string;
+        const rows = text.split('\n').filter(row => row.trim().length > 0);
+        
+        let startIndex = 0;
+        if (rows[0].toLowerCase().includes('date') || rows[0].toLowerCase().includes('balance')) {
+          startIndex = 1;
+        }
+
+        const newTransactions: SBITransaction[] = [];
+        let currentPage = 1;
+        
+        for (let i = startIndex; i < rows.length; i++) {
+          const cols = rows[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || rows[i].split(',');
+          
+          if (cols.length >= 4) {
+            // Distribute across pages artificially or put them all on page 1 for now (the UI handles it)
+            if (i > 1 && i % 25 === 0) currentPage++;
+
+            newTransactions.push({
+              page: currentPage,
+              date: cols[0]?.replace(/"/g, '').trim() || '',
+              valueDate: cols[0]?.replace(/"/g, '').trim() || '', // Duplicate Date for ValueDate
+              descriptionLines: [cols[1]?.replace(/"/g, '').trim() || ''],
+              refLines: [cols[2]?.replace(/"/g, '').trim() || ''],
+              branchCode: "04392",
+              debit: cols[3]?.replace(/"/g, '').trim() || '',
+              credit: cols[4]?.replace(/"/g, '').trim() || '',
+              balance: cols[5]?.replace(/"/g, '').trim() || ''
+            });
+          }
+        }
+        
+        setTransactions(newTransactions);
+        toast.success(`Successfully loaded ${newTransactions.length} transactions from CSV!`);
+      } catch (err) {
+        toast.error('Failed to parse CSV file. Please ensure it has columns: Date, Description, RefNo, Debit, Credit, Balance');
+      }
+    };
+    reader.readAsText(file);
+    if (fileInputRef.current) { fileInputRef.current.value = ''; }
+  };
 
   const handlePrint = () => {
     window.print();

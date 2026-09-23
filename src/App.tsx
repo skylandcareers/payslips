@@ -61,6 +61,8 @@ import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGener
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 import UnionBankStatementGenerator from "./pages/UnionBankStatementGenerator";
 import SBIStatementGenerator from "./pages/SBIStatementGenerator";
+import KotakBankStatementGenerator from "./pages/KotakBankStatementGenerator";
+import TGBStatementGenerator from "./pages/TGBStatementGenerator";
 
 
 const queryClient = new QueryClient();
@@ -134,6 +136,10 @@ const App = () => (
 
           <Route path="/sbi" element={<SBIStatementGenerator />} />
           <Route path="/sbi/statement" element={<SBIStatementGenerator />} />
+          <Route path="/kotak" element={<KotakBankStatementGenerator />} />
+          <Route path="/kotak/statement" element={<KotakBankStatementGenerator />} />
+          <Route path="/tgb" element={<TGBStatementGenerator />} />
+          <Route path="/tgb/statement" element={<TGBStatementGenerator />} />
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

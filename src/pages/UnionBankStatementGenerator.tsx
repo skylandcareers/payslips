@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Download, ArrowLeft, Printer, Loader2 } from 'lucide-react';
+import { Download, ArrowLeft, Printer, Loader2, Upload } from 'lucide-react';
 import { toast } from 'sonner';
 import {
   BankTransaction,
@@ -21,12 +21,57 @@ const SUMMARY_PAGE_MAX = 22;
 export default function UnionBankStatementGenerator() {
   const [isExporting, setIsExporting] = useState(false);
   const accountDetails = defaultAccountDetails;
-  const transactions = defaultTransactions;
+  const [transactions, setTransactions] = useState(defaultTransactions);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const linkedLoans = defaultLinkedLoans;
   const linkedCasa = defaultLinkedCasa;
   const linkedDeposits = defaultLinkedDeposits;
   const linkedLockers = defaultLinkedLockers;
   const digitalProducts = defaultDigitalProducts;
+
+  
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const text = event.target?.result as string;
+        const rows = text.split('\n').filter(row => row.trim().length > 0);
+        
+        let startIndex = 0;
+        if (rows[0].toLowerCase().includes('date') || rows[0].toLowerCase().includes('balance')) {
+          startIndex = 1;
+        }
+
+        const newTransactions: BankTransaction[] = [];
+        
+        for (let i = startIndex; i < rows.length; i++) {
+          const cols = rows[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || rows[i].split(',');
+          
+          if (cols.length >= 4) {
+            newTransactions.push({
+              si: (i).toString(),
+              date: cols[0]?.replace(/"/g, '').trim() || '',
+              particulars: cols[1]?.replace(/"/g, '').trim() || '',
+              chqNum: cols[2]?.replace(/"/g, '').trim() || '',
+              withdrawal: cols[3]?.replace(/"/g, '').trim() || '',
+              deposit: cols[4]?.replace(/"/g, '').trim() || '',
+              balance: cols[5]?.replace(/"/g, '').trim() || ''
+            });
+          }
+        }
+        
+        setTransactions(newTransactions);
+        toast.success(`Successfully loaded ${newTransactions.length} transactions from CSV!`);
+      } catch (err) {
+        toast.error('Failed to parse CSV file. Please ensure it has columns: Date, Description, RefNo, Debit, Credit, Balance');
+      }
+    };
+    reader.readAsText(file);
+    if (fileInputRef.current) { fileInputRef.current.value = ''; }
+  };
 
   const handlePrint = () => {
     window.print();
