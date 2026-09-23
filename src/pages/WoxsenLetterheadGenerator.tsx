@@ -38,7 +38,7 @@ This letter is issued at the request of the student for **visa and other officia
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **Woxsen University**`,
       footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -72,7 +72,7 @@ This certificate is issued at his request for **visa and official purposes**.
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean)*  
+*(Registrar / Director - Research)*  
 **Woxsen University**`,
       footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -102,7 +102,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **Woxsen University**`,
       footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }
@@ -132,7 +132,7 @@ This certificate is issued upon his request for official purposes, including vis
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **Woxsen University**`,
       footerAddress: 'Campus Address:Woxsen University, Kamkole, Sadasivpet, Sangareddy District, Hyderabad - 502345, Telangana, India.',
     }

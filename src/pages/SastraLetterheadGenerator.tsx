@@ -38,7 +38,7 @@ This letter is issued at the request of the student for **visa and other officia
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
@@ -59,7 +59,7 @@ This letter is issued at the request of the student for **visa and other officia
 
 This is to certify that **Mr. RAGHU KUDALA** is a bonafide **Ph.D. Scholar** at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU24010825** and **Passport No.: AU931922**. His doctoral research is related to the poster presentation titled **““Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in the School of Chemical and Biotechnology**, with **Student ID: SU24010825** and **Passport No.: U9813918**. His doctoral research is related to the poster presentation titled **““Advanced Biotechnological Applications in Crop Genetics and Biochemical Engineering.”**
 
 The University has **no objection to his travel to Spain** to attend the **BIOSPAIN 2026 Conference**, scheduled from **29 September – 01 October 2026** in **Bilbao, Spain**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at SASTRA Deemed to be University upon completion of the conference**.
 
@@ -73,7 +73,7 @@ This certificate is issued at his request for **visa and official purposes**.
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean)*  
+*(Registrar / Director - Research)*  
 **SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
@@ -90,7 +90,7 @@ This certificate is issued at his request for **visa and official purposes**.
 
 This is to certify that **Mr. RAGHU KUDALA**, bearing **Student ID: SU24010825** is a bonafide **Ph.D. Scholar in the School of Chemical and Biotechnology (SCBT)** at **SASTRA Deemed to be University**.
 
-He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
 The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
 
@@ -104,7 +104,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,
@@ -135,7 +135,7 @@ This certificate is issued upon his request for official purposes, including vis
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **SASTRA Deemed to be University**`,
       footerNote: 'SASTRA Deemed to be University, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.',
       isHTML: false,

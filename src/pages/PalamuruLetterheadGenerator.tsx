@@ -8,7 +8,7 @@ const templates = [
     id: 'sanction',
     name: '1. Sanction Letter - Financial & Academic Leave Approval (AMP 2026)',
     data: {
-      referenceNumber: 'PALAMURU/2026/PHD/EVEN&CONF/148',
+      referenceNumber: 'PU/2026/PHD/EVEN&CONF/148',
       date: '22/09/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
@@ -38,7 +38,7 @@ This letter is issued at the request of the student for **visa and other officia
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **Palamuru University**`,
       isHTML: false,
     }
@@ -47,7 +47,7 @@ This letter is issued at the request of the student for **visa and other officia
     id: 'noc',
     name: '2. No Objection Certificate (NOC) - AMP 2026, France',
     data: {
-      referenceNumber: 'PALAMURU/2026/PHD/REG/115',
+      referenceNumber: 'PU/2026/PHD/REG/115',
       date: '22/09/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `To  
@@ -58,7 +58,7 @@ This letter is issued at the request of the student for **visa and other officia
 
 This is to certify that **Mr. SUDHEER KUMAR SHAPURAM** is a bonafide **Ph.D. Scholar** at the **Department of Microbiology, Palamuru University**.
 
-He is pursuing his **Doctor of Philosophy (Ph.D.) in the Department of Microbiology**, with **Student ID: PU24010850** and **Passport No.: AU931922**. His doctoral research is related to the presentation titled **“Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens.”**
+He is pursuing his **Doctor of Philosophy (Ph.D.) in the Department of Microbiology**, with **Student ID: PU24010850** and **Passport No.: U9813918**. His doctoral research is related to the presentation titled **“Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens.”**
 
 The University has **no objection to his travel to France** to attend the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, scheduled from **18th November – 20th November 2026** in **Besançon, France**. His participation is purely academic and will not affect his Ph.D. programme. He is expected to **resume his research at Palamuru University upon completion of the symposium**.
 
@@ -72,7 +72,7 @@ This certificate is issued at his request for **visa and official purposes**.
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean)*  
+*(Registrar / Director - Research)*  
 **Palamuru University**`,
       isHTML: false,
     }
@@ -81,14 +81,14 @@ This certificate is issued at his request for **visa and official purposes**.
     id: 'bonafide',
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
-      referenceNumber: 'PALAMURU/2026/PHD/REG/118',
+      referenceNumber: 'PU/2026/PHD/REG/118',
       date: '22/09/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
 This is to certify that **Mr. SUDHEER KUMAR SHAPURAM**, bearing **Student ID: PU24010850** is a bonafide **Ph.D. Scholar in the Department of Microbiology** at **Palamuru University**.
 
-He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
 The student is provided **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the duration of his Ph.D. program.
 
@@ -102,7 +102,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **Palamuru University**`,
       isHTML: false,
     }
@@ -111,14 +111,14 @@ This bonafide certificate is issued upon his request for **official purposes**, 
     id: 'hotel',
     name: '4. Hotel / Accommodation Confirmation - SUDHEER KUMAR',
     data: {
-      referenceNumber: 'PALAMURU/2026/PHD/HOSTEL/108',
+      referenceNumber: 'PU/2026/PHD/HOSTEL/108',
       date: '22/09/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
 This is to certify that **Mr. SUDHEER KUMAR SHAPURAM**, holding **Student ID: PU24010850**, is a bonafide Ph.D. Scholar in the Department of Microbiology at Palamuru University, Mahabubnagar, Telangana, India.
 
-He is a regular research scholar of the University and is currently in the **2nd year of his doctoral program** during the academic year **2026–2027**.
+He is a regular research scholar of the University and is currently in the **3rd year of his doctoral program** during the academic year **2026–2027**.
 
 This is to officially confirm that the student is provided with **hostel accommodation within the University campus**, and his stay is officially recognized and permitted by the University for the entire duration of his Ph.D. program.
 
@@ -132,7 +132,7 @@ This certificate is issued upon his request for official purposes, including vis
 &nbsp;
 &nbsp;
 
-*(Registrar / Dean / Director – Research)*  
+*(Registrar / Director – Research)*  
 **Palamuru University**`,
       isHTML: false,
     }
@@ -170,7 +170,7 @@ This certificate is issued upon his request for official purposes, including vis
       <tr class="h-7 align-top">
         <td class="font-semibold text-slate-700">Father/Guardian</td>
         <td>:</td>
-        <td class="font-bold uppercase text-slate-900">SAPURAM RAMULU</td>
+        <td class="font-bold uppercase text-slate-900">SHAPURAM RAMULU</td>
         <td class="font-semibold text-slate-700">Academic Year</td>
         <td>:</td>
         <td class="font-bold text-slate-900">2026-27</td>
@@ -237,16 +237,48 @@ This certificate is issued upon his request for official purposes, including vis
 </div>`,
     }
   }
+  ,
+  {
+    id: 'hod-recommendation',
+    name: '6. HOD Recommendation Letter - SUDHEER KUMAR',
+    data: {
+      referenceNumber: '**F.No.** PU/MICRO/REC/2026/188',
+      date: '**Date:** 22/09/2026',
+      documentTitle: '**RECOMMENDATION LETTER**',
+      bodyText: `**To,**
+**The Visa Officer,**
+**Consulate General of France**
+
+**Subject: Recommendation Letter for Mr. Sudheer Kumar Shapuram**
+
+Dear Sir/Madam,
+
+It is with great pleasure that I write this letter of recommendation in strong support of **Mr. SUDHEER KUMAR SHAPURAM**, who is a dedicated Ph.D. Scholar in the Department of Microbiology at Palamuru University.
+
+I have had the opportunity to closely observe his doctoral research. His work on the *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"* demonstrates significant scientific merit and a high degree of technical competence.
+
+His research abstract has been officially accepted for presentation at the prestigious **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, taking place from **18th to 20th November 2026** at the MSHE in **Besançon, France**. Participating in this global symposium will immensely benefit his academic progression and contribute to our department's ongoing research objectives.
+
+Mr. Sudheer is a scholar of high moral character and integrity. I strongly recommend him for the issuance of the Schengen Visa. We are fully confident that he will strictly adhere to his travel itinerary and return to India promptly to resume his doctoral studies at our university.
+
+Please feel free to contact my office if you require any additional information.
+
+Sincerely,`,
+      isHTML: false,
+    }
+  }
+
 ];
 
 const PalamuruLetterheadGenerator = () => {
   const [activeTab, setActiveTab] = useState<'form' | 'preview'>('form');
   const [isExporting, setIsExporting] = useState(false);
   const [formData, setFormData] = useState(templates[0].data);
+  const [selectedTemplateId, setSelectedTemplateId] = useState(templates[0].id);
 
   const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const template = templates.find(t => t.id === e.target.value);
-    if (template) setFormData(template.data);
+    if (template) { setFormData(template.data); setSelectedTemplateId(template.id); }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -258,7 +290,9 @@ const PalamuruLetterheadGenerator = () => {
     setTimeout(() => { window.print(); setTimeout(() => setIsExporting(false), 1000); }, 100);
   };
 
-  const PageHeader = () => (
+  const PageHeader = () => {
+    if (selectedTemplateId === 'receipt' || selectedTemplateId === 'hod-recommendation') {
+      return (
     <div style={{ padding: '30px 40px 10px 40px', fontFamily: 'Arial, Helvetica, sans-serif' }}>
       <div className="flex items-center justify-center gap-7 pb-2">
         <div className="flex-shrink-0">
@@ -268,8 +302,8 @@ const PalamuruLetterheadGenerator = () => {
           <h1 className="text-[28px] font-black text-[#444444] leading-none tracking-wider mb-2.5 uppercase" style={{ fontFamily: '"Arial Black", Arial, sans-serif', transform: 'scaleY(1.05)', transformOrigin: 'left' }}>
             PALAMURU UNIVERSITY
           </h1>
-          <h2 className="text-[23px] font-semibold text-[#10549c] leading-none tracking-wide mb-2.5">
-            Mahbubnagar, Telangana State
+          <h2 className="text-[18px] font-semibold text-[#10549c] leading-none tracking-wide mb-2.5">
+            Mahbubnagar, Telangana State - 509 001
           </h2>
           <h3 className="text-[18px] font-medium text-[#444444] leading-none tracking-wide">
             Accredited by NAAC with 'B' Grade
@@ -278,17 +312,52 @@ const PalamuruLetterheadGenerator = () => {
       </div>
       <div className="w-full h-[1.5px] bg-[#444444] mt-3" />
     </div>
-  );
+      );
+    }
+    return (
+
+    <div className="w-full text-gray-900 pt-8 px-[15mm]" style={{ fontFamily: 'Verdana, Tahoma, sans-serif' }}>
+      <div className="flex items-center justify-center gap-4 pb-2 w-full">
+        <div className="flex-shrink-0 flex items-center">
+          <img src="/palamuru-logo.png" alt="Palamuru University Logo" className="w-[115px] h-[115px] object-contain" />
+        </div>
+        <div className="flex flex-col items-center justify-center text-center">
+          <h2 className="text-[26px] font-[800] tracking-wide leading-tight">
+            OFFICE OF THE REGISTRAR
+          </h2>
+          <h1 className="text-[26px] font-[800] tracking-wider leading-tight">
+            PALAMURU UNIVERSITY
+          </h1>
+          <h3 className="text-[14px] font-bold leading-tight my-[2px]">
+            (Accredited with Grade 'B' by NAAC)
+          </h3>
+          <h2 className="text-[26px] font-[900] tracking-widest leading-tight">
+            MAHABUBNAGAR
+          </h2>
+        </div>
+      </div>
+      <div className="w-full border-b-[3px] border-black mt-1"></div>
+      <div className="w-full border-b border-black mt-[2px]"></div>
+    </div>
+
+    );
+  };
 
   const PageFooter = () => (
-    <div className="w-full px-[20mm] pb-[12mm] mt-8 font-sans">
-      <div className="w-full h-[2px] bg-[#b31b1b] mb-1.5" />
-      <div className="flex justify-between items-start text-[10.5px] font-bold text-[#b31b1b]">
-        <div className="text-left tracking-wide">
-          MAHABUBNAGAR - 509 001, TELANGANA STATE
+
+    <div className="w-full px-[15mm] pb-[12mm] mt-8 text-black" style={{ fontFamily: 'Verdana, Tahoma, sans-serif' }}>
+      <div className="w-full border-b border-black mb-[1.5px]"></div>
+      <div className="w-full border-b-[2.5px] border-black mb-1.5"></div>
+      <div className="flex flex-col items-center text-[12px] text-gray-900">
+        <div className="tracking-wide text-center">
+          Administrative Building, Palamuru University Campus, Raichur Road, Bandameedipally, Mahabubnagar - Telangana State - 509001 :: E-mail: <span className="underline">registrar@palamuruuniversity.ac.in</span>
         </div>
-        <div className="text-right tracking-wide">
-          WEBSITE: www.palamuruuniversity.ac.in
+        <div className="tracking-wide mt-0.5 flex items-center justify-center gap-2">
+          <span>☎ : 08542-277144</span>
+          <span>::</span>
+          <span>📱 : +91 9676150158</span>
+          <span>::</span>
+          <span>🌐 www.palamuruuniversity.ac.in</span>
         </div>
       </div>
     </div>
@@ -389,16 +458,20 @@ const PalamuruLetterheadGenerator = () => {
 
         {/* Preview */}
         <div className={`${activeTab === 'preview' ? 'flex' : 'hidden'} md:flex flex-1 bg-slate-100/50 overflow-y-auto print:overflow-visible p-4 md:p-8 justify-center print:p-0 print:bg-white print:block print:!flex`}>
-          <div className="w-full max-w-[210mm] bg-white shadow-xl print:shadow-none print-content-container print:max-w-none page-container" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
-            <table className="w-full h-full border-collapse border-spacing-0 table-fixed p-4">
+          <div className="w-full max-w-[210mm] bg-white shadow-xl print:shadow-none print-content-container print:max-w-none page-container relative overflow-hidden" style={{ fontFamily: 'Verdana, Tahoma, sans-serif' }}>
+            {/* Background Watermark */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.08]">
+              <img src="/palamuru-logo.png" alt="Watermark" className="w-[450px] h-[450px] object-contain" />
+            </div>
+            <table className="w-full h-full border-collapse border-spacing-0 table-fixed p-4 relative z-10">
               <thead><tr><td><PageHeader /></td></tr></thead>
               <tbody className="h-full align-top">
                 <tr>
-                  <td className="align-top px-[20mm] pt-6">
+                  <td className="align-top px-[15mm] pt-6">
                     <div className="min-h-[600px] text-black text-[13.5px] font-sans leading-[1.5]">
 
                       {(formData.referenceNumber || formData.date) && (
-                        <div className="flex justify-between items-start mb-8 text-[14px]">
+                        <div className="flex justify-between items-start mb-10 text-[13.5px] font-bold" style={{ fontFamily: 'Verdana, Tahoma, sans-serif' }}>
                           <div><ReactMarkdown components={{ p: React.Fragment }}>{formData.referenceNumber.replace(/\n/g, '  \n')}</ReactMarkdown></div>
                           <div><ReactMarkdown components={{ p: React.Fragment }}>{formData.date.replace(/\n/g, '  \n')}</ReactMarkdown></div>
                         </div>
@@ -411,7 +484,7 @@ const PalamuruLetterheadGenerator = () => {
                       )}
 
                       {formData.bodyText && (
-                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-[0.65rem] max-w-none leading-[1.5] prose-strong:font-bold prose-strong:text-black text-black text-[13.5px] text-justify">
+                        <div className="mb-6 prose prose-p:mt-0 prose-p:mb-[0.65rem] max-w-none leading-[1.5] prose-strong:font-bold prose-strong:text-black text-black text-[14.5px] text-justify" style={{ fontFamily: 'Verdana, Tahoma, sans-serif' }}>
                           {(formData as { isHTML?: boolean }).isHTML ? (
                             <div dangerouslySetInnerHTML={{ __html: formData.bodyText }} />
                           ) : (

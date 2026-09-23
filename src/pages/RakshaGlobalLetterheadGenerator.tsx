@@ -148,7 +148,7 @@ Yours faithfully,`,
       recipientAddress: `Consulate General of Spain\nMumbai, India`,
       subject: "SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE UNDERTAKING FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)",
       salutation: "Dear Sir/Madam,",
-      bodyText: `I, **Mrs. POSANI KUDALA**, an Indian citizen, hereby confirm that I am the biological mother and financial sponsor of **Mr. RAGHU KUDALA** (Passport No.: AU931922), who is a 2nd Year Ph.D. Research Scholar pursuing his doctoral degree at SASTRA University, India.
+      bodyText: `I, **Mrs. POSANI KUDALA**, an Indian citizen, hereby confirm that I am the biological mother and financial sponsor of **Mr. RAGHU KUDALA** (Passport No.: U9813918), who is a 2nd Year Ph.D. Research Scholar pursuing his doctoral degree at SASTRA University, India.
 
 I am the Partner of **M/S RAKSHA GLOBAL ENTERPRISES**, a registered wholesale and retail business in Telangana, India (GSTIN: 36ABMFR7406E1Z2). My enterprise is active, generates a stable income, and I regularly file my Income Tax Returns.
 

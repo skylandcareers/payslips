@@ -138,7 +138,7 @@ Thanking you.`,
       recipientAddress: "The Consulate General of Spain\nMumbai, India",
       subject: "SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)",
       salutation: "Dear Sir / Madam,",
-      bodyText: `I, **Mr. POSHETTY KUDALA**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and financial sponsor** of **Mr. RAGHU KUDALA** (Student ID: **SU24010825**, Passport No: **AU931922**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
+      bodyText: `I, **Mr. POSHETTY KUDALA**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and financial sponsor** of **Mr. RAGHU KUDALA** (Student ID: **SU24010825**, Passport No: **U9813918**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
 
 I am the **Proprietor of HOME FURNITURE AND ENTERPRISE**, a registered business in Nandyal, Andhra Pradesh, India (**GSTIN: 37COOPD8437E6ZK**, **PAN: CQLPR8612J**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.
 
