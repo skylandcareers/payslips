@@ -253,17 +253,24 @@ This certificate is issued upon his request for official purposes, including vis
 
 Dear Sir/Madam,
 
-It is with great pleasure that I write this letter of recommendation in strong support of **Mr. SUDHEER KUMAR SHAPURAM**, who is a dedicated Ph.D. Scholar in the Department of Microbiology at Palamuru University.
+I am writing in strong support of **Mr. SUDHEER KUMAR SHAPURAM**, a dedicated Ph.D. Scholar in the Department of Microbiology at Palamuru University. I have closely supervised his doctoral research, specifically his work on the *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil,"* which demonstrates significant scientific merit and high technical competence.
 
-I have had the opportunity to closely observe his doctoral research. His work on the *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"* demonstrates significant scientific merit and a high degree of technical competence.
+His research abstract has been officially accepted for presentation at the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, scheduled from **18th to 20th November 2026** in **Besançon, France**. Participating in this prestigious global symposium is highly beneficial for his academic progression and our department's ongoing research objectives.
 
-His research abstract has been officially accepted for presentation at the prestigious **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, taking place from **18th to 20th November 2026** at the MSHE in **Besançon, France**. Participating in this global symposium will immensely benefit his academic progression and contribute to our department's ongoing research objectives.
-
-Mr. Sudheer is a scholar of high moral character and integrity. I strongly recommend him for the issuance of the Schengen Visa. We are fully confident that he will strictly adhere to his travel itinerary and return to India promptly to resume his doctoral studies at our university.
+He is a scholar of high moral character and integrity. I strongly recommend him for the issuance of a Schengen Visa. We are fully confident that he will strictly adhere to his travel itinerary and promptly return to India to resume his doctoral studies at our university.
 
 Please feel free to contact my office if you require any additional information.
 
-Sincerely,`,
+Sincerely,
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+*(Head of the Department)*  
+**Department of Microbiology**  
+**Palamuru University**`,
       isHTML: false,
     }
   }
@@ -490,11 +497,11 @@ const PalamuruLetterheadGenerator = () => {
                           ) : (
                             <div>
                               {(() => {
-                                const sigMatch = formData.bodyText.match(/\n\s*\&nbsp;\s*\n[\s\S]*?\*\(Registrar/);
+                                const sigMatch = formData.bodyText.match(/\n\s*\&nbsp;\s*\n[\s\S]*?\*\((Registrar|Head|Dean)/);
                                 if (sigMatch) {
                                   const splitIndex = sigMatch.index;
                                   const mainBody = formData.bodyText.substring(0, splitIndex);
-                                  const signature = formData.bodyText.substring(splitIndex).replace(/\n\s*\&nbsp;\s*\n[\s\S]*?\*\(Registrar/, '*(Registrar'); // Clean up the raw spacing
+                                  const signature = formData.bodyText.substring(splitIndex).replace(/\n\s*\&nbsp;\s*\n[\s\S]*?\*\((Registrar|Head|Dean)/, '*($1'); // Clean up the raw spacing
 
                                   return (
                                     <>
