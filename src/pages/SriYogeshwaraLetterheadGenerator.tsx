@@ -149,12 +149,10 @@ const SriYogeshwaraLetterheadGenerator = () => {
               box-shadow: none !important;
               margin: 0 !important;
               width: 210mm !important;
-              max-height: 297mm !important;
-              padding: 8mm 15mm 10mm !important;
+              min-height: 297mm !important;
+              padding: 12mm 18mm 18mm !important;
               position: relative;
-              page-break-inside: avoid !important;
-              page-break-after: avoid !important;
-              overflow: hidden !important;
+              page-break-after: always;
             }
           }
         `}
