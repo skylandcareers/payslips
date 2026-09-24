@@ -9,7 +9,7 @@ const templates = [
     name: '1. Sanction Letter - Financial & Academic Leave Approval (AMP 2026)',
     data: {
       referenceNumber: '**F.No.** PU/2026/PHD/EVEN&CONF/148',
-      date: 'Date: 22/09/2026',
+      date: 'Date: 24/09/2026',
       documentTitle: '**SANCTION LETTER**',
       bodyText: `To  
 **Mr. SUDHEER KUMAR SHAPURAM**  
@@ -31,7 +31,7 @@ The above financial sanction and leave approval have been granted after due cons
 This letter is issued at the request of the student for **visa and other official purposes**.
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 22/09/2026
+**Date:** 24/09/2026
 
 &nbsp;
 &nbsp;
@@ -48,7 +48,7 @@ This letter is issued at the request of the student for **visa and other officia
     name: '2. No Objection Certificate (NOC) - AMP 2026, France',
     data: {
       referenceNumber: '**F.No.** PU/2026/PHD/REG/115',
-      date: 'Date: 22/09/2026',
+      date: 'Date: 24/09/2026',
       documentTitle: '**NO OBJECTION CERTIFICATE (NOC)**',
       bodyText: `**To,**
 **The Consulate General of France**
@@ -65,7 +65,7 @@ The University has **no objection to his travel to France** to attend the **9th 
 This certificate is issued at his request for **visa and official purposes**.
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 22/09/2026
+**Date:** 24/09/2026
 
 &nbsp;
 &nbsp;
@@ -82,7 +82,7 @@ This certificate is issued at his request for **visa and official purposes**.
     name: '3. Bonafide Student Certificate - Ph.D Scholar',
     data: {
       referenceNumber: '**F.No.** PU/2026/PHD/REG/118',
-      date: 'Date: 22/09/2026',
+      date: 'Date: 24/09/2026',
       documentTitle: '**BONAFIDE CERTIFICATE**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -95,7 +95,7 @@ The student is provided **hostel accommodation within the University campus**, a
 This bonafide certificate is issued upon his request for **official purposes**, including **conference participation, accommodation confirmation, visa processing, and other academic requirements.**
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 22/09/2026
+**Date:** 24/09/2026
 
 &nbsp;
 &nbsp;
@@ -112,7 +112,7 @@ This bonafide certificate is issued upon his request for **official purposes**, 
     name: '4. Hotel / Accommodation Confirmation - SUDHEER KUMAR',
     data: {
       referenceNumber: '**F.No.** PU/2026/PHD/HOSTEL/108',
-      date: 'Date: 22/09/2026',
+      date: 'Date: 24/09/2026',
       documentTitle: '**ACCOMMODATION CONFIRMATION**',
       bodyText: `**To Whomsoever It May Concern**
 
@@ -125,7 +125,7 @@ This is to officially confirm that the student is provided with **hostel accommo
 This certificate is issued upon his request for official purposes, including visa processing for attending AMP 2026 (Besançon, France) and other academic requirements.
 
 **Place:** Mahabubnagar, Telangana, India  
-**Date:** 22/09/2026
+**Date:** 24/09/2026
 
 &nbsp;
 &nbsp;
@@ -243,7 +243,7 @@ This certificate is issued upon his request for official purposes, including vis
     name: '6. HOD Recommendation Letter - SUDHEER KUMAR',
     data: {
       referenceNumber: '**F.No.** PU/MICRO/REC/2026/188',
-      date: '**Date:** 22/09/2026',
+      date: '**Date:** 24/09/2026',
       documentTitle: '**RECOMMENDATION LETTER**',
       bodyText: `**To,**
 **The Consulate General of France**

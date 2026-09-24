@@ -26,13 +26,13 @@ export interface TGBAccountDetails {
 
 export const defaultTGBAccountDetails: TGBAccountDetails = {
   accountName: 'SRI YOGESHWARA SEEDS PESTICIDES',
-  proprietor: 'NARSAIAH MUSKU',
+  proprietor: 'SHAPURAM RAMULU',
   addressLines: [
     '2-79/3',
     'MUPKAL',
     'MUPKAL, MUPKAL NIZAMABAD, 503218'
   ],
-  email: 'narasaiahmusku@gmail.com',
+  email: 'shapuramramulu@gmail.com',
   accountNumber: '0000079016219702',
   secondHolderName: '--',
   cifNo: '29009029618',
@@ -802,8 +802,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "74",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:TRF FR 0099579999223",
     "debit": "-",
     "credit": "160930.00",
@@ -812,8 +812,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "75",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  860101497595\n9989760817@ybl:TRF FR\n0093558999334",
     "debit": "-",
     "credit": "3000.00",
@@ -822,8 +822,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "76",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  615174041123 gaddam.\nmalleshyadav-1@oksbi:TRF FR\n0093558999334",
     "debit": "-",
     "credit": "2000.00",
@@ -832,8 +832,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "77",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  241118563564\n9989760817-3@axl:TRF FR\n0093115999330",
     "debit": "-",
     "credit": "1000.00",
@@ -842,8 +842,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "78",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  178562197404\n9177662131-4@ybl:TRF FR\n0093555999337",
     "debit": "-",
     "credit": "1000.00",
@@ -852,8 +852,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "79",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "WDL TFR:UPI  883821051182\n9848176105@ybl:TRF TO\n0093562999339",
     "debit": "-500.00",
     "credit": "",
@@ -862,8 +862,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "80",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  425027302644\nsayareddy7@axl:TRF FR\n0093557999335",
     "debit": "-",
     "credit": "21600.00",
@@ -872,8 +872,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "81",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  376936149128\n9949864909-15@axl:TRF FR\n0093554999338",
     "debit": "-",
     "credit": "4500.00",
@@ -882,8 +882,8 @@ export const tgbTransactions: TGBTransaction[] = [
   },
   {
     "id": "82",
-    "date": "31-06-2026",
-    "valueDate": "31-06-2026",
+    "date": "30-06-2026",
+    "valueDate": "30-06-2026",
     "description": "By Transfer:UPI  536238470771\n8074951337@axl:TRF FR\n0093557999335",
     "debit": "-",
     "credit": "4000.00",
@@ -7533,7 +7533,7 @@ export const tgbTransactions: TGBTransaction[] = [
   {
     "id": "747",
     "date": "20-09-2026",
-    "valueDate": "18-09-2026",
+    "valueDate": "20-09-2026",
     "description": "WDL TFR:IMPS/622919640550/KKBK00\n08370/XXXX6505/Bill Paymen:TRF TO\n0092292999331",
     "debit": "-100000.00",
     "credit": "",
@@ -7543,7 +7543,7 @@ export const tgbTransactions: TGBTransaction[] = [
   {
     "id": "748",
     "date": "21-09-2026",
-    "valueDate": "20-09-2026",
+    "valueDate": "21-09-2026",
     "description": "WDL TFR:IMPS/622919640658/HDFC00\n00240/XXXX0007/Bill Paymen:TRF TO\n0092292999331",
     "debit": "-50000.00",
     "credit": "",
@@ -7553,7 +7553,7 @@ export const tgbTransactions: TGBTransaction[] = [
   {
     "id": "749",
     "date": "22-09-2026",
-    "valueDate": "20-09-2026",
+    "valueDate": "22-09-2026",
     "description": "By Transfer:NEFT YESB0000001\nYESAP62304150765 PhonePe Lim:\nTRF FR 0099569999225",
     "debit": "-",
     "credit": "74540.00",

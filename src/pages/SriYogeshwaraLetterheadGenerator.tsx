@@ -6,6 +6,36 @@ import remarkGfm from 'remark-gfm';
 
 const templateOptions = [
   {
+    id: 'france_sponsorship_sudheer',
+    name: 'France Visa Sponsorship Letter - Sudheer Kumar Shapuram',
+    data: {
+      referenceNo: 'SYS/VISA/2026/FRANCE-01',
+      date: '24 September 2026',
+      recipientName: 'The Visa Officer',
+      recipientAddress: 'Consulate General of France\nBengaluru, India',
+      subject: 'SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE UNDERTAKING FOR SCHENGEN VISA (AMP 2026, BESANÇON, FRANCE)',
+      salutation: 'Dear Sir/Madam,',
+      bodyText: `I, **Mr. SHAPURAM RAMULU**, an Indian citizen, hereby confirm that I am the biological father and financial sponsor of **Mr. SUDHEER KUMAR SHAPURAM** (Passport No.: **U9813918**, Student ID: **PU24010850**), who is a full-time Ph.D. Research Scholar (3rd year) pursuing his doctoral degree in the Department of Microbiology at **Palamuru University**, Telangana, India.
+
+I am the proprietor of **SRI YOGESHWARA SEEDS & PESTICIDES**, an active and registered business in Telangana, India (GSTIN: **36ADFPN1935M1Z9**) with a stable income, and I regularly file my Income Tax Returns.
+
+My son has been officially accepted to present his doctoral research titled *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"* at the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, taking place in **Besançon, France** from **18th-20th November 2026**.
+
+I hereby undertake **full financial responsibility** for his entire trip to France and the Schengen territory, covering round-trip air travel, accommodation, daily living expenses, meals, local transport, overseas health insurance, and any emergency contingencies from **16th-22nd November 2026**.
+
+My son is traveling strictly for academic purposes, has strong academic commitments in India, and will return immediately after completing his symposium visit to resume his Ph.D. research at Palamuru University.
+
+All necessary financial and business credentials, including GST registration certificate, PAN, bank statements, ITR, No Objection Certificate (NOC), Bonafide Certificate from Palamuru University, and AMP 2026 symposium receipts, are submitted in support of this application.
+
+I fully support his participation in this international symposium and assure you of my financial capability and commitment. I kindly request you to consider his Schengen visa application favorably.
+
+Thanking you.`,
+      signatoryName: 'SHAPURAM RAMULU',
+      signatoryTitle: 'Proprietor',
+      signatoryFirm: 'Sri Yogeshwara Seeds & Pesticides',
+    }
+  },
+  {
     id: 'spain_sponsorship',
     name: 'Spain Visa Sponsorship Letter - Dinesh Kumar (Sri Yogeshwara Seeds)',
     data: {
@@ -95,17 +125,17 @@ Thanking you.`,
 const SriYogeshwaraLetterheadGenerator = () => {
   const [activeTab, setActiveTab] = useState<'form' | 'preview'>('form');
   const [isExporting, setIsExporting] = useState(false);
-  const [selectedFont, setSelectedFont] = useState("Calibri, Arial, sans-serif");
+  const [selectedFont, setSelectedFont] = useState("Arial, Helvetica, sans-serif");
   const [headerStyle, setHeaderStyle] = useState<'centered' | 'boxed' | 'modern'>('centered');
 
   const [headerData, setHeaderData] = useState({
     firmName: 'SRI YOGESHWARA SEEDS & PESTICIDES',
     tagline: 'Dealers in: High-Yield Hybrid Seeds • Pesticides • Fertilisers',
-    proprietor: 'ANANDHARAMAN',
+    proprietor: 'SHAPURAM RAMULU',
     gstin: '36ADFPN1935M1Z9',
     hsnCode: 'HSN: 31021000 (Fertilisers) | HSN: 12091000 (Seeds)',
     regType: 'REGULAR TAXPAYER (PROPRIETORSHIP)',
-    address: 'H.No. 4/13/3, Mupkal Village, Balkonda Mandalam, Nizamabad District, Telangana – 503218',
+    address: 'H.No. 1-163/5A, Nandipet Village, Nandipet Mandal, Nizamabad District, Telangana – 503212',
     phone: '+91 94400 12345 / +91 98490 67890',
   });
 
@@ -131,7 +161,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
   };
 
   const inputCls = "w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs outline-none transition-all text-slate-800 focus:border-green-700";
-  const labelCls = "block text-[11px] mb-1 text-slate-600 font-semibold";
+  const labelCls = "block text-[12px] mb-1 text-slate-600 font-semibold";
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col print:bg-white print:text-black">
@@ -146,6 +176,9 @@ const SriYogeshwaraLetterheadGenerator = () => {
               background: white !important;
             }
             .page-container {
+              font-variant-ligatures: none !important;
+              text-rendering: geometricPrecision !important;
+              -webkit-font-smoothing: antialiased !important;
               box-shadow: none !important;
               margin: 0 !important;
               width: 210mm !important;
@@ -162,7 +195,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 print:hidden shadow-sm">
         <div className="container mx-auto px-6 py-3 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-700 to-emerald-800 flex items-center justify-center text-amber-300 font-black text-xl shadow border border-amber-400">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-700 to-emerald-800 flex items-center justify-center text-amber-300 font-bold text-xl shadow border border-amber-400">
               <Sprout className="w-6 h-6 text-amber-300" />
             </div>
             <div className="flex flex-col">
@@ -197,7 +230,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
 
           {/* Template Selectors */}
           <div>
-            <label className="block text-[11px] mb-2 text-green-700 font-extrabold uppercase tracking-wider flex items-center gap-1">
+            <label className="block text-[12px] mb-2 text-green-700 font-extrabold uppercase tracking-wider flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Select Document Template
             </label>
             <div className="grid grid-cols-1 gap-2">
@@ -245,7 +278,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
 
           {/* Header Metadata */}
           <div className="space-y-3 pt-3 border-t border-slate-100">
-            <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Firm Info & Header</h3>
+            <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest">Firm Info & Header</h3>
             <div><label className={labelCls}>Firm Trade Name</label><input type="text" name="firmName" value={headerData.firmName} onChange={handleHeaderChange} className={inputCls} /></div>
             <div><label className={labelCls}>Business Tagline</label><input type="text" name="tagline" value={headerData.tagline} onChange={handleHeaderChange} className={inputCls} /></div>
             <div><label className={labelCls}>Proprietor Name</label><input type="text" name="proprietor" value={headerData.proprietor} onChange={handleHeaderChange} className={inputCls} /></div>
@@ -259,7 +292,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
 
           {/* Document Content Inputs */}
           <div className="space-y-3 pt-3 border-t border-slate-100">
-            <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Document Content</h3>
+            <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest">Document Content</h3>
             <div className="grid grid-cols-2 gap-2">
               <div><label className={labelCls}>Ref Number</label><input type="text" name="referenceNo" value={formData.referenceNo} onChange={handleFormChange} className={inputCls} /></div>
               <div><label className={labelCls}>Date</label><input type="text" name="date" value={formData.date} onChange={handleFormChange} className={inputCls} /></div>
@@ -274,14 +307,14 @@ const SriYogeshwaraLetterheadGenerator = () => {
                 value={formData.bodyText}
                 onChange={handleFormChange}
                 rows={10}
-                className={`${inputCls} resize-none font-mono text-[11px]`}
+                className={`${inputCls} resize-none font-mono text-[12px]`}
               />
             </div>
           </div>
 
           {/* Signatory Details */}
           <div className="space-y-3 pt-3 border-t border-slate-100">
-            <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Signatory Details</h3>
+            <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest">Signatory Details</h3>
             <div><label className={labelCls}>Signatory Name</label><input type="text" name="signatoryName" value={formData.signatoryName} onChange={handleFormChange} className={inputCls} /></div>
             <div><label className={labelCls}>Designation</label><input type="text" name="signatoryTitle" value={formData.signatoryTitle} onChange={handleFormChange} className={inputCls} /></div>
             <div><label className={labelCls}>Firm Name</label><input type="text" name="signatoryFirm" value={formData.signatoryFirm} onChange={handleFormChange} className={inputCls} /></div>
@@ -298,33 +331,33 @@ const SriYogeshwaraLetterheadGenerator = () => {
             <div className="w-full flex flex-col">
 
               {/* RESTORED GREEN SRI YOGESHWARA LETTERHEAD HEADER */}
-              <header className="w-full pb-2 mb-3 border-b-2 border-green-900 bg-white flex flex-col items-center justify-center text-center">
+              <header className="w-full pb-2 mb-2 border-b-2 border-green-900 bg-white flex flex-col items-center justify-center text-center">
 
                 {/* Single Line: Emblem Logo + Firm Title */}
                 <div className="flex items-center justify-center gap-3 mb-1">
                   <div className="w-9 h-9 rounded-xl bg-green-900 flex items-center justify-center text-amber-300 shadow-sm shrink-0">
-                    <Sprout className="w-5.5 h-5.5 text-amber-300" />
+                    <Sprout className="w-6 h-6 text-amber-300" />
                   </div>
-                  <h1 className="text-[23px] font-black text-green-950 tracking-tight leading-none uppercase">
+                  <h1 className="text-2xl font-bold text-green-900 tracking-tight leading-none uppercase">
                     {headerData.firmName}
                   </h1>
                 </div>
 
                 {/* Tagline */}
-                <div className="text-[11.5px] font-black text-green-900 tracking-wide uppercase mb-1 max-w-[620px]">
+                <div className="text-[12px] font-bold text-green-900 tracking-wide uppercase mb-1 max-w-[620px]">
                   {headerData.tagline}
                 </div>
 
                 {/* Principal Address Line */}
-                <div className="text-[10.5px] font-semibold text-slate-800 mb-1 leading-snug">
+                <div className="text-[12px] font-semibold text-slate-800 mb-1 leading-snug">
                   {headerData.address}
                 </div>
 
                 {/* GSTIN & Contact Info */}
-                <div className="text-[11px] font-extrabold text-slate-900 flex items-center justify-center flex-wrap gap-3">
-                  <span><strong className="text-green-950 font-black">GSTIN:</strong> {headerData.gstin}</span>
-                  <span className="text-green-800 font-black">•</span>
-                  <span><strong className="text-green-950 font-black">Ph:</strong> {headerData.phone}</span>
+                <div className="text-[12px] font-extrabold text-slate-900 flex items-center justify-center flex-wrap gap-3">
+                  <span><strong className="text-green-900 font-bold">GSTIN:</strong> {headerData.gstin}</span>
+                  <span className="text-green-800 font-bold">•</span>
+                  <span><strong className="text-green-900 font-bold">Ph:</strong> {headerData.phone}</span>
                 </div>
 
               </header>
@@ -343,14 +376,14 @@ const SriYogeshwaraLetterheadGenerator = () => {
               {formData.recipientName && (
                 <div className="text-[9.5pt] leading-tight mb-3 text-slate-900">
                   <strong>To</strong><br />
-                  <span className="font-bold text-green-950">{formData.recipientName}</span><br />
+                  <span className="font-bold text-green-900">{formData.recipientName}</span><br />
                   <span className="whitespace-pre-line text-slate-700">{formData.recipientAddress}</span>
                 </div>
               )}
 
               {/* Subject */}
               {formData.subject && (
-                <div className="border-l-[3.5px] border-amber-500 bg-green-50/60 p-2.5 mb-3 font-sans text-[9.2pt] leading-snug font-bold text-green-950">
+                <div className="border-l-[3.5px] border-amber-500 bg-green-50/60 p-2.5 mb-3  text-[9.2pt] leading-snug font-bold text-green-900">
                   Subject: {formData.subject}
                 </div>
               )}
@@ -361,7 +394,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
               )}
 
               {/* Body Content */}
-              <div className="w-full text-[9.6pt] leading-[1.6] text-justify text-slate-900 mb-3 [&_p]:mb-3.5 prose-strong:font-bold prose-strong:text-green-950">
+              <div className="w-full text-[9.6pt] leading-[1.65] text-justify text-slate-900 mb-3 [&_p]:mb-1.5 prose-strong:font-bold prose-strong:text-green-900">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {formData.bodyText || ''}
                 </ReactMarkdown>
@@ -370,21 +403,21 @@ const SriYogeshwaraLetterheadGenerator = () => {
             </div>
 
             {/* Signature Block (Left Aligned) */}
-            <div className="w-full mt-3 pt-1 flex flex-col items-start text-left font-sans">
+            <div className="w-full mt-1 pt-1 flex flex-col items-start text-left ">
               <div className="text-[9.5pt] text-slate-900 font-medium">Yours faithfully,</div>
-              <div className="text-[9.2pt] font-bold text-green-950 mt-0.5">For {formData.signatoryFirm || headerData.firmName}</div>
+              <div className="text-[9.2pt] font-bold text-green-900 mt-0.5">For {formData.signatoryFirm || headerData.firmName}</div>
 
               {/* Blank vertical space for physical signing & stamping */}
-              <div className="h-12 w-48" />
+              <div className="h-8 w-48" />
 
-              <div className="text-[10.5pt] font-bold text-green-950 uppercase">{headerData.proprietor}</div>
+              <div className="text-[10.5pt] font-bold text-green-900 uppercase">{headerData.proprietor}</div>
               <div className="text-[9pt] font-semibold text-slate-700">Proprietor</div>
             </div>
 
             {/* Centered Page Footer */}
-            <footer className="w-full font-sans mt-auto pt-2 border-t-2 border-green-900 bg-white text-center text-[9px] text-slate-900 leading-snug">
+            <footer className="w-full  mt-auto pt-2 border-t-2 border-green-900 bg-white text-center text-[9px] text-slate-900 leading-snug">
               <div className="font-semibold text-slate-900 flex items-center justify-center flex-wrap gap-2">
-                <span>GSTIN: <strong className="text-green-950 font-black">{headerData.gstin}</strong></span>
+                <span>GSTIN: <strong className="text-green-900 font-bold">{headerData.gstin}</strong></span>
                 <span className="text-green-800 font-bold">•</span>
                 <span>{headerData.hsnCode}</span>
                 <span className="text-green-800 font-bold">•</span>

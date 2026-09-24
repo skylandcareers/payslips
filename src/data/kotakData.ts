@@ -32,13 +32,13 @@ export interface KotakAccountDetails {
 }
 
 export const defaultKotakAccountDetails: KotakAccountDetails = {
-  customerName: "Musku Dinesh Kumar",
+  customerName: "Shapuram Sudheer Kumar",
   crn: "xxxxxx030",
   addressLines: [
-    "House Number 5-57 Mupkal Bal",
-    "Konda Mandal",
-    "Kisannagar",
-    "Hyderabad - 503218",
+    "House Number 1-163/5A",
+    "Nandipet",
+    "Nizamabad",
+    "Nizamabad - 503212",
     "Telangana - India"
   ],
   micr: "503485622",

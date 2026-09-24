@@ -393,7 +393,7 @@ const Index = () => {
             <input
               type="text"
               placeholder="Search documents and institutions..."
-              className="block w-full pl-11 pr-4 py-4 border border-slate-300 rounded-xl leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-lg transition-all"
+              className="block w-full pl-11 pr-4 py-4 border border-slate-300 rounded-xl leading-5 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-lg transition-all"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />

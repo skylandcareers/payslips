@@ -15,12 +15,13 @@ import { kotakInfoTextYs, kotakOverflowDescription, kotakRowLayouts } from '../d
 const PAGE_COUNT = 13;
 const ASSET_ROOT = '/kotak/layout';
 
-function Text({ x, y, children, size = 12, bold = false, color = '#000' }: {
-  x: number; y: number; children: ReactNode; size?: number; bold?: boolean; color?: string;
+function Text({ x, y, children, size = 12, bold = false, color = '#000', systemFont = false }: {
+  x: number; y: number; children: ReactNode; size?: number; bold?: boolean; color?: string; systemFont?: boolean;
 }) {
   return <span className="kotak-text" style={{
     transform: `translate(${x}px, ${y}px)`,
-    fontFamily: bold ? 'KotakBold, sans-serif' : 'KotakRegular, sans-serif',
+    fontFamily: systemFont ? 'Arial, Helvetica, sans-serif' : (bold ? 'KotakBold, sans-serif' : 'KotakRegular, sans-serif'),
+    fontWeight: (systemFont && bold) ? 'bold' : 'normal',
     fontSize: size,
     color,
   }}>{children}</span>;
@@ -36,20 +37,20 @@ function Asset({ name, x, y, width, height }: {
 
 function Header({ pageNumber }: { pageNumber: number }) {
   if (pageNumber !== 1) return <>
-    <Text x={48} y={16}>{account.customerName.toUpperCase()}</Text>
+    <Text x={48} y={16} systemFont>{account.customerName.toUpperCase()}</Text>
     <Text x={48} y={32} color="#9fa1a4">Account No.</Text>
     <Text x={112} y={32} bold>{account.accountNumber}</Text>
     <Text x={48} y={48} color="#9fa1a4">Account Statement</Text>
-    <Text x={148} y={48} bold>{account.periodFrom} - {account.periodTo}</Text>
+    <Text x={148} y={48} bold systemFont>{account.periodFrom} - {account.periodTo}</Text>
   </>;
 
   return <>
     <img className="kotak-banner" src="/kotak-logo.jpg" alt="Kotak Mahindra Bank" />
     <Text x={48} y={123.33} size={33.33} bold>Account Statement</Text>
-    <Text x={48} y={164} size={14.67}>{account.periodFrom} - {account.periodTo}</Text>
-    <Text x={50.67} y={224} size={18.67} bold>{account.customerName}</Text>
+    <Text x={48} y={164} size={14.67} systemFont>{account.periodFrom} - {account.periodTo}</Text>
+    <Text x={50.67} y={224} size={18.67} bold systemFont>{account.customerName}</Text>
     <Text x={50.67} y={250} size={14.67} color="#9fa1a4">CRN {account.crn}</Text>
-    {account.addressLines.map((line, i) => <Text key={i} x={50.67} y={296.67 + 20 * i}>{line}</Text>)}
+    {account.addressLines.map((line, i) => <Text key={i} x={50.67} y={296.67 + 20 * i} systemFont>{line}</Text>)}
     <Text x={50.67} y={411.33} color="#9fa1a4">MICR</Text>
     <Text x={78.6} y={411.33} bold>{account.micr}</Text>
     <Text x={141.2} y={411.33} color="#9fa1a4">IFSC Code</Text>

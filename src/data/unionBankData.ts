@@ -81,7 +81,7 @@ export interface StatementSummary {
 }
 
 export const defaultAccountDetails: AccountDetails = {
-  customerName: "SAPURAM RAMULU",
+  customerName: "SHAPURAM RAMULU",
   addressLines: [
     "HNO 1 63 5A   RAM NAGAR",
     "NANDIPET MANDAL",
