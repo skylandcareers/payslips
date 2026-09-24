@@ -19,7 +19,7 @@ const templateOptions = [
 
 I am the proprietor of **Sri Yogeshwara Seeds & Pesticides**, an active registered business in Telangana, India (GSTIN: **36ADFPN1935M1Z9**). The business has a stable income, and I regularly file my Income Tax Returns.
 
-My son has been accepted to present his doctoral research titled *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"* at the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, to be held in **Besançon, France**, from **18 to 20 November 2026**.
+My son has been accepted to present his doctoral research titled **"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"** at the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, to be held in **Besançon, France**, from **18 to 20 November 2026**.
 
 I hereby undertake **full financial responsibility** for his trip from **16 to 22 November 2026**, including round-trip airfare, accommodation, daily living expenses (including meals), local transport, overseas health insurance, and any emergency expenses. I have transferred funds from my business account to my son’s personal bank account to cover these costs.
 
