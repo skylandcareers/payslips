@@ -9,7 +9,7 @@ const cardsData = [
       <Link to="/tgb" className="group">
                   <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-orange-500 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
                     <div className="h-16 flex items-center justify-center mb-3">
-                      <div className="text-orange-500 font-bold text-2xl group-hover:scale-105 transition-transform">TGB</div>
+                      <img src="/tgb-logo.png" alt="Telangana Grameena Bank" className="h-10 max-w-[150px] object-contain group-hover:scale-105 transition-transform" />
                     </div>
                     <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Telangana Grameena Bank</h2>
                     <div className="mt-auto w-full flex items-center justify-center gap-2 text-orange-600 text-[11px] font-semibold bg-orange-50 py-1.5 rounded-md px-2 group-hover:bg-orange-600 group-hover:text-white transition-all">Open Portal <Landmark className="w-4 h-4" /></div>

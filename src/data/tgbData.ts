@@ -1,3 +1,47 @@
+export interface TGBAccountDetails {
+  accountName: string;
+  proprietor: string;
+  addressLines: string[];
+  accountNumber: string;
+  cifNo: string;
+  ifscCode: string;
+  product: string;
+  branchName: string;
+  branchCode: string;
+  branchAddress: string[];
+  periodFrom: string;
+  periodTo: string;
+  clearedBalance: string;
+  unclearedAmount: string;
+  statementDate: string;
+}
+
+export const defaultTGBAccountDetails: TGBAccountDetails = {
+  accountName: 'SRI YOGESHWARA SEEDS PESTICIDES',
+  proprietor: 'NARSAIAH MUSKU',
+  addressLines: [
+    '2-79/3',
+    'MUPKAL',
+    'MUPKAL, MUPKAL NIZAMABAD, 503218'
+  ],
+  accountNumber: '0000079016219702',
+  cifNo: '29009029618',
+  ifscCode: 'TGRB0000222',
+  product: 'CA-RURAL-FIRM/TRUST/SOC',
+  branchName: 'MUPKAL',
+  branchCode: '00222',
+  branchAddress: [
+    'H NO 2-83 NEAR BUS STAND MUPKAL BUSSTAND',
+    'Telangana Grameena Bank MUPKAL',
+    'Nizamabad, 503218'
+  ],
+  periodFrom: '18/05/2026',
+  periodTo: '21/08/2026',
+  clearedBalance: '1094074.29Cr',
+  unclearedAmount: '0.00',
+  statementDate: '21/08/2026'
+};
+
 export interface TGBTransaction {
   id: string;
   date: string;
@@ -157,7 +201,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "17",
     "date": "19-05-2026",
     "valueDate": "19-05-2026",
-    "description": "By Transfer:UPI  678636306867 7569285498@ibl:TRF FR 0093557999335 This is a computer-generated document. No signature is required. Page 1 of 37",
+    "description": "By Transfer:UPI  678636306867 7569285498@ibl:TRF FR 0093557999335",
     "debit": "-",
     "credit": "3000.00",
     "balance": "268129.00Cr"
@@ -346,7 +390,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "38",
     "date": "26-05-2026",
     "valueDate": "26-05-2026",
-    "description": "WDL TFR:UPI  180326613012 yashodaclinics.63493627@hdfcbank:TRF TO 0093563999338 This is a computer-generated document. No signature is required. Page 2 of 37",
+    "description": "WDL TFR:UPI  180326613012 yashodaclinics.63493627@hdfcbank:TRF TO 0093563999338",
     "debit": "-570.00",
     "credit": "",
     "balance": "478839.00Cr"
@@ -526,7 +570,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "58",
     "date": "29-05-2026",
     "valueDate": "29-05-2026",
-    "description": "By Transfer:UPI  424114950683 padamagundeti@ybl:TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 3 of 37",
+    "description": "By Transfer:UPI  424114950683 padamagundeti@ybl:TRF FR 0093555999337",
     "debit": "-",
     "credit": "7000.00",
     "balance": "533719.00Cr"
@@ -715,7 +759,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "79",
     "date": "31-05-2026",
     "valueDate": "31-05-2026",
-    "description": "WDL TFR:UPI  883821051182 9848176105@ybl:TRF TO 0093562999339 This is a computer-generated document. No signature is required. Page 4 of 37",
+    "description": "WDL TFR:UPI  883821051182 9848176105@ybl:TRF TO 0093562999339",
     "debit": "-500.00",
     "credit": "",
     "balance": "338158.00Cr"
@@ -904,7 +948,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "100",
     "date": "03-06-2026",
     "valueDate": "03-06-2026",
-    "description": "By Transfer:UPI  399779381456 devenderreddy420@axl:TRF FR 0093115999330 This is a computer-generated document. No signature is required. Page 5 of 37",
+    "description": "By Transfer:UPI  399779381456 devenderreddy420@axl:TRF FR 0093115999330",
     "debit": "-",
     "credit": "9900.00",
     "balance": "1113828.00Cr"
@@ -1093,7 +1137,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "121",
     "date": "05-06-2026",
     "valueDate": "05-06-2026",
-    "description": "By Transfer:UPI  682101680833 8184887008@axl:TRF FR 0093115999330 This is a computer-generated document. No signature is required. Page 6 of 37",
+    "description": "By Transfer:UPI  682101680833 8184887008@axl:TRF FR 0093115999330",
     "debit": "-",
     "credit": "11000.00",
     "balance": "1148836.00Cr"
@@ -1282,7 +1326,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "142",
     "date": "07-06-2026",
     "valueDate": "07-06-2026",
-    "description": "By Transfer:UPI  551604622203 9110513611-3@ybl:TRF FR 0093558999334 This is a computer-generated document. No signature is required. Page 7 of 37",
+    "description": "By Transfer:UPI  551604622203 9110513611-3@ybl:TRF FR 0093558999334",
     "debit": "-",
     "credit": "60000.00",
     "balance": "681908.82Cr"
@@ -1471,7 +1515,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "163",
     "date": "09-06-2026",
     "valueDate": "09-06-2026",
-    "description": "By Transfer:UPI  934881923083 9014894157@axl:TRF FR 0093558999334 This is a computer-generated document. No signature is required. Page 8 of 37",
+    "description": "By Transfer:UPI  934881923083 9014894157@axl:TRF FR 0093558999334",
     "debit": "-",
     "credit": "13600.00",
     "balance": "764814.38Cr"
@@ -1660,7 +1704,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "184",
     "date": "10-06-2026",
     "valueDate": "10-06-2026",
-    "description": "By Transfer:UPI  083783394181 9440719776@axl:TRF FR 0093557999335 This is a computer-generated document. No signature is required. Page 9 of 37",
+    "description": "By Transfer:UPI  083783394181 9440719776@axl:TRF FR 0093557999335",
     "debit": "-",
     "credit": "6500.00",
     "balance": "1076943.38Cr"
@@ -1840,7 +1884,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "204",
     "date": "12-06-2026",
     "valueDate": "12-06-2026",
-    "description": "By Transfer:UPI  007230066796 9177662131-7@axl:TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 10 of 37",
+    "description": "By Transfer:UPI  007230066796 9177662131-7@axl:TRF FR 0093555999337",
     "debit": "-",
     "credit": "1320.00",
     "balance": "602473.37Cr"
@@ -2020,7 +2064,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "224",
     "date": "13-06-2026",
     "valueDate": "13-06-2026",
-    "description": "By Transfer:UPI  909519563936 srujanmusku@ybl:TRF FR 0093554999338 This is a computer-generated document. No signature is required. Page 11 of 37",
+    "description": "By Transfer:UPI  909519563936 srujanmusku@ybl:TRF FR 0093554999338",
     "debit": "-",
     "credit": "23000.00",
     "balance": "835709.14Cr"
@@ -2200,7 +2244,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "244",
     "date": "15-06-2026",
     "valueDate": "15-06-2026",
-    "description": "By Cash:Deposit by  ADFPN1935M This is a computer-generated document. No signature is required. Page 12 of 37",
+    "description": "By Cash:Deposit by  ADFPN1935M",
     "debit": "-",
     "credit": "98000.00",
     "balance": "1665959.14Cr"
@@ -2389,7 +2433,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "265",
     "date": "18-06-2026",
     "valueDate": "18-06-2026",
-    "description": "By Transfer:UPI  722899147473 9052820492@ybl:TRF FR 0093556999336 This is a computer-generated document. No signature is required. Page 13 of 37",
+    "description": "By Transfer:UPI  722899147473 9052820492@ybl:TRF FR 0093556999336",
     "debit": "-",
     "credit": "3600.00",
     "balance": "723165.14Cr"
@@ -2578,7 +2622,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "286",
     "date": "20-06-2026",
     "valueDate": "20-06-2026",
-    "description": "By Transfer:UPI  459736671429 mahendermacharla@axl:TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 14 of 37",
+    "description": "By Transfer:UPI  459736671429 mahendermacharla@axl:TRF FR 0093555999337",
     "debit": "-",
     "credit": "50000.00",
     "balance": "1169600.83Cr"
@@ -2767,7 +2811,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "307",
     "date": "22-06-2026",
     "valueDate": "22-06-2026",
-    "description": "By Transfer:UPI  392075530549 9949864909-7@ybl:TRF FR 0093558999334 This is a computer-generated document. No signature is required. Page 15 of 37",
+    "description": "By Transfer:UPI  392075530549 9949864909-7@ybl:TRF FR 0093558999334",
     "debit": "-",
     "credit": "1100.00",
     "balance": "1427384.42Cr"
@@ -2956,7 +3000,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "328",
     "date": "24-06-2026",
     "valueDate": "24-06-2026",
-    "description": "By Transfer:TRF FR 0093115999330 This is a computer-generated document. No signature is required. Page 16 of 37",
+    "description": "By Transfer:TRF FR 0093115999330",
     "debit": "-",
     "credit": "4500.00",
     "balance": "1484025.42Cr"
@@ -3136,7 +3180,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "348",
     "date": "25-06-2026",
     "valueDate": "25-06-2026",
-    "description": "By Transfer:UPI  666533291578 9908903361@axl:TRF FR 0093115999330 This is a computer-generated document. No signature is required. Page 17 of 37",
+    "description": "By Transfer:UPI  666533291578 9908903361@axl:TRF FR 0093115999330",
     "debit": "-",
     "credit": "20000.00",
     "balance": "646637.11Cr"
@@ -3316,7 +3360,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "368",
     "date": "27-06-2026",
     "valueDate": "27-06-2026",
-    "description": "By Transfer:NEFT YESB0000001 YESAP61789397350 PhonePe Lim: TRF FR 0099509999225 This is a computer-generated document. No signature is required. Page 18 of 37",
+    "description": "By Transfer:NEFT YESB0000001 YESAP61789397350 PhonePe Lim: TRF FR 0099509999225",
     "debit": "-",
     "credit": "136220.73",
     "balance": "648077.84Cr"
@@ -3496,7 +3540,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "388",
     "date": "29-06-2026",
     "valueDate": "29-06-2026",
-    "description": "By Transfer:UPI  771420182932 ssayareddy@ybl:TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 19 of 37",
+    "description": "By Transfer:UPI  771420182932 ssayareddy@ybl:TRF FR 0093555999337",
     "debit": "-",
     "credit": "450.00",
     "balance": "828169.97Cr"
@@ -3676,7 +3720,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "408",
     "date": "30-06-2026",
     "valueDate": "30-06-2026",
-    "description": "By Transfer:UPI  169158049143 9963043551@axl:TRF FR 0093554999338 This is a computer-generated document. No signature is required. Page 20 of 37",
+    "description": "By Transfer:UPI  169158049143 9963043551@axl:TRF FR 0093554999338",
     "debit": "-",
     "credit": "22500.00",
     "balance": "299318.71Cr"
@@ -3856,7 +3900,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "428",
     "date": "01-07-2026",
     "valueDate": "01-07-2026",
-    "description": "By Transfer:UPI  025522843513 6300962661-h186@axl:TRF FR 0093558999334 This is a computer-generated document. No signature is required. Page 21 of 37",
+    "description": "By Transfer:UPI  025522843513 6300962661-h186@axl:TRF FR 0093558999334",
     "debit": "-",
     "credit": "49999.00",
     "balance": "234625.00Cr"
@@ -4036,7 +4080,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "448",
     "date": "03-07-2026",
     "valueDate": "03-07-2026",
-    "description": "WDL TFR:IMPS/618415850860/HDFC00 00126/XXXX8994/Bill Paymen:TRF TO 0092292999331 This is a computer-generated document. No signature is required. Page 22 of 37",
+    "description": "WDL TFR:IMPS/618415850860/HDFC00 00126/XXXX8994/Bill Paymen:TRF TO 0092292999331",
     "debit": "-200000.00",
     "credit": "",
     "balance": "184188.15Cr"
@@ -4216,7 +4260,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "468",
     "date": "06-07-2026",
     "valueDate": "06-07-2026",
-    "description": "WDL TFR:IMPS/618712054266/UBIN056 2033/XXXX0110/Bill Paymen:TRF TO 0092292999331 This is a computer-generated document. No signature is required. Page 23 of 37",
+    "description": "WDL TFR:IMPS/618712054266/UBIN056 2033/XXXX0110/Bill Paymen:TRF TO 0092292999331",
     "debit": "-11000.00",
     "credit": "",
     "balance": "576985.08Cr"
@@ -4396,7 +4440,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "488",
     "date": "07-07-2026",
     "valueDate": "07-07-2026",
-    "description": "WDL TFR:IMPS/618820145414/HSBC05 00002/XXXX0630/Bill Paymen:TRF TO 0092292999331 This is a computer-generated document. No signature is required. Page 24 of 37",
+    "description": "WDL TFR:IMPS/618820145414/HSBC05 00002/XXXX0630/Bill Paymen:TRF TO 0092292999331",
     "debit": "-100000.00",
     "credit": "",
     "balance": "363445.08Cr"
@@ -4576,7 +4620,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "508",
     "date": "11-07-2026",
     "valueDate": "11-07-2026",
-    "description": "WDL TFR:UPI  926028526154 7396637714@sbi:TRF TO 0093560999330 This is a computer-generated document. No signature is required. Page 25 of 37",
+    "description": "WDL TFR:UPI  926028526154 7396637714@sbi:TRF TO 0093560999330",
     "debit": "-5000.00",
     "credit": "",
     "balance": "513609.31Cr"
@@ -4765,7 +4809,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "529",
     "date": "14-07-2026",
     "valueDate": "14-07-2026",
-    "description": "By Transfer:UPI  480756480058 9949864909-7@ybl:TRF FR 0093557999335 This is a computer-generated document. No signature is required. Page 26 of 37",
+    "description": "By Transfer:UPI  480756480058 9949864909-7@ybl:TRF FR 0093557999335",
     "debit": "-",
     "credit": "3700.00",
     "balance": "79822.53Cr"
@@ -4945,7 +4989,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "549",
     "date": "17-07-2026",
     "valueDate": "17-07-2026",
-    "description": "By Transfer:UPI  428743817105 9494457625-3@axl:TRF FR 0093557999335 This is a computer-generated document. No signature is required. Page 27 of 37",
+    "description": "By Transfer:UPI  428743817105 9494457625-3@axl:TRF FR 0093557999335",
     "debit": "-",
     "credit": "18260.00",
     "balance": "219263.53Cr"
@@ -5125,7 +5169,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "569",
     "date": "20-07-2026",
     "valueDate": "20-07-2026",
-    "description": "By Transfer:NEFT YESB0000001 YESAP62011454081 PhonePe Lim: TRF FR 0099659999223 This is a computer-generated document. No signature is required. Page 28 of 37",
+    "description": "By Transfer:NEFT YESB0000001 YESAP62011454081 PhonePe Lim: TRF FR 0099659999223",
     "debit": "-",
     "credit": "55795.00",
     "balance": "267238.55Cr"
@@ -5305,7 +5349,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "589",
     "date": "22-07-2026",
     "valueDate": "22-07-2026",
-    "description": "By Transfer:UPI  126696443711 nayakudukishannayakudu@okhdfcban: TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 29 of 37",
+    "description": "By Transfer:UPI  126696443711 nayakudukishannayakudu@okhdfcban: TRF FR 0093555999337",
     "debit": "-",
     "credit": "1300.00",
     "balance": "381867.56Cr"
@@ -5485,7 +5529,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "609",
     "date": "25-07-2026",
     "valueDate": "25-07-2026",
-    "description": "By Transfer:UPI  225813074047 9701934893@axl:TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 30 of 37",
+    "description": "By Transfer:UPI  225813074047 9701934893@axl:TRF FR 0093555999337",
     "debit": "-",
     "credit": "200.00",
     "balance": "441088.94Cr"
@@ -5674,7 +5718,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "630",
     "date": "28-07-2026",
     "valueDate": "28-07-2026",
-    "description": "By Transfer:UPI  551479433576 9912020376@ybl:TRF FR 0093557999335 This is a computer-generated document. No signature is required. Page 31 of 37",
+    "description": "By Transfer:UPI  551479433576 9912020376@ybl:TRF FR 0093557999335",
     "debit": "-",
     "credit": "10250.00",
     "balance": "602648.94Cr"
@@ -5872,7 +5916,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "652",
     "date": "01-08-2026",
     "valueDate": "01-08-2026",
-    "description": "WDL TFR:UPI  506131879332 19880CCPLTL1316@UBICAPS:TRF TO 0084199999337 This is a computer-generated document. No signature is required. Page 32 of 37",
+    "description": "WDL TFR:UPI  506131879332 19880CCPLTL1316@UBICAPS:TRF TO 0084199999337",
     "debit": "-10000.00",
     "credit": "",
     "balance": "683213.63Cr"
@@ -6061,7 +6105,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "673",
     "date": "06-08-2026",
     "valueDate": "06-08-2026",
-    "description": "By Transfer:UPI  262796592672 9949864909-7@ybl:TRF FR 0093115999330 This is a computer-generated document. No signature is required. Page 33 of 37",
+    "description": "By Transfer:UPI  262796592672 9949864909-7@ybl:TRF FR 0093115999330",
     "debit": "-",
     "credit": "1850.00",
     "balance": "914205.79Cr"
@@ -6250,7 +6294,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "694",
     "date": "10-08-2026",
     "valueDate": "10-08-2026",
-    "description": "By Transfer:UPI  622242002720 gaddam. malleshyadav-1@oksbi:TRF FR 0093554999338 This is a computer-generated document. No signature is required. Page 34 of 37",
+    "description": "By Transfer:UPI  622242002720 gaddam. malleshyadav-1@oksbi:TRF FR 0093554999338",
     "debit": "-",
     "credit": "6000.00",
     "balance": "1132544.95Cr"
@@ -6439,7 +6483,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "715",
     "date": "12-08-2026",
     "valueDate": "12-08-2026",
-    "description": "WDL TFR:IMPS/622415359077/BARB0I NTMUM/XXXX0670/Bill Paymen:TRF TO 0092292999331 This is a computer-generated document. No signature is required. Page 35 of 37",
+    "description": "WDL TFR:IMPS/622415359077/BARB0I NTMUM/XXXX0670/Bill Paymen:TRF TO 0092292999331",
     "debit": "-50000.00",
     "credit": "",
     "balance": "1256798.29Cr"
@@ -6619,7 +6663,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "735",
     "date": "15-08-2026",
     "valueDate": "15-08-2026",
-    "description": "By Transfer:NEFT YESB0000001 YESAP62272556420 PhonePe Lim: TRF FR 0099569999225 This is a computer-generated document. No signature is required. Page 36 of 37",
+    "description": "By Transfer:NEFT YESB0000001 YESAP62272556420 PhonePe Lim: TRF FR 0099569999225",
     "debit": "-",
     "credit": "36041.00",
     "balance": "1242334.29Cr"
@@ -6772,7 +6816,7 @@ export const tgbTransactions: TGBTransaction[] = [
     "id": "752",
     "date": "21-08-2026",
     "valueDate": "21-08-2026",
-    "description": "By Transfer:UPI  395893282286 9885828451-2@ybl:TRF FR 0093555999337 This is a computer-generated document. No signature is required. Page 37 of 37",
+    "description": "By Transfer:UPI  395893282286 9885828451-2@ybl:TRF FR 0093555999337",
     "debit": "-",
     "credit": "1650.00",
     "balance": "1094074.29Cr"
