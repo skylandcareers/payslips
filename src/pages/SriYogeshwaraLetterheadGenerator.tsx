@@ -15,21 +15,21 @@ const templateOptions = [
       recipientAddress: 'Consulate General of France\nBengaluru, India',
       subject: 'SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE UNDERTAKING FOR SCHENGEN VISA (AMP 2026, BESANÇON, FRANCE)',
       salutation: 'Dear Sir/Madam,',
-      bodyText: `I, **Mr. SHAPURAM RAMULU**, an Indian citizen, hereby confirm that I am the biological father and financial sponsor of **Mr. SUDHEER KUMAR SHAPURAM** (Passport No.: **U9813918**, Student ID: **PU24010850**), who is a full-time Ph.D. Research Scholar (3rd year) pursuing his doctoral degree in the Department of Microbiology at **Palamuru University**, Telangana, India.
+      bodyText: `I, **Mr. Shapuram Ramulu**, an Indian citizen, confirm that I am the biological father and financial sponsor of my son, **Mr. Sudheer Kumar Shapuram** (Passport No.: **U9813918**; Student ID: **PU24010850**). He is a third-year full-time Ph.D. Research Scholar in the Department of Microbiology at **Palamuru University**, Telangana, India.
 
-I am the proprietor of **SRI YOGESHWARA SEEDS & PESTICIDES**, an active and registered business in Telangana, India (GSTIN: **36ADFPN1935M1Z9**) with a stable income, and I regularly file my Income Tax Returns.
+I am the proprietor of **Sri Yogeshwara Seeds & Pesticides**, an active registered business in Telangana, India (GSTIN: **36ADFPN1935M1Z9**). The business has a stable income, and I regularly file my Income Tax Returns.
 
-My son has been officially accepted to present his doctoral research titled *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"* at the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, taking place in **Besançon, France** from **18th-20th November 2026**.
+My son has been accepted to present his doctoral research titled *"Isolation and Characterization of Antimicrobial Peptide-Producing Bacteria from Agricultural Soil for the Control of Multidrug-Resistant Pathogens"* at the **9th International Symposium on Antimicrobial Peptides (AMP 2026)**, to be held in **Besançon, France**, from **18 to 20 November 2026**.
 
-I hereby undertake **full financial responsibility** for his entire trip to France and the Schengen territory, covering round-trip air travel, accommodation, daily living expenses, meals, local transport, overseas health insurance, and any emergency contingencies from **16th-22nd November 2026**.
+I hereby undertake **full financial responsibility** for his trip from **16 to 22 November 2026**, including round-trip airfare, accommodation, daily living expenses (including meals), local transport, overseas health insurance, and any emergency expenses. I have transferred funds from my business account to my son’s personal bank account to cover these costs.
 
-My son is traveling strictly for academic purposes, has strong academic commitments in India, and will return immediately after completing his symposium visit to resume his Ph.D. research at Palamuru University.
+My son is traveling solely for academic purposes. He will return to India immediately after the symposium to resume his Ph.D. research at Palamuru University.
 
-All necessary financial and business credentials, including GST registration certificate, PAN, bank statements, ITR, No Objection Certificate (NOC), Bonafide Certificate from Palamuru University, and AMP 2026 symposium receipts, are submitted in support of this application.
+All supporting documents, including GST registration certificate, PAN, bank statements, ITR, No Objection Certificate, Bonafide Certificate from Palamuru University, and AMP 2026 symposium receipts, are enclosed.
 
-I fully support his participation in this international symposium and assure you of my financial capability and commitment. I kindly request you to consider his Schengen visa application favorably.
+I fully support his participation in this international symposium and request that you favorably consider his Schengen visa application.
 
-Thanking you.`,
+Thank you.`,
       signatoryName: 'SHAPURAM RAMULU',
       signatoryTitle: 'Proprietor',
       signatoryFirm: 'Sri Yogeshwara Seeds & Pesticides',
@@ -394,7 +394,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
               )}
 
               {/* Body Content */}
-              <div className="w-full text-[9.6pt] leading-[1.65] text-justify text-slate-900 mb-3 [&_p]:mb-1.5 prose-strong:font-bold prose-strong:text-green-900">
+              <div className="w-full text-[9.6pt] leading-[1.55] text-justify text-slate-900 mb-3 [&_p]:mb-3 prose-strong:font-bold prose-strong:text-green-900">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {formData.bodyText || ''}
                 </ReactMarkdown>
@@ -408,7 +408,7 @@ const SriYogeshwaraLetterheadGenerator = () => {
               <div className="text-[9.2pt] font-bold text-green-900 mt-0.5">For {formData.signatoryFirm || headerData.firmName}</div>
 
               {/* Blank vertical space for physical signing & stamping */}
-              <div className="h-8 w-48" />
+              <div className="h-12 w-48" />
 
               <div className="text-[10.5pt] font-bold text-green-900 uppercase">{headerData.proprietor}</div>
               <div className="text-[9pt] font-semibold text-slate-700">Proprietor</div>
