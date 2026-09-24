@@ -243,10 +243,9 @@ export default function UnionBankStatementGenerator() {
           font-display: swap;
         }
 
-        :root {
+        .ub-page-wrapper {
           font-family: 'Calibri', 'Carlito', Arial, sans-serif;
           color: #17212c;
-          background: #f0f2f5;
         }
         .ub-page-wrapper,
         .ub-statement-page,
