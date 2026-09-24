@@ -35,7 +35,7 @@ export const defaultKotakAccountDetails: KotakAccountDetails = {
   customerName: "Shapuram Sudheer Kumar",
   crn: "xxxxxx030",
   addressLines: [
-    "House Number 1-163/5A",
+    "H.No: 1-163/5A",
     "Nandipet",
     "Nizamabad",
     "Nizamabad - 503212",
@@ -62,7 +62,7 @@ export const defaultKotakAccountDetails: KotakAccountDetails = {
 
 // The supplied statement prints a different generation time on page 6.
 export const kotakStatementDateOverrides: Record<number, string> = {
-  6: '21 Sep 2026, 15:16',
+  6: '24 Sep 2026, 11:16',
 };
 
 export const defaultKotakTransactions: KotakTransaction[] = [
@@ -329,7 +329,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "30",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/CHENOORI\nNARESH/975918723954/Payment from Ph",
     "refNo": "UPI-615162893600",
     "debit": "45.00",
@@ -338,7 +338,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "31",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/SRINIVAS  ANGAR/099177815839/Payment\nfrom Ph",
     "refNo": "UPI-615163027327",
     "debit": "",
@@ -347,7 +347,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "32",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/CHATLA VENKATA\n/753118001619/Payment from Ph",
     "refNo": "UPI-615163092297",
     "debit": "72.00",
@@ -356,7 +356,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "33",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/MOTHE VIGNESH\nR/953791535191/Payment from Ph",
     "refNo": "UPI-615171066030",
     "debit": "",
@@ -365,7 +365,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "34",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/KANAKA DURGA\nWI/487797149627/Payment from Ph",
     "refNo": "UPI-615173081325",
     "debit": "720.00",
@@ -374,7 +374,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "35",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/KOMMULA SAI\nKUM/381333133046/Payment from Ph",
     "refNo": "UPI-615178843719",
     "debit": "600.00",
@@ -383,7 +383,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "36",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/MUSKU VIKAS\nRED/423926179681/Payment from Ph",
     "refNo": "UPI-615178924277",
     "debit": "15,000.00",
@@ -392,7 +392,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "37",
-    "date": "31 Jun 2026",
+    "date": "30 Jun 2026",
     "description": "UPI/POVAR  KAVITHA/826818333729/Payment\nfrom Ph",
     "refNo": "UPI-615182861318",
     "debit": "20.00",
@@ -1819,7 +1819,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
     "refNo": "UPI-619361113324",
     "debit": "75.00",
     "credit": "",
-    "balance": "5, 35,967.47"
+    "balance": "5,35,967.47"
   },
   {
     "id": "196",
@@ -2696,7 +2696,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "293",
-    "date": "18 Sep 2026",
+    "date": "20 Sep 2026",
     "description": "Recd: IMPS/623415698763/SRIYOGE\nSHWARA/TGRB/X9702/Trans",
     "refNo": "IMPS-623418796522",
     "debit": "",
@@ -2705,7 +2705,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "294",
-    "date": "19 Sep 2026",
+    "date": "21 Sep 2026",
     "description": "UPI/SRINIVASA\nDIRY/AIRP/992304678320/Payment made",
     "refNo": "UPI-622963805073",
     "debit": "20.00",
@@ -2714,7 +2714,7 @@ export const defaultKotakTransactions: KotakTransaction[] = [
   },
   {
     "id": "295",
-    "date": "20 Sep 2026",
+    "date": "24 Sep 2026",
     "description": "UPI/RANGANATHA\nTIF/YESB/342421260457/Payment from",
     "refNo": "UPI-622985026425",
     "debit": "25.00",
