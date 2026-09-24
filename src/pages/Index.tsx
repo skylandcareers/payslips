@@ -23,7 +23,7 @@ const cardsData = [
       <Link to="/kotak" className="group">
                   <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-red-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
                     <div className="h-16 flex items-center justify-center mb-3">
-                      <div className="text-red-600 font-bold text-2xl group-hover:scale-105 transition-transform">Kotak</div>
+                      <img src="/kotak-logo.jpg" alt="Kotak Mahindra Bank" className="h-8 max-w-[140px] object-contain group-hover:scale-105 transition-transform" />
                     </div>
                     <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Kotak Mahindra Bank</h2>
                     <div className="mt-auto w-full flex items-center justify-center gap-2 text-red-600 text-[11px] font-semibold bg-red-50 py-1.5 rounded-md px-2 group-hover:bg-red-600 group-hover:text-white transition-all">Open Portal <Landmark className="w-4 h-4" /></div>

@@ -8,16 +8,59 @@ export interface KotakTransaction {
   balance: string;
 }
 
-export const kotakTransactions: KotakTransaction[] = [
-  {
-    "id": "-",
-    "date": "-",
-    "description": "Opening Balance",
-    "refNo": "- -",
-    "debit": "- -",
-    "credit": "- -",
-    "balance": "7,49,725.57"
-  },
+export interface KotakAccountDetails {
+  customerName: string;
+  crn: string;
+  addressLines: string[];
+  micr: string;
+  ifsc: string;
+  accountNumber: string;
+  accountType: string;
+  branch: string;
+  accountStatus: string;
+  nomineeRegistered: string;
+  currency: string;
+  periodFrom: string;
+  periodTo: string;
+  statementDate: string;
+  openingBalance: string;
+  branchAddress: string;
+  branchPhone: string;
+  tollFree: string;
+  registeredOffice: string;
+  cin: string;
+}
+
+export const defaultKotakAccountDetails: KotakAccountDetails = {
+  customerName: "Musku Dinesh Kumar",
+  crn: "xxxxxx030",
+  addressLines: [
+    "House Number 5-57 Mupkal Bal",
+    "Konda Mandal",
+    "Kisannagar",
+    "Hyderabad - 503218",
+    "Telangana - India"
+  ],
+  micr: "503485622",
+  ifsc: "KKBK0008370",
+  accountNumber: "2511836505",
+  accountType: "Savings",
+  branch: "Mupkal",
+  accountStatus: "Active",
+  nomineeRegistered: "Yes",
+  currency: "INDIAN RUPEE",
+  periodFrom: "17 May 2026",
+  periodTo: "21 Aug 2026",
+  statementDate: "21 Aug 2026, 11:16",
+  openingBalance: "7,49,725.57",
+  branchAddress: "3-6 Main Road, Mupkal-503218, Telangana, India",
+  branchPhone: "7337353738",
+  tollFree: "1800 4100",
+  registeredOffice: "27 BKC, C 27, G Block, Bandra Kurla Complex, Bandra (E), Mumbai - 400 051. www.kotak.bank.in",
+  cin: "L65110MH1985PLC038137"
+};
+
+export const defaultKotakTransactions: KotakTransaction[] = [
   {
     "id": "1",
     "date": "18 May 2026",
@@ -163,6 +206,15 @@ export const kotakTransactions: KotakTransaction[] = [
     "balance": "7,29,818.57 7,29,768.57"
   },
   {
+    "id": "17",
+    "date": "24 May 2026",
+    "description": "UPI/KOMMULA SAI KUM/404468749023/Payment from Ph",
+    "refNo": "UPI-614493131976",
+    "debit": "50.00",
+    "credit": "",
+    "balance": "7,29,768.57"
+  },
+  {
     "id": "18",
     "date": "24 May 2026",
     "description": "UPI/Sama  Manikanta/692508229409/Payment from Ph",
@@ -188,6 +240,15 @@ export const kotakTransactions: KotakTransaction[] = [
     "debit": "120.00 300.00",
     "credit": "",
     "balance": "7,29,753.57 7,29,453.57"
+  },
+  {
+    "id": "21",
+    "date": "26 May 2026",
+    "description": "UPI/SRI LAXMI NARAS/509592172283/Payment from Ph",
+    "refNo": "UPI-614608130553",
+    "debit": "300.00",
+    "credit": "",
+    "balance": "7,29,453.57"
   },
   {
     "id": "22",
@@ -2654,5 +2715,135 @@ export const kotakTransactions: KotakTransaction[] = [
     "debit": "25.00",
     "credit": "",
     "balance": "9,83,404.47"
+  }
+];
+
+export const kotakTransactions: KotakTransaction[] = defaultKotakTransactions;
+
+export const kotakImportantInfo: string[] = [
+  "RBI mandates Positive Pay for high-value cheques from Jan 1, 2021. Customers must submit cheque details via Net/Mobile Banking or at the branch on the day of issuance or before handing it to the beneficiary. For more details, visit www.kotak.bank.in.",
+  "From October 4, 2025, same-day cheque clearing will be implemented across all banks. Cheques will be credited or debited within a few hours of issuance.",
+  "Complimentary insurance cover on Kotak Debit Cards (linked to Saving and Current accounts) will be discontinued w.e.f. July 20, 2025. All claims will be accepted until July 20, 2025, as per the existing process. Salary account holders may view their insurance covers under Debit Card Services in the Cards & FASTag section on the web portal. For any queries related to Debit Card insurance, write to dc.insurance@kotak.com or visit https://www.kotak.bank.in/en/personal-banking /cards/debit-cards/debit-card-services/insurnace-on-debit-card.html",
+  "TDS is applicable from time to time as per the Income Tax Act, 2025 (IT Act) and Income Tax Rules, 2026. Currently, TDS is deducted when the aggregate interest paid / credited across all FDs, RDs exceeds the threshold limit of Rs. 50,000/- for residents and Rs. 1,00,000/- for resident senior citizens in a financial year (FY) for a customer.",
+  "You can avail a Tax Deduction at Source (TDS) exemption on the interest earned on your existing or new Fixed Deposits for the current financial year by submitting Form 121 (earlier Form 15G/15H). This exemption is available if you are eligible and the total interest earned on your bank deposits in a financial year exceeds the TDS exemption threshold. If the total interest earned on your bank deposits is below the TDS exemption threshold, submission of Form 121 is not required. A fresh Form 121 must be submitted at the beginning of each financial year for Fixed Deposits and Recurring Deposits.",
+  "RBI, vide its circular DOR.CRE.REC.23/21.08.008/2022-23 dated April 19, 2022, has issued guidelines pertaining to the opening and maintenance of Current Account(s) of customers who have availed various credit facilities from the banking system. The term \"banking system\" refers to Scheduled Commercial Banks and Payments Banks. Banks (whether lending banks or otherwise) are required to monitor all Current Account, Overdraft, and Cash Credit accounts on a regular basis, at least on a half-yearly frequency. This monitoring must specifically consider the aggregate exposure of the banking system to the borrower vis-\u00e0-vis the individual bank's share in that exposure, in order to ensure compliance with the said instructions. Detailed guidelines are available in the aforementioned circular.",
+  "Corporate Salary Account holders can view complete details of the General Schedule of Features and Charges (GSFC) related to balance maintenance, debit card usage, transactions, and more by visiting: https://www.kotak.bank.in/en/personal-banking/accounts/savings-account/saving-accounts-feesand-charges.html",
+  "Starting December 2025, you will receive 30 free SMS alerts per month for transaction updates. To avoid charges beyond this limit, please maintain a combined balance of \u20b910,000 across your Savings and Term Deposits, or ensure regular salary credits in your salary account. If these conditions are not met, a nominal fee of \u20b90.15 per SMS will apply for transaction alerts such as UPI, NEFT, ATM withdrawals, Debit Card usage, and similar activities. Messages related to KYC and promotional offers will continue to be free of charge. For more details, please visit https://www.kotak.bank.in/en/gsfc.html.",
+  "Deposits of up to \u20b95,00,000 per depositor are fully insured by the Deposit Insurance and Credit Guarantee Corporation, under the Deposit Insurance Scheme.",
+  "Keep your account active for uninterrupted access to your funds: Inoperative accounts can be easily reactivated by submitting a signed request along with valid KYC documents. For details, please click https://www.kotak.bank.in/en/reach-us.html",
+  "Registering a nominee is strongly recommended: A nominee can help your family access funds lying in your inoperative account smoothly. In the event of the account holder\u2019s demise, the nominee may visit our nearest branch with the required documents for verification and settlement of claims.",
+  "Goods and Services Tax (GST), at the applicable rate of 18%, is levied on relevant service charges.",
+  "Dear Customer, any inaccurate, incomplete or false disclosure of statement of financial transaction or reportable account by you would lead to penal consequence on the Bank under applicable law. The Bank shall be entitled to recover from you such amount levied due to such inaccuracy, incompleteness or false disclosure. You will indemnify the Bank in respect of all or any liabilities incurred by Bank, by reason of any of the information or particulars given by you, being incorrect or false or being suppressed or omitted.",
+  "Please note: This statement/ advice should not be construed as a Tax Invoice under the Goods and Services Tax Act.",
+  "Effective 1 August 2026, the Dynamic Currency Conversion (DCC) fee on Kotak Debit Card transactions will be 3.5% + GST of the transaction amount (earlier 1% + GST)."
+];
+
+export const kotakNarrationsPart1 = [
+  {
+    "code": "AP",
+    "description": "Autopay for Billpay"
+  },
+  {
+    "code": "ATL",
+    "description": "ATM withdrawal done from other bank ATM machine"
+  },
+  {
+    "code": "ATW",
+    "description": "ATM withdrawal done from Kotak ATM machine"
+  },
+  {
+    "code": "BP",
+    "description": "Bill Pay transaction"
+  },
+  {
+    "code": "CDM",
+    "description": "Kotak Cash Deposit Machine"
+  },
+  {
+    "code": "CMS",
+    "description": "Cash Management Service"
+  },
+  {
+    "code": "IB",
+    "description": "Transaction done on Kotak Net Banking"
+  },
+  {
+    "code": "IMPS",
+    "description": "Immediate Payment Service"
+  },
+  {
+    "code": "Netcard",
+    "description": "Netc@rd transaction"
+  },
+  {
+    "code": "OS",
+    "description": "Online Shopping transaction"
+  },
+  {
+    "code": "OT",
+    "description": "Online Trading transaction via Payment Gateway"
+  },
+  {
+    "code": "PB",
+    "description": "Transaction done through Phone Banking (IVR)"
+  },
+  {
+    "code": "PCI/PCD",
+    "description": "POS transaction"
+  },
+  {
+    "code": "RTGS",
+    "description": "Real Time Gross Settlement"
+  },
+  {
+    "code": "UPI",
+    "description": "Unified Payment Interface"
+  },
+  {
+    "code": "VISACCPAY",
+    "description": "Visa Credit Card Payment"
+  }
+];
+
+export const kotakNarrationsPart2 = [
+  {
+    "code": "IMT",
+    "description": "Instant Money Transfer"
+  },
+  {
+    "code": "KB",
+    "description": "Billpay transaction via Keya Chatbot"
+  },
+  {
+    "code": "MB",
+    "description": "Transaction done on Mobile banking"
+  },
+  {
+    "code": "NACH",
+    "description": "National Automated Clearing House"
+  },
+  {
+    "code": "NEFT",
+    "description": "National Electronic Funds Transfer"
+  },
+  {
+    "code": "VMT",
+    "description": "VISA Money Transfer"
+  },
+  {
+    "code": "WB",
+    "description": "Billpay transaction via WhatsApp Banking"
+  },
+  {
+    "code": "Int. Pd.",
+    "description": "Interest credited on your savings account balance"
+  },
+  {
+    "code": "Sweep transfer to",
+    "description": "Booking new Term Deposit"
+  },
+  {
+    "code": "Sweep transfer from",
+    "description": "Broken existing Term Deposit"
   }
 ];
