@@ -190,6 +190,13 @@ export default function ICICIStatementGenerator() {
   const [fontsReady, setFontsReady] = useState(false);
   const [measurement, setMeasurement] = useState<{ rowBottoms: number[]; headerHeight: number } | null>(null);
 
+  // window.print() uses document.title as the saved PDF's title and default filename
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = 'ICICI_Bank_Statement';
+    return () => { document.title = previousTitle; };
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
     document.fonts.ready.then(() => { if (!cancelled) setFontsReady(true); });
