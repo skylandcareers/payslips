@@ -20,7 +20,7 @@ const TABLE_LEFT = 48;
 const TABLE_WIDTH = 697.33;
 const PAGE1_TABLE_TOP = 443;
 
-const COLUMN_WIDTHS = [36.7, 73.4, 73.4, 110.1, 73.4, 110.1, 73.4, 73.4, 73.43];
+const COLUMN_WIDTHS = [36.67, 73.5, 73.33, 110.17, 73.33, 110.17, 73.33, 73.5, 73.33];
 
 const HEADER_LABELS: [string, string?][] = [
   ['Sr', 'No'],
@@ -39,16 +39,17 @@ const headerCellStyle: React.CSSProperties = {
   textAlign: 'center', verticalAlign: 'middle', lineHeight: 1,
 };
 
-// Source PDF top-aligns cell text: ~6px from the top rule to the first glyph, 11.75px line pitch
+// Source PDF cells: 9pt (12px) Helvetica, 12px line pitch, top-aligned with the first baseline ~14.8px below the row rule
 const cellStyle: React.CSSProperties = {
-  border: '0.67px solid #000', padding: '5px 2px 0.25px', fontSize: '11px',
-  textAlign: 'center', verticalAlign: 'top', lineHeight: '11.75px',
+  border: '0.67px solid #000', padding: '4.1px 2px 0.25px', fontSize: '12px',
+  textAlign: 'center', verticalAlign: 'top', lineHeight: '12px',
 };
 
 const wrapCellStyle: React.CSSProperties = { ...cellStyle, wordBreak: 'break-word', overflowWrap: 'break-word' };
 const remarksCellStyle: React.CSSProperties = { ...wrapCellStyle, whiteSpace: 'pre-line' };
-// Source cells leave less text width than the column, so dd-Mon-yyyy value dates wrap after the last hyphen
-const valueDateCellStyle: React.CSSProperties = { ...wrapCellStyle, paddingLeft: '5px', paddingRight: '5px' };
+// Source wraps dd-Mon-yyyy value dates wider than ~68px (e.g. 04-Sep-2025) but not narrower ones (e.g. 23-Jan-2026);
+// in Chrome that threshold needs 2.3-2.4px side padding, while remarks segments need <= 2.2px to stay unbroken
+const valueDateCellStyle: React.CSSProperties = { ...wrapCellStyle, paddingLeft: '2.35px', paddingRight: '2.35px' };
 
 const StatementTable = React.forwardRef<HTMLTableElement, { rows: ICICITransaction[]; showHeader?: boolean }>(
   ({ rows, showHeader = false }, ref) => (
