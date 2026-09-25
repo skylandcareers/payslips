@@ -110,8 +110,8 @@ export default function ICICIStatementGenerator() {
     }
   };
 
-  // Group transactions cleanly across pages with generous bottom margin (13 on pg 1, ~20 on continuation pages)
-  const pageRowsConfig = [13, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21];
+  // Exactly 20 rows per page on continuation pages (13 on Page 1 due to header)
+  const pageRowsConfig = [13, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 12];
 
   const pagesData = useMemo(() => {
     const pagesArray: { pageNum: number; txns: ICICITransaction[] }[] = [];
@@ -126,7 +126,7 @@ export default function ICICIStatementGenerator() {
       startIdx += count;
     }
 
-    // If more rows were uploaded beyond 325, chunk them in groups of 20
+    // Chunk any extra uploaded transactions in groups of 20
     while (startIdx < transactions.length) {
       const slice = transactions.slice(startIdx, startIdx + 20);
       pagesArray.push({ pageNum: pagesArray.length + 1, txns: slice });
