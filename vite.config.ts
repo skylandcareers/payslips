@@ -43,6 +43,8 @@ function pdfExportPlugin(): Plugin {
           await page.goto(targetUrl, { waitUntil: "networkidle0", timeout: 30000 });
           await page.emulateMediaType("print");
           await page.evaluateHandle("document.fonts.ready");
+          // Generators that paginate by measured height flag themselves with data-paginating until done
+          await page.waitForFunction(() => !document.querySelector("[data-paginating]"), { timeout: 15000 });
           await new Promise((r) => setTimeout(r, 200));
 
           const pdfBuffer = await page.pdf({

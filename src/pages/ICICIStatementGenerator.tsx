@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, ArrowLeft, Printer, Loader2, Upload, Trash2, RotateCcw, Building2, Search } from 'lucide-react';
 import { toast } from 'sonner';
@@ -9,6 +9,80 @@ import {
   defaultICICITransactions,
   iciciLegends,
 } from '../data/iciciData';
+import { paginateByHeight } from '../lib/paginateByHeight';
+
+// Page geometry in CSS px (A4 at 96 DPI), taken from public/icici/IciciBank.pdf
+const PAGE_WIDTH = 793.33;
+const PAGE_HEIGHT = 1122.67;
+const MARGIN_TOP = 48;
+const MARGIN_BOTTOM = 48;
+const TABLE_LEFT = 48;
+const TABLE_WIDTH = 697.33;
+const PAGE1_TABLE_TOP = 443;
+
+const COLUMN_WIDTHS = [36.7, 73.4, 73.4, 110.1, 73.4, 110.1, 73.4, 73.4, 73.43];
+
+const HEADER_LABELS: [string, string?][] = [
+  ['Sr', 'No'],
+  ['Tran', 'ID'],
+  ['Value', 'Date'],
+  ['Transaction', 'Date'],
+  ['Cheque', 'no/ RefNo'],
+  ['Transaction', 'Remarks'],
+  ['Withdrawl', '(Dr)'],
+  ['Deposit', '(Cr)'],
+  ['Balance'],
+];
+
+const headerCellStyle: React.CSSProperties = {
+  border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700,
+  textAlign: 'center', verticalAlign: 'middle', lineHeight: 1,
+};
+
+const cellStyle: React.CSSProperties = {
+  border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px',
+  textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15,
+};
+
+const wrapCellStyle: React.CSSProperties = { ...cellStyle, wordBreak: 'break-word', overflowWrap: 'break-word' };
+const remarksCellStyle: React.CSSProperties = { ...wrapCellStyle, whiteSpace: 'pre-line' };
+
+const StatementTable = React.forwardRef<HTMLTableElement, { rows: ICICITransaction[]; showHeader?: boolean }>(
+  ({ rows, showHeader = false }, ref) => (
+    <table ref={ref} style={{ width: `${TABLE_WIDTH}px`, borderCollapse: 'collapse', tableLayout: 'fixed', border: '0.67px solid #000' }}>
+      <colgroup>
+        {COLUMN_WIDTHS.map((w, i) => <col key={i} style={{ width: `${w}px` }} />)}
+      </colgroup>
+      {showHeader && (
+        <thead>
+          <tr style={{ height: '32px', backgroundColor: '#fff' }}>
+            {HEADER_LABELS.map(([a, b], i) => (
+              <th key={i} style={headerCellStyle}>
+                {b ? <><div>{a}</div><div>{b}</div></> : a}
+              </th>
+            ))}
+          </tr>
+        </thead>
+      )}
+      <tbody>
+        {rows.map((t, idx) => (
+          <tr key={idx}>
+            <td style={cellStyle}>{t.srNo}</td>
+            <td style={cellStyle}>{t.tranId}</td>
+            <td style={wrapCellStyle}>{t.valueDate}</td>
+            <td style={cellStyle}>{t.txnDate}</td>
+            <td style={wrapCellStyle}>{t.chqRef || ''}</td>
+            <td style={remarksCellStyle}>{t.remarks}</td>
+            <td style={cellStyle}>{t.withdrawal}</td>
+            <td style={cellStyle}>{t.deposit}</td>
+            <td style={cellStyle}>{t.balance}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+);
+StatementTable.displayName = 'StatementTable';
 
 export default function ICICIStatementGenerator() {
   const [activeTab, setActiveTab] = useState<'preview' | 'edit'>('preview');
@@ -110,31 +184,40 @@ export default function ICICIStatementGenerator() {
     }
   };
 
-  // Exactly matches the 16 transaction pages of public/icici/IciciBank.pdf (total 325 txns)
-  const pageRowsConfig = [13, 21, 20, 21, 20, 21, 21, 21, 21, 21, 21, 19, 22, 21, 22, 20];
+  // Rows wrap to varying heights, so pages are cut by measured height rather than row count.
+  // An off-screen copy of the table is measured, then rows are packed up to the bottom margin.
+  const measureRef = useRef<HTMLTableElement>(null);
+  const [fontsReady, setFontsReady] = useState(false);
+  const [measurement, setMeasurement] = useState<{ rowBottoms: number[]; headerHeight: number } | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    document.fonts.ready.then(() => { if (!cancelled) setFontsReady(true); });
+    return () => { cancelled = true; };
+  }, []);
+
+  useLayoutEffect(() => {
+    const table = measureRef.current;
+    if (!table) return;
+    const rows = Array.from(table.tBodies[0]?.rows ?? []);
+    const origin = rows[0]?.getBoundingClientRect().top ?? 0;
+    setMeasurement({
+      rowBottoms: rows.map(r => r.getBoundingClientRect().bottom - origin),
+      headerHeight: table.tHead?.getBoundingClientRect().height ?? 0,
+    });
+  }, [transactions, fontsReady]);
 
   const pagesData = useMemo(() => {
-    const pagesArray: { pageNum: number; txns: ICICITransaction[] }[] = [];
-    let startIdx = 0;
+    if (!measurement || measurement.rowBottoms.length !== transactions.length) return [];
+    const firstCapacity = PAGE_HEIGHT - MARGIN_BOTTOM - PAGE1_TABLE_TOP - measurement.headerHeight;
+    const otherCapacity = PAGE_HEIGHT - MARGIN_BOTTOM - MARGIN_TOP;
+    return paginateByHeight(measurement.rowBottoms, firstCapacity, otherCapacity).map((indices, p) => ({
+      pageNum: p + 1,
+      txns: indices.map(i => transactions[i]),
+    }));
+  }, [measurement, transactions]);
 
-    for (let p = 0; p < pageRowsConfig.length; p++) {
-      const count = pageRowsConfig[p];
-      const slice = transactions.slice(startIdx, startIdx + count);
-      if (slice.length > 0) {
-        pagesArray.push({ pageNum: p + 1, txns: slice });
-      }
-      startIdx += count;
-    }
-
-    // Chunk any extra uploaded transactions in groups of 21
-    while (startIdx < transactions.length) {
-      const slice = transactions.slice(startIdx, startIdx + 21);
-      pagesArray.push({ pageNum: pagesArray.length + 1, txns: slice });
-      startIdx += 21;
-    }
-
-    return pagesArray;
-  }, [transactions]);
+  const isPaginated = fontsReady && pagesData.length > 0;
 
   const filteredTransactions = useMemo(() => {
     if (!searchTerm.trim()) return transactions;
@@ -151,7 +234,19 @@ export default function ICICIStatementGenerator() {
   }, [transactions, searchTerm]);
 
   return (
-    <div className="min-h-screen bg-slate-200 text-slate-900 flex flex-col print:bg-white print:text-black">
+    <div
+      className="min-h-screen bg-slate-200 text-slate-900 flex flex-col print:bg-white print:text-black"
+      data-paginating={isPaginated ? undefined : 'true'}
+    >
+      {/* Off-screen measuring copy of the statement table; drives height-based pagination */}
+      <div
+        aria-hidden
+        className="no-print"
+        style={{ position: 'absolute', left: '-10000px', top: 0, width: `${TABLE_WIDTH}px`, visibility: 'hidden', pointerEvents: 'none', fontFamily: 'Arial, Helvetica, sans-serif' }}
+      >
+        <StatementTable ref={measureRef} rows={transactions} showHeader />
+      </div>
+
       <style>{`
         @media print {
           @page {
@@ -536,101 +631,16 @@ export default function ICICIStatementGenerator() {
                     <div style={{ position: 'absolute', left: '50.67px', top: '404.85px', fontSize: '16px', color: '#000000' }}>Transaction Type:</div>
                     <div style={{ position: 'absolute', left: '205.63px', top: '404.09px', fontSize: '13.33px', color: '#000000' }}>{account.transactionType}</div>
 
-                    {/* Page 1 Table (Top: 443px, Left: 48px, Width: 697.33px) */}
-                    <div style={{ position: 'absolute', left: '48px', top: '443px', width: '697.33px' }}>
-                      <table style={{ width: '697.33px', borderCollapse: 'collapse', tableLayout: 'fixed', border: '0.67px solid #000' }}>
-                        <colgroup>
-                          <col style={{ width: '36.7px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '110.1px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '110.1px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.43px' }} />
-                        </colgroup>
-                        <thead>
-                          <tr style={{ height: '32px', backgroundColor: '#fff' }}>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Sr</div><div>No</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Tran</div><div>ID</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Value</div><div>Date</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Transaction</div><div>Date</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Cheque</div><div>no/ RefNo</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Transaction</div><div>Remarks</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Withdrawl</div><div>(Dr)</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              <div>Deposit</div><div>(Cr)</div>
-                            </th>
-                            <th style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700, textAlign: 'center', verticalAlign: 'middle', lineHeight: 1 }}>
-                              Balance
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {txns.map((t, idx) => (
-                            <tr key={idx}>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.srNo}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.tranId}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.valueDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.txnDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.chqRef || ''}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'pre-line', lineHeight: 1.15 }}>{t.remarks}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.withdrawal}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.deposit}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.balance}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                    {/* Page 1 Table */}
+                    <div style={{ position: 'absolute', left: `${TABLE_LEFT}px`, top: `${PAGE1_TABLE_TOP}px`, width: `${TABLE_WIDTH}px` }}>
+                      <StatementTable rows={txns} showHeader />
                     </div>
                   </div>
                 ) : (
-                  /* SUBSEQUENT PAGES (Pages 2 to 16): Pure table continuing from top: 48px */
-                  <div style={{ position: 'relative', width: '793.33px', height: '1122.67px' }}>
-                    <div style={{ position: 'absolute', left: '48px', top: '48px', width: '697.33px' }}>
-                      <table style={{ width: '697.33px', borderCollapse: 'collapse', tableLayout: 'fixed', border: '0.67px solid #000' }}>
-                        <colgroup>
-                          <col style={{ width: '36.7px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '110.1px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '110.1px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.43px' }} />
-                        </colgroup>
-                        <tbody>
-                          {txns.map((t, idx) => (
-                            <tr key={idx}>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.srNo}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.tranId}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.valueDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.txnDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.chqRef || ''}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'pre-line', lineHeight: 1.15 }}>{t.remarks}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.withdrawal}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.deposit}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.balance}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                  /* SUBSEQUENT PAGES: table continues from the top margin */
+                  <div style={{ position: 'relative', width: `${PAGE_WIDTH}px`, height: `${PAGE_HEIGHT}px` }}>
+                    <div style={{ position: 'absolute', left: `${TABLE_LEFT}px`, top: `${MARGIN_TOP}px`, width: `${TABLE_WIDTH}px` }}>
+                      <StatementTable rows={txns} />
                     </div>
                   </div>
                 )}
