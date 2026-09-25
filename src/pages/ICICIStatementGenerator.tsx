@@ -20,6 +20,21 @@ const TABLE_LEFT = 48;
 const TABLE_WIDTH = 697.33;
 const PAGE1_TABLE_TOP = 443;
 
+// Source PDF uses (non-embedded) Helvetica; Nimbus Sans is the metric-compatible Helvetica clone viewers substitute.
+// Vertical metrics are overridden to Liberation Sans/Arial values so calibrated positions stay unchanged.
+const FONT_FAMILY = "'ICICI Helvetica', Helvetica, Arial, sans-serif";
+const FONT_FACES = [400, 700].map(weight => `
+  @font-face {
+    font-family: 'ICICI Helvetica';
+    src: url('/icici/fonts/NimbusSans-${weight === 700 ? 'Bold' : 'Regular'}.woff') format('woff');
+    font-weight: ${weight};
+    font-style: normal;
+    font-display: block;
+    ascent-override: 90.5%;
+    descent-override: 21.2%;
+    line-gap-override: 3.3%;
+  }`).join('');
+
 const COLUMN_WIDTHS = [36.67, 73.5, 73.33, 110.17, 73.33, 110.17, 73.33, 73.5, 73.33];
 
 const HEADER_LABELS: [string, string?][] = [
@@ -27,29 +42,30 @@ const HEADER_LABELS: [string, string?][] = [
   ['Tran', 'ID'],
   ['Value', 'Date'],
   ['Transaction', 'Date'],
-  ['Cheque', 'no/ RefNo'],
+  ['Cheque', 'no/\u00a0 RefNo'], // source has two spaces here
   ['Transaction', 'Remarks'],
   ['Withdrawl', '(Dr)'],
   ['Deposit', '(Cr)'],
   ['Balance'],
 ];
 
+// Source header labels are top-aligned: first baseline 16px below the header rule, 13.33px line pitch
 const headerCellStyle: React.CSSProperties = {
-  border: '0.67px solid #000', padding: '1px 2px', fontSize: '13.33px', fontWeight: 700,
-  textAlign: 'center', verticalAlign: 'middle', lineHeight: 1,
+  border: '0.67px solid #000', padding: '4.4px 2px 0', fontSize: '13.33px', fontWeight: 700,
+  textAlign: 'center', verticalAlign: 'top', lineHeight: '13.33px',
 };
 
 // Source PDF cells: 9pt (12px) Helvetica, 12px line pitch, top-aligned with the first baseline ~14.8px below the row rule
 const cellStyle: React.CSSProperties = {
-  border: '0.67px solid #000', padding: '4.1px 2px 0.25px', fontSize: '12px',
+  border: '0.67px solid #000', padding: '4.1px 1.9px 0.25px', fontSize: '12px',
   textAlign: 'center', verticalAlign: 'top', lineHeight: '12px',
 };
 
 const wrapCellStyle: React.CSSProperties = { ...cellStyle, wordBreak: 'break-word', overflowWrap: 'break-word' };
 const remarksCellStyle: React.CSSProperties = { ...wrapCellStyle, whiteSpace: 'pre-line' };
 // Source wraps dd-Mon-yyyy value dates wider than ~68px (e.g. 04-Sep-2025) but not narrower ones (e.g. 23-Jan-2026);
-// in Chrome that threshold needs 2.3-2.4px side padding, while remarks segments need <= 2.2px to stay unbroken
-const valueDateCellStyle: React.CSSProperties = { ...wrapCellStyle, paddingLeft: '2.35px', paddingRight: '2.35px' };
+// with the Helvetica-metric font that needs 2.0-2.3px side padding, while remarks segments need <= 2.0px to stay unbroken
+const valueDateCellStyle: React.CSSProperties = { ...wrapCellStyle, paddingLeft: '2.15px', paddingRight: '2.15px' };
 
 const StatementTable = React.forwardRef<HTMLTableElement, { rows: ICICITransaction[]; showHeader?: boolean }>(
   ({ rows, showHeader = false }, ref) => (
@@ -203,7 +219,13 @@ export default function ICICIStatementGenerator() {
 
   useEffect(() => {
     let cancelled = false;
-    document.fonts.ready.then(() => { if (!cancelled) setFontsReady(true); });
+    Promise.all([
+      document.fonts.load("12px 'ICICI Helvetica'"),
+      document.fonts.load("700 13.33px 'ICICI Helvetica'"),
+    ])
+      .catch(() => undefined)
+      .then(() => document.fonts.ready)
+      .then(() => { if (!cancelled) setFontsReady(true); });
     return () => { cancelled = true; };
   }, []);
 
@@ -253,12 +275,12 @@ export default function ICICIStatementGenerator() {
       <div
         aria-hidden
         className="no-print"
-        style={{ position: 'absolute', left: '-10000px', top: 0, width: `${TABLE_WIDTH}px`, visibility: 'hidden', pointerEvents: 'none', fontFamily: 'Arial, Helvetica, sans-serif' }}
+        style={{ position: 'absolute', left: '-10000px', top: 0, width: `${TABLE_WIDTH}px`, visibility: 'hidden', pointerEvents: 'none', fontFamily: FONT_FAMILY }}
       >
         <StatementTable ref={measureRef} rows={transactions} showHeader />
       </div>
 
-      <style>{`
+      <style>{`${FONT_FACES}
         @media print {
           @page {
             size: 793.33px 1122.67px;
@@ -545,7 +567,7 @@ export default function ICICIStatementGenerator() {
                   boxSizing: 'border-box',
                   position: 'relative',
                   background: '#ffffff',
-                  fontFamily: 'Arial, Helvetica, sans-serif'
+                  fontFamily: FONT_FAMILY
                 }}
               >
                 {/* PAGE 1 CONTENT */}
@@ -570,7 +592,7 @@ export default function ICICIStatementGenerator() {
                       position: 'absolute',
                       left: '48px',
                       top: '92.85px',
-                      fontFamily: 'Arial, Helvetica, sans-serif',
+                      fontFamily: FONT_FAMILY,
                       fontSize: '16px',
                       fontWeight: 700,
                       color: '#000000'
@@ -622,7 +644,7 @@ export default function ICICIStatementGenerator() {
                       position: 'absolute',
                       left: '48px',
                       top: '303.51px',
-                      fontFamily: 'Arial, Helvetica, sans-serif',
+                      fontFamily: FONT_FAMILY,
                       fontSize: '16px',
                       fontWeight: 700,
                       color: '#000000'
@@ -668,7 +690,7 @@ export default function ICICIStatementGenerator() {
                 boxSizing: 'border-box',
                 position: 'relative',
                 background: '#ffffff',
-                fontFamily: 'Arial, Helvetica, sans-serif'
+                fontFamily: FONT_FAMILY
               }}
             >
               <div style={{ position: 'relative', width: '793.33px', height: '1122.67px' }}>
@@ -676,7 +698,7 @@ export default function ICICIStatementGenerator() {
                   position: 'absolute',
                   left: '48px',
                   top: '108.51px',
-                  fontFamily: 'Arial, Helvetica, sans-serif',
+                  fontFamily: FONT_FAMILY,
                   fontSize: '16px',
                   fontWeight: 700,
                   color: '#000000'
@@ -692,7 +714,7 @@ export default function ICICIStatementGenerator() {
                       position: 'absolute',
                       left: '48px',
                       top: `${154.43 + idx * 20}px`,
-                      fontFamily: 'Arial, Helvetica, sans-serif',
+                      fontFamily: FONT_FAMILY,
                       fontSize: '13.33px',
                       color: '#000000',
                       whiteSpace: 'nowrap'
@@ -707,7 +729,7 @@ export default function ICICIStatementGenerator() {
                   position: 'absolute',
                   left: '48px',
                   top: '802.43px',
-                  fontFamily: 'Arial, Helvetica, sans-serif',
+                  fontFamily: FONT_FAMILY,
                   fontSize: '13.33px',
                   color: '#000000'
                 }}>
@@ -719,7 +741,7 @@ export default function ICICIStatementGenerator() {
                   position: 'absolute',
                   left: '114.76px',
                   top: '872.51px',
-                  fontFamily: 'Arial, Helvetica, sans-serif',
+                  fontFamily: FONT_FAMILY,
                   fontSize: '16px',
                   color: '#000000'
                 }}>
