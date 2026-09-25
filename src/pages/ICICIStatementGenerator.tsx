@@ -39,13 +39,16 @@ const headerCellStyle: React.CSSProperties = {
   textAlign: 'center', verticalAlign: 'middle', lineHeight: 1,
 };
 
+// Source PDF top-aligns cell text: ~6px from the top rule to the first glyph, 11.75px line pitch
 const cellStyle: React.CSSProperties = {
-  border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px',
-  textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15,
+  border: '0.67px solid #000', padding: '5px 2px 0.25px', fontSize: '11px',
+  textAlign: 'center', verticalAlign: 'top', lineHeight: '11.75px',
 };
 
 const wrapCellStyle: React.CSSProperties = { ...cellStyle, wordBreak: 'break-word', overflowWrap: 'break-word' };
 const remarksCellStyle: React.CSSProperties = { ...wrapCellStyle, whiteSpace: 'pre-line' };
+// Source cells leave less text width than the column, so dd-Mon-yyyy value dates wrap after the last hyphen
+const valueDateCellStyle: React.CSSProperties = { ...wrapCellStyle, paddingLeft: '5px', paddingRight: '5px' };
 
 const StatementTable = React.forwardRef<HTMLTableElement, { rows: ICICITransaction[]; showHeader?: boolean }>(
   ({ rows, showHeader = false }, ref) => (
@@ -69,7 +72,7 @@ const StatementTable = React.forwardRef<HTMLTableElement, { rows: ICICITransacti
           <tr key={idx}>
             <td style={cellStyle}>{t.srNo}</td>
             <td style={cellStyle}>{t.tranId}</td>
-            <td style={wrapCellStyle}>{t.valueDate}</td>
+            <td style={valueDateCellStyle}>{t.valueDate}</td>
             <td style={cellStyle}>{t.txnDate}</td>
             <td style={wrapCellStyle}>{t.chqRef || ''}</td>
             <td style={remarksCellStyle}>{t.remarks}</td>
