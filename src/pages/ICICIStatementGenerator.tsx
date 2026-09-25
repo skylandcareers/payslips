@@ -110,8 +110,8 @@ export default function ICICIStatementGenerator() {
     }
   };
 
-  // Exactly matches the 16 transaction pages of public/icici/IciciBank.pdf (total 325 txns)
-  const pageRowsConfig = [13, 21, 20, 21, 20, 21, 21, 21, 21, 21, 21, 19, 22, 21, 22, 20];
+  // Exactly 20 rows per page on continuation pages (13 on Page 1 due to header)
+  const pageRowsConfig = [13, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 12];
 
   const pagesData = useMemo(() => {
     const pagesArray: { pageNum: number; txns: ICICITransaction[] }[] = [];
@@ -126,11 +126,11 @@ export default function ICICIStatementGenerator() {
       startIdx += count;
     }
 
-    // Chunk any extra uploaded transactions in groups of 21
+    // Chunk any extra uploaded transactions in groups of 20
     while (startIdx < transactions.length) {
-      const slice = transactions.slice(startIdx, startIdx + 21);
+      const slice = transactions.slice(startIdx, startIdx + 20);
       pagesArray.push({ pageNum: pagesArray.length + 1, txns: slice });
-      startIdx += 21;
+      startIdx += 20;
     }
 
     return pagesArray;
@@ -178,14 +178,8 @@ export default function ICICIStatementGenerator() {
             width: 793.33px !important;
             min-height: 1122.67px !important;
             height: 1122.67px !important;
-            max-height: 1122.67px !important;
-            overflow: hidden !important;
             padding: 0 !important;
             position: relative !important;
-          }
-          .icici-page:last-child {
-            page-break-after: auto !important;
-            break-after: auto !important;
           }
         }
       `}</style>
@@ -583,16 +577,16 @@ export default function ICICIStatementGenerator() {
                         </thead>
                         <tbody>
                           {txns.map((t, idx) => (
-                            <tr key={idx}>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.srNo}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.tranId}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.valueDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.txnDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.chqRef || ''}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'pre-line', lineHeight: 1.15 }}>{t.remarks}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.withdrawal}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.deposit}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.balance}</td>
+                            <tr key={idx} style={{ height: '38px' }}>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.srNo}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.tranId}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.valueDate}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.txnDate}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.chqRef || ''}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'pre-line', lineHeight: 1.15 }}>{t.remarks}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.withdrawal}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.deposit}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.balance}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -617,16 +611,16 @@ export default function ICICIStatementGenerator() {
                         </colgroup>
                         <tbody>
                           {txns.map((t, idx) => (
-                            <tr key={idx}>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.srNo}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.tranId}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.valueDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.txnDate}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.chqRef || ''}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'pre-line', lineHeight: 1.15 }}>{t.remarks}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.withdrawal}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.deposit}</td>
-                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', fontSize: '11px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.balance}</td>
+                            <tr key={idx} style={{ height: '38px' }}>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.srNo}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.tranId}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.valueDate}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.txnDate}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', lineHeight: 1.15 }}>{t.chqRef || ''}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'pre-line', lineHeight: 1.15 }}>{t.remarks}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.withdrawal}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.deposit}</td>
+                              <td style={{ border: '0.67px solid #000', padding: '1px 2px', height: '38px', fontSize: '12px', textAlign: 'center', verticalAlign: 'middle', lineHeight: 1.15 }}>{t.balance}</td>
                             </tr>
                           ))}
                         </tbody>

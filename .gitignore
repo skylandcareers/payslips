@@ -23,4 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 .dual-graph/
-.dual-graph-context/
