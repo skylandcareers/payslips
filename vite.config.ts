@@ -45,6 +45,8 @@ function pdfExportPlugin(): Plugin {
           await page.evaluateHandle("document.fonts.ready");
           // Generators that paginate by measured height flag themselves with data-paginating until done
           await page.waitForFunction(() => !document.querySelector("[data-paginating]"), { timeout: 15000 });
+          // Chrome writes document.title into the PDF Title metadata; use the statement's name instead of the app title
+          await page.evaluate((title: string) => { document.title = title; }, filename.replace(/\.pdf$/i, ""));
           await new Promise((r) => setTimeout(r, 200));
 
           const pdfBuffer = await page.pdf({
