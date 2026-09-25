@@ -6,167 +6,211 @@ import remarkGfm from 'remark-gfm';
 
 const templateOptions = [
   {
-    id: "quotation",
-    name: "1. Quotation / Estimate",
+    id: "gst-details",
+    name: "1. GST Registration & Business Profile Declaration",
     isHTML: false,
     data: {
-      referenceNo: "HFE/QTN/2026/001",
-      date: "11/09/2026",
-      recipientName: "Customer Name",
-      recipientAddress: "Customer Address",
-      subject: "Quotation for Furniture Supply",
+      referenceNo: "AVM/GST/2026/01",
+      date: "25/09/2026",
+      recipientName: "To Whomsoever It May Concern",
+      recipientAddress: "Verification / Banking / Official Authority",
+      subject: "DECLARATION OF GST REGISTRATION DETAILS & BUSINESS CREDENTIALS (AVM FURNITURE)",
       salutation: "Dear Sir/Madam,",
-      bodyText: `We are pleased to submit our quotation for the supply of furniture as detailed below:
+      bodyText: `This is to certify and declare the official Goods & Services Tax (GST) registration credentials and core business profile of **M/s. AVM FURNITURE** as registered under the Goods and Services Tax Act, 2017:
 
-| # | Description | Qty | Unit Price (₹) | Amount (₹) |
+| Field | Details |
+|---|---|
+| **GSTIN / UIN** | **33DFTPK5651E1Z9** |
+| **Legal Name of Business** | **Rajalingam K** |
+| **Trade Name** | **AVM FURNITURE** |
+| **Effective Date of Registration** | **01/07/2017** |
+| **Constitution of Business** | **Proprietorship** |
+| **GSTIN / UIN Status** | **Active** |
+| **Taxpayer Type** | **Regular** |
+| **Aadhaar Authenticated?** | **No** |
+| **e-KYC Verified?** | **No** |
+| **Nature of Core Business Activity** | **Trader - Retailer** |
+| **Nature of Business Activities** | **1. Retail Business, Administrative Office** |
+
+### Jurisdictional Office Details
+
+| Jurisdiction Type | State | Zone | Commissionerate / Division | Range / Circle |
 |---|---|---|---|---|
-| 1 | Wooden Office Chair | 10 | 3,500 | 35,000 |
-| 2 | Wooden Office Table (4×2 ft) | 5 | 8,500 | 42,500 |
-| 3 | Wooden Bookshelf (6 shelf) | 3 | 12,000 | 36,000 |
-| | **Subtotal** | | | **1,13,500** |
-| | GST (Composition – Bill of Supply) | | | – |
-| | **Total** | | | **₹1,13,500** |
+| **Center Jurisdiction** | CBIC | CHENNAI | TIRUCHIRAPALLI / TIRICHIRAPALLI - II | LALGUDI RANGE |
+| **State Jurisdiction** | Tamil Nadu | Ariyalur | TRICHY | LALGUDI |
 
-**Note:** As per Composition Scheme under GST, tax is not collected separately. This is a Bill of Supply.
+### Principal Place of Business
+**122/P, Trichy Main Road, Angarai, Lalgudi, Lalgudi, Tiruchirappalli, Tamil Nadu, 621703**
 
-**Terms & Conditions:**
-- Delivery within 15 working days from order confirmation
-- 50% advance payment required
-- Balance on delivery
-- Warranty: 1 year against manufacturing defects
+### Goods Dealing In (HSN Code & Description)
+
+| HSN Code | Description of Goods |
+|---|---|
+| **39** | Plastics and articles thereof |
+| **7321** | Stoves, ranges, grates, cookers (including those with subsidiary boilers for central heating), barbecues, braziers, gas-rings, plate warmers and similar non-electric domestic appliances, and parts thereof, of iron or steel |
+| **120710** | Palm nuts and kernels |
+| **94033010** | Cabinetware |
+
+We hereby declare and confirm that the above particulars are true, accurate, and extracted from the official GST portal records of the Government of India.
 
 Thanking you.`,
-      signatoryName: "POSHETTY KUDALA",
+      signatoryName: "Rajalingam K",
       signatoryTitle: "Proprietor",
-      signatoryFirm: "Home Furniture and Enterprise",
+      signatoryFirm: "AVM FURNITURE",
     },
   },
   {
-    id: "bill-of-supply",
-    name: "2. Bill of Supply (Composition Dealer)",
+    id: "quotation",
+    name: "2. Quotation / Estimate",
     isHTML: false,
     data: {
-      referenceNo: "HFE/BOS/2026/001",
-      date: "11/09/2026",
+      referenceNo: "AVM/QTN/2026/001",
+      date: "25/09/2026",
       recipientName: "Customer Name",
-      recipientAddress: "Customer Address\nGSTIN (if any): _______________",
-      subject: "BILL OF SUPPLY – Composition taxable person, not eligible to collect tax on supplies",
-      salutation: "",
-      bodyText: `| # | HSN | Description of Goods | Qty | Rate (₹) | Amount (₹) |
+      recipientAddress: "Customer Address",
+      subject: "Quotation for Furniture Supply & Cabinetware",
+      salutation: "Dear Sir/Madam,",
+      bodyText: `We are pleased to submit our quotation for the supply of furniture and cabinetware as detailed below:
+
+| # | HSN | Description | Qty | Unit Price (₹) | Amount (₹) |
 |---|---|---|---|---|---|
-| 1 | 940330 | Wooden Office Furniture | 5 | 8,500 | 42,500 |
-| 2 | 940330 | Wooden Home Furniture | 3 | 12,000 | 36,000 |
-| | | | | **Total** | **₹78,500** |
+| 1 | 94033010 | Wooden Cabinetware / Cupboard | 4 | 14,500 | 58,000 |
+| 2 | 940330 | Wooden Office Table (4×2 ft) | 5 | 8,500 | 42,500 |
+| 3 | 39 | Premium Molded Plastic Chairs | 15 | 1,200 | 18,000 |
+| 4 | 7321 | Domestic Gas Stove / Burner Unit | 2 | 4,500 | 9,000 |
+| | | **Subtotal** | | | **1,27,500** |
+| | | CGST @ 9% | | | **11,475** |
+| | | SGST @ 9% | | | **11,475** |
+| | | **Total Amount (Incl. GST)** | | | **₹1,50,450** |
 
-**Amount in Words:** Seventy Eight Thousand Five Hundred Rupees Only
+**Terms & Conditions:**
+- Delivery within 10 working days from order confirmation
+- Payment: 50% advance, balance on delivery
+- Warranty: 1 year against manufacturing defects
 
-**Mode of Payment:** Cash / Bank Transfer
-**Delivery:** [Delivery Address]
-
-**Declaration:** I/We hereby certify that the information given above is true, correct and complete in every respect.`,
-      signatoryName: "POSHETTY KUDALA",
+Thanking you.`,
+      signatoryName: "Rajalingam K",
       signatoryTitle: "Proprietor",
-      signatoryFirm: "Home Furniture and Enterprise",
+      signatoryFirm: "AVM FURNITURE",
+    },
+  },
+  {
+    id: "tax-invoice",
+    name: "3. Tax Invoice (Regular Taxpayer)",
+    isHTML: false,
+    data: {
+      referenceNo: "AVM/INV/2026/089",
+      date: "25/09/2026",
+      recipientName: "M/s. Royal Interiors & Enterprises",
+      recipientAddress: "Trichy Road, Lalgudi, Tiruchirappalli\nGSTIN: 33AAAAA0000A1Z5",
+      subject: "TAX INVOICE",
+      salutation: "",
+      bodyText: `| # | HSN | Description of Goods | Qty | Rate (₹) | Taxable Value (₹) |
+|---|---|---|---|---|---|
+| 1 | 94033010 | Cabinetware (Wooden Wardrobe / Almirah) | 3 | 16,000 | 48,000 |
+| 2 | 940330 | Modular Office Desk with Drawers | 4 | 9,500 | 38,000 |
+| 3 | 39 | Heavy-Duty Plastic Storage Containers | 10 | 850 | 8,500 |
+| | | **Subtotal** | | | **94,500** |
+| | | CGST @ 9% | | | **8,505** |
+| | | SGST @ 9% | | | **8,505** |
+| | | **Total Invoice Value** | | | **₹1,11,510** |
+
+**Amount in Words:** One Lakh Eleven Thousand Five Hundred and Ten Rupees Only
+
+**Bank Account Details:**
+- **Account Name:** AVM FURNITURE
+- **Bank:** State Bank of India, Lalgudi Branch
+- **GSTIN:** 33DFTPK5651E1Z9
+
+**Declaration:** We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct.`,
+      signatoryName: "Rajalingam K",
+      signatoryTitle: "Proprietor",
+      signatoryFirm: "AVM FURNITURE",
     },
   },
   {
     id: "delivery-challan",
-    name: "3. Delivery Challan",
+    name: "4. Delivery Challan",
     isHTML: false,
     data: {
-      referenceNo: "HFE/DC/2026/001",
-      date: "11/09/2026",
-      recipientName: "Customer Name",
-      recipientAddress: "Customer Address\nPh: _______________",
-      subject: "DELIVERY CHALLAN",
+      referenceNo: "AVM/DC/2026/045",
+      date: "25/09/2026",
+      recipientName: "Customer / Site Supervisor",
+      recipientAddress: "Site Delivery Address\nPh: +91 94431 XXXXX",
+      subject: "DELIVERY CHALLAN / DISPATCH NOTE",
       salutation: "",
-      bodyText: `**Dispatch From:** Sy No.375/1, Panyam Road, Nandyal – 518 502
+      bodyText: `**Dispatch From:** 122/P, Trichy Main Road, Angarai, Lalgudi, Tiruchirappalli, Tamil Nadu – 621 703
 
-| # | Description | Qty | Remarks |
-|---|---|---|---|
-| 1 | Wooden Office Chair | 10 | Good Condition |
-| 2 | Wooden Table (4×2 ft) | 5 | Good Condition |
-| 3 | Wooden Bookshelf | 3 | Good Condition |
+| # | HSN Code | Description | Qty | Remarks |
+|---|---|---|---|---|
+| 1 | 94033010 | Cabinetware Units | 3 | Factory Assembled |
+| 2 | 940330 | Modular Wooden Desks | 4 | Box Packed |
+| 3 | 39 | Plastic Articles / Molded Chairs | 10 | Good Condition |
 
-**Vehicle No.:** _______________
-**Driver Name:** _______________
+**Vehicle No.:** TN-48-AB-1234  
+**Driver Name:** M. Subramanian  
 
-*This challan is for delivery purposes only. Invoice / Bill of Supply will follow.*
+*This challan is issued for delivery purposes. Tax Invoice attached.*
 
-**Signature of Receiver:** _______________
-**Date & Seal:** _______________`,
-      signatoryName: "POSHETTY KUDALA",
+**Receiver Signature & Seal:** _______________  
+**Date:** _______________`,
+      signatoryName: "Rajalingam K",
       signatoryTitle: "Proprietor",
-      signatoryFirm: "Home Furniture and Enterprise",
+      signatoryFirm: "AVM FURNITURE",
     },
   },
   {
     id: "warranty",
-    name: "4. Warranty Certificate",
+    name: "5. Warranty Certificate",
     isHTML: false,
     data: {
-      referenceNo: "HFE/WC/2026/001",
-      date: "11/09/2026",
+      referenceNo: "AVM/WC/2026/012",
+      date: "25/09/2026",
       recipientName: "Customer Name",
-      recipientAddress: "Customer Address\nBill No.: _______________   Bill Date: _______________",
-      subject: "WARRANTY CERTIFICATE",
+      recipientAddress: "Customer Address\nInvoice No.: AVM/INV/2026/089",
+      subject: "OFFICIAL WARRANTY CERTIFICATE",
       salutation: "Dear Customer,",
-      bodyText: `This is to certify that the furniture item(s) listed below have been purchased from **Home Furniture and Enterprise** and are covered under warranty as specified:
+      bodyText: `This is to certify that the furniture and cabinetware items supplied by **AVM FURNITURE** are covered under warranty as specified below:
 
-| Item Description | Serial / Batch No. | Warranty Period |
+| Item Description | HSN Code | Warranty Period |
 |---|---|---|
-| [Item Description] | [Batch No.] | 1 Year from purchase |
+| Wooden Cabinetware & Modular Office Tables | 94033010 / 940330 | 1 Year from Invoice Date |
+| Domestic Appliances / Hardware | 7321 | 1 Year Manufacturer Warranty |
 
 **Warranty Terms:**
-- Covers manufacturing defects only
-- Damage due to misuse or accidents is NOT covered
-- Warranty is non-transferable
-- Present this certificate with original bill for claims`,
-      signatoryName: "POSHETTY KUDALA",
+- Covers manufacturing and structural timber defects
+- Damage resulting from misuse, unauthorized modifications, or water damage is excluded
+- Please preserve this certificate alongside the original tax invoice for service claims`,
+      signatoryName: "Rajalingam K",
       signatoryTitle: "Proprietor",
-      signatoryFirm: "Home Furniture and Enterprise",
+      signatoryFirm: "AVM FURNITURE",
     },
   },
   {
-    id: "spain-sponsorship",
-    name: "5. Spain Visa Sponsorship – BioSpain 2026 (RAGHU KUDALA)",
+    id: "sponsorship",
+    name: "6. Visa Sponsorship Declaration (Rajalingam K)",
     isHTML: false,
     data: {
-      referenceNo: "HFE/VISA/2026/SPAIN",
-      date: "11/09/2026",
+      referenceNo: "AVM/VISA/2026/SPONSOR",
+      date: "25/09/2026",
       recipientName: "To\nThe Visa Officer",
-      recipientAddress: "The Consulate General of Spain\nMumbai, India",
-      subject: "SPONSORSHIP DECLARATION & FINANCIAL GUARANTEE FOR SCHENGEN VISA (BIOSPAIN 2026, BILBAO, SPAIN)",
+      recipientAddress: "The Embassy / Consulate General\nVisa Processing Section",
+      subject: "FINANCIAL SPONSORSHIP DECLARATION & UNDERTAKING",
       salutation: "Dear Sir / Madam,",
-      bodyText: `I, **Mr. POSHETTY KUDALA**, an Indian citizen residing at **H.No: 3/535/J3, Byramal Street, Jillella, Nandyal, Andhra Pradesh – 518 501**, hereby confirm that I am the **biological father and financial sponsor** of **Mr. RAGHU KUDALA** (Student ID: **SU24010825**, Passport No: **U9813918**), who is a student at the **School of Chemical and Biotechnology (SCBT), SASTRA Deemed to be University**, Thirumalaisamudram, Thanjavur – 613 401, Tamil Nadu, India.
+      bodyText: `I, **Rajalingam K**, an Indian citizen residing at **122/P, Trichy Main Road, Angarai, Lalgudi, Tiruchirappalli, Tamil Nadu – 621 703**, hereby confirm that I am the **Proprietor of AVM FURNITURE**, an active registered business entity in Tamil Nadu, India (**GSTIN: 33DFTPK5651E1Z9**).
 
-I am the **Proprietor of HOME FURNITURE AND ENTERPRISE**, a registered business in Nandyal, Andhra Pradesh, India (**GSTIN: 37COOPD8437E6ZK**, **PAN: CQLPR8612J**). My enterprise is active and generates a stable income, and I regularly file my Income Tax Returns.
+Our business is engaged in the retail trade of furniture, cabinetware, and household merchandise since **01/07/2017**, operating under the jurisdiction of the Center (CBIC Chennai, Tiruchirappalli, Lalgudi Range) and State (Tamil Nadu, Trichy, Lalgudi Circle). The business maintains a steady and substantial turnover, and I regularly file my Goods & Services Tax (GST) Returns and Income Tax Returns (ITR).
 
-My son, **Mr. RAGHU KUDALA**, has been accepted to attend **BIOSPAIN 2026** - one of the largest biotechnology trade fairs and conferences in Europe, organized by the Spanish national bioindustry association (AseBio):
+I hereby undertake **full financial responsibility** for all associated travel, accommodation, daily living, health insurance, and incidental expenses during the proposed international visit.
 
-- **Venue:** BILBAO EXHIBITION CENTRE
-- **Address:** Azkue Kalea, 1, 48902 San Vicente de Barakaldo, Bizkaia. Spain
-- **Dates:** 29 September – 1 October 2026
+All supporting documents - including our active GST Registration Certificate (GSTIN: 33DFTPK5651E1Z9), Income Tax Returns, Business Current Account Bank Statements, and Proof of Business Ownership - are enclosed herewith for your verification.
 
-I hereby undertake **full and unconditional financial responsibility** for my son's entire visit to Spain and the Schengen territory, covering:
-
-- Round-trip international airfare (India to Spain and back)
-- Hotel accommodation in Bilbao for the duration of his stay
-- Daily living expenses, meals, and local transportation
-- Overseas travel health insurance
-- Conference registration and academic event fees
-- Any emergency contingency expenses during his stay
-
-My son is traveling **strictly for academic and professional development purposes** and will **return to India on or before 06 October 2026** to resume his studies at SASTRA Deemed to be University.
-
-All required supporting documents - including GST Registration Certificate, PAN Card, Bank Statements, Income Tax Returns, University Enrollment Certificate, and BioSpain Conference Registration - are enclosed herewith.
-
-I kindly and respectfully request you to consider his Schengen Visa application **favorably**.
+I kindly request you to consider the visa application favorably.
 
 Thanking you.`,
-      signatoryName: "POSHETTY KUDALA",
+      signatoryName: "Rajalingam K",
       signatoryTitle: "Proprietor",
-      signatoryFirm: "Home Furniture and Enterprise",
+      signatoryFirm: "AVM FURNITURE",
     },
   },
 ];
@@ -177,15 +221,15 @@ const HomeFurnitureLetterheadGenerator = () => {
   const [headerStyle, setHeaderStyle] = useState<'centered' | 'boxed' | 'modern'>('centered');
 
   const [headerData, setHeaderData] = useState({
-    firmName: 'HOME FURNITURE AND ENTERPRISE',
-    tagline: 'Premium Luxury Furniture Mart | Manufacturer & Wholesale',
-    proprietor: 'POSHETTY KUDALA',
-    gstin: '37COOPD8437E6ZK',
-    hsnCode: 'HSN: 940330 (Wooden Furniture)',
-    regType: 'ACTIVE COMPOSITION DEALER',
-    address: 'Sy No.375/1, Maruthi Oil Mill, Panyam Road, Udumalpuram, Nandyal, Andhra Pradesh – 518 502',
-    phone: '+91 7428730894',
-    email: 'info@homefurniture.in',
+    firmName: 'AVM FURNITURE',
+    tagline: 'Premium Furniture & Household Goods | Retailer & Trader',
+    proprietor: 'Rajalingam K',
+    gstin: '33DFTPK5651E1Z9',
+    hsnCode: 'HSN: 94033010 (Cabinetware) | 7321 | 39 | 120710',
+    regType: 'REGULAR TAXPAYER (PROPRIETORSHIP)',
+    address: '122/P, Trichy Main Road, Angarai, Lalgudi, Tiruchirappalli, Tamil Nadu – 621 703',
+    phone: '+91 94431 56510',
+    email: 'avmfurniture.trichy@gmail.com',
   });
 
   const [formData, setFormData] = useState(templateOptions[0].data);

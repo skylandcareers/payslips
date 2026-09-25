@@ -57,12 +57,16 @@ import StandardEngineeringLetterheadGenerator from "./pages/StandardEngineeringL
 import MedicalEquipmentsLetterheadGenerator from "./pages/MedicalEquipmentsLetterheadGenerator";
 import HomeFurnitureLetterheadGenerator from "./pages/HomeFurnitureLetterheadGenerator";
 import HomeFurnitureGstCertificateGenerator from "./pages/HomeFurnitureGstCertificateGenerator";
+import AvmFurnitureIndex from "./pages/AvmFurnitureIndex";
+import AvmFurnitureLetterheadGenerator from "./pages/AvmFurnitureLetterheadGenerator";
+import AvmFurnitureGstCertificateGenerator from "./pages/AvmFurnitureGstCertificateGenerator";
 import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 import UnionBankStatementGenerator from "./pages/UnionBankStatementGenerator";
 import SBIStatementGenerator from "./pages/SBIStatementGenerator";
 import KotakBankStatementGenerator from "./pages/KotakBankStatementGenerator";
 import TGBStatementGenerator from "./pages/TGBStatementGenerator";
+import ICICIStatementGenerator from "./pages/ICICIStatementGenerator";
 
 
 const queryClient = new QueryClient();
@@ -127,6 +131,9 @@ const App = () => (
           <Route path="/medical-equipments/letterhead" element={<MedicalEquipmentsLetterheadGenerator />} />
           <Route path="/home-furniture/letterhead" element={<HomeFurnitureLetterheadGenerator />} />
           <Route path="/home-furniture/gst" element={<HomeFurnitureGstCertificateGenerator />} />
+          <Route path="/avm-furniture" element={<AvmFurnitureIndex />} />
+          <Route path="/avm-furniture/letterhead" element={<AvmFurnitureLetterheadGenerator />} />
+          <Route path="/avm-furniture/gst" element={<AvmFurnitureGstCertificateGenerator />} />
           <Route path="/raksha-global/letterhead" element={<RakshaGlobalLetterheadGenerator />} />
           <Route path="/sri-saravana" element={<SriSaravanaLetterheadGenerator />} />
 
@@ -140,6 +147,9 @@ const App = () => (
           <Route path="/kotak/statement" element={<KotakBankStatementGenerator />} />
           <Route path="/tgb" element={<TGBStatementGenerator />} />
           <Route path="/tgb/statement" element={<TGBStatementGenerator />} />
+          <Route path="/icici" element={<ICICIStatementGenerator />} />
+          <Route path="/icici/statement" element={<ICICIStatementGenerator />} />
+          <Route path="/icici-bank" element={<ICICIStatementGenerator />} />
 
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

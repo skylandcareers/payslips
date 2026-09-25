@@ -60,17 +60,31 @@ const cardsData = [
     )
   },
   {
+    name: "ICICI Bank",
+    element: (
+      <Link to="/icici" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-orange-600 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <img src="/icici-bank-logo.png" alt="ICICI Bank" className="h-9 max-w-[150px] object-contain group-hover:scale-105 transition-transform" />
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">ICICI Bank</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-orange-700 text-[11px] font-semibold bg-orange-50 py-1.5 rounded-md px-2 group-hover:bg-orange-700 group-hover:text-white transition-all">Open Portal <Landmark className="w-4 h-4" /></div>
+        </div>
+      </Link>
+    )
+  },
+  {
     name: "Palamuru University",
     element: (
       <Link to="/palamuru" className="group">
-                  <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#b31b1b] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
-                    <div className="h-16 flex items-center justify-center mb-3">
-                      <img src="/palamuru-logo.png" alt="Palamuru University" className="h-12 w-auto group-hover:scale-105 transition-transform" />
-                    </div>
-                    <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Palamuru University</h2>
-                    <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#b31b1b] text-[11px] font-semibold bg-red-50 py-1.5 rounded-md px-2 group-hover:bg-[#b31b1b] group-hover:text-white transition-all">Open Portal <GraduationCap className="w-4 h-4" /></div>
-                  </div>
-                </Link>
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#b31b1b] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <img src="/palamuru-logo.png" alt="Palamuru University" className="h-12 w-auto group-hover:scale-105 transition-transform" />
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Palamuru University</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#b31b1b] text-[11px] font-semibold bg-red-50 py-1.5 rounded-md px-2 group-hover:bg-[#b31b1b] group-hover:text-white transition-all">Open Portal <GraduationCap className="w-4 h-4" /></div>
+        </div>
+      </Link>
     )
   },
   {
@@ -190,6 +204,20 @@ const cardsData = [
                     <div className="mt-auto w-full flex items-center justify-center gap-2 text-green-700 text-[11px] font-semibold bg-green-50 py-1.5 rounded-md px-2 group-hover:bg-green-600 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
                   </div>
                 </Link>
+    )
+  },
+  {
+    name: "AVM Furniture",
+    element: (
+      <Link to="/avm-furniture" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-amber-800 hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <img src="/avm-furniture-logo.png" alt="AVM Furniture" className="h-11 w-auto max-w-[170px] object-contain group-hover:scale-105 transition-transform" />
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">AVM Furniture</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-amber-800 text-[11px] font-semibold bg-amber-50 py-1.5 rounded-md px-2 group-hover:bg-amber-800 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+        </div>
+      </Link>
     )
   },
   {

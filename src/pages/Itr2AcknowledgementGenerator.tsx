@@ -149,7 +149,7 @@ export default function Itr2AcknowledgementGenerator() {
                     <Label htmlFor="totalIncome" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Total Income</Label>
                     <div className="relative">
                       <IndianRupee className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
-                      <Input id="totalIncome" name="totalIncome" value={formData.totalIncome} onChange={handleInputChange} className="pl-9 bg-white border-slate-200 font-mono" />
+                      <Input id="totalIncome" name="totalIncome" value={formData.totalIncome} onChange={handleInputChange} className="pl-9 bg-white text-slate-900 border-slate-200 font-mono" />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
