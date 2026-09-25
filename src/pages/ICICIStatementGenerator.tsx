@@ -65,17 +65,17 @@ export default function ICICIStatementGenerator() {
       try {
         const text = event.target?.result as string;
         const rows = text.split('\n').filter(row => row.trim().length > 0);
-        
+
         let startIndex = 0;
         if (rows[0].toLowerCase().includes('date') || rows[0].toLowerCase().includes('balance') || rows[0].toLowerCase().includes('tran')) {
           startIndex = 1;
         }
 
         const newTransactions: ICICITransaction[] = [];
-        
+
         for (let i = startIndex; i < rows.length; i++) {
           const cols = rows[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || rows[i].split(',');
-          
+
           if (cols.length >= 4) {
             newTransactions.push({
               srNo: (i).toString(),
@@ -91,7 +91,7 @@ export default function ICICIStatementGenerator() {
             });
           }
         }
-        
+
         setTransactions(newTransactions);
         toast.success(`Successfully loaded ${newTransactions.length} transactions from CSV!`);
       } catch (err) {
@@ -139,7 +139,7 @@ export default function ICICIStatementGenerator() {
   const filteredTransactions = useMemo(() => {
     if (!searchTerm.trim()) return transactions;
     const term = searchTerm.toLowerCase();
-    return transactions.filter(t => 
+    return transactions.filter(t =>
       t.srNo.toLowerCase().includes(term) ||
       t.tranId.toLowerCase().includes(term) ||
       t.txnDate.toLowerCase().includes(term) ||
@@ -536,8 +536,8 @@ export default function ICICIStatementGenerator() {
                         <colgroup>
                           <col style={{ width: '36.7px' }} />
                           <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '110.1px' }} />
+                          <col style={{ width: '100.4px' }} />
+                          <col style={{ width: '83.1px' }} />
                           <col style={{ width: '73.4px' }} />
                           <col style={{ width: '110.1px' }} />
                           <col style={{ width: '73.4px' }} />
@@ -601,8 +601,8 @@ export default function ICICIStatementGenerator() {
                         <colgroup>
                           <col style={{ width: '36.7px' }} />
                           <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '73.4px' }} />
-                          <col style={{ width: '110.1px' }} />
+                          <col style={{ width: '83.4px' }} />
+                          <col style={{ width: '83.4px' }} />
                           <col style={{ width: '73.4px' }} />
                           <col style={{ width: '110.1px' }} />
                           <col style={{ width: '73.4px' }} />
