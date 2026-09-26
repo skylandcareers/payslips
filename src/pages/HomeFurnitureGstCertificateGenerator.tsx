@@ -521,6 +521,7 @@ body { background: #e8e8e8; }
                 </div>
                 <div className="t c4" style={{ zIndex: '576', transform: 'matrix(1,0,0,1,85.53,489.56)' }}>  5.</div>
                 <div className="t c0" style={{ zIndex: '580', transform: 'matrix(1,0,0,1,126.03,489.56)' }}>Date of Liability</div>
+                <div className="t c4" style={{ whiteSpace: "nowrap", zIndex: '590', transform: 'matrix(1,0,0,1,348.72,489.56)' }}>{formData.dateOfLiability}</div>
                 <div className="t c4" style={{ zIndex: '597', transform: 'matrix(1,0,0,1,85.53,516.23)' }}>  6.</div>
                 <div className="t c0" style={{ zIndex: '601', transform: 'matrix(1,0,0,1,126.03,516.23)' }}>Period of Validity</div>
                 <div className="t c4" style={{ zIndex: '619', transform: 'matrix(1,0,0,1,348.72,516.23)' }}>From</div>
