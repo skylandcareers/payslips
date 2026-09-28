@@ -35,7 +35,7 @@ const FONT_FACES = [400, 700].map(weight => `
     line-gap-override: 3.3%;
   }`).join('');
 
-const COLUMN_WIDTHS = [36.67, 73.5, 73.33, 110.17, 73.33, 110.17, 73.33, 73.5, 73.33];
+const COLUMN_WIDTHS = [36.67, 73.5, 75.83, 107.67, 73.33, 110.17, 73.33, 73.5, 73.33];
 
 const HEADER_LABELS: [string, string?][] = [
   ['Sr', 'No'],
@@ -59,10 +59,11 @@ const headerCellStyle: React.CSSProperties = {
 const cellStyle: React.CSSProperties = {
   border: '0.67px solid #000', padding: '4.1px 1.9px 0.25px', fontSize: '12px',
   textAlign: 'center', verticalAlign: 'top', lineHeight: '12px',
+  color: '#000000', backgroundColor: 'transparent',
 };
 
 const wrapCellStyle: React.CSSProperties = { ...cellStyle, wordBreak: 'break-word', overflowWrap: 'break-word' };
-const remarksCellStyle: React.CSSProperties = { ...wrapCellStyle, whiteSpace: 'pre-line' };
+const remarksCellStyle: React.CSSProperties = { ...wrapCellStyle, whiteSpace: 'pre-line', color: '#000000', backgroundColor: 'transparent' };
 // Source wraps dd-Mon-yyyy value dates wider than ~68px (e.g. 04-Sep-2025) but not narrower ones (e.g. 23-Jan-2026);
 // with the Helvetica-metric font that needs 2.0-2.3px side padding, while remarks segments need <= 2.0px to stay unbroken
 const valueDateCellStyle: React.CSSProperties = { ...wrapCellStyle, paddingLeft: '2.15px', paddingRight: '2.15px' };

@@ -1,210 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Printer, FileText, User, MapPin, Calculator, ShieldCheck, IndianRupee } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { Printer, FileText, User, MapPin, Calculator, ShieldCheck, IndianRupee, Layers, CheckCircle2, RotateCcw, ArrowLeft } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { Itr2ReportData, ITR2_YEAR_PRESETS } from "../data/itr2Data";
 
-export default function Itr2AcknowledgementGenerator() {
-  const [formData, setFormData] = useState({
-    ackNumber: '309247080310724',
-    dateOfFiling: '31-Jul-2024',
-    assessmentYear: '2024-25',
-    pan: 'BWGPB9334R',
-    name: 'SESHU BUDDA',
-    address1: '6-2-346/11A, Rani Mahal, Veer Nagar, Chinthal Basthi, Khairatabad, Khairatabad H.O, Khairatabad,',
-    address2: 'Hyderabad, HYDERABAD, 36-Telangana, 91-India, 500004',
-    status: 'Individual',
-    formNumber: 'ITR-2',
-    filedUs: '139(1)-On or before due date',
-    totalIncome: '5,84,760',
-    netTax: '30,629',
-    taxesPaid: '52,582',
-    taxPayable1: '(-) 21,950',
-    timestamp: '31-Jul-2024 17:42:40',
-    ipAddress: '49.43.234.230',
-    evc: 'TUL9E58DAI',
-    barcodeValue: 'BWGPB9334R023092470803107247c6c4daa99f7f86ee2acf60aa101950ce7b24abd',
-  });
-
-  const handlePrint = () => {
-    window.print();
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-100 flex flex-col print:bg-white">
-      {/* Settings Panel - Hidden on Print */}
-      <div className="print:hidden bg-white border-b p-4 shadow-sm z-10 sticky top-0">
-        <div className="w-full px-8 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">ITR-V Generator</h1>
-          <Button onClick={handlePrint} className="bg-blue-600 hover:bg-blue-700">
-            <Printer className="mr-2 h-4 w-4" />
-            Print ITR-V
-          </Button>
-        </div>
-      </div>
-
-      <div className="flex-1 flex flex-col lg:flex-row overflow-hidden w-full">
-        {/* Left Sidebar - Hidden on Print */}
-        <div className="print:hidden w-full lg:w-[450px] bg-white border-r flex flex-col z-10 shadow-sm relative">
-          <div className="p-4 bg-white border-b sticky top-0 z-20 shadow-sm">
-            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-blue-600" />
-              ITR-V Data Entry
-            </h2>
-            <p className="text-sm text-slate-500 mt-1">Update the fields below to instantly generate your acknowledgement.</p>
-          </div>
-          
-          <ScrollArea className="flex-1 p-4">
-            <div className="space-y-6 pb-20">
-              
-              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
-                <CardHeader className="bg-white text-slate-900 pb-4 border-b border-slate-100">
-                  <CardTitle className="text-base font-semibold text-slate-800 flex items-center gap-2">
-                    <User className="w-4 h-4" /> Basic Details
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="ackNumber" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Ack Number</Label>
-                    <Input id="ackNumber" name="ackNumber" value={formData.ackNumber} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 focus-visible:ring-blue-500" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="dateOfFiling" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Date</Label>
-                      <Input id="dateOfFiling" name="dateOfFiling" value={formData.dateOfFiling} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 focus-visible:ring-blue-500" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="assessmentYear" className="text-xs font-bold text-slate-600 uppercase tracking-wider">A.Y.</Label>
-                      <Input id="assessmentYear" name="assessmentYear" value={formData.assessmentYear} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 focus-visible:ring-blue-500" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="pan" className="text-xs font-bold text-slate-600 uppercase tracking-wider">PAN</Label>
-                    <Input id="pan" name="pan" value={formData.pan} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 focus-visible:ring-blue-500 font-mono" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Full Name</Label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 focus-visible:ring-blue-500" />
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
-                <CardHeader className="bg-white text-slate-900 pb-4 border-b border-slate-100">
-                  <CardTitle className="text-base font-semibold text-slate-800 flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-slate-500" /> Address Info
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="address1" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Line 1 (Street/Area)</Label>
-                    <Input id="address1" name="address1" value={formData.address1} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="address2" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Line 2 (City/State/PIN)</Label>
-                    <Input id="address2" name="address2" value={formData.address2} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200" />
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
-                <CardHeader className="bg-white text-slate-900 pb-4 border-b border-slate-100">
-                  <CardTitle className="text-base font-semibold text-slate-800 flex items-center gap-2">
-                    <FileText className="w-4 h-4" /> Return Details
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="status" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Status</Label>
-                      <Input id="status" name="status" value={formData.status} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="formNumber" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Form</Label>
-                      <Input id="formNumber" name="formNumber" value={formData.formNumber} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="filedUs" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Filed u/s</Label>
-                    <Input id="filedUs" name="filedUs" value={formData.filedUs} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200" />
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
-                <CardHeader className="bg-white text-slate-900 pb-4 border-b border-slate-100">
-                  <CardTitle className="text-base font-semibold text-slate-800 flex items-center gap-2">
-                    <Calculator className="w-4 h-4" /> Tax Computation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="totalIncome" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Total Income</Label>
-                    <div className="relative">
-                      <IndianRupee className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
-                      <Input id="totalIncome" name="totalIncome" value={formData.totalIncome} onChange={handleInputChange} className="pl-9 bg-white text-slate-900 border-slate-200 font-mono" />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="netTax" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Net Tax</Label>
-                      <Input id="netTax" name="netTax" value={formData.netTax} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="taxesPaid" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Taxes Paid</Label>
-                      <Input id="taxesPaid" name="taxesPaid" value={formData.taxesPaid} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono text-emerald-700" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="taxPayable1" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Payable/Refundable</Label>
-                    <Input id="taxPayable1" name="taxPayable1" value={formData.taxPayable1} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono font-bold" />
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
-                <CardHeader className="bg-white text-slate-900 pb-4 border-b border-slate-100">
-                  <CardTitle className="text-base font-semibold text-slate-800 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4" /> Verification
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="timestamp" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Timestamp</Label>
-                    <Input id="timestamp" name="timestamp" value={formData.timestamp} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono text-sm" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="ipAddress" className="text-xs font-bold text-slate-600 uppercase tracking-wider">IP Address</Label>
-                      <Input id="ipAddress" name="ipAddress" value={formData.ipAddress} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono text-sm" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="evc" className="text-xs font-bold text-slate-600 uppercase tracking-wider">EVC</Label>
-                      <Input id="evc" name="evc" value={formData.evc} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono text-sm tracking-widest uppercase" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="barcodeValue" className="text-xs font-bold text-slate-600 uppercase tracking-wider">Barcode String</Label>
-                    <Input id="barcodeValue" name="barcodeValue" value={formData.barcodeValue} onChange={handleInputChange} className="bg-white text-slate-900 border-slate-200 font-mono text-xs overflow-hidden text-ellipsis" />
-                  </div>
-                </CardContent>
-              </Card>
-
-            </div>
-          </ScrollArea>
-        </div>
-
-        {/* Right Preview - This gets printed */}
-        <div className="flex-1 overflow-auto bg-slate-200 print:bg-white print:overflow-visible">
-          <div className="flex justify-center items-start min-w-max p-8 print:p-0">
-          <style dangerouslySetInnerHTML={{ __html: `
+const ITR2_PAGE_CSS = `
             @media print {
               body * { visibility: hidden; }
               #print-container, #print-container * { visibility: visible; }
@@ -217,7 +21,7 @@ export default function Itr2AcknowledgementGenerator() {
             .im { z-index: 1; display: block; }
             .vec { z-index: 1; overflow: visible; pointer-events: none; }
             .cdefs { width: 0; height: 0; overflow: hidden; position: absolute; }
-            ` + `
+            
 
 html, body { margin: 0; padding: 0; }
 body { background: #e8e8e8; }
@@ -446,9 +250,24 @@ body { background: #e8e8e8; }
 #p0{width:793.33px;height:1122.67px}
 
 ` + `
-          ` }} />
-          
-          <div id="print-container" className="page bg-white text-black" style={{ width: '793.33px', height: '1122.67px' }}>
+          `;
+
+const SingleItr2Page = ({ formData, id }: { formData: Itr2ReportData; id?: string }) => {
+  return (
+    <div
+      id={id}
+      className="page bg-white text-black"
+      style={{
+        width: "793.33px",
+        height: "1122.67px",
+        minHeight: "1122.67px",
+        position: "relative",
+        boxSizing: "border-box",
+        overflow: "hidden",
+        margin: "0 auto",
+      }}
+    >
+
             
 <svg className="cdefs" width="0" height="0"><defs><clipPath id="c0_0"><path d="M37.8 1084.6V37.8H755.5V1084.6Z"/></clipPath></defs></svg>
 <svg className="vec" style={{zIndex: '1', left: '36.76px', top: '60.05px', overflow: 'hidden'}} width="719.76" height="2.77" viewBox="36.76 60.05 719.76 2.77"><g clipPath="url(#c0_0)"><path d="M37.8 61H494.8V61.8H37.8Z" fill="#000000"/><path d="M494.8 61H755.5V61.8H494.8Z" fill="#000000"/></g></svg>
@@ -489,50 +308,50 @@ body { background: #e8e8e8; }
 <div className="t c2" style={{zIndex: '826', transform: 'matrix(1,0,0,1,405.47,296.96)'}}>e-Filing Acknowledgement Number</div>
 <div className="t c2" style={{zIndex: '857', transform: 'matrix(1,0,0,1,644.98,296.96)'}}>{formData.ackNumber}</div>
 <div className="t c2" style={{zIndex: '872', transform: 'matrix(1,0,0,1,93.03,329.97)'}}>Current Year business loss, if any</div>
-<div className="t c2" style={{zIndex: '906', transform: 'matrix(1,0,0,1,582.29,329.97)'}}>1</div>
-<div className="t c2" style={{zIndex: '907', transform: 'matrix(1,0,0,1,738.63,329.97)'}}>0</div>
+<div className="t c2" style={{zIndex: '906', left: '568px', top: '329.97px', width: '60px', textAlign: 'center'}}>1</div>
+<div className="t c2" style={{zIndex: '907', left: '630px', top: '329.97px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '908', transform: 'matrix(1,0,0,1,93.03,362.21)'}}>Total Income</div>
-<div className="t c2" style={{zIndex: '920', transform: 'matrix(1,0,0,1,582.29,362.21)'}}>2</div>
-<div className="t c2" style={{zIndex: '921', transform: 'matrix(1,0,0,1,698.46,362.21)'}}>{formData.totalIncome}</div>
+<div className="t c2" style={{zIndex: '920', left: '568px', top: '362.21px', width: '60px', textAlign: 'center'}}>2</div>
+<div className="t c2" style={{zIndex: '921', left: '630px', top: '362.21px', width: '115px', textAlign: 'right'}}>{formData.totalIncome}</div>
 <div className="t c2" style={{zIndex: '929', transform: 'matrix(1,0,0,1,93.03,394.45)'}}>Book Profit under MAT, where applicable</div>
-<div className="t c2" style={{zIndex: '968', transform: 'matrix(1,0,0,1,582.29,394.45)'}}>3</div>
-<div className="t c2" style={{zIndex: '969', transform: 'matrix(1,0,0,1,738.63,394.45)'}}>0</div>
+<div className="t c2" style={{zIndex: '968', left: '568px', top: '394.45px', width: '60px', textAlign: 'center'}}>3</div>
+<div className="t c2" style={{zIndex: '969', left: '630px', top: '394.45px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '970', transform: 'matrix(1,0,0,1,93.03,426.69)'}}>Adjusted Total Income under AMT, where applicable</div>
-<div className="t c2" style={{zIndex: '1019', transform: 'matrix(1,0,0,1,582.29,426.69)'}}>4</div>
-<div className="t c2" style={{zIndex: '1020', transform: 'matrix(1,0,0,1,698.46,426.69)'}}>{formData.totalIncome}</div>
+<div className="t c2" style={{zIndex: '1019', left: '568px', top: '426.69px', width: '60px', textAlign: 'center'}}>4</div>
+<div className="t c2" style={{zIndex: '1020', left: '630px', top: '426.69px', width: '115px', textAlign: 'right'}}>{formData.totalIncome}</div>
 <div className="t c2" style={{zIndex: '1028', transform: 'matrix(1,0,0,1,93.03,458.93)'}}>Net tax payable</div>
-<div className="t c2" style={{zIndex: '1043', transform: 'matrix(1,0,0,1,582.29,458.93)'}}>5</div>
-<div className="t c2" style={{zIndex: '1044', transform: 'matrix(1,0,0,1,708.69,458.93)'}}>{formData.netTax}</div>
+<div className="t c2" style={{zIndex: '1043', left: '568px', top: '458.93px', width: '60px', textAlign: 'center'}}>5</div>
+<div className="t c2" style={{zIndex: '1044', left: '630px', top: '458.93px', width: '115px', textAlign: 'right'}}>{formData.netTax}</div>
 <div className="t c2" style={{zIndex: '1050', transform: 'matrix(1,0,0,1,93.03,491.18)'}}>Interest and Fee Payable</div>
-<div className="t c2" style={{zIndex: '1074', transform: 'matrix(1,0,0,1,582.29,491.18)'}}>6</div>
-<div className="t c2" style={{zIndex: '1075', transform: 'matrix(1,0,0,1,738.63,491.18)'}}>0</div>
+<div className="t c2" style={{zIndex: '1074', left: '568px', top: '491.18px', width: '60px', textAlign: 'center'}}>6</div>
+<div className="t c2" style={{zIndex: '1075', left: '630px', top: '491.18px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '1076', transform: 'matrix(1,0,0,1,93.03,523.42)'}}>Total tax, interest and Fee payable</div>
-<div className="t c2" style={{zIndex: '1111', transform: 'matrix(1,0,0,1,582.29,523.42)'}}>7</div>
-<div className="t c2" style={{zIndex: '1112', transform: 'matrix(1,0,0,1,708.69,523.42)'}}>{formData.netTax}</div>
+<div className="t c2" style={{zIndex: '1111', left: '568px', top: '523.42px', width: '60px', textAlign: 'center'}}>7</div>
+<div className="t c2" style={{zIndex: '1112', left: '630px', top: '523.42px', width: '115px', textAlign: 'right'}}>{formData.netTax}</div>
 <div className="t c2" style={{zIndex: '1118', transform: 'matrix(1,0,0,1,93.03,555.66)'}}>Taxes Paid</div>
-<div className="t c2" style={{zIndex: '1128', transform: 'matrix(1,0,0,1,582.29,555.66)'}}>8</div>
-<div className="t c2" style={{zIndex: '1129', transform: 'matrix(1,0,0,1,708.69,555.66)'}}>{formData.taxesPaid}</div>
+<div className="t c2" style={{zIndex: '1128', left: '568px', top: '555.66px', width: '60px', textAlign: 'center'}}>8</div>
+<div className="t c2" style={{zIndex: '1129', left: '630px', top: '555.66px', width: '115px', textAlign: 'right'}}>{formData.taxesPaid}</div>
 <div className="t c2" style={{zIndex: '1135', transform: 'matrix(1,0,0,1,93.03,587.9)'}}>(+) Tax Payable /(-) Refundable (7-8)</div>
-<div className="t c2" style={{zIndex: '1172', transform: 'matrix(1,0,0,1,582.29,587.9)'}}>9</div>
-<div className="t c2" style={{zIndex: '1173', transform: 'matrix(1,0,0,1,693.34,587.9)'}}>{formData.taxPayable1}</div>
+<div className="t c2" style={{zIndex: '1172', left: '568px', top: '587.90px', width: '60px', textAlign: 'center'}}>9</div>
+<div className="t c2" style={{zIndex: '1173', left: '630px', top: '587.90px', width: '115px', textAlign: 'right'}}>{formData.taxPayable1}</div>
 <div className="t c2" style={{zIndex: '1183', transform: 'matrix(1,0,0,1,93.03,620.14)'}}>Accreted Income as per section 115TD</div>
-<div className="t c2" style={{zIndex: '1219', transform: 'matrix(1,0,0,1,582.29,620.14)'}}>10</div>
-<div className="t c2" style={{zIndex: '1221', transform: 'matrix(1,0,0,1,738.63,620.14)'}}>0</div>
+<div className="t c2" style={{zIndex: '1219', left: '568px', top: '620.14px', width: '60px', textAlign: 'center'}}>10</div>
+<div className="t c2" style={{zIndex: '1221', left: '630px', top: '620.14px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '1222', transform: 'matrix(1,0,0,1,93.03,652.38)'}}>Additional Tax payable u/s 115TD</div>
-<div className="t c2" style={{zIndex: '1254', transform: 'matrix(1,0,0,1,582.29,652.38)'}}>11</div>
-<div className="t c2" style={{zIndex: '1256', transform: 'matrix(1,0,0,1,738.63,652.38)'}}>0</div>
+<div className="t c2" style={{zIndex: '1254', left: '568px', top: '652.38px', width: '60px', textAlign: 'center'}}>11</div>
+<div className="t c2" style={{zIndex: '1256', left: '630px', top: '652.38px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '1257', transform: 'matrix(1,0,0,1,93.03,690.25)'}}>Interest payable u/s 115TE</div>
-<div className="t c2" style={{zIndex: '1283', transform: 'matrix(1,0,0,1,582.29,684.62)'}}>12</div>
-<div className="t c2" style={{zIndex: '1285', transform: 'matrix(1,0,0,1,738.63,684.62)'}}>0</div>
+<div className="t c2" style={{zIndex: '1283', left: '568px', top: '684.62px', width: '60px', textAlign: 'center'}}>12</div>
+<div className="t c2" style={{zIndex: '1285', left: '630px', top: '684.62px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '1286', transform: 'matrix(1,0,0,1,93.03,728.13)'}}>Additional Tax and interest payable</div>
-<div className="t c2" style={{zIndex: '1321', transform: 'matrix(1,0,0,1,582.29,728.13)'}}>13</div>
-<div className="t c2" style={{zIndex: '1323', transform: 'matrix(1,0,0,1,738.63,728.13)'}}>0</div>
+<div className="t c2" style={{zIndex: '1321', left: '568px', top: '728.13px', width: '60px', textAlign: 'center'}}>13</div>
+<div className="t c2" style={{zIndex: '1323', left: '630px', top: '728.13px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '1324', transform: 'matrix(1,0,0,1,93.03,760.37)'}}>Tax and interest paid</div>
-<div className="t c2" style={{zIndex: '1345', transform: 'matrix(1,0,0,1,582.29,760.37)'}}>14</div>
-<div className="t c2" style={{zIndex: '1347', transform: 'matrix(1,0,0,1,738.63,760.37)'}}>0</div>
+<div className="t c2" style={{zIndex: '1345', left: '568px', top: '760.37px', width: '60px', textAlign: 'center'}}>14</div>
+<div className="t c2" style={{zIndex: '1347', left: '630px', top: '760.37px', width: '115px', textAlign: 'right'}}>0</div>
 <div className="t c2" style={{zIndex: '1348', transform: 'matrix(1,0,0,1,93.03,792.61)'}}>(+) Tax Payable /(-) Refundable (13-14)</div>
-<div className="t c2" style={{zIndex: '1387', transform: 'matrix(1,0,0,1,582.29,792.61)'}}>15</div>
-<div className="t c2" style={{zIndex: '1389', transform: 'matrix(1,0,0,1,718.42,792.61)'}}>(+) 0</div>
+<div className="t c2" style={{zIndex: '1387', left: '568px', top: '792.61px', width: '60px', textAlign: 'center'}}>15</div>
+<div className="t c2" style={{zIndex: '1389', left: '630px', top: '792.61px', width: '115px', textAlign: 'right'}}>(+) 0</div>
 <div className="t c2" style={{zIndex: '1394', transform: 'matrix(1,0,0,1,59.51,827.67)'}}>Income </div>
 <div className="t c2" style={{zIndex: '1401', transform: 'matrix(1,0,0,1,103.23,827.67)'}}>T</div>
 <div className="t c2" style={{zIndex: '1402', transform: 'matrix(1,0,0,1,107.84,827.67)'}}>ax </div>
@@ -568,13 +387,317 @@ body { background: #e8e8e8; }
 <div className="t c2" style={{zIndex: '1664', transform: 'matrix(1,0,0,1,59.51,885.24)'}}>mode</div>
 <div className="t c2" style={{zIndex: '1668', transform: 'matrix(1,0,0,1,79.98,927.46)'}}>System Generated </div>
 <div className="t c2" style={{zIndex: '1685', transform: 'matrix(1,0,0,1,79.98,952.54)'}}>Barcode/QR Code</div>
-<div className="t c4" style={{zIndex: '1701', transform: 'matrix(1,0,0,1,253.47,965.33)'}}>{formData.pan}02{formData.ackNumber}7c6c4daa99f7f86ee2acf60aa101950ce7b24abd</div>
+<div className="t c4" style={{zIndex: '1701', transform: 'matrix(1,0,0,1,253.47,965.33)'}}>{formData.barcodeValue}</div>
 <div className="t c5" style={{zIndex: '1769', transform: 'matrix(1,0,0,1,207.92,992.71)'}}> DO NOT SEND THIS ACKNOWLEDGEMENT TO CPC, BENGALURU  </div>
 <div className="t c4" style={{zIndex: '1822', transform: 'matrix(0,-1,1,0,54.63,558.87)'}}>Taxable Income and Tax Details</div>
 <div className="t c4" style={{zIndex: '1852', transform: 'matrix(0,-1,1,0,54.63,806.19)'}}>Accreted Income and Tax Detail</div>
 
+          
+    </div>
+  );
+};
+
+export default function Itr2AcknowledgementGenerator() {
+  const [reports, setReports] = useState<Record<string, Itr2ReportData>>(ITR2_YEAR_PRESETS);
+  const [selectedYear, setSelectedYear] = useState<string>("all");
+  const [activeEditYear, setActiveEditYear] = useState<string>("FY 2024-25");
+
+  const currentFormData = reports[activeEditYear] || reports["FY 2024-25"];
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setReports((prev) => ({
+      ...prev,
+      [activeEditYear]: {
+        ...prev[activeEditYear],
+        [name]: value,
+      },
+    }));
+  };
+
+  const handleResetCurrentYear = () => {
+    if (window.confirm(`Reset ${activeEditYear} back to default estimated values?`)) {
+      setReports((prev) => ({
+        ...prev,
+        [activeEditYear]: { ...ITR2_YEAR_PRESETS[activeEditYear] },
+      }));
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col print:bg-white text-slate-900">
+      {/* Settings Header - Hidden on Print */}
+      <div className="print:hidden bg-white border-b border-slate-200 px-6 py-3.5 shadow-sm z-20 sticky top-0">
+        <div className="w-full flex flex-wrap justify-between items-center gap-4">
+          <div className="flex items-center gap-3">
+            <Link to="/" className="p-2 hover:bg-slate-100 rounded-lg text-slate-600 transition">
+              <ArrowLeft className="w-5 h-5" />
+            </Link>
+            <div>
+              <h1 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-blue-600" />
+                ITR-2 / ITR-V Acknowledgement (Father: RAJALINGAM K)
+              </h1>
+              <p className="text-xs text-slate-500 font-medium">
+                PAN: KXFPK8725L • 3-Year Visa Dossier (FY 2023-24, FY 2024-25, FY 2025-26)
+              </p>
+            </div>
           </div>
+
+          <div className="flex items-center gap-3">
+            {/* Year Selector Tabs */}
+            <div className="flex bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-semibold">
+              <button
+                onClick={() => { setSelectedYear("FY 2023-24"); setActiveEditYear("FY 2023-24"); }}
+                className={`px-3 py-1.5 rounded-md transition ${selectedYear === "FY 2023-24" ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
+              >
+                FY 2023-24 (AY 24-25)
+              </button>
+              <button
+                onClick={() => { setSelectedYear("FY 2024-25"); setActiveEditYear("FY 2024-25"); }}
+                className={`px-3 py-1.5 rounded-md transition ${selectedYear === "FY 2024-25" ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
+              >
+                FY 2024-25 (AY 25-26)
+              </button>
+              <button
+                onClick={() => { setSelectedYear("FY 2025-26"); setActiveEditYear("FY 2025-26"); }}
+                className={`px-3 py-1.5 rounded-md transition ${selectedYear === "FY 2025-26" ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
+              >
+                FY 2025-26 (AY 26-27)
+              </button>
+              <button
+                onClick={() => setSelectedYear("all")}
+                className={`px-3 py-1.5 rounded-md transition flex items-center gap-1.5 ${selectedYear === "all" ? "bg-blue-600 text-white shadow-sm font-bold" : "text-blue-700 hover:text-blue-900"}`}
+              >
+                <Layers className="w-3.5 h-3.5" /> All 3 Years (Bundle)
+              </button>
+            </div>
+
+            <Button onClick={handlePrint} className="bg-blue-600 hover:bg-blue-700 font-semibold shadow-sm text-xs">
+              <Printer className="mr-2 h-4 w-4" />
+              Print {selectedYear === "all" ? "All 3 ITR-V Reports" : "ITR-V (" + selectedYear + ")"}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-1 flex flex-col lg:flex-row overflow-hidden w-full">
+        {/* Left Sidebar - Hidden on Print */}
+        <div className="print:hidden w-full lg:w-[460px] bg-white border-r border-slate-200 flex flex-col z-10 shadow-sm relative">
+          <div className="p-4 bg-slate-50 border-b border-slate-200 sticky top-0 z-20">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                  <Calculator className="w-4 h-4 text-blue-600" />
+                  Editing Year: <span className="text-blue-700">{activeEditYear}</span> (AY {reports[activeEditYear]?.assessmentYear})
+                </h2>
+                <p className="text-xs text-slate-500">Edit fields below to customize this specific tax year.</p>
+              </div>
+              <button
+                onClick={handleResetCurrentYear}
+                className="flex items-center gap-1 text-xs text-rose-600 hover:text-rose-700 font-medium"
+              >
+                <RotateCcw className="w-3.5 h-3.5" /> Reset
+              </button>
+            </div>
+
+            {/* Year Switcher within Editor */}
+            <div className="flex gap-2 mt-3 pt-2 border-t border-slate-200/80">
+              {["FY 2023-24", "FY 2024-25", "FY 2025-26"].map((yr) => (
+                <button
+                  key={yr}
+                  onClick={() => {
+                    setActiveEditYear(yr);
+                    if (selectedYear !== "all") setSelectedYear(yr);
+                  }}
+                  className={`flex-1 py-1 px-2 rounded text-xs font-semibold transition ${activeEditYear === yr ? "bg-blue-100 text-blue-800 border border-blue-300" : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100"}`}
+                >
+                  {yr}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <ScrollArea className="flex-1 p-4">
+            <div className="space-y-5 pb-20 text-xs">
+              
+              {/* 3-Year Summary Quick Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-3.5 text-xs shadow-sm">
+                <div className="flex items-center gap-1.5 font-bold text-blue-900 mb-2">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" /> 3-Year Income & Tax Estimates (Visa Compliant)
+                </div>
+                <table className="w-full text-[11px] border-collapse bg-white rounded-lg overflow-hidden border border-blue-100">
+                  <thead className="bg-blue-100/60 font-bold text-blue-900">
+                    <tr>
+                      <th className="p-1.5 text-left">FY (AY)</th>
+                      <th className="p-1.5 text-right">Gross Income</th>
+                      <th className="p-1.5 text-right">Tax Paid</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {["FY 2023-24", "FY 2024-25", "FY 2025-26"].map((yr) => (
+                      <tr key={yr} className={activeEditYear === yr ? "bg-blue-50 font-semibold" : ""}>
+                        <td className="p-1.5 text-slate-800 font-medium">{yr} (AY {reports[yr]?.assessmentYear})</td>
+                        <td className="p-1.5 text-right text-slate-900 font-bold">₹{reports[yr]?.totalIncome}</td>
+                        <td className="p-1.5 text-right text-emerald-700 font-medium">₹{reports[yr]?.taxesPaid}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
+                <CardHeader className="bg-white text-slate-900 pb-3 border-b border-slate-100">
+                  <CardTitle className="text-xs font-bold text-slate-800 flex items-center gap-2">
+                    <User className="w-3.5 h-3.5" /> Basic Details ({activeEditYear})
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-3 space-y-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="ackNumber" className="text-[11px] font-bold text-slate-600 uppercase">Ack Number</Label>
+                    <Input id="ackNumber" name="ackNumber" value={currentFormData.ackNumber} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono" />
                   </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <Label htmlFor="dateOfFiling" className="text-[11px] font-bold text-slate-600 uppercase">Filing Date</Label>
+                      <Input id="dateOfFiling" name="dateOfFiling" value={currentFormData.dateOfFiling} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200" />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="assessmentYear" className="text-[11px] font-bold text-slate-600 uppercase">A.Y.</Label>
+                      <Input id="assessmentYear" name="assessmentYear" value={currentFormData.assessmentYear} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-semibold" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <Label htmlFor="pan" className="text-[11px] font-bold text-slate-600 uppercase">PAN</Label>
+                      <Input id="pan" name="pan" value={currentFormData.pan} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono font-bold" />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="name" className="text-[11px] font-bold text-slate-600 uppercase">Full Name</Label>
+                      <Input id="name" name="name" value={currentFormData.name} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-semibold" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
+                <CardHeader className="bg-white text-slate-900 pb-3 border-b border-slate-100">
+                  <CardTitle className="text-xs font-bold text-slate-800 flex items-center gap-2">
+                    <MapPin className="w-3.5 h-3.5 text-slate-500" /> Address Info
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-3 space-y-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="address1" className="text-[11px] font-bold text-slate-600 uppercase">Line 1</Label>
+                    <Input id="address1" name="address1" value={currentFormData.address1} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="address2" className="text-[11px] font-bold text-slate-600 uppercase">Line 2</Label>
+                    <Input id="address2" name="address2" value={currentFormData.address2} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
+                <CardHeader className="bg-white text-slate-900 pb-3 border-b border-slate-100">
+                  <CardTitle className="text-xs font-bold text-slate-800 flex items-center gap-2">
+                    <Calculator className="w-3.5 h-3.5" /> Tax Computation ({activeEditYear})
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-3 space-y-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="totalIncome" className="text-[11px] font-bold text-slate-600 uppercase">Total Income (Gross)</Label>
+                    <div className="relative">
+                      <IndianRupee className="absolute left-2.5 top-2 h-3.5 w-3.5 text-slate-400" />
+                      <Input id="totalIncome" name="totalIncome" value={currentFormData.totalIncome} onChange={handleInputChange} className="h-8 pl-8 text-xs bg-white text-slate-900 border-slate-200 font-mono font-bold" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <Label htmlFor="netTax" className="text-[11px] font-bold text-slate-600 uppercase">Net Tax</Label>
+                      <Input id="netTax" name="netTax" value={currentFormData.netTax} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono" />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="taxesPaid" className="text-[11px] font-bold text-slate-600 uppercase">Taxes Paid</Label>
+                      <Input id="taxesPaid" name="taxesPaid" value={currentFormData.taxesPaid} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono text-emerald-700 font-bold" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="taxPayable1" className="text-[11px] font-bold text-slate-600 uppercase">Payable / Refundable</Label>
+                    <Input id="taxPayable1" name="taxPayable1" value={currentFormData.taxPayable1} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono font-bold" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-slate-200 shadow-sm overflow-hidden bg-white">
+                <CardHeader className="bg-white text-slate-900 pb-3 border-b border-slate-100">
+                  <CardTitle className="text-xs font-bold text-slate-800 flex items-center gap-2">
+                    <ShieldCheck className="w-3.5 h-3.5" /> Verification ({activeEditYear})
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-3 space-y-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="timestamp" className="text-[11px] font-bold text-slate-600 uppercase">Timestamp</Label>
+                    <Input id="timestamp" name="timestamp" value={currentFormData.timestamp} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <Label htmlFor="ipAddress" className="text-[11px] font-bold text-slate-600 uppercase">IP Address</Label>
+                      <Input id="ipAddress" name="ipAddress" value={currentFormData.ipAddress} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono" />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="evc" className="text-[11px] font-bold text-slate-600 uppercase">EVC</Label>
+                      <Input id="evc" name="evc" value={currentFormData.evc} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono uppercase" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="barcodeValue" className="text-[11px] font-bold text-slate-600 uppercase">Barcode String</Label>
+                    <Input id="barcodeValue" name="barcodeValue" value={currentFormData.barcodeValue} onChange={handleInputChange} className="h-8 text-xs bg-white text-slate-900 border-slate-200 font-mono text-[10px]" />
+                  </div>
+                </CardContent>
+              </Card>
+
+            </div>
+          </ScrollArea>
+        </div>
+
+        {/* Right Preview - This gets printed */}
+        <div className="flex-1 overflow-auto bg-slate-200 print:bg-white print:overflow-visible">
+          <div className="flex flex-col items-center justify-start min-w-max p-8 print:p-0 gap-8 print:gap-0">
+            <style dangerouslySetInnerHTML={{ __html: `
+              @media print {
+                body * { visibility: hidden; }
+                #print-container, #print-container * { visibility: visible; }
+                #print-container { position: absolute; left: 0; top: 0; margin: 0; box-shadow: none; width: 100%; }
+                @page { size: 793.33px 1122.67px; margin: 0; }
+                .page { margin: 0 !important; box-shadow: none !important; break-after: page !important; page-break-after: always !important; }
+                .page:last-child { break-after: auto !important; page-break-after: auto !important; }
+              }
+              .page { position: relative; isolation: isolate; margin: 0 auto 24px auto; background: #fff; box-shadow: 0 4px 12px rgba(0, 0, 0, .15); overflow: hidden; }
+              .bg, .t3o, .t, .im, .vec, .tbl, .lnk, .fld { position: absolute; transform-origin: 0 0; }
+              .t { z-index: 1; white-space: pre; line-height: 1; display: inline-block; }
+              .im { z-index: 1; display: block; }
+              .vec { z-index: 1; overflow: visible; pointer-events: none; }
+              .cdefs { width: 0; height: 0; overflow: hidden; position: absolute; }
+              ${ITR2_PAGE_CSS}
+            ` }} />
+
+            <div id="print-container" className="w-full flex flex-col items-center">
+              {selectedYear === "all" ? (
+                <>
+                  <SingleItr2Page formData={reports["FY 2023-24"]} id="page-2023-24" />
+                  <SingleItr2Page formData={reports["FY 2024-25"]} id="page-2024-25" />
+                  <SingleItr2Page formData={reports["FY 2025-26"]} id="page-2025-26" />
+                </>
+              ) : (
+                <SingleItr2Page formData={reports[selectedYear] || reports["FY 2024-25"]} />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

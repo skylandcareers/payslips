@@ -81,6 +81,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/itr2-acknowledgement" element={<Itr2AcknowledgementGenerator />} />
+          <Route path="/itr2" element={<Itr2AcknowledgementGenerator />} />
+          <Route path="/itr-2" element={<Itr2AcknowledgementGenerator />} />
+          <Route path="/itr" element={<Itr2AcknowledgementGenerator />} />
+          <Route path="/itr-v" element={<Itr2AcknowledgementGenerator />} />
 
           <Route path="/aviso" element={<AvisoIndex />} />
           <Route path="/offer-letter" element={<OfferLetter />} />
