@@ -4,6 +4,38 @@ import { FileText, Calculator, Landmark, GraduationCap, Building2, Search, Brief
 
 const cardsData = [
   {
+    name: "Yashoda Hospitals",
+    element: (
+      <Link to="/yashoda" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#34316E] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', transform: 'scale(0.8)' }}>
+                <div style={{ background: '#F58634', width: '32px', height: '32px', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 'bold', fontSize: '20px' }}>Y</div>
+                <h1 style={{ color: '#34316E', margin: 0, fontWeight: 800, letterSpacing: '-0.5px', fontSize: '24px' }}>YASHODA <span style={{ fontWeight: 300 }}>HOSPITALS</span></h1>
+             </div>
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Yashoda Hospitals</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#34316E] text-[11px] font-semibold bg-indigo-50 py-1.5 rounded-md px-2 group-hover:bg-[#34316E] group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+        </div>
+      </Link>
+    )
+  },
+
+  {
+    name: "Vijaya Diagnostic Centre",
+    element: (
+      <Link to="/vijaya-diagnostic" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#312783] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <img src="/vijaya-diagnostic-logo.webp" alt="Vijaya Diagnostic Centre" className="h-12 max-w-[160px] object-contain group-hover:scale-105 transition-transform" />
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Vijaya Diagnostic Centre</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#312783] text-[11px] font-semibold bg-indigo-50 py-1.5 rounded-md px-2 group-hover:bg-[#312783] group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+        </div>
+      </Link>
+    )
+  },
+  {
     name: "Telangana Grameena Bank",
     element: (
       <Link to="/tgb" className="group">
@@ -259,7 +291,7 @@ const cardsData = [
                       <div className="h-14 w-auto px-4 bg-teal-900 rounded-xl flex items-center justify-center text-teal-200 font-sans font-black text-lg group-hover:scale-105 transition-transform text-center leading-tight shadow-md border-2 border-teal-500">MEDICAL<br />EQUIPMENTS</div>
                     </div>
                     <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Medical Equipments & Instruments</h2>
-                    <div className="mt-auto w-full flex items-center justify-center gap-2 text-teal-800 text-[11px] font-semibold bg-teal-50 py-1.5 rounded-md px-2 group-hover:bg-teal-800 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+                    <div className="mt-auto w-full flex items-center justify-center gap-2 text-teal-800 text-[11px] font-semibold bg-indigo-50 py-1.5 rounded-md px-2 group-hover:bg-teal-800 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
                   </div>
                 </Link>
     )

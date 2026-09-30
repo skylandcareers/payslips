@@ -68,6 +68,17 @@ import KotakBankStatementGenerator from "./pages/KotakBankStatementGenerator";
 import TGBStatementGenerator from "./pages/TGBStatementGenerator";
 import ICICIStatementGenerator from "./pages/ICICIStatementGenerator";
 
+import VijayaDiagnosticIndex from "./pages/VijayaDiagnosticIndex";
+import VijayaDiagnosticOfferLetter from "./pages/VijayaDiagnosticOfferLetter";
+import VijayaDiagnosticPayslip from "./pages/VijayaDiagnosticPayslip";
+import VijayaDiagnosticIdCard from "./pages/VijayaDiagnosticIdCard";
+import YashodaIndex from "./pages/YashodaIndex";
+import YashodaLetterHead from "./pages/YashodaLetterHead";
+import YashodaOfferLetter from "./pages/YashodaOfferLetter";
+import YashodaPayslip from "./pages/YashodaPayslip";
+import YashodaIdCard from "./pages/YashodaIdCard";
+
+
 
 const queryClient = new QueryClient();
 
@@ -156,6 +167,17 @@ const App = () => (
           <Route path="/icici-bank" element={<ICICIStatementGenerator />} />
 
           
+          <Route path="/vijaya-diagnostic" element={<VijayaDiagnosticIndex />} />
+          <Route path="/vijaya-diagnostic/offer-letter" element={<VijayaDiagnosticOfferLetter />} />
+          <Route path="/vijaya-diagnostic/payslips" element={<VijayaDiagnosticPayslip />} />
+          <Route path="/vijaya-diagnostic/id-card" element={<VijayaDiagnosticIdCard />} />
+
+                    <Route path="/yashoda" element={<YashodaIndex />} />
+          <Route path="/yashoda/letterhead" element={<YashodaLetterHead />} />
+          <Route path="/yashoda/offer-letter" element={<YashodaOfferLetter />} />
+          <Route path="/yashoda/payslips" element={<YashodaPayslip />} />
+          <Route path="/yashoda/id-card" element={<YashodaIdCard />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
