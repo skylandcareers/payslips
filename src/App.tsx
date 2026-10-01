@@ -64,6 +64,7 @@ import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGener
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 import UnionBankStatementGenerator from "./pages/UnionBankStatementGenerator";
 import SBIStatementGenerator from "./pages/SBIStatementGenerator";
+import SBI2StatementGenerator from "./pages/SBI2StatementGenerator";
 import KotakBankStatementGenerator from "./pages/KotakBankStatementGenerator";
 import TGBStatementGenerator from "./pages/TGBStatementGenerator";
 import ICICIStatementGenerator from "./pages/ICICIStatementGenerator";
@@ -159,6 +160,10 @@ const App = () => (
 
           <Route path="/sbi" element={<SBIStatementGenerator />} />
           <Route path="/sbi/statement" element={<SBIStatementGenerator />} />
+          <Route path="/sbi2" element={<SBI2StatementGenerator />} />
+          <Route path="/sbi2/statement" element={<SBI2StatementGenerator />} />
+          <Route path="/sbi-2" element={<SBI2StatementGenerator />} />
+          <Route path="/sbi-whatsapp" element={<SBI2StatementGenerator />} />
           <Route path="/kotak" element={<KotakBankStatementGenerator />} />
           <Route path="/kotak/statement" element={<KotakBankStatementGenerator />} />
           <Route path="/tgb" element={<TGBStatementGenerator />} />
