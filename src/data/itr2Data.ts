@@ -21,6 +21,27 @@ export interface Itr2ReportData {
 }
 
 export const ITR2_YEAR_PRESETS: Record<string, Itr2ReportData> = {
+  'Irfan Shaik (ITR-3 FY23-24)': {
+    ackNumber: '118673410270724',
+    dateOfFiling: '27-Jul-2024',
+    financialYear: '2023-24',
+    assessmentYear: '2024-25',
+    pan: 'FCEPS8377F',
+    name: 'IRFAN SHAIK',
+    address1: '202,12-2-710 TO 712, AVALON APARTMENTS , KHADERBAGH,GOLCONDA ,',
+    address2: 'HYDERABAD , 36-Telangana, 91-India, 500008',
+    status: 'Individual',
+    formNumber: 'ITR-3',
+    filedUs: '139(1)- On or Before due date',
+    totalIncome: '4,99,240',
+    netTax: '0',
+    taxesPaid: '0',
+    taxPayable1: '0',
+    timestamp: '27-Jul-2024 19:33:26',
+    ipAddress: '49.43.225.120',
+    evc: 'TUD92T69CI',
+    barcodeValue: 'FCEPS8377F031186734102707249403a37457d7e218f315db3bc77e52525fd00306',
+  },
   'FY 2023-24': {
     ackNumber: '309247080290724',
     dateOfFiling: '29-Jul-2024',

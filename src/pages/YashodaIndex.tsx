@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FileText, Banknote, CreditCard, Mail } from "lucide-react";
+import { FileText, Banknote, CreditCard, Mail, Plane } from "lucide-react";
 
 const YASHODA_PRIMARY = "#34316E"; // India Blue
 const YASHODA_ACCENT = "#F58634"; // Uplifting Orange
@@ -34,12 +34,13 @@ const YashodaIndex = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
           {[
             { title: "Blank Letterhead", icon: Mail, path: "/yashoda/letterhead", desc: "Generate blank official letterhead", delay: 0 },
             { title: "Offer Letter", icon: FileText, path: "/yashoda/offer-letter", desc: "Generate official offer letters", delay: 100 },
             { title: "Payslips", icon: Banknote, path: "/yashoda/payslips", desc: "Generate monthly payslips", delay: 200 },
-            { title: "ID Card", icon: CreditCard, path: "/yashoda/id-card", desc: "Create employee ID cards", delay: 300 }
+            { title: "ID Card", icon: CreditCard, path: "/yashoda/id-card", desc: "Create employee ID cards", delay: 300 },
+            { title: "Visa NOC / Leave Letter", icon: Plane, path: "/yashoda/visa-noc", desc: "Generate NOC for Schengen/Travel Visas", delay: 400 }
           ].map((item, idx) => (
             <Link key={idx} to={item.path} className="group relative bg-white border border-slate-200 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 overflow-hidden flex flex-col h-full" style={{ animationDelay: `${item.delay}ms` }}>
               <div className="absolute top-0 left-0 w-full h-1 transition-all duration-300" style={{ background: YASHODA_ACCENT, transform: 'scaleX(0)', transformOrigin: 'left' }} />

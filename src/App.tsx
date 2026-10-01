@@ -77,6 +77,7 @@ import YashodaLetterHead from "./pages/YashodaLetterHead";
 import YashodaOfferLetter from "./pages/YashodaOfferLetter";
 import YashodaPayslip from "./pages/YashodaPayslip";
 import YashodaIdCard from "./pages/YashodaIdCard";
+import YashodaVisaNoc from "./pages/YashodaVisaNoc";
 
 
 
@@ -177,6 +178,7 @@ const App = () => (
           <Route path="/yashoda/offer-letter" element={<YashodaOfferLetter />} />
           <Route path="/yashoda/payslips" element={<YashodaPayslip />} />
           <Route path="/yashoda/id-card" element={<YashodaIdCard />} />
+          <Route path="/yashoda/visa-noc" element={<YashodaVisaNoc />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

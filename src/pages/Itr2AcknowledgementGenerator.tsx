@@ -286,7 +286,7 @@ const SingleItr2Page = ({ formData, id }: { formData: Itr2ReportData; id?: strin
 <div className="t c0" style={{zIndex: '268', transform: 'matrix(1,0,0,1,37.76,37.91)'}}>Acknowledgement Number:{formData.ackNumber}</div>
 <div className="t c0" style={{zIndex: '306', transform: 'matrix(1,0,0,1,564.89,37.91)'}}>Date of filing : {formData.dateOfFiling}</div>
 <div className="t c1" style={{zIndex: '335', transform: 'matrix(1,0,0,1,135.64,77.17)'}}>INDIAN INCOME TAX RETURN ACKNOWLEDGEMENT</div>
-<div className="t c2" style={{zIndex: '375', transform: 'matrix(1,0,0,1,51.07,97.37)'}}>[Where the data of the Return of Income in Form ITR-1(SAHAJ), {formData.formNumber}, ITR-3, ITR-4(SUGAM), ITR-5, ITR-6, ITR-7</div>
+<div className="t c2" style={{zIndex: '375', transform: 'matrix(1,0,0,1,51.07,97.37)'}}>[Where the data of the Return of Income in Form ITR-1(SAHAJ), ITR-2, ITR-3, ITR-4(SUGAM), ITR-5, ITR-6, ITR-7</div>
 <div className="t c2" style={{zIndex: '484', transform: 'matrix(1,0,0,1,293.9,109.91)'}}>filed and verified]</div>
 <div className="t c2" style={{zIndex: '503', transform: 'matrix(1,0,0,1,205.75,122.44)'}}>(Please see Rule 12 of the Income-tax Rules, 1962)</div>
 <div className="t c3" style={{zIndex: '553', transform: 'matrix(1,0,0,1,660.33,80.39)'}}>Assessment</div>
@@ -451,29 +451,20 @@ export default function Itr2AcknowledgementGenerator() {
           <div className="flex items-center gap-3">
             {/* Year Selector Tabs */}
             <div className="flex bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-semibold">
-              <button
-                onClick={() => { setSelectedYear("FY 2023-24"); setActiveEditYear("FY 2023-24"); }}
-                className={`px-3 py-1.5 rounded-md transition ${selectedYear === "FY 2023-24" ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
-              >
-                FY 2023-24 (AY 24-25)
-              </button>
-              <button
-                onClick={() => { setSelectedYear("FY 2024-25"); setActiveEditYear("FY 2024-25"); }}
-                className={`px-3 py-1.5 rounded-md transition ${selectedYear === "FY 2024-25" ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
-              >
-                FY 2024-25 (AY 25-26)
-              </button>
-              <button
-                onClick={() => { setSelectedYear("FY 2025-26"); setActiveEditYear("FY 2025-26"); }}
-                className={`px-3 py-1.5 rounded-md transition ${selectedYear === "FY 2025-26" ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
-              >
-                FY 2025-26 (AY 26-27)
-              </button>
+              {Object.keys(reports).map(key => (
+                <button
+                  key={key}
+                  onClick={() => { setSelectedYear(key); setActiveEditYear(key); }}
+                  className={`px-3 py-1.5 rounded-md transition ${selectedYear === key ? "bg-white text-blue-700 shadow-sm font-bold" : "text-slate-600 hover:text-slate-900"}`}
+                >
+                  {key}
+                </button>
+              ))}
               <button
                 onClick={() => setSelectedYear("all")}
                 className={`px-3 py-1.5 rounded-md transition flex items-center gap-1.5 ${selectedYear === "all" ? "bg-blue-600 text-white shadow-sm font-bold" : "text-blue-700 hover:text-blue-900"}`}
               >
-                <Layers className="w-3.5 h-3.5" /> All 3 Years (Bundle)
+                <Layers className="w-3.5 h-3.5" /> Print All (Bundle)
               </button>
             </div>
 
@@ -689,12 +680,12 @@ export default function Itr2AcknowledgementGenerator() {
             <div id="print-container" className="w-full flex flex-col items-center">
               {selectedYear === "all" ? (
                 <>
-                  <SingleItr2Page formData={reports["FY 2023-24"]} id="page-2023-24" />
-                  <SingleItr2Page formData={reports["FY 2024-25"]} id="page-2024-25" />
-                  <SingleItr2Page formData={reports["FY 2025-26"]} id="page-2025-26" />
+                  {Object.keys(reports).map(key => (
+                    <SingleItr2Page key={key} formData={reports[key]} id={`page-${key}`} />
+                  ))}
                 </>
               ) : (
-                <SingleItr2Page formData={reports[selectedYear] || reports["FY 2024-25"]} />
+                <SingleItr2Page formData={reports[selectedYear] || Object.values(reports)[0]} />
               )}
             </div>
           </div>
