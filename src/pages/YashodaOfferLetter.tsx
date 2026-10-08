@@ -1,42 +1,77 @@
 import { useState } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import { Link } from "react-router-dom";
 import { Download, Settings2, Check } from "lucide-react";
 
-const YASHODA_PRIMARY = "#34316E"; 
-const YASHODA_ACCENT = "#F58634"; 
+const YASHODA_PRIMARY = "#34316E";
+const YASHODA_ACCENT = "#F58634";
 
 const YashodaOfferLetter = () => {
   const [isExporting, setIsExporting] = useState(false);
   const [activeTab, setActiveTab] = useState<"form" | "preview">("form");
 
   const [formData, setFormData] = useState({
-    date: new Date().toLocaleDateString("en-IN", { year: "numeric", month: "short", day: "numeric" }),
-    referenceNo: "YH/HR/2026/102",
-    candidateName: "Mr. Rohan Kumar",
-    candidateAddress: "Plot 45, Jubilee Hills",
-    cityStatePin: "Hyderabad, Telangana - 500033",
-    designation: "Senior Staff Nurse",
-    department: "Intensive Care Unit (ICU)",
-    joiningDate: "10-Oct-2026",
-    location: "Yashoda Hospitals, Secunderabad",
+    date: "15-Sep-2023",
+    referenceNo: "YH/HR/2023/1084",
+    candidateName: "Mr. Irfan Shaik",
+    candidateAddress: "202, Avalon Apartments, Nanal Nagar",
+    cityStatePin: "Hyderabad, Telangana - 500028",
+    designation: "Senior Lab Technician",
+    department: "Pathology Laboratory",
+    joiningDate: "09-Oct-2023",
+    location: "Somajiguda, Hyderabad",
     probationPeriod: "Six (6)",
-    basic: "18,000",
-    hra: "7,200",
+    basic: "40,000",
+    hra: "20,000",
     conveyance: "1,600",
     medicalAllowance: "1,250",
-    specialAllowance: "6,950",
-    grossSalary: "35,000",
+    specialAllowance: "24,350",
+    grossSalary: "87,200",
     pfDeduction: "1,800",
     ptDeduction: "200",
     totalDeductions: "2,000",
-    netSalary: "33,000",
+    netSalary: "85,200",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleExportPDF = () => {
-    setIsExporting(true);
-    setTimeout(() => { window.print(); setIsExporting(false); }, 200);
+  const handleExportPDF = async () => {
+    try {
+      setIsExporting(true);
+      
+      // Allow DOM to settle
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      const pagesElements = document.querySelectorAll('.print-page');
+      if (pagesElements.length === 0) throw new Error('Page elements not found');
+
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      
+      for (let i = 0; i < pagesElements.length; i++) {
+        const pageEl = pagesElements[i] as HTMLElement;
+        const canvas = await html2canvas(pageEl, {
+          scale: 1.5,
+          useCORS: true,
+          logging: false,
+          backgroundColor: '#ffffff'
+        });
+
+        const imgData = canvas.toDataURL('image/jpeg', 0.9);
+        
+        if (i > 0) pdf.addPage();
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      }
+      
+      pdf.save(`Yashoda_Offer_Letter_${formData.candidateName ? formData.candidateName.replace(' ', '_') : 'Document'}.pdf`);
+    } catch (error) {
+      console.error('Export failed', error);
+      alert('Failed to export PDF');
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   const PageHeader = () => (
@@ -47,6 +82,7 @@ const YashodaOfferLetter = () => {
         </div>
         <div className="text-right" style={{ fontSize: '10px', lineHeight: '1.4', color: '#475569', fontFamily: '"Arial", sans-serif' }}>
           <p style={{ color: YASHODA_PRIMARY, fontWeight: '900', fontSize: '12px', marginBottom: '2px', letterSpacing: '0.5px' }}>YASHODA HEALTHCARE SERVICES PVT. LTD.</p>
+          <p>CIN: U85110TG1999PTC031267</p>
           <p>Yashoda House, Plot #64, Nagarjuna Hills,</p>
           <p>Punjagutta, Hyderabad, Telangana – 500082</p>
           <p>Ph: +91 40 4567 4567 | www.yashodahospitals.com</p>
@@ -77,7 +113,7 @@ const YashodaOfferLetter = () => {
           .print-page { margin: 0 !important; box-shadow: none !important; position: relative; min-height: 297mm; page-break-after: always; overflow: hidden; } 
         }
       `}</style>
-      
+
       <div className="no-print flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="flex items-center gap-4">
           <Link to="/yashoda" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium">← Back to Dashboard</Link>
@@ -108,7 +144,7 @@ const YashodaOfferLetter = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="border-t border-slate-200 pt-4 mt-2">
                 <h3 className="text-sm font-bold text-slate-800 mb-3">Candidate Info</h3>
                 {[
@@ -157,9 +193,9 @@ const YashodaOfferLetter = () => {
           </div>
         )}
 
-        
+
         <div className={`flex-1 overflow-y-auto bg-slate-200 flex flex-col items-center py-10 print:bg-white print:p-0 gap-10 print:gap-0 ${activeTab === "form" ? "hidden md:flex" : "flex"}`}>
-          
+
           {/* PAGE 1: Offer Letter & Core Terms */}
           <div className="print-page bg-white shadow-2xl relative" style={{ width: '210mm', minHeight: '297mm', padding: '15mm', paddingBottom: '25mm', fontFamily: '"Arial", sans-serif', fontSize: '10.5pt', color: '#111' }}>
             {/* Watermark */}
@@ -169,7 +205,7 @@ const YashodaOfferLetter = () => {
 
             <div style={{ position: 'relative', zIndex: 1 }}>
               <PageHeader />
-              
+
               <div className="flex justify-between mb-8" style={{ fontSize: '10pt' }}>
                 <div>
                   <p><strong>Ref:</strong> {formData.referenceNo}</p>
@@ -189,7 +225,7 @@ const YashodaOfferLetter = () => {
               </div>
 
               <p style={{ marginBottom: '16px' }}>Dear <strong>{formData.candidateName}</strong>,</p>
-              
+
               <p style={{ marginBottom: '16px', textAlign: 'justify', lineHeight: '1.6' }}>
                 With reference to your application and the subsequent interviews you had with our management, we are pleased to appoint you as <strong>"{formData.designation}"</strong> in the <strong>{formData.department}</strong> department at <strong>{formData.location}</strong>.
               </p>
@@ -232,7 +268,7 @@ const YashodaOfferLetter = () => {
 
             <div style={{ position: 'relative', zIndex: 1 }}>
               <PageHeader />
-              
+
               <div style={{ paddingLeft: '10px', marginTop: '20px' }}>
                 <h4 style={{ fontWeight: 'bold', marginBottom: '4px', color: YASHODA_PRIMARY }}>5. Working Hours & Shifts</h4>
                 <p style={{ marginBottom: '16px', textAlign: 'justify', lineHeight: '1.6' }}>
@@ -258,7 +294,7 @@ const YashodaOfferLetter = () => {
               <p style={{ marginBottom: '24px', marginTop: '40px', textAlign: 'justify', lineHeight: '1.6' }}>
                 Please return the duplicate copy of this letter, duly signed on all pages, as a token of your acceptance of this offer and the terms and conditions mentioned herein.
               </p>
-              
+
               <p style={{ marginBottom: '40px' }}>We welcome you to Yashoda Hospitals and look forward to a long and mutually beneficial association.</p>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
@@ -289,7 +325,7 @@ const YashodaOfferLetter = () => {
 
             <div style={{ position: 'relative', zIndex: 1 }}>
               <PageHeader />
-              
+
               <div style={{ textAlign: 'center', marginBottom: '24px', marginTop: '20px' }}>
                 <p style={{ fontWeight: 'bold', fontSize: '14pt', color: YASHODA_PRIMARY, textDecoration: 'underline' }}>ANNEXURE - A</p>
                 <p style={{ fontSize: '11pt', marginTop: '8px', fontWeight: 'bold' }}>COMPENSATION & BENEFITS</p>

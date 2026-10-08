@@ -1,9 +1,11 @@
 import { useState } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import { Link } from "react-router-dom";
 import { Download, Settings2, Check } from "lucide-react";
 
-const YASHODA_PRIMARY = "#34316E"; 
-const YASHODA_ACCENT = "#F58634"; 
+const YASHODA_PRIMARY = "#34316E";
+const YASHODA_ACCENT = "#F58634";
 
 const YashodaVisaNoc = () => {
   const [isExporting, setIsExporting] = useState(false);
@@ -17,7 +19,7 @@ const YashodaVisaNoc = () => {
     candidateName: "Irfan Shaik",
     designation: "Senior Lab Technician",
     department: "Pathology",
-    joiningDate: "10-Oct-2024",
+    joiningDate: "09-Oct-2023",
     passportNumber: "AG944613",
     country: "France",
     purpose: "attend the Journées de l'Innovation en Biologie (JIB 2026) conference in Paris",
@@ -28,9 +30,42 @@ const YashodaVisaNoc = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleExportPDF = () => {
-    setIsExporting(true);
-    setTimeout(() => { window.print(); setIsExporting(false); }, 200);
+  const handleExportPDF = async () => {
+    try {
+      setIsExporting(true);
+      
+      // Allow DOM to settle
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      const pagesElements = document.querySelectorAll('.print-page');
+      if (pagesElements.length === 0) throw new Error('Page elements not found');
+
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      
+      for (let i = 0; i < pagesElements.length; i++) {
+        const pageEl = pagesElements[i] as HTMLElement;
+        const canvas = await html2canvas(pageEl, {
+          scale: 1.5,
+          useCORS: true,
+          logging: false,
+          backgroundColor: '#ffffff'
+        });
+
+        const imgData = canvas.toDataURL('image/jpeg', 0.9);
+        
+        if (i > 0) pdf.addPage();
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      }
+      
+      pdf.save(`Yashoda_Visa_NOC_${formData.candidateName ? formData.candidateName.replace(' ', '_') : 'Document'}.pdf`);
+    } catch (error) {
+      console.error('Export failed', error);
+      alert('Failed to export PDF');
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   const PageHeader = () => (
@@ -41,6 +76,7 @@ const YashodaVisaNoc = () => {
         </div>
         <div className="text-right" style={{ fontSize: '10px', lineHeight: '1.4', color: '#475569', fontFamily: '"Arial", sans-serif' }}>
           <p style={{ color: YASHODA_PRIMARY, fontWeight: '900', fontSize: '12px', marginBottom: '2px', letterSpacing: '0.5px' }}>YASHODA HEALTHCARE SERVICES PVT. LTD.</p>
+          <p>CIN: U85110TG1999PTC031267</p>
           <p>Yashoda House, Plot #64, Nagarjuna Hills,</p>
           <p>Punjagutta, Hyderabad, Telangana – 500082</p>
           <p>Ph: +91 40 4567 4567 | www.yashodahospitals.com</p>
@@ -70,7 +106,7 @@ const YashodaVisaNoc = () => {
           .print-page { margin: 0 !important; box-shadow: none !important; position: relative; min-height: 297mm; page-break-after: always; overflow: hidden; } 
         }
       `}</style>
-      
+
       <div className="no-print flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="flex items-center gap-4">
           <Link to="/yashoda" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium">← Back to Dashboard</Link>
@@ -101,7 +137,7 @@ const YashodaVisaNoc = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="border-t border-slate-200 pt-4 mt-2">
                 <h3 className="text-sm font-bold text-slate-800 mb-3">Visa Office</h3>
                 <div className="grid grid-cols-2 gap-4 mb-3">
@@ -159,9 +195,9 @@ const YashodaVisaNoc = () => {
         )}
 
         <div className={`flex-1 overflow-y-auto bg-slate-200 flex flex-col items-center py-10 print:bg-white print:p-0 gap-10 print:gap-0 ${activeTab === "form" ? "hidden md:flex" : "flex"}`}>
-          
+
           <div className="print-page bg-white shadow-2xl relative" style={{ width: '210mm', minHeight: '297mm', padding: '15mm', paddingBottom: '25mm', fontFamily: '"Arial", sans-serif', fontSize: '11pt', color: '#111' }}>
-            
+
             {/* Watermark */}
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }}>
               <img src="/yashoda-icon.png" style={{ width: '120mm' }} />
@@ -169,7 +205,7 @@ const YashodaVisaNoc = () => {
 
             <div style={{ position: 'relative', zIndex: 1 }}>
               <PageHeader />
-              
+
               <div className="flex justify-between mb-10" style={{ fontSize: '10pt' }}>
                 <div>
                   <p><strong>Ref:</strong> {formData.referenceNo}</p>
@@ -193,13 +229,13 @@ const YashodaVisaNoc = () => {
               </div>
 
               <p style={{ marginBottom: '20px' }}>Dear Sir/Madam,</p>
-              
+
               <p style={{ marginBottom: '20px', textAlign: 'justify', lineHeight: '1.6' }}>
                 This is to certify that <strong>{formData.candidateName}</strong> (Passport Number: <strong>{formData.passportNumber}</strong>) is a permanent employee of Yashoda Hospitals. They have been working with us since <strong>{formData.joiningDate}</strong> and are currently holding the position of <strong>{formData.designation}</strong> in the <strong>{formData.department}</strong> department.
               </p>
 
               <p style={{ marginBottom: '20px', textAlign: 'justify', lineHeight: '1.6' }}>
-                We understand that {formData.candidateName} is applying for a visa to travel to <strong>{formData.country}</strong> to <strong>{formData.purpose}</strong>. 
+                We understand that {formData.candidateName} is applying for a visa to travel to <strong>{formData.country}</strong> to <strong>{formData.purpose}</strong>.
               </p>
 
               <p style={{ marginBottom: '20px', textAlign: 'justify', lineHeight: '1.6' }}>
@@ -207,11 +243,11 @@ const YashodaVisaNoc = () => {
               </p>
 
               <p style={{ marginBottom: '30px', textAlign: 'justify', lineHeight: '1.6' }}>
-                {formData.candidateName} is expected to return to India and resume their normal duties on <strong>{formData.resumeDutyDate}</strong>. All expenses pertaining to this travel, including accommodation and medical insurance, will be borne by the employee.
+                {formData.candidateName} is expected to return to India and resume his/her normal duties on <strong>{formData.resumeDutyDate}</strong>. All expenses pertaining to this travel, including accommodation and medical insurance, will be borne by the employee.
               </p>
 
               <p style={{ marginBottom: '40px' }}>
-                We kindly request you to grant them the necessary visa for their travel. Should you require any further information, please feel free to contact us.
+                We kindly request you to grant him/her the necessary visa to facilitate this travel. Should you require any further information, please feel free to contact us.
               </p>
 
               <div style={{ marginTop: '50px' }}>

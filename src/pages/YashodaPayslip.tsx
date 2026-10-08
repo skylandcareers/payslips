@@ -1,9 +1,11 @@
 import { useState } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import { Link } from "react-router-dom";
 import { Download, Settings2, Check } from "lucide-react";
 
-const YASHODA_PRIMARY = "#34316E"; 
-const YASHODA_ACCENT = "#F58634"; 
+const YASHODA_PRIMARY = "#34316E";
+const YASHODA_ACCENT = "#F58634";
 
 const YashodaPayslip = () => {
   const [isExporting, setIsExporting] = useState(false);
@@ -11,42 +13,70 @@ const YashodaPayslip = () => {
 
   const [formData, setFormData] = useState({
     payPeriod: "September 2026",
-    employeeName: "Mr. Rohan Kumar",
-    employeeId: "YH-2024-1042",
-    designation: "Senior Staff Nurse",
-    department: "Intensive Care Unit (ICU)",
-    doj: "10-Oct-2024",
-    location: "Secunderabad",
-    bankName: "HDFC Bank",
-    bankAccount: "XXXXXXXX6789",
-    pan: "ABCDE1234F",
-    uan: "100987654321",
-    pfNumber: "AP/HYD/12345/678",
+    employeeName: "Mr. Irfan Shaik",
+    employeeId: "YH-2023-9844",
+    designation: "Senior Lab Technician",
+    department: "Pathology Laboratory",
+    doj: "09-Oct-2023",
+    location: "Somajiguda, Hyderabad",
+    bankName: "State Bank of India",
+    bankAccount: "XXXXX3192",
+    pan: "FCEPS8377F",
+    uan: "101459283714",
+    pfNumber: "TS/HYD/0045812/000/0089421",
     totalDays: "30",
     lwp: "0",
     paidDays: "30",
     clBalance: "2.5",
     slBalance: "1.0",
     plBalance: "8.5",
-    basic: "18,000",
-    hra: "7,200",
-    conveyance: "1,600",
-    medicalAllowance: "1,250",
-    specialAllowance: "6,950",
-    totalEarnings: "35,000",
+    basic: "50,000",
+    hra: "20,000",
+    conveyance: "5,000",
+    medicalAllowance: "3,000",
+    specialAllowance: "23,200",
+    totalEarnings: "1,01,200",
     pf: "1,800",
     pt: "200",
-    tds: "1,000",
-    totalDeductions: "3,000",
-    netPay: "32,000",
-    amountInWords: "Thirty Two Thousand Rupees Only",
+    tds: "5,200",
+    totalDeductions: "7,200",
+    netPay: "94,000",
+    amountInWords: "Ninety Four Thousand Rupees Only",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleExportPDF = () => {
-    setIsExporting(true);
-    setTimeout(() => { window.print(); setIsExporting(false); }, 200);
+  const handleExportPDF = async () => {
+    try {
+      setIsExporting(true);
+      
+      // Allow DOM to settle
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      const pageEl = document.querySelector('.print-page') as HTMLElement;
+      if (!pageEl) throw new Error('Page element not found');
+
+      const canvas = await html2canvas(pageEl, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff'
+      });
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.9);
+      
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      
+      pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      pdf.save(`Yashoda_Payslip_${formData.payPeriod.replace(' ', '_')}.pdf`);
+    } catch (error) {
+      console.error('Export failed', error);
+      alert('Failed to export PDF');
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   const PageHeader = () => (
@@ -57,6 +87,7 @@ const YashodaPayslip = () => {
         </div>
         <div className="text-right" style={{ fontSize: '10px', lineHeight: '1.4', color: '#475569', fontFamily: '"Arial", sans-serif' }}>
           <p style={{ color: YASHODA_PRIMARY, fontWeight: '900', fontSize: '12px', marginBottom: '2px', letterSpacing: '0.5px' }}>YASHODA HEALTHCARE SERVICES PVT. LTD.</p>
+          <p>CIN: U85110TG1999PTC031267</p>
           <p>Yashoda House, Plot #64, Nagarjuna Hills,</p>
           <p>Punjagutta, Hyderabad, Telangana – 500082</p>
           <p>Ph: +91 40 4567 4567 | www.yashodahospitals.com</p>
@@ -77,7 +108,7 @@ const YashodaPayslip = () => {
           .print-page { margin: 0 !important; box-shadow: none !important; padding: 15mm !important; position: relative; min-height: 297mm; overflow: hidden; } 
         }
       `}</style>
-      
+
       <div className="no-print flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="flex items-center gap-4">
           <Link to="/yashoda" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium">← Back to Dashboard</Link>
@@ -154,11 +185,11 @@ const YashodaPayslip = () => {
           </div>
         )}
 
-        
+
         <div className={`flex-1 overflow-y-auto bg-slate-200 flex flex-col items-center py-10 print:bg-white print:p-0 ${activeTab === "form" ? "hidden md:flex" : "flex"}`}>
-          
+
           <div className="print-page bg-white shadow-2xl relative" style={{ width: '210mm', minHeight: '297mm', padding: '15mm', paddingBottom: '25mm', fontFamily: '"Arial", sans-serif', fontSize: '10pt', color: '#000' }}>
-            
+
             {/* Watermark */}
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.08, zIndex: 0, pointerEvents: 'none' }}>
               <img src="/yashoda-icon.png" style={{ width: '150mm' }} />
@@ -166,7 +197,7 @@ const YashodaPayslip = () => {
 
             <div style={{ position: 'relative', zIndex: 1 }}>
               <PageHeader />
-              
+
               <div style={{ textAlign: 'center', marginBottom: '24px', marginTop: '10px' }}>
                 <p style={{ fontWeight: 'bold', fontSize: '14pt', textDecoration: 'underline', letterSpacing: '1px' }}>PAYSLIP FOR THE MONTH OF {formData.payPeriod.toUpperCase()}</p>
               </div>
@@ -282,7 +313,7 @@ const YashodaPayslip = () => {
                   </tbody>
                 </table>
               </div>
-              
+
               {/* Leave Balances */}
               <div style={{ marginBottom: '40px' }}>
                 <p style={{ fontWeight: 'bold', textDecoration: 'underline', marginBottom: '10px' }}>Leave Balances as of {formData.payPeriod}:</p>

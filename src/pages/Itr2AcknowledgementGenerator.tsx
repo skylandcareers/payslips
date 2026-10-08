@@ -400,9 +400,9 @@ const SingleItr2Page = ({ formData, id }: { formData: Itr2ReportData; id?: strin
 export default function Itr2AcknowledgementGenerator() {
   const [reports, setReports] = useState<Record<string, Itr2ReportData>>(ITR2_YEAR_PRESETS);
   const [selectedYear, setSelectedYear] = useState<string>("all");
-  const [activeEditYear, setActiveEditYear] = useState<string>("FY 2024-25");
+  const [activeEditYear, setActiveEditYear] = useState<string>("Irfan Shaik (FY 2025-26)");
 
-  const currentFormData = reports[activeEditYear] || reports["FY 2024-25"];
+  const currentFormData = reports[activeEditYear] || reports["Irfan Shaik (FY 2025-26)"];
 
   const handlePrint = () => {
     window.print();

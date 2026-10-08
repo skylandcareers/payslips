@@ -4,6 +4,22 @@ import { FileText, Calculator, Landmark, GraduationCap, Building2, Search, Brief
 
 const cardsData = [
   {
+    name: "Malla Reddy University",
+    element: (
+      <Link to="/mallareddy" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#1a2f66] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+             <img src="/mallareddy-logo.png" alt="Malla Reddy University" className="h-12 w-auto object-contain group-hover:scale-105 transition-transform" onError={(e) => {
+               (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2U1ZTdlYiIvPjx0ZXh0IHg9IjYwIiB5PSI1MCIgZm9udC1mYW1pbHk9ImFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOWNhM2FmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjMiPkxvZ28gSGVyZTwvdGV4dD48L3N2Zz4=';
+             }} />
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Malla Reddy Univ.</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#1a2f66] text-[11px] font-semibold bg-blue-50 py-1.5 rounded-md px-2 group-hover:bg-[#1a2f66] group-hover:text-white transition-all">Open Portal <GraduationCap className="w-4 h-4" /></div>
+        </div>
+      </Link>
+    )
+  },
+  {
     name: "Yashoda Hospitals",
     element: (
       <Link to="/yashoda" className="group">

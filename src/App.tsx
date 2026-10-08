@@ -7,6 +7,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Itr2AcknowledgementGenerator from "./pages/Itr2AcknowledgementGenerator";
 import NotFound from "./pages/NotFound";
+import MallaReddyLetterheadGenerator from "./pages/MallaReddyLetterheadGenerator";
+import MallaReddyIndex from "./pages/MallaReddyIndex";
 
 import OfferLetter from "./pages/OfferLetter";
 import PayslipGenerator from "./pages/PayslipGenerator";
@@ -186,6 +188,8 @@ const App = () => (
           <Route path="/yashoda/visa-noc" element={<YashodaVisaNoc />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/mallareddy" element={<MallaReddyIndex />} />
+          <Route path="/mallareddy/letterhead" element={<MallaReddyLetterheadGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

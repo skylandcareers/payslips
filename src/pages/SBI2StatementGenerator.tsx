@@ -13,6 +13,9 @@ import {
   Eye,
 } from 'lucide-react';
 import { toast } from 'sonner';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 import {
   SBI2Transaction,
   SBI2AccountDetails,
@@ -26,8 +29,8 @@ const MIDDLE_PAGE_MAX = 26;
 const LAST_PAGE_MAX = 25;
 
 // Capacities calibrated for exact A4 (793.33px x 1122.67px at 96 DPI)
-const PAGE_1_CAPACITY = 576.5; // fits 18 rows of 32px
-const OTHER_CAPACITY = 832.5;  // fits 26 rows of 32px
+const PAGE_1_CAPACITY = 612.5; // fits 18 rows of 32px
+const OTHER_CAPACITY = 884.5;  // fits 26 rows of 32px
 const END_OF_STATEMENT_HEIGHT = 19; // height of End of Statement row
 
 export default function SBI2StatementGenerator() {
@@ -117,24 +120,33 @@ export default function SBI2StatementGenerator() {
   const handleDownloadPdf = async () => {
     try {
       setIsExporting(true);
-      toast.info('Generating accurate statement PDF via Puppeteer...');
+      toast.info('Generating accurate statement PDF...', { duration: 4000 });
+      
+      // Allow DOM to settle
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
-      const response = await fetch('/api/export-pdf?path=/sbi2&filename=SBI_WhatsApp_Statement.pdf');
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || `Export failed with status ${response.status}`);
+      const pagesElements = document.querySelectorAll('.sbi2-statement-page');
+      if (pagesElements.length === 0) throw new Error('No pages found to export');
+
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+
+      for (let i = 0; i < pagesElements.length; i++) {
+        const pageEl = pagesElements[i] as HTMLElement;
+        const canvas = await html2canvas(pageEl, {
+          scale: 1.5,
+          useCORS: true,
+          logging: false,
+          backgroundColor: '#ffffff'
+        });
+
+        const imgData = canvas.toDataURL('image/jpeg', 0.85);
+        if (i > 0) pdf.addPage();
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
       }
 
-      const blob = await response.blob();
-      const downloadUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = downloadUrl;
-      link.download = 'SBI_WhatsApp_Statement.pdf';
-      document.body.appendChild(link);
-      link.click();
-      window.URL.revokeObjectURL(downloadUrl);
-      document.body.removeChild(link);
-
+      pdf.save('SBI_WhatsApp_Statement.pdf');
       toast.success('SBI Statement downloaded successfully!');
     } catch (err: any) {
       console.error('[PDF Download Error]:', err);
@@ -283,7 +295,7 @@ export default function SBI2StatementGenerator() {
 
   return (
     <div
-      className="sbi2-root min-h-screen bg-[#e8e8e8] print:bg-white print:min-h-0 text-black antialiased flex flex-col items-center"
+      className="sbi2-root min-h-screen bg-[#e8e8e8] print:bg-white print:min-h-0 text-black subpixel-antialiased flex flex-col items-center"
       data-paginating={measurement ? undefined : 'true'}
     >
       {/* Off-screen table copy strictly used by useLayoutEffect to measure dynamic pixel heights */}
@@ -460,11 +472,11 @@ export default function SBI2StatementGenerator() {
         .sbi2-table td.data-cell {
           font-size: 13.33px;
           font-weight: 400;
-          line-height: 13.33px;
+          line-height: 1.15;
           text-align: left;
           vertical-align: top;
-          height: 32px;
           padding: 2px 3px 1px 3px;
+          height: 34px;
           border: 0.67px solid #000000;
           overflow-wrap: break-word;
           word-break: break-word;
@@ -481,8 +493,7 @@ export default function SBI2StatementGenerator() {
           font-weight: 700;
           text-align: center;
           vertical-align: middle;
-          height: 18.67px;
-          padding: 1px 3px;
+          padding: 6px 4px;
           border: 0.67px solid #000000;
         }
 
@@ -499,7 +510,7 @@ export default function SBI2StatementGenerator() {
 
         @media print {
           @page {
-            size: 793.33px 1122.67px;
+            size: A4;
             margin: 0 !important;
           }
           html, body, .min-h-screen, .sbi2-root {
@@ -516,8 +527,10 @@ export default function SBI2StatementGenerator() {
           .sbi2-statement-page {
             margin: 0 !important;
             box-shadow: none !important;
+            width: 793.33px !important;
             height: 1122.67px !important;
             max-height: 1122.67px !important;
+            padding: 48px !important;
             overflow: hidden !important;
             page-break-after: always !important;
             break-after: page !important;
