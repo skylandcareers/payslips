@@ -123,6 +123,21 @@ const cardsData = [
     )
   },
   {
+    name: "State Bank of India (Retail Statement)",
+    element: (
+      <Link to="/sbi3" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#1a1f71] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3 relative">
+            <img src="/sbi_logo.jpg" alt="SBI Retail Statement" className="h-10 w-auto object-contain group-hover:scale-105 transition-transform" />
+            <span className="absolute -top-1 -right-2 bg-indigo-700 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-xs">Retail INB</span>
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">SBI (Retail Statement)</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#1a1f71] text-[11px] font-semibold bg-indigo-50 text-indigo-800 py-1.5 rounded-md px-2 group-hover:bg-[#1a1f71] group-hover:text-white transition-all">Open Portal <Landmark className="w-4 h-4" /></div>
+        </div>
+      </Link>
+    )
+  },
+  {
     name: "ICICI Bank",
     element: (
       <Link to="/icici" className="group">

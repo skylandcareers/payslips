@@ -70,6 +70,7 @@ import SBI2StatementGenerator from "./pages/SBI2StatementGenerator";
 import KotakBankStatementGenerator from "./pages/KotakBankStatementGenerator";
 import TGBStatementGenerator from "./pages/TGBStatementGenerator";
 import ICICIStatementGenerator from "./pages/ICICIStatementGenerator";
+import SBI3StatementGenerator from "./pages/SBI3StatementGenerator";
 
 import VijayaDiagnosticIndex from "./pages/VijayaDiagnosticIndex";
 import VijayaDiagnosticOfferLetter from "./pages/VijayaDiagnosticOfferLetter";
@@ -166,6 +167,9 @@ const App = () => (
           <Route path="/sbi2/statement" element={<SBI2StatementGenerator />} />
           <Route path="/sbi-2" element={<SBI2StatementGenerator />} />
           <Route path="/sbi-whatsapp" element={<SBI2StatementGenerator />} />
+          <Route path="/sbi3" element={<SBI3StatementGenerator />} />
+          <Route path="/sbi3/statement" element={<SBI3StatementGenerator />} />
+          <Route path="/sbi-retail" element={<SBI3StatementGenerator />} />
           <Route path="/kotak" element={<KotakBankStatementGenerator />} />
           <Route path="/kotak/statement" element={<KotakBankStatementGenerator />} />
           <Route path="/tgb" element={<TGBStatementGenerator />} />
