@@ -1,24 +1,36 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
-import { Download, Check, Settings2 } from "lucide-react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import { Download, Settings2, Printer, Loader2 } from "lucide-react";
+import { toast } from "sonner";
+
+const defaultFormData = {
+  documentTitle: "NO OBJECTION CERTIFICATE",
+  date: "02/06/2026",
+  referenceNo: "MRU/Conference/CSE/2025-26/198",
+  recipientName: "The Embassy of the Republic of Korea\nIndia",
+  subject: "No Objection Certificate for Attending the 2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS 2026)",
+  salutation: "Dear Sir/Madam,",
+  bodyText: "This is to certify that **Mr. Raghu Kudala** (S/o Poshetty Kudala), **Roll No. 2321CS10245, Passport No. Y5540555**, is a **bonafide B.Tech. Scholar** in the **Department of Computer Science and Engineering (CSE)** at **Malla Reddy University, Hyderabad, Telangana, India** for the Academic Year **2023–27**.\n\nThe University has no objection to her travel to **Seoul, Republic of Korea** for the purpose of attending and presenting her research work at the **2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS)** scheduled from 22 June 2026 to 25 June 2026.\n\nHe has been granted **academic leave from 20 June 2026 to 30 June 2026** for this purpose. He is expected to return to India on **01 July 2026** and resume her academic/research duties thereafter.\n\nThis certificate is issued upon her request for **visa processing purposes**.\n\nShould you require any further information, please feel free to contact us.",
+  signatoryName: "",
+  signatoryDesignation: "Head of Department\nDepartment of Computer Science and Engineering\nMalla Reddy University\nHyderabad, Telangana, India",
+};
 
 const MallaReddyLetterheadGenerator = () => {
   const [isExporting, setIsExporting] = useState(false);
   const [activeTab, setActiveTab] = useState<"form" | "preview">("form");
 
-  const [formData, setFormData] = useState({
-    documentTitle: "NO OBJECTION CERTIFICATE",
-    date: "02/06/2026",
-    referenceNo: "MRU/Conference/CSE/2025-26/198",
-    recipientName: "The Embassy of the Republic of Korea\nIndia",
-    subject: "No Objection Certificate for Attending the 2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS 2026)",
-    salutation: "Dear Sir/Madam,",
-    bodyText: "This is to certify that **Mr. Raghu Kudala** (S/o Poshetty Kudala), **Roll No. 2321CS10245, Passport No. Y5540555**, is a **bonafide B.Tech. Scholar** in the **Department of Computer Science and Engineering (CSE)** at **Malla Reddy University, Hyderabad, Telangana, India** for the Academic Year **2023–27**.\n\nThe University has no objection to her travel to **Seoul, Republic of Korea** for the purpose of attending and presenting her research work at the **2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS)** scheduled from 22 June 2026 to 25 June 2026.\n\nHe has been granted **academic leave from 20 June 2026 to 30 June 2026** for this purpose. He is expected to return to India on **01 July 2026** and resume her academic/research duties thereafter.\n\nThis certificate is issued upon her request for **visa processing purposes**.\n\nShould you require any further information, please feel free to contact us.",
-    signatoryName: "",
-    signatoryDesignation: "Head of Department\nDepartment of Computer Science and Engineering\nMalla Reddy University\nHyderabad, Telangana, India",
+  const [formData, setFormData] = useState(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const dataParam = params.get("data");
+      if (dataParam) {
+        return JSON.parse(decodeURIComponent(dataParam));
+      }
+    } catch (e) {
+      console.error("Failed to parse URL form data", e);
+    }
+    return defaultFormData;
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,73 +40,80 @@ const MallaReddyLetterheadGenerator = () => {
   const handleExportPDF = async () => {
     try {
       setIsExporting(true);
-      await new Promise(resolve => setTimeout(resolve, 300));
-      
-      const pagesElements = document.querySelectorAll('.print-page');
-      if (pagesElements.length === 0) throw new Error('Page elements not found');
+      toast.info("Generating PDF via Puppeteer in background...");
 
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      
-      for (let i = 0; i < pagesElements.length; i++) {
-        const pageEl = pagesElements[i] as HTMLElement;
-        const canvas = await html2canvas(pageEl, {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-          backgroundColor: '#ffffff'
-        });
+      const query = encodeURIComponent("/mallareddy/letterhead?data=" + encodeURIComponent(JSON.stringify(formData)));
+      const response = await fetch(`/api/export-pdf?path=${query}&filename=MallaReddy_Document.pdf`);
 
-        const imgData = canvas.toDataURL('image/jpeg', 0.95);
-        if (i > 0) pdf.addPage();
-        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Export failed with status ${response.status}`);
       }
-      
-      pdf.save(`MallaReddy_Document.pdf`);
+
+      const blob = await response.blob();
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = "MallaReddy_Document.pdf";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(downloadUrl);
+      toast.success("Malla Reddy Letterhead PDF downloaded successfully.");
     } catch (error) {
-      console.error('Export failed', error);
-      alert('Failed to export PDF');
+      console.error("Export failed", error);
+      toast.error(`Failed to export PDF: ${error instanceof Error ? error.message : "Unknown error"}`);
     } finally {
       setIsExporting(false);
     }
   };
 
   const PageHeader = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
-    <div className={`w-full relative ${isPrintFixed ? 'pt-0' : 'pt-0 print:pt-0'} mb-8`}>
+    <div className={`w-full relative ${isPrintFixed ? 'pt-0' : 'pt-0 print:pt-0'} mb-[26px]`}>
       
-      {/* Top horizontal graphic bar (Not absolute anymore, properly stacked) */}
-      <div className="w-full flex justify-end h-[14px] mb-4">
-        <div className="w-[71%] flex">
-          <div className="w-[68%] bg-[#ea6625]" style={{ clipPath: 'polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0% 100%)' }}></div>
-          <div className="w-[4px]"></div>
-          <div className="flex-1 bg-[#2a3b82]" style={{ clipPath: 'polygon(8px 0, 100% 0, 100% 100%, 0% 100%)' }}></div>
+      {/* Top horizontal graphic bar */}
+      <div className="w-full flex justify-end h-[14px] mb-5">
+        <div className="flex h-full">
+          <div className="w-[328.5px] bg-[#ea6625]"></div>
+          <div className="w-[5px]"></div>
+          <div className="w-[150.5px] bg-[#2a3b82]"></div>
         </div>
       </div>
 
       <div className="flex w-full items-start justify-between px-0">
         
         {/* Left Logo */}
-        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-start justify-center mt-1">
+        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-start justify-center">
           <img src="/mallareddy-logo.png" alt="Malla Reddy Logo" className="w-auto h-full object-contain" />
         </div>
 
         {/* Center Text */}
-        <div className="flex-1 flex flex-col items-center justify-start text-center px-2">
-          <h1 className="text-[#2a3b82] text-[34px] print:text-[34px] font-black leading-none tracking-tighter whitespace-nowrap" style={{ fontFamily: 'Arial, sans-serif', transform: 'scaleY(1.4) scaleX(0.85)' }}>
+        <div className="flex-1 flex flex-col items-center justify-start text-center px-2 pt-[31px]">
+          <h1 
+            className="text-[#2a3b82] text-[34px] print:text-[34px] font-black leading-none tracking-tighter whitespace-nowrap" 
+            style={{ 
+              fontFamily: 'Arial, Helvetica, sans-serif', 
+              transform: 'scaleY(1.35) scaleX(0.85)', 
+              transformOrigin: 'center center' 
+            }}
+          >
             MALLA REDDY UNIVERSITY
           </h1>
-          <p className="text-black text-[12.5px] print:text-[12.5px] font-normal leading-tight mt-6 text-center" style={{ fontFamily: 'Times New Roman, Times, serif' }}>
+          <p 
+            className="text-black text-[12.5px] print:text-[12.5px] font-normal leading-tight mt-[14px] text-center" 
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
             (Telangana State Private Universities Act No. 13 of 2020 &<br/>G.O.Ms. No. 14, Higher Education (UE) Department)
           </p>
         </div>
 
         {/* Right Contact Info */}
-        <div className="w-[160px] print:w-[160px] text-left font-sans flex-shrink-0 pt-2">
-          <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.4] text-left">
+        <div className="w-[160px] print:w-[160px] text-left font-sans flex-shrink-0 pt-[9.5px]">
+          <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.38] text-left">
             Maisammaguda, Kompally,<br/>
             Medchal - Malkajgiri District<br/>
-            Hyderabad - 500100, Telangana State.<br/>
+            Hyderabad - 500100, Telangana<br/>
+            State.<br/>
             mruh@mallareddyuniversity.ac.in<br/>
             www.mallareddyuniversity.ac.in
           </p>
@@ -105,17 +124,17 @@ const MallaReddyLetterheadGenerator = () => {
   );
 
   const PageFooter = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
-    <div className={`w-full relative bg-transparent ${isPrintFixed ? 'pb-8 pt-4' : 'mt-8 pt-4 pb-12 print:pb-8'}`}>
-      <div className="flex w-full items-center">
+    <div className={`w-full relative bg-transparent ${isPrintFixed ? 'pb-0 pt-0' : 'pt-0 pb-0'}`}>
+      <div className="flex w-full items-end justify-between">
         {/* Left graphic bar */}
-        <div className="flex h-[18px] flex-1">
-          <div className="w-[20%] bg-[#1b2b5d]" style={{ clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }}></div>
-          <div className="w-[4px] bg-transparent"></div>
-          <div className="flex-1 bg-[#de5c2a]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 2% 100%)' }}></div>
+        <div className="flex h-[18px]">
+          <div className="w-[88px] bg-[#1b2b5d]"></div>
+          <div className="w-[4.5px] bg-transparent"></div>
+          <div className="w-[348.5px] bg-[#de5c2a]"></div>
         </div>
         {/* Right text */}
-        <div className="ml-4 flex-shrink-0">
-          <p className="text-black text-[14px] print:text-[14px] font-sans font-medium tracking-wide">
+        <div className="flex-shrink-0 translate-y-[7px]">
+          <p className="text-black text-[14.5px] print:text-[14.5px] font-sans font-bold tracking-tight leading-none">
             www.mallareddyuniversity.ac.in
           </p>
         </div>
@@ -130,7 +149,7 @@ const MallaReddyLetterheadGenerator = () => {
           @page { size: A4; margin: 0; } 
           body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; } 
           .no-print { display: none !important; } 
-          .print-page { margin: 0 !important; box-shadow: none !important; position: relative; min-height: 297mm; page-break-after: always; overflow: hidden; background: white !important; } 
+          .print-page { margin: 0 !important; box-shadow: none !important; position: relative; width: 210mm !important; height: 297mm !important; min-height: 297mm !important; max-height: 297mm !important; page-break-after: always; overflow: hidden; background: white !important; } 
         }
       `}</style>
 
@@ -144,8 +163,12 @@ const MallaReddyLetterheadGenerator = () => {
           <button onClick={() => setActiveTab(activeTab === "form" ? "preview" : "form")} className="px-4 py-2 rounded-lg text-sm font-medium border border-slate-300 hover:border-slate-400 bg-white text-slate-700 transition-colors flex items-center gap-2">
             <Settings2 className="w-4 h-4" /> {activeTab === "form" ? "Preview" : "Edit Details"}
           </button>
-          <button onClick={handleExportPDF} disabled={isExporting} className="px-5 py-2 rounded-lg text-sm font-bold text-white flex items-center gap-2 transition-all shadow-md hover:opacity-90 bg-blue-700">
-            {isExporting ? <Check className="w-4 h-4" /> : <Download className="w-4 h-4" />} Print / Export PDF
+          <button onClick={() => window.print()} className="px-4 py-2 rounded-lg text-sm font-medium border border-slate-300 hover:border-slate-400 bg-white text-slate-700 transition-colors flex items-center gap-2">
+            <Printer className="w-4 h-4" /> Print
+          </button>
+          <button onClick={handleExportPDF} disabled={isExporting} className="px-5 py-2 rounded-lg text-sm font-bold text-white flex items-center gap-2 transition-all shadow-md hover:opacity-90 bg-blue-700 disabled:opacity-60">
+            {isExporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+            {isExporting ? "Generating PDF..." : "Download PDF"}
           </button>
         </div>
       </div>
@@ -208,7 +231,7 @@ const MallaReddyLetterheadGenerator = () => {
         {/* Preview Panel */}
         <div className={`flex-1 overflow-y-auto bg-slate-200 flex flex-col items-center py-10 print:bg-white print:p-0 gap-10 print:gap-0 ${activeTab === "form" ? "hidden md:flex" : "flex"}`}>
           
-          <div className="print-page bg-white shadow-2xl relative" style={{ width: '210mm', minHeight: '297mm', fontFamily: '"Times New Roman", Times, serif', fontSize: '11.5pt', color: '#000' }}>
+          <div className="print-page bg-white shadow-2xl relative" style={{ width: '210mm', height: '297mm', minHeight: '297mm', maxHeight: '297mm', boxSizing: 'border-box', fontFamily: '"Times New Roman", Times, serif', fontSize: '11.5pt', color: '#000' }}>
             
             {/* Header */}
             <div className="px-14 pt-0">
@@ -216,9 +239,9 @@ const MallaReddyLetterheadGenerator = () => {
             </div>
 
             {/* Content Body */}
-            <div className="px-14 pb-8 flex-1 flex flex-col min-h-[220mm]">
+            <div className="px-14">
               
-              <div className="flex justify-between items-start mb-10 text-[12pt]">
+              <div className="flex justify-between items-start text-[12pt] mb-[44px]">
                 <div className="font-bold">
                   {formData.referenceNo && `Ref No: ${formData.referenceNo}`}
                 </div>
@@ -228,13 +251,13 @@ const MallaReddyLetterheadGenerator = () => {
               </div>
 
               {formData.documentTitle && (
-                <div className="mb-8 text-center">
-                  <h2 className="text-[14pt] font-bold uppercase">{formData.documentTitle}</h2>
+                <div className="text-center mb-[44px]">
+                  <h2 className="text-[14pt] font-bold uppercase tracking-wide">{formData.documentTitle}</h2>
                 </div>
               )}
 
               {formData.recipientName && (
-                <div className="mb-6 leading-relaxed">
+                <div className="mb-[32px] leading-[1.4]">
                   <p>To</p>
                   {formData.recipientName.split('\n').map((line, i) => (
                     <p key={i}>{line}</p>
@@ -243,21 +266,21 @@ const MallaReddyLetterheadGenerator = () => {
               )}
 
               {formData.subject && (
-                <div className="mb-6 leading-relaxed">
+                <div className="mb-[32px] leading-[1.4]">
                   <p><strong>Subject: {formData.subject}</strong></p>
                 </div>
               )}
 
               {formData.salutation && (
-                <div className="mb-4">
+                <div className="mb-[24px]">
                   <p>{formData.salutation}</p>
                 </div>
               )}
 
-              <div className="mb-8 leading-[1.6] text-justify space-y-4">
+              <div className="mb-[54px] leading-[1.45] text-justify space-y-[18px]">
                 <ReactMarkdown
                   components={{
-                    p: ({ node, ...props }) => <p className="mb-4" {...props} />,
+                    p: ({ node, ...props }) => <p {...props} />,
                     strong: ({ node, ...props }) => <strong className="font-bold" {...props} />
                   }}
                 >
@@ -265,21 +288,21 @@ const MallaReddyLetterheadGenerator = () => {
                 </ReactMarkdown>
               </div>
 
-              <div className="mt-auto pt-8">
-                <p className="mb-10">Sincerely,</p>
+              <div>
+                <p className="mb-[40px]">Sincerely,</p>
                 
                 {formData.signatoryName && (
                   <p className="font-bold mb-1">{formData.signatoryName}</p>
                 )}
                 
                 {formData.signatoryDesignation && formData.signatoryDesignation.split('\n').map((line, i) => (
-                  <p key={i} className="leading-snug">{line}</p>
+                  <p key={i} className="leading-[1.38]">{line}</p>
                 ))}
               </div>
             </div>
 
             {/* Footer */}
-            <div className="absolute bottom-0 w-full px-14 pb-4">
+            <div className="absolute bottom-0 w-full px-14 pb-[66px]">
               <PageFooter />
             </div>
           </div>
