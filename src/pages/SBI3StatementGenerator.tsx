@@ -1,24 +1,36 @@
-import { useState, type ReactNode } from 'react';
+import { useState, useMemo, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, Loader2, Printer } from 'lucide-react';
+import { ArrowLeft, Download, Loader2, Printer, Database } from 'lucide-react';
 import { toast } from 'sonner';
 import {
-  defaultSBI3AccountDetails as account,
-  defaultSBI3StatementSummary as summary,
+  defaultSBI3AccountDetails,
+  defaultSBI3StatementSummary,
   sbi3Transactions,
   type SBI3Transaction,
+  type SBI3AccountDetails,
+  type SBI3StatementSummary,
 } from '../data/sbi3Data';
-import { sbi3PageLayouts, sbi3ColumnWidths } from '../data/sbi3Layout';
+import { sbi3PageLayouts, sbi3ColumnWidths, type SBI3PageLayout } from '../data/sbi3Layout';
+import {
+  umadeviOriginalAccount,
+  umadeviOriginalSummary,
+  umadeviOriginalTransactions,
+  umadeviScaledAccount,
+  umadeviScaledSummary,
+  umadeviScaledTransactions,
+  umadeviPageLayouts,
+} from '../data/sbi3UmadeviData';
 
-const pageCount = sbi3PageLayouts.length;
-const pages = (() => {
-  let start = 0;
-  return sbi3PageLayouts.map((layout) => {
-    const transactions = sbi3Transactions.slice(start, start + layout.rowCount);
-    start += layout.rowCount;
-    return { ...layout, transactions };
-  });
-})();
+export type DatasetOption = 'default' | 'umadevi-scaled' | 'umadevi-original';
+
+interface ActiveDataset {
+  key: DatasetOption;
+  label: string;
+  account: SBI3AccountDetails;
+  summary: SBI3StatementSummary;
+  transactions: SBI3Transaction[];
+  layouts: SBI3PageLayout[];
+}
 
 function Text({
   x,
@@ -46,7 +58,7 @@ function Text({
   );
 }
 
-function Page1Header() {
+function Page1Header({ account }: { account: SBI3AccountDetails }) {
   return (
     <div className="sbi3-header-container">
       {/* Background vector decorations */}
@@ -147,37 +159,37 @@ function Page1Header() {
       <Text x={86.67} y={436.13} className="c3">
         Limit
       </Text>
-      <Text x={265.33} y={437.75} className="c4">
+      <Text x={265.33} y={435.08} className="c4">
         :
       </Text>
-      <Text x={276.00} y={437.47} className="c3">
+      <Text x={276.00} y={436.13} className="c3">
         {account.limit}
       </Text>
 
-      <Text x={86.67} y={470.80} className="c3">
+      <Text x={86.67} y={468.13} className="c3">
         Monthly Avg Balance
       </Text>
-      <Text x={265.33} y={471.08} className="c4">
+      <Text x={265.33} y={467.08} className="c4">
         :
       </Text>
-      <Text x={276.00} y={472.13} className="c3">
+      <Text x={276.00} y={468.13} className="c3">
         {account.monthlyAvgBalance}
       </Text>
 
-      <Text x={86.67} y={500.13} className="c3">
+      <Text x={86.67} y={498.80} className="c3">
         Interest Rate
       </Text>
-      <Text x={265.33} y={500.42} className="c4">
+      <Text x={265.33} y={497.75} className="c4">
         :
       </Text>
-      <Text x={276.00} y={501.47} className="c3">
+      <Text x={276.00} y={498.80} className="c3">
         {account.interestRate}
       </Text>
 
-      <Text x={86.67} y={529.47} className="c3">
+      <Text x={86.67} y={530.80} className="c3">
         Drawing Power
       </Text>
-      <Text x={265.33} y={529.75} className="c4">
+      <Text x={265.33} y={530.42} className="c4">
         :
       </Text>
       <Text x={276.00} y={530.80} className="c3">
@@ -196,13 +208,13 @@ function Page1Header() {
 
       {/* Right Column: Branch & Relationship product details */}
       <Text x={458.67} y={152.13} className="c3">
-        {account.branchAddress[0]}
+        {account.branchAddress[0] || ''}
       </Text>
       <Text x={462.67} y={184.13} className="c3">
-        {account.branchAddress[1]}
+        {account.branchAddress[1] || ''}
       </Text>
       <Text x={462.67} y={199.65} className="c3">
-        {account.branchAddress[2]}
+        {account.branchAddress[2] || ''}
       </Text>
 
       <Text x={464.00} y={237.47} className="c3">
@@ -248,50 +260,50 @@ function Page1Header() {
       <Text x={464.00} y={345.47} className="c3">
         CIF Number
       </Text>
-      <Text x={589.33} y={344.42} className="c4">
+      <Text x={589.33} y={345.75} className="c4">
         :
       </Text>
       <Text x={601.33} y={345.47} className="c3">
         {account.cifNumber}
       </Text>
 
-      <Text x={464.00} y={369.47} className="c3">
+      <Text x={464.00} y={376.13} className="c3">
         Account Number
       </Text>
-      <Text x={589.33} y={368.42} className="c4">
+      <Text x={589.33} y={376.42} className="c4">
         :
       </Text>
-      <Text x={601.33} y={369.47} className="c3">
+      <Text x={601.33} y={377.47} className="c3">
         {account.accountNumber}
       </Text>
 
-      <Text x={464.00} y={394.80} className="c3">
+      <Text x={464.00} y={402.80} className="c3">
         Product
       </Text>
-      <Text x={589.33} y={393.75} className="c4">
+      <Text x={589.33} y={403.08} className="c4">
         :
       </Text>
-      <Text x={601.33} y={396.63} className="c5">
+      <Text x={601.33} y={402.80} className="c8">
         {account.product}
       </Text>
 
-      <Text x={464.00} y={421.47} className="c3">
+      <Text x={464.00} y={426.80} className="c3">
         IFSC Code
       </Text>
-      <Text x={589.33} y={420.42} className="c4">
+      <Text x={589.33} y={427.08} className="c4">
         :
       </Text>
-      <Text x={601.33} y={421.47} className="c3">
+      <Text x={601.33} y={428.13} className="c3">
         {account.ifscCode}
       </Text>
 
-      <Text x={464.00} y={449.47} className="c3">
+      <Text x={464.00} y={452.13} className="c3">
         Currency
       </Text>
-      <Text x={589.33} y={448.42} className="c4">
+      <Text x={589.33} y={451.08} className="c4">
         :
       </Text>
-      <Text x={601.33} y={449.47} className="c3">
+      <Text x={601.33} y={452.13} className="c3">
         {account.currency}
       </Text>
 
@@ -464,9 +476,15 @@ function Table({
   );
 }
 
-function SummarySection() {
+function SummarySection({
+  summary,
+  top = 445.33,
+}: {
+  summary: SBI3StatementSummary;
+  top?: number;
+}) {
   return (
-    <div className="sbi3-summary-container" style={{ top: 445.33 }}>
+    <div className="sbi3-summary-container" style={{ top }}>
       <div className="sbi3-summary-banner">
         Statement Summary : {summary.periodFrom} To {summary.periodTo}
       </div>
@@ -552,11 +570,76 @@ function Footer({ pageNumber }: { pageNumber: number }) {
 export default function SBI3StatementGenerator() {
   const [isExporting, setIsExporting] = useState(false);
 
+  // Read dataset query param or default to Umadevi Scaled (3-4 Lakhs -> 9-10 Lakhs)
+  const [selectedDataset, setSelectedDataset] = useState<DatasetOption>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const ds = params.get('dataset') as DatasetOption;
+      if (ds === 'default' || ds === 'umadevi-scaled' || ds === 'umadevi-original') {
+        return ds;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return 'umadevi-scaled';
+  });
+
+  const dataset: ActiveDataset = useMemo(() => {
+    switch (selectedDataset) {
+      case 'umadevi-scaled':
+        return {
+          key: 'umadevi-scaled',
+          label: 'Mrs. UMADEVI KANDUKURI (3.5L to 9.5L Balance)',
+          account: umadeviScaledAccount,
+          summary: umadeviScaledSummary,
+          transactions: umadeviScaledTransactions,
+          layouts: umadeviPageLayouts,
+        };
+      case 'umadevi-original':
+        return {
+          key: 'umadevi-original',
+          label: 'Mrs. UMADEVI KANDUKURI (Exact PDF copy - 500 Balance)',
+          account: umadeviOriginalAccount,
+          summary: umadeviOriginalSummary,
+          transactions: umadeviOriginalTransactions,
+          layouts: umadeviPageLayouts,
+        };
+      case 'default':
+      default:
+        return {
+          key: 'default',
+          label: 'Mr. SIRIGIRI VENKATESWARLU (Existing Dataset)',
+          account: defaultSBI3AccountDetails,
+          summary: defaultSBI3StatementSummary,
+          transactions: sbi3Transactions,
+          layouts: sbi3PageLayouts,
+        };
+    }
+  }, [selectedDataset]);
+
+  const pageCount = dataset.layouts.length;
+  const pages = useMemo(() => {
+    let start = 0;
+    return dataset.layouts.map((layout) => {
+      const transactions = dataset.transactions.slice(start, start + layout.rowCount);
+      start += layout.rowCount;
+      return { ...layout, transactions };
+    });
+  }, [dataset]);
+
+  const handleDatasetChange = (newDs: DatasetOption) => {
+    setSelectedDataset(newDs);
+    const url = new URL(window.location.href);
+    url.searchParams.set('dataset', newDs);
+    window.history.replaceState({}, '', url.toString());
+  };
+
   const downloadPdf = async () => {
     try {
       setIsExporting(true);
+      toast.info('Generating PDF in background...');
       const response = await fetch(
-        '/api/export-pdf?path=/sbi3&filename=SBI_Account_Statement.pdf'
+        `/api/export-pdf?path=${encodeURIComponent(`/sbi3?dataset=${selectedDataset}`)}&filename=SBI_Account_Statement.pdf`
       );
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
@@ -565,7 +648,7 @@ export default function SBI3StatementGenerator() {
       const url = URL.createObjectURL(await response.blob());
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'SBI_Account_Statement.pdf';
+      link.download = `SBI_Statement_${dataset.account.customerName.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`;
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -573,8 +656,7 @@ export default function SBI3StatementGenerator() {
       toast.success('SBI Statement PDF downloaded successfully.');
     } catch (error) {
       toast.error(
-        `Failed to download PDF: ${error instanceof Error ? error.message : 'Unknown error'
-        }`
+        `Failed to download PDF: ${error instanceof Error ? error.message : 'Unknown error'}`
       );
     } finally {
       setIsExporting(false);
@@ -601,8 +683,8 @@ export default function SBI3StatementGenerator() {
 
         @page { size: 793.33px 1122.67px; margin: 0; }
         .sbi3-viewer { min-height: 100vh; background: #e8e8e8; font-family: 'SBI Helvetica', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        .sbi3-toolbar { position: sticky; top: 0; z-index: 50; background: white; border-bottom: 1px solid #ddd; }
-        .sbi3-toolbar-inner { max-width: 1200px; margin: auto; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .sbi3-toolbar { position: sticky; top: 0; z-index: 50; background: white; border-bottom: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .sbi3-toolbar-inner { max-width: 1400px; margin: auto; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
         .sbi3-toolbar-title, .sbi3-toolbar-actions { display: flex; align-items: center; gap: 12px; }
         .sbi3-toolbar button { cursor: pointer; }
         .sbi3-pages { padding: 8px 0; }
@@ -621,8 +703,6 @@ export default function SBI3StatementGenerator() {
         .c7 { font-family: 'SBI Helvetica', Helvetica, Arial, sans-serif; font-size: 10.67px; color: #000000; }
         .c8 { font-family: 'SBI Helvetica', Helvetica, Arial, sans-serif; font-size: 10px; color: #000000; }
 
-
-        
         /* Table layout */
         .sbi3-table { position: absolute; left: 26.67px; width: 740px; box-sizing: border-box; }
         .sbi3-table-header { display: flex; width: 740px; height: 49.33px; background: #5553aa; border: 0.67px solid #b8b8b8; box-sizing: border-box; }
@@ -683,12 +763,36 @@ export default function SBI3StatementGenerator() {
               Dashboard
             </Link>
             <strong className="text-sm text-slate-800">
-              State Bank of India Statement
+              State Bank of India Statement (Format 3)
             </strong>
           </div>
+
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 bg-slate-100 border border-slate-300 rounded-lg px-2.5 py-1.5">
+              <Database className="w-3.5 h-3.5 text-indigo-600" />
+              <label htmlFor="dataset-select" className="text-xs font-bold text-slate-700">Dataset:</label>
+              <select
+                id="dataset-select"
+                value={selectedDataset}
+                onChange={(e) => handleDatasetChange(e.target.value as DatasetOption)}
+                className="text-xs font-semibold bg-white border border-slate-300 rounded px-2 py-1 text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              >
+                <option value="umadevi-scaled">
+                  Mrs. UMADEVI KANDUKURI (3.5L Initial &rarr; 9.45L Final Balance) [1,431 Txns]
+                </option>
+                <option value="umadevi-original">
+                  Mrs. UMADEVI KANDUKURI (Exact PDF Copy - 517 &rarr; 558 Balance) [1,431 Txns]
+                </option>
+                <option value="default">
+                  Mr. SIRIGIRI VENKATESWARLU (Existing Dataset - 767 Txns)
+                </option>
+              </select>
+            </div>
+          </div>
+
           <div className="sbi3-toolbar-actions">
             <span className="text-xs text-slate-600">
-              {sbi3Transactions.length} transactions · {pageCount} pages
+              {dataset.transactions.length} transactions · {pageCount} pages
             </span>
             <button
               type="button"
@@ -728,14 +832,21 @@ export default function SBI3StatementGenerator() {
               aria-label={`Statement page ${pageNumber} of ${pageCount}`}
               key={pageNumber}
             >
-              {isFirst && <Page1Header />}
-              <Table
-                transactions={page.transactions}
-                rowHeights={page.rowHeights}
-                top={page.tableTop}
-              />
-              {isLast && <SummarySection />}
-              <Footer pageNumber={pageNumber} />
+              {isFirst && <Page1Header account={dataset.account} />}
+              {page.transactions.length > 0 && (
+                <Table
+                  transactions={page.transactions}
+                  rowHeights={page.rowHeights}
+                  top={page.tableTop}
+                />
+              )}
+              {isLast && (
+                <SummarySection
+                  summary={dataset.summary}
+                  top={page.summaryTop ?? 445.33}
+                />
+              )}
+              {page.rowCount > 0 && <Footer pageNumber={pageNumber} />}
             </section>
           );
         })}

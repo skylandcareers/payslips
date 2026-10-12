@@ -9,6 +9,8 @@ import Itr2AcknowledgementGenerator from "./pages/Itr2AcknowledgementGenerator";
 import NotFound from "./pages/NotFound";
 import MallaReddyLetterheadGenerator from "./pages/MallaReddyLetterheadGenerator";
 import MallaReddyIndex from "./pages/MallaReddyIndex";
+import SriBalajiIndex from "./pages/SriBalajiIndex";
+import SriBalajiLetterheadGenerator from "./pages/SriBalajiLetterheadGenerator";
 
 import OfferLetter from "./pages/OfferLetter";
 import PayslipGenerator from "./pages/PayslipGenerator";
@@ -194,6 +196,10 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/mallareddy" element={<MallaReddyIndex />} />
           <Route path="/mallareddy/letterhead" element={<MallaReddyLetterheadGenerator />} />
+          <Route path="/sri-balaji" element={<SriBalajiIndex />} />
+          <Route path="/sri-balaji/letterhead" element={<SriBalajiLetterheadGenerator />} />
+          <Route path="/sbup" element={<SriBalajiIndex />} />
+          <Route path="/sbup/letterhead" element={<SriBalajiLetterheadGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

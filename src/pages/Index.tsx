@@ -20,6 +20,26 @@ const cardsData = [
     )
   },
   {
+    name: "Sri Balaji University Pune",
+    element: (
+      <Link to="/sri-balaji" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#a11d22] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <img
+              src="/sri-balaji-logo.png"
+              alt="Sri Balaji University, Pune"
+              className="h-10 w-auto max-w-[170px] object-contain group-hover:scale-105 transition-transform"
+            />
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Sri Balaji Univ. Pune</h2>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#a11d22] text-[11px] font-semibold bg-red-50 py-1.5 rounded-md px-2 group-hover:bg-[#a11d22] group-hover:text-white transition-all">
+            Open Portal <GraduationCap className="w-4 h-4" />
+          </div>
+        </div>
+      </Link>
+    )
+  },
+  {
     name: "Yashoda Hospitals",
     element: (
       <Link to="/yashoda" className="group">
