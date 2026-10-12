@@ -79,15 +79,15 @@ const MallaReddyLetterheadGenerator = () => {
         </div>
       </div>
 
-      <div className="flex w-full items-center justify-between px-0">
+      <div className="flex w-full items-start justify-between px-0">
 
         {/* Left Logo */}
-        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-center justify-center">
+        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-start justify-center">
           <img src="/mallareddy-logo.png" alt="Malla Reddy Logo" className="w-auto h-full object-contain" />
         </div>
 
         {/* Center Text */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-3">
+        <div className="flex-1 flex flex-col items-center justify-start text-center px-3 pt-[10px]">
           <h1
             className="text-[#2a3b82] text-[33px] print:text-[33px] font-black leading-none tracking-tighter whitespace-nowrap"
             style={{
@@ -107,12 +107,11 @@ const MallaReddyLetterheadGenerator = () => {
         </div>
 
         {/* Right Contact Info */}
-        <div className="w-[150px] print:w-[150px] text-left font-sans flex-shrink-0 flex flex-col justify-center">
-          <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.38] text-left">
+        <div className="w-[160px] print:w-[160px] text-left font-sans flex-shrink-0 pt-[10px]">
+          <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.45] text-left whitespace-nowrap">
             Maisammaguda, Kompally,<br />
             Medchal - Malkajgiri District<br />
-            Hyderabad - 500100, Telangana<br />
-            State.<br />
+            Hyderabad - 500100, Telangana.<br />
             mruh@mallareddyuniversity.ac.in<br />
             www.mallareddyuniversity.ac.in
           </p>
@@ -124,7 +123,7 @@ const MallaReddyLetterheadGenerator = () => {
 
   const PageFooter = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
     <div className={`w-full relative bg-transparent ${isPrintFixed ? 'pb-0 pt-0' : 'pt-0 pb-0'}`}>
-      <div className="flex w-full items-end justify-between">
+      <div className="flex w-full items-center justify-between">
         {/* Left graphic bar */}
         <div className="flex h-[18px]">
           <div className="w-[88px] bg-[#1b2b5d]"></div>
@@ -132,7 +131,7 @@ const MallaReddyLetterheadGenerator = () => {
           <div className="w-[348.5px] bg-[#de5c2a]"></div>
         </div>
         {/* Right text */}
-        <div className="flex-shrink-0 translate-y-[7px]">
+        <div className="flex-shrink-0 flex items-center">
           <p className="text-black text-[14.5px] print:text-[14.5px] font-sans font-bold tracking-tight leading-none">
             www.mallareddyuniversity.ac.in
           </p>
