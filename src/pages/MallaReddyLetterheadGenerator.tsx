@@ -5,13 +5,13 @@ import { Download, Settings2, Printer, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const defaultFormData = {
-  documentTitle: "NO OBJECTION CERTIFICATE",
+  documentTitle: "BONAFIDE CERTIFICATE & NO OBJECTION CERTIFICATE",
   date: "02/06/2026",
   referenceNo: "MRU/Conference/CSE/2025-26/198",
   recipientName: "The Embassy of the Republic of Korea\nIndia",
-  subject: "No Objection Certificate for Attending the 2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS 2026)",
+  subject: "Bonafide Certificate & No Objection Certificate for Attending the 2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS 2026)",
   salutation: "Dear Sir/Madam,",
-  bodyText: "This is to certify that **Mr. Raghu Kudala** (S/o Poshetty Kudala), **Roll No. 2321CS10245, Passport No. Y5540555**, is a **bonafide B.Tech. Scholar** in the **Department of Computer Science and Engineering (CSE)** at **Malla Reddy University, Hyderabad, Telangana, India** for the Academic Year **2023–27**.\n\nThe University has no objection to her travel to **Seoul, Republic of Korea** for the purpose of attending and presenting her research work at the **2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS)** scheduled from 22 June 2026 to 25 June 2026.\n\nHe has been granted **academic leave from 20 June 2026 to 30 June 2026** for this purpose. He is expected to return to India on **01 July 2026** and resume her academic/research duties thereafter.\n\nThis certificate is issued upon her request for **visa processing purposes**.\n\nShould you require any further information, please feel free to contact us.",
+  bodyText: "This is to certify that **Mr. Saitarun Siri Giri** (S/o Venkateswarlu Siri Giri), **Roll No. 2321CS10255, Passport No. X2509507**, is a **bonafide B.Tech. Scholar** studying in the **Department of Computer Science and Engineering (CSE)** at **Malla Reddy University, Hyderabad, Telangana, India** for the Academic Year **2023–27**.\n\nThe University has no objection to his travel to **Seoul, Republic of Korea** for the purpose of attending and presenting his research work at the **2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS)** scheduled from 22 June 2026 to 25 June 2026.\n\nHe has been granted **academic leave from 20 June 2026 to 30 June 2026** for this purpose. He is expected to return to India on **01 July 2026** and resume his regular academic duties thereafter.\n\nThis certificate is issued upon his request for **visa processing purposes**.\n\nShould you require any further information, please feel free to contact us.",
   signatoryName: "",
   signatoryDesignation: "Head of Department\nDepartment of Computer Science and Engineering\nMalla Reddy University\nHyderabad, Telangana, India",
 };
@@ -240,7 +240,7 @@ const MallaReddyLetterheadGenerator = () => {
             {/* Content Body */}
             <div className="px-14">
 
-              <div className="flex justify-between items-start text-[12pt] mb-[44px]">
+              <div className="flex justify-between items-start text-[12pt] mb-[26px]">
                 <div className="font-bold">
                   {formData.referenceNo && `Ref No: ${formData.referenceNo}`}
                 </div>
@@ -250,13 +250,13 @@ const MallaReddyLetterheadGenerator = () => {
               </div>
 
               {formData.documentTitle && (
-                <div className="text-center mb-[44px]">
+                <div className="text-center mb-[26px]">
                   <h2 className="text-[14pt] font-bold uppercase tracking-wide">{formData.documentTitle}</h2>
                 </div>
               )}
 
               {formData.recipientName && (
-                <div className="mb-[32px] leading-[1.4]">
+                <div className="mb-[20px] leading-[1.35]">
                   <p>To</p>
                   {formData.recipientName.split('\n').map((line, i) => (
                     <p key={i}>{line}</p>
@@ -265,18 +265,18 @@ const MallaReddyLetterheadGenerator = () => {
               )}
 
               {formData.subject && (
-                <div className="mb-[32px] leading-[1.4]">
+                <div className="mb-[20px] leading-[1.35]">
                   <p><strong>Subject: {formData.subject}</strong></p>
                 </div>
               )}
 
               {formData.salutation && (
-                <div className="mb-[24px]">
+                <div className="mb-[16px]">
                   <p>{formData.salutation}</p>
                 </div>
               )}
 
-              <div className="mb-[54px] leading-[1.45] text-justify space-y-[18px]">
+              <div className="mb-[30px] leading-[1.4] text-justify space-y-[12px]">
                 <ReactMarkdown
                   components={{
                     p: ({ node, ...props }) => <p {...props} />,
@@ -288,20 +288,20 @@ const MallaReddyLetterheadGenerator = () => {
               </div>
 
               <div>
-                <p className="mb-[40px]">Sincerely,</p>
+                <p className="mb-[28px]">Sincerely,</p>
 
                 {formData.signatoryName && (
                   <p className="font-bold mb-1">{formData.signatoryName}</p>
                 )}
 
                 {formData.signatoryDesignation && formData.signatoryDesignation.split('\n').map((line, i) => (
-                  <p key={i} className="leading-[1.38]">{line}</p>
+                  <p key={i} className="leading-[1.35]">{line}</p>
                 ))}
               </div>
             </div>
 
             {/* Footer */}
-            <div className="absolute bottom-0 w-full px-14 pb-[66px]">
+            <div className="absolute bottom-0 w-full px-14 pb-[40px]">
               <PageFooter />
             </div>
           </div>
