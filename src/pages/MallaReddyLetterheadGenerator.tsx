@@ -16,11 +16,10 @@ const MallaReddyLetterheadGenerator = () => {
     recipientName: "The Embassy of the Republic of Korea\nIndia",
     subject: "No Objection Certificate for Attending the 2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS 2026)",
     salutation: "Dear Sir/Madam,",
-    bodyText: "This is to certify that **Mr. Raghu Kudala** (S/o Poshetty Kudala), **Roll No. 2321CS10245, Passport No. Y5540555**, is a **bonafide B.Tech. Scholar** in the **Department of Computer Science and Engineering (CSE)** at **Malla Reddy University, Hyderabad, Telangana, India** for the Academic Year **2023–27**.\n\nThe University has no objection to her travel to **Seoul, Republic of Korea** for the purpose of attending and presenting her research work at the **2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS)** scheduled from 22 June 2026 to 25 June 2026.\n\nHe has been granted **academic leave from 20 June 2026 to 30 June 2026** for this purpose. He is expected to return to India on **01 July 2026** and resume her academic/research duties thereafter.\n\nThis certificate is issued upon her request for **visa processing purposes**.\n\nShould you require any further information, please feel free to contact us.",
+    bodyText: "This is to certify that **Mr. Saitarun Siri Giri** (S/o Venkateswarlu Siri Giri), **Roll No. 2321CS10255, Passport No. X2509507**, is a **bonafide B.Tech. Scholar** in the **Department of Computer Science and Engineering (CSE)** at **Malla Reddy University, Hyderabad, Telangana, India** for the Academic Year **2023–27**.\n\nThe University has no objection to his travel to **Seoul, Republic of Korea** for the purpose of attending and presenting his research work at the **2026 IEEE 46th International Conference on Distributed Computing Systems (ICDCS)** scheduled from 22 June 2026 to 25 June 2026.\n\nHe has been granted **academic leave from 20 June 2026 to 30 June 2026** for this purpose. He is expected to return to India on **01 July 2026** and resume his academic/research duties thereafter.\n\nThis certificate is issued upon his request for **visa processing purposes**.\n\nShould you require any further information, please feel free to contact us.",
     signatoryName: "",
     signatoryDesignation: "Head of Department\nDepartment of Computer Science and Engineering\nMalla Reddy University\nHyderabad, Telangana, India",
   });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -63,35 +62,39 @@ const MallaReddyLetterheadGenerator = () => {
   const PageHeader = ({ isPrintFixed = false }: { isPrintFixed?: boolean }) => (
     <div className={`w-full relative ${isPrintFixed ? 'pt-0' : 'pt-0 print:pt-0'} mb-8`}>
       
-      {/* Top horizontal graphic bar (Not absolute anymore, properly stacked) */}
-      <div className="w-full flex justify-end h-[14px] mb-4">
-        <div className="w-[71%] flex">
-          <div className="w-[68%] bg-[#ea6625]" style={{ clipPath: 'polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0% 100%)' }}></div>
-          <div className="w-[4px]"></div>
-          <div className="flex-1 bg-[#2a3b82]" style={{ clipPath: 'polygon(8px 0, 100% 0, 100% 100%, 0% 100%)' }}></div>
+      {/* Top horizontal graphic bar (NORMAL FLOW, No Overlap) */}
+      <div className="w-full flex justify-end mb-5">
+        <div className="h-[14px] flex" style={{ width: 'calc(100% - 126px)' }}>
+          <div className="w-[60%] bg-[#ea6625]" style={{ clipPath: 'polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0% 100%)' }}></div>
+          <div className="w-[5px]"></div>
+          <div className="flex-1 bg-[#233575]" style={{ clipPath: 'polygon(10px 0, 100% 0, 100% 100%, 0% 100%)' }}></div>
         </div>
       </div>
 
       <div className="flex w-full items-start justify-between px-0">
         
-        {/* Left Logo */}
-        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-start justify-center mt-1">
-          <img src="/mallareddy-logo.png" alt="Malla Reddy Logo" className="w-auto h-full object-contain" />
-        </div>
+        {/* Left Side: Logo + Titles */}
+        <div className="flex items-start gap-[16px]">
+          {/* Logo */}
+          <div className="w-[110px] print:w-[110px] h-[110px] print:h-[110px] flex-shrink-0 flex items-start justify-center">
+            <img src="/mallareddy-logo.png" alt="Malla Reddy Logo" className="w-auto h-full object-contain" />
+          </div>
 
-        {/* Center Text */}
-        <div className="flex-1 flex flex-col items-center justify-start text-center px-2">
-          <h1 className="text-[#2a3b82] text-[34px] print:text-[34px] font-black leading-none tracking-tighter whitespace-nowrap" style={{ fontFamily: 'Arial, sans-serif', transform: 'scaleY(1.4) scaleX(0.85)' }}>
-            MALLA REDDY UNIVERSITY
-          </h1>
-          <p className="text-black text-[12.5px] print:text-[12.5px] font-normal leading-tight mt-6 text-center" style={{ fontFamily: 'Times New Roman, Times, serif' }}>
-            (Telangana State Private Universities Act No. 13 of 2020 &<br/>G.O.Ms. No. 14, Higher Education (UE) Department)
-          </p>
+          {/* Title Block */}
+          <div className="flex flex-col items-center justify-start pt-1">
+            <h1 className="text-[#233575] text-[26px] print:text-[26px] font-black leading-none whitespace-nowrap" 
+                style={{ fontFamily: 'Arial, sans-serif', transform: 'scaleY(1.45)', transformOrigin: 'top center', letterSpacing: '-0.5px' }}>
+              MALLA REDDY UNIVERSITY
+            </h1>
+            <p className="text-black text-[11px] print:text-[11px] font-normal leading-tight text-center mt-[14px]" style={{ fontFamily: 'Times New Roman, Times, serif' }}>
+              (Telangana State Private Universities Act No. 13 of 2020 &<br/>G.O.Ms. No. 14, Higher Education (UE) Department)
+            </p>
+          </div>
         </div>
 
         {/* Right Contact Info */}
-        <div className="w-[160px] print:w-[160px] text-left font-sans flex-shrink-0 pt-2">
-          <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.4] text-left">
+        <div className="w-[170px] print:w-[170px] text-left font-sans flex-shrink-0 pt-2">
+          <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.3] text-left">
             Maisammaguda, Kompally,<br/>
             Medchal - Malkajgiri District<br/>
             Hyderabad - 500100, Telangana State.<br/>
@@ -156,6 +159,7 @@ const MallaReddyLetterheadGenerator = () => {
           <div className="no-print w-full max-w-md bg-white overflow-y-auto p-6 border-r border-slate-200 flex-shrink-0 shadow-lg z-10">
             <h2 className="text-xl font-bold mb-6 text-slate-800">Document Details</h2>
             <div className="space-y-4">
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">Reference No</label>
@@ -218,6 +222,8 @@ const MallaReddyLetterheadGenerator = () => {
             {/* Content Body */}
             <div className="px-14 pb-8 flex-1 flex flex-col min-h-[220mm]">
               
+
+              
               <div className="flex justify-between items-start mb-10 text-[12pt]">
                 <div className="font-bold">
                   {formData.referenceNo && `Ref No: ${formData.referenceNo}`}
@@ -227,7 +233,7 @@ const MallaReddyLetterheadGenerator = () => {
                 </div>
               </div>
 
-              {formData.documentTitle && (
+                            {formData.documentTitle && (
                 <div className="mb-8 text-center">
                   <h2 className="text-[14pt] font-bold uppercase">{formData.documentTitle}</h2>
                 </div>
