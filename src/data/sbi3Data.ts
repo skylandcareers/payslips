@@ -63,7 +63,7 @@ export const defaultSBI3AccountDetails: SBI3AccountDetails = {
     "HYDERABAD,RANGA REDDY,500060"
   ],
   "statementDate": "09-10-2026",
-  "clearBalance": "558.98CR",
+  "clearBalance": "8,50,558.98CR",
   "unclearedAmount": "0.00",
   "modBalance": "0.00",
   "lien": "354.0",
@@ -97,12 +97,12 @@ export const defaultSBI3AccountDetails: SBI3AccountDetails = {
 export const defaultSBI3StatementSummary: SBI3StatementSummary = {
   "periodFrom": "01-07-2026",
   "periodTo": "09-10-2026",
-  "broughtForward": "2,088.54CR",
+  "broughtForward": "3,52,088.54CR",
   "drCount": 670,
   "crCount": 97,
   "totalDebits": "10,11,106.60",
-  "totalCredits": "10,09,577.04",
-  "closingBalance": "558.98CR"
+  "totalCredits": "15,09,577.04",
+  "closingBalance": "8,50,558.98CR"
 };
 
 export const sbi3Transactions: SBI3Transaction[] = [
@@ -115,7 +115,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,053.54"
+    "balance": "3,52,053.54"
   },
   {
     "id": "2",
@@ -126,7 +126,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "1,978.54"
+    "balance": "3,51,978.54"
   },
   {
     "id": "3",
@@ -137,7 +137,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "40.00",
     "credit": "-",
-    "balance": "1,938.54"
+    "balance": "3,51,938.54"
   },
   {
     "id": "4",
@@ -148,7 +148,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "1,908.54"
+    "balance": "3,51,908.54"
   },
   {
     "id": "5",
@@ -159,7 +159,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "60.00",
     "credit": "-",
-    "balance": "1,848.54"
+    "balance": "3,51,848.54"
   },
   {
     "id": "6",
@@ -170,7 +170,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "1,773.54"
+    "balance": "3,51,773.54"
   },
   {
     "id": "7",
@@ -181,7 +181,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,738.54"
+    "balance": "3,51,738.54"
   },
   {
     "id": "8",
@@ -192,7 +192,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "60.00",
     "credit": "-",
-    "balance": "1,678.54"
+    "balance": "3,51,678.54"
   },
   {
     "id": "9",
@@ -203,7 +203,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "1,605.54"
+    "balance": "3,51,605.54"
   },
   {
     "id": "10",
@@ -214,7 +214,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "32.00",
     "credit": "-",
-    "balance": "1,573.54"
+    "balance": "3,51,573.54"
   },
   {
     "id": "11",
@@ -225,7 +225,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "76.00",
     "credit": "-",
-    "balance": "1,497.54"
+    "balance": "3,51,497.54"
   },
   {
     "id": "12",
@@ -236,7 +236,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,462.54"
+    "balance": "3,51,462.54"
   },
   {
     "id": "13",
@@ -247,7 +247,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "1,392.54"
+    "balance": "3,51,392.54"
   },
   {
     "id": "14",
@@ -258,7 +258,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "103.00",
     "credit": "-",
-    "balance": "1,289.54"
+    "balance": "3,51,289.54"
   },
   {
     "id": "15",
@@ -269,7 +269,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "28.00",
     "credit": "-",
-    "balance": "1,261.54"
+    "balance": "3,51,261.54"
   },
   {
     "id": "16",
@@ -280,7 +280,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "76.00",
     "credit": "-",
-    "balance": "1,185.54"
+    "balance": "3,51,185.54"
   },
   {
     "id": "17",
@@ -291,7 +291,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,150.54"
+    "balance": "3,51,150.54"
   },
   {
     "id": "18",
@@ -302,7 +302,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "850.54"
+    "balance": "3,50,850.54"
   },
   {
     "id": "19",
@@ -313,7 +313,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "300.00",
-    "balance": "1,150.54"
+    "balance": "3,51,150.54"
   },
   {
     "id": "20",
@@ -324,7 +324,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,115.54"
+    "balance": "3,51,115.54"
   },
   {
     "id": "21",
@@ -335,7 +335,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "102.00",
     "credit": "-",
-    "balance": "1,013.54"
+    "balance": "3,51,013.54"
   },
   {
     "id": "22",
@@ -346,7 +346,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "978.54"
+    "balance": "3,50,978.54"
   },
   {
     "id": "23",
@@ -357,7 +357,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "116.00",
     "credit": "-",
-    "balance": "862.54"
+    "balance": "3,50,862.54"
   },
   {
     "id": "24",
@@ -368,7 +368,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "2,862.54"
+    "balance": "3,52,862.54"
   },
   {
     "id": "25",
@@ -379,7 +379,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "80.00",
     "credit": "-",
-    "balance": "2,782.54"
+    "balance": "3,52,782.54"
   },
   {
     "id": "26",
@@ -390,7 +390,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "1,782.54"
+    "balance": "3,51,782.54"
   },
   {
     "id": "27",
@@ -401,7 +401,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "745.00",
     "credit": "-",
-    "balance": "1,037.54"
+    "balance": "3,51,037.54"
   },
   {
     "id": "28",
@@ -412,7 +412,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "540.00",
     "credit": "-",
-    "balance": "497.54"
+    "balance": "3,50,497.54"
   },
   {
     "id": "29",
@@ -423,7 +423,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "462.54"
+    "balance": "3,50,462.54"
   },
   {
     "id": "30",
@@ -434,7 +434,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "427.54"
+    "balance": "3,50,427.54"
   },
   {
     "id": "31",
@@ -445,7 +445,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "354.54"
+    "balance": "3,50,354.54"
   },
   {
     "id": "32",
@@ -456,7 +456,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "250.28",
-    "balance": "604.82"
+    "balance": "3,50,604.82"
   },
   {
     "id": "33",
@@ -467,7 +467,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "90.00",
     "credit": "-",
-    "balance": "514.82"
+    "balance": "3,50,514.82"
   },
   {
     "id": "34",
@@ -478,7 +478,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "479.82"
+    "balance": "3,50,479.82"
   },
   {
     "id": "35",
@@ -489,7 +489,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "97.00",
     "credit": "-",
-    "balance": "382.82"
+    "balance": "3,50,382.82"
   },
   {
     "id": "36",
@@ -500,7 +500,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50,000.00",
-    "balance": "50,382.82"
+    "balance": "4,00,382.82"
   },
   {
     "id": "37",
@@ -511,7 +511,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "113.40",
     "credit": "-",
-    "balance": "50,269.42"
+    "balance": "4,00,269.42"
   },
   {
     "id": "38",
@@ -522,7 +522,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "653.08",
     "credit": "-",
-    "balance": "49,616.34"
+    "balance": "3,99,616.34"
   },
   {
     "id": "39",
@@ -533,7 +533,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,340.00",
     "credit": "-",
-    "balance": "48,276.34"
+    "balance": "3,98,276.34"
   },
   {
     "id": "40",
@@ -544,7 +544,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30,000.00",
     "credit": "-",
-    "balance": "18,276.34"
+    "balance": "3,68,276.34"
   },
   {
     "id": "41",
@@ -555,7 +555,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "14,276.34"
+    "balance": "3,64,276.34"
   },
   {
     "id": "42",
@@ -566,7 +566,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "10,276.34"
+    "balance": "3,60,276.34"
   },
   {
     "id": "43",
@@ -577,7 +577,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "6,000.00",
     "credit": "-",
-    "balance": "4,276.34"
+    "balance": "3,54,276.34"
   },
   {
     "id": "44",
@@ -588,7 +588,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "2,776.34"
+    "balance": "3,52,776.34"
   },
   {
     "id": "45",
@@ -599,7 +599,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "2,576.34"
+    "balance": "3,52,576.34"
   },
   {
     "id": "46",
@@ -610,7 +610,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "77.00",
     "credit": "-",
-    "balance": "2,499.34"
+    "balance": "3,52,499.34"
   },
   {
     "id": "47",
@@ -621,7 +621,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,464.34"
+    "balance": "3,52,464.34"
   },
   {
     "id": "48",
@@ -632,7 +632,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,429.34"
+    "balance": "3,52,429.34"
   },
   {
     "id": "49",
@@ -643,7 +643,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "475.00",
     "credit": "-",
-    "balance": "1,954.34"
+    "balance": "3,51,954.34"
   },
   {
     "id": "50",
@@ -654,7 +654,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "20,000.00",
-    "balance": "21,954.34"
+    "balance": "3,71,954.34"
   },
   {
     "id": "51",
@@ -665,7 +665,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "47.20",
     "credit": "-",
-    "balance": "21,907.14"
+    "balance": "3,71,907.14"
   },
   {
     "id": "52",
@@ -676,7 +676,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "16,907.14"
+    "balance": "3,66,907.14"
   },
   {
     "id": "53",
@@ -687,7 +687,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "12,907.14"
+    "balance": "3,62,907.14"
   },
   {
     "id": "54",
@@ -698,7 +698,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "9,907.14"
+    "balance": "3,59,907.14"
   },
   {
     "id": "55",
@@ -709,7 +709,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "8,907.14"
+    "balance": "3,58,907.14"
   },
   {
     "id": "56",
@@ -720,7 +720,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "4,907.14"
+    "balance": "3,54,907.14"
   },
   {
     "id": "57",
@@ -731,7 +731,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "2,907.14"
+    "balance": "3,52,907.14"
   },
   {
     "id": "58",
@@ -742,7 +742,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,872.14"
+    "balance": "3,52,872.14"
   },
   {
     "id": "59",
@@ -753,7 +753,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "868.00",
     "credit": "-",
-    "balance": "2,004.14"
+    "balance": "3,52,004.14"
   },
   {
     "id": "60",
@@ -764,7 +764,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,969.14"
+    "balance": "3,51,969.14"
   },
   {
     "id": "61",
@@ -775,7 +775,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "91.00",
     "credit": "-",
-    "balance": "1,878.14"
+    "balance": "3,51,878.14"
   },
   {
     "id": "62",
@@ -786,7 +786,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "600.00",
     "credit": "-",
-    "balance": "1,278.14"
+    "balance": "3,51,278.14"
   },
   {
     "id": "63",
@@ -797,7 +797,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "1,256.14"
+    "balance": "3,51,256.14"
   },
   {
     "id": "64",
@@ -808,7 +808,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "856.14"
+    "balance": "3,50,856.14"
   },
   {
     "id": "65",
@@ -819,7 +819,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "821.14"
+    "balance": "3,50,821.14"
   },
   {
     "id": "66",
@@ -830,7 +830,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "69.00",
     "credit": "-",
-    "balance": "752.14"
+    "balance": "3,50,752.14"
   },
   {
     "id": "67",
@@ -841,7 +841,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "722.14"
+    "balance": "3,50,722.14"
   },
   {
     "id": "68",
@@ -852,7 +852,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "97.00",
     "credit": "-",
-    "balance": "625.14"
+    "balance": "3,50,625.14"
   },
   {
     "id": "69",
@@ -863,7 +863,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "590.14"
+    "balance": "3,50,590.14"
   },
   {
     "id": "70",
@@ -874,7 +874,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "71.00",
     "credit": "-",
-    "balance": "519.14"
+    "balance": "3,50,519.14"
   },
   {
     "id": "71",
@@ -885,7 +885,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "484.14"
+    "balance": "3,50,484.14"
   },
   {
     "id": "72",
@@ -896,7 +896,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "40.00",
     "credit": "-",
-    "balance": "444.14"
+    "balance": "3,50,444.14"
   },
   {
     "id": "73",
@@ -907,7 +907,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "371.14"
+    "balance": "3,50,371.14"
   },
   {
     "id": "74",
@@ -918,7 +918,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "300.05",
-    "balance": "671.19"
+    "balance": "3,50,671.19"
   },
   {
     "id": "75",
@@ -929,7 +929,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "596.19"
+    "balance": "3,50,596.19"
   },
   {
     "id": "76",
@@ -940,7 +940,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "521.19"
+    "balance": "3,50,521.19"
   },
   {
     "id": "77",
@@ -951,7 +951,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "486.19"
+    "balance": "3,50,486.19"
   },
   {
     "id": "78",
@@ -962,7 +962,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "87.00",
     "credit": "-",
-    "balance": "399.19"
+    "balance": "3,50,399.19"
   },
   {
     "id": "79",
@@ -973,7 +973,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,399.19"
+    "balance": "3,51,399.19"
   },
   {
     "id": "80",
@@ -984,7 +984,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "1,199.19"
+    "balance": "3,51,199.19"
   },
   {
     "id": "81",
@@ -995,7 +995,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "85.00",
     "credit": "-",
-    "balance": "1,114.19"
+    "balance": "3,51,114.19"
   },
   {
     "id": "82",
@@ -1006,7 +1006,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "85.00",
     "credit": "-",
-    "balance": "1,029.19"
+    "balance": "3,51,029.19"
   },
   {
     "id": "83",
@@ -1017,7 +1017,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "1,009.19"
+    "balance": "3,51,009.19"
   },
   {
     "id": "84",
@@ -1028,7 +1028,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "90.00",
     "credit": "-",
-    "balance": "919.19"
+    "balance": "3,50,919.19"
   },
   {
     "id": "85",
@@ -1039,7 +1039,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "884.19"
+    "balance": "3,50,884.19"
   },
   {
     "id": "86",
@@ -1050,7 +1050,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "814.19"
+    "balance": "3,50,814.19"
   },
   {
     "id": "87",
@@ -1061,7 +1061,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "3,000.00",
-    "balance": "3,814.19"
+    "balance": "3,53,814.19"
   },
   {
     "id": "88",
@@ -1072,7 +1072,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "1,814.19"
+    "balance": "3,51,814.19"
   },
   {
     "id": "89",
@@ -1083,7 +1083,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "1,792.19"
+    "balance": "3,51,792.19"
   },
   {
     "id": "90",
@@ -1094,7 +1094,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "40.00",
     "credit": "-",
-    "balance": "1,752.19"
+    "balance": "3,51,752.19"
   },
   {
     "id": "91",
@@ -1105,7 +1105,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "1,682.19"
+    "balance": "3,51,682.19"
   },
   {
     "id": "92",
@@ -1116,7 +1116,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "96.00",
     "credit": "-",
-    "balance": "1,586.19"
+    "balance": "3,51,586.19"
   },
   {
     "id": "93",
@@ -1127,7 +1127,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "60.73",
-    "balance": "1,646.92"
+    "balance": "3,51,646.92"
   },
   {
     "id": "94",
@@ -1138,7 +1138,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,290.00",
     "credit": "-",
-    "balance": "356.92"
+    "balance": "3,50,356.92"
   },
   {
     "id": "95",
@@ -1149,7 +1149,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "2,356.92"
+    "balance": "3,52,356.92"
   },
   {
     "id": "96",
@@ -1160,7 +1160,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "1,356.92"
+    "balance": "3,51,356.92"
   },
   {
     "id": "97",
@@ -1171,7 +1171,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "610.00",
     "credit": "-",
-    "balance": "746.92"
+    "balance": "3,50,746.92"
   },
   {
     "id": "98",
@@ -1182,7 +1182,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "22,000.00",
-    "balance": "22,746.92"
+    "balance": "3,72,746.92"
   },
   {
     "id": "99",
@@ -1193,7 +1193,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "12,746.92"
+    "balance": "3,62,746.92"
   },
   {
     "id": "100",
@@ -1204,7 +1204,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "6,000.00",
     "credit": "-",
-    "balance": "6,746.92"
+    "balance": "3,56,746.92"
   },
   {
     "id": "101",
@@ -1215,7 +1215,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "1,746.92"
+    "balance": "3,51,746.92"
   },
   {
     "id": "102",
@@ -1226,7 +1226,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "1,346.92"
+    "balance": "3,51,346.92"
   },
   {
     "id": "103",
@@ -1237,7 +1237,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "160.00",
     "credit": "-",
-    "balance": "1,186.92"
+    "balance": "3,51,186.92"
   },
   {
     "id": "104",
@@ -1248,7 +1248,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "170.00",
     "credit": "-",
-    "balance": "1,016.92"
+    "balance": "3,51,016.92"
   },
   {
     "id": "105",
@@ -1259,7 +1259,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "981.92"
+    "balance": "3,50,981.92"
   },
   {
     "id": "106",
@@ -1270,7 +1270,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "946.92"
+    "balance": "3,50,946.92"
   },
   {
     "id": "107",
@@ -1281,7 +1281,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "87.00",
     "credit": "-",
-    "balance": "859.92"
+    "balance": "3,50,859.92"
   },
   {
     "id": "108",
@@ -1292,7 +1292,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,859.92"
+    "balance": "3,51,859.92"
   },
   {
     "id": "109",
@@ -1303,7 +1303,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "143.00",
     "credit": "-",
-    "balance": "1,716.92"
+    "balance": "3,51,716.92"
   },
   {
     "id": "110",
@@ -1314,7 +1314,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "202.00",
     "credit": "-",
-    "balance": "1,514.92"
+    "balance": "3,51,514.92"
   },
   {
     "id": "111",
@@ -1325,7 +1325,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,500.00",
-    "balance": "3,014.92"
+    "balance": "3,53,014.92"
   },
   {
     "id": "112",
@@ -1336,7 +1336,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "2,814.92"
+    "balance": "3,52,814.92"
   },
   {
     "id": "113",
@@ -1347,7 +1347,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "814.92"
+    "balance": "3,50,814.92"
   },
   {
     "id": "114",
@@ -1358,7 +1358,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "45,000.00",
-    "balance": "45,814.92"
+    "balance": "3,95,814.92"
   },
   {
     "id": "115",
@@ -1369,7 +1369,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "997.00",
     "credit": "-",
-    "balance": "44,817.92"
+    "balance": "3,94,817.92"
   },
   {
     "id": "116",
@@ -1380,7 +1380,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "567.00",
     "credit": "-",
-    "balance": "44,250.92"
+    "balance": "3,94,250.92"
   },
   {
     "id": "117",
@@ -1391,7 +1391,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "320.00",
     "credit": "-",
-    "balance": "43,930.92"
+    "balance": "3,93,930.92"
   },
   {
     "id": "118",
@@ -1402,7 +1402,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "42,430.92"
+    "balance": "3,92,430.92"
   },
   {
     "id": "119",
@@ -1413,7 +1413,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "220.00",
     "credit": "-",
-    "balance": "42,210.92"
+    "balance": "3,92,210.92"
   },
   {
     "id": "120",
@@ -1424,7 +1424,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "40,710.92"
+    "balance": "3,90,710.92"
   },
   {
     "id": "121",
@@ -1435,7 +1435,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "38,710.92"
+    "balance": "3,88,710.92"
   },
   {
     "id": "122",
@@ -1446,7 +1446,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "36,710.92"
+    "balance": "3,86,710.92"
   },
   {
     "id": "123",
@@ -1457,7 +1457,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "36,688.92"
+    "balance": "3,86,688.92"
   },
   {
     "id": "124",
@@ -1468,7 +1468,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,500.00",
     "credit": "-",
-    "balance": "33,188.92"
+    "balance": "3,83,188.92"
   },
   {
     "id": "125",
@@ -1479,7 +1479,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "123.00",
     "credit": "-",
-    "balance": "33,065.92"
+    "balance": "3,83,065.92"
   },
   {
     "id": "126",
@@ -1490,7 +1490,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "33,015.92"
+    "balance": "3,83,015.92"
   },
   {
     "id": "127",
@@ -1501,7 +1501,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "32,965.92"
+    "balance": "3,82,965.92"
   },
   {
     "id": "128",
@@ -1512,7 +1512,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "22,965.92"
+    "balance": "3,72,965.92"
   },
   {
     "id": "129",
@@ -1523,7 +1523,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "12,965.92"
+    "balance": "3,62,965.92"
   },
   {
     "id": "130",
@@ -1534,7 +1534,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,715.00",
     "credit": "-",
-    "balance": "9,250.92"
+    "balance": "3,59,250.92"
   },
   {
     "id": "131",
@@ -1545,7 +1545,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "90.00",
     "credit": "-",
-    "balance": "9,160.92"
+    "balance": "3,59,160.92"
   },
   {
     "id": "132",
@@ -1556,7 +1556,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "9,125.92"
+    "balance": "3,59,125.92"
   },
   {
     "id": "133",
@@ -1567,7 +1567,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "5,125.92"
+    "balance": "3,55,125.92"
   },
   {
     "id": "134",
@@ -1578,7 +1578,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "3,125.92"
+    "balance": "3,53,125.92"
   },
   {
     "id": "135",
@@ -1589,7 +1589,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "3,055.92"
+    "balance": "3,53,055.92"
   },
   {
     "id": "136",
@@ -1600,7 +1600,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "185.00",
     "credit": "-",
-    "balance": "2,870.92"
+    "balance": "3,52,870.92"
   },
   {
     "id": "137",
@@ -1611,7 +1611,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "2,770.92"
+    "balance": "3,52,770.92"
   },
   {
     "id": "138",
@@ -1622,7 +1622,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "2,470.92"
+    "balance": "3,52,470.92"
   },
   {
     "id": "139",
@@ -1633,7 +1633,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "2,448.92"
+    "balance": "3,52,448.92"
   },
   {
     "id": "140",
@@ -1644,7 +1644,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "80.00",
     "credit": "-",
-    "balance": "2,368.92"
+    "balance": "3,52,368.92"
   },
   {
     "id": "141",
@@ -1655,7 +1655,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "2,068.92"
+    "balance": "3,52,068.92"
   },
   {
     "id": "142",
@@ -1666,7 +1666,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "25.00",
     "credit": "-",
-    "balance": "2,043.92"
+    "balance": "3,52,043.92"
   },
   {
     "id": "143",
@@ -1677,7 +1677,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "60.00",
     "credit": "-",
-    "balance": "1,983.92"
+    "balance": "3,51,983.92"
   },
   {
     "id": "144",
@@ -1688,7 +1688,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "97.00",
     "credit": "-",
-    "balance": "1,886.92"
+    "balance": "3,51,886.92"
   },
   {
     "id": "145",
@@ -1699,7 +1699,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,851.92"
+    "balance": "3,51,851.92"
   },
   {
     "id": "146",
@@ -1710,7 +1710,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "102.00",
     "credit": "-",
-    "balance": "1,749.92"
+    "balance": "3,51,749.92"
   },
   {
     "id": "147",
@@ -1721,7 +1721,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "1,727.92"
+    "balance": "3,51,727.92"
   },
   {
     "id": "148",
@@ -1732,7 +1732,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "600.00",
     "credit": "-",
-    "balance": "1,127.92"
+    "balance": "3,51,127.92"
   },
   {
     "id": "149",
@@ -1743,7 +1743,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "103.00",
     "credit": "-",
-    "balance": "1,024.92"
+    "balance": "3,51,024.92"
   },
   {
     "id": "150",
@@ -1754,7 +1754,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "989.92"
+    "balance": "3,50,989.92"
   },
   {
     "id": "151",
@@ -1765,7 +1765,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "97.00",
     "credit": "-",
-    "balance": "892.92"
+    "balance": "3,50,892.92"
   },
   {
     "id": "152",
@@ -1776,7 +1776,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "870.92"
+    "balance": "3,50,870.92"
   },
   {
     "id": "153",
@@ -1787,7 +1787,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "74.00",
     "credit": "-",
-    "balance": "796.92"
+    "balance": "3,50,796.92"
   },
   {
     "id": "154",
@@ -1798,7 +1798,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "761.92"
+    "balance": "3,50,761.92"
   },
   {
     "id": "155",
@@ -1809,7 +1809,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "95.00",
     "credit": "-",
-    "balance": "666.92"
+    "balance": "3,50,666.92"
   },
   {
     "id": "156",
@@ -1820,7 +1820,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "644.92"
+    "balance": "3,50,644.92"
   },
   {
     "id": "157",
@@ -1831,7 +1831,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "624.92"
+    "balance": "3,50,624.92"
   },
   {
     "id": "158",
@@ -1842,7 +1842,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "48.00",
     "credit": "-",
-    "balance": "576.92"
+    "balance": "3,50,576.92"
   },
   {
     "id": "159",
@@ -1853,7 +1853,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "40.00",
     "credit": "-",
-    "balance": "536.92"
+    "balance": "3,50,536.92"
   },
   {
     "id": "160",
@@ -1864,7 +1864,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "71.00",
     "credit": "-",
-    "balance": "465.92"
+    "balance": "3,50,465.92"
   },
   {
     "id": "161",
@@ -1875,7 +1875,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "430.92"
+    "balance": "3,50,430.92"
   },
   {
     "id": "162",
@@ -1886,7 +1886,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "200.76",
-    "balance": "631.68"
+    "balance": "3,50,631.68"
   },
   {
     "id": "163",
@@ -1897,7 +1897,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "556.68"
+    "balance": "3,50,556.68"
   },
   {
     "id": "164",
@@ -1908,7 +1908,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "90.00",
     "credit": "-",
-    "balance": "466.68"
+    "balance": "3,50,466.68"
   },
   {
     "id": "165",
@@ -1919,7 +1919,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "40,000.00",
-    "balance": "40,466.68"
+    "balance": "3,90,466.68"
   },
   {
     "id": "166",
@@ -1930,7 +1930,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "15,114.00",
     "credit": "-",
-    "balance": "25,352.68"
+    "balance": "3,75,352.68"
   },
   {
     "id": "167",
@@ -1941,7 +1941,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "9,000.00",
     "credit": "-",
-    "balance": "16,352.68"
+    "balance": "3,66,352.68"
   },
   {
     "id": "168",
@@ -1952,7 +1952,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,540.00",
     "credit": "-",
-    "balance": "14,812.68"
+    "balance": "3,64,812.68"
   },
   {
     "id": "169",
@@ -1963,7 +1963,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "12,812.68"
+    "balance": "3,62,812.68"
   },
   {
     "id": "170",
@@ -1974,7 +1974,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,500.00",
     "credit": "-",
-    "balance": "10,312.68"
+    "balance": "3,60,312.68"
   },
   {
     "id": "171",
@@ -1985,7 +1985,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "5,312.68"
+    "balance": "3,55,312.68"
   },
   {
     "id": "172",
@@ -1996,7 +1996,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "3,312.68"
+    "balance": "3,53,312.68"
   },
   {
     "id": "173",
@@ -2007,7 +2007,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "3,112.68"
+    "balance": "3,53,112.68"
   },
   {
     "id": "174",
@@ -2018,7 +2018,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "3,042.68"
+    "balance": "3,53,042.68"
   },
   {
     "id": "175",
@@ -2029,7 +2029,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "3,022.68"
+    "balance": "3,53,022.68"
   },
   {
     "id": "176",
@@ -2040,7 +2040,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "2,522.68"
+    "balance": "3,52,522.68"
   },
   {
     "id": "177",
@@ -2051,7 +2051,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "2,492.68"
+    "balance": "3,52,492.68"
   },
   {
     "id": "178",
@@ -2062,7 +2062,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "82.00",
     "credit": "-",
-    "balance": "2,410.68"
+    "balance": "3,52,410.68"
   },
   {
     "id": "179",
@@ -2073,7 +2073,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,375.68"
+    "balance": "3,52,375.68"
   },
   {
     "id": "180",
@@ -2084,7 +2084,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,340.68"
+    "balance": "3,52,340.68"
   },
   {
     "id": "181",
@@ -2095,7 +2095,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "98.00",
     "credit": "-",
-    "balance": "2,242.68"
+    "balance": "3,52,242.68"
   },
   {
     "id": "182",
@@ -2106,7 +2106,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "250.00",
     "credit": "-",
-    "balance": "1,992.68"
+    "balance": "3,51,992.68"
   },
   {
     "id": "183",
@@ -2117,7 +2117,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "22.00",
     "credit": "-",
-    "balance": "1,970.68"
+    "balance": "3,51,970.68"
   },
   {
     "id": "184",
@@ -2128,7 +2128,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "1,950.68"
+    "balance": "3,51,950.68"
   },
   {
     "id": "185",
@@ -2139,7 +2139,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "1,650.68"
+    "balance": "3,51,650.68"
   },
   {
     "id": "186",
@@ -2150,7 +2150,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "130.00",
     "credit": "-",
-    "balance": "1,520.68"
+    "balance": "3,51,520.68"
   },
   {
     "id": "187",
@@ -2161,7 +2161,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "72.00",
     "credit": "-",
-    "balance": "1,448.68"
+    "balance": "3,51,448.68"
   },
   {
     "id": "188",
@@ -2172,7 +2172,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "140.00",
     "credit": "-",
-    "balance": "1,308.68"
+    "balance": "3,51,308.68"
   },
   {
     "id": "189",
@@ -2183,7 +2183,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,273.68"
+    "balance": "3,51,273.68"
   },
   {
     "id": "190",
@@ -2194,7 +2194,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "1,073.68"
+    "balance": "3,51,073.68"
   },
   {
     "id": "191",
@@ -2205,7 +2205,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "6,073.68"
+    "balance": "3,56,073.68"
   },
   {
     "id": "192",
@@ -2216,7 +2216,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "5,073.68"
+    "balance": "3,55,073.68"
   },
   {
     "id": "193",
@@ -2227,7 +2227,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "954.00",
     "credit": "-",
-    "balance": "4,119.68"
+    "balance": "3,54,119.68"
   },
   {
     "id": "194",
@@ -2238,7 +2238,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "9,119.68"
+    "balance": "3,59,119.68"
   },
   {
     "id": "195",
@@ -2249,7 +2249,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "4,119.68"
+    "balance": "3,54,119.68"
   },
   {
     "id": "196",
@@ -2260,7 +2260,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "4,084.68"
+    "balance": "3,54,084.68"
   },
   {
     "id": "197",
@@ -2271,7 +2271,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,090.00",
     "credit": "-",
-    "balance": "994.68"
+    "balance": "3,50,994.68"
   },
   {
     "id": "198",
@@ -2282,7 +2282,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "78.00",
     "credit": "-",
-    "balance": "916.68"
+    "balance": "3,50,916.68"
   },
   {
     "id": "199",
@@ -2293,7 +2293,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "24.00",
     "credit": "-",
-    "balance": "892.68"
+    "balance": "3,50,892.68"
   },
   {
     "id": "200",
@@ -2304,7 +2304,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "420.00",
     "credit": "-",
-    "balance": "472.68"
+    "balance": "3,50,472.68"
   },
   {
     "id": "201",
@@ -2315,7 +2315,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "437.68"
+    "balance": "3,50,437.68"
   },
   {
     "id": "202",
@@ -2326,7 +2326,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "201.03",
-    "balance": "638.71"
+    "balance": "3,50,638.71"
   },
   {
     "id": "203",
@@ -2337,7 +2337,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "588.71"
+    "balance": "3,50,588.71"
   },
   {
     "id": "204",
@@ -2348,7 +2348,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "25.00",
     "credit": "-",
-    "balance": "563.71"
+    "balance": "3,50,563.71"
   },
   {
     "id": "205",
@@ -2359,7 +2359,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7.00",
     "credit": "-",
-    "balance": "556.71"
+    "balance": "3,50,556.71"
   },
   {
     "id": "206",
@@ -2370,7 +2370,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "97.00",
     "credit": "-",
-    "balance": "459.71"
+    "balance": "3,50,459.71"
   },
   {
     "id": "207",
@@ -2381,7 +2381,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "424.71"
+    "balance": "3,50,424.71"
   },
   {
     "id": "208",
@@ -2392,7 +2392,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "135.00",
-    "balance": "559.71"
+    "balance": "3,50,559.71"
   },
   {
     "id": "209",
@@ -2403,7 +2403,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "36.00",
-    "balance": "595.71"
+    "balance": "3,50,595.71"
   },
   {
     "id": "210",
@@ -2414,7 +2414,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "560.71"
+    "balance": "3,50,560.71"
   },
   {
     "id": "211",
@@ -2425,7 +2425,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "487.71"
+    "balance": "3,50,487.71"
   },
   {
     "id": "212",
@@ -2436,7 +2436,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10.00",
     "credit": "-",
-    "balance": "477.71"
+    "balance": "3,50,477.71"
   },
   {
     "id": "213",
@@ -2447,7 +2447,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10.00",
     "credit": "-",
-    "balance": "467.71"
+    "balance": "3,50,467.71"
   },
   {
     "id": "214",
@@ -2458,7 +2458,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "500.00",
-    "balance": "967.71"
+    "balance": "3,50,967.71"
   },
   {
     "id": "215",
@@ -2469,7 +2469,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "260.00",
     "credit": "-",
-    "balance": "707.71"
+    "balance": "3,50,707.71"
   },
   {
     "id": "216",
@@ -2480,7 +2480,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "34.00",
     "credit": "-",
-    "balance": "673.71"
+    "balance": "3,50,673.71"
   },
   {
     "id": "217",
@@ -2491,7 +2491,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,500.00",
-    "balance": "2,173.71"
+    "balance": "3,52,173.71"
   },
   {
     "id": "218",
@@ -2502,7 +2502,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,350.00",
     "credit": "-",
-    "balance": "823.71"
+    "balance": "3,50,823.71"
   },
   {
     "id": "219",
@@ -2513,7 +2513,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "400.00",
-    "balance": "1,223.71"
+    "balance": "3,51,223.71"
   },
   {
     "id": "220",
@@ -2524,7 +2524,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "600.00",
     "credit": "-",
-    "balance": "623.71"
+    "balance": "3,50,623.71"
   },
   {
     "id": "221",
@@ -2535,7 +2535,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "588.71"
+    "balance": "3,50,588.71"
   },
   {
     "id": "222",
@@ -2546,7 +2546,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "553.71"
+    "balance": "3,50,553.71"
   },
   {
     "id": "223",
@@ -2557,7 +2557,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "87.00",
     "credit": "-",
-    "balance": "466.71"
+    "balance": "3,50,466.71"
   },
   {
     "id": "224",
@@ -2568,7 +2568,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "110.26",
-    "balance": "576.97"
+    "balance": "3,50,576.97"
   },
   {
     "id": "225",
@@ -2579,7 +2579,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "211.00",
     "credit": "-",
-    "balance": "365.97"
+    "balance": "3,50,365.97"
   },
   {
     "id": "226",
@@ -2590,7 +2590,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "70,000.00",
-    "balance": "70,365.97"
+    "balance": "4,20,365.97"
   },
   {
     "id": "227",
@@ -2601,7 +2601,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "67,365.97"
+    "balance": "4,17,365.97"
   },
   {
     "id": "228",
@@ -2612,7 +2612,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7,176.00",
     "credit": "-",
-    "balance": "60,189.97"
+    "balance": "4,10,189.97"
   },
   {
     "id": "229",
@@ -2623,7 +2623,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "8,080.00",
     "credit": "-",
-    "balance": "52,109.97"
+    "balance": "4,02,109.97"
   },
   {
     "id": "230",
@@ -2634,7 +2634,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "15,000.00",
     "credit": "-",
-    "balance": "37,109.97"
+    "balance": "3,87,109.97"
   },
   {
     "id": "231",
@@ -2645,7 +2645,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "36,109.97"
+    "balance": "3,86,109.97"
   },
   {
     "id": "232",
@@ -2656,7 +2656,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,144.00",
     "credit": "-",
-    "balance": "31,965.97"
+    "balance": "3,81,965.97"
   },
   {
     "id": "233",
@@ -2667,7 +2667,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "140.00",
     "credit": "-",
-    "balance": "31,825.97"
+    "balance": "3,81,825.97"
   },
   {
     "id": "234",
@@ -2678,7 +2678,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,340.00",
     "credit": "-",
-    "balance": "30,485.97"
+    "balance": "3,80,485.97"
   },
   {
     "id": "235",
@@ -2689,7 +2689,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "20,485.97"
+    "balance": "3,70,485.97"
   },
   {
     "id": "236",
@@ -2700,7 +2700,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "10,485.97"
+    "balance": "3,60,485.97"
   },
   {
     "id": "237",
@@ -2711,7 +2711,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "9,000.00",
     "credit": "-",
-    "balance": "1,485.97"
+    "balance": "3,51,485.97"
   },
   {
     "id": "238",
@@ -2722,7 +2722,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "142.00",
     "credit": "-",
-    "balance": "1,343.97"
+    "balance": "3,51,343.97"
   },
   {
     "id": "239",
@@ -2733,7 +2733,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "1,043.97"
+    "balance": "3,51,043.97"
   },
   {
     "id": "240",
@@ -2744,7 +2744,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "1,013.97"
+    "balance": "3,51,013.97"
   },
   {
     "id": "241",
@@ -2755,7 +2755,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "93.00",
     "credit": "-",
-    "balance": "920.97"
+    "balance": "3,50,920.97"
   },
   {
     "id": "242",
@@ -2766,7 +2766,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "885.97"
+    "balance": "3,50,885.97"
   },
   {
     "id": "243",
@@ -2777,7 +2777,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "96.00",
     "credit": "-",
-    "balance": "789.97"
+    "balance": "3,50,789.97"
   },
   {
     "id": "244",
@@ -2788,7 +2788,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "489.97"
+    "balance": "3,50,489.97"
   },
   {
     "id": "245",
@@ -2799,7 +2799,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "42.00",
     "credit": "-",
-    "balance": "447.97"
+    "balance": "3,50,447.97"
   },
   {
     "id": "246",
@@ -2810,7 +2810,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "89.00",
     "credit": "-",
-    "balance": "358.97"
+    "balance": "3,50,358.97"
   },
   {
     "id": "247",
@@ -2821,7 +2821,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "30.00",
-    "balance": "388.97"
+    "balance": "3,50,388.97"
   },
   {
     "id": "248",
@@ -2832,7 +2832,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "100.00",
-    "balance": "488.97"
+    "balance": "3,50,488.97"
   },
   {
     "id": "249",
@@ -2843,7 +2843,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "74.00",
     "credit": "-",
-    "balance": "414.97"
+    "balance": "3,50,414.97"
   },
   {
     "id": "250",
@@ -2854,7 +2854,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "379.97"
+    "balance": "3,50,379.97"
   },
   {
     "id": "251",
@@ -2865,7 +2865,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "100.29",
-    "balance": "480.26"
+    "balance": "3,50,480.26"
   },
   {
     "id": "252",
@@ -2876,7 +2876,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "90.00",
     "credit": "-",
-    "balance": "390.26"
+    "balance": "3,50,390.26"
   },
   {
     "id": "253",
@@ -2887,7 +2887,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "370.26"
+    "balance": "3,50,370.26"
   },
   {
     "id": "254",
@@ -2898,7 +2898,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "30,000.00",
-    "balance": "30,370.26"
+    "balance": "3,80,370.26"
   },
   {
     "id": "255",
@@ -2909,7 +2909,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "25,370.26"
+    "balance": "3,75,370.26"
   },
   {
     "id": "256",
@@ -2920,7 +2920,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "20,370.26"
+    "balance": "3,70,370.26"
   },
   {
     "id": "257",
@@ -2931,7 +2931,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "16,370.26"
+    "balance": "3,66,370.26"
   },
   {
     "id": "258",
@@ -2942,7 +2942,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "11,370.26"
+    "balance": "3,61,370.26"
   },
   {
     "id": "259",
@@ -2953,7 +2953,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,900.00",
     "credit": "-",
-    "balance": "9,470.26"
+    "balance": "3,59,470.26"
   },
   {
     "id": "260",
@@ -2964,7 +2964,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "4,470.26"
+    "balance": "3,54,470.26"
   },
   {
     "id": "261",
@@ -2975,7 +2975,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "146.19",
     "credit": "-",
-    "balance": "4,324.07"
+    "balance": "3,54,324.07"
   },
   {
     "id": "262",
@@ -2986,7 +2986,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "700.00",
     "credit": "-",
-    "balance": "3,624.07"
+    "balance": "3,53,624.07"
   },
   {
     "id": "263",
@@ -2997,7 +2997,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,200.00",
     "credit": "-",
-    "balance": "2,424.07"
+    "balance": "3,52,424.07"
   },
   {
     "id": "264",
@@ -3008,7 +3008,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "120.00",
     "credit": "-",
-    "balance": "2,304.07"
+    "balance": "3,52,304.07"
   },
   {
     "id": "265",
@@ -3019,7 +3019,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,269.07"
+    "balance": "3,52,269.07"
   },
   {
     "id": "266",
@@ -3030,7 +3030,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,234.07"
+    "balance": "3,52,234.07"
   },
   {
     "id": "267",
@@ -3041,7 +3041,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,199.07"
+    "balance": "3,52,199.07"
   },
   {
     "id": "268",
@@ -3052,7 +3052,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "2,129.07"
+    "balance": "3,52,129.07"
   },
   {
     "id": "269",
@@ -3063,7 +3063,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "700.00",
     "credit": "-",
-    "balance": "1,429.07"
+    "balance": "3,51,429.07"
   },
   {
     "id": "270",
@@ -3074,7 +3074,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "1,379.07"
+    "balance": "3,51,379.07"
   },
   {
     "id": "271",
@@ -3085,7 +3085,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "940.00",
     "credit": "-",
-    "balance": "439.07"
+    "balance": "3,50,439.07"
   },
   {
     "id": "272",
@@ -3096,7 +3096,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,439.07"
+    "balance": "3,51,439.07"
   },
   {
     "id": "273",
@@ -3107,7 +3107,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "1,039.07"
+    "balance": "3,51,039.07"
   },
   {
     "id": "274",
@@ -3118,7 +3118,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1.00",
     "credit": "-",
-    "balance": "1,038.07"
+    "balance": "3,51,038.07"
   },
   {
     "id": "275",
@@ -3129,7 +3129,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "838.07"
+    "balance": "3,50,838.07"
   },
   {
     "id": "276",
@@ -3140,7 +3140,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "788.07"
+    "balance": "3,50,788.07"
   },
   {
     "id": "277",
@@ -3151,7 +3151,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "104.00",
     "credit": "-",
-    "balance": "684.07"
+    "balance": "3,50,684.07"
   },
   {
     "id": "278",
@@ -3162,7 +3162,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "649.07"
+    "balance": "3,50,649.07"
   },
   {
     "id": "279",
@@ -3173,7 +3173,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "150.00",
     "credit": "-",
-    "balance": "499.07"
+    "balance": "3,50,499.07"
   },
   {
     "id": "280",
@@ -3184,7 +3184,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "101.11",
-    "balance": "600.18"
+    "balance": "3,50,600.18"
   },
   {
     "id": "281",
@@ -3195,7 +3195,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "83.00",
     "credit": "-",
-    "balance": "517.18"
+    "balance": "3,50,517.18"
   },
   {
     "id": "282",
@@ -3206,7 +3206,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "482.18"
+    "balance": "3,50,482.18"
   },
   {
     "id": "283",
@@ -3217,7 +3217,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "409.18"
+    "balance": "3,50,409.18"
   },
   {
     "id": "284",
@@ -3228,7 +3228,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10.00",
     "credit": "-",
-    "balance": "399.18"
+    "balance": "3,50,399.18"
   },
   {
     "id": "285",
@@ -3239,7 +3239,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "500.00",
-    "balance": "899.18"
+    "balance": "3,50,899.18"
   },
   {
     "id": "286",
@@ -3250,7 +3250,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "96.00",
     "credit": "-",
-    "balance": "803.18"
+    "balance": "3,50,803.18"
   },
   {
     "id": "287",
@@ -3261,7 +3261,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "60.87",
-    "balance": "864.05"
+    "balance": "3,50,864.05"
   },
   {
     "id": "288",
@@ -3272,7 +3272,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "364.05"
+    "balance": "3,50,364.05"
   },
   {
     "id": "289",
@@ -3283,7 +3283,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "500.00",
-    "balance": "864.05"
+    "balance": "3,50,864.05"
   },
   {
     "id": "290",
@@ -3294,7 +3294,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "829.05"
+    "balance": "3,50,829.05"
   },
   {
     "id": "291",
@@ -3305,7 +3305,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "87.00",
     "credit": "-",
-    "balance": "742.05"
+    "balance": "3,50,742.05"
   },
   {
     "id": "292",
@@ -3316,7 +3316,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "130.00",
     "credit": "-",
-    "balance": "612.05"
+    "balance": "3,50,612.05"
   },
   {
     "id": "293",
@@ -3327,7 +3327,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "71.00",
     "credit": "-",
-    "balance": "541.05"
+    "balance": "3,50,541.05"
   },
   {
     "id": "294",
@@ -3338,7 +3338,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "506.05"
+    "balance": "3,50,506.05"
   },
   {
     "id": "295",
@@ -3349,7 +3349,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "69.00",
     "credit": "-",
-    "balance": "437.05"
+    "balance": "3,50,437.05"
   },
   {
     "id": "296",
@@ -3360,7 +3360,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "4,000.00",
-    "balance": "4,437.05"
+    "balance": "3,54,437.05"
   },
   {
     "id": "297",
@@ -3371,7 +3371,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "4,037.05"
+    "balance": "3,54,037.05"
   },
   {
     "id": "298",
@@ -3382,7 +3382,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,120.00",
     "credit": "-",
-    "balance": "1,917.05"
+    "balance": "3,51,917.05"
   },
   {
     "id": "299",
@@ -3393,7 +3393,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "90.00",
     "credit": "-",
-    "balance": "1,827.05"
+    "balance": "3,51,827.05"
   },
   {
     "id": "300",
@@ -3404,7 +3404,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "110.00",
     "credit": "-",
-    "balance": "1,717.05"
+    "balance": "3,51,717.05"
   },
   {
     "id": "301",
@@ -3415,7 +3415,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "71.00",
     "credit": "-",
-    "balance": "1,646.05"
+    "balance": "3,51,646.05"
   },
   {
     "id": "302",
@@ -3426,7 +3426,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "320.00",
     "credit": "-",
-    "balance": "1,326.05"
+    "balance": "3,51,326.05"
   },
   {
     "id": "303",
@@ -3437,7 +3437,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,291.05"
+    "balance": "3,51,291.05"
   },
   {
     "id": "304",
@@ -3448,7 +3448,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "90,000.00",
-    "balance": "91,291.05"
+    "balance": "4,41,291.05"
   },
   {
     "id": "305",
@@ -3459,7 +3459,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30,000.00",
     "credit": "-",
-    "balance": "61,291.05"
+    "balance": "4,11,291.05"
   },
   {
     "id": "306",
@@ -3470,7 +3470,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "57,291.05"
+    "balance": "4,07,291.05"
   },
   {
     "id": "307",
@@ -3481,7 +3481,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "52,291.05"
+    "balance": "4,02,291.05"
   },
   {
     "id": "308",
@@ -3492,7 +3492,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7,000.00",
     "credit": "-",
-    "balance": "45,291.05"
+    "balance": "3,95,291.05"
   },
   {
     "id": "309",
@@ -3503,7 +3503,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "11,000.00",
     "credit": "-",
-    "balance": "34,291.05"
+    "balance": "3,84,291.05"
   },
   {
     "id": "310",
@@ -3514,7 +3514,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,500.00",
     "credit": "-",
-    "balance": "30,791.05"
+    "balance": "3,80,791.05"
   },
   {
     "id": "311",
@@ -3525,7 +3525,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "26,791.05"
+    "balance": "3,76,791.05"
   },
   {
     "id": "312",
@@ -3536,7 +3536,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "21,791.05"
+    "balance": "3,71,791.05"
   },
   {
     "id": "313",
@@ -3547,7 +3547,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "20,791.05"
+    "balance": "3,70,791.05"
   },
   {
     "id": "314",
@@ -3558,7 +3558,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "20,291.05"
+    "balance": "3,70,291.05"
   },
   {
     "id": "315",
@@ -3569,7 +3569,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,200.00",
     "credit": "-",
-    "balance": "18,091.05"
+    "balance": "3,68,091.05"
   },
   {
     "id": "316",
@@ -3580,7 +3580,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "15,091.05"
+    "balance": "3,65,091.05"
   },
   {
     "id": "317",
@@ -3591,7 +3591,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "535.08",
     "credit": "-",
-    "balance": "14,555.97"
+    "balance": "3,64,555.97"
   },
   {
     "id": "318",
@@ -3602,7 +3602,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "14,485.97"
+    "balance": "3,64,485.97"
   },
   {
     "id": "319",
@@ -3613,7 +3613,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "13,985.97"
+    "balance": "3,63,985.97"
   },
   {
     "id": "320",
@@ -3624,7 +3624,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,368.00",
     "credit": "-",
-    "balance": "12,617.97"
+    "balance": "3,62,617.97"
   },
   {
     "id": "321",
@@ -3635,7 +3635,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "12,117.97"
+    "balance": "3,62,117.97"
   },
   {
     "id": "322",
@@ -3646,7 +3646,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "9,117.97"
+    "balance": "3,59,117.97"
   },
   {
     "id": "323",
@@ -3657,7 +3657,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "97.00",
     "credit": "-",
-    "balance": "9,020.97"
+    "balance": "3,59,020.97"
   },
   {
     "id": "324",
@@ -3668,7 +3668,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "450.00",
     "credit": "-",
-    "balance": "8,570.97"
+    "balance": "3,58,570.97"
   },
   {
     "id": "325",
@@ -3679,7 +3679,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "8,535.97"
+    "balance": "3,58,535.97"
   },
   {
     "id": "326",
@@ -3690,7 +3690,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "350.00",
     "credit": "-",
-    "balance": "8,185.97"
+    "balance": "3,58,185.97"
   },
   {
     "id": "327",
@@ -3701,7 +3701,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "8,120.97"
+    "balance": "3,58,120.97"
   },
   {
     "id": "328",
@@ -3712,7 +3712,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,050.00",
     "credit": "-",
-    "balance": "7,070.97"
+    "balance": "3,57,070.97"
   },
   {
     "id": "329",
@@ -3723,7 +3723,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "9,070.97"
+    "balance": "3,59,070.97"
   },
   {
     "id": "330",
@@ -3734,7 +3734,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "72.00",
     "credit": "-",
-    "balance": "8,998.97"
+    "balance": "3,58,998.97"
   },
   {
     "id": "331",
@@ -3745,7 +3745,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "385.00",
     "credit": "-",
-    "balance": "8,613.97"
+    "balance": "3,58,613.97"
   },
   {
     "id": "332",
@@ -3756,7 +3756,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "3,613.97"
+    "balance": "3,53,613.97"
   },
   {
     "id": "333",
@@ -3767,7 +3767,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "2,613.97"
+    "balance": "3,52,613.97"
   },
   {
     "id": "334",
@@ -3778,7 +3778,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "340.00",
     "credit": "-",
-    "balance": "2,273.97"
+    "balance": "3,52,273.97"
   },
   {
     "id": "335",
@@ -3789,7 +3789,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "2,243.97"
+    "balance": "3,52,243.97"
   },
   {
     "id": "336",
@@ -3800,7 +3800,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "95.00",
     "credit": "-",
-    "balance": "2,148.97"
+    "balance": "3,52,148.97"
   },
   {
     "id": "337",
@@ -3811,7 +3811,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,113.97"
+    "balance": "3,52,113.97"
   },
   {
     "id": "338",
@@ -3822,7 +3822,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "1,113.97"
+    "balance": "3,51,113.97"
   },
   {
     "id": "339",
@@ -3833,7 +3833,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "21.00",
-    "balance": "1,134.97"
+    "balance": "3,51,134.97"
   },
   {
     "id": "340",
@@ -3844,7 +3844,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,099.97"
+    "balance": "3,51,099.97"
   },
   {
     "id": "341",
@@ -3855,7 +3855,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,064.97"
+    "balance": "3,51,064.97"
   },
   {
     "id": "342",
@@ -3866,7 +3866,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "88.00",
     "credit": "-",
-    "balance": "976.97"
+    "balance": "3,50,976.97"
   },
   {
     "id": "343",
@@ -3877,7 +3877,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50,000.00",
-    "balance": "50,976.97"
+    "balance": "4,00,976.97"
   },
   {
     "id": "344",
@@ -3888,7 +3888,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "45,976.97"
+    "balance": "3,95,976.97"
   },
   {
     "id": "345",
@@ -3899,7 +3899,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "40,976.97"
+    "balance": "3,90,976.97"
   },
   {
     "id": "346",
@@ -3910,7 +3910,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "35,976.97"
+    "balance": "3,85,976.97"
   },
   {
     "id": "347",
@@ -3921,7 +3921,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "25,976.97"
+    "balance": "3,75,976.97"
   },
   {
     "id": "348",
@@ -3932,7 +3932,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "15,000.00",
     "credit": "-",
-    "balance": "10,976.97"
+    "balance": "3,60,976.97"
   },
   {
     "id": "349",
@@ -3943,7 +3943,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "10,941.97"
+    "balance": "3,60,941.97"
   },
   {
     "id": "350",
@@ -3954,7 +3954,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "6,941.97"
+    "balance": "3,56,941.97"
   },
   {
     "id": "351",
@@ -3965,7 +3965,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "6,441.97"
+    "balance": "3,56,441.97"
   },
   {
     "id": "352",
@@ -3976,7 +3976,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "6,371.97"
+    "balance": "3,56,371.97"
   },
   {
     "id": "353",
@@ -3987,7 +3987,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "368.00",
     "credit": "-",
-    "balance": "6,003.97"
+    "balance": "3,56,003.97"
   },
   {
     "id": "354",
@@ -3998,7 +3998,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "29.76",
     "credit": "-",
-    "balance": "5,974.21"
+    "balance": "3,55,974.21"
   },
   {
     "id": "355",
@@ -4009,7 +4009,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "678.00",
     "credit": "-",
-    "balance": "5,296.21"
+    "balance": "3,55,296.21"
   },
   {
     "id": "356",
@@ -4020,7 +4020,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "3,296.21"
+    "balance": "3,53,296.21"
   },
   {
     "id": "357",
@@ -4031,7 +4031,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "3,261.21"
+    "balance": "3,53,261.21"
   },
   {
     "id": "358",
@@ -4042,7 +4042,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,080.00",
     "credit": "-",
-    "balance": "1,181.21"
+    "balance": "3,51,181.21"
   },
   {
     "id": "359",
@@ -4053,7 +4053,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "137.00",
     "credit": "-",
-    "balance": "1,044.21"
+    "balance": "3,51,044.21"
   },
   {
     "id": "360",
@@ -4064,7 +4064,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "72.00",
     "credit": "-",
-    "balance": "972.21"
+    "balance": "3,50,972.21"
   },
   {
     "id": "361",
@@ -4075,7 +4075,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "160.00",
     "credit": "-",
-    "balance": "812.21"
+    "balance": "3,50,812.21"
   },
   {
     "id": "362",
@@ -4086,7 +4086,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "777.21"
+    "balance": "3,50,777.21"
   },
   {
     "id": "363",
@@ -4097,7 +4097,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "140.00",
     "credit": "-",
-    "balance": "637.21"
+    "balance": "3,50,637.21"
   },
   {
     "id": "364",
@@ -4108,7 +4108,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "98.00",
     "credit": "-",
-    "balance": "539.21"
+    "balance": "3,50,539.21"
   },
   {
     "id": "365",
@@ -4119,7 +4119,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "2,539.21"
+    "balance": "3,52,539.21"
   },
   {
     "id": "366",
@@ -4130,7 +4130,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "77.00",
     "credit": "-",
-    "balance": "2,462.21"
+    "balance": "3,52,462.21"
   },
   {
     "id": "367",
@@ -4141,7 +4141,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "462.21"
+    "balance": "3,50,462.21"
   },
   {
     "id": "368",
@@ -4152,7 +4152,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "9.00",
-    "balance": "471.21"
+    "balance": "3,50,471.21"
   },
   {
     "id": "369",
@@ -4163,7 +4163,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "436.21"
+    "balance": "3,50,436.21"
   },
   {
     "id": "370",
@@ -4174,7 +4174,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "363.21"
+    "balance": "3,50,363.21"
   },
   {
     "id": "371",
@@ -4185,7 +4185,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "350.02",
-    "balance": "713.23"
+    "balance": "3,50,713.23"
   },
   {
     "id": "372",
@@ -4196,7 +4196,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "79.00",
     "credit": "-",
-    "balance": "634.23"
+    "balance": "3,50,634.23"
   },
   {
     "id": "373",
@@ -4207,7 +4207,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "599.23"
+    "balance": "3,50,599.23"
   },
   {
     "id": "374",
@@ -4218,7 +4218,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "64.00",
     "credit": "-",
-    "balance": "535.23"
+    "balance": "3,50,535.23"
   },
   {
     "id": "375",
@@ -4229,7 +4229,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "800.00",
-    "balance": "1,335.23"
+    "balance": "3,51,335.23"
   },
   {
     "id": "376",
@@ -4240,7 +4240,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "240.00",
     "credit": "-",
-    "balance": "1,095.23"
+    "balance": "3,51,095.23"
   },
   {
     "id": "377",
@@ -4251,7 +4251,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "595.23"
+    "balance": "3,50,595.23"
   },
   {
     "id": "378",
@@ -4262,7 +4262,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "545.23"
+    "balance": "3,50,545.23"
   },
   {
     "id": "379",
@@ -4273,7 +4273,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "445.23"
+    "balance": "3,50,445.23"
   },
   {
     "id": "380",
@@ -4284,7 +4284,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "67.00",
     "credit": "-",
-    "balance": "378.23"
+    "balance": "3,50,378.23"
   },
   {
     "id": "381",
@@ -4295,7 +4295,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "5,378.23"
+    "balance": "3,55,378.23"
   },
   {
     "id": "382",
@@ -4306,7 +4306,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "5,305.23"
+    "balance": "3,55,305.23"
   },
   {
     "id": "383",
@@ -4317,7 +4317,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,260.00",
     "credit": "-",
-    "balance": "3,045.23"
+    "balance": "3,53,045.23"
   },
   {
     "id": "384",
@@ -4328,7 +4328,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "3,015.23"
+    "balance": "3,53,015.23"
   },
   {
     "id": "385",
@@ -4339,7 +4339,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,980.23"
+    "balance": "3,52,980.23"
   },
   {
     "id": "386",
@@ -4350,7 +4350,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "922.00",
     "credit": "-",
-    "balance": "2,058.23"
+    "balance": "3,52,058.23"
   },
   {
     "id": "387",
@@ -4361,7 +4361,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "85.00",
     "credit": "-",
-    "balance": "1,973.23"
+    "balance": "3,51,973.23"
   },
   {
     "id": "388",
@@ -4372,7 +4372,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "170.00",
     "credit": "-",
-    "balance": "1,803.23"
+    "balance": "3,51,803.23"
   },
   {
     "id": "389",
@@ -4383,7 +4383,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,768.23"
+    "balance": "3,51,768.23"
   },
   {
     "id": "390",
@@ -4394,7 +4394,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "103.00",
     "credit": "-",
-    "balance": "1,665.23"
+    "balance": "3,51,665.23"
   },
   {
     "id": "391",
@@ -4405,7 +4405,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "130.00",
     "credit": "-",
-    "balance": "1,535.23"
+    "balance": "3,51,535.23"
   },
   {
     "id": "392",
@@ -4416,7 +4416,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "430.00",
     "credit": "-",
-    "balance": "1,105.23"
+    "balance": "3,51,105.23"
   },
   {
     "id": "393",
@@ -4427,7 +4427,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "55.00",
     "credit": "-",
-    "balance": "1,050.23"
+    "balance": "3,51,050.23"
   },
   {
     "id": "394",
@@ -4438,7 +4438,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "104.00",
     "credit": "-",
-    "balance": "946.23"
+    "balance": "3,50,946.23"
   },
   {
     "id": "395",
@@ -4449,7 +4449,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "911.23"
+    "balance": "3,50,911.23"
   },
   {
     "id": "396",
@@ -4460,7 +4460,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "64.00",
     "credit": "-",
-    "balance": "847.23"
+    "balance": "3,50,847.23"
   },
   {
     "id": "397",
@@ -4471,7 +4471,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "115.00",
     "credit": "-",
-    "balance": "732.23"
+    "balance": "3,50,732.23"
   },
   {
     "id": "398",
@@ -4482,7 +4482,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "40,000.00",
-    "balance": "40,732.23"
+    "balance": "3,90,732.23"
   },
   {
     "id": "399",
@@ -4493,7 +4493,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,528.00",
     "credit": "-",
-    "balance": "39,204.23"
+    "balance": "3,89,204.23"
   },
   {
     "id": "400",
@@ -4504,7 +4504,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "8,167.00",
     "credit": "-",
-    "balance": "31,037.23"
+    "balance": "3,81,037.23"
   },
   {
     "id": "401",
@@ -4515,7 +4515,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "800.00",
     "credit": "-",
-    "balance": "30,237.23"
+    "balance": "3,80,237.23"
   },
   {
     "id": "402",
@@ -4526,7 +4526,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7,000.00",
     "credit": "-",
-    "balance": "23,237.23"
+    "balance": "3,73,237.23"
   },
   {
     "id": "403",
@@ -4537,7 +4537,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "18,237.23"
+    "balance": "3,68,237.23"
   },
   {
     "id": "404",
@@ -4548,7 +4548,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "13,237.23"
+    "balance": "3,63,237.23"
   },
   {
     "id": "405",
@@ -4559,7 +4559,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "6,000.00",
     "credit": "-",
-    "balance": "7,237.23"
+    "balance": "3,57,237.23"
   },
   {
     "id": "406",
@@ -4570,7 +4570,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "3,237.23"
+    "balance": "3,53,237.23"
   },
   {
     "id": "407",
@@ -4581,7 +4581,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "2,237.23"
+    "balance": "3,52,237.23"
   },
   {
     "id": "408",
@@ -4592,7 +4592,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "127.00",
     "credit": "-",
-    "balance": "2,110.23"
+    "balance": "3,52,110.23"
   },
   {
     "id": "409",
@@ -4603,7 +4603,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "92.00",
     "credit": "-",
-    "balance": "2,018.23"
+    "balance": "3,52,018.23"
   },
   {
     "id": "410",
@@ -4614,7 +4614,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,983.23"
+    "balance": "3,51,983.23"
   },
   {
     "id": "411",
@@ -4625,7 +4625,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "96.00",
     "credit": "-",
-    "balance": "1,887.23"
+    "balance": "3,51,887.23"
   },
   {
     "id": "412",
@@ -4636,7 +4636,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "101.00",
     "credit": "-",
-    "balance": "1,786.23"
+    "balance": "3,51,786.23"
   },
   {
     "id": "413",
@@ -4647,7 +4647,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "1,286.23"
+    "balance": "3,51,286.23"
   },
   {
     "id": "414",
@@ -4658,7 +4658,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "355.00",
     "credit": "-",
-    "balance": "931.23"
+    "balance": "3,50,931.23"
   },
   {
     "id": "415",
@@ -4669,7 +4669,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "856.23"
+    "balance": "3,50,856.23"
   },
   {
     "id": "416",
@@ -4680,7 +4680,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "821.23"
+    "balance": "3,50,821.23"
   },
   {
     "id": "417",
@@ -4691,7 +4691,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "721.23"
+    "balance": "3,50,721.23"
   },
   {
     "id": "418",
@@ -4702,7 +4702,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "150.00",
     "credit": "-",
-    "balance": "571.23"
+    "balance": "3,50,571.23"
   },
   {
     "id": "419",
@@ -4713,7 +4713,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "150.52",
-    "balance": "721.75"
+    "balance": "3,50,721.75"
   },
   {
     "id": "420",
@@ -4724,7 +4724,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "421.75"
+    "balance": "3,50,421.75"
   },
   {
     "id": "421",
@@ -4735,7 +4735,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "10,000.00",
-    "balance": "10,421.75"
+    "balance": "3,60,421.75"
   },
   {
     "id": "422",
@@ -4746,7 +4746,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "10,000.00",
-    "balance": "20,421.75"
+    "balance": "3,70,421.75"
   },
   {
     "id": "423",
@@ -4757,7 +4757,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "10,421.75"
+    "balance": "3,60,421.75"
   },
   {
     "id": "424",
@@ -4768,7 +4768,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "560.00",
     "credit": "-",
-    "balance": "9,861.75"
+    "balance": "3,59,861.75"
   },
   {
     "id": "425",
@@ -4779,7 +4779,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "7,861.75"
+    "balance": "3,57,861.75"
   },
   {
     "id": "426",
@@ -4790,7 +4790,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "3,861.75"
+    "balance": "3,53,861.75"
   },
   {
     "id": "427",
@@ -4801,7 +4801,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "2,361.75"
+    "balance": "3,52,361.75"
   },
   {
     "id": "428",
@@ -4812,7 +4812,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "150.00",
     "credit": "-",
-    "balance": "2,211.75"
+    "balance": "3,52,211.75"
   },
   {
     "id": "429",
@@ -4823,7 +4823,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "2,181.75"
+    "balance": "3,52,181.75"
   },
   {
     "id": "430",
@@ -4834,7 +4834,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,300.00",
     "credit": "-",
-    "balance": "881.75"
+    "balance": "3,50,881.75"
   },
   {
     "id": "431",
@@ -4845,7 +4845,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "846.75"
+    "balance": "3,50,846.75"
   },
   {
     "id": "432",
@@ -4856,7 +4856,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "84.00",
     "credit": "-",
-    "balance": "762.75"
+    "balance": "3,50,762.75"
   },
   {
     "id": "433",
@@ -4867,7 +4867,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "61.00",
     "credit": "-",
-    "balance": "701.75"
+    "balance": "3,50,701.75"
   },
   {
     "id": "434",
@@ -4878,7 +4878,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "164.00",
     "credit": "-",
-    "balance": "537.75"
+    "balance": "3,50,537.75"
   },
   {
     "id": "435",
@@ -4889,7 +4889,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "57.00",
     "credit": "-",
-    "balance": "480.75"
+    "balance": "3,50,480.75"
   },
   {
     "id": "436",
@@ -4900,7 +4900,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "445.75"
+    "balance": "3,50,445.75"
   },
   {
     "id": "437",
@@ -4911,7 +4911,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "24.00",
-    "balance": "469.75"
+    "balance": "3,50,469.75"
   },
   {
     "id": "438",
@@ -4922,7 +4922,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "434.75"
+    "balance": "3,50,434.75"
   },
   {
     "id": "439",
@@ -4933,7 +4933,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,434.75"
+    "balance": "3,51,434.75"
   },
   {
     "id": "440",
@@ -4944,7 +4944,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,500.00",
-    "balance": "3,934.75"
+    "balance": "3,53,934.75"
   },
   {
     "id": "441",
@@ -4955,7 +4955,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,605.00",
     "credit": "-",
-    "balance": "1,329.75"
+    "balance": "3,51,329.75"
   },
   {
     "id": "442",
@@ -4966,7 +4966,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "217.00",
     "credit": "-",
-    "balance": "1,112.75"
+    "balance": "3,51,112.75"
   },
   {
     "id": "443",
@@ -4977,7 +4977,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "85.00",
     "credit": "-",
-    "balance": "1,027.75"
+    "balance": "3,51,027.75"
   },
   {
     "id": "444",
@@ -4988,7 +4988,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "992.75"
+    "balance": "3,50,992.75"
   },
   {
     "id": "445",
@@ -4999,7 +4999,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "917.75"
+    "balance": "3,50,917.75"
   },
   {
     "id": "446",
@@ -5010,7 +5010,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "417.75"
+    "balance": "3,50,417.75"
   },
   {
     "id": "447",
@@ -5021,7 +5021,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "5,417.75"
+    "balance": "3,55,417.75"
   },
   {
     "id": "448",
@@ -5032,7 +5032,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "7,417.75"
+    "balance": "3,57,417.75"
   },
   {
     "id": "449",
@@ -5043,7 +5043,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "5,417.75"
+    "balance": "3,55,417.75"
   },
   {
     "id": "450",
@@ -5054,7 +5054,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "3,417.75"
+    "balance": "3,53,417.75"
   },
   {
     "id": "451",
@@ -5065,7 +5065,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "1,417.75"
+    "balance": "3,51,417.75"
   },
   {
     "id": "452",
@@ -5076,7 +5076,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "76.00",
     "credit": "-",
-    "balance": "1,341.75"
+    "balance": "3,51,341.75"
   },
   {
     "id": "453",
@@ -5087,7 +5087,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "1,141.75"
+    "balance": "3,51,141.75"
   },
   {
     "id": "454",
@@ -5098,7 +5098,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "1,121.75"
+    "balance": "3,51,121.75"
   },
   {
     "id": "455",
@@ -5109,7 +5109,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,086.75"
+    "balance": "3,51,086.75"
   },
   {
     "id": "456",
@@ -5120,7 +5120,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "84.00",
     "credit": "-",
-    "balance": "1,002.75"
+    "balance": "3,51,002.75"
   },
   {
     "id": "457",
@@ -5131,7 +5131,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "602.75"
+    "balance": "3,50,602.75"
   },
   {
     "id": "458",
@@ -5142,7 +5142,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "29,700.00",
-    "balance": "30,302.75"
+    "balance": "3,80,302.75"
   },
   {
     "id": "459",
@@ -5153,7 +5153,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "20,302.75"
+    "balance": "3,70,302.75"
   },
   {
     "id": "460",
@@ -5164,7 +5164,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "10,302.75"
+    "balance": "3,60,302.75"
   },
   {
     "id": "461",
@@ -5175,7 +5175,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,800.00",
     "credit": "-",
-    "balance": "7,502.75"
+    "balance": "3,57,502.75"
   },
   {
     "id": "462",
@@ -5186,7 +5186,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "6,502.75"
+    "balance": "3,56,502.75"
   },
   {
     "id": "463",
@@ -5197,7 +5197,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "6,302.75"
+    "balance": "3,56,302.75"
   },
   {
     "id": "464",
@@ -5208,7 +5208,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,300.00",
     "credit": "-",
-    "balance": "5,002.75"
+    "balance": "3,55,002.75"
   },
   {
     "id": "465",
@@ -5219,7 +5219,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "4,927.75"
+    "balance": "3,54,927.75"
   },
   {
     "id": "466",
@@ -5230,7 +5230,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "4,427.75"
+    "balance": "3,54,427.75"
   },
   {
     "id": "467",
@@ -5241,7 +5241,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "4,392.75"
+    "balance": "3,54,392.75"
   },
   {
     "id": "468",
@@ -5252,7 +5252,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "470.00",
     "credit": "-",
-    "balance": "3,922.75"
+    "balance": "3,53,922.75"
   },
   {
     "id": "469",
@@ -5263,7 +5263,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "40.00",
     "credit": "-",
-    "balance": "3,882.75"
+    "balance": "3,53,882.75"
   },
   {
     "id": "470",
@@ -5274,7 +5274,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,012.00",
     "credit": "-",
-    "balance": "1,870.75"
+    "balance": "3,51,870.75"
   },
   {
     "id": "471",
@@ -5285,7 +5285,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "1,820.75"
+    "balance": "3,51,820.75"
   },
   {
     "id": "472",
@@ -5296,7 +5296,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,785.75"
+    "balance": "3,51,785.75"
   },
   {
     "id": "473",
@@ -5307,7 +5307,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10.00",
     "credit": "-",
-    "balance": "1,775.75"
+    "balance": "3,51,775.75"
   },
   {
     "id": "474",
@@ -5318,7 +5318,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "87.00",
     "credit": "-",
-    "balance": "1,688.75"
+    "balance": "3,51,688.75"
   },
   {
     "id": "475",
@@ -5329,7 +5329,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "658.00",
     "credit": "-",
-    "balance": "1,030.75"
+    "balance": "3,51,030.75"
   },
   {
     "id": "476",
@@ -5340,7 +5340,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "44.00",
     "credit": "-",
-    "balance": "986.75"
+    "balance": "3,50,986.75"
   },
   {
     "id": "477",
@@ -5351,7 +5351,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "80.00",
     "credit": "-",
-    "balance": "906.75"
+    "balance": "3,50,906.75"
   },
   {
     "id": "478",
@@ -5362,7 +5362,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "806.75"
+    "balance": "3,50,806.75"
   },
   {
     "id": "479",
@@ -5373,7 +5373,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "733.75"
+    "balance": "3,50,733.75"
   },
   {
     "id": "480",
@@ -5384,7 +5384,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "663.75"
+    "balance": "3,50,663.75"
   },
   {
     "id": "481",
@@ -5395,7 +5395,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "628.75"
+    "balance": "3,50,628.75"
   },
   {
     "id": "482",
@@ -5406,7 +5406,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "553.75"
+    "balance": "3,50,553.75"
   },
   {
     "id": "483",
@@ -5417,7 +5417,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "518.75"
+    "balance": "3,50,518.75"
   },
   {
     "id": "484",
@@ -5428,7 +5428,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "445.75"
+    "balance": "3,50,445.75"
   },
   {
     "id": "485",
@@ -5439,7 +5439,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50,000.00",
-    "balance": "50,445.75"
+    "balance": "4,00,445.75"
   },
   {
     "id": "486",
@@ -5450,7 +5450,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "8,000.00",
     "credit": "-",
-    "balance": "42,445.75"
+    "balance": "3,92,445.75"
   },
   {
     "id": "487",
@@ -5461,7 +5461,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "32,445.75"
+    "balance": "3,82,445.75"
   },
   {
     "id": "488",
@@ -5472,7 +5472,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "15,000.00",
     "credit": "-",
-    "balance": "17,445.75"
+    "balance": "3,67,445.75"
   },
   {
     "id": "489",
@@ -5483,7 +5483,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "14,445.75"
+    "balance": "3,64,445.75"
   },
   {
     "id": "490",
@@ -5494,7 +5494,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "9,445.75"
+    "balance": "3,59,445.75"
   },
   {
     "id": "491",
@@ -5505,7 +5505,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,420.00",
     "credit": "-",
-    "balance": "6,025.75"
+    "balance": "3,56,025.75"
   },
   {
     "id": "492",
@@ -5516,7 +5516,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "6,000.00",
-    "balance": "12,025.75"
+    "balance": "3,62,025.75"
   },
   {
     "id": "493",
@@ -5527,7 +5527,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "25,000.00",
-    "balance": "37,025.75"
+    "balance": "3,87,025.75"
   },
   {
     "id": "494",
@@ -5538,7 +5538,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "36,825.75"
+    "balance": "3,86,825.75"
   },
   {
     "id": "495",
@@ -5549,7 +5549,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "120.00",
     "credit": "-",
-    "balance": "36,705.75"
+    "balance": "3,86,705.75"
   },
   {
     "id": "496",
@@ -5560,7 +5560,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "26.00",
-    "balance": "36,731.75"
+    "balance": "3,86,731.75"
   },
   {
     "id": "497",
@@ -5571,7 +5571,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "12,000.00",
     "credit": "-",
-    "balance": "24,731.75"
+    "balance": "3,74,731.75"
   },
   {
     "id": "498",
@@ -5582,7 +5582,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "6,000.00",
     "credit": "-",
-    "balance": "18,731.75"
+    "balance": "3,68,731.75"
   },
   {
     "id": "499",
@@ -5593,7 +5593,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "20,000.00",
-    "balance": "38,731.75"
+    "balance": "3,88,731.75"
   },
   {
     "id": "500",
@@ -5604,7 +5604,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "33,731.75"
+    "balance": "3,83,731.75"
   },
   {
     "id": "501",
@@ -5615,7 +5615,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "33,696.75"
+    "balance": "3,83,696.75"
   },
   {
     "id": "502",
@@ -5626,7 +5626,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "23,696.75"
+    "balance": "3,73,696.75"
   },
   {
     "id": "503",
@@ -5637,7 +5637,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "13,696.75"
+    "balance": "3,63,696.75"
   },
   {
     "id": "504",
@@ -5648,7 +5648,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "13,661.75"
+    "balance": "3,63,661.75"
   },
   {
     "id": "505",
@@ -5659,7 +5659,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "12,661.75"
+    "balance": "3,62,661.75"
   },
   {
     "id": "506",
@@ -5670,7 +5670,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,493.00",
     "credit": "-",
-    "balance": "7,168.75"
+    "balance": "3,57,168.75"
   },
   {
     "id": "507",
@@ -5681,7 +5681,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "4,168.75"
+    "balance": "3,54,168.75"
   },
   {
     "id": "508",
@@ -5692,7 +5692,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "1,168.75"
+    "balance": "3,51,168.75"
   },
   {
     "id": "509",
@@ -5703,7 +5703,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "868.75"
+    "balance": "3,50,868.75"
   },
   {
     "id": "510",
@@ -5714,7 +5714,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "818.75"
+    "balance": "3,50,818.75"
   },
   {
     "id": "511",
@@ -5725,7 +5725,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "400.00",
-    "balance": "1,218.75"
+    "balance": "3,51,218.75"
   },
   {
     "id": "512",
@@ -5736,7 +5736,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "818.75"
+    "balance": "3,50,818.75"
   },
   {
     "id": "513",
@@ -5747,7 +5747,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "743.75"
+    "balance": "3,50,743.75"
   },
   {
     "id": "514",
@@ -5758,7 +5758,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "708.75"
+    "balance": "3,50,708.75"
   },
   {
     "id": "515",
@@ -5769,7 +5769,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "635.75"
+    "balance": "3,50,635.75"
   },
   {
     "id": "516",
@@ -5780,7 +5780,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,635.75"
+    "balance": "3,51,635.75"
   },
   {
     "id": "517",
@@ -5791,7 +5791,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "4,000.00",
-    "balance": "5,635.75"
+    "balance": "3,55,635.75"
   },
   {
     "id": "518",
@@ -5802,7 +5802,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "74.00",
     "credit": "-",
-    "balance": "5,561.75"
+    "balance": "3,55,561.75"
   },
   {
     "id": "519",
@@ -5813,7 +5813,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "561.75"
+    "balance": "3,50,561.75"
   },
   {
     "id": "520",
@@ -5824,7 +5824,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "5,561.75"
+    "balance": "3,55,561.75"
   },
   {
     "id": "521",
@@ -5835,7 +5835,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "5,486.75"
+    "balance": "3,55,486.75"
   },
   {
     "id": "522",
@@ -5846,7 +5846,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "5,451.75"
+    "balance": "3,55,451.75"
   },
   {
     "id": "523",
@@ -5857,7 +5857,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "73.00",
     "credit": "-",
-    "balance": "5,378.75"
+    "balance": "3,55,378.75"
   },
   {
     "id": "524",
@@ -5868,7 +5868,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "4,378.75"
+    "balance": "3,54,378.75"
   },
   {
     "id": "525",
@@ -5879,7 +5879,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,750.00",
     "credit": "-",
-    "balance": "628.75"
+    "balance": "3,50,628.75"
   },
   {
     "id": "526",
@@ -5890,7 +5890,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "400.54",
-    "balance": "1,029.29"
+    "balance": "3,51,029.29"
   },
   {
     "id": "527",
@@ -5901,7 +5901,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "529.29"
+    "balance": "3,50,529.29"
   },
   {
     "id": "528",
@@ -5912,7 +5912,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "5,529.29"
+    "balance": "3,55,529.29"
   },
   {
     "id": "529",
@@ -5923,7 +5923,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "2,529.29"
+    "balance": "3,52,529.29"
   },
   {
     "id": "530",
@@ -5934,7 +5934,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "1,529.29"
+    "balance": "3,51,529.29"
   },
   {
     "id": "531",
@@ -5945,7 +5945,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "2,529.29"
+    "balance": "3,52,529.29"
   },
   {
     "id": "532",
@@ -5956,7 +5956,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "529.29"
+    "balance": "3,50,529.29"
   },
   {
     "id": "533",
@@ -5967,7 +5967,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "150.00",
     "credit": "-",
-    "balance": "379.29"
+    "balance": "3,50,379.29"
   },
   {
     "id": "534",
@@ -5978,7 +5978,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "30.00",
-    "balance": "409.29"
+    "balance": "3,50,409.29"
   },
   {
     "id": "535",
@@ -5989,7 +5989,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "46.00",
     "credit": "-",
-    "balance": "363.29"
+    "balance": "3,50,363.29"
   },
   {
     "id": "536",
@@ -6000,7 +6000,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50.00",
-    "balance": "413.29"
+    "balance": "3,50,413.29"
   },
   {
     "id": "537",
@@ -6011,7 +6011,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "32.00",
     "credit": "-",
-    "balance": "381.29"
+    "balance": "3,50,381.29"
   },
   {
     "id": "538",
@@ -6022,7 +6022,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,381.29"
+    "balance": "3,51,381.29"
   },
   {
     "id": "539",
@@ -6033,7 +6033,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "881.29"
+    "balance": "3,50,881.29"
   },
   {
     "id": "540",
@@ -6044,7 +6044,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "67.00",
     "credit": "-",
-    "balance": "814.29"
+    "balance": "3,50,814.29"
   },
   {
     "id": "541",
@@ -6055,7 +6055,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "66.00",
     "credit": "-",
-    "balance": "748.29"
+    "balance": "3,50,748.29"
   },
   {
     "id": "542",
@@ -6066,7 +6066,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "713.29"
+    "balance": "3,50,713.29"
   },
   {
     "id": "543",
@@ -6077,7 +6077,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "678.29"
+    "balance": "3,50,678.29"
   },
   {
     "id": "544",
@@ -6088,7 +6088,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "603.29"
+    "balance": "3,50,603.29"
   },
   {
     "id": "545",
@@ -6099,7 +6099,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "568.29"
+    "balance": "3,50,568.29"
   },
   {
     "id": "546",
@@ -6110,7 +6110,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "503.29"
+    "balance": "3,50,503.29"
   },
   {
     "id": "547",
@@ -6121,7 +6121,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50,000.00",
-    "balance": "50,503.29"
+    "balance": "4,00,503.29"
   },
   {
     "id": "548",
@@ -6132,7 +6132,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "653.08",
     "credit": "-",
-    "balance": "49,850.21"
+    "balance": "3,99,850.21"
   },
   {
     "id": "549",
@@ -6143,7 +6143,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7,000.00",
     "credit": "-",
-    "balance": "42,850.21"
+    "balance": "3,92,850.21"
   },
   {
     "id": "550",
@@ -6154,7 +6154,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "41,850.21"
+    "balance": "3,91,850.21"
   },
   {
     "id": "551",
@@ -6165,7 +6165,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "39,850.21"
+    "balance": "3,89,850.21"
   },
   {
     "id": "552",
@@ -6176,7 +6176,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,100.00",
     "credit": "-",
-    "balance": "38,750.21"
+    "balance": "3,88,750.21"
   },
   {
     "id": "553",
@@ -6187,7 +6187,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "37,250.21"
+    "balance": "3,87,250.21"
   },
   {
     "id": "554",
@@ -6198,7 +6198,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "33,250.21"
+    "balance": "3,83,250.21"
   },
   {
     "id": "555",
@@ -6209,7 +6209,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "900.00",
     "credit": "-",
-    "balance": "32,350.21"
+    "balance": "3,82,350.21"
   },
   {
     "id": "556",
@@ -6220,7 +6220,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "28,350.21"
+    "balance": "3,78,350.21"
   },
   {
     "id": "557",
@@ -6231,7 +6231,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "18,350.21"
+    "balance": "3,68,350.21"
   },
   {
     "id": "558",
@@ -6242,7 +6242,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "8,350.21"
+    "balance": "3,58,350.21"
   },
   {
     "id": "559",
@@ -6253,7 +6253,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "3,350.21"
+    "balance": "3,53,350.21"
   },
   {
     "id": "560",
@@ -6264,7 +6264,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "3,315.21"
+    "balance": "3,53,315.21"
   },
   {
     "id": "561",
@@ -6275,7 +6275,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "2,315.21"
+    "balance": "3,52,315.21"
   },
   {
     "id": "562",
@@ -6286,7 +6286,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "64.00",
     "credit": "-",
-    "balance": "2,251.21"
+    "balance": "3,52,251.21"
   },
   {
     "id": "563",
@@ -6297,7 +6297,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50,000.00",
-    "balance": "52,251.21"
+    "balance": "4,02,251.21"
   },
   {
     "id": "564",
@@ -6308,7 +6308,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30,000.00",
     "credit": "-",
-    "balance": "22,251.21"
+    "balance": "3,72,251.21"
   },
   {
     "id": "565",
@@ -6319,7 +6319,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "18,251.21"
+    "balance": "3,68,251.21"
   },
   {
     "id": "566",
@@ -6330,7 +6330,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "15,251.21"
+    "balance": "3,65,251.21"
   },
   {
     "id": "567",
@@ -6341,7 +6341,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,955.00",
     "credit": "-",
-    "balance": "12,296.21"
+    "balance": "3,62,296.21"
   },
   {
     "id": "568",
@@ -6352,7 +6352,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,500.00",
     "credit": "-",
-    "balance": "8,796.21"
+    "balance": "3,58,796.21"
   },
   {
     "id": "569",
@@ -6363,7 +6363,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,500.00",
     "credit": "-",
-    "balance": "5,296.21"
+    "balance": "3,55,296.21"
   },
   {
     "id": "570",
@@ -6374,7 +6374,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "4,796.21"
+    "balance": "3,54,796.21"
   },
   {
     "id": "571",
@@ -6385,7 +6385,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "9,796.21"
+    "balance": "3,59,796.21"
   },
   {
     "id": "572",
@@ -6396,7 +6396,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "9,596.21"
+    "balance": "3,59,596.21"
   },
   {
     "id": "573",
@@ -6407,7 +6407,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "250.00",
     "credit": "-",
-    "balance": "9,346.21"
+    "balance": "3,59,346.21"
   },
   {
     "id": "574",
@@ -6418,7 +6418,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "6,346.21"
+    "balance": "3,56,346.21"
   },
   {
     "id": "575",
@@ -6429,7 +6429,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "60.00",
     "credit": "-",
-    "balance": "6,286.21"
+    "balance": "3,56,286.21"
   },
   {
     "id": "576",
@@ -6440,7 +6440,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "4,286.21"
+    "balance": "3,54,286.21"
   },
   {
     "id": "577",
@@ -6451,7 +6451,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "3,286.21"
+    "balance": "3,53,286.21"
   },
   {
     "id": "578",
@@ -6462,7 +6462,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "3,251.21"
+    "balance": "3,53,251.21"
   },
   {
     "id": "579",
@@ -6473,7 +6473,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "3,176.21"
+    "balance": "3,53,176.21"
   },
   {
     "id": "580",
@@ -6484,7 +6484,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "3,141.21"
+    "balance": "3,53,141.21"
   },
   {
     "id": "581",
@@ -6495,7 +6495,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "98.00",
     "credit": "-",
-    "balance": "3,043.21"
+    "balance": "3,53,043.21"
   },
   {
     "id": "582",
@@ -6506,7 +6506,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "1,043.21"
+    "balance": "3,51,043.21"
   },
   {
     "id": "583",
@@ -6517,7 +6517,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "3,043.21"
+    "balance": "3,53,043.21"
   },
   {
     "id": "584",
@@ -6528,7 +6528,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "2,843.21"
+    "balance": "3,52,843.21"
   },
   {
     "id": "585",
@@ -6539,7 +6539,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "74.00",
     "credit": "-",
-    "balance": "2,769.21"
+    "balance": "3,52,769.21"
   },
   {
     "id": "586",
@@ -6550,7 +6550,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,734.21"
+    "balance": "3,52,734.21"
   },
   {
     "id": "587",
@@ -6561,7 +6561,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "2,669.21"
+    "balance": "3,52,669.21"
   },
   {
     "id": "588",
@@ -6572,7 +6572,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "920.00",
     "credit": "-",
-    "balance": "1,749.21"
+    "balance": "3,51,749.21"
   },
   {
     "id": "589",
@@ -6583,7 +6583,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "1,349.21"
+    "balance": "3,51,349.21"
   },
   {
     "id": "590",
@@ -6594,7 +6594,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "78.00",
     "credit": "-",
-    "balance": "1,271.21"
+    "balance": "3,51,271.21"
   },
   {
     "id": "591",
@@ -6605,7 +6605,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50.00",
-    "balance": "1,321.21"
+    "balance": "3,51,321.21"
   },
   {
     "id": "592",
@@ -6616,7 +6616,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "150.00",
     "credit": "-",
-    "balance": "1,171.21"
+    "balance": "3,51,171.21"
   },
   {
     "id": "593",
@@ -6627,7 +6627,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "30,000.00",
-    "balance": "31,171.21"
+    "balance": "3,81,171.21"
   },
   {
     "id": "594",
@@ -6638,7 +6638,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "19,500.00",
-    "balance": "50,671.21"
+    "balance": "4,00,671.21"
   },
   {
     "id": "595",
@@ -6649,7 +6649,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "49,171.21"
+    "balance": "3,99,171.21"
   },
   {
     "id": "596",
@@ -6660,7 +6660,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,750.00",
     "credit": "-",
-    "balance": "45,421.21"
+    "balance": "3,95,421.21"
   },
   {
     "id": "597",
@@ -6671,7 +6671,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "35,421.21"
+    "balance": "3,85,421.21"
   },
   {
     "id": "598",
@@ -6682,7 +6682,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "33,421.21"
+    "balance": "3,83,421.21"
   },
   {
     "id": "599",
@@ -6693,7 +6693,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "31,921.21"
+    "balance": "3,81,921.21"
   },
   {
     "id": "600",
@@ -6704,7 +6704,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "31,886.21"
+    "balance": "3,81,886.21"
   },
   {
     "id": "601",
@@ -6715,7 +6715,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "26,886.21"
+    "balance": "3,76,886.21"
   },
   {
     "id": "602",
@@ -6726,7 +6726,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "26,821.21"
+    "balance": "3,76,821.21"
   },
   {
     "id": "603",
@@ -6737,7 +6737,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "25,000.00",
     "credit": "-",
-    "balance": "1,821.21"
+    "balance": "3,51,821.21"
   },
   {
     "id": "604",
@@ -6748,7 +6748,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "1,321.21"
+    "balance": "3,51,321.21"
   },
   {
     "id": "605",
@@ -6759,7 +6759,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "89.80",
     "credit": "-",
-    "balance": "1,231.41"
+    "balance": "3,51,231.41"
   },
   {
     "id": "606",
@@ -6770,7 +6770,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "77.00",
     "credit": "-",
-    "balance": "1,154.41"
+    "balance": "3,51,154.41"
   },
   {
     "id": "607",
@@ -6781,7 +6781,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "45.00",
     "credit": "-",
-    "balance": "1,109.41"
+    "balance": "3,51,109.41"
   },
   {
     "id": "608",
@@ -6792,7 +6792,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "146.00",
     "credit": "-",
-    "balance": "963.41"
+    "balance": "3,50,963.41"
   },
   {
     "id": "609",
@@ -6803,7 +6803,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "928.41"
+    "balance": "3,50,928.41"
   },
   {
     "id": "610",
@@ -6814,7 +6814,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,000.00",
-    "balance": "1,928.41"
+    "balance": "3,51,928.41"
   },
   {
     "id": "611",
@@ -6825,7 +6825,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "800.00",
     "credit": "-",
-    "balance": "1,128.41"
+    "balance": "3,51,128.41"
   },
   {
     "id": "612",
@@ -6836,7 +6836,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "150.00",
     "credit": "-",
-    "balance": "978.41"
+    "balance": "3,50,978.41"
   },
   {
     "id": "613",
@@ -6847,7 +6847,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "943.41"
+    "balance": "3,50,943.41"
   },
   {
     "id": "614",
@@ -6858,7 +6858,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "5,000.00",
-    "balance": "5,943.41"
+    "balance": "3,55,943.41"
   },
   {
     "id": "615",
@@ -6869,7 +6869,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "20,000.00",
-    "balance": "25,943.41"
+    "balance": "3,75,943.41"
   },
   {
     "id": "616",
@@ -6880,7 +6880,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "280.00",
     "credit": "-",
-    "balance": "25,663.41"
+    "balance": "3,75,663.41"
   },
   {
     "id": "617",
@@ -6891,7 +6891,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "25,563.41"
+    "balance": "3,75,563.41"
   },
   {
     "id": "618",
@@ -6902,7 +6902,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "20,563.41"
+    "balance": "3,70,563.41"
   },
   {
     "id": "619",
@@ -6913,7 +6913,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "600.00",
     "credit": "-",
-    "balance": "19,963.41"
+    "balance": "3,69,963.41"
   },
   {
     "id": "620",
@@ -6924,7 +6924,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,500.00",
     "credit": "-",
-    "balance": "14,463.41"
+    "balance": "3,64,463.41"
   },
   {
     "id": "621",
@@ -6935,7 +6935,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,650.00",
     "credit": "-",
-    "balance": "12,813.41"
+    "balance": "3,62,813.41"
   },
   {
     "id": "622",
@@ -6946,7 +6946,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,695.00",
     "credit": "-",
-    "balance": "7,118.41"
+    "balance": "3,57,118.41"
   },
   {
     "id": "623",
@@ -6957,7 +6957,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "720.00",
     "credit": "-",
-    "balance": "6,398.41"
+    "balance": "3,56,398.41"
   },
   {
     "id": "624",
@@ -6968,7 +6968,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "4,398.41"
+    "balance": "3,54,398.41"
   },
   {
     "id": "625",
@@ -6979,7 +6979,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "4,363.41"
+    "balance": "3,54,363.41"
   },
   {
     "id": "626",
@@ -6990,7 +6990,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "4,343.41"
+    "balance": "3,54,343.41"
   },
   {
     "id": "627",
@@ -7001,7 +7001,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "20.00",
     "credit": "-",
-    "balance": "4,323.41"
+    "balance": "3,54,323.41"
   },
   {
     "id": "628",
@@ -7012,7 +7012,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "2,323.41"
+    "balance": "3,52,323.41"
   },
   {
     "id": "629",
@@ -7023,7 +7023,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "120.00",
     "credit": "-",
-    "balance": "2,203.41"
+    "balance": "3,52,203.41"
   },
   {
     "id": "630",
@@ -7034,7 +7034,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "60.00",
     "credit": "-",
-    "balance": "2,143.41"
+    "balance": "3,52,143.41"
   },
   {
     "id": "631",
@@ -7045,7 +7045,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,600.00",
-    "balance": "3,743.41"
+    "balance": "3,53,743.41"
   },
   {
     "id": "632",
@@ -7056,7 +7056,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "3,708.41"
+    "balance": "3,53,708.41"
   },
   {
     "id": "633",
@@ -7067,7 +7067,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,260.00",
     "credit": "-",
-    "balance": "2,448.41"
+    "balance": "3,52,448.41"
   },
   {
     "id": "634",
@@ -7078,7 +7078,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "66.00",
     "credit": "-",
-    "balance": "2,382.41"
+    "balance": "3,52,382.41"
   },
   {
     "id": "635",
@@ -7089,7 +7089,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "17,700.00",
-    "balance": "20,082.41"
+    "balance": "3,70,082.41"
   },
   {
     "id": "636",
@@ -7100,7 +7100,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "15,082.41"
+    "balance": "3,65,082.41"
   },
   {
     "id": "637",
@@ -7111,7 +7111,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1.00",
-    "balance": "15,083.41"
+    "balance": "3,65,083.41"
   },
   {
     "id": "638",
@@ -7122,7 +7122,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "15,048.41"
+    "balance": "3,65,048.41"
   },
   {
     "id": "639",
@@ -7133,7 +7133,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,200.00",
     "credit": "-",
-    "balance": "13,848.41"
+    "balance": "3,63,848.41"
   },
   {
     "id": "640",
@@ -7144,7 +7144,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "72.00",
     "credit": "-",
-    "balance": "13,776.41"
+    "balance": "3,63,776.41"
   },
   {
     "id": "641",
@@ -7155,7 +7155,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "64.00",
     "credit": "-",
-    "balance": "13,712.41"
+    "balance": "3,63,712.41"
   },
   {
     "id": "642",
@@ -7166,7 +7166,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "8,000.00",
     "credit": "-",
-    "balance": "5,712.41"
+    "balance": "3,55,712.41"
   },
   {
     "id": "643",
@@ -7177,7 +7177,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "120.00",
     "credit": "-",
-    "balance": "5,592.41"
+    "balance": "3,55,592.41"
   },
   {
     "id": "644",
@@ -7188,7 +7188,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "108.50",
     "credit": "-",
-    "balance": "5,483.91"
+    "balance": "3,55,483.91"
   },
   {
     "id": "645",
@@ -7199,7 +7199,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "3,483.91"
+    "balance": "3,53,483.91"
   },
   {
     "id": "646",
@@ -7210,7 +7210,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "30.00",
-    "balance": "3,513.91"
+    "balance": "3,53,513.91"
   },
   {
     "id": "647",
@@ -7221,7 +7221,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "3,478.91"
+    "balance": "3,53,478.91"
   },
   {
     "id": "648",
@@ -7232,7 +7232,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "2,978.91"
+    "balance": "3,52,978.91"
   },
   {
     "id": "649",
@@ -7243,7 +7243,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "64.00",
     "credit": "-",
-    "balance": "2,914.91"
+    "balance": "3,52,914.91"
   },
   {
     "id": "650",
@@ -7254,7 +7254,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,879.91"
+    "balance": "3,52,879.91"
   },
   {
     "id": "651",
@@ -7265,7 +7265,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "95.00",
     "credit": "-",
-    "balance": "2,784.91"
+    "balance": "3,52,784.91"
   },
   {
     "id": "652",
@@ -7276,7 +7276,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "120.00",
     "credit": "-",
-    "balance": "2,664.91"
+    "balance": "3,52,664.91"
   },
   {
     "id": "653",
@@ -7287,7 +7287,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,000.00",
     "credit": "-",
-    "balance": "1,664.91"
+    "balance": "3,51,664.91"
   },
   {
     "id": "654",
@@ -7298,7 +7298,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "75.00",
     "credit": "-",
-    "balance": "1,589.91"
+    "balance": "3,51,589.91"
   },
   {
     "id": "655",
@@ -7309,7 +7309,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,554.91"
+    "balance": "3,51,554.91"
   },
   {
     "id": "656",
@@ -7320,7 +7320,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "1,484.91"
+    "balance": "3,51,484.91"
   },
   {
     "id": "657",
@@ -7331,7 +7331,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "180.00",
     "credit": "-",
-    "balance": "1,304.91"
+    "balance": "3,51,304.91"
   },
   {
     "id": "658",
@@ -7342,7 +7342,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "220.00",
     "credit": "-",
-    "balance": "1,084.91"
+    "balance": "3,51,084.91"
   },
   {
     "id": "659",
@@ -7353,7 +7353,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "30.00",
     "credit": "-",
-    "balance": "1,054.91"
+    "balance": "3,51,054.91"
   },
   {
     "id": "660",
@@ -7364,7 +7364,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "18.00",
-    "balance": "1,072.91"
+    "balance": "3,51,072.91"
   },
   {
     "id": "661",
@@ -7375,7 +7375,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "400.00",
     "credit": "-",
-    "balance": "672.91"
+    "balance": "3,50,672.91"
   },
   {
     "id": "662",
@@ -7386,7 +7386,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "637.91"
+    "balance": "3,50,637.91"
   },
   {
     "id": "663",
@@ -7397,7 +7397,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "572.91"
+    "balance": "3,50,572.91"
   },
   {
     "id": "664",
@@ -7408,7 +7408,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "50,000.00",
-    "balance": "50,572.91"
+    "balance": "4,00,572.91"
   },
   {
     "id": "665",
@@ -7419,7 +7419,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7,000.00",
     "credit": "-",
-    "balance": "43,572.91"
+    "balance": "3,93,572.91"
   },
   {
     "id": "666",
@@ -7430,7 +7430,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "39,572.91"
+    "balance": "3,89,572.91"
   },
   {
     "id": "667",
@@ -7441,7 +7441,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "7,000.00",
     "credit": "-",
-    "balance": "32,572.91"
+    "balance": "3,82,572.91"
   },
   {
     "id": "668",
@@ -7452,7 +7452,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "27,572.91"
+    "balance": "3,77,572.91"
   },
   {
     "id": "669",
@@ -7463,7 +7463,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "17,572.91"
+    "balance": "3,67,572.91"
   },
   {
     "id": "670",
@@ -7474,7 +7474,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "7,572.91"
+    "balance": "3,57,572.91"
   },
   {
     "id": "671",
@@ -7485,7 +7485,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "5,000.00",
     "credit": "-",
-    "balance": "2,572.91"
+    "balance": "3,52,572.91"
   },
   {
     "id": "672",
@@ -7496,7 +7496,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "140.00",
     "credit": "-",
-    "balance": "2,432.91"
+    "balance": "3,52,432.91"
   },
   {
     "id": "673",
@@ -7507,7 +7507,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "810.00",
     "credit": "-",
-    "balance": "1,622.91"
+    "balance": "3,51,622.91"
   },
   {
     "id": "674",
@@ -7518,7 +7518,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "320.00",
     "credit": "-",
-    "balance": "1,302.91"
+    "balance": "3,51,302.91"
   },
   {
     "id": "675",
@@ -7529,7 +7529,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "80.00",
     "credit": "-",
-    "balance": "1,222.91"
+    "balance": "3,51,222.91"
   },
   {
     "id": "676",
@@ -7540,7 +7540,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,187.91"
+    "balance": "3,51,187.91"
   },
   {
     "id": "677",
@@ -7551,7 +7551,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "887.91"
+    "balance": "3,50,887.91"
   },
   {
     "id": "678",
@@ -7562,7 +7562,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "852.91"
+    "balance": "3,50,852.91"
   },
   {
     "id": "679",
@@ -7573,7 +7573,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "95.00",
     "credit": "-",
-    "balance": "757.91"
+    "balance": "3,50,757.91"
   },
   {
     "id": "680",
@@ -7584,7 +7584,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "30,000.00",
-    "balance": "30,757.91"
+    "balance": "3,80,757.91"
   },
   {
     "id": "681",
@@ -7595,7 +7595,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "26,757.91"
+    "balance": "3,76,757.91"
   },
   {
     "id": "682",
@@ -7606,7 +7606,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "6,000.00",
     "credit": "-",
-    "balance": "20,757.91"
+    "balance": "3,70,757.91"
   },
   {
     "id": "683",
@@ -7617,7 +7617,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "6,000.00",
     "credit": "-",
-    "balance": "14,757.91"
+    "balance": "3,64,757.91"
   },
   {
     "id": "684",
@@ -7628,7 +7628,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,000.00",
     "credit": "-",
-    "balance": "12,757.91"
+    "balance": "3,62,757.91"
   },
   {
     "id": "685",
@@ -7639,7 +7639,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "8,757.91"
+    "balance": "3,58,757.91"
   },
   {
     "id": "686",
@@ -7650,7 +7650,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "4,000.00",
     "credit": "-",
-    "balance": "4,757.91"
+    "balance": "3,54,757.91"
   },
   {
     "id": "687",
@@ -7661,7 +7661,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "32.10",
     "credit": "-",
-    "balance": "4,725.81"
+    "balance": "3,54,725.81"
   },
   {
     "id": "688",
@@ -7672,7 +7672,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "120.00",
     "credit": "-",
-    "balance": "4,605.81"
+    "balance": "3,54,605.81"
   },
   {
     "id": "689",
@@ -7683,7 +7683,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "70.00",
     "credit": "-",
-    "balance": "4,535.81"
+    "balance": "3,54,535.81"
   },
   {
     "id": "690",
@@ -7694,7 +7694,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "4,500.81"
+    "balance": "3,54,500.81"
   },
   {
     "id": "691",
@@ -7705,7 +7705,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,469.00",
     "credit": "-",
-    "balance": "1,031.81"
+    "balance": "3,51,031.81"
   },
   {
     "id": "692",
@@ -7716,7 +7716,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "64.00",
     "credit": "-",
-    "balance": "967.81"
+    "balance": "3,50,967.81"
   },
   {
     "id": "693",
@@ -7727,7 +7727,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "142.00",
     "credit": "-",
-    "balance": "825.81"
+    "balance": "3,50,825.81"
   },
   {
     "id": "694",
@@ -7738,7 +7738,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "400.02",
-    "balance": "1,225.83"
+    "balance": "3,51,225.83"
   },
   {
     "id": "695",
@@ -7749,7 +7749,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "725.83"
+    "balance": "3,50,725.83"
   },
   {
     "id": "696",
@@ -7760,7 +7760,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "67.00",
     "credit": "-",
-    "balance": "658.83"
+    "balance": "3,50,658.83"
   },
   {
     "id": "697",
@@ -7771,7 +7771,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "623.83"
+    "balance": "3,50,623.83"
   },
   {
     "id": "698",
@@ -7782,7 +7782,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "85.00",
     "credit": "-",
-    "balance": "538.83"
+    "balance": "3,50,538.83"
   },
   {
     "id": "699",
@@ -7793,7 +7793,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "2,000.00",
-    "balance": "2,538.83"
+    "balance": "3,52,538.83"
   },
   {
     "id": "700",
@@ -7804,7 +7804,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "900.00",
     "credit": "-",
-    "balance": "1,638.83"
+    "balance": "3,51,638.83"
   },
   {
     "id": "701",
@@ -7815,7 +7815,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "320.00",
     "credit": "-",
-    "balance": "1,318.83"
+    "balance": "3,51,318.83"
   },
   {
     "id": "702",
@@ -7826,7 +7826,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "3,000.00",
-    "balance": "4,318.83"
+    "balance": "3,54,318.83"
   },
   {
     "id": "703",
@@ -7837,7 +7837,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "1,318.83"
+    "balance": "3,51,318.83"
   },
   {
     "id": "704",
@@ -7848,7 +7848,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "54.00",
     "credit": "-",
-    "balance": "1,264.83"
+    "balance": "3,51,264.83"
   },
   {
     "id": "705",
@@ -7859,7 +7859,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "900.00",
-    "balance": "2,164.83"
+    "balance": "3,52,164.83"
   },
   {
     "id": "706",
@@ -7870,7 +7870,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "67.00",
     "credit": "-",
-    "balance": "2,097.83"
+    "balance": "3,52,097.83"
   },
   {
     "id": "707",
@@ -7881,7 +7881,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,062.83"
+    "balance": "3,52,062.83"
   },
   {
     "id": "708",
@@ -7892,7 +7892,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "83.00",
     "credit": "-",
-    "balance": "1,979.83"
+    "balance": "3,51,979.83"
   },
   {
     "id": "709",
@@ -7903,7 +7903,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "1,879.83"
+    "balance": "3,51,879.83"
   },
   {
     "id": "710",
@@ -7914,7 +7914,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "66.00",
     "credit": "-",
-    "balance": "1,813.83"
+    "balance": "3,51,813.83"
   },
   {
     "id": "711",
@@ -7925,7 +7925,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "190.00",
     "credit": "-",
-    "balance": "1,623.83"
+    "balance": "3,51,623.83"
   },
   {
     "id": "712",
@@ -7936,7 +7936,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,588.83"
+    "balance": "3,51,588.83"
   },
   {
     "id": "713",
@@ -7947,7 +7947,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "428.00",
     "credit": "-",
-    "balance": "1,160.83"
+    "balance": "3,51,160.83"
   },
   {
     "id": "714",
@@ -7958,7 +7958,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "85.00",
     "credit": "-",
-    "balance": "1,075.83"
+    "balance": "3,51,075.83"
   },
   {
     "id": "715",
@@ -7969,7 +7969,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,040.83"
+    "balance": "3,51,040.83"
   },
   {
     "id": "716",
@@ -7980,7 +7980,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "840.83"
+    "balance": "3,50,840.83"
   },
   {
     "id": "717",
@@ -7991,7 +7991,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "71.00",
     "credit": "-",
-    "balance": "769.83"
+    "balance": "3,50,769.83"
   },
   {
     "id": "718",
@@ -8002,7 +8002,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "734.83"
+    "balance": "3,50,734.83"
   },
   {
     "id": "719",
@@ -8013,7 +8013,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "80.00",
     "credit": "-",
-    "balance": "654.83"
+    "balance": "3,50,654.83"
   },
   {
     "id": "720",
@@ -8024,7 +8024,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "554.83"
+    "balance": "3,50,554.83"
   },
   {
     "id": "721",
@@ -8035,7 +8035,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.00",
     "credit": "-",
-    "balance": "504.83"
+    "balance": "3,50,504.83"
   },
   {
     "id": "722",
@@ -8046,7 +8046,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "350.06",
-    "balance": "854.89"
+    "balance": "3,50,854.89"
   },
   {
     "id": "723",
@@ -8057,7 +8057,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "360.00",
     "credit": "-",
-    "balance": "494.89"
+    "balance": "3,50,494.89"
   },
   {
     "id": "724",
@@ -8068,7 +8068,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "459.89"
+    "balance": "3,50,459.89"
   },
   {
     "id": "725",
@@ -8079,7 +8079,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "424.89"
+    "balance": "3,50,424.89"
   },
   {
     "id": "726",
@@ -8089,8 +8089,8 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "description": "DEP TFR\nUPI/CR/347898768252/MOHAMM\nAD/BKID/9849839645/Paym\n0097732162091 AT 20876\nCHAITANYAPURI",
     "refNo": "-",
     "debit": "-",
-    "credit": "40,000.00",
-    "balance": "40,424.89"
+    "credit": "5,40,000.00",
+    "balance": "8,90,424.89"
   },
   {
     "id": "727",
@@ -8101,7 +8101,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "10,000.00",
     "credit": "-",
-    "balance": "30,424.89"
+    "balance": "8,80,424.89"
   },
   {
     "id": "728",
@@ -8112,7 +8112,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,750.00",
     "credit": "-",
-    "balance": "26,674.89"
+    "balance": "8,76,674.89"
   },
   {
     "id": "729",
@@ -8123,7 +8123,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,500.00",
     "credit": "-",
-    "balance": "23,174.89"
+    "balance": "8,73,174.89"
   },
   {
     "id": "730",
@@ -8134,7 +8134,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "20,174.89"
+    "balance": "8,70,174.89"
   },
   {
     "id": "731",
@@ -8145,7 +8145,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "17,174.89"
+    "balance": "8,67,174.89"
   },
   {
     "id": "732",
@@ -8156,7 +8156,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "3,000.00",
     "credit": "-",
-    "balance": "14,174.89"
+    "balance": "8,64,174.89"
   },
   {
     "id": "733",
@@ -8167,7 +8167,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,800.00",
     "credit": "-",
-    "balance": "12,374.89"
+    "balance": "8,62,374.89"
   },
   {
     "id": "734",
@@ -8178,7 +8178,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,500.00",
     "credit": "-",
-    "balance": "9,874.89"
+    "balance": "8,59,874.89"
   },
   {
     "id": "735",
@@ -8189,7 +8189,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,500.00",
     "credit": "-",
-    "balance": "7,374.89"
+    "balance": "8,57,374.89"
   },
   {
     "id": "736",
@@ -8200,7 +8200,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "800.00",
     "credit": "-",
-    "balance": "6,574.89"
+    "balance": "8,56,574.89"
   },
   {
     "id": "737",
@@ -8211,7 +8211,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "50.41",
     "credit": "-",
-    "balance": "6,524.48"
+    "balance": "8,56,524.48"
   },
   {
     "id": "738",
@@ -8222,7 +8222,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "6,459.48"
+    "balance": "8,56,459.48"
   },
   {
     "id": "739",
@@ -8233,7 +8233,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "6,424.48"
+    "balance": "8,56,424.48"
   },
   {
     "id": "740",
@@ -8244,7 +8244,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "6,359.48"
+    "balance": "8,56,359.48"
   },
   {
     "id": "741",
@@ -8255,7 +8255,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "600.00",
     "credit": "-",
-    "balance": "5,759.48"
+    "balance": "8,55,759.48"
   },
   {
     "id": "742",
@@ -8266,7 +8266,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "40.00",
     "credit": "-",
-    "balance": "5,719.48"
+    "balance": "8,55,719.48"
   },
   {
     "id": "743",
@@ -8277,7 +8277,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,250.00",
     "credit": "-",
-    "balance": "4,469.48"
+    "balance": "8,54,469.48"
   },
   {
     "id": "744",
@@ -8288,7 +8288,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "300.00",
     "credit": "-",
-    "balance": "4,169.48"
+    "balance": "8,54,169.48"
   },
   {
     "id": "745",
@@ -8299,7 +8299,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "4,069.48"
+    "balance": "8,54,069.48"
   },
   {
     "id": "746",
@@ -8310,7 +8310,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "2,500.00",
     "credit": "-",
-    "balance": "1,569.48"
+    "balance": "8,51,569.48"
   },
   {
     "id": "747",
@@ -8321,7 +8321,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "200.00",
     "credit": "-",
-    "balance": "1,369.48"
+    "balance": "8,51,369.48"
   },
   {
     "id": "748",
@@ -8332,7 +8332,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "1,334.48"
+    "balance": "8,51,334.48"
   },
   {
     "id": "749",
@@ -8343,7 +8343,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "80.00",
     "credit": "-",
-    "balance": "1,254.48"
+    "balance": "8,51,254.48"
   },
   {
     "id": "750",
@@ -8354,7 +8354,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "250.00",
     "credit": "-",
-    "balance": "1,004.48"
+    "balance": "8,51,004.48"
   },
   {
     "id": "751",
@@ -8365,7 +8365,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,500.00",
-    "balance": "2,504.48"
+    "balance": "8,52,504.48"
   },
   {
     "id": "752",
@@ -8376,7 +8376,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "1,004.48"
+    "balance": "8,51,004.48"
   },
   {
     "id": "753",
@@ -8387,7 +8387,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "1,500.00",
-    "balance": "2,504.48"
+    "balance": "8,52,504.48"
   },
   {
     "id": "754",
@@ -8398,7 +8398,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "68.00",
     "credit": "-",
-    "balance": "2,436.48"
+    "balance": "8,52,436.48"
   },
   {
     "id": "755",
@@ -8409,7 +8409,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "74.00",
     "credit": "-",
-    "balance": "2,362.48"
+    "balance": "8,52,362.48"
   },
   {
     "id": "756",
@@ -8420,7 +8420,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "60.00",
     "credit": "-",
-    "balance": "2,302.48"
+    "balance": "8,52,302.48"
   },
   {
     "id": "757",
@@ -8431,7 +8431,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "2,267.48"
+    "balance": "8,52,267.48"
   },
   {
     "id": "758",
@@ -8442,7 +8442,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "500.00",
     "credit": "-",
-    "balance": "1,767.48"
+    "balance": "8,51,767.48"
   },
   {
     "id": "759",
@@ -8453,7 +8453,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "1,702.48"
+    "balance": "8,51,702.48"
   },
   {
     "id": "760",
@@ -8464,7 +8464,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "180.50",
-    "balance": "1,882.98"
+    "balance": "8,51,882.98"
   },
   {
     "id": "761",
@@ -8475,7 +8475,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "1,500.00",
     "credit": "-",
-    "balance": "382.98"
+    "balance": "8,50,382.98"
   },
   {
     "id": "762",
@@ -8486,7 +8486,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "-",
     "credit": "500.00",
-    "balance": "882.98"
+    "balance": "8,50,882.98"
   },
   {
     "id": "763",
@@ -8497,7 +8497,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "100.00",
     "credit": "-",
-    "balance": "782.98"
+    "balance": "8,50,782.98"
   },
   {
     "id": "764",
@@ -8508,7 +8508,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "67.00",
     "credit": "-",
-    "balance": "715.98"
+    "balance": "8,50,715.98"
   },
   {
     "id": "765",
@@ -8519,7 +8519,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "57.00",
     "credit": "-",
-    "balance": "658.98"
+    "balance": "8,50,658.98"
   },
   {
     "id": "766",
@@ -8530,7 +8530,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "35.00",
     "credit": "-",
-    "balance": "623.98"
+    "balance": "8,50,623.98"
   },
   {
     "id": "767",
@@ -8541,6 +8541,7 @@ export const sbi3Transactions: SBI3Transaction[] = [
     "refNo": "-",
     "debit": "65.00",
     "credit": "-",
-    "balance": "558.98"
+    "balance": "8,50,558.98"
+
   }
 ];

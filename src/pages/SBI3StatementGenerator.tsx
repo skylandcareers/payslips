@@ -441,19 +441,19 @@ function Table({
           </div>
           <div
             style={{ width: sbi3ColumnWidths.debit }}
-            className="sbi3-cell sbi3-cell-amount"
+            className="sbi3-cell sbi3-cell-center"
           >
             {row.debit}
           </div>
           <div
             style={{ width: sbi3ColumnWidths.credit }}
-            className="sbi3-cell sbi3-cell-amount"
+            className="sbi3-cell sbi3-cell-center"
           >
             {row.credit}
           </div>
           <div
             style={{ width: sbi3ColumnWidths.balance }}
-            className="sbi3-cell sbi3-cell-amount"
+            className="sbi3-cell sbi3-cell-center"
           >
             {row.balance}
           </div>
@@ -573,8 +573,7 @@ export default function SBI3StatementGenerator() {
       toast.success('SBI Statement PDF downloaded successfully.');
     } catch (error) {
       toast.error(
-        `Failed to download PDF: ${
-          error instanceof Error ? error.message : 'Unknown error'
+        `Failed to download PDF: ${error instanceof Error ? error.message : 'Unknown error'
         }`
       );
     } finally {
@@ -622,6 +621,8 @@ export default function SBI3StatementGenerator() {
         .c7 { font-family: 'SBI Helvetica', Helvetica, Arial, sans-serif; font-size: 10.67px; color: #000000; }
         .c8 { font-family: 'SBI Helvetica', Helvetica, Arial, sans-serif; font-size: 10px; color: #000000; }
 
+
+        
         /* Table layout */
         .sbi3-table { position: absolute; left: 26.67px; width: 740px; box-sizing: border-box; }
         .sbi3-table-header { display: flex; width: 740px; height: 49.33px; background: #5553aa; border: 0.67px solid #b8b8b8; box-sizing: border-box; }
@@ -629,10 +630,10 @@ export default function SBI3StatementGenerator() {
         .sbi3-th-multiline { flex-direction: column; font-size: 10px; line-height: 12px; }
         .sbi3-th-cell:last-child { border-right: none; }
         .sbi3-table-row { display: flex; width: 740px; border-left: 0.67px solid #b8b8b8; border-right: 0.67px solid #b8b8b8; border-bottom: 0.67px solid #b8b8b8; box-sizing: border-box; }
-        .sbi3-cell { border-right: 0.67px solid #b8b8b8; box-sizing: border-box; overflow: hidden; font-size: 10.67px; line-height: 12.5px; font-family: 'SBI Helvetica', Helvetica, Arial, sans-serif; color: #000000; }
+        .sbi3-cell { border-right: 0.67px solid #b8b8b8; box-sizing: border-box; overflow: visible; font-size: 10.67px; line-height: 12.5px; font-weight: 500; font-family: Arial, Helvetica, sans-serif; color: #000000; -webkit-text-stroke: 0.10px #000000; text-rendering: geometricPrecision; }
         .sbi3-cell:last-child { border-right: none; }
         .sbi3-cell-center { display: flex; align-items: center; justify-content: center; text-align: center; }
-        .sbi3-cell-desc { display: flex; flex-direction: column; justify-content: center; padding: 4px 6px; text-align: left; }
+        .sbi3-cell-desc { display: flex; flex-direction: column; justify-content: flex-start; padding: 6px 6px 2px 6px; text-align: left; line-height: 11.5px; overflow: visible; }
         .sbi3-desc-line { white-space: pre-wrap; word-break: break-word; }
         .sbi3-cell-amount { display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; text-align: right; font-variant-numeric: tabular-nums; }
         .sbi3-table-ending-row { display: flex; width: 740px; height: 40px; background: #5553aa; border-left: 0.67px solid #b8b8b8; border-right: 0.67px solid #b8b8b8; border-bottom: 0.67px solid #b8b8b8; box-sizing: border-box; }
