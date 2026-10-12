@@ -94,7 +94,7 @@ function Page1Header() {
         </Text>
       ))}
 
-      <Text x={90.67} y={276.13} className="c3">
+      <Text x={86.67} y={276.13} className="c3">
         Date of Statement
       </Text>
       <Text x={265.33} y={276.42} className="c4">
@@ -104,7 +104,7 @@ function Page1Header() {
         {account.statementDate}
       </Text>
 
-      <Text x={89.33} y={314.80} className="c3">
+      <Text x={86.67} y={314.80} className="c3">
         Clear Balance
       </Text>
       <Text x={265.33} y={312.42} className="c4">
@@ -114,7 +114,7 @@ function Page1Header() {
         {account.clearBalance}
       </Text>
 
-      <Text x={88.00} y={344.13} className="c3">
+      <Text x={86.67} y={344.13} className="c3">
         Uncleared Amount
       </Text>
       <Text x={265.33} y={343.08} className="c4">
@@ -124,13 +124,13 @@ function Page1Header() {
         {account.unclearedAmount}
       </Text>
 
-      <Text x={88.00} y={376.13} className="c3">
+      <Text x={86.67} y={376.13} className="c3">
         +MOD Bal
       </Text>
       <Text x={265.33} y={376.42} className="c4">
         :
       </Text>
-      <Text x={277.33} y={377.47} className="c3">
+      <Text x={276.00} y={377.47} className="c3">
         {account.modBalance}
       </Text>
 
@@ -140,7 +140,7 @@ function Page1Header() {
       <Text x={265.33} y={405.75} className="c4">
         :
       </Text>
-      <Text x={277.33} y={405.47} className="c3">
+      <Text x={276.00} y={405.47} className="c3">
         {account.lien}
       </Text>
 
@@ -150,7 +150,7 @@ function Page1Header() {
       <Text x={265.33} y={437.75} className="c4">
         :
       </Text>
-      <Text x={277.33} y={437.47} className="c3">
+      <Text x={276.00} y={437.47} className="c3">
         {account.limit}
       </Text>
 
@@ -160,7 +160,7 @@ function Page1Header() {
       <Text x={265.33} y={471.08} className="c4">
         :
       </Text>
-      <Text x={278.67} y={472.13} className="c3">
+      <Text x={276.00} y={472.13} className="c3">
         {account.monthlyAvgBalance}
       </Text>
 
@@ -170,7 +170,7 @@ function Page1Header() {
       <Text x={265.33} y={500.42} className="c4">
         :
       </Text>
-      <Text x={277.33} y={501.47} className="c3">
+      <Text x={276.00} y={501.47} className="c3">
         {account.interestRate}
       </Text>
 
@@ -190,7 +190,7 @@ function Page1Header() {
       <Text x={265.33} y={568.42} className="c4">
         :
       </Text>
-      <Text x={277.33} y={569.47} className="c3">
+      <Text x={276.00} y={569.47} className="c3">
         {account.accountOpenDate}
       </Text>
 
@@ -221,7 +221,7 @@ function Page1Header() {
       <Text x={589.33} y={259.08} className="c4">
         :
       </Text>
-      <Text x={600.00} y={260.13} className="c3">
+      <Text x={601.33} y={260.13} className="c3">
         {account.branchName}
       </Text>
 
@@ -241,7 +241,7 @@ function Page1Header() {
       <Text x={589.33} y={309.75} className="c4">
         :
       </Text>
-      <Text x={600.00} y={310.80} className="c3">
+      <Text x={601.33} y={310.80} className="c3">
         {account.branchPhone}
       </Text>
 
@@ -315,13 +315,13 @@ function Page1Header() {
         {account.ckycrNumber}
       </Text>
 
-      <Text x={465.33} y={530.80} className="c3">
+      <Text x={464.00} y={530.80} className="c3">
         MICR Code
       </Text>
-      <Text x={590.67} y={528.42} className="c4">
+      <Text x={589.33} y={528.42} className="c4">
         :
       </Text>
-      <Text x={602.67} y={530.80} className="c3">
+      <Text x={601.33} y={530.80} className="c3">
         {account.micrCode}
       </Text>
 
