@@ -71,25 +71,25 @@ const MallaReddyLetterheadGenerator = () => {
     <div className={`w-full relative ${isPrintFixed ? 'pt-0' : 'pt-0 print:pt-0'} mb-[26px]`}>
 
       {/* Top horizontal graphic bar */}
-      <div className="w-full flex justify-end h-[14px] mb-5">
+      <div className="w-full flex justify-end h-[16px] mb-6">
         <div className="flex h-full">
-          <div className="w-[328.5px] bg-[#ea6625]"></div>
+          <div className="w-[328px] bg-[#ea6625]"></div>
           <div className="w-[5px]"></div>
-          <div className="w-[150.5px] bg-[#2a3b82]"></div>
+          <div className="w-[150px] bg-[#2a3b82]"></div>
         </div>
       </div>
 
-      <div className="flex w-full items-start justify-between px-0">
+      <div className="flex w-full items-center justify-between px-0">
 
         {/* Left Logo */}
-        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-start justify-center">
+        <div className="w-[105px] print:w-[105px] h-[105px] print:h-[105px] flex-shrink-0 flex items-center justify-center">
           <img src="/mallareddy-logo.png" alt="Malla Reddy Logo" className="w-auto h-full object-contain" />
         </div>
 
         {/* Center Text */}
-        <div className="flex-1 flex flex-col items-center justify-start text-center px-2 pt-[31px]">
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-3">
           <h1
-            className="text-[#2a3b82] text-[34px] print:text-[34px] font-black leading-none tracking-tighter whitespace-nowrap"
+            className="text-[#2a3b82] text-[33px] print:text-[33px] font-black leading-none tracking-tighter whitespace-nowrap"
             style={{
               fontFamily: 'Arial, Helvetica, sans-serif',
               transform: 'scaleY(1.35) scaleX(0.85)',
@@ -107,7 +107,7 @@ const MallaReddyLetterheadGenerator = () => {
         </div>
 
         {/* Right Contact Info */}
-        <div className="w-[160px] print:w-[160px] text-left font-sans flex-shrink-0 pt-[9.5px]">
+        <div className="w-[150px] print:w-[150px] text-left font-sans flex-shrink-0 flex flex-col justify-center">
           <p className="text-black text-[9.5px] print:text-[9.5px] leading-[1.38] text-left">
             Maisammaguda, Kompally,<br />
             Medchal - Malkajgiri District<br />

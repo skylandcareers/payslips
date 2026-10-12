@@ -56,39 +56,41 @@ export interface SBI3StatementSummary {
 }
 
 export const defaultSBI3AccountDetails: SBI3AccountDetails = {
-  "customerName": "Mrs. UMADEVI  KANDUKURI",
-  "email": "umadevikarthik555@gmail.com",
+
+  "customerName": "Mr. SIRIGIRI VENKATESWARLU",
+  "email": "sirigirivenkateswarlu@gmail.com",
   "addressLines": [
-    "1-7-107,PNR RESIDENCY,CHAITANYAPURI,",
-    "HYDERABAD,RANGA REDDY,500060"
+    "H.NO: 15-132, KODANDA RAM NAGAR,",
+    "P&T COLONY, DILSHUKNAGAR",
+    "HYDERABAD,RANGA REDDY - 500060"
   ],
   "statementDate": "09-10-2026",
   "clearBalance": "8,50,558.98CR",
   "unclearedAmount": "0.00",
   "modBalance": "0.00",
-  "lien": "354.0",
+  "lien": "0.00",
   "limit": "0.00",
   "monthlyAvgBalance": "0.00",
   "interestRate": "2.50 % p.a.",
   "drawingPower": "0.00",
   "accountOpenDate": "29/12/2015",
-  "branchName": "CHAITANYAPURI",
-  "branchCode": "20876",
+  "branchName": "P&T COLONY",
+  "branchCode": "20864",
   "branchAddress": [
-    "COMPLEX, CHAITANYAPURI",
-    "DOOR NO 1 7 95 1, SHRI SHIVA",
-    "KRISHNA,COMPLEX,"
+    "SAROORNAGAR, HYDERABAD",
+    "14-60, SRI SAI MITHRA ENCLAVE",
+    "P&T COLONY,"
   ],
   "branchEmail": "SBI.20876@sbi.co.in",
-  "branchPhone": "9063180480",
-  "cifNumber": "72233658095",
-  "accountNumber": "52210183318",
+  "branchPhone": "24060839",
+  "cifNumber": "72010428268",
+  "accountNumber": "62021658759",
   "product": "REGULAR SB CHQ-INDIVIDUALS",
-  "ifscCode": "SBIN0020876",
+  "ifscCode": "SBIN0020864",
   "currency": "INR",
   "accountStatus": "OPEN",
   "ckycrNumber": "Not Available",
-  "micrCode": "500002386",
+  "micrCode": "500002384",
   "nomineeName": "XXXXXXXXXXXXXXXXXXXXX",
   "periodFrom": "01-07-2026",
   "periodTo": "09-10-2026"
