@@ -22,9 +22,21 @@ console.log(`[PDF Exporter] Target URL: ${targetUrl}`);
 console.log(`[PDF Exporter] Output file: ${outFile}`);
 
 async function generate() {
-  const chromePath = process.env.CHROME_PATH || '/usr/bin/google-chrome';
-  if (!fs.existsSync(chromePath)) {
-    throw new Error(`Chrome binary not found at ${chromePath}. Please set CHROME_PATH environment variable.`);
+  const candidatePaths = [
+    process.env.CHROME_PATH,
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/Applications/Chromium.app/Contents/MacOS/Chromium',
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+  ].filter(Boolean);
+
+  const chromePath = candidatePaths.find((p) => fs.existsSync(p));
+  if (!chromePath) {
+    throw new Error(`Chrome binary not found. Please set CHROME_PATH environment variable.`);
   }
 
   const browser = await puppeteer.launch({

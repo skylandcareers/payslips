@@ -16,11 +16,23 @@ function pdfExportPlugin(): Plugin {
         const filename = parsedUrl.searchParams.get("filename") || "Union_Bank_Statement.pdf";
         const targetUrl = `http://${host}${pagePath.startsWith("/") ? pagePath : "/" + pagePath}`;
 
-        const chromePath = process.env.CHROME_PATH || "/usr/bin/google-chrome";
-        if (!fs.existsSync(chromePath)) {
+        const candidatePaths = [
+          process.env.CHROME_PATH,
+          "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+          "/Applications/Chromium.app/Contents/MacOS/Chromium",
+          "/usr/bin/google-chrome",
+          "/usr/bin/google-chrome-stable",
+          "/usr/bin/chromium",
+          "/usr/bin/chromium-browser",
+          "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+          "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        ].filter(Boolean) as string[];
+
+        const chromePath = candidatePaths.find((p) => fs.existsSync(p));
+        if (!chromePath) {
           res.statusCode = 500;
           res.setHeader("Content-Type", "application/json");
-          res.end(JSON.stringify({ error: `Chrome not found at ${chromePath}` }));
+          res.end(JSON.stringify({ error: `Chrome binary not found. Checked: ${candidatePaths.join(", ")}` }));
           return;
         }
 
