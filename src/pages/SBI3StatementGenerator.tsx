@@ -422,10 +422,12 @@ function Table({
   transactions,
   rowHeights,
   top,
+  showEndingRow = true,
 }: {
   transactions: SBI3Transaction[];
   rowHeights: number[];
   top: number;
+  showEndingRow?: boolean;
 }) {
   return (
     <div className="sbi3-table" style={{ top }}>
@@ -484,7 +486,7 @@ function Table({
           </div>
         </div>
       ))}
-      <TableEndingRow />
+      {showEndingRow && <TableEndingRow />}
     </div>
   );
 }
@@ -580,6 +582,8 @@ function Footer({ pageNumber }: { pageNumber: number }) {
   );
 }
 
+const AFFECTED_PAGES = [19, 37, 41, 44, 45, 56, 78, 90, 94, 103];
+
 export default function SBI3StatementGenerator() {
   const [isExporting, setIsExporting] = useState(false);
 
@@ -595,6 +599,18 @@ export default function SBI3StatementGenerator() {
       console.error(e);
     }
     return 'umadevi-scaled';
+  });
+
+  const [pageFilter, setPageFilter] = useState<'all' | 'affected'>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('pages') === 'affected') {
+        return 'affected';
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return 'all';
   });
 
   const dataset: ActiveDataset = useMemo(() => {
@@ -640,6 +656,17 @@ export default function SBI3StatementGenerator() {
     });
   }, [dataset]);
 
+  const displayedPages = useMemo(() => {
+    return pages
+      .map((page, i) => ({ ...page, pageNumber: i + 1 }))
+      .filter((page) => {
+        if (pageFilter === 'affected') {
+          return AFFECTED_PAGES.includes(page.pageNumber);
+        }
+        return true;
+      });
+  }, [pages, pageFilter]);
+
   const handleDatasetChange = (newDs: DatasetOption) => {
     setSelectedDataset(newDs);
     const url = new URL(window.location.href);
@@ -647,12 +674,29 @@ export default function SBI3StatementGenerator() {
     window.history.replaceState({}, '', url.toString());
   };
 
+  const handlePageFilterChange = (filter: 'all' | 'affected') => {
+    setPageFilter(filter);
+    const url = new URL(window.location.href);
+    if (filter === 'affected') {
+      url.searchParams.set('pages', 'affected');
+    } else {
+      url.searchParams.delete('pages');
+    }
+    window.history.replaceState({}, '', url.toString());
+  };
+
   const downloadPdf = async () => {
     try {
       setIsExporting(true);
       toast.info('Generating PDF in background...');
+      const pathParam = pageFilter === 'affected'
+        ? `/sbi3?dataset=${selectedDataset}&pages=affected`
+        : `/sbi3?dataset=${selectedDataset}`;
+      const filename = pageFilter === 'affected'
+        ? `SBI_Statement_${dataset.account.customerName.replace(/[^a-zA-Z0-9]/g, '_')}_Pages_19_37_41_44_45_56_78_90_94_103.pdf`
+        : `SBI_Statement_${dataset.account.customerName.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`;
       const response = await fetch(
-        `/api/export-pdf?path=${encodeURIComponent(`/sbi3?dataset=${selectedDataset}`)}&filename=SBI_Account_Statement.pdf`
+        `/api/export-pdf?path=${encodeURIComponent(pathParam)}&filename=${encodeURIComponent(filename)}`
       );
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
@@ -661,7 +705,7 @@ export default function SBI3StatementGenerator() {
       const url = URL.createObjectURL(await response.blob());
       const link = document.createElement('a');
       link.href = url;
-      link.download = `SBI_Statement_${dataset.account.customerName.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`;
+      link.download = filename;
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -726,7 +770,7 @@ export default function SBI3StatementGenerator() {
         .sbi3-cell { border-right: 0.67px solid #b8b8b8; box-sizing: border-box; overflow: visible; font-size: 10.67px; line-height: 12.5px; font-weight: 500; font-family: Arial, Helvetica, sans-serif; color: #000000; -webkit-text-stroke: 0.10px #000000; text-rendering: geometricPrecision; }
         .sbi3-cell:last-child { border-right: none; }
         .sbi3-cell-center { display: flex; align-items: center; justify-content: center; text-align: center; }
-        .sbi3-cell-desc { display: flex; flex-direction: column; justify-content: flex-start; padding: 6px 6px 2px 6px; text-align: left; line-height: 11.5px; overflow: visible; }
+        .sbi3-cell-desc { display: flex; flex-direction: column; justify-content: center; padding: 2px 6px; text-align: left; line-height: 11.5px; overflow: visible; }
         .sbi3-desc-line { white-space: pre-wrap; word-break: break-word; }
         .sbi3-cell-amount { display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; text-align: right; font-variant-numeric: tabular-nums; }
         .sbi3-table-ending-row { display: flex; width: 740px; height: 40px; background: #5553aa; border-left: 0.67px solid #b8b8b8; border-right: 0.67px solid #b8b8b8; border-bottom: 0.67px solid #b8b8b8; box-sizing: border-box; }
@@ -801,11 +845,39 @@ export default function SBI3StatementGenerator() {
                 </option>
               </select>
             </div>
+
+            <div className="flex items-center gap-1 bg-slate-100 border border-slate-300 rounded-lg p-1">
+              <button
+                type="button"
+                onClick={() => handlePageFilterChange('all')}
+                className={`px-2.5 py-1 text-xs font-semibold rounded transition-colors ${
+                  pageFilter === 'all'
+                    ? 'bg-white text-indigo-700 shadow-sm border border-slate-200'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                All Pages ({pageCount})
+              </button>
+              <button
+                type="button"
+                onClick={() => handlePageFilterChange('affected')}
+                className={`px-2.5 py-1 text-xs font-semibold rounded transition-colors ${
+                  pageFilter === 'affected'
+                    ? 'bg-amber-600 text-white shadow-sm'
+                    : 'text-amber-800 hover:text-amber-950 font-medium'
+                }`}
+                title="View & Print only the 10 fixed pages (19, 37, 41, 44, 45, 56, 78, 90, 94, 103)"
+              >
+                Reprint Fixed Pages (10)
+              </button>
+            </div>
           </div>
 
           <div className="sbi3-toolbar-actions">
             <span className="text-xs text-slate-600">
-              {dataset.transactions.length} transactions · {pageCount} pages
+              {displayedPages.length === pageCount
+                ? `${dataset.transactions.length} transactions · ${pageCount} pages`
+                : `Showing ${displayedPages.length} of ${pageCount} pages (19, 37, 41, 44, 45, 56, 78, 90, 94, 103)`}
             </span>
             <button
               type="button"
@@ -834,8 +906,8 @@ export default function SBI3StatementGenerator() {
 
       {/* Statement Pages Canvas */}
       <main className="sbi3-pages" aria-label="State Bank of India statement">
-        {pages.map((page, i) => {
-          const pageNumber = i + 1;
+        {displayedPages.map((page) => {
+          const pageNumber = page.pageNumber;
           const isFirst = pageNumber === 1;
           const isLast = pageNumber === pageCount;
 
