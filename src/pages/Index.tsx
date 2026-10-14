@@ -26,9 +26,9 @@ const cardsData = [
         <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#a11d22] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
           <div className="h-16 flex items-center justify-center mb-3">
             <img
-              src="/sri-balaji-logo.png"
+              src="/sri-balaji-emblem.png"
               alt="Sri Balaji University, Pune"
-              className="h-10 w-auto max-w-[170px] object-contain group-hover:scale-105 transition-transform"
+              className="h-14 w-auto object-contain group-hover:scale-105 transition-transform"
             />
           </div>
           <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">Sri Balaji Univ. Pune</h2>
@@ -314,6 +314,118 @@ const cardsData = [
           </div>
           <h2 className="text-sm sm:text-base font-bold mb-3 leading-tight text-slate-800">AVM Furniture</h2>
           <div className="mt-auto w-full flex items-center justify-center gap-2 text-amber-800 text-[11px] font-semibold bg-amber-50 py-1.5 rounded-md px-2 group-hover:bg-amber-800 group-hover:text-white transition-all">Open Portal <Building2 className="w-4 h-4" /></div>
+        </div>
+      </Link>
+    )
+  },
+  {
+    name: "Amrita Enterprises",
+    element: (
+      <Link to="/amrita-enterprises" className="group">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#0f2b5c] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 120 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="drop-shadow-md group-hover:scale-105 transition-transform"
+            >
+              <circle cx="60" cy="60" r="56" stroke="#c59b27" strokeWidth="3" fill="#0f2b5c" />
+              <circle cx="60" cy="60" r="50" stroke="#e6c66e" strokeWidth="1" strokeDasharray="3 2" fill="none" opacity="0.85" />
+              <circle cx="60" cy="60" r="46" fill="#0c234b" />
+              <g fill="#c59b27" opacity="0.85">
+                <path d="M30 65 C26 50 32 38 42 30 C38 38 35 48 37 62 Z" />
+                <path d="M28 55 C24 48 26 40 33 35 C30 42 29 48 31 54 Z" />
+                <path d="M90 65 C94 50 88 38 78 30 C82 38 85 48 83 62 Z" />
+                <path d="M92 55 C96 48 94 40 87 35 C90 42 91 48 89 54 Z" />
+              </g>
+              <path d="M50 33 L55 38 L60 30 L65 38 L70 33 L68 41 L52 41 Z" fill="#e6c66e" stroke="#c59b27" strokeWidth="0.8" />
+              <text x="60" y="71" textAnchor="middle" fontFamily="'Times New Roman', Georgia, serif" fontSize="31" fontWeight="900" fill="#ffffff" letterSpacing="1">AE</text>
+              <rect x="34" y="86" width="52" height="12" rx="3" fill="#c59b27" stroke="#e6c66e" strokeWidth="0.8" />
+              <text x="60" y="95" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="7" fontWeight="900" fill="#0c234b" letterSpacing="1">ESTD 2017</text>
+            </svg>
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-1 leading-tight text-slate-800">Amrita Enterprises</h2>
+          <p className="text-[10px] text-slate-500 font-medium mb-3">Sponsorship • GST • Letterhead</p>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#0f2b5c] text-[11px] font-semibold bg-blue-50 py-1.5 rounded-md px-2 group-hover:bg-[#0f2b5c] group-hover:text-white transition-all">
+            Open Portal <Building2 className="w-4 h-4" />
+          </div>
+        </div>
+      </Link>
+    )
+  },
+  {
+    name: "Sri Ayyappa Enterprises",
+    element: (
+      <Link to="/sri-ayyappa-enterprises" className="group">
+        <div className="bg-white border border-stone-200 rounded-2xl p-4 h-full transition-all duration-300 hover:border-[#780016] hover:shadow-xl hover:-translate-y-2 flex flex-col items-center text-center">
+          <div className="h-16 flex items-center justify-center mb-3">
+            <svg
+              width="52"
+              height="52"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="drop-shadow-md group-hover:scale-105 transition-transform"
+            >
+              <defs>
+                <radialGradient id="idxDeepamFlame" cx="50%" cy="60%" r="50%">
+                  <stop offset="0%" stopColor="#fef08a" />
+                  <stop offset="50%" stopColor="#f59e0b" />
+                  <stop offset="100%" stopColor="#dc2626" />
+                </radialGradient>
+                <linearGradient id="idxDeepamGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#fde047" />
+                  <stop offset="40%" stopColor="#d97706" />
+                  <stop offset="100%" stopColor="#78350f" />
+                </linearGradient>
+                <linearGradient id="idxLotus" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#f59e0b" />
+                  <stop offset="70%" stopColor="#991b1b" />
+                  <stop offset="100%" stopColor="#780016" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="28" r="22" fill="#fbbf24" fillOpacity="0.35" />
+              <path
+                d="M50 7 C53 14 62 25 62 33 C62 41 57 46 50 46 C43 46 38 41 38 33 C38 25 47 14 50 7 Z"
+                fill="url(#idxDeepamFlame)"
+              />
+              <path
+                d="M50 17 C51.5 22 56 28 56 34 C56 39 53 43 50 43 C47 43 44 39 44 34 C44 28 48.5 22 50 17 Z"
+                fill="#ffffff"
+                opacity="0.9"
+              />
+              <path
+                d="M26 46 C32 43 68 43 74 46 C77 48 76 52 70 54 C62 57 38 57 30 54 C24 52 23 48 26 46 Z"
+                fill="url(#idxDeepamGold)"
+              />
+              <path
+                d="M50 49 C46 56 46 66 50 71 C54 66 54 56 50 49 Z"
+                fill="url(#idxDeepamGold)"
+              />
+              <path
+                d="M48 51 C40 54 36 63 42 69 C44 65 46 58 48 51 Z"
+                fill="url(#idxLotus)"
+              />
+              <path
+                d="M52 51 C60 54 64 63 58 69 C56 65 54 58 52 51 Z"
+                fill="url(#idxLotus)"
+              />
+              <path d="M46 69 H54 V74 H46 Z" fill="url(#idxDeepamGold)" />
+              <ellipse cx="50" cy="74" rx="7" ry="2" fill="url(#idxDeepamGold)" />
+              <path d="M47 75 H53 V82 H47 Z" fill="url(#idxDeepamGold)" />
+              <ellipse cx="50" cy="82" rx="9" ry="2.5" fill="url(#idxDeepamGold)" />
+              <path d="M38 84 C38 83 62 83 62 84 L68 91 C68 92 32 92 32 91 Z" fill="url(#idxDeepamGold)" />
+              <rect x="28" y="91" width="44" height="4" rx="2" fill="url(#idxDeepamGold)" />
+            </svg>
+          </div>
+          <h2 className="text-sm sm:text-base font-bold mb-1 leading-tight text-slate-800">Sri Ayyappa Enterprises</h2>
+          <p className="text-[10px] text-amber-700 font-semibold mb-3">Sponsorship • GST • Letterhead</p>
+          <div className="mt-auto w-full flex items-center justify-center gap-2 text-[#780016] text-[11px] font-bold bg-rose-50 py-1.5 rounded-md px-2 group-hover:bg-[#780016] group-hover:text-white transition-all border border-rose-200">
+            Open Portal <Building2 className="w-4 h-4" />
+          </div>
         </div>
       </Link>
     )

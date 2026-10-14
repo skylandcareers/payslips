@@ -68,13 +68,26 @@ function Page1Header({ account }: { account: SBI3AccountDetails }) {
         className="sbi3-page1-vectors"
       />
 
-      {/* Top purple banner text */}
-      <Text x={698.67} y={22.80} className="c1">
-        Welcome:
-      </Text>
-      <Text x={581.03} y={44.13} className="c1">
-        {account.customerName}
-      </Text>
+      {/* Top purple banner text - right-aligned */}
+      <div
+        style={{
+          position: "absolute",
+          top: "22.80px",
+          right: "26.67px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+          textAlign: "right",
+          zIndex: 10,
+        }}
+      >
+        <span className="c1" style={{ display: "inline-block", lineHeight: 1 }}>
+          Welcome:
+        </span>
+        <span className="c1" style={{ display: "inline-block", marginTop: "8px", lineHeight: 1 }}>
+          {account.customerName?.trim()}
+        </span>
+      </div>
       <Text x={358.67} y={29.47} className="c1">
         As on
       </Text>
@@ -589,7 +602,7 @@ export default function SBI3StatementGenerator() {
       case 'umadevi-scaled':
         return {
           key: 'umadevi-scaled',
-          label: 'Mrs. UMADEVI KANDUKURI (3.5L to 9.5L Balance)',
+          label: 'Mr. SUKUMAR ROY (3.5L to 9.5L Balance)',
           account: umadeviScaledAccount,
           summary: umadeviScaledSummary,
           transactions: umadeviScaledTransactions,
@@ -598,7 +611,7 @@ export default function SBI3StatementGenerator() {
       case 'umadevi-original':
         return {
           key: 'umadevi-original',
-          label: 'Mrs. UMADEVI KANDUKURI (Exact PDF copy - 500 Balance)',
+          label: 'Mr. SUKUMAR ROY (Exact Copy - 500 Balance)',
           account: umadeviOriginalAccount,
           summary: umadeviOriginalSummary,
           transactions: umadeviOriginalTransactions,
@@ -778,10 +791,10 @@ export default function SBI3StatementGenerator() {
                 className="text-xs font-semibold bg-white border border-slate-300 rounded px-2 py-1 text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-500"
               >
                 <option value="umadevi-scaled">
-                  Mrs. UMADEVI KANDUKURI (3.5L Initial &rarr; 9.45L Final Balance) [1,431 Txns]
+                  Mr. SUKUMAR ROY (3.5L Initial &rarr; 9.45L Final Balance) [1,431 Txns]
                 </option>
                 <option value="umadevi-original">
-                  Mrs. UMADEVI KANDUKURI (Exact PDF Copy - 517 &rarr; 558 Balance) [1,431 Txns]
+                  Mr. SUKUMAR ROY (Exact Copy - 517 &rarr; 558 Balance) [1,431 Txns]
                 </option>
                 <option value="default">
                   Mr. SIRIGIRI VENKATESWARLU (Existing Dataset - 767 Txns)

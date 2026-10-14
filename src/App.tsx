@@ -64,6 +64,12 @@ import HomeFurnitureGstCertificateGenerator from "./pages/HomeFurnitureGstCertif
 import AvmFurnitureIndex from "./pages/AvmFurnitureIndex";
 import AvmFurnitureLetterheadGenerator from "./pages/AvmFurnitureLetterheadGenerator";
 import AvmFurnitureGstCertificateGenerator from "./pages/AvmFurnitureGstCertificateGenerator";
+import AmritaEnterprisesIndex from "./pages/AmritaEnterprisesIndex";
+import AmritaEnterprisesLetterheadGenerator from "./pages/AmritaEnterprisesLetterheadGenerator";
+import AmritaEnterprisesGstCertificateGenerator from "./pages/AmritaEnterprisesGstCertificateGenerator";
+import SriAyyappaEnterprisesIndex from "./pages/SriAyyappaEnterprisesIndex";
+import SriAyyappaLetterheadGenerator from "./pages/SriAyyappaLetterheadGenerator";
+import SriAyyappaGstCertificateGenerator from "./pages/SriAyyappaGstCertificateGenerator";
 import RakshaGlobalLetterheadGenerator from "./pages/RakshaGlobalLetterheadGenerator";
 import SriSaravanaLetterheadGenerator from "./pages/SriSaravanaLetterheadGenerator";
 import UnionBankStatementGenerator from "./pages/UnionBankStatementGenerator";
@@ -156,6 +162,25 @@ const App = () => (
           <Route path="/avm-furniture" element={<AvmFurnitureIndex />} />
           <Route path="/avm-furniture/letterhead" element={<AvmFurnitureLetterheadGenerator />} />
           <Route path="/avm-furniture/gst" element={<AvmFurnitureGstCertificateGenerator />} />
+          
+          <Route path="/amrita-enterprises" element={<AmritaEnterprisesIndex />} />
+          <Route path="/amrita-enterprises/letterhead" element={<AmritaEnterprisesLetterheadGenerator />} />
+          <Route path="/amrita-enterprises/sponsorship" element={<AmritaEnterprisesLetterheadGenerator />} />
+          <Route path="/amrita-enterprises/gst" element={<AmritaEnterprisesGstCertificateGenerator />} />
+          <Route path="/amrita" element={<AmritaEnterprisesIndex />} />
+          <Route path="/amrita/letterhead" element={<AmritaEnterprisesLetterheadGenerator />} />
+          <Route path="/amrita/sponsorship" element={<AmritaEnterprisesLetterheadGenerator />} />
+          <Route path="/amrita/gst" element={<AmritaEnterprisesGstCertificateGenerator />} />
+
+          <Route path="/sri-ayyappa-enterprises" element={<SriAyyappaEnterprisesIndex />} />
+          <Route path="/sri-ayyappa-enterprises/letterhead" element={<SriAyyappaLetterheadGenerator />} />
+          <Route path="/sri-ayyappa-enterprises/sponsorship" element={<SriAyyappaLetterheadGenerator />} />
+          <Route path="/sri-ayyappa-enterprises/gst" element={<SriAyyappaGstCertificateGenerator />} />
+          <Route path="/sri-ayyappa" element={<SriAyyappaEnterprisesIndex />} />
+          <Route path="/sri-ayyappa/letterhead" element={<SriAyyappaLetterheadGenerator />} />
+          <Route path="/sri-ayyappa/sponsorship" element={<SriAyyappaLetterheadGenerator />} />
+          <Route path="/sri-ayyappa/gst" element={<SriAyyappaGstCertificateGenerator />} />
+
           <Route path="/raksha-global/letterhead" element={<RakshaGlobalLetterheadGenerator />} />
           <Route path="/sri-saravana" element={<SriSaravanaLetterheadGenerator />} />
 
@@ -198,8 +223,10 @@ const App = () => (
           <Route path="/mallareddy/letterhead" element={<MallaReddyLetterheadGenerator />} />
           <Route path="/sri-balaji" element={<SriBalajiIndex />} />
           <Route path="/sri-balaji/letterhead" element={<SriBalajiLetterheadGenerator />} />
+          <Route path="/sri-balaji-letterhead" element={<SriBalajiLetterheadGenerator />} />
           <Route path="/sbup" element={<SriBalajiIndex />} />
           <Route path="/sbup/letterhead" element={<SriBalajiLetterheadGenerator />} />
+          <Route path="/sbup-letterhead" element={<SriBalajiLetterheadGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
